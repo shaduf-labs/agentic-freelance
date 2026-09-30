@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
+<title>Is it worth the tokens? calculator</title>
+<style>
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;background:#fff}
+body{font:14px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#37352f}
+.root{padding:16px}
+h2{margin:0 0 2px;font-size:17px}
+.note{margin:0 0 12px;color:#5d5c58;font-size:13px}
+.illus{display:inline-block;margin-left:6px;padding:0 6px;border:1px dashed #b9b7b0;border-radius:4px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5d5c58;vertical-align:middle}
+.presets{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0 0 14px;padding:0;list-style:none}
+.presets-label{width:100%;font-size:11.5px;font-weight:600;color:#5d5c58}
+button{font:inherit;color:inherit;padding:5px 10px;border:1px solid #b9b7b0;border-radius:5px;background:#fff;cursor:pointer}
+button[aria-pressed=true]{background:#1d4f8f;border-color:#1d4f8f;color:#fff}
+button:hover{background:#f4f3f0}button[aria-pressed=true]:hover{background:#1d4f8f}
+:focus-visible{outline:2px solid #2a6fc4;outline-offset:2px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:10px 14px;margin:0 0 14px}
+.field{display:flex;flex-direction:column;gap:3px;min-width:0}
+.field label{font-size:12px;font-weight:600;color:#37352f}
+.field small{color:#787774;font-size:11.5px;line-height:1.35}
+input{font:inherit;width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcdc6;border-radius:5px}
+.out{padding:14px 0 4px;border-top:2px solid #37352f}
+.ev{margin:0;font-size:26px;font-weight:700;letter-spacing:-.01em}
+.ev.neg{color:#9f3f3b}.ev.pos{color:#2c5e44}
+.sum{margin:4px 0 12px;font-size:13.5px;max-width:70ch}
+.bars{margin:6px 0 12px}
+.bar-row{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:4px 10px;align-items:center;margin:6px 0}
+.bar-label{font-size:12.5px}
+.track{position:relative;height:16px;background:#f2f1ee;border-radius:0 4px 4px 0;overflow:hidden}
+.fill{height:16px;border-radius:0 4px 4px 0;min-width:2px}
+.fill.pay{background:#2a6fc4}.fill.cost{background:#c4541f}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:8px 14px;margin:8px 0 0;padding:0;list-style:none}
+.facts li{padding:8px 10px;border:1px solid #e6e5e2;border-radius:5px;min-width:0}
+.facts b{display:block;font-size:16px}
+.facts span{font-size:12px;color:#5d5c58}
+.caveat{margin:12px 0 0;font-size:12px;color:#5d5c58;max-width:75ch}
+@media (max-width:420px){.bar-row{grid-template-columns:minmax(0,1fr)}}
+</style>
+</head>
+<body>
+<div class="root" data-shaduf-resize-root>
+<h2>Is it worth the tokens? <span class="illus">Illustrative</span></h2>
+<p class="note">Expected value of one attempt at a competitive task. Presets use observed numbers from 30 September 2026; your token cost and your edge are guesses only you can make.</p>
+<div class="presets" role="group" aria-label="Presets from observed venues">
+<span class="presets-label">Start from an observed case</span>
+<button type="button" data-preset="tm2" aria-pressed="true">TaskMarket 2 USDC bounty</button>
+<button type="button" data-preset="tm199" aria-pressed="false">TaskMarket 199 USDC task</button>
+<button type="button" data-preset="algora" aria-pressed="false">Algora $75 bounty</button>
+<button type="button" data-preset="em" aria-pressed="false">Execution Market $0.02 task</button>
+</div>
+<div class="grid">
+<div class="field"><label for="reward">Reward per prize ($ or USDC)</label><input id="reward" type="number" min="0" step="any" inputmode="decimal"><small id="reward-src"></small></div>
+<div class="field"><label for="fee">Platform fee taken from the reward (%)</label><input id="fee" type="number" min="0" max="100" step="any" inputmode="decimal"><small id="fee-src"></small></div>
+<div class="field"><label for="rivals">Other entries competing</label><input id="rivals" type="number" min="0" step="1" inputmode="numeric"><small id="rivals-src"></small></div>
+<div class="field"><label for="prizes">Number of equal prizes</label><input id="prizes" type="number" min="1" step="1" inputmode="numeric"><small>1 = winner takes all</small></div>
+<div class="field"><label for="edge">Your edge over an average entry (×)</label><input id="edge" type="number" min="0" step="any" inputmode="decimal"><small>1 = same chance as everyone else</small></div>
+<div class="field"><label for="tokens">Your inference cost per attempt ($)</label><input id="tokens" type="number" min="0" step="any" inputmode="decimal"><small>Your estimate; not observed</small></div>
+<div class="field"><label for="other">Other cost per attempt ($)</label><input id="other" type="number" min="0" step="any" inputmode="decimal"><small>Paid routes, x402 charges, gas</small></div>
+</div>
+<div class="out" aria-live="polite">
+<p class="ev" id="ev"></p>
+<p class="sum" id="sum"></p>
+<div class="bars" role="img" id="bars-wrap">
+<div class="bar-row"><span class="bar-label" id="pay-label"></span><div class="track"><div class="fill pay" id="pay-bar"></div></div></div>
+<div class="bar-row"><span class="bar-label" id="cost-label"></span><div class="track"><div class="fill cost" id="cost-bar"></div></div></div>
+</div>
+<ul class="facts">
+<li><b id="p"></b><span>chance of winning a prize</span></li>
+<li><b id="attempts"></b><span>attempts per win, on average</span></li>
+<li><b id="be-cost"></b><span>break-even total cost per attempt</span></li>
+<li><b id="be-p"></b><span>win chance needed to break even</span></li>
+</ul>
+</div>
+<p class="caveat">Assumes each entry has an equal base chance, scaled by your edge, and that a winner is actually paid. It ignores withdrawal fees, taxes, time spent validating, and ban risk on venues that forbid automated submissions. Not a prediction of income.</p>
+</div>
+<script>
+(function(){
+  var P={
+    tm2:{reward:2,fee:7.5,rivals:69,prizes:1,edge:1,tokens:0.5,other:0,src:{reward:'Most common TaskMarket reward (61 of last 240 tasks)',fee:'TaskMarket platformFeeBps 750',rivals:'Median ~69 submissions per task'}},
+    tm199:{reward:199,fee:7.5,rivals:20,prizes:1,edge:1,tokens:2,other:0,src:{reward:'Largest open TaskMarket task on 30 Sep',fee:'TaskMarket platformFeeBps 750',rivals:'20 submissions on that task'}},
+    algora:{reward:75,fee:0,rivals:105,prizes:1,edge:1,tokens:3,other:0,src:{reward:'tscircuit/jlcsearch#92 bounty',fee:'Algora charges the sponsor, not the solver',rivals:'121 /attempt comments from 106 accounts'}},
+    em:{reward:0.02,fee:13,rivals:0,prizes:1,edge:1,tokens:0.01,other:0,src:{reward:'All 3 open Execution Market tasks were $0.02',fee:'Execution Market 13% flat',rivals:'Tasks are assigned; competition not measured'}}
+  };
+  var ids=['reward','fee','rivals','prizes','edge','tokens','other'];
+  var $=function(id){return document.getElementById(id)};
+  function money(x){var a=Math.abs(x); var d=a<0.1?4:a<10?3:2; return (x<0?'−$':'$')+a.toFixed(d)}
+  function pct(x){return (x*100<0.1&&x>0)?(x*100).toFixed(3)+'%':(x*100).toFixed(1)+'%'}
+  function num(id,def){var v=parseFloat($(id).value); return isFinite(v)&&v>=0?v:def}
+  function load(key){
+    var p=P[key]; ids.forEach(function(id){$(id).value=p[id]});
+    $('reward-src').textContent=p.src.reward; $('fee-src').textContent=p.src.fee; $('rivals-src').textContent=p.src.rivals;
+    document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-preset')===key?'true':'false')});
+    calc();
+  }
+  function calc(){
+    var reward=num('reward',0), fee=Math.min(100,num('fee',0))/100, rivals=Math.floor(num('rivals',0)), prizes=Math.max(1,Math.floor(num('prizes',1))), edge=num('edge',1), tokens=num('tokens',0), other=num('other',0);
+    var entries=rivals+1;
+    var p=Math.min(1,edge*prizes/entries);
+    var net=reward*(1-fee);
+    var pay=net*p, cost=tokens+other, ev=pay-cost;
+    $('ev').textContent=(ev>=0?'+':'')+money(ev)+' per attempt';
+    $('ev').className='ev '+(ev<0?'neg':'pos');
+    $('sum').textContent='Expected payout '+money(pay)+' ('+money(net)+' after fees × '+pct(p)+' chance) against '+money(cost)+' spent per attempt.'+(ev<0?' On these numbers each attempt loses money on average.':' On these numbers each attempt gains on average, before time and ban risk.');
+    var max=Math.max(pay,cost,1e-9);
+    $('pay-bar').style.width=(pay/max*100)+'%'; $('cost-bar').style.width=(cost/max*100)+'%';
+    $('pay-label').textContent='Expected payout '+money(pay); $('cost-label').textContent='Cost per attempt '+money(cost);
+    $('bars-wrap').setAttribute('aria-label','Expected payout '+money(pay)+' versus cost '+money(cost));
+    $('p').textContent=pct(p);
+    $('attempts').textContent=p>0?(1/p).toFixed(1):'never';
+    $('be-cost').textContent=money(pay);
+    $('be-p').textContent=net>0?(cost/net>1?'over 100%':pct(cost/net)):'n/a';
+  }
+  ids.forEach(function(id){$(id).addEventListener('input',function(){document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed','false')}); calc()})});
+  document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){load(b.getAttribute('data-preset'))})});
+  load('tm2');
+})();
+</script>
+<script src="../assets/shaduf-tool-resize.js"></script>
+</body>
+</html>
