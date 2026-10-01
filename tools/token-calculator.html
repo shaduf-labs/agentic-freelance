@@ -46,13 +46,15 @@ input{font:inherit;width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcd
 <body>
 <div class="root" data-shaduf-resize-root>
 <h2>Is it worth the tokens? <span class="illus">Illustrative</span></h2>
-<p class="note">Expected value of one attempt at a competitive task. Presets use observed numbers from 30 September 2026; your token cost and your edge are guesses only you can make.</p>
+<p class="note">Expected value of one attempt at a competitive task. Presets use sourced numbers from the payout ledger and samples to 1 October 2026; your token cost and your edge are guesses only you can make.</p>
 <div class="presets" role="group" aria-label="Presets from observed venues">
 <span class="presets-label">Start from an observed case</span>
-<button type="button" data-preset="tm2" aria-pressed="true">TaskMarket 2 USDC bounty</button>
-<button type="button" data-preset="tm199" aria-pressed="false">TaskMarket 199 USDC task</button>
-<button type="button" data-preset="algora" aria-pressed="false">Algora $75 bounty</button>
-<button type="button" data-preset="em" aria-pressed="false">Execution Market $0.02 task</button>
+<button type="button" data-preset="tm_med" aria-pressed="true">TaskMarket median task</button>
+<button type="button" data-preset="tm_top" aria-pressed="false">TaskMarket top task ($15)</button>
+<button type="button" data-preset="al_med" aria-pressed="false">Algora bounty median</button>
+<button type="button" data-preset="al_crowd" aria-pressed="false">Algora crowded bounty</button>
+<button type="button" data-preset="st_med" aria-pressed="false">Superteam agent-allowed median</button>
+<button type="button" data-preset="em_med" aria-pressed="false">Execution Market median</button>
 </div>
 <div class="grid">
 <div class="field"><label for="reward">Reward per prize ($ or USDC)</label><input id="reward" type="number" min="0" step="any" inputmode="decimal"><small id="reward-src"></small></div>
@@ -77,15 +79,18 @@ input{font:inherit;width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcd
 <li><b id="be-p"></b><span>win chance needed to break even</span></li>
 </ul>
 </div>
+<p class="caveat"><strong>Equal-chance EV is optimistic where wins concentrate:</strong> TaskMarket's top worker took 10.2% of worker USD in 30 days, Execution Market's 18.2%, MoltJobs' 57.1%, and one winner took 31% of the Algora sample.</p>
 <p class="caveat">Assumes each entry has an equal base chance, scaled by your edge, and that a winner is actually paid. It ignores withdrawal fees, taxes, time spent validating, and ban risk on venues that forbid automated submissions. Not a prediction of income.</p>
 </div>
 <script>
 (function(){
   var P={
-    tm2:{reward:2,fee:7.5,rivals:69,prizes:1,edge:1,tokens:0.5,other:0,src:{reward:'Most common TaskMarket reward (61 of last 240 tasks)',fee:'TaskMarket platformFeeBps 750',rivals:'Median ~69 submissions per task'}},
-    tm199:{reward:199,fee:7.5,rivals:20,prizes:1,edge:1,tokens:2,other:0,src:{reward:'Largest open TaskMarket task on 30 Sep',fee:'TaskMarket platformFeeBps 750',rivals:'20 submissions on that task'}},
-    algora:{reward:75,fee:0,rivals:105,prizes:1,edge:1,tokens:3,other:0,src:{reward:'tscircuit/jlcsearch#92 bounty',fee:'Algora charges the sponsor, not the solver',rivals:'121 /attempt comments from 106 accounts'}},
-    em:{reward:0.02,fee:13,rivals:0,prizes:1,edge:1,tokens:0.01,other:0,src:{reward:'All 3 open Execution Market tasks were $0.02',fee:'Execution Market 13% flat',rivals:'Tasks are assigned; competition not measured'}}
+    tm_med:{reward:2,fee:7.5,rivals:86,prizes:1,edge:1,tokens:0.5,other:0,src:{reward:'Median reward, 73 TaskMarket tasks settled 1 Sep to 1 Oct 2026',fee:'TaskMarket platformFeeBps 750',rivals:'Median 87 submissions per settled task (you plus 86)'}},
+    tm_top:{reward:15,fee:7.5,rivals:230,prizes:1,edge:1,tokens:2,other:0,src:{reward:'Largest task settled in the window (TSK-WAAYZDHJ)',fee:'TaskMarket platformFeeBps 750',rivals:'231 submissions on that task (you plus 230)'}},
+    al_med:{reward:100,fee:0,rivals:2,prizes:1,edge:1,tokens:3,other:0,src:{reward:'Median of 5 recent Algora bounty-on-issue awards (May to Aug 2026)',fee:'Algora charges the sponsor, not the solver',rivals:'Median 3 attempters on those bounties (you plus 2); only 2 awards dated Jul to Sep 2026 were found'}},
+    al_crowd:{reward:75,fee:0,rivals:105,prizes:1,edge:1,tokens:3,other:0,src:{reward:'tscircuit/jlcsearch#92',fee:'Algora charges the sponsor, not the solver',rivals:'106 attempters; closed 2026-09-30 with no award visible'}},
+    st_med:{reward:166.67,fee:0,rivals:116,prizes:3,edge:1,tokens:1,other:0,src:{reward:'$500 median listing split over 3 winners (real splits are unequal); advertised, not traced',fee:'No fee found on Superteam Earn',rivals:'Median 117 submissions on 34 completed agent-allowed listings; a human must claim'}},
+    em_med:{reward:0.02,fee:13,rivals:0,prizes:1,edge:1,tokens:0.01,other:0,src:{reward:'Median of 1,289 Execution Market tasks completed in Sep 2026',fee:'Execution Market 13% flat',rivals:'One executor is assigned; every Sep 2026 buyer was the operator\'s own swarm, idle since 2026-09-29'}}
   };
   var ids=['reward','fee','rivals','prizes','edge','tokens','other'];
   var $=function(id){return document.getElementById(id)};
@@ -118,7 +123,7 @@ input{font:inherit;width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcd
   }
   ids.forEach(function(id){$(id).addEventListener('input',function(){document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed','false')}); calc()})});
   document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){load(b.getAttribute('data-preset'))})});
-  load('tm2');
+  load('tm_med');
 })();
 </script>
 <script src="../assets/shaduf-tool-resize.js"></script>

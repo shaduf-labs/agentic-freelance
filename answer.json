@@ -1,27 +1,30 @@
 {
   "schema_version": "1.0.0",
   "status": "current",
-  "current_answer": "Real money for agent-assisted work reaches humans: on HackerOne, Bugcrowd, Kaggle, Algora and Upwork the owner holds the account, passes identity checks, validates and submits the work, and withdraws. Agent-first boards (TaskMarket, Virtuals ACP, Execution Market, MoltJobs, AgentPact) do pay agents on-chain, but typically $0.02 to $2 and mostly from the operator or related wallets. No venue shows an independent buyer paying an agent for work at meaningful scale.",
+  "current_answer": "Real money for agent-assisted work reaches humans: on HackerOne, Bugcrowd, Kaggle, Algora and Upwork the owner holds the account, passes identity checks, validates and submits the work, and withdraws. Agent-first boards do pay agents on-chain, but little: in the 30 days to 1 October 2026 we traced $230.37 paid to agent workers on five boards (TaskMarket, Execution Market, MoltJobs, Virtuals ACP, AgentPact). About 45% of it came from the operator or operator-linked wallets, the rest from wallets we could not link to the operator, and none from a payer we could identify as independent. No venue shows an independent buyer paying agents at meaningful scale.",
   "catalogue_card": {
     "question": "Where can AI agents actually get paid for real work?",
-    "text": "Humans who use agents get real payouts on bug bounties and competitions; agent-first boards pay agents cents to dollars, mostly from operators. 33 venues checked, all pathways untested."
+    "text": "Humans who use agents get real payouts on bug bounties and competitions. Agent-first boards paid agent workers $230.37 in 30 days, 45% of it from operators or linked wallets; no payer is identified as independent. 33 venues checked, all pathways untested."
   },
   "summary": [
-    "12 of 26 paid-work or selling venues show a confirmed payout (E1); six of them pay humans, five pay agent-performed work, and one (x402) is a payment mechanism.",
-    "0 venues show a demonstrably independent payer paying an agent at meaningful scale.",
-    "Practical routes today: agent does the work and the owner submits on programs that allow AI assistance; an agent wallet on TaskMarket (7.5% fee, mostly 2 USDC rewards against about 69 submissions); selling a narrow service per call through x402.",
-    "Autonomous submission gets owners banned on HackerOne, Bugcrowd, huntr and Upwork; advertised rewards on dealwork.ai, opentask.ai and ugig.net were unfunded when checked.",
-    "Provider terms forbid sharing or reselling subscription access; unused quota is not transferable compute.",
-    "Seven agent communities were checked; all are unpaid, and Moltbook's database leak exposed about 1.5M API tokens."
+    "$230.37 reached agent workers in the 30 days to 1 October 2026 across 5 venues, net of fees ($251.47 gross): TaskMarket $117.80, Execution Market $38.69, MoltJobs $38.28, Virtuals ACP $29.19, AgentPact $6.41.",
+    "45% of it ($102.64) came from operator or operator-linked wallets (range 36% to 49%); 55% from unlinked wallets, which are not proven independent; 0 payers and $0 were identified as independent.",
+    "0 venues reach meaningful scale (at least $1,000 in 30 days from at least 5 unlinked or independent payers). The best case, TaskMarket, has $117.80 from 10 unlinked wallets, 12% of the bar, and 78.5% of its money traces to one unidentified funder.",
+    "The homepage counts are unchanged: 26 paid-work or selling venues, 12 with a confirmed payout (E1), 5 paying agent-performed work, 0 with an independent payer at meaningful scale. The 0 is now measured from 276 traced payout events.",
+    "Is it worth the tokens? An equal-chance attempt at a median TaskMarket task is worth about $0.02; a Superteam agent-allowed submission about $4 to $5 (advertised, human claim required); recent paid Algora bounties had a median of 3 attempters for $100, but only 2 Algora awards dated July to September 2026 were found.",
+    "x402 paid APIs do have real buyers (dTelecom $35,381 from 26; Cluster $55,226 from 722 in 30 days), but these are per-call sales with untraced buyers and are excluded from agent-work totals.",
+    "Corrections: TaskMarket's funding is not opaque (the listed requester pays through an x402 relayer); Execution Market's payer is 100% its own swarm and its completed bounties total $113.83, not $504.84; Algora's 2026-08-26 comment paid out a 2024 award.",
+    "Autonomous submission gets owners banned on HackerOne, Bugcrowd, huntr and Upwork; provider terms forbid reselling subscription access."
   ],
   "uncertainty": [
-    "All data is a single-day snapshot taken on 30 September 2026.",
-    "On-chain records prove transfers, not who controls a wallet; payer independence is mostly unknown.",
-    "Kaggle and huntr E1 rest on award announcements or prize tables, Upwork's on aggregate SEC-reported volume, and x402's on mechanism-level settlements.",
-    "OpenAI and Upwork terms pages returned HTTP 403; OpenAI clauses are quoted from search-result text and need re-checking, as do Kaggle's rules.",
+    "On-chain data proves transfers, not identities: unlinked means no operator link was found within two funding hops, not that the payer is independent.",
+    "If the unidentified funder 0xd8c5763b behind 78.5% of TaskMarket's money is operator-affiliated, the operator or operator-linked share rises from 45% to 85%; a strict reading of the two-hop rule gives 50%.",
+    "Virtuals ACP's payer split is extrapolated from a 14-day job-level sample to the 30-day total; leaving ACP out gives 41%.",
+    "Explorer rate limits (HTTP 429) left hop 2 incomplete for 4 small TaskMarket payers, limited ACP tracing to one hop, and stopped x402 buyer tracing.",
+    "Kaggle and huntr E1 rest on award announcements or prize tables, Upwork's on aggregate SEC-reported volume. 21 of 33 records were last fully verified on 30 September 2026.",
     "No pathway was tested by the pool; no account was opened and no job was taken."
   ],
-  "checked_at": "2026-09-30T15:05:00Z",
-  "meaningfully_updated_at": "2026-09-30T15:05:00Z",
-  "freshness_note": "Verified 30 September 2026. Venue statuses change monthly; treat any record older than about 60 days as stale."
+  "checked_at": "2026-10-01T15:25:24Z",
+  "meaningfully_updated_at": "2026-10-01T15:25:24Z",
+  "freshness_note": "Payout ledger covers 1 September to 1 October 2026; catalogue re-checked 1 October 2026 for 12 records and 30 September for the rest. Venue statuses change monthly; treat any record older than about 60 days as stale."
 }
