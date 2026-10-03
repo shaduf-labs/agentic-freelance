@@ -570,6 +570,136 @@
       "accessed_at": "2026-10-02T13:45:00Z",
       "relation": "supports",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "x402scan-sellers-2026-10-03",
+      "source_type": "analytics",
+      "source_url": "https://www.x402scan.com/",
+      "title": "x402scan seller table",
+      "claim": "In the 30 days to 2026-10-03, x402 settled $969,228; 27 sellers cleared $1,000 from at least 5 buyers ($704,789), and only 1 (AX1, $6,116) sells agent work, partly. Buyer counts are wallet counts.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdp-bazaar-discovery",
+      "source_type": "listing",
+      "source_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources",
+      "title": "CDP Bazaar discovery listing",
+      "claim": "The public Bazaar listing held 24,515 resources across 1,800 payTos on 2026-10-03; 15 of 16 unknown-type qualifying sellers appear in neither the Bazaar nor x402scan registrations.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cluster-payto-trace",
+      "source_type": "primary-record",
+      "source_url": "https://base.blockscout.com/address/0x68396bd35874695ad86cd29410bd80a550991a2b",
+      "title": "Cluster Protocol payTo on Base",
+      "claim": "Cluster’s payTo sent 7,247 USDC to 0x0a4135f9, which sent 9,103 USDC to 0x82b551e8, which funded 5 of 8 traced buyers including the top 4: the published 722-buyer count overstates independent customers.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "dtelecom-payto-trace",
+      "source_type": "primary-record",
+      "source_url": "https://base.blockscout.com/address/0x47d3394c7234714e4b9e9b74827c12be847f9dda",
+      "title": "dTelecom x402 Gateway payTo on Base",
+      "claim": "All 8 traced buyers of dTelecom’s payTo were funded by the same two wallets, so the 26-buyer count is probably one economic buyer.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "ax1-funder-trace",
+      "source_type": "primary-record",
+      "source_url": "https://base.blockscout.com/address/0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+      "title": "AX1 buyer funder on Base",
+      "claim": "6 of 8 traced AX1 buyers, including the top 5, were funded by one untagged wallet, 0x3dd6f35c; whether it is a common owner or an exchange wallet is unresolved.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdp-x402-faq",
+      "source_type": "documentation",
+      "source_url": "https://docs.cdp.coinbase.com/x402/support/faq",
+      "title": "CDP docs: x402 FAQ",
+      "claim": "A CDP API key ID and secret are \"enough to run a seller\" with an address you control; every payment is OFAC/KYT-screened; Bazaar listing follows the first settled payment. No seller KYC requirement found, not ruled out.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "cdp-terms-403",
+      "source_type": "terms",
+      "source_url": "https://www.coinbase.com/legal/developer-platform/terms-of-service",
+      "title": "Coinbase Developer Platform Terms of Service",
+      "claim": "The CDP Terms reserve identity and compliance checks; the page returned HTTP 403 on 2026-10-03, so seller KYC remains unresolved.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "hackerone-hpsr-9",
+      "source_type": "press-release",
+      "source_url": "https://www.hackerone.com/press-release/hackerone-report-finds-210-spike-ai-vulnerability-reports-amid-rise-ai-autonomy",
+      "title": "HackerOne 9th Hacker-Powered Security Report",
+      "claim": "Autonomous agents submitted 560+ valid reports and programmes paid $81 million in total, but neither figure is split by AI; no primary figure exists for pay on AI-assisted findings.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "xbow-hackerone",
+      "source_type": "company-blog",
+      "source_url": "https://xbow.com/blog/top-1-how-xbow-did-it",
+      "title": "XBOW: top 1 on HackerOne",
+      "claim": "About 1,060 submissions with 130 resolved; staff reviewed every report before submission; no bounty total published.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "bugcrowd-ai-slop",
+      "source_type": "policy",
+      "source_url": "https://www.bugcrowd.com/blog/bugcrowd-policy-changes-to-address-ai-slop-submissions/",
+      "title": "Bugcrowd policy changes on AI slop",
+      "claim": "Submission queues rose 334% in three weeks; accounts with 10 or more invalid reports are ID-checked; no payout figure for AI-assisted work.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "em-607c9a44-410",
+      "source_type": "api",
+      "source_url": "https://api.execution.market/api/v1/tasks/607c9a44-916f-471c-98c2-64bc3c611594",
+      "title": "Execution Market task 607c9a44",
+      "claim": "The $20 non-swarm task was never settled and its URL returned HTTP 410 Gone on 2026-10-03; cause unknown.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "acp-release-2026-10-03",
+      "source_type": "primary-record",
+      "source_url": "https://base.blockscout.com/tx/0x4418910c4f81044c7c0f3dac0f6eca6f4518bc3a82a1843a2472f7ce07d83512",
+      "title": "Virtuals ACP release, 2026-10-03",
+      "claim": "A 0.009 USDC provider release on 2026-10-03, one of two new ACP payouts in the 3 October ledger refresh.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltrust-tsk-j3r0mdga",
+      "source_type": "api",
+      "source_url": "https://taskmarket.dev/api/tasks/0xcae1c4c262e520898f96f2c36deea24ed529c58946904a721922a083a8ecff7b",
+      "title": "TaskMarket task TSK-J3R0MDGA",
+      "claim": "MolTrust’s funded bounty expired with 206 submissions and 0 awards; no new payout from the one identified independent payer.",
+      "accessed_at": "2026-10-03T13:45:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }
