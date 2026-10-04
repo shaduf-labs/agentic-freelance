@@ -4,7 +4,7 @@
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
  "page_url": "https://shaduf.ai/p/agentic-freelance/rules/",
  "tool_url": "https://shaduf.ai/p/agentic-freelance/tools/rules-matrix.html",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-03-sell-per-call-or-bounties.html",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-04-agent-communities.html",
  "kyc_url": "https://shaduf.ai/p/agentic-freelance/assets/data/kyc.json",
  "security_url": "https://shaduf.ai/p/agentic-freelance/assets/data/security.json",
  "walkthroughs_url": "https://shaduf.ai/p/agentic-freelance/assets/data/walkthroughs.json",
@@ -20,10 +20,11 @@
   "rules_check (run 4, 2026-10-03) records whether each run-3 quote was still present; quote_still_present false with a route means unfetchable, not changed. doc_text_sha256 values from run 4 use the documented normalisation; run-3 hashes are not comparable.",
   "rules_check (run 4, 2026-10-03) records whether each run-3 quote was still present; quote_still_present false with a route means unfetchable, not changed. doc_text_sha256 values from run 4 use the documented normalisation; run-3 hashes are not comparable.",
   "rules_check (run 4, 2026-10-03) records whether each run-3 quote was still present; quote_still_present false with a route means unfetchable, not changed. doc_text_sha256 values from run 4 use the documented normalisation; run-3 hashes are not comparable.",
-  "rules_check (run 4, 2026-10-03) records whether each run-3 quote was still present; quote_still_present false with a route means unfetchable, not changed. doc_text_sha256 values from run 4 use the documented normalisation; run-3 hashes are not comparable."
+  "rules_check (run 4, 2026-10-03) records whether each run-3 quote was still present; quote_still_present false with a route means unfetchable, not changed. doc_text_sha256 values from run 4 use the documented normalisation; run-3 hashes are not comparable.",
+  "Community rows (party_type community, 15 rows first quoted on 2026-10-04) quote community terms; applies_to community_conduct covers posting rules such as bans on crypto promotion or prompt injection. They join the change check from the next run."
  ],
- "run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
- "accessed": "2026-10-03",
+ "run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
+ "accessed": "2026-10-04",
  "legal_note": "Rules quotes are not legal advice. Quotes are verbatim extracts (cuts marked with …) from the URL shown, fetched read-only on the access date. search_snippet rows are unverified and never the sole basis of a public allow or forbid.",
  "verdict_definitions": {
   "allow": "The text explicitly permits the activity.",
@@ -42,7 +43,8 @@
   "automated_access_consumer_plan": "Automated or non-human access on a consumer subscription plan.",
   "commercial_use_of_output": "Owning and commercially using the model output.",
   "usage_limits_basis": "What the plan limits assume (individual, fair use, rate limits).",
-  "payout_identity": "Identity, KYC, age, tax, sanctions and jurisdiction gates on getting paid."
+  "payout_identity": "Identity, KYC, age, tax, sanctions and jurisdiction gates on getting paid.",
+  "community_conduct": "Conduct rules on what an agent posts in a community (crypto promotion, prompt injection, spam, harassment)."
  },
  "owner_step_definitions": {
   "account": "Opening or holding the account",
@@ -63,26 +65,26 @@
   "5. Only then a search-engine snippet (source_kind search_snippet; shown as unverified)."
  ],
  "summary": {
-  "rows_total": 154,
-  "parties_total": 56,
+  "rows_total": 170,
+  "parties_total": 65,
   "verdicts": {
-   "forbid": 41,
-   "restrict": 85,
-   "unclear": 12,
-   "allow": 16
+   "forbid": 45,
+   "restrict": 92,
+   "unclear": 16,
+   "allow": 17
   },
   "source_kinds": {
-   "primary": 116,
+   "primary": 132,
    "primary_via_wayback": 15,
    "primary_via_api_json": 13,
    "third_party_copy": 1,
    "search_snippet": 9
   },
   "change_vs_previous": {
-   "unchanged": 55,
-   "unverified": 10,
-   "not_rechecked": 77,
-   "new": 12
+   "unchanged": 60,
+   "unverified": 5,
+   "not_rechecked": 89,
+   "new": 16
   },
   "parties_by_party_type": {
    "bounty_platform": 13,
@@ -93,7 +95,8 @@
    "competition": 1,
    "model_provider": 4,
    "maintainer_project": 18,
-   "selling_rail": 3
+   "selling_rail": 3,
+   "community": 9
   },
   "verdicts_by_party_type": {
    "bounty_platform": {
@@ -109,7 +112,7 @@
     "restrict": 3
    },
    "agent_first_board": {
-    "restrict": 28,
+    "restrict": 29,
     "allow": 6,
     "unclear": 3
    },
@@ -136,12 +139,18 @@
     "allow": 4,
     "unclear": 3,
     "restrict": 4
+   },
+   "community": {
+    "restrict": 6,
+    "unclear": 4,
+    "forbid": 4,
+    "allow": 1
    }
   },
   "verdicts_by_applies_to": {
    "autonomous_submission": {
     "forbid": 11,
-    "restrict": 7,
+    "restrict": 8,
     "allow": 1
    },
    "ai_assisted_work": {
@@ -151,9 +160,9 @@
     "allow": 1
    },
    "automation_api_access": {
-    "restrict": 16,
+    "restrict": 17,
     "forbid": 4,
-    "unclear": 1,
+    "unclear": 2,
     "allow": 2
    },
    "multiple_accounts": {
@@ -161,12 +170,13 @@
     "restrict": 1
    },
    "agent_operated_account": {
-    "restrict": 11,
+    "restrict": 15,
     "forbid": 1,
-    "allow": 5
+    "allow": 6,
+    "unclear": 3
    },
    "payout_identity": {
-    "restrict": 24,
+    "restrict": 25,
     "unclear": 5,
     "allow": 2,
     "forbid": 1
@@ -186,32 +196,36 @@
    },
    "usage_limits_basis": {
     "restrict": 4
+   },
+   "community_conduct": {
+    "forbid": 4
    }
   },
   "verdicts_by_owner_step": {
    "submit": {
-    "forbid": 18,
-    "restrict": 23,
+    "forbid": 21,
+    "restrict": 25,
     "unclear": 4,
     "allow": 7
    },
    "agent_setup": {
     "restrict": 11,
-    "forbid": 4,
-    "unclear": 1,
+    "forbid": 5,
+    "unclear": 2,
     "allow": 2
    },
    "account": {
     "forbid": 5,
-    "restrict": 14,
-    "allow": 5
+    "restrict": 18,
+    "allow": 6,
+    "unclear": 3
    },
    "identity_kyc": {
     "restrict": 14,
     "unclear": 2
    },
    "withdraw": {
-    "restrict": 7,
+    "restrict": 8,
     "unclear": 4,
     "forbid": 1
    },
@@ -1038,6 +1052,57 @@
     "B": "lower-case, collapse whitespace, strip HTML tags (B rules_check.json; quote test whitespace-normalised, per-row route)"
    },
    "method_note": "Hash baseline: run 4 establishes the documented-normalisation baseline for doc_text_sha256 (per row in rules_check.doc_text_sha256_2026_10_03). Run-3 hashes used an undocumented normalisation and are not comparable; a hash mismatch against run 3 is NOT evidence of change. The change test this run is quote presence only. From run 5, compare hashes against this baseline using the same normalisation id."
+  },
+  "grid_note_run5": "Grid unchanged: no grid row changed and no new row belongs to a grid venue.",
+  "community_rows": {
+   "rows": 15,
+   "by_party": {
+    "moltbook": 3,
+    "the-colony": 3,
+    "4claw": 2,
+    "agent4science": 1,
+    "mozilla-ai-cq": 1,
+    "clawstr": 1,
+    "moltx": 1,
+    "chirper-ai": 1,
+    "openclawcity": 2
+   },
+   "verdicts": {
+    "restrict": 6,
+    "unclear": 4,
+    "forbid": 4,
+    "allow": 1
+   },
+   "by_source": {
+    "run5-A": 12,
+    "run5-B": 1,
+    "run5-merge": 2
+   },
+   "note": "Community terms rows join the change check from run 6."
+  },
+  "new_rows_run5": {
+   "total": 16,
+   "run5-A": 12,
+   "run5-B": 2,
+   "run5-merge": 2,
+   "ids": [
+    "moltbook-community-agent_liability",
+    "moltbook-community-automated_access",
+    "moltbook-community-crypto_promotion",
+    "the-colony-community-agent_liability",
+    "the-colony-community-prompt_injection",
+    "the-colony-community-age_18",
+    "4claw-community-rate_limits_spam",
+    "4claw-community-hard_nos",
+    "agent4science-community-agents_only",
+    "mozilla-ai-cq-community-human_review",
+    "clawstr-community-unclear",
+    "moltx-community-unclear",
+    "dealwork-ai-kyc_payout_eligibility-2",
+    "chirper-ai-automation_ai-1",
+    "openclawcity-community-agent_liability",
+    "openclawcity-community-acceptable_use"
+   ]
   }
  },
  "rows": [
@@ -1064,7 +1129,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "42ac5c293ef7d71fea9086552e3c6b0b26a35e118c87c29e6d5ad687a256798c",
    "notes": "Hackbot section text identical to the 2026-09-30 tos_ai_policy quote. No 'last updated' date shown on page (only ©2026).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1073,6 +1138,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/policies/code-of-conduct",
+    "http_status": 200,
+    "doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "run4_doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1098,7 +1177,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "42ac5c293ef7d71fea9086552e3c6b0b26a35e118c87c29e6d5ad687a256798c",
    "notes": "Same page lists 'Prohibited Use of AI': large volumes of low-signal reports, unverified or fabricated claims, hallucinated details, unsafe testing.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1107,6 +1186,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/policies/code-of-conduct",
+    "http_status": 200,
+    "doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "run4_doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1132,7 +1226,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "42ac5c293ef7d71fea9086552e3c6b0b26a35e118c87c29e6d5ad687a256798c",
    "notes": "The escalation matrix (Final Warning → 12-month ban → permanent ban for AI/automation report floods) was not quoted on 2026-09-30; recorded as new, not as a change. Bounty Eligible clause: 'Human operators of Hackbots qualify for any applicable bug bounty rewards'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1141,6 +1235,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/policies/code-of-conduct",
+    "http_status": 200,
+    "doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "run4_doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1166,7 +1275,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "42ac5c293ef7d71fea9086552e3c6b0b26a35e118c87c29e6d5ad687a256798c",
    "notes": "The account belongs to the human member; an agent cannot hold its own separate account alongside the owner's.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1175,6 +1284,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/policies/code-of-conduct",
+    "http_status": 200,
+    "doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "run4_doc_text_sha256": "3415823aba7c3f6619dc5f289b95992bbd296deb945dfa64982b99076a5ee97d",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1200,7 +1323,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "474a823b6c886f3388ada8d2f4ba9b38292bb006f8be993aa82071cffab6d035",
    "notes": "No clause names an AI agent as account holder. Read with CoC hackbot clause: an owner's own agent may act through the owner's account only as a hackbot under human-in-the-loop. Business accounts exist (docs article 14289683): owner is a legally authorized representative, ID-verified every 12 months, responsible for authorized users.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1209,6 +1332,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/terms/community",
+    "http_status": 200,
+    "doc_text_sha256": "7609b3e1078cb960ec7fe4879787cb49dffb824d717871e56da8aa605b3df061",
+    "run4_doc_text_sha256": "7609b3e1078cb960ec7fe4879787cb49dffb824d717871e56da8aa605b3df061",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1234,7 +1371,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "dffc62cdc1a201176cc41d46e049c8ae91d7ffb5cd00d9f05ea9c0e594963d40",
    "notes": "Shows HackerOne offers a Hacker API through which reports can be submitted; the API itself is a sanctioned automation route. Rollout: Aug 5 new accounts, then accounts under 150 reputation, then all.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1243,6 +1380,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://docs.hackerone.com/en/articles/16190765-august-2026-changelog",
+    "http_status": 200,
+    "doc_text_sha256": "09cec24a21361babcc79e184aa49d1cdd0e35b72d6c6ae4fe182b67410063105",
+    "run4_doc_text_sha256": "41d447f604fc18b1237a691d653f3faab2c0a03f229be7e0f105273cc9732286",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "punct_insensitive",
+     "strict"
+    ],
+    "note": "Help-centre page hash differs (page chrome or related-article lists); quoted text still present. One fragment matched only punctuation-insensitively (as in run 4 list/tag boundaries).",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1268,7 +1420,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "b075f332adc2b8b64c24b022b9bea3a80f0639d016b7c130b643d904d6b343ad",
    "notes": "Page shows 'Updated over a month ago'. VPN, traffic anonymizer, SDK emulator or jailbroken device causes rejection. The gate now sits before submit, not only before withdraw.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1277,6 +1429,22 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://docs.hackerone.com/en/articles/8399430-id-verification",
+    "http_status": 200,
+    "doc_text_sha256": "9f994ab1bd44d21c821a9ef426ca26c8c7ff928275eb1bec016efea4bef37d6c",
+    "run4_doc_text_sha256": "233e960dc125ea8f0b231521477dde26d698ce1cbe00c09fd8d506dd4207c849",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "Help-centre page hash differs (page chrome or related-article lists); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1302,7 +1470,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "474a823b6c886f3388ada8d2f4ba9b38292bb006f8be993aa82071cffab6d035",
    "notes": "No country list found in terms or payment docs. Payment Preferences: 'Make sure your bank isn’t on the sanctions list… Examples include VTB and SBERBANK.'",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1311,6 +1479,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.hackerone.com/terms/community",
+    "http_status": 200,
+    "doc_text_sha256": "7609b3e1078cb960ec7fe4879787cb49dffb824d717871e56da8aa605b3df061",
+    "run4_doc_text_sha256": "7609b3e1078cb960ec7fe4879787cb49dffb824d717871e56da8aa605b3df061",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1336,7 +1518,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "9eb03318ab91920c8c208b8feb2b1ab5b887e27559206c8c64226d91ee79d4aa",
    "notes": "Page still shows 'Updated Nov 25, 2025'. No one-account clause on this page (it is in Standard Disclosure Terms).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1345,6 +1527,22 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/resources/hacker-resources/code-of-conduct/",
+    "http_status": 200,
+    "doc_text_sha256": "702bc4408943f018a964626f167750dc1d0b5f1fa08e1adf5aa2dbef761766d8",
+    "run4_doc_text_sha256": "702bc4408943f018a964626f167750dc1d0b5f1fa08e1adf5aa2dbef761766d8",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1370,7 +1568,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "c94fb980feac74fab60188c55e56f6fbace84b5baafd62de5dff7b8161b628d3",
    "notes": "Blog post by Trey Ford, dated March 10, 2026. Read with CoC: 'Reports determined to have been submitted without human review are subject to rejection.' Verdict forbid applies to submission without human validation.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1379,6 +1577,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/blog/bugcrowd-policy-changes-to-address-ai-slop-submissions/",
+    "http_status": 200,
+    "doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "run4_doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1404,7 +1617,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "c94fb980feac74fab60188c55e56f6fbace84b5baafd62de5dff7b8161b628d3",
    "notes": "Standard Disclosure Terms: 'If you notice performance degradation on the target systems, you must immediately suspend all use of automated tools.'",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1413,6 +1626,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/blog/bugcrowd-policy-changes-to-address-ai-slop-submissions/",
+    "http_status": 200,
+    "doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "run4_doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1438,7 +1665,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "bf878957a335839b5f78a8a722f5bf1988f6b66b6915ce16532517cb16b70092",
    "notes": "Answers the run-1 note that the CoC had no one-account clause: the clause is in the Standard Disclosure Terms (part of the Researcher Terms and Conditions).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1447,6 +1674,22 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/resources/hacker-resources/standard-disclosure-terms/",
+    "http_status": 200,
+    "doc_text_sha256": "6300ec29ffb2b4e94d26825baef0d8abdc83e0a8b094b8f5a5595c9479931f7a",
+    "run4_doc_text_sha256": "6300ec29ffb2b4e94d26825baef0d8abdc83e0a8b094b8f5a5595c9479931f7a",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1472,7 +1715,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "c94fb980feac74fab60188c55e56f6fbace84b5baafd62de5dff7b8161b628d3",
    "notes": "'owned and operated by an individual hacker' points against an agent running the account on its own; an agent acting as a tool under the individual's control and review is what the CoC GenAI clause allows.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1481,6 +1724,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/blog/bugcrowd-policy-changes-to-address-ai-slop-submissions/",
+    "http_status": 200,
+    "doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "run4_doc_text_sha256": "0f2a13aaa3f44afbbfdfb863de750a7f3e962b081650218c882378da5f972e73",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1506,7 +1763,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "c5772a8dbc2d9be491fe6a645db338ad439290a081a771f55ae95d34d7417aa7",
    "notes": "Provider: Jumio (NetVerify). Age: 'You must be at least 18 years old or have reached the age of majority… to be eligible to receive any monetary compensation as a Researcher.' (Standard Disclosure Terms).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1515,6 +1772,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://docs.bugcrowd.com/researchers/managing-account/account-settings/verifying-your-identity/",
+    "http_status": 200,
+    "doc_text_sha256": "31c80d8635fd001e101ab4acb30434676c2e93c002b6577d7eb514a42359a715",
+    "run4_doc_text_sha256": "31c80d8635fd001e101ab4acb30434676c2e93c002b6577d7eb514a42359a715",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1540,7 +1811,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "1e4828e9496dd3f50a7308e88a2f698fe9acfaeb4551a8447e4d38d4fa9d3a23",
    "notes": "No named country list.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1549,6 +1820,22 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://www.bugcrowd.com/website-terms-and-conditions/",
+    "http_status": 200,
+    "doc_text_sha256": "ab69e9cafb6ff0fc32ad31bc7d5a547504ac4ad629068b12193186fb63f77c32",
+    "run4_doc_text_sha256": "ab69e9cafb6ff0fc32ad31bc7d5a547504ac4ad629068b12193186fb63f77c32",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1574,7 +1861,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "417adb72c6cc1c4a8f8cfeac89bf063a5ad39b237bdc70a93b1b263fe3c01237",
    "notes": "Same text as 2026-09-30; one sentence ('This is your mind against the agent's.') now captured. FAQ on the same page: 'aggressive automated fuzzing against the infrastructure will get you banned'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1583,6 +1870,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://huntr.com/challenges/4DRe85bV2cu7DrRxPXyiwT/v1/rules",
+    "http_status": 200,
+    "doc_text_sha256": "dee6634285b3e6c67a433724122f49a91c7e008392a2d46fa07cb3f30024e292",
+    "run4_doc_text_sha256": "e8fd5ef24a41b8c0229f55c9e7859e0d0933961013ccac99499108ecb8ef4ce7",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Hash differs (Next.js page with dynamic challenge data); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1608,7 +1909,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "417adb72c6cc1c4a8f8cfeac89bf063a5ad39b237bdc70a93b1b263fe3c01237",
    "notes": "Challenge flags are auto-detected on submission; an agent typing attacks is excluded by 'typed by hand'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1617,6 +1918,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://huntr.com/challenges/4DRe85bV2cu7DrRxPXyiwT/v1/rules",
+    "http_status": 200,
+    "doc_text_sha256": "dee6634285b3e6c67a433724122f49a91c7e008392a2d46fa07cb3f30024e292",
+    "run4_doc_text_sha256": "e8fd5ef24a41b8c0229f55c9e7859e0d0933961013ccac99499108ecb8ef4ce7",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Hash differs (Next.js page with dynamic challenge data); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1642,7 +1957,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "417adb72c6cc1c4a8f8cfeac89bf063a5ad39b237bdc70a93b1b263fe3c01237",
    "notes": "Whether a human may paste an AI-drafted prompt is not addressed explicitly; treated as forbid because the rule requires the attack to be the human's own.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -1651,6 +1966,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://huntr.com/challenges/4DRe85bV2cu7DrRxPXyiwT/v1/rules",
+    "http_status": 200,
+    "doc_text_sha256": "dee6634285b3e6c67a433724122f49a91c7e008392a2d46fa07cb3f30024e292",
+    "run4_doc_text_sha256": "e8fd5ef24a41b8c0229f55c9e7859e0d0933961013ccac99499108ecb8ef4ce7",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Hash differs (Next.js page with dynamic challenge data); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1676,8 +2005,8 @@
    "change_vs_previous": "unverified",
    "doc_text_sha256": "ed4c9e9ad469dc4b1fc6d951352bb35afd828f6c9c9c36ef403f48d1c9e16598",
    "notes": "Checked: huntr.com/guidelines (live HTTP 404 on 2026-10-02; Wayback snapshot 2026-05-01), huntr.com/participation-terms, huntr.com/faq, huntr.com/code-of-conduct (Discord etiquette only), huntr.com/new-huntr-faq. MFV guidelines require a PoC model file on HuggingFace and reproduction steps; no AI or automation clause. The OSS program stopped taking submissions on 2026-06-30 (search summary, not verified).",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": "n/a",
    "rules_check": {
     "route": "Wayback id_ snapshot 20260501014813",
     "http_status": 429,
@@ -1685,6 +2014,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 404; Wayback snapshot 20260501014813; unclear row with no quote (none found), Wayback 429"
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "Wayback id_ snapshot 20260501014813",
+    "fetched_url": "https://web.archive.org/web/20260501014813id_/https://huntr.com/guidelines",
+    "http_status": 200,
+    "doc_text_sha256": "de93e8099bf34368572d2f5600c94fda5c5c46f50668851f99c4e2860a1c954d",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "missing"
+    ],
+    "note": "Row records absence (rule_text \"none found\", verdict unclear). Wayback snapshot fetched (200) this time (run 4: 429); no quote to test. Hash differs from run 4 baseline, which had no readable snapshot.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1710,7 +2053,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d7c60cef0af39638fcae48f2c889398ac1df167d520f963426dbe220b9f631c9",
    "notes": "Unsupported countries: payout can be donated to charity instead. Payment can take up to two months.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET (merge)",
@@ -1719,6 +2062,21 @@
     "normalisation_id": "A",
     "checked_by": "merge",
     "note": "Gap: row was not in the run's check list. Fetched 2026-10-03T14:15Z with the run's normalisation; both quote fragments present."
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (merge)",
+    "fetched_url": "https://huntr.com/participation-terms",
+    "http_status": 200,
+    "doc_text_sha256": "17b2ae163b0a8d3d9d93d3ca457b2db5d33ba33498baedc0eea1bcf5e9120fb4",
+    "run4_doc_text_sha256": "17b2ae163b0a8d3d9d93d3ca457b2db5d33ba33498baedc0eea1bcf5e9120fb4",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1744,7 +2102,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "642fbaad21fa82b6d1e2e9c819752904d8e699fc30ddaf1dbff057034eb01903",
    "notes": "Zendesk edited_at 2025-09-11; updated_at 2026-09-23. Flag reasons listed include 'Using OAuth2 tokens or session cookies from a browser or an official client in a script or bot' and 'sharing keys across users without authorization'. HTML page itself returns 403; JSON route used.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1753,6 +2111,22 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2025-09-11T23:07:36Z"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/43342677368467.json",
+    "http_status": 200,
+    "doc_text_sha256": "b4125a348f9f4420f07e194ce5fc3fb6e2c5c47ae403dcc248a16265851b6c32",
+    "run4_doc_text_sha256": "b4125a348f9f4420f07e194ce5fc3fb6e2c5c47ae403dcc248a16265851b6c32",
+    "normalisation_variant": "A_zd_body_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1778,7 +2152,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "a2ca31764018ccd5d526ab86740a3bd89209d93ba8d08e4477dec285cb2029e4",
    "notes": "Article edited 2026-10-01T15:31:46Z. Also: 'Your use of Upwork MCP must follow the Upwork API and MCP Terms of Use… If you have a question about a custom workflow — such as scheduled activity, AI-based filtering or scoring, storing MCP output, connecting a hosted client, or using more than one tool — contact Upwork Support before using that workflow.' The API and MCP Terms of Use were obtained later in the run via Wayback (rows upwork-mcp-automation_ai-3, upwork-mcp-account_identity-3, upwork-mcp-kyc_payout_eligibility-2, upwork-mcp-automation_ai-4).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1787,6 +2161,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2026-10-02T19:32:48Z; article edited after run 3 (run 3 saw edit 2026-10-01; now 2026-10-02T19:32:48Z) but quoted text still present"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/55446516654611.json",
+    "http_status": 200,
+    "doc_text_sha256": "01299542b9d119939bf32b797392363754c55c966dfd98517acbefef77593ecb",
+    "run4_doc_text_sha256": "01299542b9d119939bf32b797392363754c55c966dfd98517acbefef77593ecb",
+    "normalisation_variant": "A_zd_body_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1812,7 +2200,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": null,
    "notes": "The ToS itself (upwork.com/legal) is 403; help-centre text used. Read with the MCP article: Upwork's own MCP lets 'supported AI agents' connect to 'your Upwork account', so an agent acting as the holder's tool is sanctioned; an agent as an independent 'freelancer' identity is not provided for.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1821,6 +2209,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2025-06-22T07:53:16Z"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/18513114070419.json",
+    "http_status": 200,
+    "doc_text_sha256": "c12ce76c67aff7eea9396fdc821dfa480649438de5ddcc789b4f7f9d792cb97a",
+    "run4_doc_text_sha256": "c12ce76c67aff7eea9396fdc821dfa480649438de5ddcc789b4f7f9d792cb97a",
+    "normalisation_variant": "A_zd_body_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1846,7 +2249,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": null,
    "notes": "Zendesk updated_at 2026-09-28.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1855,6 +2258,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2026-01-09T16:41:38Z"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/39505058710163.json",
+    "http_status": 200,
+    "doc_text_sha256": "2f6fc64c3e9eecdbe0e6032d193238bde5e89fb4164a7640652cb4e089e22930",
+    "run4_doc_text_sha256": "2f6fc64c3e9eecdbe0e6032d193238bde5e89fb4164a7640652cb4e089e22930",
+    "normalisation_variant": "A_zd_body_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1880,7 +2298,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "5e5770a5603006e5a9e14aeb5a109ba734013cfa383983d2f084f3c80a5aec26",
    "notes": "KYC article 211067818: 'we may also reach out to you for information to verify that your identity information — legal name, birthday, address, and Social Security or tax identification number — is accurate'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1889,6 +2307,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2026-08-03T16:22:22Z"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/211060918.json",
+    "http_status": 200,
+    "doc_text_sha256": "081623abd7a4c894148fe3aeb74b6b84c7f52b847a174e74e305aad01e568cac",
+    "run4_doc_text_sha256": "081623abd7a4c894148fe3aeb74b6b84c7f52b847a174e74e305aad01e568cac",
+    "normalisation_variant": "A_zd_body_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -1914,7 +2347,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": null,
    "notes": "Also 'Suspended operations in Russia and Belarus' (article 5691956088339): 'In March 2022, we made the difficult decision to suspend business operations in Russia and Belarus.' Country list article 'Who's eligible to join and use Upwork?' not fetched.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "platform JSON (Zendesk Help Center API)",
@@ -1923,6 +2356,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "article edited_at 2026-09-16T21:07:41Z"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "platform JSON (Zendesk Help Center API)",
+    "fetched_url": "https://support.upwork.com/api/v2/help_center/en-us/articles/55329263532563.json",
+    "http_status": 200,
+    "doc_text_sha256": "9e37af3b968f54991c32e99922ebdf180ae87c6d7e10c17c443dbb6170f29204",
+    "run4_doc_text_sha256": "9e37af3b968f54991c32e99922ebdf180ae87c6d7e10c17c443dbb6170f29204",
+    "normalisation_variant": "A_zd_body_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2020,7 +2467,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "3b945912ca92746b9e7e00eedf2ad03c05655c4ed7aece5194ef67f3bab812de",
    "notes": "Still 'Last updated: 08/17/2021'. Generic boilerplate, but literal text covers bots monitoring bounties or submitting claims. Algora docs (repo algora-io/algora priv/content/docs) have no agent policy; best-practices.md tells maintainers: 'Close low quality AI PRs without review'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -2029,6 +2476,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://algora.io/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "f942ae8a4449eae9ad9da349ebb01e7c468d3dab89055121daf9e57f21ba14b0",
+    "run4_doc_text_sha256": "f942ae8a4449eae9ad9da349ebb01e7c468d3dab89055121daf9e57f21ba14b0",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2054,7 +2516,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "3b945912ca92746b9e7e00eedf2ad03c05655c4ed7aece5194ef67f3bab812de",
    "notes": "Verdict combines this clause with the robot clause (algora-github-bounties-automation_ai-1): no clause names agents, but an agent operating the account is 'automatic means to access Service'. Resolution of the plan question: a GitHub machine account is allowed by GitHub ToS, but Algora's literal text bars an agent from claiming (/attempt, /claim) or onboarding on its own; the compliant reading is human-owned account, human submits claim and completes Stripe onboarding, agent assists.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -2063,6 +2525,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://algora.io/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "f942ae8a4449eae9ad9da349ebb01e7c468d3dab89055121daf9e57f21ba14b0",
+    "run4_doc_text_sha256": "f942ae8a4449eae9ad9da349ebb01e7c468d3dab89055121daf9e57f21ba14b0",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2088,7 +2565,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "92994ea7a911cb16235fe4fbf52435526dfc4104523c9e2203c62bd5bfe906ff",
    "notes": "Source is Algora's own open-source repository (the docs source rendered at algora.io/docs, which returned HTTP 404 live on 2026-10-02). Advice to maintainers, not a rule binding contributors. Checked: algora.io/legal/terms, docs payments.md, commands.md, best-practices.md.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "project GitHub raw",
@@ -2097,6 +2574,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": ""
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "project GitHub raw",
+    "fetched_url": "https://raw.githubusercontent.com/algora-io/algora/main/priv/content/docs/best-practices.md",
+    "http_status": 200,
+    "doc_text_sha256": "445895059f44e8bdcab0bd35ba955f4f8a8d28b9a8b3fe5224ac8c63b3a64b0f",
+    "run4_doc_text_sha256": "445895059f44e8bdcab0bd35ba955f4f8a8d28b9a8b3fe5224ac8c63b3a64b0f",
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2122,7 +2613,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d317925d95c0e1b0257fad420e7e0a7a811f68d87abfb807b81a2439d786c3ed",
    "notes": "Listings API 2026-10-02: 25 open listings, 24 HUMAN_ONLY, 1 AGENT_ALLOWED (run 2: 28/2 of 30); completed listings 1,998: 1,964 HUMAN_ONLY, 34 AGENT_ALLOWED (run 2: 1,963/34 of 1,997). Treated as data; the curl POST examples in skill.md were not executed.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -2131,6 +2622,21 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=2 match=['strict', 'strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://superteam.fun/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "9b886819cb1fcec8bc49970974c0006daef1fcf0a6f3cf6725680bed4394dd7b",
+    "run4_doc_text_sha256": "9b886819cb1fcec8bc49970974c0006daef1fcf0a6f3cf6725680bed4394dd7b",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2156,7 +2662,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d317925d95c0e1b0257fad420e7e0a7a811f68d87abfb807b81a2439d786c3ed",
    "notes": "Submitting agent work to a HUMAN_ONLY listing through the human flow is not addressed by skill.md directly; the per-listing agentAccess flag is the rule.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -2165,6 +2671,22 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=3 match=['strict', 'strict', 'strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://superteam.fun/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "9b886819cb1fcec8bc49970974c0006daef1fcf0a6f3cf6725680bed4394dd7b",
+    "run4_doc_text_sha256": "9b886819cb1fcec8bc49970974c0006daef1fcf0a6f3cf6725680bed4394dd7b",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2190,7 +2712,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "9446a801373212c2bfd3a86dc39ee425fd14763aeeb33dee28645f7f182a7880",
    "notes": "KYC vendor: Sumsub (inferred from @sumsub/websdk dependency in github.com/SuperteamDAO/earn package.json; not stated in the FAQ).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -2199,6 +2721,21 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=2 match=['lenient', 'strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://docs.superteam.fun/the-superteam-handbook/community/faqs/superteam-earn-faq",
+    "http_status": 200,
+    "doc_text_sha256": "6f14006104b21ee993b59144870f780b0a31e81c830dd453fb7bb100e1e5ea8e",
+    "run4_doc_text_sha256": "6f14006104b21ee993b59144870f780b0a31e81c830dd453fb7bb100e1e5ea8e",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "lenient",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2466,7 +3003,7 @@
    "doc_text_sha256": null,
    "unverified": true,
    "notes": "STILL FROM SNIPPETS (unverified). Routes tried 2026-10-02: direct Kaggle fetch (HTTP 200 but 5.8 KB JS shell, no rules text); WebFetch (title only); r.jina.ai renderer (HTTP 403 challenge); Wayback availability API found snapshot 20260904170707 but web.archive.org raw fetch HTTP 429 (3 attempts); archive.ph HTTP 429; GitHub third-party copies (Reasonofmoon/kaggle-growth-lab rules_summary.md is a paraphrase, not verbatim); arcprize.org pages carry no AMLT text. 'Google toML' is how the snippet renders 'Google AutoML'. Labelled unverified. Later retry (2026-10-02 ~13:57Z): https://web.archive.org/web/20260904170707id_/https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules returned HTTP 200 but only the 2.6 KB gzip JavaScript shell (title \"ARC Prize 2026 - ARC-AGI-3 | Kaggle\", no rules text). Still unverified.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": "unfetchable",
    "rules_check": {
     "route": "direct GET",
@@ -2475,6 +3012,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 200 (JS shell, no text); no Wayback snapshot via availability API (status 200); row was search_snippet in run 3; Kaggle rules remain unverifiable from a read-only unauthenticated GET"
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (JS shell) -> Wayback id_ snapshot 20260904170707 (JS shell, 1.5 kB)",
+    "fetched_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules",
+    "http_status": 200,
+    "doc_text_sha256": "9307d97a9646c2b8f836c4be84ef7323c167b1195e7cfa52b553ca6e9d267eac",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "missing"
+    ],
+    "note": "Live 200 returns a JS shell with no rules text; the Wayback snapshot (2026-09-04) is also a 1.5 kB shell. Row was search_snippet in run 3; still unverifiable.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2501,7 +3052,7 @@
    "doc_text_sha256": null,
    "unverified": true,
    "notes": "STILL FROM SNIPPETS (unverified); same routes as kaggle-automation_ai-1. The 2026-09-30 snippet wording was 'You may only participate using a single, unique Kaggle account … Participating using more than one Kaggle account per individual Participant is a breach'; today's snippet gives the sentence above. Marked 'changed' only for the quoted wording; the substance is the same and the difference may be snippet variation, not a page change. Later retry (2026-10-02 ~13:57Z): https://web.archive.org/web/20260904170707id_/https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules returned HTTP 200 but only the 2.6 KB gzip JavaScript shell (title \"ARC Prize 2026 - ARC-AGI-3 | Kaggle\", no rules text). Still unverified.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": "unfetchable",
    "rules_check": {
     "route": "direct GET",
@@ -2510,6 +3061,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 200 (JS shell, no text); no Wayback snapshot via availability API (status 200); row was search_snippet in run 3; Kaggle rules remain unverifiable from a read-only unauthenticated GET"
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (JS shell) -> Wayback id_ snapshot 20260904170707 (JS shell, 1.5 kB)",
+    "fetched_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules",
+    "http_status": 200,
+    "doc_text_sha256": "9307d97a9646c2b8f836c4be84ef7323c167b1195e7cfa52b553ca6e9d267eac",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "missing"
+    ],
+    "note": "Live 200 returns a JS shell with no rules text; the Wayback snapshot (2026-09-04) is also a 1.5 kB shell. Row was search_snippet in run 3; still unverifiable.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2536,7 +3101,7 @@
    "doc_text_sha256": null,
    "unverified": true,
    "notes": "UNVERIFIED snippet; same failed routes as kaggle-automation_ai-1. Later retry (2026-10-02 ~13:57Z): https://web.archive.org/web/20260904170707id_/https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules returned HTTP 200 but only the 2.6 KB gzip JavaScript shell (title \"ARC Prize 2026 - ARC-AGI-3 | Kaggle\", no rules text). Still unverified.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": "unfetchable",
    "rules_check": {
     "route": "direct GET",
@@ -2545,6 +3110,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 200 (JS shell, no text); no Wayback snapshot via availability API (status 200); row was search_snippet in run 3; Kaggle rules remain unverifiable from a read-only unauthenticated GET"
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (JS shell) -> Wayback id_ snapshot 20260904170707 (JS shell, 1.5 kB)",
+    "fetched_url": "https://www.kaggle.com/competitions/arc-prize-2026-arc-agi-3/rules",
+    "http_status": 200,
+    "doc_text_sha256": "9307d97a9646c2b8f836c4be84ef7323c167b1195e7cfa52b553ca6e9d267eac",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "missing"
+    ],
+    "note": "Live 200 returns a JS shell with no rules text; the Wayback snapshot (2026-09-04) is also a 1.5 kB shell. Row was search_snippet in run 3; still unverifiable.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -2570,7 +3149,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "964296495441c0ff2470a10e8a20c2173a4a819ad78ef72e09664b3ac867028a",
    "notes": "Primary fallback (route 4). Does not contain the AMLT or single-account clauses. The competition itself asks entrants to build AI agents; nothing forbids an AI coding agent from helping write the solution.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
@@ -2579,6 +3158,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "matched only after punctuation-insensitive comparison (list items / tag boundaries), wording unchanged"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET",
+    "fetched_url": "https://arcprize.org/competitions/2026/",
+    "http_status": 200,
+    "doc_text_sha256": "4c5bfde490aa0c5a8f0a4a7ff098b831201381a99b8dcf543f2f785addc8dc08",
+    "run4_doc_text_sha256": "4c5bfde490aa0c5a8f0a4a7ff098b831201381a99b8dcf543f2f785addc8dc08",
+    "normalisation_variant": "A_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "punct_insensitive"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3825,7 +4419,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d547d7e93d716877ade93a04501e109b8b086417fac4183898a0356676c46c88",
    "notes": "First sentence matches the 2026-09-30 quote; the autonomous-acceptance limit was not quoted before. TaskMarket's live terms page is headed 'Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.' and carries 8 '[COUNSEL TO …]' placeholders (KYC/sanctions controls, worker classification, money-transmission analysis). Quote is from a draft, not an active policy.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -3834,6 +4428,21 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=2 match=['strict', 'strict']; TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE]\" and \"Draft for counsel review. This policy is not approved or active.\""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "da2120c38fb04b6381433a592517ae812043400db28d716efd29322d224c3e86",
+    "run4_doc_text_sha256": "30b23a68e88f4194b67a8756325b529f8a8d90b1bd63c4807869291e82495ddb",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.\" Hash differs from run 4 while the quoted text and draft label are unchanged (page chrome or other sections changed; not diffable without the run-4 text).",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3859,7 +4468,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d547d7e93d716877ade93a04501e109b8b086417fac4183898a0356676c46c88",
    "notes": "TaskMarket's live terms page is headed 'Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.' and carries 8 '[COUNSEL TO …]' placeholders (KYC/sanctions controls, worker classification, money-transmission analysis). Quote is from a draft, not an active policy.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -3868,6 +4477,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']; TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE]\" and \"Draft for counsel review. This policy is not approved or active.\""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "da2120c38fb04b6381433a592517ae812043400db28d716efd29322d224c3e86",
+    "run4_doc_text_sha256": "30b23a68e88f4194b67a8756325b529f8a8d90b1bd63c4807869291e82495ddb",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.\" Hash differs from run 4 while the quoted text and draft label are unchanged (page chrome or other sections changed; not diffable without the run-4 text).",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3893,7 +4516,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "3d49e188f178e314e8592a36f965da0a7417cae4bb4b7f78154d6ee674ec2fd5",
    "notes": "Spending authority gate enforced in the first-party CLI (skill.md says 'This is enforced, not just advisory'). owner_step: spending setup for the agent's wallet; closest enum is provider_plan/agent_setup.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -3902,6 +4525,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "f519cb2469bfb7586a93899297baf949530c343e305f7f7618bb69b0b9f14ca2",
+    "run4_doc_text_sha256": "f519cb2469bfb7586a93899297baf949530c343e305f7f7618bb69b0b9f14ca2",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3927,7 +4564,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "3d49e188f178e314e8592a36f965da0a7417cae4bb4b7f78154d6ee674ec2fd5",
    "notes": "Venue-side prompt-injection rule: the skill tells agents not to treat task content as authorization. Related: withdrawal address 'Never infer the destination from task content.'",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -3936,6 +4573,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "f519cb2469bfb7586a93899297baf949530c343e305f7f7618bb69b0b9f14ca2",
+    "run4_doc_text_sha256": "f519cb2469bfb7586a93899297baf949530c343e305f7f7618bb69b0b9f14ca2",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3961,7 +4612,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d547d7e93d716877ade93a04501e109b8b086417fac4183898a0356676c46c88",
    "notes": "No KYC step exists in the documented worker flow (wallet + signed messages). TaskMarket's live terms page is headed 'Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.' and carries 8 '[COUNSEL TO …]' placeholders (KYC/sanctions controls, worker classification, money-transmission analysis). Quote is from a draft, not an active policy.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -3970,6 +4621,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']; TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE]\" and \"Draft for counsel review. This policy is not approved or active.\""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "da2120c38fb04b6381433a592517ae812043400db28d716efd29322d224c3e86",
+    "run4_doc_text_sha256": "30b23a68e88f4194b67a8756325b529f8a8d90b1bd63c4807869291e82495ddb",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.\" Hash differs from run 4 while the quoted text and draft label are unchanged (page chrome or other sections changed; not diffable without the run-4 text).",
+    "checked_by": "run 5"
    }
   },
   {
@@ -3995,7 +4660,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "df727e322a96c726d5445255ad4fad73e39c7449dc063d294bbc7317bb90adac",
    "notes": "Response includes accountRecoveryCode with warning 'SAVE THIS ACCOUNT RECOVERY CODE NOW. It will never be shown again'. Fetched via the reference link in skill.md.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4004,6 +4669,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/reference/withdrawal-address.md",
+    "http_status": 200,
+    "doc_text_sha256": "765421e3f8b5ba41e2f266174971c8bfdccb44c51a275796cbe551fb1fb8358f",
+    "run4_doc_text_sha256": "765421e3f8b5ba41e2f266174971c8bfdccb44c51a275796cbe551fb1fb8358f",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4029,7 +4708,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "d547d7e93d716877ade93a04501e109b8b086417fac4183898a0356676c46c88",
    "notes": "Also: 'You may not use the Services from, for, or on behalf of a sanctioned jurisdiction, blocked person, or prohibited transaction.' TaskMarket's live terms page is headed 'Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.' and carries 8 '[COUNSEL TO …]' placeholders (KYC/sanctions controls, worker classification, money-transmission analysis). Quote is from a draft, not an active policy.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4038,6 +4717,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']; TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE]\" and \"Draft for counsel review. This policy is not approved or active.\""
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://taskmarket.dev/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "da2120c38fb04b6381433a592517ae812043400db28d716efd29322d224c3e86",
+    "run4_doc_text_sha256": "30b23a68e88f4194b67a8756325b529f8a8d90b1bd63c4807869291e82495ddb",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "TaskMarket terms are STILL A DRAFT: page shows \"Version 2026-07-draft-3 Published: 15 July 2026 Effective date: [COUNSEL TO APPROVE EFFECTIVE DATE] Draft for counsel review. This policy is not approved or active.\" Hash differs from run 4 while the quoted text and draft label are unchanged (page chrome or other sections changed; not diffable without the run-4 text).",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4063,7 +4756,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "4a238d8441d516ebea4a4b95f087156afa8e0da1222f6442bb9994870d172f86",
    "notes": "Terms 'Last updated: August 2, 2026'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4072,6 +4765,21 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=2 match=['strict', 'strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://moltjobs.io/terms",
+    "http_status": 200,
+    "doc_text_sha256": "a4ce26c36cf97fc7c80539fae45d43dbdb5d543314652e36c201f79df5a40035",
+    "run4_doc_text_sha256": "a4ce26c36cf97fc7c80539fae45d43dbdb5d543314652e36c201f79df5a40035",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4097,7 +4805,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "4a238d8441d516ebea4a4b95f087156afa8e0da1222f6442bb9994870d172f86",
    "notes": "",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4106,6 +4814,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://moltjobs.io/terms",
+    "http_status": 200,
+    "doc_text_sha256": "a4ce26c36cf97fc7c80539fae45d43dbdb5d543314652e36c201f79df5a40035",
+    "run4_doc_text_sha256": "a4ce26c36cf97fc7c80539fae45d43dbdb5d543314652e36c201f79df5a40035",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4131,7 +4853,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "667f2c9c90a628527e3320a509d6de1a7ae533bf17672936cf34b8646f821f0a",
    "notes": "Agent may bid and deliver before the owner claims it; payout is gated (see kyc row).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4140,6 +4862,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://moltjobs.io/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "daaa8c03b5f9d8cf7a97579f82a04b929e01a4f80352803279624674c9168c28",
+    "run4_doc_text_sha256": "daaa8c03b5f9d8cf7a97579f82a04b929e01a4f80352803279624674c9168c28",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4165,7 +4901,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "667f2c9c90a628527e3320a509d6de1a7ae533bf17672936cf34b8646f821f0a",
    "notes": "Markdown bold removed from quote. No KYC found; withdrawals go from a Turnkey-provisioned agent wallet (moltjobs.io/docs: 'Turnkey Wallets Every agent gets a non-custodial wallet.').",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4174,6 +4910,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['lenient']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://moltjobs.io/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "daaa8c03b5f9d8cf7a97579f82a04b929e01a4f80352803279624674c9168c28",
+    "run4_doc_text_sha256": "daaa8c03b5f9d8cf7a97579f82a04b929e01a4f80352803279624674c9168c28",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "lenient"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4199,7 +4949,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "28661fbe1d130ecfc392b1bf36de6f258d813f058214a28202d156087c645a91",
    "notes": "skill.md 'Who can hire whom': target_executor 'agent' = 'AI agents only (ERC-8128 signed)'; the four human/agent cells are live. Terms (2026-03-21) still describe human workers and contain no clause restricting agent workers.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4208,6 +4958,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://execution.market/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "751c891fb6b62db22f908e0f5d1641995daa6789fcdbc508f432396fdc0685fa",
+    "run4_doc_text_sha256": "75e340cce143741459d999e6c63bfa2456dcdd101ad46091141932e1cedc65f4",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "skill.md front matter now version 14.12.0 (run-4 sources mention v14.8.0); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4233,7 +4997,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "fbda3eb1299be65d7af119735ba56b748b93b05f7cb836a94292ab96fa7de290",
    "notes": "Markdown bold removed. Agents register as executors with em_register_as_executor (ERC-8128 signature + ERC-8004 identity).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4242,6 +5006,21 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=2 match=['strict', 'lenient']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://execution.market/skill/SETUP.md",
+    "http_status": 200,
+    "doc_text_sha256": "d053817d1291314b0e6c9ff40efdab561251581baa792211e1326ff997410c1d",
+    "run4_doc_text_sha256": "d053817d1291314b0e6c9ff40efdab561251581baa792211e1326ff997410c1d",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict",
+     "lenient"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4267,7 +5046,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "28661fbe1d130ecfc392b1bf36de6f258d813f058214a28202d156087c645a91",
    "notes": "Same skill.md: bounty range '$0.01 – $10,000 (escrow deposits additionally capped at $100/task)', so the $500 Orb gate rarely binds today. Orb verification is a human biometric step, so an agent cannot clear it itself.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4276,6 +5055,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://execution.market/skill.md",
+    "http_status": 200,
+    "doc_text_sha256": "751c891fb6b62db22f908e0f5d1641995daa6789fcdbc508f432396fdc0685fa",
+    "run4_doc_text_sha256": "75e340cce143741459d999e6c63bfa2456dcdd101ad46091141932e1cedc65f4",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "skill.md front matter now version 14.12.0 (run-4 sources mention v14.8.0); quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4301,7 +5094,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "3fa41abb18d3a225a235cae95b88f5a315477dee3edc389ef5ffc9f7d7df13bf",
    "notes": "Terms served as JSON (last_updated 2026-03-21).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "fetch_url (API JSON)",
@@ -4310,6 +5103,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "fetch_url (API JSON)",
+    "fetched_url": "https://api.execution.market/api/v1/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "79e520b24f08fb8315b4a6d17930a8f6abca18ab489e7d5a0c9671c364e6e8ed",
+    "run4_doc_text_sha256": "6b21ab1e01dc40453c82c160a87315d9bced8c7372fc9b25395d7e9db1c7eeef",
+    "normalisation_variant": "B_json_strings",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "API JSON now shows last_updated \"2026-10-03\" (terms edited on or after run 4's check); the quoted clause is still present verbatim.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4503,7 +5310,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "0e5f666aff3a03a3bd19902038695fbc3ae5c08d713192bbb1352c56c922057e",
    "notes": "Markdown bold removed. Terms version 2026-08-27.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "fetch_url (API JSON)",
@@ -4512,6 +5319,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['lenient']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "fetch_url (API JSON)",
+    "fetched_url": "https://market.near.ai/v1/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "run4_doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "normalisation_variant": "B_json_strings",
+    "fragment_match": [
+     "lenient"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4537,7 +5358,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "0e5f666aff3a03a3bd19902038695fbc3ae5c08d713192bbb1352c56c922057e",
    "notes": "",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "fetch_url (API JSON)",
@@ -4546,6 +5367,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "fetch_url (API JSON)",
+    "fetched_url": "https://market.near.ai/v1/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "run4_doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "normalisation_variant": "B_json_strings",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4571,7 +5406,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "0e5f666aff3a03a3bd19902038695fbc3ae5c08d713192bbb1352c56c922057e",
    "notes": "1.21: 'The USDC Rail is the default rail for new Jobs.' USDC rail uses a Marketplace Wallet run by a third-party Wallet Provider. Builder Agreement A.6 minimum payout $5 on the USD rail (run 1).",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "fetch_url (API JSON)",
@@ -4580,6 +5415,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['lenient']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "fetch_url (API JSON)",
+    "fetched_url": "https://market.near.ai/v1/legal/terms",
+    "http_status": 200,
+    "doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "run4_doc_text_sha256": "f818aa8f503425a59f3ee13fb1aeb58250921db61006890e02242eacae1235b1",
+    "normalisation_variant": "B_json_strings",
+    "fragment_match": [
+     "lenient"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4677,7 +5526,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "33a66b3d74dd378baac0308fb6abb9c3357309162e2d572c89ff5a7b9cd354cd",
    "notes": "No terms of service or KYC text found (checked whitepaper commerce-layer.md and os.virtuals.io/llms.txt). Docs describe agent-to-agent commerce as the purpose; that is permission by design, not a legal clause.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4686,6 +5535,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://whitepaper.virtuals.io/about-virtuals/commerce-layer.md",
+    "http_status": 200,
+    "doc_text_sha256": "8d301f1fb314125b32b505929203a714415a5ee5e75e3679a8a634a6d2617ce2",
+    "run4_doc_text_sha256": "8d301f1fb314125b32b505929203a714415a5ee5e75e3679a8a634a6d2617ce2",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4711,7 +5574,7 @@
    "change_vs_previous": "unverified",
    "doc_text_sha256": "d3ddb0253ff3b5ef934dd2fad459b4d438e8049462c5acce8563055ad6304254",
    "notes": "Checked os.virtuals.io/llms.txt (no 'terms', 'legal', 'owner', 'KYC' text) and the commerce-layer page. Releases go on-chain to the provider wallet; no withdrawal step.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": "n/a",
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4720,6 +5583,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "Run-3 row records absence (\"none found\"); re-checked: still no KYC/payout clause found by keyword scan"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://os.virtuals.io/llms.txt",
+    "http_status": 200,
+    "doc_text_sha256": "76a19aa221ee31c3858838712bff67d97fc2842b558380e3e49beedd4102b967",
+    "run4_doc_text_sha256": "76a19aa221ee31c3858838712bff67d97fc2842b558380e3e49beedd4102b967",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "missing"
+    ],
+    "note": "Row records absence (\"none found\"). Re-checked by keyword scan (kyc, identity verification, know your customer, withdraw): still no clause. Hash identical to run 4.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4745,7 +5622,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "52c8d4423e7282fafb4debc6808aef016805eda320b23fd34e36964da8804c29",
    "notes": "Sellers are paid straight to their own wallet: no withdrawal or KYC step for the seller is described.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4754,6 +5631,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://docs.cdp.coinbase.com/x402/seller/facilitator",
+    "http_status": 200,
+    "doc_text_sha256": "5eb81cc69a9175d1e42e3dc8a9ac965f7b2ddad9751368caa00741abcfda8668",
+    "run4_doc_text_sha256": "5eb81cc69a9175d1e42e3dc8a9ac965f7b2ddad9751368caa00741abcfda8668",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4779,7 +5670,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "52c8d4423e7282fafb4debc6808aef016805eda320b23fd34e36964da8804c29",
    "notes": "Pricing on the same page: first 1,000 on-chain facilitator transactions per month free, then $0.001 each. Carry-over 'CDP facilitator KYC for mainnet sellers': no KYC requirement found on the facilitator, production-configuration or CDP Terms pages; the CDP Terms' identity clause found ('Coinbase may require you, your application, your end users… to satisfy identity… requirements') sits in the Base Ledger Services appendix, not the facilitator. Still unclear.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4788,6 +5679,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": false,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://docs.cdp.coinbase.com/x402/seller/facilitator",
+    "http_status": 200,
+    "doc_text_sha256": "5eb81cc69a9175d1e42e3dc8a9ac965f7b2ddad9751368caa00741abcfda8668",
+    "run4_doc_text_sha256": "5eb81cc69a9175d1e42e3dc8a9ac965f7b2ddad9751368caa00741abcfda8668",
+    "normalisation_variant": "B_html_tag' '",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4810,11 +5715,11 @@
    "document_date": null,
    "accessed": "2026-10-02",
    "owner_step": "identity_kyc",
-   "change_vs_previous": "unverified",
+   "change_vs_previous": "unchanged",
    "doc_text_sha256": "8c5d13b7b5fd939012e4d037c4bd9a99652e2882d53ee75d421a1ee2de411a95",
    "notes": "Clause is in the 'Base Ledger Services' section of the CDP Terms ('If you do not use Base Ledger Services, this section does not apply to you'), so it does not settle facilitator KYC. Logged as the closest text found.",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": true,
    "rules_check": {
     "route": "direct GET (403); WebFetch (403); Wayback id_ (stale snapshot, not used)",
     "http_status": 403,
@@ -4822,6 +5727,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "Direct GET 403 (also 403 via WebFetch). Fallback 1: Wayback availability API returned no snapshot for this URL; the id_ redirect served a 2026-04-17 en-ca snapshot (https://web.archive.org/web/20260417102632id_/https://www.coinbase.com/en-ca/legal/developer-platform/terms-of-service) that predates run 3 and does not contain the quote, so it cannot test for change. Fallbacks 2-3 have no route for coinbase.com legal pages. Result: unfetchable."
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (403); WebFetch (403); Wayback id_ (stale snapshot, not used)",
+    "fetched_url": "https://www.coinbase.com/legal/developer-platform/terms-of-service",
+    "http_status": 200,
+    "doc_text_sha256": "538bb4b33382ba3e5cbde115c230829cec4e0e3c92943202bb9e9e240ec1f19e",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Run 4: direct GET 403 (unfetchable). Now direct GET 200 and the quote is present (strict). No run-4 hash to compare; this run sets the baseline.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4847,7 +5766,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "9bbf8bce72eb52f32a732ec6fbf28c4c4375e764757138ec4b3c2eac49d511dc",
    "notes": "2026-09-30 record said 'none found (checked: llms.txt partial)'. https://agentpact.xyz/terms returned 404. Registration: 'POST https://api.agentpact.xyz/api/auth/register (free, instant API key)'.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4856,6 +5775,22 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=3 match=['strict', 'strict', 'strict']"
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://agentpact.xyz/llms.txt",
+    "http_status": 200,
+    "doc_text_sha256": "148ae65d425bf1690250844d93c15ff9f2ed614d8ad7d501bb9772ef43ce9661",
+    "run4_doc_text_sha256": "d350fa5bd8417b10c5e22bb9b52e984b881b54b4fb9e8aae62f1964a9ceb5aa1",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict",
+     "strict"
+    ],
+    "note": "llms.txt embeds a live marketplace snapshot (counts change with every deal), so the hash changes on every fetch; quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -4881,7 +5816,7 @@
    "change_vs_previous": "unchanged",
    "doc_text_sha256": "9bbf8bce72eb52f32a732ec6fbf28c4c4375e764757138ec4b3c2eac49d511dc",
    "notes": "No KYC, age or jurisdiction text found (terms URL 404). Settlement is on-chain to the seller wallet on Base.",
-   "last_rechecked": "2026-10-03",
+   "last_rechecked": "2026-10-04",
    "quote_still_present": true,
    "rules_check": {
     "route": "direct GET of primary URL",
@@ -4890,6 +5825,20 @@
     "normalisation_id": "B",
     "checked_by": "B",
     "note": "fragments=1 match=['strict']"
+   },
+   "hash_changed_vs_run4": true,
+   "rules_check_2026_10_04": {
+    "route": "direct GET of primary URL",
+    "fetched_url": "https://agentpact.xyz/llms.txt",
+    "http_status": 200,
+    "doc_text_sha256": "148ae65d425bf1690250844d93c15ff9f2ed614d8ad7d501bb9772ef43ce9661",
+    "run4_doc_text_sha256": "d350fa5bd8417b10c5e22bb9b52e984b881b54b4fb9e8aae62f1964a9ceb5aa1",
+    "normalisation_variant": "B_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "llms.txt embeds a live marketplace snapshot (counts change with every deal), so the hash changes on every fetch; quoted text still present.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -5008,11 +5957,11 @@
    "document_date": "2026-08-13",
    "accessed": "2026-10-02",
    "owner_step": "agent_setup",
-   "change_vs_previous": "unverified",
+   "change_vs_previous": "unchanged",
    "doc_text_sha256": "bc133275bb2f099becc75a5216dca496aa02f4da11a4f015c4d3a449aed32e2a",
    "notes": "Obtained later in the run from Wayback snapshot 20260910011811 of www.upwork.com/legal (raw id_ fetch HTTP 200, gzip, 1.8 MB; the API & MCP Terms section is Version 2.3, effective 13 Aug 2026). This run had logged all routes as failed (direct 403, Wayback 429, archive.ph 429, Zendesk links only, no Open Terms Archive entry, no search text). Section 5.2 bars content obtained by scraping, headless browsing, \"multi-account fan-out, header spoofing, IP rotation\" and use of the Tools \"in conjunction with any user-interface automation technique designed to obtain access beyond your authorized scope\". Snapshot predates the live page by about 3 weeks; the live page is still 403. doc_text_sha256 covers the extracted API & MCP Terms section to the end of the page.",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
     "http_status": 403,
@@ -5020,6 +5969,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 403; no Wayback snapshot via availability API (status 200); run 3 Wayback snapshot 20260910011811 not re-read (availability API returned no closest snapshot; Wayback rate-limited). Live www.upwork.com/legal 403 (Cloudflare)."
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (403) -> Wayback id_ snapshot 20261001191256 (fallback 1)",
+    "fetched_url": "https://web.archive.org/web/20261001191256id_/https://www.upwork.com/legal",
+    "http_status": "403 live; 200 snapshot",
+    "doc_text_sha256": "84b2fc3319bee7cec0019406cc5e6f5e565952ecf81f64169904ccc59af3ac6d",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "Live page 403. Wayback availability API now returns snapshot 2026-10-01T19:12:56Z (run 4 found none); quote tested on that snapshot. No run-4 hash to compare.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -5042,11 +6006,11 @@
    "document_date": "2026-08-13",
    "accessed": "2026-10-02",
    "owner_step": "accept",
-   "change_vs_previous": "unverified",
+   "change_vs_previous": "unchanged",
    "doc_text_sha256": "bc133275bb2f099becc75a5216dca496aa02f4da11a4f015c4d3a449aed32e2a",
    "notes": "Same document and route as upwork-mcp-automation_ai-3. Read with 4.1(e): an agent may operate inside the holder's account within granted scopes, but these acts stay with the human. Verdict is restrict for agent operation as a whole; the listed acts themselves are forbidden to the agent (see upwork-mcp-kyc_payout_eligibility-2 for the payout side). The space before the colon is in the source text.",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
     "http_status": 403,
@@ -5054,6 +6018,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 403; no Wayback snapshot via availability API (status 200); run 3 Wayback snapshot 20260910011811 not re-read (availability API returned no closest snapshot; Wayback rate-limited). Live www.upwork.com/legal 403 (Cloudflare)."
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (403) -> Wayback id_ snapshot 20261001191256 (fallback 1)",
+    "fetched_url": "https://web.archive.org/web/20261001191256id_/https://www.upwork.com/legal",
+    "http_status": "403 live; 200 snapshot",
+    "doc_text_sha256": "84b2fc3319bee7cec0019406cc5e6f5e565952ecf81f64169904ccc59af3ac6d",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Live page 403. Wayback availability API now returns snapshot 2026-10-01T19:12:56Z (run 4 found none); quote tested on that snapshot. No run-4 hash to compare.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -5076,11 +6054,11 @@
    "document_date": "2026-08-13",
    "accessed": "2026-10-02",
    "owner_step": "withdraw",
-   "change_vs_previous": "unverified",
+   "change_vs_previous": "unchanged",
    "doc_text_sha256": "bc133275bb2f099becc75a5216dca496aa02f4da11a4f015c4d3a449aed32e2a",
    "notes": "Same document and route as upwork-mcp-automation_ai-3 (section 5.8). This is the clearest text found in any venue that the owner, not the agent, must withdraw.",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
     "http_status": 403,
@@ -5088,6 +6066,21 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 403; no Wayback snapshot via availability API (status 200); run 3 Wayback snapshot 20260910011811 not re-read (availability API returned no closest snapshot; Wayback rate-limited). Live www.upwork.com/legal 403 (Cloudflare)."
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (403) -> Wayback id_ snapshot 20261001191256 (fallback 1)",
+    "fetched_url": "https://web.archive.org/web/20261001191256id_/https://www.upwork.com/legal",
+    "http_status": "403 live; 200 snapshot",
+    "doc_text_sha256": "84b2fc3319bee7cec0019406cc5e6f5e565952ecf81f64169904ccc59af3ac6d",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict",
+     "strict"
+    ],
+    "note": "Live page 403. Wayback availability API now returns snapshot 2026-10-01T19:12:56Z (run 4 found none); quote tested on that snapshot. No run-4 hash to compare.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -5110,11 +6103,11 @@
    "document_date": "2026-08-13",
    "accessed": "2026-10-02",
    "owner_step": "submit",
-   "change_vs_previous": "unverified",
+   "change_vs_previous": "unchanged",
    "doc_text_sha256": "bc133275bb2f099becc75a5216dca496aa02f4da11a4f015c4d3a449aed32e2a",
    "notes": "Section 9.7 \"AI-interaction disclosure\" of the same document. Section 5.8(g) also bars presenting \"Agent-authored content as human-authored where AI-origin disclosure is required\".",
-   "last_rechecked": "2026-10-03",
-   "quote_still_present": "unfetchable",
+   "last_rechecked": "2026-10-04",
+   "quote_still_present": true,
    "rules_check": {
     "route": "direct GET",
     "http_status": 403,
@@ -5122,6 +6115,20 @@
     "normalisation_id": "A",
     "checked_by": "A",
     "note": "live 403; no Wayback snapshot via availability API (status 200); run 3 Wayback snapshot 20260910011811 not re-read (availability API returned no closest snapshot; Wayback rate-limited). Live www.upwork.com/legal 403 (Cloudflare)."
+   },
+   "hash_changed_vs_run4": null,
+   "rules_check_2026_10_04": {
+    "route": "direct GET (403) -> Wayback id_ snapshot 20261001191256 (fallback 1)",
+    "fetched_url": "https://web.archive.org/web/20261001191256id_/https://www.upwork.com/legal",
+    "http_status": "403 live; 200 snapshot",
+    "doc_text_sha256": "84b2fc3319bee7cec0019406cc5e6f5e565952ecf81f64169904ccc59af3ac6d",
+    "run4_doc_text_sha256": null,
+    "normalisation_variant": "A_html_tag''",
+    "fragment_match": [
+     "strict"
+    ],
+    "note": "Live page 403. Wayback availability API now returns snapshot 2026-10-01T19:12:56Z (run 4 found none); quote tested on that snapshot. No run-4 hash to compare.",
+    "checked_by": "run 5"
    }
   },
   {
@@ -5144,10 +6151,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "submit",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "search_snippet (unverified): direct GET returns a JavaScript shell with no policy text (200, ~3.5 KB); fallbacks tried: r.jina.ai render 403 (Cloudflare), Wayback id_ 429 (snapshot 20260921222844 of hackerone.com/ui exists), HackerOne GraphQL over GET 404 (POST not used, by rule), hacker API program endpoint needs an API token (not used). Text comes from WebSearch result snippets on 2026-10-03; wording may be truncated or out of date. Payment-timing snippet: 'Due to the significant increase in vulnerability submissions since March 2026, primarily from AI-assisted research and automated testing, Ubiquiti has changed its bounty payment process.' Reward caps quoted in snippet: Physical 1,000 … Ubiquiti Cloud 30,000 USD. No rate-limit text seen in snippets.",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "hackerone-nextcloud-automation_ai-1",
@@ -5169,10 +6177,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "submit",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "search_snippet (unverified): direct GET returns a JavaScript shell with no policy text (200, ~3.5 KB); fallbacks tried: r.jina.ai render 403 (Cloudflare), Wayback id_ 429 (snapshot 20260921222844 of hackerone.com/ui exists), HackerOne GraphQL over GET 404 (POST not used, by rule), hacker API program endpoint needs an API token (not used). Text comes from WebSearch result snippets on 2026-10-03; wording may be truncated or out of date. Also in snippet: 'If you use LLMs, only use services that run locally on your own hardware to ensure our security information does not leak to the outside world.' A hosted-model agent therefore breaks this programme's rule. The bounty suspension took effect around 2026-04-22 (secondary: heise.de).",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "hackerone-discourse-automation_ai-1",
@@ -5194,10 +6203,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "withdraw",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "search_snippet (unverified): direct GET returns a JavaScript shell with no policy text (200, ~3.5 KB); fallbacks tried: r.jina.ai render 403 (Cloudflare), Wayback id_ 429 (snapshot 20260921222844 of hackerone.com/ui exists), HackerOne GraphQL over GET 404 (POST not used, by rule), hacker API program endpoint needs an API token (not used). Text comes from WebSearch result snippets on 2026-10-03; wording may be truncated or out of date. Verdict is 'unclear' for AI use. The row records that no money is paid at present, whatever the tooling.",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "hackerone-anthropic-automation_ai-1",
@@ -5219,10 +6229,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "submit",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "search_snippet (unverified): direct GET returns a JavaScript shell with no policy text (200, ~3.5 KB); fallbacks tried: r.jina.ai render 403 (Cloudflare), Wayback id_ 429 (snapshot 20260921222844 of hackerone.com/ui exists), HackerOne GraphQL over GET 404 (POST not used, by rule), hacker API program endpoint needs an API token (not used). Text comes from WebSearch result snippets on 2026-10-03; wording may be truncated or out of date. Snippet says the policy was 'last updated on September 28, 2026'. Traffic rule (snippet): 'using tools that generate substantial amounts of traffic' is listed under disruption to avoid. No numeric rate limit seen. Note the conflict of interest: Anthropic is also a model provider (see the anthropic-* rows in run 3).",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "hackerone-brave-automation_ai-1",
@@ -5244,10 +6255,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "submit",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "search_snippet (unverified): direct GET returns a JavaScript shell with no policy text (200, ~3.5 KB); fallbacks tried: r.jina.ai render 403 (Cloudflare), Wayback id_ 429 (snapshot 20260921222844 of hackerone.com/ui exists), HackerOne GraphQL over GET 404 (POST not used, by rule), hacker API program endpoint needs an API token (not used). Text comes from WebSearch result snippets on 2026-10-03; wording may be truncated or out of date. The search tool reported the indexed copy as about 311 days old. Snippet also: 'Due to high AI-generated report volume, we may temporarily pause report submissions from time to time.'",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "hackerone-automation_ai-5",
@@ -5269,10 +6281,11 @@
    "document_date": "2025-11-25 (Last revised, reports section); 2026-02-05 (report intents)",
    "accessed": "2026-10-03",
    "owner_step": "submit",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": null,
    "notes": "Verdict 'restrict' combines the docs with the Code of Conduct: technically an agent holding the owner's token could submit, but hackerone-automation_ai-1 forbids fully autonomous submission. The docs include 'This team needs to enable Report Assistant.' for report intents. No rate-limit text and no 'submitted_with_assistant' field anywhere in the hacker or customer API reference (customer reference page 827 KB, searched 2026-10-03).",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-cdp-account_identity-2",
@@ -5294,10 +6307,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "account",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "7829f6c98e5cd0c9cd1e608de9a97c68c706ddc5523489d700abe6f8aaf0e12c",
    "notes": "Answers the seller-credential half of the KYC carry-over: the documented seller requirement is an API key, not an identity check. [quote_match at capture: strict]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-cdp-kyc_payout_eligibility-3",
@@ -5319,10 +6333,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "identity_kyc",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "98a69ae9f52dcab2fd251f09cc66dd1346d17404d01a5ba9b2f632a6b1cad71f",
    "notes": "KYC carry-over, best available answer: no CDP text requires seller KYC for the x402 Facilitator with an owner-held payTo; \"payment acceptance\" in the custodial list is ambiguous and the custodial groups enumerated on the page do not include x402. Verification applies when the owner uses custodial receiving destinations (Coinbase Business/Prime/CDP custodial accounts). The CDP ToS reservation (x402-cdp-kyc_payout_eligibility-2) still applies but was unfetchable (403) this run. Spaces before colons come from the page markup. [quote_match at capture: strict]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-cdp-kyc_payout_eligibility-4",
@@ -5344,10 +6359,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "wallet_bank",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "7829f6c98e5cd0c9cd1e608de9a97c68c706ddc5523489d700abe6f8aaf0e12c",
    "notes": "Screening is of addresses per payment, not identity KYC of the seller. Recipient screening means a flagged payTo cannot receive. [quote_match at capture: strict]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-cdp-kyc_payout_eligibility-5",
@@ -5369,10 +6385,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "wallet_bank",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "bec3e85b7dde42094ef7ad9fd235d2a3d2b094ed36058dc23ed074e59e9900d8",
    "notes": "Quoted as rendered; the .md source wraps each destination in a markdown link (matched leniently after removing link targets). [quote_match at capture: lenient]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-org-account_identity-1",
@@ -5394,10 +6411,11 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "agent_setup",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "bc2af30e76d0fe57dcabc092a54931d5f1cb565f24ccced874f8d19dfa64b535",
    "notes": "Public testnet facilitator for walkthrough step \"testnet first\". Mainnet needs a different facilitator (CDP or another). [quote_match at capture: strict]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
   },
   {
    "id": "x402-cdp-account_identity-3",
@@ -5419,11 +6437,428 @@
    "document_date": null,
    "accessed": "2026-10-03",
    "owner_step": "agent_setup",
-   "change_vs_previous": "new",
+   "change_vs_previous": "not_rechecked",
    "doc_text_sha256": "7829f6c98e5cd0c9cd1e608de9a97c68c706ddc5523489d700abe6f8aaf0e12c",
    "notes": "Same FAQ: \"There is no delisting mechanism.\" and testnet and mainnet resources are both indexed. [quote_match at capture: strict]",
-   "last_rechecked": "2026-10-03"
+   "last_rechecked": "2026-10-03",
+   "change_vs_previous_run4": "new"
+  },
+  {
+   "id": "moltbook-community-agent_liability",
+   "party": "Moltbook",
+   "party_slug": "moltbook",
+   "party_type": "community",
+   "catalogue_slug": "moltbook",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "restrict",
+   "conditions": "Agents may act on the account, but the human account holder is solely responsible for every act or omission of their AI agents",
+   "disclosure_required": null,
+   "enforcement": "Licence automatically revoked on violation of the Terms",
+   "rule_text": "AS A RESULT, YOU AGREE THAT YOU ARE SOLELY RESPONSIBLE FOR YOUR AI AGENTS AND ANY ACTIONS OR OMISSIONS OF YOUR AI AGENTS.",
+   "url": "https://www.moltbook.com/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "Moltbook Terms of Service",
+   "document_date": "2026-03-15",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "3bc39d2be3e62225a3e7839ef9ad36a40ac4a4ad5001735da56114fecc47bd3c",
+   "notes": "Same clause family as the 2026-09-30 tos_ai_policy quote. Not legal advice."
+  },
+  {
+   "id": "moltbook-community-automated_access",
+   "party": "Moltbook",
+   "party_slug": "moltbook",
+   "party_type": "community",
+   "catalogue_slug": "moltbook",
+   "rule_type": "automation_ai",
+   "applies_to": "automation_api_access",
+   "verdict": "unclear",
+   "conditions": "Terms text bans automated access, but the operator publishes an agent API and skill.md for agents",
+   "disclosure_required": null,
+   "enforcement": "Licence revocation",
+   "rule_text": "use any robot, spider, site search/retrieval application or other automated device, process or means to access, retrieve, scrape or index any portion of our Services or any Content",
+   "url": "https://www.moltbook.com/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "Moltbook Terms of Service",
+   "document_date": "2026-03-15",
+   "accessed": "2026-10-04",
+   "owner_step": "agent_setup",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "3bc39d2be3e62225a3e7839ef9ad36a40ac4a4ad5001735da56114fecc47bd3c",
+   "notes": "Literal text forbids automated access; the official agent API (skill.md v1.12.0) contradicts it, so the verdict is unclear. Not legal advice."
+  },
+  {
+   "id": "moltbook-community-crypto_promotion",
+   "party": "Moltbook",
+   "party_slug": "moltbook",
+   "party_type": "community",
+   "catalogue_slug": "moltbook",
+   "rule_type": "contribution_policy",
+   "applies_to": "community_conduct",
+   "verdict": "forbid",
+   "conditions": "Content that sells, exchanges or promotes cryptocurrency is prohibited",
+   "disclosure_required": null,
+   "enforcement": "Content removal / licence revocation (Terms)",
+   "rule_text": "(x) sells, exchanges, or promotes cryptocurrency;",
+   "url": "https://www.moltbook.com/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "Moltbook Terms of Service",
+   "document_date": "2026-03-15",
+   "accessed": "2026-10-04",
+   "owner_step": "submit",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "3bc39d2be3e62225a3e7839ef9ad36a40ac4a4ad5001735da56114fecc47bd3c",
+   "notes": "Item (x) in the list of prohibited content. Our sample: 1 of 500 posts matched a token-promotion pattern. Not legal advice."
+  },
+  {
+   "id": "the-colony-community-agent_liability",
+   "party": "The Colony (Starsol Ltd)",
+   "party_slug": "the-colony",
+   "party_type": "community",
+   "catalogue_slug": "the-colony",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "restrict",
+   "conditions": "Agents allowed; the operator is responsible for everything the agent does, including after manipulation",
+   "disclosure_required": null,
+   "enforcement": null,
+   "rule_text": "If you run an AI agent here, you are responsible for everything it does — including what it does after someone else manipulates it.",
+   "url": "https://thecolony.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "The Colony Terms",
+   "document_date": "2026-09-09",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "cc392b4e3ba93d0b34cc9735dc3169c879a66f78745ae1b2471418c6330a293c",
+   "notes": "Matches the 2026-09-30 quote. Not legal advice."
+  },
+  {
+   "id": "the-colony-community-prompt_injection",
+   "party": "The Colony (Starsol Ltd)",
+   "party_slug": "the-colony",
+   "party_type": "community",
+   "catalogue_slug": "the-colony",
+   "rule_type": "contribution_policy",
+   "applies_to": "community_conduct",
+   "verdict": "forbid",
+   "conditions": "Writing content meant to manipulate other agents is banned",
+   "disclosure_required": null,
+   "enforcement": "Automated tools and human review remove manipulation attempts; \"prompt injection\" is a report reason",
+   "rule_text": "Prompt injection is a breach of these terms.",
+   "url": "https://thecolony.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "The Colony Terms",
+   "document_date": "2026-09-09",
+   "accessed": "2026-10-04",
+   "owner_step": "submit",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "cc392b4e3ba93d0b34cc9735dc3169c879a66f78745ae1b2471418c6330a293c",
+   "notes": "Our scan found 1 post labelled instruction_aimed_at_agents (a disclosed off-site solicitation, not key-seeking). Not legal advice."
+  },
+  {
+   "id": "the-colony-community-age_18",
+   "party": "The Colony (Starsol Ltd)",
+   "party_slug": "the-colony",
+   "party_type": "community",
+   "catalogue_slug": "the-colony",
+   "rule_type": "account_identity",
+   "applies_to": "agent_operated_account",
+   "verdict": "restrict",
+   "conditions": "The human must be at least 18 to create an account or operate an agent",
+   "disclosure_required": null,
+   "enforcement": null,
+   "rule_text": "You must be at least 18 years old to create an account or to operate an agent on the Service.",
+   "url": "https://thecolony.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "The Colony Terms",
+   "document_date": "2026-09-09",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "cc392b4e3ba93d0b34cc9735dc3169c879a66f78745ae1b2471418c6330a293c",
+   "notes": "Not legal advice."
+  },
+  {
+   "id": "4claw-community-rate_limits_spam",
+   "party": "4claw",
+   "party_slug": "4claw",
+   "party_type": "community",
+   "catalogue_slug": "4claw",
+   "rule_type": "automation_ai",
+   "applies_to": "automation_api_access",
+   "verdict": "restrict",
+   "conditions": "API posting allowed within rate limits (threads ~2/min, replies ~5/min per agent plus per-IP); no evasion; no cross-post spam",
+   "disclosure_required": null,
+   "enforcement": "Board UI: agents are blocked for spamming",
+   "rule_text": "Respect rate limits (and don’t try to evade them).",
+   "url": "https://www.4claw.org/skill.md",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "4claw skill.md",
+   "document_date": "v0.2.4",
+   "accessed": "2026-10-04",
+   "owner_step": "submit",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "6b1535e23e32b81038341cba3d9308e172964a963e231fd145fb6dd0c6ee7f70",
+   "notes": "skill.md is the only rules document found (no terms page). Not legal advice."
+  },
+  {
+   "id": "4claw-community-hard_nos",
+   "party": "4claw",
+   "party_slug": "4claw",
+   "party_type": "community",
+   "catalogue_slug": "4claw",
+   "rule_type": "contribution_policy",
+   "applies_to": "community_conduct",
+   "verdict": "forbid",
+   "conditions": "Illegal instructions/facilitation, doxxing, harassment and sexual content involving minors are banned",
+   "disclosure_required": null,
+   "enforcement": "Moderation",
+   "rule_text": "Hard NOs:",
+   "url": "https://www.4claw.org/skill.md",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "4claw skill.md",
+   "document_date": "v0.2.4",
+   "accessed": "2026-10-04",
+   "owner_step": "submit",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "6b1535e23e32b81038341cba3d9308e172964a963e231fd145fb6dd0c6ee7f70",
+   "notes": "Heading only quoted here; list items as in the 2026-09-30 tos_ai_policy quote (illegal instructions/facilitation, doxxing, harassment, sexual content involving minors). Not legal advice."
+  },
+  {
+   "id": "agent4science-community-agents_only",
+   "party": "Agent4Science (CHAI, UChicago)",
+   "party_slug": "agent4science",
+   "party_type": "community",
+   "catalogue_slug": "agent4science",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "allow",
+   "conditions": "Only agents post; humans observe, own and configure agents",
+   "disclosure_required": null,
+   "enforcement": null,
+   "rule_text": "Humans can observe the discussions, own, and configure agents, but only agents can post content, write peer reviews, and engage in debates",
+   "url": "https://agent4science.org/about",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "About - Agent4Science",
+   "document_date": null,
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "8c7b92892a3398a75672a2cd281b2240f29a3fea2b657b0aabcb3f7960e9ec68",
+   "notes": "No terms page found; about page only. Not legal advice."
+  },
+  {
+   "id": "mozilla-ai-cq-community-human_review",
+   "party": "cq (Mozilla.ai)",
+   "party_slug": "mozilla-ai-cq",
+   "party_type": "community",
+   "catalogue_slug": "mozilla-ai-cq",
+   "rule_type": "contribution_policy",
+   "applies_to": "autonomous_submission",
+   "verdict": "restrict",
+   "conditions": "Agents may propose knowledge units, but they reach other agents only after human review",
+   "disclosure_required": null,
+   "enforcement": null,
+   "rule_text": "available to agents once graduated via human review.",
+   "url": "https://docs.mozilla.ai/cq",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "cq documentation (docs.mozilla.ai)",
+   "document_date": null,
+   "accessed": "2026-10-04",
+   "owner_step": "submit",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "64e367aabd383d28763acf0e55bfbac06cd86b27a1bb5515ac513dce473d833e",
+   "notes": "Docs only; no cq.exchange terms readable. Not legal advice."
+  },
+  {
+   "id": "clawstr-community-unclear",
+   "party": "Clawstr",
+   "party_slug": "clawstr",
+   "party_type": "community",
+   "catalogue_slug": "clawstr",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "unclear",
+   "conditions": "No terms found",
+   "disclosure_required": null,
+   "enforcement": "None documented (permissionless relays)",
+   "rule_text": "none found (checked: clawstr.com homepage, SKILL.md v3.0.0, HEARTBEAT.md v3.0.0)",
+   "url": "https://clawstr.com/SKILL.md",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "Clawstr SKILL.md",
+   "document_date": "v3.0.0",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "8c3659dcc3374489ec9539052eee267ecf08be12a84b66b88d7469c7b9de90dc",
+   "notes": "SKILL.md is aimed at agents and contains no rules section beyond key-secrecy warnings. Not legal advice."
+  },
+  {
+   "id": "moltx-community-unclear",
+   "party": "MoltX",
+   "party_slug": "moltx",
+   "party_type": "community",
+   "catalogue_slug": "moltx",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "unclear",
+   "conditions": "No terms reachable",
+   "disclosure_required": null,
+   "enforcement": "n/a",
+   "rule_text": "none found (checked: moltx.io, social.moltx.io unreachable; skill.moltx.io index; skill.moltx.io/moltx.md 404)",
+   "url": "https://skill.moltx.io/",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "skill.moltx.io index",
+   "document_date": null,
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "f848351edf78acf040397b7e8362ceeae8847c8e9cdf060e4c2e451e87bda2e2",
+   "notes": "Site inactive. Not legal advice."
+  },
+  {
+   "id": "dealwork-ai-kyc_payout_eligibility-2",
+   "party": "dealwork.ai",
+   "party_slug": "dealwork-ai",
+   "party_type": "agent_first_board",
+   "catalogue_slug": "dealwork-ai",
+   "rule_type": "kyc_payout_eligibility",
+   "applies_to": "payout_identity",
+   "verdict": "restrict",
+   "conditions": "Withdrawals: bank payout only after Stripe Connect onboarding (min $10); USDC withdrawal min $10, every one admin-reviewed, extra scrutiny over $1,000",
+   "disclosure_required": null,
+   "enforcement": "Admin review can complete or reject a withdrawal (admin endpoints in openapi.json)",
+   "rule_text": "All crypto withdrawals require an admin review. Amounts over $1000 get additional scrutiny.",
+   "url": "https://dealwork.ai/api/v1/stats/payments-info",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "dealwork.ai payments-info (public API)",
+   "document_date": "2026-10-04 (generatedAt)",
+   "accessed": "2026-10-04",
+   "owner_step": "withdraw",
+   "change_vs_previous": "new",
+   "doc_text_sha256": null,
+   "notes": "Not legal advice. API response, not terms; it can change without notice. Stripe Connect label: 'Available once Stripe Connect onboarding is complete.'"
+  },
+  {
+   "id": "chirper-ai-automation_ai-1",
+   "party": "Chirper.ai",
+   "party_slug": "chirper-ai",
+   "party_type": "community",
+   "catalogue_slug": null,
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "unclear",
+   "conditions": "Terms (dated 23 April 2023) cover a personal, non-commercial licence to site materials and user-generated content; no clause found on agent-operated accounts, automated or API access, or the CHIRP token",
+   "disclosure_required": null,
+   "enforcement": "The licence 'may be terminated by Chirper AI Inc. at any time'",
+   "rule_text": "These Terms of Service govern your use of the website located at https://chirper.ai and any related services provided by Chirper AI Inc.",
+   "url": "https://chirper.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "Chirper Terms of Service",
+   "document_date": "2023-04-23",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": null,
+   "notes": "Not legal advice. Checked: whole terms page (6.8k chars of text) for automation, bot, token and CHIRP. Governing law: Australia. Terms predate the token and the agent-funding feature."
+  },
+  {
+   "id": "openclawcity-community-agent_liability",
+   "party": "OpenClawCity (OpenBotCity)",
+   "party_slug": "openclawcity",
+   "party_type": "community",
+   "catalogue_slug": "openclawcity",
+   "rule_type": "automation_ai",
+   "applies_to": "agent_operated_account",
+   "verdict": "restrict",
+   "conditions": "One or more AI agents may be registered; the person using the Service is responsible for all activity through their agents and must keep the JWT private",
+   "disclosure_required": null,
+   "enforcement": "Agents that violate the Terms may be suspended or removed",
+   "rule_text": "You may register one or more AI agents to participate in the city. You are responsible for all activity that occurs through your agent(s).",
+   "url": "https://openclawcity.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "OpenBotCity Terms of Service",
+   "document_date": "2026-03-28",
+   "accessed": "2026-10-04",
+   "owner_step": "account",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "1c0051d74a829992a826da0e101c36b81e58eb400d1a9c92a111098301cf3ed7",
+   "notes": "Final-check fetch 2026-10-04T14:06Z (the backlog pass found no terms link on the homepage; /terms exists). Governing law California; no legal entity named beyond 'OpenBotCity and its operators'. doc_text_sha256 uses run-4 normalisation A. Not legal advice."
+  },
+  {
+   "id": "openclawcity-community-acceptable_use",
+   "party": "OpenClawCity (OpenBotCity)",
+   "party_slug": "openclawcity",
+   "party_type": "community",
+   "catalogue_slug": "openclawcity",
+   "rule_type": "community_conduct",
+   "applies_to": "community_conduct",
+   "verdict": "forbid",
+   "conditions": "No exploiting or compromising the Service or other agents' data; no exceeding published rate limits; no illegal or harmful content",
+   "disclosure_required": null,
+   "enforcement": "Suspension or termination at any time",
+   "rule_text": "Attempt to exploit, compromise, or gain unauthorized access to the Service, its infrastructure, or other agents' data.",
+   "url": "https://openclawcity.ai/terms",
+   "source_kind": "primary",
+   "fetch_url": null,
+   "document_title": "OpenBotCity Terms of Service",
+   "document_date": "2026-03-28",
+   "accessed": "2026-10-04",
+   "owner_step": "agent_setup",
+   "change_vs_previous": "new",
+   "doc_text_sha256": "1c0051d74a829992a826da0e101c36b81e58eb400d1a9c92a111098301cf3ed7",
+   "notes": "Quoted from the 'You agree not to' list (section 4). Final-check fetch 2026-10-04. Not legal advice."
   }
  ],
- "previous_run_id": "run:278474ff-68ad-411d-87a6-d05e7e785bde"
+ "previous_run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
+ "communities_url": "https://shaduf.ai/p/agentic-freelance/assets/data/communities.json",
+ "accessed_note": "Rows keep their own accessed dates. 65 grid rows re-checked 2026-10-04 (rules_check_2026_10_04); 16 new rows accessed 2026-10-04.",
+ "rules_check_2026_10_04": {
+  "source": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
+  "summary": {
+   "rows": 65,
+   "quote_still_present": {
+    "True": 60,
+    "n/a": 2,
+    "unfetchable": 3
+   },
+   "hash_changed_vs_run4": {
+    "False": 42,
+    "True": 14,
+    "None": 9
+   },
+   "changed_rows": 0,
+   "taskmarket_terms_still_draft": true,
+   "status_changes_vs_run4": [
+    "x402-cdp-kyc_payout_eligibility-2: unfetchable -> present (coinbase.com legal page now returns 200)",
+    "upwork-mcp legal rows (4): unfetchable -> tested on Wayback snapshot 2026-10-01",
+    "huntr-automation_ai-4 and virtuals-acp-kyc_payout_eligibility-1: absence rows, n/a"
+   ],
+   "notable_edits": [
+    "Execution Market terms API last_updated 2026-10-03; quote unchanged",
+    "Execution Market skill.md version 14.12.0"
+   ]
+  },
+  "hash_note": "Both run-4 normalisations were re-implemented; the documented text did not say whether a stripped tag becomes \"\" or \" \", so both were computed and the variant that reproduces the run-4 hash is used. hash_changed_vs_run4 = true means no variant reproduced it (page text changed somewhere, not necessarily in the quoted clause). Use quote_still_present as the change test for the rule itself.",
+  "scope": "All 65 rows in run 4 rules.json that carry a rules_check object (14 grid venues), each through the route recorded in run 4 (A or B normalisation per row).",
+  "accessed": "2026-10-04"
+ }
 }

@@ -1,7 +1,7 @@
 {
  "schema": "agentic-freelance-x402-buyers/0.1",
  "title": "Agentic Freelance: x402 buyer trace for 8 sellers",
- "description": "On-chain trace of buyers paying 8 x402 sellers on Base (2026-10-03): sample windows, distinct buyers, top-buyer shares, payer classes and shared funders.",
+ "description": "On-chain trace of buyers paying 8 x402 sellers on Base (2026-10-03), refreshed on 2026-10-04 (refresh_2026_10_04): sample windows, distinct buyers, top-buyer shares, payer classes and shared funders.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/x402_buyers.json",
  "page_url": "https://shaduf.ai/p/agentic-freelance/who-paid/",
  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-03-sell-per-call-or-bounties.html",
@@ -532,6 +532,99 @@
     "meets_literal": true,
     "meets_after_shared_funder_adjustment": false,
     "note": "Literal: unlinked wallets clear the bar (indicative ~$35.7k unlinked from 26 wallets). Adjusted: all traced buyers share one funder pair, so this is probably 1 economic payer. Infrastructure, not agent work."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x47d3394c7234714e4b9e9b74827c12be847f9dda",
+    "name": "dTelecom x402 Gateway (STT/TTS/WebRTC)",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-04T05:16:35.000000Z",
+     "to": "2026-10-04T13:47:29.000000Z",
+     "payments": 198
+    },
+    "sample_usd": 446.9,
+    "distinct_buyers": 23,
+    "top1_share": 0.1007,
+    "top5_share": 0.3871,
+    "median_payment": 1.0,
+    "top5": [
+     {
+      "address": "0x6a1637683f11e0bcb14fbad60c651c7e96fc3b5e",
+      "usd": 45.0,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0xf2f20f346a61c31d7744105accef0a3cee668528",
+      "usd": 36.0,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x5840aff089b9d38907ebb01fc1b21cd05844aa15",
+      "usd": 32.0,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x957fdc7c7e6aba1623e0901459d3fd57999820a0",
+      "usd": 30.0,
+      "run4_class": null
+     },
+     {
+      "address": "0x072014b79c22b067e9fceeb0e4fb189e2552106a",
+      "usd": 30.0,
+      "run4_class": null
+     }
+    ],
+    "top5_known_from_run4": 3,
+    "new_top5": [
+     {
+      "address": "0x957fdc7c7e6aba1623e0901459d3fd57999820a0",
+      "sample_usd": 30.0,
+      "sample_payments": 3,
+      "hop1_funder": [
+       {
+        "address": "0x6fa5b6d93e2539caea358518d3fe8f75418e5a1d",
+        "usdc": 540.0
+       },
+       {
+        "address": "0x47d3fd5cc47058a23b6b901b06401c2882791dda",
+        "usdc": 0.0005
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funder 0x6fa5b6d9 (540 USDC), the SingleOwnerMSCA smart account that funded all 8 run-4 traced dTelecom buyers: same wallet fleet, counts as the same payer. No link to the payTo found.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x072014b79c22b067e9fceeb0e4fb189e2552106a",
+      "sample_usd": 30.0,
+      "sample_payments": 2,
+      "hop1_funder": [
+       {
+        "address": "0x6fa5b6d93e2539caea358518d3fe8f75418e5a1d",
+        "usdc": 810.0
+       },
+       {
+        "address": "0x47d3fd5cc47058a23b6b901b06401c2882791dda",
+        "usdc": 0.0007
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funder 0x6fa5b6d9 (810 USDC), same funder as the run-4 dTelecom fleet; same payer. No link to the payTo found.",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 35830.7,
+     "buyers": 26,
+     "tx_count": 16483,
+     "latest_block_timestamp": "2026-10-04T12:52:25.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Unchanged shape: 23 buyers (22), top-5 share 0.387 (0.394); 2 new top-5 buyers both funded by the run-4 fleet funder 0x6fa5b6d9, so the top of the distribution is still one funder cluster. x402scan 30d $35.8k / 26 buyers (was $35.7k / 26).",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -1016,6 +1109,60 @@
     "meets_literal": null,
     "meets_after_shared_funder_adjustment": false,
     "note": "Unlinked share among traced buyers is about 2%; 52% of the sample is operator_linked through revenue recycling. Untraced long tail (47% of the sample) unknown. Model-inference resale."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x68396bd35874695ad86cd29410bd80a550991a2b",
+    "name": "Cluster Protocol",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-01T23:33:55.000000Z",
+     "to": "2026-10-02T12:00:51.000000Z",
+     "payments": 197
+    },
+    "sample_usd": 109.474,
+    "distinct_buyers": 175,
+    "top1_share": 0.137,
+    "top5_share": 0.5207,
+    "median_payment": 0.003,
+    "top5": [
+     {
+      "address": "0xf4080f93b3915423dd5281d0af801c70cfd0139f",
+      "usd": 15.0,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x25441cae8540b76942980245ee4c1328f2d2e9b2",
+      "usd": 15.0,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x3dc287f1f3b6ce30033d0b6d8018dd2d7d69915c",
+      "usd": 15.0,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x3cd6de5e881a3bc21201e720ffa12e3cc40c3cee",
+      "usd": 6.0,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x0e768479ab7d7200cf053faa691e76f1b5bf1868",
+      "usd": 6.0,
+      "run4_class": "operator_linked"
+     }
+    ],
+    "top5_known_from_run4": 5,
+    "new_top5": [],
+    "x402scan_30d": {
+     "usd": 54761.29,
+     "buyers": 722,
+     "tx_count": 66675,
+     "latest_block_timestamp": "2026-10-02T12:00:51.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "No new inbound USDC since 2026-10-02T12:00:51Z: the latest 4 pages are the run-4 sample (identical figures). x402scan also shows latest_block_timestamp 2026-10-02T12:00:51Z and unchanged 30-day totals ($54,761 / 722). Sales appear to have stopped about 50 h before this check.",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -1498,6 +1645,114 @@
     "meets_literal": true,
     "meets_after_shared_funder_adjustment": null,
     "note": "Indicative ~$1.4k unlinked from >=5 distinct funder groups. Closest to genuine diverse demand among the 8, but it is a data API, not agent work, and the sample is 10 hours."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430",
+    "name": "StableEnrich",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-04T09:38:21.000000Z",
+     "to": "2026-10-04T13:30:09.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 5.5876,
+    "distinct_buyers": 10,
+    "top1_share": 0.8805,
+    "top5_share": 0.992,
+    "median_payment": 0.03,
+    "top5": [
+     {
+      "address": "0x01c956c98b8e2938573affbf5897a6120d202816",
+      "usd": 4.92,
+      "run4_class": null
+     },
+     {
+      "address": "0xfb8859fd10647d2d7fbfff1579cebb66f2e534a2",
+      "usd": 0.38,
+      "run4_class": null
+     },
+     {
+      "address": "0x5e06059a764b7343b828a3b3d0cc45b0bc0afb09",
+      "usd": 0.12,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0xd97c63d0503b506b63cae11128cc09d7c1220093",
+      "usd": 0.1104,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x6861a90a79212488283da9e18f75d2a6425f1835",
+      "usd": 0.0126,
+      "run4_class": null
+     }
+    ],
+    "top5_known_from_run4": 2,
+    "new_top5": [
+     {
+      "address": "0x01c956c98b8e2938573affbf5897a6120d202816",
+      "sample_usd": 4.92,
+      "sample_payments": 164,
+      "hop1_funder": [
+       {
+        "address": "0x4b5c71082d027d16d2a146465d66f9eec11634f6",
+        "usdc": 58.0
+       },
+       {
+        "address": "0x739120ade7ed878fca5bbdb806263a8258fe2360",
+        "usdc": 50.0
+       },
+       {
+        "address": "0x6dcbce46a8b494c885d0e7b6817d2b519df64467",
+        "usdc": 20.0
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funders 0x4b5c7108 (58), 0x739120ad (50), 0x6dcbce46 (20); 0x4b5c7108 and 0x739120ad also funded run-4 StableEnrich buyers and are probably bridge/exchange infrastructure (unverified). No link to the payTo found.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0xfb8859fd10647d2d7fbfff1579cebb66f2e534a2",
+      "sample_usd": 0.38,
+      "sample_payments": 9,
+      "hop1_funder": [
+       {
+        "address": "0xa449e4ae6aede3f4eb44a48428398650bb7315ac",
+        "usdc": 15.0
+       }
+      ],
+      "class": "operator_linked",
+      "class_reason": "Circular: hop-1 funder 0xa449e4ae (15 USDC) received 1,000 USDC from the StableEnrich payTo (run-4 seller-side outflows), i.e. a payTo sink.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x6861a90a79212488283da9e18f75d2a6425f1835",
+      "sample_usd": 0.0126,
+      "sample_payments": 1,
+      "hop1_funder": [
+       {
+        "address": "0xf0854c4dc9d3f1ebd4f0e44eb91587f7fc5bd518",
+        "usdc": 0.13
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Single inbound: 0.13 USDC from 0xf0854c4d (not seen in run 4). No link to the payTo found at hop 1.",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 1363.75,
+     "buyers": 342,
+     "tx_count": 51938,
+     "latest_block_timestamp": "2026-10-04T12:42:15.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "More concentrated: top-1 0.88 (0.63) on a 4-hour sample; new top buyer 0x01c956c9 (unlinked, infrastructure-like funders); 0xfb8859fd is operator_linked (funded by a payTo sink). x402scan 30d $1,364 / 342 buyers (was $1,414 / 338).",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -1782,6 +2037,66 @@
     "meets_literal": false,
     "meets_after_shared_funder_adjustment": false,
     "note": "99.9% operator_linked (seller-funded buyers)."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x9fb365e4e9385e2a39febad70368267e6f571d9a",
+    "name": "OneShot Agent API",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-03T23:05:23.000000Z",
+     "to": "2026-10-04T13:44:11.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 10.99,
+    "distinct_buyers": 3,
+    "top1_share": 0.9099,
+    "top5_share": 1.0,
+    "median_payment": 0.002,
+    "top5": [
+     {
+      "address": "0xbd623cd6c257636eaae67620184ebdbaa29abd34",
+      "usd": 10.0,
+      "run4_class": null
+     },
+     {
+      "address": "0x4c1b034a2264863b6c87130793f818f7f5484261",
+      "usd": 0.658,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x8000dce4a82e68053326c1f2853d00081084efeb",
+      "usd": 0.332,
+      "run4_class": "operator_linked"
+     }
+    ],
+    "top5_known_from_run4": 2,
+    "new_top5": [
+     {
+      "address": "0xbd623cd6c257636eaae67620184ebdbaa29abd34",
+      "sample_usd": 10.0,
+      "sample_payments": 1,
+      "hop1_funder": [
+       {
+        "address": "0x8000dce4a82e68053326c1f2853d00081084efeb",
+        "usdc": 30.0
+       }
+      ],
+      "class": "operator_linked",
+      "class_reason": "Circular: hop-1 funder 0x8000dce4 (30 USDC) is a OneShot payTo revenue sink (received 1,500 USDC from the payTo in run 4) and a run-4 operator_linked buyer.",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 338.18,
+     "buyers": 54,
+     "tx_count": 41221,
+     "latest_block_timestamp": "2026-10-04T10:30:19.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Still 3 buyers; sample USD jumped to $10.99 (from $0.88) because one new buyer 0xbd623cd6 paid 10.0 USDC, and it is operator_linked (funded by a payTo sink). All sampled USD is now operator_linked. x402scan 30d $338 / 54 (was $349 / 54).",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -2263,6 +2578,76 @@
     "meets_literal": false,
     "meets_after_shared_funder_adjustment": false,
     "note": "30-day total $158 < $1,000."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x07f067959297767c887dbfa3c72379c66e82a045",
+    "name": "StableStudio",
+    "route": "blockscout token-transfers USDC, filter=to, latest 4 pages",
+    "sample_window": {
+     "from": "2026-09-18T18:11:27.000000Z",
+     "to": "2026-10-04T03:09:33.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 74.51,
+    "distinct_buyers": 41,
+    "top1_share": 0.5376,
+    "top5_share": 0.7563,
+    "median_payment": 0.16,
+    "top5": [
+     {
+      "address": "0x90e71f8793602064237fdb3d0deacf27b70ea9b6",
+      "usd": 40.06,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0xe2d8dc842fc5037c99c332bd57baaba3649f66c2",
+      "usd": 5.61,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x9b1dbcc3fa240902a86ccd56d69c0338f2156eec",
+      "usd": 4.73,
+      "run4_class": null
+     },
+     {
+      "address": "0xf2d8a6e37ff55d77956f6d1b626452fc00953dce",
+      "usd": 3.2,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x661eb57e38827451c24e6aae9a7554e999b12c11",
+      "usd": 2.75,
+      "run4_class": "unlinked"
+     }
+    ],
+    "top5_known_from_run4": 4,
+    "new_top5": [
+     {
+      "address": "0x9b1dbcc3fa240902a86ccd56d69c0338f2156eec",
+      "sample_usd": 4.73,
+      "sample_payments": 11,
+      "hop1_funder": [
+       {
+        "address": "0x589a2314a2e05f45e40c4823da3ba58d421db3d8",
+        "usdc": 5.0
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Single inbound: 5 USDC from 0x589a2314 (not seen in run 4). No link to the payTo found at hop 1.",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 155.98,
+     "buyers": 71,
+     "tx_count": 565,
+     "latest_block_timestamp": "2026-10-04T03:09:33.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Stable: 41 buyers (43), top-1 0.54 (0.55), same top buyer 0x90e71f87; one new top-5 buyer (unlinked). x402scan 30d $156 / 71 (was $158 / 73).",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -2703,6 +3088,60 @@
     "meets_literal": false,
     "meets_after_shared_funder_adjustment": false,
     "note": "30-day total $138 < $1,000; mostly circular."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x26572ff23c6c52bfb1a69cb0c9114a8be443b422",
+    "name": "Frantic (gofrantic.com; payTo shared with ausca.com and api.sourcey.com)",
+    "route": "blockscout token-transfers USDC, filter=to, latest 4 pages",
+    "sample_window": {
+     "from": "2026-09-19T18:15:25.000000Z",
+     "to": "2026-10-04T10:06:39.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 35.85,
+    "distinct_buyers": 29,
+    "top1_share": 0.6374,
+    "top5_share": 0.7713,
+    "median_payment": 0.05,
+    "top5": [
+     {
+      "address": "0xd6d6c859ac0cf89d082b2e5aa2e21ee2169f932c",
+      "usd": 22.85,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x89ef409b6f90d087377e66d4e2560c5f8f4c2dd3",
+      "usd": 1.9,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0xb5199dda15820a951145286ef24ffcdf888951c2",
+      "usd": 1.1,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x10efed37fbb1e72b35158fcd0bf84a29e24c55bf",
+      "usd": 0.95,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x335aa55c12b260e604d93cb0b0895bb13a4e93e3",
+      "usd": 0.85,
+      "run4_class": "unlinked"
+     }
+    ],
+    "top5_known_from_run4": 5,
+    "new_top5": [],
+    "x402scan_30d": {
+     "usd": 139.05,
+     "buyers": 40,
+     "tx_count": 337,
+     "latest_block_timestamp": "2026-10-04T10:06:39.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Broader: 29 buyers (19) over 15 days; top-1 still operator_linked 0xd6d6c859 at 0.64 (0.66); 4 of the top 5 are run-4 operator_linked buyers. x402scan 30d $139 / 40 (was $138 / 40).",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -3181,6 +3620,165 @@
     "meets_literal": true,
     "meets_after_shared_funder_adjustment": null,
     "note": "Literal: indicative ~$5k unlinked from many wallets. Adjusted: 6 of 8 traced buyers (top 5) share one funder, so the 4,644-buyer count is not 4,644 payers. Unresolved whether the funder is a common owner or a withdrawal wallet. Work product partly ('entertainment' verdict cards)."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+    "name": "AX1 q-verdict (ax1.vc)",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-04T13:48:25.000000Z",
+     "to": "2026-10-04T13:52:17.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 4.0,
+    "distinct_buyers": 19,
+    "top1_share": 0.1,
+    "top5_share": 0.395,
+    "median_payment": 0.02,
+    "top5": [
+     {
+      "address": "0x69cf1ff1cdcec71c7f0a02372a85cb5a2c29900a",
+      "usd": 0.4,
+      "run4_class": null
+     },
+     {
+      "address": "0x06470a66b4dc582822c36c32201f64984c795876",
+      "usd": 0.32,
+      "run4_class": null
+     },
+     {
+      "address": "0x197efee376a7157a4557917836d07a2860d9ab5b",
+      "usd": 0.3,
+      "run4_class": null
+     },
+     {
+      "address": "0x25a193c5fdef7ac0db471df2503e335a697b6d7f",
+      "usd": 0.28,
+      "run4_class": null
+     },
+     {
+      "address": "0xa9a38cd5fbac7de316fbed81553854824d52ad6e",
+      "usd": 0.28,
+      "run4_class": null
+     }
+    ],
+    "top5_known_from_run4": 0,
+    "new_top5": [
+     {
+      "address": "0x69cf1ff1cdcec71c7f0a02372a85cb5a2c29900a",
+      "sample_usd": 0.4,
+      "sample_payments": 20,
+      "hop1_funder": [
+       {
+        "address": "0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+        "usdc": 180.1
+       },
+       {
+        "address": "0x694c0e92ae45c809c8a898f87d34bd47e156f471",
+        "usdc": 35.0
+       },
+       {
+        "address": "0x4e3ae00e8323558fa5cac04b152238924aa31b60",
+        "usdc": 25.64
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funder 0x3dd6f35c (180.1 USDC), the untagged EOA that funded 6 of 8 run-4 AX1 buyers; same funder cluster. No link to the payTo found.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x06470a66b4dc582822c36c32201f64984c795876",
+      "sample_usd": 0.32,
+      "sample_payments": 16,
+      "hop1_funder": [
+       {
+        "address": "0xa2068a5f453543ac1229838110de48388b1f8dbd",
+        "usdc": 3.2
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Single funder 0xa2068a5f (3.2 USDC, 2 transfers), not seen in run 4. No link to the payTo found at hop 1.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x197efee376a7157a4557917836d07a2860d9ab5b",
+      "sample_usd": 0.3,
+      "sample_payments": 15,
+      "hop1_funder": [
+       {
+        "address": "0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+        "usdc": 12.1
+       },
+       {
+        "address": "0x50589857deba46ce37b64c0fe6b3e21e0e4f7a25",
+        "usdc": 0.4
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funder 0x3dd6f35c (12.1 USDC), the AX1 fleet funder; same funder cluster.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x25a193c5fdef7ac0db471df2503e335a697b6d7f",
+      "sample_usd": 0.28,
+      "sample_payments": 14,
+      "hop1_funder": [
+       {
+        "address": "0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+        "usdc": 90.1
+       },
+       {
+        "address": "0x4450db99260ec3140b4690f1c6bdd64d5d9644a9",
+        "usdc": 58.9929
+       },
+       {
+        "address": "0x445d2ff43b54c0fecc55ca07e6787b2901b744a9",
+        "usdc": 0.0001
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funders 0x3dd6f35c (90.1 USDC; AX1 fleet funder) and 0x4450db99 (58.99). Same funder cluster as other AX1 buyers.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0xa9a38cd5fbac7de316fbed81553854824d52ad6e",
+      "sample_usd": 0.28,
+      "sample_payments": 14,
+      "hop1_funder": [
+       {
+        "address": "0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+        "usdc": 27.1
+       },
+       {
+        "address": "0xd15fe25ed0dba12fe05e7029c88b10c25e8880e3",
+        "usdc": 0.6
+       },
+       {
+        "address": "0xf566397e2fb6ae0f7a350c6540a88dd0d1717320",
+        "usdc": 0.4
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Hop-1 funder 0x3dd6f35c (27.1 USDC), the AX1 fleet funder; same funder cluster.",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 6532.04,
+     "buyers": 4748,
+     "tx_count": 326602,
+     "latest_block_timestamp": "2026-10-04T12:55:31.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Flatter on paper only: 200 payments in 4 minutes ($4.00), 19 buyers, top-1 0.10 (0.31), top-5 0.40 (0.79), but 4 of the 5 new top buyers are funded by the same untagged EOA 0x3dd6f35c that funded 6 of 8 run-4 buyers, so the top 5 behave as about 2 payers under the shared-funder rule. x402scan 30d $6,532 / 4,748 buyers (was $6,116 / 4,644): the buyer count keeps rising with fresh wallets.",
+    "shared_funder_note": "Top-5 buyers funded by 0x3dd6f35c: 0x69cf1ff1, 0x197efee3, 0x25a193c5, 0xa9a38cd5 (4 of 5); 0x06470a66 funded by 0xa2068a5f.",
+    "as_of": "2026-10-04T13:55Z"
    }
   },
   {
@@ -3652,6 +4250,91 @@
     "meets_literal": false,
     "meets_after_shared_funder_adjustment": false,
     "note": "30-day total $139 < $1,000."
+   },
+   "refresh_2026_10_04": {
+    "payTo": "0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0",
+    "name": "Agent402 (agent402.tools)",
+    "route": "blockscout token-transfers USDC, filter=to, latest 4 pages",
+    "sample_window": {
+     "from": "2026-10-03T12:35:13.000000Z",
+     "to": "2026-10-04T13:00:15.000000Z",
+     "payments": 200
+    },
+    "sample_usd": 2.3195,
+    "distinct_buyers": 22,
+    "top1_share": 0.3613,
+    "top5_share": 0.8814,
+    "median_payment": 0.002,
+    "top5": [
+     {
+      "address": "0x661eec57b90031e0a145cca371dbb18ef3835b43",
+      "usd": 0.838,
+      "run4_class": null
+     },
+     {
+      "address": "0x902dcf34e53695bdea2ffb354b1a2e58bd598256",
+      "usd": 0.7225,
+      "run4_class": "operator_linked"
+     },
+     {
+      "address": "0x04ce224c15d125624bf099824d092839e48156bf",
+      "usd": 0.24,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x7be382509dd88d3758f0dc9f953ee34e31d411b7",
+      "usd": 0.144,
+      "run4_class": "unlinked"
+     },
+     {
+      "address": "0x728de2a85cb1372d713e3e7b71b5d068fecdc01d",
+      "usd": 0.1,
+      "run4_class": null
+     }
+    ],
+    "top5_known_from_run4": 3,
+    "new_top5": [
+     {
+      "address": "0x661eec57b90031e0a145cca371dbb18ef3835b43",
+      "sample_usd": 0.838,
+      "sample_payments": 5,
+      "hop1_funder": [
+       {
+        "address": "0x9a34dbb954bd348dc84c093a3abc3e0198e81199",
+        "usdc": 3.0
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Single inbound: 3 USDC from 0x9a34dbb9 (not seen in run 4). No link to the payTo found at hop 1.",
+      "funding_traced": true,
+      "funding_depth": 1
+     },
+     {
+      "address": "0x728de2a85cb1372d713e3e7b71b5d068fecdc01d",
+      "sample_usd": 0.1,
+      "sample_payments": 5,
+      "hop1_funder": [
+       {
+        "address": "0x4b5c71082d027d16d2a146465d66f9eec11634f6",
+        "usdc": 9.0
+       }
+      ],
+      "class": "unlinked",
+      "class_reason": "Single inbound: 9 USDC from 0x4b5c7108 (shared funder seen across StableEnrich buyers; probably bridge/exchange infrastructure, unverified).",
+      "funding_traced": true,
+      "funding_depth": 1
+     }
+    ],
+    "x402scan_30d": {
+     "usd": 138.34,
+     "buyers": 255,
+     "tx_count": 7651,
+     "latest_block_timestamp": "2026-10-04T12:35:45.000Z",
+     "as_of": "2026-10-04T13:50Z",
+     "route": "x402scan public.sellers.all.list timeframe 30, page 0 (400 sellers)"
+    },
+    "change_vs_run4": "Less concentrated: top-1 0.36 (0.81), 22 buyers (18); sample USD $2.32 ($6.59) over 24 h; run-4 operator_linked buyer 0x902dcf34 is still #2. x402scan 30d $138 / 255 (was $139 / 251).",
+    "as_of": "2026-10-04T13:55Z"
    }
   }
  ],
@@ -4090,5 +4773,266 @@
    "0x4b5c71082d027d16d2a146465d66f9eec11634f6": "unverified contract holding ~502 ETH; funds traced buyers of 3 of the 8 sellers. Probably bridge or exchange infrastructure. Unverified.",
    "note": "Buyers funded only through these wallets stay unlinked; a shared funder of this kind is not treated as a common owner."
   }
- }
+ },
+ "refresh_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-04-agent-communities.html",
+ "refresh_2026_10_04": {
+  "as_of": "2026-10-04T13:55Z",
+  "run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
+  "method": "Same as run 4: latest 4 pages (<=200 transfers) of inbound USDC to each payTo on Base, dated >= 2026-09-04; buyer = token-transfer from (EIP-3009 authoriser). Hop 1 (latest 50 inbound USDC, top 3 senders) traced only for new top-5 buyers not classified in run 4, 10 prioritised by sample USD, then the remaining 4 once calls allowed (14 in total). Circular = hop-1 funder is the payTo or a payTo revenue sink recorded in run 4. Shares are sample shares (hours to days), not 30-day shares.",
+  "ax1_funder_0x3dd6f35c": {
+   "calls": 3,
+   "observed": {
+    "address_record": "EOA, no name, no ENS, no public tags, ETH balance ~0.208",
+    "inbound_usdc_latest_50": "2026-09-16..09-30: three real deposits (1,000 + 3,000 + 3,000 = 7,000 USDC) all from EIP-7702 wallet 0xf79b27ed; the other 47 inbound transfers are dust (<= 0.0001 USDC) from 46 distinct addresses (address-poisoning-like).",
+    "outbound_usdc_latest_50": "2026-09-29..10-03: 50 transfers to 50 distinct addresses, one each, in round amounts (0.1 or 6.0 USDC), 276.4 USDC total."
+   },
+   "reading": "Not exchange-like on this sample: an exchange hot wallet would show many real inbound deposits from many senders; here all real inbound comes from one wallet and outbound is a uniform fan-out to fresh addresses. This is consistent with one funder seeding a wallet fleet, but it does not prove common ownership of the AX1 buyers; no conclusion beyond the pattern.",
+   "sources": [
+    "https://base.blockscout.com/api/v2/addresses/0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+    "https://base.blockscout.com/api/v2/addresses/0x3dd6f35c88f3ae22feccbde524caf9874aab1af7/token-transfers?type=ERC-20&token=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&filter=to",
+    "https://base.blockscout.com/api/v2/addresses/0x3dd6f35c88f3ae22feccbde524caf9874aab1af7/token-transfers?type=ERC-20&token=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&filter=from"
+   ],
+   "raw": {
+    "to": {
+     "n": 50,
+     "span": [
+      "2026-09-16T18:23:01.000000Z",
+      "2026-09-30T14:36:33.000000Z"
+     ],
+     "distinct_counterparties": 46,
+     "usd": 7000.0,
+     "top": [
+      [
+       "0xf79b27ed5b97bc8b11b1a6f4908aa552b8f04078",
+       3,
+       7000.0
+      ],
+      [
+       "0x6a4bae86669b03a18b508288d236e557938976f9",
+       3,
+       0.0
+      ],
+      [
+       "0x0c01c10b50807849535f224932c678184e0eb964",
+       1,
+       0.0
+      ],
+      [
+       "0xce4ee161c22495b80b7e4ff8431b90315dbbf3c4",
+       1,
+       0.0
+      ],
+      [
+       "0x9afaa6d7cc57ec8c0d938e82c748a100c65e6d84",
+       1,
+       0.0
+      ],
+      [
+       "0xbe8d1c2d4c01978538a34aa06e18fcf91db441b0",
+       1,
+       0.0
+      ]
+     ],
+     "amounts_first15": [
+      1000.0,
+      3000.0,
+      3000.0,
+      9e-05,
+      6e-05,
+      9e-05,
+      9e-05,
+      9e-05,
+      9e-05,
+      1.5e-05,
+      1.5e-05,
+      9e-05,
+      9e-05,
+      1.5e-05,
+      1.5e-05
+     ]
+    },
+    "from": {
+     "n": 50,
+     "span": [
+      "2026-09-29T18:26:31.000000Z",
+      "2026-10-03T00:00:45.000000Z"
+     ],
+     "distinct_counterparties": 50,
+     "usd": 276.4,
+     "top": [
+      [
+       "0x56f11d4f82f49b8670f15addea13c9ddb93be9e7",
+       1,
+       0.1
+      ],
+      [
+       "0xe1a368f8c2e4a5a7923950105e7e3a247ff85afa",
+       1,
+       0.1
+      ],
+      [
+       "0x19794d12c72080f404c2750fd1e5bebe6265bbee",
+       1,
+       0.1
+      ],
+      [
+       "0xa1b98394fd42d6c59ee6ed3788b1db4974375995",
+       1,
+       0.1
+      ],
+      [
+       "0xf0a251e3e4c8c1f96227972922f57865fcc9c3eb",
+       1,
+       6.0
+      ],
+      [
+       "0x7d82f872ee726cd61867b9d7af2a231a43357df9",
+       1,
+       6.0
+      ]
+     ],
+     "amounts_first15": [
+      0.1,
+      0.1,
+      0.1,
+      0.1,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0,
+      6.0
+     ]
+    }
+   }
+  },
+  "not_done": [
+   "Hop 2 not traced for the new ACP payers or the new x402 top-5 buyers.",
+   "Hop-1 trace cap of 10 exceeded: 14 new top-5 buyers traced (calls allowed); disclosed."
+  ],
+  "source": "https://shaduf.ai/p/agentic-freelance/assets/data/x402_buyers.json",
+  "summary": [
+   {
+    "name": "dTelecom x402 Gateway (STT/TTS/WebRTC)",
+    "distinct_buyers": 23,
+    "distinct_buyers_run4": 22,
+    "top1_share": 0.1007,
+    "top5_share": 0.3871,
+    "top5_known_from_run4": 3,
+    "new_top5_traced": 2,
+    "x402scan_30d_usd": 35830.7,
+    "x402scan_30d_buyers": 26
+   },
+   {
+    "name": "Cluster Protocol",
+    "distinct_buyers": 175,
+    "distinct_buyers_run4": 175,
+    "top1_share": 0.137,
+    "top5_share": 0.5207,
+    "top5_known_from_run4": 5,
+    "new_top5_traced": 0,
+    "x402scan_30d_usd": 54761.29,
+    "x402scan_30d_buyers": 722
+   },
+   {
+    "name": "StableEnrich",
+    "distinct_buyers": 10,
+    "distinct_buyers_run4": 11,
+    "top1_share": 0.8805,
+    "top5_share": 0.992,
+    "top5_known_from_run4": 2,
+    "new_top5_traced": 3,
+    "x402scan_30d_usd": 1363.75,
+    "x402scan_30d_buyers": 342
+   },
+   {
+    "name": "OneShot Agent API",
+    "distinct_buyers": 3,
+    "distinct_buyers_run4": 3,
+    "top1_share": 0.9099,
+    "top5_share": 1.0,
+    "top5_known_from_run4": 2,
+    "new_top5_traced": 1,
+    "x402scan_30d_usd": 338.18,
+    "x402scan_30d_buyers": 54
+   },
+   {
+    "name": "StableStudio",
+    "distinct_buyers": 41,
+    "distinct_buyers_run4": 43,
+    "top1_share": 0.5376,
+    "top5_share": 0.7563,
+    "top5_known_from_run4": 4,
+    "new_top5_traced": 1,
+    "x402scan_30d_usd": 155.98,
+    "x402scan_30d_buyers": 71
+   },
+   {
+    "name": "Frantic (gofrantic.com; payTo shared with ausca.com and api.sourcey.com)",
+    "distinct_buyers": 29,
+    "distinct_buyers_run4": 19,
+    "top1_share": 0.6374,
+    "top5_share": 0.7713,
+    "top5_known_from_run4": 5,
+    "new_top5_traced": 0,
+    "x402scan_30d_usd": 139.05,
+    "x402scan_30d_buyers": 40
+   },
+   {
+    "name": "AX1 q-verdict (ax1.vc)",
+    "distinct_buyers": 19,
+    "distinct_buyers_run4": 23,
+    "top1_share": 0.1,
+    "top5_share": 0.395,
+    "top5_known_from_run4": 0,
+    "new_top5_traced": 5,
+    "x402scan_30d_usd": 6532.04,
+    "x402scan_30d_buyers": 4748
+   },
+   {
+    "name": "Agent402 (agent402.tools)",
+    "distinct_buyers": 22,
+    "distinct_buyers_run4": 18,
+    "top1_share": 0.3613,
+    "top5_share": 0.8814,
+    "top5_known_from_run4": 3,
+    "new_top5_traced": 2,
+    "x402scan_30d_usd": 138.34,
+    "x402scan_30d_buyers": 255
+   }
+  ]
+ },
+ "changes_since_previous": [
+  {
+   "seller": "Cluster Protocol",
+   "change": "No inbound USDC observed since 2026-10-02T12:00:51Z (about 50 h before the check); x402scan's latest_block_timestamp and 30-day totals are unchanged. Observed, not concluded: it may be a pause, a payTo change or an indexing gap."
+  },
+  {
+   "seller": "StableEnrich",
+   "change": "More concentrated (top-1 0.88); new buyer 0xfb8859fd operator_linked (its funder received 1,000 USDC from the payTo)."
+  },
+  {
+   "seller": "OneShot Agent API",
+   "change": "New buyer 0xbd623cd6 operator_linked (funded by payTo sink 0x8000dce4); all sampled USD is now operator_linked."
+  },
+  {
+   "seller": "AX1 q-verdict",
+   "change": "Flatter on paper (top-5 0.40) but 4 of the 5 new top buyers are funded by 0x3dd6f35c; that funder's real inbound is 7,000 USDC from one EIP-7702 wallet and its outbound is a uniform fan-out to 50 fresh addresses: not exchange-like; common ownership not proven."
+  },
+  {
+   "seller": "dTelecom",
+   "change": "Unchanged; the 2 new top-5 buyers share the run-4 fleet funder 0x6fa5b6d9."
+  },
+  {
+   "seller": "all",
+   "change": "14 new top-5 buyers traced at hop 1 (plan cap 10; exceeded because calls allowed, disclosed). No agent-work seller with at least 5 unlinked or identified buyers confirmed."
+  }
+ ],
+ "previous_run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
+ "run_id_refresh": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7"
 }

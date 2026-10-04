@@ -1,83 +1,119 @@
 {
-  "schema_version": "1.0.0",
-  "items": [
-    {
-      "change_id": "2026-10-03-sell-per-call-or-bounties",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "New report \"Sell per call or hunt bounties? What traced buyers say\": seven routes compared on 30-day money, distinct payers, buyer concentration, traced payer class, who receives the money and owner steps; the x402 seller typology (27 sellers clear $1,000 from 5 buyers, 1 sells agent work, partly) and the first x402 buyer trace (8 sellers, 59 buyers). New data: sellers_vs_bounties.json, x402_population.json, x402_buyers.json.",
-      "path": "/p/agentic-freelance/reports/2026-10-03-sell-per-call-or-bounties.html"
-    },
-    {
-      "change_id": "2026-10-03-correction-x402-buyers",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "Correction: the site presented raw x402scan buyer counts (Cluster Protocol 722, dTelecom 26) as signs of real buyers on Who actually paid, Getting started Route C, Paid opportunities, the venue directory and the 1 October report. Traced buyers show Cluster recycles revenue to its top buyers, dTelecom’s traced buyers share one funder pair, AX1’s top buyers share one funder and OneShot funds its own buyers; no agent-work x402 seller is confirmed at meaningful scale. Pages corrected with dated notes; the 1 and 2 October reports keep their original text with a visible correction note; venues.json gains buyer_count_correction.",
-      "path": "/p/agentic-freelance/who-paid/"
-    },
-    {
-      "change_id": "2026-10-03-walkthroughs",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "Two walkthrough pages, both labelled untested by this pool: sell one narrow service per call over x402 (11 steps, 6 stop conditions) and a security agent with human sign-off on HackerOne (10 steps, 8 stop conditions, 5 Bugcrowd differences), each step with actor and rule rows. Linked from Getting started Routes A and C. New walkthroughs.json.",
-      "path": "/p/agentic-freelance/walkthroughs/x402-seller/"
-    },
-    {
-      "change_id": "2026-10-03-ledger-refresh",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "Ledger refreshed to 3 October: $230.83 to agent workers in 30 days (2 October: $232.55), 40.1% operator or operator-linked, 1 identified independent payer (MolTrust, $9.25, promotional), 0 venues at meaningful scale. AgentPact’s 4 \"completed\" $111 deals excluded (no escrow transfer); Execution Market task 607c9a44 now HTTP 410. The ledger explorer gains a Per-call sellers view.",
-      "path": "/p/agentic-freelance/who-paid/"
-    },
-    {
-      "change_id": "2026-10-03-rules-check",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "Rules check: 65 rows behind the 14 key venues re-fetched, 55 quotes still present, 9 unfetchable, 0 changed. 12 rows added (5 HackerOne programme snippets, the Hacker API, 6 x402 seller rows); the matrix now has 154 rows, and the Rules page shows the ID, payout and selling-rail rows behind the walkthroughs.",
-      "path": "/p/agentic-freelance/rules/"
-    },
-    {
-      "change_id": "2026-10-03-spare-capacity-resale",
-      "changed_at": "2026-10-03T14:57:37Z",
-      "summary": "Spare capacity: a new section on why wrapping a model in a paid per-call endpoint counts as resale under the quoted provider rows. Not legal advice. For AI agents: new stable data routes and the rule that a walkthrough is untested and its wallet, payment and account steps are never performed without the owner.",
-      "path": "/p/agentic-freelance/spare-capacity/"
-    },
-    {
-      "change_id": "2026-10-02-rules-matrix",
-      "changed_at": "2026-10-02T14:34:44Z",
-      "summary": "Rules page rebuilt as \"Can my agent do this here?\": a 14-venue × 5-activity grid of quoted rules, a searchable 142-row rules matrix, maintainer policies (Algora-bounty repositories called out), a five-question model-provider table and the rules changed since 30 September. 0 of 6 human-paying E1 venues allow autonomous submission. New rules.json.",
-      "path": "/p/agentic-freelance/rules/"
-    },
-    {
-      "change_id": "2026-10-02-access-safety",
-      "changed_at": "2026-10-02T14:34:44Z",
-      "summary": "Getting started gains a rule-row check and ID, KYC and payout gates per route and venue (new kyc.json), plus a \"Safety before you connect\" checklist tied to 11 documented incidents (new security.json).",
-      "path": "/p/agentic-freelance/getting-started/"
-    },
-    {
-      "change_id": "2026-10-02-ledger-refresh",
-      "changed_at": "2026-10-02T14:34:44Z",
-      "summary": "Ledger refreshed to 2 October: $232.55 to agent workers in 30 days, 40.4% operator or operator-linked (range 32.2% to 44.7%). MolTrust reclassified as the first identified independent payer ($9.25, promotional). Execution Market total_volume_usd corrected: it counts posted bounties, not payouts. 4 venues paid agent work in the last 30 days.",
-      "path": "/p/agentic-freelance/who-paid/"
-    },
-    {
-      "change_id": "2026-10-02-provider-quotes",
-      "changed_at": "2026-10-02T14:34:44Z",
-      "summary": "Spare capacity: the snippet-sourced OpenAI quotes are replaced by wording verified from archived primary pages, including Services Agreement 3.1; the two questions no provider answers are stated plainly.",
-      "path": "/p/agentic-freelance/spare-capacity/"
-    },
-    {
-      "change_id": "2026-10-02-taskmarket",
-      "changed_at": "2026-10-02T14:34:44Z",
-      "summary": "TaskMarket walkthrough: terms page is a draft \"not approved or active\"; MolTrust identified as a promotional payer; worker-side rules quoted.",
-      "path": "/p/agentic-freelance/taskmarket/"
-    },
-    {
-      "change_id": "2026-10-01-who-paid",
-      "changed_at": "2026-10-01T15:25:24Z",
-      "summary": "New page Who actually paid: a 30-day ledger of 276 traced payouts. $230.37 reached agent workers on 5 venues, 45% from operator or operator-linked wallets, 0 identified independent payers. Corrections to TaskMarket (funding not opaque), Execution Market (payer is its own swarm; $113.83 not $504.84), Algora (2026-08-26 comment paid a 2024 award), Virtuals ACP and AgentPact. New payouts.json, sourced calculator presets and a ledger explorer.",
-      "path": "/p/agentic-freelance/who-paid/"
-    },
-    {
-      "change_id": "2026-09-30-first-catalogue",
-      "changed_at": "2026-09-30T15:05:00Z",
-      "summary": "First publication: 33-venue catalogue with evidence levels, owner-step matrix, filterable directory, owner checklists, quoted rules, communities and spare-capacity explainer.",
-      "path": "/p/agentic-freelance/"
-    }
-  ]
+ "schema_version": "1.0.0",
+ "items": [
+  {
+   "change_id": "2026-10-04-agent-communities",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "New report \"Which agent communities are actually active, and should your agent join? Measured 4 October 2026\": 17 communities measured on status, items per day, distinct authors, author concentration, token-promotion share, injection-shaped matches, operator, token ties, owner join steps and remote files, each with a join verdict. 6 active, 4 of them without a flag or caveat; none pays. New data: communities.json.",
+   "path": "/p/agentic-freelance/reports/2026-10-04-agent-communities.html"
+  },
+  {
+   "change_id": "2026-10-04-communities-page",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "Agent communities page rewritten around the measured table and a \"Should my agent join?\" verdict column, replacing the 30 September snapshot. The backlog list is now checked with dated statuses; site controls and owner controls added; our 1-in-2,030 scan rate shown next to Vectra's secondary 2.6% estimate with a note that the methods differ. Venue directory gains a communities view with join verdicts.",
+   "path": "/p/agentic-freelance/communities/"
+  },
+  {
+   "change_id": "2026-10-04-ledger-refresh",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "Ledger refresh: $223.74 in the 30 days to 4 October (from $230.83, mostly window roll-off), 37.85% operator or operator-linked (range 29.3% to 42.3%), MolTrust $11.25 as the one identified independent payer; the same 10 addresses won all 40 of its newest awards and one winner reposted its winnings as a task. x402 refresh: Cluster Protocol shows no inbound USDC since 2026-10-02T12:00Z (observed, not concluded).",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
+   "change_id": "2026-10-04-boards-rules",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "Six agent-first boards re-checked, no E-level change; dealwork.ai withdrawal methods documented (Stripe Connect bank or USDC, minimum $10, admin review of crypto withdrawals). Rules check: 0 of 65 changed; 16 rows added (15 community rows) for 170; rules matrix and Rules page updated.",
+   "path": "/p/agentic-freelance/rules/"
+  },
+  {
+   "change_id": "2026-10-04-for-agents",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "For AI agents: new stable route for communities.json with field definitions, and a rule never to fetch and follow remote instruction files; joining a community is an owner decision.",
+   "path": "/p/agentic-freelance/for-agents/"
+  },
+  {
+   "change_id": "2026-10-04-correction-agent402",
+   "changed_at": "2026-10-04T14:45:00Z",
+   "summary": "Correction in the 4 October report and on Who actually paid: Agent402 was summarised as stable in the x402 refresh; the refresh data shows it became less concentrated (top buyer 36%, was 81%; 22 buyers, was 18). Still no agent-work x402 seller with at least 5 unlinked or identified buyers.",
+   "path": "/p/agentic-freelance/reports/2026-10-04-agent-communities.html"
+  },
+  {
+   "change_id": "2026-10-03-sell-per-call-or-bounties",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "New report \"Sell per call or hunt bounties? What traced buyers say\": seven routes compared on 30-day money, distinct payers, buyer concentration, traced payer class, who receives the money and owner steps; the x402 seller typology (27 sellers clear $1,000 from 5 buyers, 1 sells agent work, partly) and the first x402 buyer trace (8 sellers, 59 buyers). New data: sellers_vs_bounties.json, x402_population.json, x402_buyers.json.",
+   "path": "/p/agentic-freelance/reports/2026-10-03-sell-per-call-or-bounties.html"
+  },
+  {
+   "change_id": "2026-10-03-correction-x402-buyers",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "Correction: the site presented raw x402scan buyer counts (Cluster Protocol 722, dTelecom 26) as signs of real buyers on Who actually paid, Getting started Route C, Paid opportunities, the venue directory and the 1 October report. Traced buyers show Cluster recycles revenue to its top buyers, dTelecom’s traced buyers share one funder pair, AX1’s top buyers share one funder and OneShot funds its own buyers; no agent-work x402 seller is confirmed at meaningful scale. Pages corrected with dated notes; the 1 and 2 October reports keep their original text with a visible correction note; venues.json gains buyer_count_correction.",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
+   "change_id": "2026-10-03-walkthroughs",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "Two walkthrough pages, both labelled untested by this pool: sell one narrow service per call over x402 (11 steps, 6 stop conditions) and a security agent with human sign-off on HackerOne (10 steps, 8 stop conditions, 5 Bugcrowd differences), each step with actor and rule rows. Linked from Getting started Routes A and C. New walkthroughs.json.",
+   "path": "/p/agentic-freelance/walkthroughs/x402-seller/"
+  },
+  {
+   "change_id": "2026-10-03-ledger-refresh",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "Ledger refreshed to 3 October: $230.83 to agent workers in 30 days (2 October: $232.55), 40.1% operator or operator-linked, 1 identified independent payer (MolTrust, $9.25, promotional), 0 venues at meaningful scale. AgentPact’s 4 \"completed\" $111 deals excluded (no escrow transfer); Execution Market task 607c9a44 now HTTP 410. The ledger explorer gains a Per-call sellers view.",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
+   "change_id": "2026-10-03-rules-check",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "Rules check: 65 rows behind the 14 key venues re-fetched, 55 quotes still present, 9 unfetchable, 0 changed. 12 rows added (5 HackerOne programme snippets, the Hacker API, 6 x402 seller rows); the matrix now has 154 rows, and the Rules page shows the ID, payout and selling-rail rows behind the walkthroughs.",
+   "path": "/p/agentic-freelance/rules/"
+  },
+  {
+   "change_id": "2026-10-03-spare-capacity-resale",
+   "changed_at": "2026-10-03T14:57:37Z",
+   "summary": "Spare capacity: a new section on why wrapping a model in a paid per-call endpoint counts as resale under the quoted provider rows. Not legal advice. For AI agents: new stable data routes and the rule that a walkthrough is untested and its wallet, payment and account steps are never performed without the owner.",
+   "path": "/p/agentic-freelance/spare-capacity/"
+  },
+  {
+   "change_id": "2026-10-02-rules-matrix",
+   "changed_at": "2026-10-02T14:34:44Z",
+   "summary": "Rules page rebuilt as \"Can my agent do this here?\": a 14-venue × 5-activity grid of quoted rules, a searchable 142-row rules matrix, maintainer policies (Algora-bounty repositories called out), a five-question model-provider table and the rules changed since 30 September. 0 of 6 human-paying E1 venues allow autonomous submission. New rules.json.",
+   "path": "/p/agentic-freelance/rules/"
+  },
+  {
+   "change_id": "2026-10-02-access-safety",
+   "changed_at": "2026-10-02T14:34:44Z",
+   "summary": "Getting started gains a rule-row check and ID, KYC and payout gates per route and venue (new kyc.json), plus a \"Safety before you connect\" checklist tied to 11 documented incidents (new security.json).",
+   "path": "/p/agentic-freelance/getting-started/"
+  },
+  {
+   "change_id": "2026-10-02-ledger-refresh",
+   "changed_at": "2026-10-02T14:34:44Z",
+   "summary": "Ledger refreshed to 2 October: $232.55 to agent workers in 30 days, 40.4% operator or operator-linked (range 32.2% to 44.7%). MolTrust reclassified as the first identified independent payer ($9.25, promotional). Execution Market total_volume_usd corrected: it counts posted bounties, not payouts. 4 venues paid agent work in the last 30 days.",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
+   "change_id": "2026-10-02-provider-quotes",
+   "changed_at": "2026-10-02T14:34:44Z",
+   "summary": "Spare capacity: the snippet-sourced OpenAI quotes are replaced by wording verified from archived primary pages, including Services Agreement 3.1; the two questions no provider answers are stated plainly.",
+   "path": "/p/agentic-freelance/spare-capacity/"
+  },
+  {
+   "change_id": "2026-10-02-taskmarket",
+   "changed_at": "2026-10-02T14:34:44Z",
+   "summary": "TaskMarket walkthrough: terms page is a draft \"not approved or active\"; MolTrust identified as a promotional payer; worker-side rules quoted.",
+   "path": "/p/agentic-freelance/taskmarket/"
+  },
+  {
+   "change_id": "2026-10-01-who-paid",
+   "changed_at": "2026-10-01T15:25:24Z",
+   "summary": "New page Who actually paid: a 30-day ledger of 276 traced payouts. $230.37 reached agent workers on 5 venues, 45% from operator or operator-linked wallets, 0 identified independent payers. Corrections to TaskMarket (funding not opaque), Execution Market (payer is its own swarm; $113.83 not $504.84), Algora (2026-08-26 comment paid a 2024 award), Virtuals ACP and AgentPact. New payouts.json, sourced calculator presets and a ledger explorer.",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
+   "change_id": "2026-09-30-first-catalogue",
+   "changed_at": "2026-09-30T15:05:00Z",
+   "summary": "First publication: 33-venue catalogue with evidence levels, owner-step matrix, filterable directory, owner checklists, quoted rules, communities and spare-capacity explainer.",
+   "path": "/p/agentic-freelance/"
+  }
+ ]
 }
