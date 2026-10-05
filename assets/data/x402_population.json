@@ -1655,6 +1655,853 @@
   {
    "date": "2026-10-04",
    "note": "Copied forward unchanged (population refresh out of scope in run 5). Per-seller x402scan readings of 2026-10-04 for the 8 traced sellers are in x402_buyers.json refresh_2026_10_04; Cluster Protocol's 30-day totals were unchanged because no sale was indexed after 2026-10-02T12:00:51Z."
+  },
+  {
+   "date": "2026-10-05",
+   "note": "Added seller_odds_2026_10_05 from run 6 run 6 (x402scan, untraced). Bar counts: >=$1,000 with >=5 buyers 27 -> 26 ($704,789 -> $679,262); AX1 $6,116 -> $7,067; seller table total 37,818 -> 38,048."
   }
- ]
+ ],
+ "seller_odds_2026_10_05": {
+  "schema": "agentic-freelance-economics/0.1#x402_seller_odds",
+  "run_id": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d",
+  "status": "complete",
+  "as_of": "2026-10-05T13:5xZ fetch; x402scan 30-day timeframe (rolling; newest latest_block_timestamp in table 2026-10-05T12:55:43.000Z)",
+  "source": {
+   "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list (timeframe 30, page_size 400, sorted total_amount desc, pages 0-5; stopped at page 5 where revenue fell below $1)",
+   "bazaar": "https://www.x402scan.com/api/trpc/public.sellers.bazaar.featured (same input, pages 0-2; page 2 empty)",
+   "route": "x402scan public tRPC, unauthenticated GET; not Blockscout"
+  },
+  "sellers_total": 38048,
+  "sellers_total_basis": "x402scan seller table total_count (distinct payTo recipients with >=1 indexed x402 payment in 30 days, all chains). Run 4 table total_count was 37,818 (stats.overall unique_sellers 38,494).",
+  "buckets": [
+   {
+    "min_usd": 0,
+    "max_usd": 1,
+    "label": "<1 (incl. 0)",
+    "sellers": 35863,
+    "share": 0.94257
+   },
+   {
+    "min_usd": 1,
+    "max_usd": 100,
+    "label": "1-100",
+    "sellers": 2016,
+    "share": 0.05299
+   },
+   {
+    "min_usd": 100,
+    "max_usd": 1000,
+    "label": "100-1,000",
+    "sellers": 128,
+    "share": 0.00336
+   },
+   {
+    "min_usd": 1000,
+    "max_usd": null,
+    "label": ">=1,000",
+    "sellers": 41,
+    "share": 0.00108
+   }
+  ],
+  "buckets_sum": 38048,
+  "share_ge_1": 0.05743,
+  "share_ge_100": 0.00444,
+  "share_ge_1000": 0.00108,
+  "share_ge_1000_ge5_buyers": 0.000683,
+  "count_ge_1": 2185,
+  "count_ge_100": 169,
+  "count_ge_1000": 41,
+  "count_ge_1000_ge5_buyers": 26,
+  "usd_ge_1000": 885958.78,
+  "usd_ge_1000_ge5_buyers": 679261.79,
+  "bazaar_registered": {
+   "n": 1305,
+   "unit": "origin group (x402scan bazaar.featured row: one or more origins and payTos)",
+   "with_any_30d_revenue": 577,
+   "rows_returned": 577,
+   "buckets": [
+    {
+     "min_usd": 0,
+     "max_usd": 1,
+     "label": "<1 (incl. 0)",
+     "sellers": 1081,
+     "share": 0.82835
+    },
+    {
+     "min_usd": 1,
+     "max_usd": 100,
+     "label": "1-100",
+     "sellers": 187,
+     "share": 0.1433
+    },
+    {
+     "min_usd": 100,
+     "max_usd": 1000,
+     "label": "100-1,000",
+     "sellers": 26,
+     "share": 0.01992
+    },
+    {
+     "min_usd": 1000,
+     "max_usd": null,
+     "label": ">=1,000",
+     "sellers": 11,
+     "share": 0.00843
+    }
+   ],
+   "share_ge_1": 0.17165,
+   "share_ge_100": 0.02835,
+   "share_ge_1000": 0.00843,
+   "ge_1000_ge5_buyers": 11,
+   "ge_1000_list": [
+    {
+     "origins": [
+      "https://laso.finance"
+     ],
+     "recipients": [
+      "3MZVk97x9SeRxbYpc3jhzRfU2fyA3emYutnqfn9kNfYX",
+      "0x3291e96b3bff7ed56e3ca8364273c5b4654b2b37"
+     ],
+     "usd_30d": 249362.62,
+     "buyers_30d": 95
+    },
+    {
+     "origins": [
+      "http://sol.blockrun.ai",
+      "https://sol.blockrun.ai"
+     ],
+     "recipients": [
+      "AQqnMFBwGZEoti85aTVRy8XYpKrho7GaMDx9ZB3CEeKA"
+     ],
+     "usd_30d": 61040.06,
+     "buyers_30d": 129
+    },
+    {
+     "origins": [
+      "https://api.clusterprotocol.ai"
+     ],
+     "recipients": [
+      "0x68396bd35874695ad86cd29410bd80a550991a2b"
+     ],
+     "usd_30d": 54761.28,
+     "buyers_30d": 722
+    },
+    {
+     "origins": [
+      "https://x402.dtelecom.org"
+     ],
+     "recipients": [
+      "0x47d3394c7234714e4b9e9b74827c12be847f9dda"
+     ],
+     "usd_30d": 35923.8,
+     "buyers_30d": 26
+    },
+    {
+     "origins": [
+      "http://blockrun.ai",
+      "https://blockrun.ai"
+     ],
+     "recipients": [
+      "0xe9030014f5dae217d0a152f02a043567b16c1abf"
+     ],
+     "usd_30d": 3739.51,
+     "buyers_30d": 379
+    },
+    {
+     "origins": [
+      "https://api.venice.ai"
+     ],
+     "recipients": [
+      "0x2670b922ef37c7df47158725c0cc407b5382293f"
+     ],
+     "usd_30d": 3067.1,
+     "buyers_30d": 44
+    },
+    {
+     "origins": [
+      "https://api.botpay.network"
+     ],
+     "recipients": [
+      "0x159be9e316bc5fac8ce05aec4eaae46e8f8a4908",
+      "d8X2MdS7QMiMFVWzYMVTeKhm1BVx75GoHskf9ws74nM"
+     ],
+     "usd_30d": 1374.53,
+     "buyers_30d": 364
+    },
+    {
+     "origins": [
+      "https://stableenrich.dev"
+     ],
+     "recipients": [
+      "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430"
+     ],
+     "usd_30d": 1307.51,
+     "buyers_30d": 347
+    },
+    {
+     "origins": [
+      "https://video.botpay.network",
+      "https://v.botpay.network",
+      "https://api.botpay.network"
+     ],
+     "recipients": [
+      "0xcc1984e79726e7a0ae2b9df2ac9e79fb4983930e"
+     ],
+     "usd_30d": 1272.0,
+     "buyers_30d": 345
+    },
+    {
+     "origins": [
+      "https://www.api-xpay.com"
+     ],
+     "recipients": [
+      "0x589a2314a2e05f45e40c4823da3ba58d421db3d8"
+     ],
+     "usd_30d": 1027.46,
+     "buyers_30d": 93
+    },
+    {
+     "origins": [
+      "https://claw402.ai"
+     ],
+     "recipients": [
+      "0xa9dd7cc9cbf0e05551332209289f04be36bc2315"
+     ],
+     "usd_30d": 1016.02,
+     "buyers_30d": 136
+    }
+   ]
+  },
+  "agent_work_sellers_ge_1000": 1,
+  "agent_work_sellers_ge_1000_list": [
+   {
+    "payTo": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+    "name": "AX1 q-verdict",
+    "usd_30d": 7066.64,
+    "buyers_30d": 4764
+   }
+  ],
+  "ge_1000_ge5_by_run4_type": {
+   "financial_commerce": {
+    "count": 2,
+    "usd": 249362.62
+   },
+   "unknown": {
+    "count": 15,
+    "usd": 260949.77
+   },
+   "model_inference_resale": {
+    "count": 4,
+    "usd": 122607.96
+   },
+   "infrastructure": {
+    "count": 2,
+    "usd": 36939.82
+   },
+   "agent_work_service": {
+    "count": 1,
+    "usd": 7066.64
+   },
+   "data_api": {
+    "count": 1,
+    "usd": 1307.51
+   },
+   "not_in_run4_ge1000_lists": {
+    "count": 1,
+    "usd": 1027.46
+   }
+  },
+  "ge_1000_group": [
+   {
+    "payTo": "3MZVk97x9SeRxbYpc3jhzRfU2fyA3emYutnqfn9kNfYX",
+    "usd_30d": 247647.4,
+    "buyers_30d": 33,
+    "tx_30d": 103,
+    "chains": [
+     "solana"
+    ],
+    "latest_block_timestamp": "2026-10-05T05:42:22.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "financial_commerce",
+    "run4_name": "Laso Finance (Solana)",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xfa02300b1a598daba1b27b2bf79f9775355dac82",
+    "usd_30d": 80000.0,
+    "buyers_30d": 1,
+    "tx_30d": 3,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-24T09:05:09.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "7xvuVbuyzfoE8jLRAbdqwjNYgqLs9pVNx9FpkXPwVDVP",
+    "usd_30d": 61612.0,
+    "buyers_30d": 54,
+    "tx_30d": 327,
+    "chains": [
+     "solana"
+    ],
+    "latest_block_timestamp": "2026-10-05T10:52:44.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "AQqnMFBwGZEoti85aTVRy8XYpKrho7GaMDx9ZB3CEeKA",
+    "usd_30d": 61040.06,
+    "buyers_30d": 129,
+    "tx_30d": 3632412,
+    "chains": [
+     "solana"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:25:27.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "model_inference_resale",
+    "run4_name": "BlockRun (Solana)",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0x68396bd35874695ad86cd29410bd80a550991a2b",
+    "usd_30d": 54761.28,
+    "buyers_30d": 722,
+    "tx_30d": 66674,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-02T12:00:51.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "model_inference_resale",
+    "run4_name": "Cluster Protocol",
+    "work_product_run4": "partly"
+   },
+   {
+    "payTo": "0xce2646d8b6ab269987f3c8823022ed4a0ce31318",
+    "usd_30d": 50001.0,
+    "buyers_30d": 1,
+    "tx_30d": 2,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-28T08:33:05.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x47d3394c7234714e4b9e9b74827c12be847f9dda",
+    "usd_30d": 35923.8,
+    "buyers_30d": 26,
+    "tx_30d": 16499,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:55:27.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "infrastructure",
+    "run4_name": "dTelecom x402 Gateway",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xffde1acbac169f822dabc3d97d6d7127dcae6003",
+    "usd_30d": 30740.0,
+    "buyers_30d": 12,
+    "tx_30d": 19,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T17:39:23.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x93862e5b2b1fa10a01772e7e9ca7cdc7deb5ca25",
+    "usd_30d": 27555.87,
+    "buyers_30d": 164,
+    "tx_30d": 1994,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-28T12:04:03.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xe55eb84c37e90dfb7304969e5c6bff02c600f748",
+    "usd_30d": 21259.65,
+    "buyers_30d": 5,
+    "tx_30d": 692,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:28:37.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xa6a90366a307080bccb859642d3378121fe8809d",
+    "usd_30d": 20988.61,
+    "buyers_30d": 5,
+    "tx_30d": 681,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T11:40:05.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x1cec447da1915f018bd74006ff6d695468b68dd4",
+    "usd_30d": 20774.37,
+    "buyers_30d": 5,
+    "tx_30d": 663,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T11:29:13.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x13db4caf175f23f1429c2df6b333350c24705192",
+    "usd_30d": 20491.44,
+    "buyers_30d": 5,
+    "tx_30d": 672,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:17:41.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x475436ef0a97286081d0fc2a762ad6296949327b",
+    "usd_30d": 20065.02,
+    "buyers_30d": 5,
+    "tx_30d": 666,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:42:13.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xfe8f511d8542f687cf70b798c388ef4c3265794d",
+    "usd_30d": 20014.18,
+    "buyers_30d": 5,
+    "tx_30d": 660,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:01:55.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xc2204317799b521cd1ff1f7c6cab84d3ac5f774e",
+    "usd_30d": 13820.4,
+    "buyers_30d": 1,
+    "tx_30d": 74,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T09:40:45.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x6d3d6df3f5394d588e4a4ce798fe59820b901ace",
+    "usd_30d": 10000.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x8a12157b27c22fb239e558dc3cb43c7d1a8c0881",
+    "usd_30d": 9007.87,
+    "buyers_30d": 4831,
+    "tx_30d": 4839,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-02T21:59:15.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x1a199cd404b4eea21678fe6713c8bc807f9dacf4",
+    "usd_30d": 8100.0,
+    "buyers_30d": 1,
+    "tx_30d": 2,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "X4o2UuVNMxnrgkzVy97kPF5gmS6CLRCVJGB48VastML",
+    "usd_30d": 7698.62,
+    "buyers_30d": 2,
+    "tx_30d": 6834,
+    "chains": [
+     "solana"
+    ],
+    "latest_block_timestamp": "2026-10-03T07:20:10.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x85b47b40455ab2bd7921f76dce841b48c82d627c",
+    "usd_30d": 7682.3,
+    "buyers_30d": 3,
+    "tx_30d": 5544,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:00:19.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x63f103304ed9f0f1b47b90b10b30e47b639c46c9",
+    "usd_30d": 7500.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+    "usd_30d": 7066.64,
+    "buyers_30d": 4764,
+    "tx_30d": 353332,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:20:45.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "agent_work_service",
+    "run4_name": "AX1 q-verdict",
+    "work_product_run4": "partly"
+   },
+   {
+    "payTo": "0xe0f54e20ecd4829a8a80526173531132c1e48873",
+    "usd_30d": 6700.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x1f9fd037b19a20e4f36790c4e4d992c54fccd61a",
+    "usd_30d": 4000.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-23T13:16:45.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0xe9030014f5dae217d0a152f02a043567b16c1abf",
+    "usd_30d": 3739.51,
+    "buyers_30d": 379,
+    "tx_30d": 74172,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:49:49.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "model_inference_resale",
+    "run4_name": "BlockRun (Base)",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xde128f221dfa09c4fb497e1fd03d3ef5249c4ffc",
+    "usd_30d": 3521.6,
+    "buyers_30d": 2,
+    "tx_30d": 2,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-16T06:20:43.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x7f219652fa3bde3d5c0cd30f0c0cfd87dfc4c605",
+    "usd_30d": 3304.6,
+    "buyers_30d": 3,
+    "tx_30d": 14,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T04:58:01.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x2670b922ef37c7df47158725c0cc407b5382293f",
+    "usd_30d": 3067.1,
+    "buyers_30d": 44,
+    "tx_30d": 623,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:36:49.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "model_inference_resale",
+    "run4_name": "Venice API",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xed9fcd0d36d1fc847b6489865261ccbbbf299902",
+    "usd_30d": 2698.61,
+    "buyers_30d": 16,
+    "tx_30d": 1096,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-01T02:54:41.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xd2f74a14522d40e4a1d7fbb62aa97ce99fa1a7e5",
+    "usd_30d": 1868.47,
+    "buyers_30d": 2,
+    "tx_30d": 7,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-03T03:43:57.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x3291e96b3bff7ed56e3ca8364273c5b4654b2b37",
+    "usd_30d": 1715.22,
+    "buyers_30d": 62,
+    "tx_30d": 238,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T02:06:29.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "financial_commerce",
+    "run4_name": "Laso Finance (Base)",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xf000ab8b02aa5c52b62bdb10bf63312317e994fc",
+    "usd_30d": 1655.68,
+    "buyers_30d": 20,
+    "tx_30d": 20930,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:48:15.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0x32bc36ac43ac5545d0eb29960290b85f8f219008",
+    "usd_30d": 1527.45,
+    "buyers_30d": 38,
+    "tx_30d": 140,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T08:02:51.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xba6018c96b41761a3a48b6d371445ddf912bce48",
+    "usd_30d": 1500.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430",
+    "usd_30d": 1307.51,
+    "buyers_30d": 347,
+    "tx_30d": 51259,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:54:23.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "data_api",
+    "run4_name": "StableEnrich",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xbe87e47471660c5775df60896d8cc59c368a1db2",
+    "usd_30d": 1287.04,
+    "buyers_30d": 11,
+    "tx_30d": 26,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-03T06:06:17.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": null,
+    "work_product_run4": "unknown"
+   },
+   {
+    "payTo": "0xcc1984e79726e7a0ae2b9df2ac9e79fb4983930e",
+    "usd_30d": 1272.0,
+    "buyers_30d": 345,
+    "tx_30d": 12693,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-19T06:03:47.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "unknown",
+    "run4_name": "BotPay video access",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0x589a2314a2e05f45e40c4823da3ba58d421db3d8",
+    "usd_30d": 1027.46,
+    "buyers_30d": 93,
+    "tx_30d": 31750,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T11:55:21.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "not_in_run4_ge1000_lists",
+    "run4_name": null,
+    "work_product_run4": null
+   },
+   {
+    "payTo": "0xa9dd7cc9cbf0e05551332209289f04be36bc2315",
+    "usd_30d": 1016.02,
+    "buyers_30d": 136,
+    "tx_30d": 444336,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-10-05T12:54:11.000Z",
+    "ge5_buyers": true,
+    "run4_seller_type": "infrastructure",
+    "run4_name": "claw402",
+    "work_product_run4": "no"
+   },
+   {
+    "payTo": "0xe2768dfdb47fb0237c6079b967fbbbd10cb16723",
+    "usd_30d": 1000.0,
+    "buyers_30d": 1,
+    "tx_30d": 1,
+    "chains": [
+     "base"
+    ],
+    "latest_block_timestamp": "2026-09-30T14:40:11.000Z",
+    "ge5_buyers": false,
+    "run4_seller_type": "unknown_lt5_buyers_run4",
+    "run4_name": null,
+    "work_product_run4": null
+   }
+  ],
+  "basis": {
+   "buckets": "measured (x402scan counts, untraced)",
+   "shares": "estimated (computed from measured counts)",
+   "seller_types": "carried from run 4 classification (x402_population.json); not re-classified",
+   "buyers": "x402scan unique_buyers, untraced: buyers sharing a funder are not merged"
+  },
+  "note": "Untraced counts, labelled as such. A 'seller' is a payTo address, not a business: one operator can run many payTos (run 4: a 6-payTo 'mrdn' cluster). Raw buyer counts overstate independent customers (run 4/5 traces). The bazaar denominator is x402scan's registered-origin list (1,305 groups), a different unit from the payTo table; 728 registered groups had no indexed revenue in 30 days. The odds describe sellers that already exist and are indexed, not the chance that a new listing will sell.",
+  "compare_run4": {
+   "run4_as_of": "2026-10-03T12:45Z",
+   "run4_ge_100": 165,
+   "run4_ge_1000_ge5_buyers": 27,
+   "run4_seller_table_total": 37818
+  },
+  "not_done": []
+ },
+ "run_id_seller_odds": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d",
+ "seller_odds_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-05-worth-the-tokens.html"
 }

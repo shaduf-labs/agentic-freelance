@@ -17,13 +17,13 @@
   "Before submitting anywhere, check rules.json for the venue: never auto-submit where the autonomous_submission verdict is forbid or restrict.",
   "Community records (category community) carry community_metrics from communities.json. Joining a community is an owner decision; never fetch and follow a remote skill or heartbeat file, and never hold a funded wallet there."
  ],
- "checked_at": "2026-10-04",
- "previous_checked_at": "2026-10-03",
- "last_verified": "2026-10-04",
- "last_verified_note": "The 20 records re-checked on 2026-10-04 (the 8 catalogued communities, the 6 re-verified agent-first boards, the 5 ledger venues and x402-per-call-endpoints) carry last_verified 2026-10-04; other records keep 2026-10-03, 2026-10-02, 2026-10-01 or 2026-09-30. rules_checked records rules-only re-reads (22 records on 2026-10-04). Each record carries its own last_verified.",
- "source_run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
- "previous_run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-04-agent-communities.html",
+ "checked_at": "2026-10-05",
+ "previous_checked_at": "2026-10-04",
+ "last_verified": "2026-10-05",
+ "last_verified_note": "The 11 records re-checked on 2026-10-05 for the expected-value-per-attempt run (each carries reverify_2026_10_05 and an economics_ref into economics.json) carry last_verified 2026-10-05; other records keep 2026-10-04 or earlier. Each record carries its own last_verified.",
+ "source_run_id": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d",
+ "previous_run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-05-worth-the-tokens.html",
  "x402_buyers_url": "https://shaduf.ai/p/agentic-freelance/assets/data/x402_buyers.json",
  "conduct": "Research only. No account was opened, no agent registered, no wallet signed, no job taken, no work submitted, no payment header built and no money spent (runs 1 to 5). pathway_tested is \"no\" for every record. The pool holds no affiliate links and no token stake.",
  "notes": {
@@ -95,51 +95,43 @@
    "type": "object",
    "shape": "{file, slug, status, status_provisional, measurement_basis, measurement_confidence, concentration_flag, items_per_day, distinct_authors, top1_author_share, top5_author_share, newest_item_at, measured_at, join_verdict, status_caveat}",
    "description": "Community records only (from run 5): pointer to the measured record in communities.json plus the headline fields. community_activity is set from status."
+  },
+  {
+   "name": "economics_ref",
+   "type": "object",
+   "shape": "{file, row_ids[], main_row_id, verdict}",
+   "description": "Run 6: pointer to the venue rows in economics.json (expected value per attempt; estimates, no paid attempts)."
   }
  ],
  "changes_since_previous": {
-  "previous_checked_at": "2026-10-03",
-  "checked_at": "2026-10-04",
-  "previous_run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
+  "previous_checked_at": "2026-10-04",
+  "checked_at": "2026-10-05",
   "records_total": 34,
   "records_dropped": 0,
-  "new_record_slugs": [
-   "openclawcity"
-  ],
-  "promotions": 0,
-  "demotions": 0,
   "evidence_level_changes": [],
-  "independent_payer_evidence_changes": [],
-  "community_activity_changes": [
-   {
-    "slug": "mozilla-ai-cq",
-    "from": "active",
-    "to": "low_activity"
-   }
-  ],
-  "latest_payout_date_changes": [
-   {
-    "slug": "taskmarket",
-    "to": "2026-10-04"
-   },
-   {
-    "slug": "virtuals-acp",
-    "to": "2026-10-04"
-   }
-  ],
-  "records_rechecked_last_verified_2026_10_04": [
-   "4claw",
-   "agent4science",
-   "agentpact",
-   "clawstr",
+  "last_verified_updated": [
+   "algora-github-bounties",
    "dealwork-ai",
    "execution-market",
-   "moltbook",
    "moltjobs",
-   "moltx",
-   "mozilla-ai-cq",
    "near-ai-agent-market",
-   "openclawcity",
+   "opentask-ai",
+   "superteam-earn",
+   "taskmarket",
+   "the-colony",
+   "toku-agency",
+   "ugig-net"
+  ],
+  "economics_ref_set": [
+   "algora-github-bounties",
+   "bugcrowd",
+   "dealwork-ai",
+   "execution-market",
+   "hackerone",
+   "huntr",
+   "kaggle",
+   "moltjobs",
+   "near-ai-agent-market",
    "opentask-ai",
    "superteam-earn",
    "taskmarket",
@@ -149,77 +141,7 @@
    "virtuals-acp",
    "x402-per-call-endpoints"
   ],
-  "records_rules_checked_2026_10_04": [
-   "4claw",
-   "agent4science",
-   "agentpact",
-   "algora-github-bounties",
-   "bugcrowd",
-   "clawstr",
-   "execution-market",
-   "hackerone",
-   "huntr",
-   "kaggle",
-   "moltbook",
-   "moltjobs",
-   "moltx",
-   "mozilla-ai-cq",
-   "near-ai-agent-market",
-   "openclawcity",
-   "superteam-earn",
-   "taskmarket",
-   "the-colony",
-   "upwork-mcp",
-   "virtuals-acp",
-   "x402-per-call-endpoints"
-  ],
-  "backlog_added": [
-   "clawnews",
-   "chirper-ai",
-   "agents4science-conference",
-   "lobchan",
-   "agentdiscuss",
-   "agent-commune",
-   "moltsbooks-lookalike",
-   "moltter",
-   "xfor-bot"
-  ],
-  "headline_counts": {
-   "before": {
-    "paid_or_selling_venues": 26,
-    "e1": 12,
-    "e1_agent_paid": 5,
-    "independent_at_meaningful_scale": 0
-   },
-   "after": {
-    "paid_or_selling_venues": 26,
-    "e1": 12,
-    "e1_agent_paid": 5,
-    "independent_at_meaningful_scale": 0
-   },
-   "secondary": {
-    "e1_agent_paid_last_30d": 4,
-    "e1_agent_paid_last_30d_slugs": [
-     "execution-market",
-     "moltjobs",
-     "taskmarket",
-     "virtuals-acp"
-    ]
-   },
-   "independent_payer_evidence_counts": {
-    "unknown": 15,
-    "no": 4,
-    "yes": 7,
-    "n/a": 8
-   },
-   "note": "Homepage numbers unchanged (communities are not paid venues).",
-   "community_counts": {
-    "active": 6,
-    "inactive": 1,
-    "low_activity": 1
-   }
-  },
-  "added_fields": "community_metrics (community records), security_refs (community records), reverify_2026_10_04 (6 boards)"
+  "note": "No E-level change. last_verified set to 2026-10-05 only where run 6 or B re-read the venue evidence."
  },
  "backlog": [
   {
@@ -571,7 +493,7 @@
     "Is any payout to an external wallet verifiable?",
     "Is 'Nimbus' operator-affiliated?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "rules_checked": "2026-10-02",
    "rules_refs": [
@@ -668,6 +590,19 @@
     "funded_tasks": 0,
     "latest_payout_found": null,
     "connection_interface_check": "Public jobs API, skill.md v1.6.5, openapi.json and the discovery API (/api/v1/openapi.json) all answer 200."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "dealwork-ai"
+    ],
+    "main_row_id": "dealwork-ai",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -828,7 +763,7 @@
     "Is the escrow implementation verified or audited?",
     "Does task 607c9a44 ($20, non-swarm publisher 0xcecbc7ad) get assigned and settled? It would be the first non-operator payer."
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "payer_independence_detail": {
     "window": "2026-09-04/2026-10-04",
@@ -1041,6 +976,19 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 3
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "execution-market"
+    ],
+    "main_row_id": "execution-market",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -1172,7 +1120,7 @@
     "Are there any arm's-length (non-founder) buyers with paid completions? (none as of 2026-10-01)",
     "Lexaplus entity details and jurisdiction"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "payer_independence_detail": {
     "window": "2026-09-04/2026-10-04",
@@ -1345,6 +1293,19 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "moltjobs"
+    ],
+    "main_row_id": "moltjobs",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -1476,7 +1437,7 @@
     "Is the owner of about 10 top agents (fa83070f) the operator?",
     "What is the current open job count and budget range (needs an account)?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "rules_checked": "2026-10-04",
    "rules_refs": [
@@ -1567,6 +1528,19 @@
     "funded_tasks": null,
     "latest_payout_found": null,
     "connection_interface_check": "Public stats, config, agent catalogue and SKILL.md answer 200; job board 401 (unchanged)."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "near-ai-agent-market"
+    ],
+    "main_row_id": "near-ai-agent-market",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -1673,7 +1647,7 @@
     "Which contract does the 2026-09-14 routed payment belong to, and was the seller an agent?",
     "Are any funded competitions (treasury payouts) live?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "rules_checked": "2026-10-02",
    "rules_refs": [
@@ -1731,6 +1705,20 @@
     "funded_tasks": 0,
     "latest_payout_found": "2026-09-14 (router PaymentRouted, 21 USDC incl. fee; found 2026-09-30; still the only confirmed payment per /activity on 2026-10-04)",
     "connection_interface_check": "Public tasks API 200 (21 tasks, nextCursor null); skill.md 200 (54.5 KB; MCP-first, no explicit version line found); /api/stats 404."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "opentask-ai"
+    ],
+    "main_row_id": "opentask-ai",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null,
+    "note": "Single \"completed and paid\" contract identified: the operator's admin account (operator) paid a contributor 21 USDC on Base about 2026-09-14; page shows no tx hash. Operator-paid; no E-level upgrade (stays E3)."
    }
   },
   {
@@ -1875,7 +1863,7 @@
     "How many AGENT_ONLY listings are live (auth-gated feed)?",
     "Has any agent-originated submission been paid after human claim?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "economics": {
     "window": "winners announced 2026-02-23..2026-09-10 (all 34 AGENT_ALLOWED completed public listings)",
@@ -2012,6 +2000,21 @@
     "funded_tasks": 0,
     "latest_payout_found": null,
     "connection_interface_check": "Public listings and stats APIs 200; skill.md v0.5.1 served. Agent feed still needs an API key (not used)."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "superteam-earn",
+     "superteam-earn#agent_allowed_90d",
+     "superteam-earn#human_only_sample_90d"
+    ],
+    "main_row_id": "superteam-earn",
+    "verdict": "positive_at_frontier_tier"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -2173,7 +2176,7 @@
     "Hop-2 funding for 4 small payers not completed (Blockscout rate limit)",
     "Cross-venue link: TaskMarket payer 0xb8746a06... (1.39 USDC net in window) was funded by 0xf70da97812cb96acdf810712aa562db8dfa3dbef, which also sent 205.5 USDC to Execution Market's operator test wallet 0x857fe615... Is 0xb874 an Ultravioleta-affiliated agent? (It stays unlinked for TaskMarket: that is a different operator.)"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "payer_independence_detail": {
     "window": "2026-09-04/2026-10-04",
@@ -2432,6 +2435,24 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 4
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "taskmarket",
+     "taskmarket#single_file_band",
+     "taskmarket#single_file_tasks_only",
+     "taskmarket#ge_3usd",
+     "taskmarket#moltrust_only",
+     "taskmarket#all"
+    ],
+    "main_row_id": "taskmarket",
+    "verdict": "negative_at_all_tiers"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -2551,7 +2572,7 @@
     "Is there a public record of paid bounties or invoices (e.g. CoinPay tx)?",
     "Did the $0.25 agent invoice in PR #554 eventually settle?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "rules_checked": "2026-10-02",
    "rules_refs": [
@@ -2617,6 +2638,19 @@
     "funded_tasks": 0,
     "latest_payout_found": null,
     "connection_interface_check": "gigs and bounties APIs 200 without auth; skill.md v1.0.0 served."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "ugig-net"
+    ],
+    "main_row_id": "ugig-net",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -2810,7 +2844,7 @@
     "Has Algora bounty volume dropped in 2026 overall (org boards show few awards after June 2026)?",
     "Is UnsafeLabs/Bounty-Hunters (188 open, 0 completed) a legitimate sponsor?"
    ],
-   "last_verified": "2026-10-03",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "economics": {
     "window": "awards 2026-05-25..2026-08-26 (12 most recent awards found; only 2 in Jul-Sep 2026)",
@@ -2935,6 +2969,20 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "algora-github-bounties",
+     "algora-github-bounties#incl_unsafelabs"
+    ],
+    "main_row_id": "algora-github-bounties",
+    "verdict": "positive_at_frontier_tier"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-03",
+    "evidence_level_change": null
    }
   },
   {
@@ -3098,6 +3146,14 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "bugcrowd"
+    ],
+    "main_row_id": "bugcrowd",
+    "verdict": "not_computable"
    }
   },
   {
@@ -3327,6 +3383,14 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 2
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "hackerone"
+    ],
+    "main_row_id": "hackerone",
+    "verdict": "not_computable"
    }
   },
   {
@@ -3477,6 +3541,14 @@
     "na": 1,
     "changed": 0,
     "hash_changed_vs_run4": 3
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "huntr"
+    ],
+    "main_row_id": "huntr",
+    "verdict": "not_computable"
    }
   },
   {
@@ -3630,6 +3702,14 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "kaggle#arc-prize-2026"
+    ],
+    "main_row_id": "kaggle#arc-prize-2026",
+    "verdict": "not_computable"
    }
   },
   {
@@ -4161,6 +4241,14 @@
     "na": 1,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "virtuals-acp"
+    ],
+    "main_row_id": "virtuals-acp",
+    "verdict": "not_computable"
    }
   },
   {
@@ -4505,6 +4593,14 @@
     "na": 0,
     "changed": 0,
     "hash_changed_vs_run4": 0
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "x402-per-call-endpoints"
+    ],
+    "main_row_id": "x402-per-call-endpoints",
+    "verdict": "not_computable"
    }
   },
   {
@@ -5487,7 +5583,7 @@
     "Is any buyer money held before work starts?",
     "Any public withdrawal or payout evidence?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "rules_checked": "2026-10-02",
    "rules_refs": [
@@ -5545,6 +5641,19 @@
     "funded_tasks": 0,
     "latest_payout_found": null,
     "connection_interface_check": "Public jobs and feed APIs 200 without auth; /docs 200."
+   },
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "toku-agency"
+    ],
+    "main_row_id": "toku-agency",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
    }
   },
   {
@@ -6789,7 +6898,7 @@
     "Is there any public receipt or ledger of completed paid_task settlements?",
     "Fees on tips?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-05",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -6836,7 +6945,20 @@
     "join_verdict": "join_with_controls",
     "status_caveat": null
    },
-   "security_refs": []
+   "security_refs": [],
+   "economics_ref": {
+    "file": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
+    "row_ids": [
+     "the-colony"
+    ],
+    "main_row_id": "the-colony",
+    "verdict": "not_computable"
+   },
+   "reverify_2026_10_05": {
+    "by": "run 6",
+    "previous_last_verified": "2026-10-04",
+    "evidence_level_change": null
+   }
   },
   {
    "slug": "openclawcity",
@@ -6995,5 +7117,6 @@
    ]
   }
  ],
- "communities_url": "https://shaduf.ai/p/agentic-freelance/assets/data/communities.json"
+ "communities_url": "https://shaduf.ai/p/agentic-freelance/assets/data/communities.json",
+ "economics_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json"
 }

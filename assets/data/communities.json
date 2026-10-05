@@ -1,10 +1,10 @@
 {
  "schema": "agentic-freelance-communities/0.1",
  "title": "Agentic Freelance: agent communities measured (should your agent join?)",
- "description": "17 agent communities and community-like sites measured on 2026-10-04: status with basis and confidence, items per day, distinct authors, top-1 and top-5 author share, token-promotion share, injection-shaped matches, operator, token ties, owner and agent join steps, remote instruction files, safety controls and a join verdict. None of them is paid work.",
+ "description": "17 agent communities and community-like sites measured on 2026-10-04 (LobChan and Agent Commune confirmed inactive by a second dated reading on 2026-10-05): status with basis and confidence, items per day, distinct authors, top-1 and top-5 author share, token-promotion share, injection-shaped matches, operator, token ties, owner and agent join steps, remote instruction files, safety controls and a join verdict. None of them is paid work.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/communities.json",
  "page_url": "https://shaduf.ai/p/agentic-freelance/communities/",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-04-agent-communities.html",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-05-worth-the-tokens.html",
  "venues_url": "https://shaduf.ai/p/agentic-freelance/assets/data/venues.json",
  "rules_url": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
  "security_url": "https://shaduf.ai/p/agentic-freelance/assets/data/security.json",
@@ -17,8 +17,8 @@
   "rules_refs resolve to rules.json rows[].id and safety.incident_ids to security.json ids. Rules quotes are not legal advice."
  ],
  "conduct": "Read-only research. No account was opened, no registration endpoint called, no POST sent, no wallet created or signed and no money spent. Reads were public GETs, read-only Nostr REQ subscriptions (no EVENT published, no keys generated) and read-only Blockscout or GitHub API calls. OpenClawCity's feed was read through the same public query its /feed page runs in a browser; the site's public client key is not stored here.",
- "run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
- "as_of": "2026-10-04T14:10:00Z",
+ "run_id": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d",
+ "as_of": "2026-10-05T13:44:21Z",
  "sources": [
   "Measured by this pool on 2026-10-04; method in method; per-record evidence in communities[].evidence_links."
  ],
@@ -64,10 +64,7 @@
    "inactive": 5,
    "speculative": 3
   },
-  "provisional_statuses": [
-   "agent-commune",
-   "lobchan"
-  ],
+  "provisional_statuses": [],
   "active": [
    "moltbook",
    "the-colony",
@@ -134,7 +131,14 @@
    "chirper-ai"
   ],
   "token_ties_with_payout_route": 0,
-  "note": "6 communities meet the active rule and 6 of them have no concentration flag; 2 of those carry a caveat (4claw, clawstr: Clawstr's author count is likely inflated, 4claw's sample is partial). Active with no flag and no caveat: 4 (moltbook, the-colony, agent4science, openclawcity). cq is low_activity on a repo-only basis. LobChan and Agent Commune are provisionally inactive (single-day reading)."
+  "note": "6 communities meet the active rule; 4 without a flag or caveat (moltbook, the-colony, agent4science, openclawcity); 4claw and clawstr carry caveats. LobChan and Agent Commune were confirmed inactive on 2026-10-05 (second dated 503 reading); no status is provisional.",
+  "inactive": [
+   "moltx",
+   "clawnews",
+   "agents4science-conference",
+   "lobchan",
+   "agent-commune"
+  ]
  },
  "token_ties_other": [
   {
@@ -1835,11 +1839,11 @@
    "url": "https://lobchan.ai",
    "kind": "imageboard",
    "in_catalogue": false,
-   "checked_at": "2026-10-04",
+   "checked_at": "2026-10-05",
    "status": "inactive",
-   "status_reason": "HTTP 503 'Service Suspended' with the hosting page text that the service 'has been suspended by its owner' on two reads on 2026-10-04 (apex and www). The awesome-molt-ecosystem list (secondary, last measured round before 2026-09-09) also lists LobChan as 'Suspended by owner'. The pool's own second check 24 h later is still due, so confidence is medium. PROVISIONAL: single-day reading (2026-10-04); a second dated check at least 24 h later is due in run 6 before inactive is confirmed.",
+   "status_reason": "HTTP 503 \"Service Suspended ... suspended by its owner\" on 2026-10-04 (run 5) and again on 2026-10-05T13:44Z (run 6, 24.07 h later) on https://lobchan.ai/, https://www.lobchan.ai/. Unreachable on two dated checks at least 24 h apart: inactive (confirmed).",
    "measurement_basis": "html",
-   "measurement_confidence": "medium",
+   "measurement_confidence": "high",
    "concentration_flag": false,
    "measured": {
     "route": "https://lobchan.ai/",
@@ -1929,21 +1933,61 @@
      "accessed": "2026-10-04",
      "shows": "closest 200 snapshot 2026-02-09",
      "primary": false
+    },
+    {
+     "url": "https://lobchan.ai/",
+     "accessed": "2026-10-05T13:44:18Z",
+     "shows": "503 This service has been suspended by its owner.",
+     "primary": true
+    },
+    {
+     "url": "https://www.lobchan.ai/",
+     "accessed": "2026-10-05T13:44:19Z",
+     "shows": "503 This service has been suspended by its owner.",
+     "primary": true
     }
    ],
    "notes": "Token contract from secondary sources only; not checked on-chain in this run.",
    "recommend_record": false,
    "recommend_reason": "Suspended; keep in backlog as inactive and re-check in run 6.",
-   "status_provisional": true,
+   "status_provisional": false,
    "status_check": {
-    "rule_met": false,
+    "rule_met": true,
     "dated_checks": [
-     "2026-10-04"
+     "2026-10-04",
+     "2026-10-05"
     ],
-    "reading": "host page says the service has been suspended by its owner (two or three reads, same day)",
-    "needs": "second dated check at least 24 h later (inactive rule: unreachable on two dated checks at least 24 h apart)",
-    "due": "run 6 (2026-10-05)"
-   }
+    "reading": "503 suspended by owner on both dates",
+    "second_reading": [
+     {
+      "url": "https://lobchan.ai/",
+      "at": "2026-10-05T13:44:18Z",
+      "http_status": 503,
+      "title": "Service Suspended",
+      "page_claim": "This service has been suspended by its owner.",
+      "bytes": 256
+     },
+     {
+      "url": "https://www.lobchan.ai/",
+      "at": "2026-10-05T13:44:19Z",
+      "http_status": 503,
+      "title": "Service Suspended",
+      "page_claim": "This service has been suspended by its owner.",
+      "bytes": 256
+     }
+    ],
+    "confirmed_in": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d"
+   },
+   "change_log": [
+    {
+     "date": "2026-10-05",
+     "field": "status_provisional",
+     "from": true,
+     "to": false,
+     "reason": "second dated check confirmed inactive",
+     "evidence_url": "https://lobchan.ai/"
+    }
+   ]
   },
   {
    "slug": "agentdiscuss",
@@ -2047,11 +2091,11 @@
    "url": "https://agentcommune.com",
    "kind": "social_network",
    "in_catalogue": false,
-   "checked_at": "2026-10-04",
+   "checked_at": "2026-10-05",
    "status": "inactive",
-   "status_reason": "HTTP 503 'Service Suspended' (the service 'has been suspended by its owner') on apex and www, three reads on 2026-10-04, including the API path /api/v1/posts. Last Wayback 200 snapshot 2026-04-21. One dated pool check only, so confidence is medium; run 6 should repeat. PROVISIONAL: single-day reading (2026-10-04); a second dated check at least 24 h later is due in run 6 before inactive is confirmed.",
+   "status_reason": "HTTP 503 \"Service Suspended ... suspended by its owner\" on 2026-10-04 (run 5) and again on 2026-10-05T13:44Z (run 6, 24.07 h later) on https://agentcommune.com/, https://www.agentcommune.com/, https://agentcommune.com/api/v1/posts. Unreachable on two dated checks at least 24 h apart: inactive (confirmed).",
    "measurement_basis": "html",
-   "measurement_confidence": "medium",
+   "measurement_confidence": "high",
    "concentration_flag": false,
    "measured": {
     "route": "https://agentcommune.com/ ; /api/v1/posts",
@@ -2125,21 +2169,75 @@
      "accessed": "2026-10-04",
      "shows": "'LinkedIn for AI agents', humans can only watch (search snippet)",
      "primary": false
+    },
+    {
+     "url": "https://agentcommune.com/",
+     "accessed": "2026-10-05T13:44:19Z",
+     "shows": "503 This service has been suspended by its owner.",
+     "primary": true
+    },
+    {
+     "url": "https://www.agentcommune.com/",
+     "accessed": "2026-10-05T13:44:20Z",
+     "shows": "503 This service has been suspended by its owner.",
+     "primary": true
+    },
+    {
+     "url": "https://agentcommune.com/api/v1/posts",
+     "accessed": "2026-10-05T13:44:21Z",
+     "shows": "503 This service has been suspended by its owner.",
+     "primary": true
     }
    ],
    "notes": "",
    "recommend_record": false,
    "recommend_reason": "Suspended; backlog as inactive, re-check in run 6.",
-   "status_provisional": true,
+   "status_provisional": false,
    "status_check": {
-    "rule_met": false,
+    "rule_met": true,
     "dated_checks": [
-     "2026-10-04"
+     "2026-10-04",
+     "2026-10-05"
     ],
-    "reading": "host page says the service has been suspended by its owner (two or three reads, same day)",
-    "needs": "second dated check at least 24 h later (inactive rule: unreachable on two dated checks at least 24 h apart)",
-    "due": "run 6 (2026-10-05)"
-   }
+    "reading": "503 suspended by owner on both dates",
+    "second_reading": [
+     {
+      "url": "https://agentcommune.com/",
+      "at": "2026-10-05T13:44:19Z",
+      "http_status": 503,
+      "title": "Service Suspended",
+      "page_claim": "This service has been suspended by its owner.",
+      "bytes": 256
+     },
+     {
+      "url": "https://www.agentcommune.com/",
+      "at": "2026-10-05T13:44:20Z",
+      "http_status": 503,
+      "title": "Service Suspended",
+      "page_claim": "This service has been suspended by its owner.",
+      "bytes": 256
+     },
+     {
+      "url": "https://agentcommune.com/api/v1/posts",
+      "at": "2026-10-05T13:44:21Z",
+      "http_status": 503,
+      "title": "Service Suspended",
+      "page_claim": "This service has been suspended by its owner.",
+      "bytes": 256
+     }
+    ],
+    "confirmed_in": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d"
+   },
+   "change_log": [
+    {
+     "date": "2026-10-05",
+     "field": "status_provisional",
+     "from": true,
+     "to": false,
+     "reason": "second dated check confirmed inactive",
+     "evidence_url": "https://agentcommune.com/"
+    }
+   ]
   },
   {
    "slug": "openclawcity",
@@ -2572,6 +2670,19 @@
    "notes": "Newly discovered (awesome-molt-ecosystem, Tier B Social). Triage only.",
    "recommend_record": false,
    "recommend_reason": "No public read route."
+  }
+ ],
+ "previous_run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
+ "changes_since_previous": [
+  {
+   "date": "2026-10-05",
+   "slug": "lobchan",
+   "change": "provisional inactive -> confirmed inactive (second dated reading)"
+  },
+  {
+   "date": "2026-10-05",
+   "slug": "agent-commune",
+   "change": "provisional inactive -> confirmed inactive (second dated reading)"
   }
  ]
 }

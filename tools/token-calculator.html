@@ -5,125 +5,313 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' 'unsafe-inline'; style-src 'unsafe-inline'; img-src data:; base-uri 'none'; form-action 'none'">
-<title>Is it worth the tokens? calculator</title>
+<title>Is it worth the tokens? Expected value per attempt</title>
 <style>
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 html,body{margin:0;padding:0;background:#fff}
 body{font:14px/1.5 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;color:#37352f}
 .root{padding:16px}
-h2{margin:0 0 2px;font-size:17px}
-.note{margin:0 0 12px;color:#5d5c58;font-size:13px}
-.illus{display:inline-block;margin-left:6px;padding:0 6px;border:1px dashed #b9b7b0;border-radius:4px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5d5c58;vertical-align:middle}
-.presets{display:flex;flex-wrap:wrap;gap:6px 8px;margin:0 0 14px;padding:0;list-style:none}
-.presets-label{width:100%;font-size:11.5px;font-weight:600;color:#5d5c58}
-button{font:inherit;color:inherit;padding:5px 10px;border:1px solid #b9b7b0;border-radius:5px;background:#fff;cursor:pointer}
-button[aria-pressed=true]{background:#1d4f8f;border-color:#1d4f8f;color:#fff}
-button:hover{background:#f4f3f0}button[aria-pressed=true]:hover{background:#1d4f8f}
+h2{margin:0 0 4px;font-size:17px;line-height:1.3}
+h3{margin:0 0 6px;font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#5d5c58}
+p{margin:0 0 8px}
+.intro{margin:0 0 12px;color:#5d5c58;font-size:13px;max-width:74ch}
+.badge{display:inline-block;margin-left:6px;padding:0 6px;border:1px solid #b9b7b0;border-radius:4px;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#5d5c58;vertical-align:middle;white-space:nowrap}
+.lab{display:inline-block;padding:0 6px;border-radius:3px;font-size:10.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;line-height:1.6;white-space:nowrap}
+.lab.measured{background:#e3eefb;color:#1d4f8f}
+.lab.estimated{background:#fbefe3;color:#8e4a12}
+.lab.assumed{background:#f0eeea;color:#5d5c58;border:1px dashed #a8a59d}
+select,input,button{font:inherit;color:inherit}
+select,input[type=number]{width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcdc6;border-radius:5px;background:#fff}
 :focus-visible{outline:2px solid #2a6fc4;outline-offset:2px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:10px 14px;margin:0 0 14px}
+.pick{display:grid;grid-template-columns:minmax(0,1fr);gap:6px;margin:0 0 6px}
+.pick label{font-size:12px;font-weight:650}
+.pre-note{margin:6px 0 14px;padding:8px 10px;border-left:3px solid #8f8d87;background:#f7f7f5;font-size:12.5px;line-height:1.5}
+.pre-note.warn{border-left-color:#c4541f;background:#fdf4ee}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:12px 16px;margin:0 0 14px}
 .field{display:flex;flex-direction:column;gap:3px;min-width:0}
-.field label{font-size:12px;font-weight:600;color:#37352f}
-.field small{color:#787774;font-size:11.5px;line-height:1.35}
-input{font:inherit;width:100%;min-width:0;padding:6px 8px;border:1px solid #cfcdc6;border-radius:5px}
-.out{padding:14px 0 4px;border-top:2px solid #37352f}
-.ev{margin:0;font-size:26px;font-weight:700;letter-spacing:-.01em}
+.field>label,.field>.fl{font-size:12px;font-weight:650;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
+.src{color:#6b6a66;font-size:11.5px;line-height:1.4}
+fieldset{margin:0;padding:0;border:0;min-width:0}
+legend{padding:0;font-size:12px;font-weight:650;margin-bottom:4px}
+.seg{display:flex;flex-wrap:wrap;gap:6px}
+.legend{margin:0 0 4px;font-size:12px;font-weight:650}
+.seg button{padding:4px 11px;border:1px solid #b9b7b0;border-radius:999px;font-size:12.5px;cursor:pointer;background:#fff}
+.seg button:hover{background:#f4f3f0}
+.seg button[aria-pressed=true]{background:#37352f;border-color:#37352f;color:#fff}
+.seg button:disabled{cursor:not-allowed;border-style:dashed;color:#8f8d87;background:#fff}
+.blk{margin:0 0 14px;padding:12px 0 0;border-top:1px solid #e6e5e2}
+.toks{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,11rem),1fr));gap:10px 14px;margin-top:8px}
+.out{margin-top:6px;padding:14px 0 4px;border-top:2px solid #37352f}
+.ev{margin:0;font-size:26px;line-height:1.2;font-weight:700;letter-spacing:-.01em}
 .ev.neg{color:#9f3f3b}.ev.pos{color:#2c5e44}
-.sum{margin:4px 0 12px;font-size:13.5px;max-width:70ch}
-.bars{margin:6px 0 12px}
-.bar-row{display:grid;grid-template-columns:minmax(0,11rem) minmax(0,1fr);gap:4px 10px;align-items:center;margin:6px 0}
-.bar-label{font-size:12.5px}
-.track{position:relative;height:16px;background:#f2f1ee;border-radius:0 4px 4px 0;overflow:hidden}
-.fill{height:16px;border-radius:0 4px 4px 0;min-width:2px}
-.fill.pay{background:#2a6fc4}.fill.cost{background:#c4541f}
-.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(12rem,1fr));gap:8px 14px;margin:8px 0 0;padding:0;list-style:none}
+.sum{margin:6px 0 12px;font-size:13.5px;max-width:72ch}
+.rng{margin:8px 0 14px}
+.rng-row{display:grid;grid-template-columns:minmax(0,8.5rem) minmax(0,1fr) minmax(0,6.5rem);gap:4px 10px;align-items:center;margin:6px 0}
+.rng-lab{font-size:12.5px}
+.rng-val{font-size:12.5px;font-weight:650;text-align:right;font-variant-numeric:tabular-nums}
+.track{position:relative;height:14px;background:#f2f1ee;border-radius:3px}
+.zero{position:absolute;top:-4px;bottom:-4px;width:2px;background:#37352f}
+.dot{position:absolute;top:2px;width:10px;height:10px;margin-left:-5px;border-radius:50%;background:#37352f}
+.span{position:absolute;top:5px;height:4px;background:#8f8d87;border-radius:2px}
+.dot.neg{background:#9f3f3b}.dot.pos{background:#2c5e44}
+.axis{display:grid;grid-template-columns:minmax(0,8.5rem) minmax(0,1fr) minmax(0,6.5rem);gap:4px 10px;font-size:11px;color:#6b6a66}
+.axis span:nth-child(2){display:flex;justify-content:space-between;gap:6px}
+.tiers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;margin:6px 0 14px;padding:0;list-style:none}
+.tiers li{padding:8px 10px;border:1px solid #e6e5e2;border-radius:5px;min-width:0}
+.tiers li.sel{border-color:#37352f;box-shadow:inset 0 0 0 1px #37352f}
+.tiers b{display:block;font-size:15px;font-variant-numeric:tabular-nums}
+.tiers b.neg{color:#9f3f3b}.tiers b.pos{color:#2c5e44}
+.tiers span{display:block;font-size:11.5px;color:#5d5c58}
+.facts{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,12rem),1fr));gap:8px 14px;margin:8px 0 0;padding:0;list-style:none}
 .facts li{padding:8px 10px;border:1px solid #e6e5e2;border-radius:5px;min-width:0}
-.facts b{display:block;font-size:16px}
+.facts b{display:block;font-size:16px;font-variant-numeric:tabular-nums}
 .facts span{font-size:12px;color:#5d5c58}
-.caveat{margin:12px 0 0;font-size:12px;color:#5d5c58;max-width:75ch}
-@media (max-width:420px){.bar-row{grid-template-columns:minmax(0,1fr)}}
+.stored{margin:12px 0 0;font-size:12.5px;color:#5d5c58}
+.verdict{display:inline-block;margin-left:6px;padding:1px 8px;border-radius:999px;font-size:11px;font-weight:700;letter-spacing:.03em;vertical-align:middle;white-space:nowrap;background:#f0eeea;color:#37352f}
+.verdict.neg{background:#f8e7e5;color:#8a3431}.verdict.pos{background:#e6f2ea;color:#2c5e44}.verdict.mix{background:#fbefe3;color:#8e4a12}
+.corr{margin:16px 0 0;padding:10px 12px;border:1px solid #c9a19e;border-left:4px solid #9c2f2a;border-radius:4px;background:#fbf3f2;font-size:12.5px;line-height:1.5}
+.corr-tag{display:inline-block;margin:0 6px 4px 0;padding:0 7px;border-radius:999px;background:#9c2f2a;color:#fff;font-size:10.5px;font-weight:700;letter-spacing:.04em;text-transform:uppercase}
+details{margin-top:8px}
+summary{cursor:pointer;font-weight:650;font-size:12.5px}
+table{border-collapse:collapse;width:100%;font-size:12px;margin-top:6px}
+th,td{border-bottom:1px solid #e6e5e2;padding:4px 6px;text-align:left;vertical-align:top}
+td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.tw{overflow-x:auto}
+.mt{margin-top:8px}
+.caveat{margin:12px 0 0;font-size:12px;color:#5d5c58;max-width:78ch}
+@media (max-width:460px){.rng-row,.axis{grid-template-columns:minmax(0,1fr) minmax(0,5.5rem)}.rng-row .track{grid-column:1 / -1;grid-row:2}.axis span:first-child,.axis span:last-child{display:none}.axis span:nth-child(2){grid-column:1 / -1}.tiers{grid-template-columns:minmax(0,1fr)}}
 </style>
 </head>
 <body>
 <div class="root" data-shaduf-resize-root>
-<h2>Is it worth the tokens? <span class="illus">Illustrative</span></h2>
-<p class="note">Expected value of one attempt at a competitive task. Presets use sourced numbers from the payout ledger and samples to 1 October 2026; your token cost and your edge are guesses only you can make.</p>
-<div class="presets" role="group" aria-label="Presets from observed venues">
-<span class="presets-label">Start from an observed case</span>
-<button type="button" data-preset="tm_med" aria-pressed="true">TaskMarket median task</button>
-<button type="button" data-preset="tm_top" aria-pressed="false">TaskMarket top task ($15)</button>
-<button type="button" data-preset="al_med" aria-pressed="false">Algora bounty median</button>
-<button type="button" data-preset="al_crowd" aria-pressed="false">Algora crowded bounty</button>
-<button type="button" data-preset="st_med" aria-pressed="false">Superteam agent-allowed median</button>
-<button type="button" data-preset="em_med" aria-pressed="false">Execution Market median</button>
+<h2>Is it worth the tokens? <span class="badge">Estimate</span><span class="badge">Data: 5 Oct 2026</span></h2>
+<p class="intro">Expected value (EV) of one attempt: reward after fees × your chance of winning − what the attempt costs in tokens. Every preset comes from <code>economics.json</code> (measured 5 October 2026). Win rates and rewards are <span class="lab measured">measured</span>; token costs are <span class="lab estimated">estimated</span> from list prices and measured task sizes; turns and output lengths are often <span class="lab assumed">assumed</span>. The pool made no paid attempt and no model call against any task.</p>
+
+<div class="pick">
+<label for="preset">Start from a measured venue</label>
+<select id="preset"><optgroup label="TaskMarket"><option value="taskmarket_typical">TaskMarket typical task without MolTrust (2 USDC, ~87 rivals, code_change band)</option><option value="taskmarket_single_file">TaskMarket single-file SVG/HTML artefact (same p_win, narrower estimated band)</option><option value="taskmarket_ge3usd">TaskMarket larger task (&gt;= 3 USDC per prize; 1 award in 1,484 submissions)</option><option value="taskmarket_moltrust_promo">TaskMarket MolTrust promotional task (0.054 USDC per prize)</option></optgroup><optgroup label="Superteam Earn"><option value="superteam_agent_allowed">Superteam Earn agent-allowed listing ($100 median prize; human payout account)</option><option value="superteam_agent_allowed_90d">Superteam Earn agent-allowed, last 90 days (n=9)</option></optgroup><optgroup label="Algora"><option value="algora_paying_boards">Algora bounty on a board that pays ($100; bounded p_win)</option><option value="algora_unsafelabs">Algora UnsafeLabs-style board (never paid; estimated)</option></optgroup><optgroup label="Execution Market"><option value="execution_market_assigned">Execution Market assigned job ($0.02 median; assignment, paused since 2026-09-29)</option></optgroup></select>
 </div>
+<p class="pre-note" id="pre-note"></p>
+
+<div class="blk">
+<h3>The reward</h3>
 <div class="grid">
-<div class="field"><label for="reward">Reward per prize ($ or USDC)</label><input id="reward" type="number" min="0" step="any" inputmode="decimal"><small id="reward-src"></small></div>
-<div class="field"><label for="fee">Platform fee taken from the reward (%)</label><input id="fee" type="number" min="0" max="100" step="any" inputmode="decimal"><small id="fee-src"></small></div>
-<div class="field"><label for="rivals">Other entries competing</label><input id="rivals" type="number" min="0" step="1" inputmode="numeric"><small id="rivals-src"></small></div>
-<div class="field"><label for="prizes">Number of equal prizes</label><input id="prizes" type="number" min="1" step="1" inputmode="numeric"><small>1 = winner takes all</small></div>
-<div class="field"><label for="edge">Your edge over an average entry (×)</label><input id="edge" type="number" min="0" step="any" inputmode="decimal"><small>1 = same chance as everyone else</small></div>
-<div class="field"><label for="tokens">Your inference cost per attempt ($)</label><input id="tokens" type="number" min="0" step="any" inputmode="decimal"><small>Your estimate; not observed</small></div>
-<div class="field"><label for="other">Other cost per attempt ($)</label><input id="other" type="number" min="0" step="any" inputmode="decimal"><small>Paid routes, x402 charges, gas</small></div>
+<div class="field"><label for="reward">Reward per prize, USD <span class="lab" id="b-reward"></span></label><input id="reward" type="number" min="0" step="any" inputmode="decimal"><span class="src" id="s-reward"></span></div>
+<div class="field"><label for="fee">Platform fee, % of the reward <span class="lab" id="b-fee"></span></label><input id="fee" type="number" min="0" max="100" step="any" inputmode="decimal"><span class="src" id="s-fee"></span></div>
+<div class="field"><label for="fric">Payout cost per win, USD <span class="lab assumed">assumed</span></label><input id="fric" type="number" min="0" step="any" inputmode="decimal"><span class="src">Withdrawal or gas cost per win; 0 where none is documented.</span></div>
 </div>
+</div>
+
+<div class="blk">
+<h3>Your chance of winning</h3>
+<p class="legend" id="pb-l">Which win rate to use</p>
+<div class="seg" role="group" aria-labelledby="pb-l">
+<button type="button" data-g="pb" data-v="pooled" aria-pressed="true">Pooled, all entrants</button>
+<button type="button" data-g="pb" data-v="newcomer" aria-pressed="false">Newcomer</button>
+<button type="button" data-g="pb" data-v="equal" aria-pressed="false">Equal chance</button>
+<button type="button" data-g="pb" data-v="custom" aria-pressed="false">My own</button>
+</div>
+<div class="grid mt">
+<div class="field"><label for="pwin">Win chance per attempt <span class="lab" id="b-p"></span></label><input id="pwin" type="number" min="0" max="1" step="any" inputmode="decimal"><span class="src" id="s-p"></span></div>
+<div class="field"><span class="fl">90% range of the win rate <span class="lab estimated">estimated</span></span><span id="ci" class="src"></span><span class="src">Used for the EV range below. Wider of a Wilson interval and a bootstrap over tasks (Algora: bounds).</span></div>
+</div>
+</div>
+
+<div class="blk">
+<h3>The cost of one attempt</h3>
+<p class="legend" id="tier-l">Price band (per million tokens, list prices dated 5 Oct 2026)</p>
+<div class="seg" role="group" aria-labelledby="tier-l" id="tierseg">
+<button type="button" data-g="tier" data-v="budget" aria-pressed="false">Budget</button>
+<button type="button" data-g="tier" data-v="mid" aria-pressed="true">Mid</button>
+<button type="button" data-g="tier" data-v="frontier" aria-pressed="false">Frontier</button>
+<button type="button" data-g="tier" data-v="flat" aria-pressed="false">Flat-rate plan</button>
+<button type="button" data-g="tier" data-v="custom" aria-pressed="false">My own cost</button>
+</div>
+<p class="src mt" id="tier-note"></p>
+<div class="grid mt">
+<div class="field"><label for="cls">Task type (fills the token band) <span class="lab" id="b-cls"></span></label><select id="cls"><option value="short_text">Short text (answer, post, review)</option><option value="structured_data">Structured data (list, table, extraction)</option><option value="research_report">Research report</option><option value="code_change">Code change in a repository</option><option value="security_report">Security report (assumed band)</option><option value="code_single_file">Single-file artefact (SVG/HTML)</option></select><span class="src" id="s-cls"></span></div>
+<div class="field" id="f-own" hidden><label for="own">My cost per attempt, USD <span class="lab assumed">assumed</span></label><input id="own" type="number" min="0" step="any" inputmode="decimal"><span class="src">Your own estimate replaces the token band.</span></div>
+<div class="field"><label for="other">Other cost per attempt, USD <span class="lab assumed">assumed</span></label><input id="other" type="number" min="0" step="any" inputmode="decimal"><span class="src">Paid routes, x402 charges, gas. 0 in every preset.</span></div>
+</div>
+<div class="toks">
+<div class="field"><label for="tin">Input tokens per attempt (central) <span class="lab" id="b-tin"></span></label><input id="tin" type="number" min="0" step="1" inputmode="numeric"><span class="src" id="s-tin"></span></div>
+<div class="field"><label for="tout">Output tokens per attempt (central) <span class="lab" id="b-tout"></span></label><input id="tout" type="number" min="0" step="1" inputmode="numeric"><span class="src" id="s-tout"></span></div>
+</div>
+</div>
+
 <div class="out" aria-live="polite">
 <p class="ev" id="ev"></p>
 <p class="sum" id="sum"></p>
-<div class="bars" role="img" id="bars-wrap">
-<div class="bar-row"><span class="bar-label" id="pay-label"></span><div class="track"><div class="fill pay" id="pay-bar"></div></div></div>
-<div class="bar-row"><span class="bar-label" id="cost-label"></span><div class="track"><div class="fill cost" id="cost-bar"></div></div></div>
-</div>
+<h3>EV range per attempt at this price band</h3>
+<div class="rng" id="rng" role="img"></div>
+<h3>Central EV at each price band</h3>
+<ul class="tiers" id="tiers"></ul>
 <ul class="facts">
-<li><b id="p"></b><span>chance of winning a prize</span></li>
-<li><b id="attempts"></b><span>attempts per win, on average</span></li>
-<li><b id="be-cost"></b><span>break-even total cost per attempt</span></li>
-<li><b id="be-p"></b><span>win chance needed to break even</span></li>
+<li><b id="f-pay"></b><span>expected payout per attempt (win chance × reward after fees)</span></li>
+<li><b id="f-cost"></b><span>estimated cost per attempt at this band (low to high band)</span></li>
+<li><b id="f-be"></b><span>break-even cost per attempt: skip the task if yours is higher</span></li>
+<li><b id="f-bet"></b><span id="f-bet-l">break-even output tokens (output-only bound)</span></li>
+<li><b id="f-need"></b><span>win chance needed to break even at this cost</span></li>
+<li><b id="f-att"></b><span>attempts per win, on average</span></li>
 </ul>
+<p class="stored" id="stored"></p>
 </div>
-<p class="caveat"><strong>Equal-chance EV is optimistic where wins concentrate:</strong> TaskMarket's top worker took 10.2% of worker USD in 30 days, Execution Market's 18.2%, MoltJobs' 57.1%, and one winner took 31% of the Algora sample.</p>
-<p class="caveat">Assumes each entry has an equal base chance, scaled by your edge, and that a winner is actually paid. It ignores withdrawal fees, taxes, time spent validating, and ban risk on venues that forbid automated submissions. Not a prediction of income.</p>
+
+<div class="corr"><span class="corr-tag">Correction · 5 Oct 2026</span>Run 2's presets (1 October) used settled tasks only, so they counted survivors. The old "TaskMarket top task" preset (15 USDC, 231 submissions) implied <strong>$0.060</strong> per attempt; pooled over all closed TaskMarket tasks of 3 USDC or more it is <strong>$0.0031</strong> (1 award in 1,484 submissions). Algora's median fell from $33.33 to $9.09 and Superteam's from $4.27 to $2.37 for the same reason.
+<details><summary>Every preset change since run 2</summary><div class="tw"><table><thead><tr><th scope="col">Preset</th><th scope="col">Run 2 (1 Oct)</th><th scope="col">Run 6 (5 Oct)</th></tr></thead><tbody>
+<tr><td>TaskMarket median: win chance</td><td>1/87 = 0.0115, equal chance on 73 settled tasks</td><td>0.0130 pooled on 81 closed tasks, 16 unawarded included</td></tr>
+<tr><td>TaskMarket median: expected payout</td><td class="n">$0.0213</td><td class="n">$0.024</td></tr>
+<tr><td>TaskMarket median: token cost</td><td>typed-in guess, $0.01 to $3</td><td>$0.32 code band / $0.072 single-file band at mid prices (estimated)</td></tr>
+<tr><td>TaskMarket p90 reward</td><td class="n">$2</td><td class="n">$4</td></tr>
+<tr><td>TaskMarket top task / larger tasks</td><td class="n">$0.060</td><td class="n">$0.0031</td></tr>
+<tr><td>Algora median</td><td class="n">$33.33</td><td class="n">$9.09 (lower bound)</td></tr>
+<tr><td>Algora crowded bounty</td><td class="n">$0.71</td><td class="n">$0.148 (estimated)</td></tr>
+<tr><td>Superteam agent-allowed</td><td class="n">$4.27</td><td class="n">$2.37</td></tr>
+<tr><td>Superteam recent</td><td class="n">$3.97</td><td class="n">$2.13 (n=9)</td></tr>
+<tr><td>Execution Market</td><td>EV $0.0174 at a win chance of about 1</td><td>assignment: no win rate; margin −$0.080 per assigned job at mid prices</td></tr>
+</tbody></table></div></details>
 </div>
+<p class="caveat"><strong>Not a prediction of income.</strong> Win rates are pooled over everyone who entered, including spam, and are snapshots. Costs use list prices without caching or batch discounts. The calculator ignores taxes, the time you spend checking work, and ban risk: never submit where a venue's rules forbid automated entries. A flat-rate subscription is quota-limited, not free compute and not resellable; check your provider's rules on automated use before relying on it.</p>
+</div>
+<script type="application/json" id="econ">{"asOf":"2026-10-05T13:45:00Z","tiers":[{"id":"budget","in":0.1,"out":0.5,"label":"budget band (about $0.10 in / $0.50 out per million tokens)","basis":"measured"},{"id":"mid","in":1.25,"out":7.25,"label":"mid band (about $1.25 in / $7.25 out per million tokens)","basis":"estimated"},{"id":"frontier","in":10.0,"out":50.0,"label":"frontier band (about $10 in / $50 out per million tokens)","basis":"measured"}],"bands":{"short_text":{"label":"Short text (answer, post, review)","in":{"low":1776,"central":29351,"high":261392},"out":{"low":300,"central":1500,"high":5000},"note":"Estimated: measured instruction-file and task-text sizes; turns and output length assumed.","basis":"estimated"},"structured_data":{"label":"Structured data (list, table, extraction)","in":{"low":5552,"central":60585,"high":482320},"out":{"low":500,"central":3000,"high":10000},"note":"Estimated: measured instruction-file and task-text sizes; turns, reading and output assumed.","basis":"estimated"},"research_report":{"label":"Research report","in":{"low":28880,"central":157404,"high":1506960},"out":{"low":2000,"central":8000,"high":25000},"note":"Estimated: anchored on a published multi-agent token multiplier; turns and output assumed.","basis":"estimated"},"code_change":{"label":"Code change in a repository","in":{"low":13776,"central":166234,"high":720696},"out":{"low":2500,"central":15000,"high":30000},"note":"Estimated: anchored on 6 published SWE-bench Verified agent runs ($0.05 to $0.66 per instance) and 6 Aider polyglot runs.","basis":"estimated"},"security_report":{"label":"Security report (assumed band)","in":{"low":53552,"central":332468,"high":1821856},"out":{"low":5000,"central":20000,"high":60000},"note":"Assumed: no published per-report cost anchor was found. The weakest band.","basis":"assumed"},"code_single_file":{"label":"Single-file artefact (SVG/HTML)","in":{"low":17596,"central":27810,"high":41897},"out":{"low":2548,"central":5166,"high":11659},"note":"Estimated (run 6 sub-band): TaskMarket skill file plus task text, 1 to 3 turns (assumed), and per-exercise tokens from 6 Aider polyglot runs.","basis":"estimated"}},"presets":[{"id":"taskmarket_typical","venue":"TaskMarket","label":"TaskMarket typical task without MolTrust (2 USDC, ~87 rivals, code_change band)","row":"taskmarket","reward":2.0,"fee":7.5,"fric":0,"rivals":87.0,"prizes":1.231,"p":0.013029,"ci":[0.009919,0.017769],"pn":0.010119,"pnb":"measured","cls":"code_change","tier":"mid","other":0,"ev":{"low":-1.10002,"central":-0.292439,"high":0.030245,"central_at_p90_reward":-0.268335},"be":0.024104,"verdict":"negative_at_all_tiers","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"measured","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-09-05 to 2026-10-05","srcP":"80 awards over 6,140 submissions on 81 closed tasks (unawarded ones included)","srcF":"Documented 7.5% platform fee (platformFeeBps 750)","srcN":"Measured: awards to workers with no earlier award, over their submissions","cav":"Snapshot at 13:45 UTC on 5 October: 16 unawarded closed tasks were awaiting settlement and are still payable, so a late award would raise the win rate. TaskMarket terms are still a draft (\"not approved or active\").","window":"2026-09-05 to 2026-10-05"},{"id":"taskmarket_single_file","venue":"TaskMarket","label":"TaskMarket single-file SVG/HTML artefact (same p_win, narrower estimated band)","row":"taskmarket#single_file_band","reward":2.0,"fee":7.5,"fric":0,"rivals":87.0,"prizes":1.231,"p":0.013029,"ci":[0.009919,0.017769],"pn":0.010119,"pnb":"measured","cls":"code_single_file","tier":"mid","other":0,"ev":{"low":-0.118549,"central":-0.048112,"high":0.029839,"central_at_p90_reward":-0.024009},"be":0.024104,"verdict":"positive_only_at_budget_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"measured","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-09-05 to 2026-10-05","srcP":"80 awards over 6,140 submissions on 81 closed tasks (unawarded ones included)","srcF":"Documented 7.5% platform fee (platformFeeBps 750)","srcN":"Measured: awards to workers with no earlier award, over their submissions","cav":"Same tasks and win rate as the typical TaskMarket preset. Only the token band differs: most TaskMarket code tasks are single SVG/HTML files, which the repository-level band likely overstates.","window":"2026-09-05 to 2026-10-05"},{"id":"taskmarket_ge3usd","venue":"TaskMarket","label":"TaskMarket larger task (>= 3 USDC per prize; 1 award in 1,484 submissions)","row":"taskmarket#ge_3usd","reward":5.0,"fee":7.5,"fric":0,"rivals":165.0,"prizes":1.0,"p":0.000674,"ci":[0.00015,0.003015],"pn":null,"pnb":"measured","cls":"code_change","tier":"mid","other":0,"ev":{"low":-1.117676,"central":-0.313425,"high":0.011317,"central_at_p90_reward":-0.300956},"be":0.003117,"verdict":"negative_at_all_tiers","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"measured","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-09-05 to 2026-10-05","srcP":"1 award over 1,484 submissions on 11 closed tasks (unawarded ones included)","srcF":"Documented 7.5% platform fee (platformFeeBps 750)","srcN":"Measured: awards to workers with no earlier award, over their submissions","cav":"11 tasks of 3 USDC or more: 1 award in 1,484 submissions. Most larger tasks went unpaid. This replaces run 2's \"top task\" preset, which used one settled task (see the correction below).","window":"2026-09-05 to 2026-10-05"},{"id":"taskmarket_moltrust_promo","venue":"TaskMarket","label":"TaskMarket MolTrust promotional task (0.054 USDC per prize)","row":"taskmarket#moltrust_only","reward":0.0541,"fee":7.5,"fric":0,"rivals":41.0,"prizes":7.667,"p":0.088462,"ci":[0.033829,0.235075],"pn":0.033597,"pnb":"measured","cls":"short_text","tier":"mid","other":0,"ev":{"low":-0.361297,"central":-0.043137,"high":0.011436,"central_at_p90_reward":0.085103},"be":0.004427,"verdict":"positive_only_at_budget_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"measured","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-09-05 to 2026-10-05","srcP":"46 awards over 520 submissions on 7 closed tasks (unawarded ones included)","srcF":"Documented 7.5% platform fee (platformFeeBps 750)","srcN":"Measured: awards to workers with no earlier award, over their submissions","cav":"Promotional tasks from one sponsor paying agents to sign up for its own product; prizes are cents, and the same few workers won most awards.","window":"2026-09-05 to 2026-10-05"},{"id":"superteam_agent_allowed","venue":"Superteam Earn","label":"Superteam Earn agent-allowed listing ($100 median prize; human payout account)","row":"superteam-earn","reward":100.0,"fee":0,"fric":0,"rivals":107.0,"prizes":4,"p":0.023743,"ci":[0.016465,0.033448],"pn":0.021822,"pnb":"estimated","cls":"short_text","tier":"mid","other":0,"ev":{"low":1.28351,"central":2.326736,"high":3.344472,"central_at_p90_reward":35.566936},"be":2.3743,"verdict":"positive_at_frontier_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"assumed","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"estimated","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-02-23 to 2026-10-05 (winner announcement dates), plus 3 listings still in review","srcP":"136 awards over 5,728 submissions on 37 closed tasks (unawarded ones included)","srcF":"No fee found on Superteam Earn; 0 assumed","srcN":"Rough adjustment: win rate × (1 − top-5 share of awards)","cav":"Agent-allowed does not mean agents won: winners are human Superteam accounts, and payout needs a human account (KYC conditional). Human-only listings had a win rate of 0.086 against 0.024 here. Only 7 agent-allowed listings announced winners in 90 days, so the window is extended to about 225 days.","window":"2026-02-23 to 2026-10-05 (winner announcement dates), plus 3 listings still in review"},{"id":"superteam_agent_allowed_90d","venue":"Superteam Earn","label":"Superteam Earn agent-allowed, last 90 days (n=9)","row":"superteam-earn#agent_allowed_90d","reward":100.0,"fee":0,"fric":0,"rivals":66.0,"prizes":4.29,"p":0.021307,"ci":[0.009605,0.054924],"pn":0.017755,"pnb":"estimated","cls":"short_text","tier":"mid","other":0,"ev":{"low":0.59751,"central":2.083136,"high":5.492072,"central_at_p90_reward":17.530711},"be":2.1307,"verdict":"positive_at_frontier_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"assumed","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"estimated","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-07-07 to 2026-10-05","srcP":"30 awards over 1,408 submissions on 9 closed tasks (unawarded ones included)","srcF":"No fee found on Superteam Earn; 0 assumed","srcN":"Rough adjustment: win rate × (1 − top-5 share of awards)","cav":"Only 9 listings in 90 days, so the range is wide. Winners are human accounts; payout needs a human account (KYC conditional).","window":"2026-07-07 to 2026-10-05"},{"id":"algora_paying_boards","venue":"Algora","label":"Algora bounty on a board that pays ($100; bounded p_win)","row":"algora-github-bounties","reward":100.0,"fee":0,"fric":0,"rivals":3.0,"prizes":1.0,"p":0.090909,"ci":[0.05004,0.3213],"pn":0.022727,"pnb":"estimated","cls":"code_change","tier":"mid","other":0,"ev":{"low":3.88563,"central":8.774357,"high":32.127372,"central_at_p90_reward":12.865262},"be":9.0909,"verdict":"positive_at_frontier_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"measured","p_win_ci90":"estimated","p_win_newcomer":"estimated","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-04-08 to 2026-10-05 (180 days)","srcP":"7 confirmed awards over 77 /attempt commenters on 20 closed issues (lower bound; upper bound 18 of 77)","srcF":"Algora charges the sponsor, not the solver","srcN":"Rough adjustment: win rate × (1 − top-5 share of awards)","cav":"Low confidence, very wide range: only 1 award was found on public routes in 90 days, so the window is 180 days. The win rate is bounded between 0.091 and 0.234 and the lower bound is used; attempters are undercounted. Payout goes to a human Stripe Connect account (KYC yes).","window":"2026-04-08 to 2026-10-05 (180 days)"},{"id":"algora_unsafelabs","venue":"Algora","label":"Algora UnsafeLabs-style board (never paid; estimated)","row":"algora-github-bounties#incl_unsafelabs","reward":100.0,"fee":0,"fric":0,"rivals":null,"prizes":null,"p":0.001483,"ci":[0.000804,0.002732],"pn":null,"pnb":"estimated","cls":"code_change","tier":"mid","other":0,"ev":{"low":-1.03797,"central":-0.168243,"high":0.270572,"central_at_p90_reward":-0.101508},"be":0.1483,"verdict":"positive_only_at_budget_tier","margin":null,"assign":false,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","rivals":"measured","prizes":"measured","p_win":"estimated","p_win_ci90":"estimated","p_win_newcomer":"estimated","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed"},"srcR":"Median prize per winner on closed tasks, 2026-04-08 to 2026-10-05 (180 days)","srcP":"7 confirmed awards over an estimated 4,721 attempts (UnsafeLabs claims counted)","srcF":"Algora charges the sponsor, not the solver","srcN":"Rough adjustment: win rate × (1 − top-5 share of awards)","cav":"Do-not-attempt signal. UnsafeLabs had 188 open bounties and 0 ever completed; its claims are counted as attempts, so the denominator is estimated.","window":"2026-04-08 to 2026-10-05 (180 days)"},{"id":"execution_market_assigned","venue":"Execution Market","label":"Execution Market assigned job ($0.02 median; assignment, paused since 2026-09-29)","row":"execution-market","reward":0.02,"fee":13,"fric":0,"rivals":null,"prizes":1,"p":null,"ci":null,"pn":null,"pnb":null,"cls":"structured_data","tier":"mid","other":0,"ev":null,"be":null,"verdict":"not_computable","margin":-0.080081,"assign":true,"b":{"reward_usd":"measured","fee_pct":"measured","payout_friction_per_win_usd":"assumed","prizes":"measured","tokens_in":"estimated","tokens_out":"estimated","other_cost_usd":"assumed","margin_per_assigned_job_mid_central_usd":"estimated"},"srcR":"Median bounty $0.02 gross, 13% fee, from 909 completed jobs, 2026-09-05 to 2026-10-05","srcP":"Not public for an assignment venue","srcF":"Documented 13% flat fee","srcN":null,"cav":"Assignment venue: one executor is picked before the work, and the chance of being picked is not public, so there is no win rate. Paused: no completion since 2026-09-29.","window":"2026-09-05 to 2026-10-05"}],"flat":"quota-limited; not free compute and not resellable capacity"}</script>
 <script>
 (function(){
-  var P={
-    tm_med:{reward:2,fee:7.5,rivals:86,prizes:1,edge:1,tokens:0.5,other:0,src:{reward:'Median reward, 73 TaskMarket tasks settled 1 Sep to 1 Oct 2026',fee:'TaskMarket platformFeeBps 750',rivals:'Median 87 submissions per settled task (you plus 86)'}},
-    tm_top:{reward:15,fee:7.5,rivals:230,prizes:1,edge:1,tokens:2,other:0,src:{reward:'Largest task settled in the window (TSK-WAAYZDHJ)',fee:'TaskMarket platformFeeBps 750',rivals:'231 submissions on that task (you plus 230)'}},
-    al_med:{reward:100,fee:0,rivals:2,prizes:1,edge:1,tokens:3,other:0,src:{reward:'Median of 5 recent Algora bounty-on-issue awards (May to Aug 2026)',fee:'Algora charges the sponsor, not the solver',rivals:'Median 3 attempters on those bounties (you plus 2); only 2 awards dated Jul to Sep 2026 were found'}},
-    al_crowd:{reward:75,fee:0,rivals:105,prizes:1,edge:1,tokens:3,other:0,src:{reward:'tscircuit/jlcsearch#92',fee:'Algora charges the sponsor, not the solver',rivals:'106 attempters; closed 2026-09-30 with no award visible'}},
-    st_med:{reward:166.67,fee:0,rivals:116,prizes:3,edge:1,tokens:1,other:0,src:{reward:'$500 median listing split over 3 winners (real splits are unequal); advertised, not traced',fee:'No fee found on Superteam Earn',rivals:'Median 117 submissions on 34 completed agent-allowed listings; a human must claim'}},
-    em_med:{reward:0.02,fee:13,rivals:0,prizes:1,edge:1,tokens:0.01,other:0,src:{reward:'Median of 1,289 Execution Market tasks completed in Sep 2026',fee:'Execution Market 13% flat',rivals:'One executor is assigned; every Sep 2026 buyer was the operator\'s own swarm, idle since 2026-09-29'}}
-  };
-  var ids=['reward','fee','rivals','prizes','edge','tokens','other'];
+  var D=JSON.parse(document.getElementById('econ').textContent);
   var $=function(id){return document.getElementById(id)};
-  function money(x){var a=Math.abs(x); var d=a<0.1?4:a<10?3:2; return (x<0?'−$':'$')+a.toFixed(d)}
-  function pct(x){return (x*100<0.1&&x>0)?(x*100).toFixed(3)+'%':(x*100).toFixed(1)+'%'}
+  var T={}; D.tiers.forEach(function(t){T[t.id]=t});
+  var PR={}; D.presets.forEach(function(p){PR[p.id]=p});
+  var cur=null, scale={i:1,o:1};
+  var VERD={negative_at_all_tiers:['negative at every price band','neg'],positive_only_at_budget_tier:['positive only at the budget band','mix'],positive_at_mid_tier:['positive at mid and budget','mix'],positive_at_frontier_tier:['positive even at frontier prices','pos'],not_computable:['not computable','']};
+  function money(x){if(x==null||!isFinite(x)) return 'n/a'; var a=Math.abs(x); if(a>0&&a<0.01) return (x<0?'−$':'$')+String(parseFloat(a.toPrecision(2))); var d=a===0?2:a<0.1?3:a<1000?2:0; return (x<0?'−$':'$')+a.toLocaleString('en-US',{minimumFractionDigits:d,maximumFractionDigits:d})}
+  function sgn(x){return (x>0?'+':'')+money(x)}
+  function pct(x){if(x==null||!isFinite(x)) return 'n/a'; var v=x*100; return (v<1?v.toFixed(2):v<10?v.toFixed(1):v.toFixed(0))+'%'}
   function num(id,def){var v=parseFloat($(id).value); return isFinite(v)&&v>=0?v:def}
-  function load(key){
-    var p=P[key]; ids.forEach(function(id){$(id).value=p[id]});
-    $('reward-src').textContent=p.src.reward; $('fee-src').textContent=p.src.fee; $('rivals-src').textContent=p.src.rivals;
-    document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-preset')===key?'true':'false')});
-    calc();
+  function radio(n){var r=document.querySelector('button[data-g="'+n+'"][aria-pressed="true"]'); return r?r.getAttribute('data-v'):null}
+  function setRadio(n,v){document.querySelectorAll('button[data-g="'+n+'"]').forEach(function(r){r.setAttribute('aria-pressed',r.getAttribute('data-v')===v?'true':'false')})}
+  function setLab(id,b){var e=$(id); var k=(b||'').split(' ')[0]; e.className='lab '+(k||'assumed'); e.textContent=k||'assumed'}
+  function band(){return D.bands[$('cls').value]}
+  function tok(which,lvl){var b=band(); var base=b[which][lvl]; return Math.round(base*(which==='in'?scale.i:scale.o))}
+  function costAt(tierId,lvl){
+    var tr=radio('tier');
+    if(tierId==='flat') return num('other',0);
+    if(tierId==='custom') return num('own',0)+num('other',0);
+    var t=T[tierId]; return tok('in',lvl)*t.in/1e6+tok('out',lvl)*t.out/1e6+num('other',0);
+  }
+  function pFromBasis(){
+    var p=cur, b=radio('pb');
+    if(b==='pooled') return p.p;
+    if(b==='newcomer') return p.pn;
+    if(b==='equal') return p.rivals?Math.min(1,p.prizes/(p.rivals+1)):null;
+    return null;
+  }
+  function syncP(){
+    var b=radio('pb'), p=cur;
+    if(p.assign){ $('pwin').value=1; setLab('b-p','assumed'); $('s-p').textContent='If you are assigned the job. The chance of being assigned is not public, so this shows the margin per assigned job.'; return }
+    if(b==='custom'){ setLab('b-p','assumed'); $('s-p').textContent='Your own estimate.'; return }
+    var v=pFromBasis(); $('pwin').value=v==null?'':+v.toPrecision(6);
+    if(b==='pooled'){ setLab('b-p',p.b.p_win); $('s-p').textContent=p.srcP+'.' }
+    else if(b==='newcomer'){ setLab('b-p',p.pnb); $('s-p').textContent=(p.srcN||'')+'.' }
+    else { setLab('b-p','estimated'); $('s-p').textContent='Prizes per awarded task ('+(+p.prizes.toFixed(2))+') ÷ (median '+p.rivals+' other entries + you). Optimistic where a few workers win most prizes.' }
+  }
+  function load(id){
+    cur=PR[id]; scale={i:1,o:1};
+    $('reward').value=cur.reward; $('fee').value=cur.fee; $('fric').value=cur.fric; $('other').value=cur.other;
+    setLab('b-reward',cur.b.reward_usd); setLab('b-fee',cur.b.fee_pct);
+    $('s-reward').textContent=cur.srcR+'.'; $('s-fee').textContent=cur.srcF+'.';
+    $('cls').value=cur.cls; setRadio('tier',cur.tier); tierNote();
+    var dis={newcomer:cur.pn==null||cur.assign, equal:!cur.rivals||cur.assign, pooled:cur.assign, custom:cur.assign};
+    document.querySelectorAll('button[data-g="pb"]').forEach(function(r){r.disabled=!!dis[r.getAttribute('data-v')]});
+    setRadio('pb', 'pooled');
+    $('ci').textContent=cur.ci?(cur.ci[0].toFixed(4)+' to '+cur.ci[1].toFixed(4)):'Not applicable';
+    var n=$('pre-note'); n.textContent=cur.cav; n.className='pre-note'+(/Do-not-attempt|human|Assignment|unpaid/i.test(cur.cav)?' warn':'');
+    fillBand(); syncP(); calc();
+  }
+  function fillBand(){
+    var b=band(); $('tin').value=tok('in','central'); $('tout').value=tok('out','central');
+    setLab('b-cls',b.basis); $('s-cls').textContent=b.note;
+    setLab('b-tin',b.basis); setLab('b-tout',b.basis);
+    $('s-tin').textContent='Band '+b.in.low.toLocaleString('en-US')+' to '+b.in.high.toLocaleString('en-US')+' (low to high).';
+    $('s-tout').textContent='Band '+b.out.low.toLocaleString('en-US')+' to '+b.out.high.toLocaleString('en-US')+'.';
+  }
+  function tierNote(){
+    var t=radio('tier');
+    $('f-own').hidden=(t!=='custom');
+    if(T[t]) $('tier-note').textContent=T[t].label.charAt(0).toUpperCase()+T[t].label.slice(1)+'. '+(t==='mid'?'Mid is a separate median of input, output and cached-input prices across 16 models, not one model\'s price. ':t==='budget'?'Cheapest output price in the stated set of 17 models. ':'Most expensive output price in the set. ')+'Measured list prices, no caching or batch discounts.';
+    else if(t==='flat') $('tier-note').textContent='Assumed $0 marginal cost while within quota. '+D.flat.charAt(0).toUpperCase()+D.flat.slice(1)+'. Check your provider\'s rules on automated use of consumer plans first.';
+    else $('tier-note').textContent='Type your own cost per attempt below; the token band is ignored.';
+  }
+  function verdictFrom(evs){
+    if(evs.frontier>0) return 'positive_at_frontier_tier'; if(evs.mid>0) return 'positive_at_mid_tier'; if(evs.budget>0) return 'positive_only_at_budget_tier'; return 'negative_at_all_tiers';
   }
   function calc(){
-    var reward=num('reward',0), fee=Math.min(100,num('fee',0))/100, rivals=Math.floor(num('rivals',0)), prizes=Math.max(1,Math.floor(num('prizes',1))), edge=num('edge',1), tokens=num('tokens',0), other=num('other',0);
-    var entries=rivals+1;
-    var p=Math.min(1,edge*prizes/entries);
-    var net=reward*(1-fee);
-    var pay=net*p, cost=tokens+other, ev=pay-cost;
-    $('ev').textContent=(ev>=0?'+':'')+money(ev)+' per attempt';
-    $('ev').className='ev '+(ev<0?'neg':'pos');
-    $('sum').textContent='Expected payout '+money(pay)+' ('+money(net)+' after fees × '+pct(p)+' chance) against '+money(cost)+' spent per attempt.'+(ev<0?' On these numbers each attempt loses money on average.':' On these numbers each attempt gains on average, before time and ban risk.');
-    var max=Math.max(pay,cost,1e-9);
-    $('pay-bar').style.width=(pay/max*100)+'%'; $('cost-bar').style.width=(cost/max*100)+'%';
-    $('pay-label').textContent='Expected payout '+money(pay); $('cost-label').textContent='Cost per attempt '+money(cost);
-    $('bars-wrap').setAttribute('aria-label','Expected payout '+money(pay)+' versus cost '+money(cost));
-    $('p').textContent=pct(p);
-    $('attempts').textContent=p>0?(1/p).toFixed(1):'never';
-    $('be-cost').textContent=money(pay);
-    $('be-p').textContent=net>0?(cost/net>1?'over 100%':pct(cost/net)):'n/a';
+    var p=cur, reward=num('reward',0), fee=Math.min(100,num('fee',0))/100, fric=num('fric',0);
+    var R=Math.max(0,reward*(1-fee)-fric);
+    var pw=Math.min(1,num('pwin',0));
+    var tier=radio('tier');
+    var c=costAt(tier,'central'), cLo=costAt(tier,'low'), cHi=costAt(tier,'high');
+    var pay=pw*R, ev=pay-c;
+    var ci=p.ci||[pw,pw];
+    var lo=(radio('pb')==='pooled'?ci[0]:pw*(ci[0]/(p.p||1)))*R-cHi, hi=(radio('pb')==='pooled'?ci[1]:pw*(ci[1]/(p.p||1)))*R-cLo;
+    if(p.assign){lo=R-cHi; hi=R-cLo}
+    var word=p.assign?'margin per assigned job':'per attempt';
+    $('ev').textContent=sgn(ev)+' '+word; $('ev').className='ev '+(ev<0?'neg':'pos');
+    $('sum').textContent=(p.assign?'If assigned, the job pays '+money(R)+' after fees against an estimated '+money(c)+' to do it.':'Expected payout '+money(pay)+' ('+money(R)+' after fees × '+pct(pw)+' win chance) against an estimated '+money(c)+' per attempt.')+(ev<0?(p.assign?' On these numbers each assigned job loses money.':' On these numbers each attempt loses money on average.'):(p.assign?' On these numbers an assigned job covers its token cost, before your time and taxes.':' On these numbers an attempt gains on average, before your time, taxes and ban risk.'));
+    // range chart
+    var vals=[lo,ev,hi], mn=Math.min(0,lo,ev,hi), mx=Math.max(0,lo,ev,hi); if(mx-mn<1e-9){mx=mn+1}
+    var pad=(mx-mn)*0.06; mn-=pad; mx+=pad;
+    function pos(x){return ((x-mn)/(mx-mn)*100).toFixed(2)+'%'}
+    var rg=$('rng'); rg.textContent='';
+    var names=['Low (pessimistic)','Central','High (optimistic)'];
+    vals.forEach(function(v,i){
+      var row=document.createElement('div'); row.className='rng-row';
+      var l=document.createElement('span'); l.className='rng-lab'; l.textContent=names[i];
+      var tr=document.createElement('span'); tr.className='track';
+      var z=document.createElement('span'); z.className='zero'; z.style.left=pos(0); tr.appendChild(z);
+      if(i===1){var sp=document.createElement('span'); sp.className='span'; sp.style.left=pos(Math.min(lo,hi)); sp.style.width=(Math.abs(hi-lo)/(mx-mn)*100).toFixed(2)+'%'; tr.appendChild(sp)}
+      var d=document.createElement('span'); d.className='dot '+(v<0?'neg':'pos'); d.style.left=pos(v); tr.appendChild(d);
+      var vv=document.createElement('span'); vv.className='rng-val'; vv.textContent=sgn(v);
+      row.appendChild(l); row.appendChild(tr); row.appendChild(vv); rg.appendChild(row);
+    });
+    var ax=document.createElement('div'); ax.className='axis'; ax.setAttribute('aria-hidden','true');
+    var a1=document.createElement('span'), a2=document.createElement('span'), a3=document.createElement('span');
+    var x1=document.createElement('span'); x1.textContent=sgn(mn+pad); var x2=document.createElement('span'); x2.textContent='0 = break even'; var x3=document.createElement('span'); x3.textContent=sgn(mx-pad);
+    a2.appendChild(x1); a2.appendChild(x2); a2.appendChild(x3); ax.appendChild(a1); ax.appendChild(a2); ax.appendChild(a3); rg.appendChild(ax);
+    rg.setAttribute('aria-label','EV per attempt: low '+sgn(lo)+', central '+sgn(ev)+', high '+sgn(hi)+'. Low uses the bottom of the win-rate range and the high token band; high uses the top of the range and the low token band.');
+    // tiers
+    var tl=$('tiers'); tl.textContent=''; var evs={};
+    ['budget','mid','frontier'].forEach(function(t){
+      var e=pay-(T[t]?(tok('in','central')*T[t].in/1e6+tok('out','central')*T[t].out/1e6+num('other',0)):0); evs[t]=e;
+      var li=document.createElement('li'); if(t===tier) li.className='sel';
+      var b=document.createElement('b'); b.className=e<0?'neg':'pos'; b.textContent=sgn(e);
+      var s=document.createElement('span'); s.textContent=t.charAt(0).toUpperCase()+t.slice(1)+' band, central tokens';
+      li.appendChild(b); li.appendChild(s); tl.appendChild(li);
+    });
+    var v=VERD[p.assign?'not_computable':verdictFrom(evs)];
+    var ch=document.createElement('span'); ch.className='verdict '+v[1]; ch.textContent=p.assign?'no win rate: assignment venue':((tier==='flat'||tier==='custom')?'at list prices: ':'')+v[0]; $('ev').appendChild(document.createTextNode(' ')); $('ev').appendChild(ch);
+    // facts
+    $('f-pay').textContent=money(pay);
+    $('f-cost').textContent=money(c)+(tier==='flat'||tier==='custom'?'':' ('+money(cLo)+' to '+money(cHi)+')');
+    $('f-be').textContent=money(pay);
+    var outP=T[tier]?T[tier].out:T.mid.out;
+    $('f-bet').textContent=Math.round(pay/(outP/1e6)).toLocaleString('en-US');
+    $('f-bet-l').textContent='break-even output tokens at '+(T[tier]?tier:'mid')+' output prices (output-only bound)';
+    $('f-need').textContent=R>0?(c/R>1?'over 100%':pct(c/R)):'n/a';
+    $('f-att').textContent=pw>0?Math.round(1/pw).toLocaleString('en-US'):'never';
+    var st=$('stored');
+    if(p.assign) st.textContent='Stored in economics.json for this preset: payout per assigned job $0.0174 net; margin '+sgn(p.margin)+' at mid prices (structured-data band). Verdict: not computable (missing input: chance of being assigned).';
+    else st.textContent='Stored in economics.json for this preset (low and central at mid prices, high at budget prices): EV low '+sgn(p.ev.low)+', central '+sgn(p.ev.central)+', high '+sgn(p.ev.high)+'; break-even '+money(p.be)+' per attempt; verdict: '+VERD[p.verdict][0]+'. Window '+p.window+'.';
   }
-  ids.forEach(function(id){$(id).addEventListener('input',function(){document.querySelectorAll('[data-preset]').forEach(function(b){b.setAttribute('aria-pressed','false')}); calc()})});
-  document.querySelectorAll('[data-preset]').forEach(function(b){b.addEventListener('click',function(){load(b.getAttribute('data-preset'))})});
-  load('tm_med');
+  $('preset').addEventListener('change',function(){load(this.value)});
+  document.querySelectorAll('button[data-g="pb"]').forEach(function(r){r.addEventListener('click',function(){if(r.disabled)return;setRadio('pb',r.getAttribute('data-v'));syncP();calc()})});
+  document.querySelectorAll('button[data-g="tier"]').forEach(function(r){r.addEventListener('click',function(){setRadio('tier',r.getAttribute('data-v'));tierNote();calc()})});
+  $('cls').addEventListener('change',function(){scale={i:1,o:1};fillBand();calc()});
+  $('pwin').addEventListener('input',function(){if(!cur.assign){setRadio('pb','custom');setLab('b-p','assumed');$('s-p').textContent='Your own estimate.'}calc()});
+  $('tin').addEventListener('input',function(){var b=band(); var v=num('tin',b.in.central); scale.i=b.in.central?v/b.in.central:1; setLab('b-tin','assumed'); calc()});
+  $('tout').addEventListener('input',function(){var b=band(); var v=num('tout',b.out.central); scale.o=b.out.central?v/b.out.central:1; setLab('b-tout','assumed'); calc()});
+  ['reward','fee','fric','other','own'].forEach(function(id){$(id).addEventListener('input',calc)});
+  $('own').value='0.10';
+  tierNote(); load(D.presets[0].id);
 })();
 </script>
 <script src="../assets/shaduf-tool-resize.js"></script>
