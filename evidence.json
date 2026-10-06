@@ -2,6 +2,126 @@
   "schema_version": "1.0.0",
   "items": [
     {
+      "evidence_id": "taskmarket-escrow-corefacet",
+      "source_type": "on-chain",
+      "source_url": "https://base.blockscout.com/address/0x0FC28adc96064c93669593709f8DB88D708A1b9f?tab=contract",
+      "title": "TaskMarket escrow CoreFacet (verified source)",
+      "claim": "Unawarded escrow is never returned automatically: refundExpired reverts while any submission is active and cancelTask is requester-only and also reverts once submissions exist, so a reward on a task with submissions stays locked until the requester awards it or rejects every submitter. Code reading, not legal advice.",
+      "accessed_at": "2026-10-06T13:41:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-escrow-contract",
+      "source_type": "on-chain",
+      "source_url": "https://base.blockscout.com/address/0xDDc6cC3e4D11c1f3527B867C7DAD4ED9869C33f7",
+      "title": "TaskMarket escrow contract and event logs",
+      "claim": "Event logs carry the task ID; all 12 unawarded tasks in the window (99.02 USDC) are still in escrow; balance 1,027.03 USDC covers 818.93 USDC on listed unsettled tasks (602.21 past expiry).",
+      "accessed_at": "2026-10-06T13:45:29Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-last-refund",
+      "source_type": "on-chain",
+      "source_url": "https://base.blockscout.com/tx/0x78b3a5a1a9531c767ecbcc8231f74199de408eb90399ee12a41dac8e1a767830",
+      "title": "Last TaskMarket refund (TSK-FKYQ6JJK)",
+      "claim": "The last escrow refund of any kind was on 2026-09-02; over 90 days refunds (21 tasks, 148.93 USDC) happened only on tasks without live submissions, one exception unexplained.",
+      "accessed_at": "2026-10-06T13:45:29Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-unawarded-deposit",
+      "source_type": "on-chain",
+      "source_url": "https://base.blockscout.com/tx/0x936a58747a2bd9c617fc3be3b334bdcd5a42896e2a8c51599c047a30043c71ab",
+      "title": "Deposit for TSK-WAN8H9G1 (10 USDC, final unpaid)",
+      "claim": "A 10 USDC reward with 165 submissions, 26.7 days past expiry and no award, still in escrow with no terminal event.",
+      "accessed_at": "2026-10-06T13:45:29Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-task-list-settlement",
+      "source_type": "primary-record",
+      "source_url": "https://taskmarket.dev/api/tasks",
+      "title": "TaskMarket public task API (settlement reading)",
+      "claim": "All 387 public tasks read on 6 October: 81 closed tasks in the window (MolTrust excluded), 23.0% of submissions on tasks with no award at the check; refund action offered only where the submission counter is 0.",
+      "accessed_at": "2026-10-06T13:42:12Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-terms-draft-2026-10-06",
+      "source_type": "terms",
+      "source_url": "https://taskmarket.dev/legal/terms",
+      "title": "TaskMarket terms (draft)",
+      "claim": "Still a draft, \"not approved or active\"; no clause on unawarded rewards; defers to the Task Record and protocol state.",
+      "accessed_at": "2026-10-06T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-review-feed",
+      "source_type": "primary-record",
+      "source_url": "https://earn.superteam.fun/api/listings?status=review",
+      "title": "Superteam Earn listings past deadline",
+      "claim": "48 listings past deadline with no winners announced, 3,020 submissions, median 35.4 days overdue; 3 agent-allowed with 224 submissions. Feed cap unknown.",
+      "accessed_at": "2026-10-06T13:45:52Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "steve-agent-arena",
+      "source_type": "primary-record",
+      "source_url": "https://earn.superteam.fun/api/listings/details/steve-agent-arena-launch-your-agent-and-win-500-usdc",
+      "title": "Steve Agent Arena (Superteam, agent-allowed)",
+      "claim": "Winners not announced 4.7 days after the 2026-10-01 deadline; 66 submissions (two readings).",
+      "accessed_at": "2026-10-06T13:48:46Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "dealwork-jobs-2026-10-06",
+      "source_type": "primary-record",
+      "source_url": "https://dealwork.ai/api/v1/jobs?per_page=100",
+      "title": "dealwork.ai public jobs",
+      "claim": "128 open jobs, 0 funded, 3,972 bids; no completed contract since 2026-07-17.",
+      "accessed_at": "2026-10-06T13:46:20Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "arc-prize-milestone-2",
+      "source_type": "sponsor-announcement",
+      "source_url": "https://arcprize.org/competitions/2026/arc-agi-3",
+      "title": "ARC Prize 2026 ARC-AGI-3 competition page",
+      "claim": "Milestone #2 results not published on arcprize.org at two checks; the page still prints $25K / $10K / $2.5K. A secondary search snippet of an X post gives $25K / $7.5K / $5K to three human entrants; unverified.",
+      "accessed_at": "2026-10-06T13:49:33Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "upwork-mcp-article",
+      "source_type": "terms",
+      "source_url": "https://support.upwork.com/hc/en-us/articles/55446516654611-How-to-use-Upwork-with-AI-agents-through-MCP",
+      "title": "Upwork: how to use Upwork with AI agents through MCP",
+      "claim": "Proposals go through MCP only after the user reviews and explicitly confirms; Project Catalog cannot be managed through MCP (edited 2026-10-02). Not legal advice.",
+      "accessed_at": "2026-10-06T13:59:35Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "stripe-mcp-auth",
+      "source_type": "terms",
+      "source_url": "https://docs.stripe.com/mcp",
+      "title": "Stripe MCP documentation",
+      "claim": "From 2026-10-31 Stripe MCP accepts only Agent Keys or OAuth; marked Public preview.",
+      "accessed_at": "2026-10-06T13:48:17Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
       "evidence_id": "hackerone-report",
       "source_type": "primary-record",
       "source_url": "https://hackerone.com/reports/4000185.json",

@@ -1,7 +1,6 @@
 {
- "schema": "agentic-freelance-x402-buyers/0.1",
  "title": "Agentic Freelance: x402 buyer trace for 8 sellers",
- "description": "On-chain trace of buyers paying 8 x402 sellers on Base (2026-10-03), refreshed on 2026-10-04 (refresh_2026_10_04): sample windows, distinct buyers, top-buyer shares, payer classes and shared funders; light refresh on 2026-10-05 (refresh_2026_10_05).",
+ "description": "On-chain trace of buyers paying 8 x402 sellers on Base (2026-10-03), refreshed on 2026-10-04 (refresh_2026_10_04): sample windows, distinct buyers, top-buyer shares, payer classes and shared funders; light refresh on 2026-10-05 (refresh_2026_10_05); light refresh on 2026-10-06 (refresh_2026_10_06).",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/x402_buyers.json",
  "page_url": "https://shaduf.ai/p/agentic-freelance/who-paid/",
  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-03-sell-per-call-or-bounties.html",
@@ -13,6 +12,7 @@
   "Wallet addresses are public on-chain identifiers. This file makes no claim about the people behind them.",
   "merge_estimates are extrapolations: x402scan 30-day USD multiplied by a sample share. Treat them as estimates with the stated sample window."
  ],
+ "refresh_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
  "status": "complete",
  "as_of": "2026-10-03T14:10Z",
  "method": {
@@ -4627,6 +4627,7 @@
   "buyers_traced_reported_by_C": 64,
   "buyers_traced_note": "Correction: the run reported 64 (8 sellers x 8). OneShot had only 3 distinct buyers in its sample, so 59 buyer records exist (7 sellers x 8 + 3). All 59 were traced at least one hop."
  },
+ "schema": "agentic-freelance-x402-buyers/0.1",
  "merge_estimates": {
   "basis": "Estimated 30-day unlinked USD = x402scan 30-day USD for the payTo x unlinked share. \"high\" uses the unlinked share of traced USD (the run's indicative figure); \"low\" uses the unlinked share of the whole sample (untraced buyers counted as not unlinked). These are extrapolations from samples of hours (dTelecom 8.5 h, AX1 2 h, StableEnrich 10.5 h), not measurements. meets_bar_traced applies the shared-funder adjustment: buyers that share one funder are treated as one payer for the 5-payer test.",
   "sellers": [
@@ -4774,7 +4775,6 @@
    "note": "Buyers funded only through these wallets stay unlinked; a shared funder of this kind is not treated as a common owner."
   }
  },
- "refresh_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-05-worth-the-tokens.html",
  "refresh_2026_10_04": {
   "as_of": "2026-10-04T13:55Z",
   "run_id": "run:049a84a9-6b74-42b7-9cb5-ebf95c6b6fc7",
@@ -5035,6 +5035,10 @@
   {
    "date": "2026-10-05",
    "note": "Light refresh (2 pages per seller) in refresh_2026_10_05; Cluster Protocol still stopped since 2026-10-02T12:00:51Z; StableEnrich new top-1 0xc2f9ef1a traced at hop 1 (unlinked)."
+  },
+  {
+   "date": "2026-10-06",
+   "detail": "Light refresh (100 latest payments per seller; Cluster skipped, stopped): StableEnrich top-1 0.78 -> 0.58; StableStudio 0.77 -> 0.24; AX1 new top-1 0x37e4a8c7 27% (5 buyers in sample); Agent402 new top-1 0x914cea2c 65% (funded by a 49.41 USDC mint, unlinked); dTelecom, OneShot, Frantic unchanged. Small samples ($1.6-$2.1 for three sellers)."
   }
  ],
  "previous_run_id": "run:99d4b1f5-91db-4708-b470-6afd2953854a",
@@ -5554,5 +5558,516 @@
    "dTelecom and AX1 new top-5 buyers not traced (rule: trace only a new top-1 >25%)."
   ]
  },
- "run_id_refresh_2026_10_05": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d"
+ "run_id_refresh_2026_10_05": "run:8c352b5d-8d48-4aa4-ae72-4e53a16d190d",
+ "refresh_2026_10_06": {
+  "schema": "agentic-freelance-x402-buyers-refresh/0.1",
+  "run_id": "run:53b237a4-8806-4241-ab35-3731907527d3",
+  "as_of": "2026-10-06T13:55Z",
+  "method": "Light refresh as in run 6: latest 2 pages (<=100 transfers) of USDC to each payTo on Base, same route per seller as run 6, dated >= 2026-09-06; buyer = token-transfer from (EIP-3009 authoriser). Shares comparable with run 6 (same sample length); buyer counts are not a 30-day population. Hop-1 trace only for a new top-1 buyer above 25% (3 cases). Cluster skipped (no inbound since 2026-10-02).",
+  "sellers": [
+   {
+    "seller": "dtelecom",
+    "name": "dTelecom x402 Gateway",
+    "payTo": "0x47d3394c7234714e4b9e9b74827c12be847f9dda",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-10-06T10:18:23.000000Z",
+     "to": "2026-10-06T13:49:29.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 201.8,
+    "distinct_buyers": 21,
+    "top1_share": 0.109,
+    "top5_share": 0.4509,
+    "median_payment": 1.0,
+    "top5": [
+     {
+      "address": "0x5fa3c7c02213c3ee962de14b112022a643c6afbd",
+      "usd": 22.0,
+      "known_class": "unlinked",
+      "top1_in_run6": true
+     },
+     {
+      "address": "0x6a1637683f11e0bcb14fbad60c651c7e96fc3b5e",
+      "usd": 20.0,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x12c9a08652ee6545510e92d70586e2499b7b091e",
+      "usd": 18.0,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x5840aff089b9d38907ebb01fc1b21cd05844aa15",
+      "usd": 16.0,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x072014b79c22b067e9fceeb0e4fb189e2552106a",
+      "usd": 15.0,
+      "known_class": null,
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.1152,
+     "top5": 0.4636,
+     "buyers": 18,
+     "window": {
+      "from": "2026-10-05T10:08:51.000000Z",
+      "to": "2026-10-05T13:51:59.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": false
+   },
+   {
+    "seller": "cluster",
+    "name": "Cluster Protocol",
+    "payTo": "0x68396bd35874695ad86cd29410bd80a550991a2b",
+    "skipped": "payTo has had no inbound USDC since 2026-10-02T12:00:51Z (watch.json); run-6 shares stand",
+    "blockscout_calls": 0
+   },
+   {
+    "seller": "stableenrich",
+    "name": "StableEnrich",
+    "payTo": "0x325bdf6f7efab24a2210c48c1b64cab2eae1d430",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-10-06T08:05:43.000000Z",
+     "to": "2026-10-06T13:31:37.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 2.0944,
+    "distinct_buyers": 10,
+    "top1_share": 0.577,
+    "top5_share": 0.9357,
+    "median_payment": 0.0126,
+    "top5": [
+     {
+      "address": "0xdeafcd44c2509ac1ac6ea431a8b8701b337cb943",
+      "usd": 1.2084,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x5ec04c6a462c797da50cda71d7ec2e77ebdb4da3",
+      "usd": 0.332,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x44dbcc77055da9e2bf31ed6aa689cefe50497dc9",
+      "usd": 0.2312,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x9011c5ac80da5dc14166bcded13ced431a607be3",
+      "usd": 0.1,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x525dc58cc6ecc63444563fbea1389145c65ab186",
+      "usd": 0.0882,
+      "known_class": null,
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.781,
+     "top5": 1.0,
+     "buyers": 3,
+     "window": {
+      "from": "2026-10-05T13:22:07.000000Z",
+      "to": "2026-10-05T13:52:35.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": true,
+    "top1_hop1": {
+     "address": "0xdeafcd44c2509ac1ac6ea431a8b8701b337cb943",
+     "inbound_usdc_page1": 50,
+     "top_funders": [
+      {
+       "from": "0xd6e5f2e3536ba3d687bd911a17a03e4b5fc41b81",
+       "usd": 58.1315
+      },
+      {
+       "from": "0x848860e7a1af9af5074060d916c7c1dcd4060f42",
+       "usd": 50.0
+      },
+      {
+       "from": "0x84f3460f211ff36ff061f530b52025db52b63dea",
+       "usd": 17.6234
+      },
+      {
+       "from": "0x0b48477f7d3240d4f9027acfbdeafd5a60206dcc",
+       "usd": 3.24
+      },
+      {
+       "from": "0xa9b851129e42ebf8c2e96de121f1fe2af4881b78",
+       "usd": 0.1585
+      }
+     ],
+     "earliest_in_page": "2026-09-12T22:36:13.000000Z",
+     "class": "unlinked",
+     "class_reason": "no seller payTo or known operator wallet among hop-1 USDC funders (page 1, <=50 transfers); hop 2 not traced",
+     "route": "https://base.blockscout.com/api/v2/addresses/0xdeafcd44c2509ac1ac6ea431a8b8701b337cb943/token-transfers?type=ERC-20&token=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&filter=to"
+    }
+   },
+   {
+    "seller": "oneshot",
+    "name": "OneShot Agent API",
+    "payTo": "0x9fb365e4e9385e2a39febad70368267e6f571d9a",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-10-06T11:00:29.000000Z",
+     "to": "2026-10-06T13:40:35.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 0.5,
+    "distinct_buyers": 2,
+    "top1_share": 0.98,
+    "top5_share": 1.0,
+    "median_payment": 0.005,
+    "top5": [
+     {
+      "address": "0x4c1b034a2264863b6c87130793f818f7f5484261",
+      "usd": 0.49,
+      "known_class": "operator_linked",
+      "top1_in_run6": true
+     },
+     {
+      "address": "0xf331600ab219c1ccea02527685da0c2fb58f194c",
+      "usd": 0.01,
+      "known_class": null,
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 1.0,
+     "top5": 1.0,
+     "buyers": 1,
+     "window": {
+      "from": "2026-10-05T13:45:53.000000Z",
+      "to": "2026-10-05T13:52:43.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": false
+   },
+   {
+    "seller": "stablestudio",
+    "name": "StableStudio",
+    "payTo": "0x07f067959297767c887dbfa3c72379c66e82a045",
+    "route": "blockscout token-transfers USDC, filter=to, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-09-29T11:29:19.000000Z",
+     "to": "2026-10-06T10:14:51.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 10.98,
+    "distinct_buyers": 19,
+    "top1_share": 0.2404,
+    "top5_share": 0.7568,
+    "median_payment": 0.07,
+    "top5": [
+     {
+      "address": "0xe2d8dc842fc5037c99c332bd57baaba3649f66c2",
+      "usd": 2.64,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x661eb57e38827451c24e6aae9a7554e999b12c11",
+      "usd": 1.89,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x9aebd2c87cb1c924fb0d99a17bdc6c8411c25bee",
+      "usd": 1.45,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x054469c7ed9560706148a37e75017fa9e08b3980",
+      "usd": 1.19,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x7569b12f89d15ab97e9afcba76d74e47fd8f26e4",
+      "usd": 1.14,
+      "known_class": null,
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.7702,
+     "top5": 0.891,
+     "buyers": 24,
+     "window": {
+      "from": "2026-09-25T10:25:09.000000Z",
+      "to": "2026-10-04T18:14:29.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": false
+   },
+   {
+    "seller": "frantic",
+    "name": "Frantic (gofrantic.com)",
+    "payTo": "0x26572ff23c6c52bfb1a69cb0c9114a8be443b422",
+    "route": "blockscout token-transfers USDC, filter=to, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-09-26T08:49:35.000000Z",
+     "to": "2026-10-06T10:47:49.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 16.55,
+    "distinct_buyers": 4,
+    "top1_share": 0.9607,
+    "top5_share": 1.0,
+    "median_payment": 0.05,
+    "top5": [
+     {
+      "address": "0xd6d6c859ac0cf89d082b2e5aa2e21ee2169f932c",
+      "usd": 15.9,
+      "known_class": "operator_linked",
+      "top1_in_run6": true
+     },
+     {
+      "address": "0x335aa55c12b260e604d93cb0b0895bb13a4e93e3",
+      "usd": 0.55,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x8c062dc5d775b7d5efc168f75a875f392f53dcdf",
+      "usd": 0.05,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x4c29ec4f680ca88d0019edbfe3a8ff5c80499494",
+      "usd": 0.05,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.9238,
+     "top5": 1.0,
+     "buyers": 4,
+     "window": {
+      "from": "2026-09-25T13:52:21.000000Z",
+      "to": "2026-10-05T10:51:59.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": false
+   },
+   {
+    "seller": "ax1",
+    "name": "AX1 q-verdict (ax1.vc)",
+    "payTo": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
+    "route": "blockscout token-transfers USDC, unfiltered with client-side to==payTo, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-10-06T13:48:19.000000Z",
+     "to": "2026-10-06T13:53:27.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 2.0,
+    "distinct_buyers": 5,
+    "top1_share": 0.27,
+    "top5_share": 1.0,
+    "median_payment": 0.02,
+    "top5": [
+     {
+      "address": "0x37e4a8c75df037226c20ebcc5e6e5ac1044c8b92",
+      "usd": 0.54,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x82207aac77316911396d0c965dc05d105979c686",
+      "usd": 0.52,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x740ce3394a4b3ebc9d0aeb2ecfe3646378cacafa",
+      "usd": 0.46,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x8ca837b7b8c246cf0de992b0f535263e6a1addc3",
+      "usd": 0.26,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x297921ba81a1f100e49e2fea69b4fac4c2273a0a",
+      "usd": 0.22,
+      "known_class": null,
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.05,
+     "top5": 0.22,
+     "buyers": 45,
+     "window": {
+      "from": "2026-10-04T23:54:13.000000Z",
+      "to": "2026-10-05T12:20:45.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": true,
+    "top1_hop1": {
+     "address": "0x37e4a8c75df037226c20ebcc5e6e5ac1044c8b92",
+     "inbound_usdc_page1": 24,
+     "top_funders": [
+      {
+       "from": "0x3dd6f35c88f3ae22feccbde524caf9874aab1af7",
+       "usd": 180.1
+      },
+      {
+       "from": "0x1f144db8eb58c04886f540c3be09ce521fab947d",
+       "usd": 90.3094
+      }
+     ],
+     "earliest_in_page": "2026-09-10T15:05:23.000000Z",
+     "class": "unlinked",
+     "class_reason": "no seller payTo or known operator wallet among hop-1 USDC funders (page 1, <=50 transfers); hop 2 not traced",
+     "route": "https://base.blockscout.com/api/v2/addresses/0x37e4a8c75df037226c20ebcc5e6e5ac1044c8b92/token-transfers?type=ERC-20&token=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&filter=to"
+    }
+   },
+   {
+    "seller": "agent402",
+    "name": "Agent402 (agent402.tools)",
+    "payTo": "0xabf4fabd7c416fb67202e5f9002389fc75e2a9d0",
+    "route": "blockscout token-transfers USDC, filter=to, latest 2 pages (<=100 transfers)",
+    "blockscout_calls": 2,
+    "sample_window": {
+     "from": "2026-10-06T11:35:49.000000Z",
+     "to": "2026-10-06T13:53:11.000000Z",
+     "payments": 100
+    },
+    "sample_usd": 1.5918,
+    "distinct_buyers": 9,
+    "top1_share": 0.652,
+    "top5_share": 0.9893,
+    "median_payment": 0.020075000000000003,
+    "top5": [
+     {
+      "address": "0x914cea2c3783dac54379636a09ce5fb49b114c90",
+      "usd": 1.0378,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x286298ccb1b05d4e66b636870c8daeaa3838d02d",
+      "usd": 0.475,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0xec2abd3eda89bed90124736e317e847d5fb6d034",
+      "usd": 0.022,
+      "known_class": null,
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x7be382509dd88d3758f0dc9f953ee34e31d411b7",
+      "usd": 0.02,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     },
+     {
+      "address": "0x04ce224c15d125624bf099824d092839e48156bf",
+      "usd": 0.02,
+      "known_class": "unlinked",
+      "top1_in_run6": false
+     }
+    ],
+    "run6": {
+     "top1": 0.6888,
+     "top5": 0.9589,
+     "buyers": 12,
+     "window": {
+      "from": "2026-10-05T07:08:27.000000Z",
+      "to": "2026-10-05T13:00:13.000000Z",
+      "payments": 100
+     }
+    },
+    "new_top1_over_25pct": true,
+    "top1_hop1": {
+     "address": "0x914cea2c3783dac54379636a09ce5fb49b114c90",
+     "inbound_usdc_page1": 2,
+     "top_funders": [
+      {
+       "from": "0x0000000000000000000000000000000000000000",
+       "usd": 49.4139
+      },
+      {
+       "from": "0xb993b3650bf03098f0240143f2b157ca23f7253b",
+       "usd": 0.0
+      }
+     ],
+     "earliest_in_page": "2026-10-05T20:39:07.000000Z",
+     "class": "unlinked",
+     "class_reason": "no seller payTo or known operator wallet among hop-1 USDC funders (page 1, <=50 transfers); hop 2 not traced",
+     "route": "https://base.blockscout.com/api/v2/addresses/0x914cea2c3783dac54379636a09ce5fb49b114c90/token-transfers?type=ERC-20&token=0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913&filter=to"
+    }
+   }
+  ],
+  "top1_over_25pct_new": [
+   {
+    "seller": "stableenrich",
+    "address": "0xdeafcd44c2509ac1ac6ea431a8b8701b337cb943",
+    "share": 0.577,
+    "hop1_class": "unlinked"
+   },
+   {
+    "seller": "ax1",
+    "address": "0x37e4a8c75df037226c20ebcc5e6e5ac1044c8b92",
+    "share": 0.27,
+    "hop1_class": "unlinked"
+   },
+   {
+    "seller": "agent402",
+    "address": "0x914cea2c3783dac54379636a09ce5fb49b114c90",
+    "share": 0.652,
+    "hop1_class": "unlinked"
+   }
+  ],
+  "notes": [
+   "StableEnrich: top-1 0.78 -> 0.58, new top-1 0xdeafcd44 (hop-1 funders 0xd6e5f2e3, 0x848860e7, 0x84f3460f; unlinked). Sample is only $2.09.",
+   "AX1: only 5 buyers in the last 100 payments ($2.00); new top-1 0x37e4a8c7 at 27% (hop-1 funders 0x3dd6f35c, 0x1f144db8; unlinked). Run 6 sample had top-5 0.22, so the recent tail is far more concentrated.",
+   "Agent402: operator_linked 0x902dcf34 no longer top-1; new top-1 0x914cea2c at 65% funded by a 49.41 USDC mint from the zero address (bridge/CCTP-style mint; origin chain not traced) -> unlinked.",
+   "StableStudio: top-1 0.77 -> 0.24 (new top-1 0xe2d8dc84 at 24.0%, just under the 25% trace threshold; untraced).",
+   "dTelecom, OneShot, Frantic: essentially unchanged (OneShot and Frantic still dominated by their operator_linked buyers)."
+  ],
+  "blockscout_calls_this_step": 17,
+  "status": "complete",
+  "not_done": [
+   "no hop-2 traces",
+   "Cluster not resampled (stopped)"
+  ]
+ },
+ "run_id_refresh_2026_10_06": "run:53b237a4-8806-4241-ab35-3731907527d3"
 }

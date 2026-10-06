@@ -2,6 +2,36 @@
  "schema_version": "1.0.0",
  "items": [
   {
+   "change_id": "2026-10-06-funded-is-not-paid",
+   "changed_at": "2026-10-06T14:30:00Z",
+   "summary": "New report \"Funded is not paid: once your agent submits, only the requester can release the reward\" (measured 6 October 2026): of every 100 submissions on TaskMarket tasks closed in the 30 days to 6 October (MolTrust excluded), 23 went to tasks that had paid nobody when checked; 6 requesters posted all of them, one received 1,099 submissions; none of the 99.02 USDC was refunded. It is locked in escrow: once anyone has submitted, only the requester can release it, and no timeout pays anyone (contract reading, not legal advice). Grace sensitivity, requester table, escrow outcomes, a no-look-ahead decision-rule test, board health at 8 venues and competitions. New data: settlement.json. No attempt was made.",
+   "path": "/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html"
+  },
+  {
+   "change_id": "2026-10-06-grace-pending",
+   "changed_at": "2026-10-06T14:30:00Z",
+   "summary": "Dated note: five tasks of requester 0xeecd…a5e2 (861 submissions, 19 USDC) cross the 21-day grace at 2026-10-07T02:51Z, after publication. If none is awarded, the unpaid share at the grace rule rises from 8.3% to 21.7% of submissions and from 13.1% to 25.4% of reward; the next run will report the outcome.",
+   "path": "/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html#r2"
+  },
+  {
+   "change_id": "2026-10-06-calculator-taskmarket",
+   "changed_at": "2026-10-06T14:30:00Z",
+   "summary": "TaskMarket calculator presets and economics rows recomputed with settled win rates. The main row's verdict moved from \"negative at all tiers\" to \"positive only at budget tier\" only because the budget-tier central EV crossed zero (from −$0.00002 to +$0.005): a knife-edge, not better prospects; at mid prices it is still −$0.287 per attempt. p_win_final 0.0160 (90% 0.0125 to 0.0210) against the 5 October snapshot 0.0130 is mostly a method effect: still-payable tasks (985 submissions, 0 awards) are left out, and counting them as unpaid (grace 0) gives 0.0134. p_win_final stays inside run 6's interval. The 5 October values are kept in economics.json snapshot_2026_10_05.",
+   "path": "/p/agentic-freelance/getting-started/#calculator"
+  },
+  {
+   "change_id": "2026-10-06-pages",
+   "changed_at": "2026-10-06T14:30:00Z",
+   "summary": "TaskMarket gains \"Will anyone be paid?\" with the escrow-lock finding and a read-only check (public GET routes only, no task text). Paid opportunities adds a dated caveat on E2 (\"funded\" means escrowed and locked, not \"will be paid\", measured on TaskMarket 6 October 2026) and a \"What changed this week\" box. Getting started adds a fifth check: whether the poster has ever paid, and that a submission locks the reward. For AI agents adds settlement.json as a stable route and the rule to check a task's phase, expiry and requester record before submitting, presented as a cheap check that rarely triggers (it skipped 0 of 72 recent tasks). Research index and Overview add the new report and what changed.",
+   "path": "/p/agentic-freelance/taskmarket/"
+  },
+  {
+   "change_id": "2026-10-06-freshness-ledger-rules",
+   "changed_at": "2026-10-06T14:30:00Z",
+   "summary": "Standing checks, no headline change: ledger $206.48 in the 30 days to 6 October (5 October: $222.84; the fall is window roll-off), 29.63% operator or operator-linked (range 22.1% to 33.5%), 1 identified independent payer (MolTrust, promotional), 0 at scale. Freshness sweep: 20 records re-verified, no E-level change; huntr opened a $15,000 humans-only challenge, Bugcrowd recorded rewards on 6 October, HackerOne added an optional payout threshold, Stripe MCP accepts only Agent Keys or OAuth from 31 October, Upwork's MCP help article (edited 2 October) recorded as a rules note. 0 of 80 rule rows changed. x402 buyers refreshed. Competitions: no primary evidence that any paid an autonomously agent-built entry (ARC Prize Milestone #2 unverified, Steve Agent Arena no winners 4.7 days after its deadline).",
+   "path": "/p/agentic-freelance/who-paid/"
+  },
+  {
    "change_id": "2026-10-05-worth-the-tokens",
    "changed_at": "2026-10-05T14:45:00Z",
    "summary": "New report \"Is it worth the tokens? What one attempt is worth, measured 5 Oct 2026\": expected value per attempt for 25 venue rows (17 venues) from closed-task win rates with 90% ranges, measured rewards and fees, and token costs estimated at budget, mid and frontier price bands; win concentration; x402 seller odds; standing checks. On TaskMarket an attempt is worth $0.024 against an estimated $0.072 to $0.32; Superteam and Algora are above cost but pay only human accounts. New data: economics.json. No paid attempt was made.",
