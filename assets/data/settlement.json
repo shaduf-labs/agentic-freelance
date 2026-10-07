@@ -1,8 +1,8 @@
 {
  "title": "Agentic Freelance: TaskMarket settlement, requester records and escrow outcomes",
- "description": "Whether closed TaskMarket tasks paid anyone, measured 6 October 2026: settlement status per closed task (awarded, final_unpaid, still_payable) by a stated grace rule, unpaid shares of submissions and reward with a grace sensitivity, p_win_final next to the 5 October snapshot, 90-day requester records with assumed flags, escrow outcomes for every unawarded task from the escrow's event logs, a no-look-ahead decision rule, and stranded-attempt measures on other boards.",
+ "description": "Whether closed TaskMarket tasks paid anyone, measured 6 October 2026: settlement status per closed task (awarded, final_unpaid, still_payable) by a stated grace rule, unpaid shares of submissions and reward with a grace sensitivity, p_win_final next to the 5 October snapshot, 90-day requester records with assumed flags, escrow outcomes for every unawarded task from the escrow's event logs, a no-look-ahead decision rule, and stranded-attempt measures on other boards. Refreshed 7 October 2026 in refresh_2026_10_07: run 7's provisional 8.3% unpaid share became about 21.7% (dated correction); grace rule 16 days; new window 2026-09-07..10-07.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/settlement.json",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-07-owner-submits.html",
  "page_url": "https://shaduf.ai/p/agentic-freelance/taskmarket/#paid",
  "related": {
   "economics_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
@@ -22,7 +22,7 @@
   "Numbers are dated: as_of applies. Five tasks of requester 0xeecd...a5e2 cross the 21-day grace at 2026-10-07T02:51Z, after this file was written."
  ],
  "schema": "agentic-freelance-settlement/0.1",
- "run_id": "run:53b237a4-8806-4241-ab35-3731907527d3",
+ "run_id": "run:54ede12f-9824-4712-afb1-bf35a8cf54e3",
  "as_of": "2026-10-06T13:42:12Z",
  "windows": {
   "economics": "closed TaskMarket tasks created or expiring 2026-09-06..2026-10-06",
@@ -60,14 +60,14 @@
     "never_paid": ">=3 closed (awarded+final_unpaid) and 0 awarded",
     "mostly_unpaid": ">=3 closed and award rate < 0.5",
     "reliable": ">=3 closed and award rate >= 0.8",
-    "mixed": ">=3 closed and 0.5 <= rate < 0.8 (added in run 7)",
+    "mixed": ">=3 closed and 0.5 <= rate < 0.8 (not named in plan; added)",
     "too_new": "fewer than 3 closed",
     "basis": "assumed"
    },
    "basis": "assumed"
   },
   "decision_rule": "requester record = prior tasks (any created before this task) awarded before creation, or unawarded and cancelled/expired with expiry before creation, or unawarded and more than grace_days past expiry at creation. Cancel time not exposed by API, expiry used. grace_days itself is computed from the full 90-day history (mild parameter look-ahead).",
-  "escrow_outcome_rules": "refunded_to_requester = USDC within ±1% of reward from escrow to requester after expiry (or on cancel); still_in_escrow = deposit traceable, no terminal event; moved_elsewhere = outflow to non-requester non-worker; unknown = deposit or link not found. awarded_after_all = run-6 task that received a TaskCompleted after run 6's check (not an unawarded outcome).",
+  "escrow_outcome_rules": "PLAN.md Definitions (2026-10-06): refunded_to_requester = USDC within ±1% of reward from escrow to requester after expiry (or on cancel); still_in_escrow = deposit traceable, no terminal event; moved_elsewhere = outflow to non-requester non-worker; unknown = deposit or link not found. awarded_after_all = run-6 task that received a TaskCompleted after run 6's check (not an unawarded outcome).",
   "submissions_rule": "max(submissionCount, submissions listed); winner_only tasks list only winners so the counter is used; TSK-HWY90NPP counter 0 vs 28 listed (28 used)"
  },
  "taskmarket": {
@@ -126,7 +126,7 @@
       0.012484,
       0.020984
      ],
-     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as computed in run 7; an independent recompute differs by < 0.0003 at either bound",
+     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as reported by the run; merge recompute with its own resampling routine differs by < 0.0003 at either bound",
      "basis": "measured counts; interval estimated",
      "ci90_bootstrap_merge_recompute": [
       0.012426,
@@ -208,7 +208,7 @@
       0.016958,
       0.031593
      ],
-     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as computed in run 7; an independent recompute differs by < 0.0003 at either bound",
+     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as reported by the run; merge recompute with its own resampling routine differs by < 0.0003 at either bound",
      "basis": "measured counts; interval estimated",
      "ci90_bootstrap_merge_recompute": [
       0.01699,
@@ -292,7 +292,7 @@
       0.067941,
       0.357143
      ],
-     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as computed in run 7; an independent recompute differs by < 0.0003 at either bound",
+     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as reported by the run; merge recompute with its own resampling routine differs by < 0.0003 at either bound",
      "basis": "measured counts; interval estimated",
      "ci90_bootstrap_merge_recompute": [
       0.067941,
@@ -371,7 +371,7 @@
       0.016121,
       0.024042
      ],
-     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as computed in run 7; an independent recompute differs by < 0.0003 at either bound",
+     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as reported by the run; merge recompute with its own resampling routine differs by < 0.0003 at either bound",
      "basis": "measured counts; interval estimated",
      "ci90_bootstrap_merge_recompute": [
       0.0162,
@@ -453,7 +453,7 @@
       0.017452,
       0.026083
      ],
-     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as computed in run 7; an independent recompute differs by < 0.0003 at either bound",
+     "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006) as reported by the run; merge recompute with its own resampling routine differs by < 0.0003 at either bound",
      "basis": "measured counts; interval estimated",
      "ci90_bootstrap_merge_recompute": [
       0.017226,
@@ -671,7 +671,7 @@
      "TSK-B1MHHF16",
      "TSK-MVBFKQFP"
     ],
-    "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+    "requester": "0xeecd…a5e2",
     "submissions": 861,
     "reward_usdc": 19.0,
     "crosses_grace_at": "2026-10-07T02:51Z",
@@ -1613,7 +1613,7 @@
     "refund_action_offered_with_submissions": 0,
     "oldest_expiry": "2026-07-22T06:38:56.689Z",
     "label": "measured",
-    "pending_actions_reading": "For bounty tasks past expiry with >=1 submission (counter), the API lists only requester actions update (extend expiry), accept, accept_submissions, reject_submission (each requiring a 0.001 USDC x402 payment); refund_expired is offered only where the submission counter is 0. Read as data from GET /api/tasks/{id} pendingActions; on-chain escrow state was read separately from the escrow event logs."
+    "pending_actions_reading": "For bounty tasks past expiry with >=1 submission (counter), the API lists only requester actions update (extend expiry), accept, accept_submissions, reject_submission (each requiring a 0.001 USDC x402 payment); refund_expired is offered only where the submission counter is 0. Read as data from GET /api/tasks/{id} pendingActions; on-chain escrow state is the run."
    },
    "exception": "TSK-JVT5EC47: 1 submission, refunded by refundExpired on 2026-07-23 with no SubmissionRejected event; unexplained (possibly pre-upgrade logic).",
    "basis": "measured (escrow event logs carry the task ID; 83 of 92 deposits as TaskCreated logs, 9 pre-2026-07-24 linked by API escrowTxHash)"
@@ -1715,7 +1715,7 @@
    "basis": "estimated"
   },
   "pre_attempt_signals": {
-   "note": "Run 7 test (estimated) of checks an owner can make before attempting, computed only from what was public when each task was created (backlog) or from the task itself (reward size). Base: closed tasks without MolTrust, awarded or final_unpaid (grace 21).",
+   "note": "Merge-side test (estimated) of checks an owner can make before attempting, computed only from what was public when each task was created (backlog) or from the task itself (reward size). Base: closed tasks without MolTrust, awarded or final_unpaid (grace 21).",
    "requester_backlog_at_creation": {
     "definition": "requester had >=1 earlier non-cancelled task already past expiry and not yet awarded when this task was created",
     "history_90d": {
@@ -1819,7 +1819,7 @@
  },
  "requesters": [
   {
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "requester_trunc": "0xeecd…a5e2",
    "moltrust": false,
    "tasks_posted": 27,
@@ -1878,7 +1878,7 @@
    }
   },
   {
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "requester_trunc": "0xc056…7a63",
    "moltrust": false,
    "tasks_posted": 108,
@@ -2018,7 +2018,7 @@
    }
   },
   {
-   "requester": "0xe0d9dcab740520bd7567049e1570314b98b377ea",
+   "requester": "0xe0d9…77ea",
    "requester_trunc": "0xe0d9…77ea",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2051,7 +2051,7 @@
    }
   },
   {
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "requester_trunc": "0xcad2…feed",
    "moltrust": false,
    "tasks_posted": 6,
@@ -2089,7 +2089,7 @@
    }
   },
   {
-   "requester": "0x683bfee2e685e6061eac3e3d33eee7ae5807e6c7",
+   "requester": "0x683b…e6c7",
    "requester_trunc": "0x683b…e6c7",
    "moltrust": false,
    "tasks_posted": 10,
@@ -2131,7 +2131,7 @@
    }
   },
   {
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "requester_trunc": "0x9371…019f",
    "moltrust": false,
    "tasks_posted": 8,
@@ -2171,7 +2171,7 @@
    }
   },
   {
-   "requester": "0x29fe93e59421b3390b1ed058cdb916a9097e1061",
+   "requester": "0x29fe…1061",
    "requester_trunc": "0x29fe…1061",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2204,7 +2204,7 @@
    }
   },
   {
-   "requester": "0xa175d51bfe0170738720daaec627a84d44dc9eb9",
+   "requester": "0xa175…9eb9",
    "requester_trunc": "0xa175…9eb9",
    "moltrust": true,
    "tasks_posted": 11,
@@ -2247,7 +2247,7 @@
    }
   },
   {
-   "requester": "0x13f1d016ee826dea3ffed4ffe458105ba7424999",
+   "requester": "0x13f1…4999",
    "requester_trunc": "0x13f1…4999",
    "moltrust": false,
    "tasks_posted": 2,
@@ -2281,7 +2281,7 @@
    }
   },
   {
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "requester_trunc": "0x4aef…440c",
    "moltrust": false,
    "tasks_posted": 11,
@@ -2324,7 +2324,7 @@
    }
   },
   {
-   "requester": "0x2b0f7af96ac3d8f9d4f87be08e879cd19c08eee9",
+   "requester": "0x2b0f…eee9",
    "requester_trunc": "0x2b0f…eee9",
    "moltrust": false,
    "tasks_posted": 15,
@@ -2371,7 +2371,7 @@
    }
   },
   {
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "requester_trunc": "0x31c5…449b",
    "moltrust": false,
    "tasks_posted": 7,
@@ -2410,7 +2410,7 @@
    }
   },
   {
-   "requester": "0x8904df3de6dfee6a7c8cc38619d2f17806213cee",
+   "requester": "0x8904…3cee",
    "requester_trunc": "0x8904…3cee",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2443,7 +2443,7 @@
    }
   },
   {
-   "requester": "0x6da3024e3c94050e9e35578b00c5b707cf3d28f6",
+   "requester": "0x6da3…28f6",
    "requester_trunc": "0x6da3…28f6",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2476,7 +2476,7 @@
    }
   },
   {
-   "requester": "0x4d1c670f3a7ec9af2022b540c582bed6fcfeeaef",
+   "requester": "0x4d1c…eaef",
    "requester_trunc": "0x4d1c…eaef",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2509,7 +2509,7 @@
    }
   },
   {
-   "requester": "0x75a0c2d1df51c07982de3ff031e5232518676b19",
+   "requester": "0x75a0…6b19",
    "requester_trunc": "0x75a0…6b19",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2542,7 +2542,7 @@
    }
   },
   {
-   "requester": "0xcb1836d78c12c60318524cc0758698c9725fe764",
+   "requester": "0xcb18…e764",
    "requester_trunc": "0xcb18…e764",
    "moltrust": false,
    "tasks_posted": 22,
@@ -2596,7 +2596,7 @@
    }
   },
   {
-   "requester": "0x62267b7b0e24630a5d3a60d09cd9b5d02563f4f3",
+   "requester": "0x6226…f4f3",
    "requester_trunc": "0x6226…f4f3",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2629,7 +2629,7 @@
    }
   },
   {
-   "requester": "0x79d86d70588ed7f9742446849417d50d3bf1a707",
+   "requester": "0x79d8…a707",
    "requester_trunc": "0x79d8…a707",
    "moltrust": false,
    "tasks_posted": 5,
@@ -2666,7 +2666,7 @@
    }
   },
   {
-   "requester": "0x6189b3c5736c556077dafadd4ae386e7f41edf2a",
+   "requester": "0x6189…df2a",
    "requester_trunc": "0x6189…df2a",
    "moltrust": false,
    "tasks_posted": 2,
@@ -2700,7 +2700,7 @@
    }
   },
   {
-   "requester": "0xa139f2f028514dcbe798b484a1a4a53a1a45dbdb",
+   "requester": "0xa139…dbdb",
    "requester_trunc": "0xa139…dbdb",
    "moltrust": false,
    "tasks_posted": 1,
@@ -2733,7 +2733,7 @@
    }
   },
   {
-   "requester": "0x436326b6772851ca8bd84f27e48d77a8668b34bd",
+   "requester": "0x4363…34bd",
    "requester_trunc": "0x4363…34bd",
    "moltrust": false,
    "tasks_posted": 63,
@@ -2828,7 +2828,7 @@
    }
   },
   {
-   "requester": "0x2ea66fd758669b6f8b3173ae238a19ae6e2c7250",
+   "requester": "0x2ea6…7250",
    "requester_trunc": "0x2ea6…7250",
    "moltrust": false,
    "tasks_posted": 10,
@@ -2870,7 +2870,7 @@
    }
   },
   {
-   "requester": "0xc309af9d2813d94669f4c7171c65b35d3b1968ce",
+   "requester": "0xc309…68ce",
    "requester_trunc": "0xc309…68ce",
    "moltrust": false,
    "tasks_posted": 8,
@@ -2910,7 +2910,7 @@
    }
   },
   {
-   "requester": "0x15e9722ffba467f8cfe144d9b6216b7210d8be23",
+   "requester": "0x15e9…be23",
    "requester_trunc": "0x15e9…be23",
    "moltrust": false,
    "tasks_posted": 7,
@@ -2949,7 +2949,7 @@
    }
   },
   {
-   "requester": "0x695bffeb0bedbacb9939f2d6c01d8ff82076302f",
+   "requester": "0x695b…302f",
    "requester_trunc": "0x695b…302f",
    "moltrust": false,
    "tasks_posted": 5,
@@ -2986,7 +2986,7 @@
    }
   },
   {
-   "requester": "0xeb76f3442eaf192ebddbc1f7eebd59cde5e00d35",
+   "requester": "0xeb76…0d35",
    "requester_trunc": "0xeb76…0d35",
    "moltrust": false,
    "tasks_posted": 4,
@@ -3022,7 +3022,7 @@
    }
   },
   {
-   "requester": "0xf13838a18278ada15b54bd410a60dc5bc9a67fed",
+   "requester": "0xf138…7fed",
    "requester_trunc": "0xf138…7fed",
    "moltrust": false,
    "tasks_posted": 4,
@@ -3058,7 +3058,7 @@
    }
   },
   {
-   "requester": "0xa7becfc0d33baba330ec0e5925d7119543a7419a",
+   "requester": "0xa7be…419a",
    "requester_trunc": "0xa7be…419a",
    "moltrust": false,
    "tasks_posted": 4,
@@ -3094,7 +3094,7 @@
    }
   },
   {
-   "requester": "0x1966584eecc80bd8aae8bd86e254b4c1aa80c4f7",
+   "requester": "0x1966…c4f7",
    "requester_trunc": "0x1966…c4f7",
    "moltrust": false,
    "tasks_posted": 3,
@@ -3129,7 +3129,7 @@
    }
   },
   {
-   "requester": "0x8b66628ab709fb597bb6ea5ea2d81c590e5acb6e",
+   "requester": "0x8b66…cb6e",
    "requester_trunc": "0x8b66…cb6e",
    "moltrust": false,
    "tasks_posted": 3,
@@ -3164,7 +3164,7 @@
    }
   },
   {
-   "requester": "0x6668c4c77b6fd374d9e9fc10cabd636023727426",
+   "requester": "0x6668…7426",
    "requester_trunc": "0x6668…7426",
    "moltrust": false,
    "tasks_posted": 3,
@@ -3199,7 +3199,7 @@
    }
   },
   {
-   "requester": "0x609e46c7c666426402cf20b651faea17b471086c",
+   "requester": "0x609e…086c",
    "requester_trunc": "0x609e…086c",
    "moltrust": false,
    "tasks_posted": 2,
@@ -3233,7 +3233,7 @@
    }
   },
   {
-   "requester": "0x64b466023d360938dbfa8c1df74fae442b9b2555",
+   "requester": "0x64b4…2555",
    "requester_trunc": "0x64b4…2555",
    "moltrust": false,
    "tasks_posted": 2,
@@ -3267,7 +3267,7 @@
    }
   },
   {
-   "requester": "0xa4d897959211c8e565f862080913b45cc761ac6a",
+   "requester": "0xa4d8…ac6a",
    "requester_trunc": "0xa4d8…ac6a",
    "moltrust": false,
    "tasks_posted": 2,
@@ -3301,7 +3301,7 @@
    }
   },
   {
-   "requester": "0xd3fad775704a0ed209315a406c3d99ed589ee723",
+   "requester": "0xd3fa…e723",
    "requester_trunc": "0xd3fa…e723",
    "moltrust": false,
    "tasks_posted": 2,
@@ -3335,7 +3335,7 @@
    }
   },
   {
-   "requester": "0x89182a8c2b5890bd3b3eab3762f611205b669660",
+   "requester": "0x8918…9660",
    "requester_trunc": "0x8918…9660",
    "moltrust": false,
    "tasks_posted": 2,
@@ -3369,7 +3369,7 @@
    }
   },
   {
-   "requester": "0xcbd3e8c00af9791f0636475ef292f39aa0904490",
+   "requester": "0xcbd3…4490",
    "requester_trunc": "0xcbd3…4490",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3402,7 +3402,7 @@
    }
   },
   {
-   "requester": "0x292dc5aff29e220d8528bc509c16ef4b9c29578f",
+   "requester": "0x292d…578f",
    "requester_trunc": "0x292d…578f",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3435,7 +3435,7 @@
    }
   },
   {
-   "requester": "0x332743ab2da02d7a3e6072c970549fd6711fedd0",
+   "requester": "0x3327…edd0",
    "requester_trunc": "0x3327…edd0",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3468,7 +3468,7 @@
    }
   },
   {
-   "requester": "0xa388b5c8a4683db5c1e84139d46e723cb374995d",
+   "requester": "0xa388…995d",
    "requester_trunc": "0xa388…995d",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3501,7 +3501,7 @@
    }
   },
   {
-   "requester": "0xb8746a0688ae0b12580e3ec19572555ae54896b1",
+   "requester": "0xb874…96b1",
    "requester_trunc": "0xb874…96b1",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3534,7 +3534,7 @@
    }
   },
   {
-   "requester": "0xd732c9f2f5ca4bd738f02cd6bbd558aaac83f841",
+   "requester": "0xd732…f841",
    "requester_trunc": "0xd732…f841",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3567,7 +3567,7 @@
    }
   },
   {
-   "requester": "0x3c6fe33acdc5370ae696d83eb22d5a8048490c6b",
+   "requester": "0x3c6f…0c6b",
    "requester_trunc": "0x3c6f…0c6b",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3600,7 +3600,7 @@
    }
   },
   {
-   "requester": "0x18d3d338172dac1f074b7df9532965878571bf97",
+   "requester": "0x18d3…bf97",
    "requester_trunc": "0x18d3…bf97",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3633,7 +3633,7 @@
    }
   },
   {
-   "requester": "0x6dc943e7de6d2728f558a4b37d5ac7298d68e554",
+   "requester": "0x6dc9…e554",
    "requester_trunc": "0x6dc9…e554",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3666,7 +3666,7 @@
    }
   },
   {
-   "requester": "0xc76a4c9323a7ede01aca5a6eb2a37ae0e1a48b52",
+   "requester": "0xc76a…8b52",
    "requester_trunc": "0xc76a…8b52",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3699,7 +3699,7 @@
    }
   },
   {
-   "requester": "0xeb2c10855945d72f50bca2983bdf765bd54a915c",
+   "requester": "0xeb2c…915c",
    "requester_trunc": "0xeb2c…915c",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3732,7 +3732,7 @@
    }
   },
   {
-   "requester": "0x2dc32ba249092c27faedbaf245999efbca135ddd",
+   "requester": "0x2dc3…5ddd",
    "requester_trunc": "0x2dc3…5ddd",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3765,7 +3765,7 @@
    }
   },
   {
-   "requester": "0x03b7fe47d392df25e8d3723fd5436debfabff510",
+   "requester": "0x03b7…f510",
    "requester_trunc": "0x03b7…f510",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3798,7 +3798,7 @@
    }
   },
   {
-   "requester": "0xe274231b7d91dda77cdbd150b7b5e4fa6f5140ae",
+   "requester": "0xe274…40ae",
    "requester_trunc": "0xe274…40ae",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3831,7 +3831,7 @@
    }
   },
   {
-   "requester": "0x34aa3f359a9d614239015126635ce7732c18fdf3",
+   "requester": "0x34aa…fdf3",
    "requester_trunc": "0x34aa…fdf3",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3864,7 +3864,7 @@
    }
   },
   {
-   "requester": "0x2c15b5f46a362bca404a5520d445bf532032ab3a",
+   "requester": "0x2c15…ab3a",
    "requester_trunc": "0x2c15…ab3a",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3897,7 +3897,7 @@
    }
   },
   {
-   "requester": "0x988a955173f20681642a3c4194e171793a807331",
+   "requester": "0x988a…7331",
    "requester_trunc": "0x988a…7331",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3930,7 +3930,7 @@
    }
   },
   {
-   "requester": "0x99c7d371fcfb077ea4b79e5dc7736041e64cb5c1",
+   "requester": "0x99c7…b5c1",
    "requester_trunc": "0x99c7…b5c1",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3963,7 +3963,7 @@
    }
   },
   {
-   "requester": "0xdee6a8ac5ab896f35ef17595ff809506b037c8e9",
+   "requester": "0xdee6…c8e9",
    "requester_trunc": "0xdee6…c8e9",
    "moltrust": false,
    "tasks_posted": 1,
@@ -3996,7 +3996,7 @@
    }
   },
   {
-   "requester": "0xfc3189840fb72e472588fe56f1a84a51b250a955",
+   "requester": "0xfc31…a955",
    "requester_trunc": "0xfc31…a955",
    "moltrust": false,
    "tasks_posted": 1,
@@ -4029,7 +4029,7 @@
    }
   },
   {
-   "requester": "0xf096b8b4777dd6923cd247f60c61c56a557790a7",
+   "requester": "0xf096…90a7",
    "requester_trunc": "0xf096…90a7",
    "moltrust": false,
    "tasks_posted": 1,
@@ -4233,7 +4233,7 @@
  "escrow_outcomes": [
   {
    "task_id": "TSK-0FD7V0ZB",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4256,7 +4256,7 @@
   },
   {
    "task_id": "TSK-0P73MV6D",
-   "requester": "0xcb1836d78c12c60318524cc0758698c9725fe764",
+   "requester": "0xcb18…e764",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": true,
@@ -4279,7 +4279,7 @@
   },
   {
    "task_id": "TSK-17JXV54D",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4302,7 +4302,7 @@
   },
   {
    "task_id": "TSK-20W651EW",
-   "requester": "0x13f1d016ee826dea3ffed4ffe458105ba7424999",
+   "requester": "0x13f1…4999",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4325,7 +4325,7 @@
   },
   {
    "task_id": "TSK-38QB2KK3",
-   "requester": "0x29fe93e59421b3390b1ed058cdb916a9097e1061",
+   "requester": "0x29fe…1061",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": true,
@@ -4348,7 +4348,7 @@
   },
   {
    "task_id": "TSK-3D0NKJM2",
-   "requester": "0xa4d897959211c8e565f862080913b45cc761ac6a",
+   "requester": "0xa4d8…ac6a",
    "moltrust": false,
    "settlement_status": "awarded",
    "in_run6_17": true,
@@ -4371,7 +4371,7 @@
   },
   {
    "task_id": "TSK-3DP9H829",
-   "requester": "0xc76a4c9323a7ede01aca5a6eb2a37ae0e1a48b52",
+   "requester": "0xc76a…8b52",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4394,7 +4394,7 @@
   },
   {
    "task_id": "TSK-3F4Q85FT",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4417,7 +4417,7 @@
   },
   {
    "task_id": "TSK-3RJNBGP2",
-   "requester": "0x436326b6772851ca8bd84f27e48d77a8668b34bd",
+   "requester": "0x4363…34bd",
    "moltrust": false,
    "settlement_status": "awarded",
    "in_run6_17": true,
@@ -4440,7 +4440,7 @@
   },
   {
    "task_id": "TSK-3Z1RN20T",
-   "requester": "0x2ea66fd758669b6f8b3173ae238a19ae6e2c7250",
+   "requester": "0x2ea6…7250",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4463,7 +4463,7 @@
   },
   {
    "task_id": "TSK-4AKTDZMB",
-   "requester": "0x695bffeb0bedbacb9939f2d6c01d8ff82076302f",
+   "requester": "0x695b…302f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4486,7 +4486,7 @@
   },
   {
    "task_id": "TSK-4E4CXBM9",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4509,7 +4509,7 @@
   },
   {
    "task_id": "TSK-4M83XEN0",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4532,7 +4532,7 @@
   },
   {
    "task_id": "TSK-4QDHQY9A",
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4555,7 +4555,7 @@
   },
   {
    "task_id": "TSK-5DSDQJ76",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4578,7 +4578,7 @@
   },
   {
    "task_id": "TSK-5DV55M47",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -4601,7 +4601,7 @@
   },
   {
    "task_id": "TSK-5J2QPQZR",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4624,7 +4624,7 @@
   },
   {
    "task_id": "TSK-602GNN5Q",
-   "requester": "0x2b0f7af96ac3d8f9d4f87be08e879cd19c08eee9",
+   "requester": "0x2b0f…eee9",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4647,7 +4647,7 @@
   },
   {
    "task_id": "TSK-6AWXHF97",
-   "requester": "0xe0d9dcab740520bd7567049e1570314b98b377ea",
+   "requester": "0xe0d9…77ea",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4670,7 +4670,7 @@
   },
   {
    "task_id": "TSK-6DRNTH10",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4693,7 +4693,7 @@
   },
   {
    "task_id": "TSK-6ZPX4Q1Y",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4716,7 +4716,7 @@
   },
   {
    "task_id": "TSK-7KKH3VWV",
-   "requester": "0x988a955173f20681642a3c4194e171793a807331",
+   "requester": "0x988a…7331",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4739,7 +4739,7 @@
   },
   {
    "task_id": "TSK-8XD8PJQF",
-   "requester": "0x13f1d016ee826dea3ffed4ffe458105ba7424999",
+   "requester": "0x13f1…4999",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4762,7 +4762,7 @@
   },
   {
    "task_id": "TSK-9A9FEE3X",
-   "requester": "0x436326b6772851ca8bd84f27e48d77a8668b34bd",
+   "requester": "0x4363…34bd",
    "moltrust": false,
    "settlement_status": "awarded",
    "in_run6_17": true,
@@ -4785,7 +4785,7 @@
   },
   {
    "task_id": "TSK-9H0N4YAQ",
-   "requester": "0xeb76f3442eaf192ebddbc1f7eebd59cde5e00d35",
+   "requester": "0xeb76…0d35",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4808,7 +4808,7 @@
   },
   {
    "task_id": "TSK-9JW9F8MY",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -4831,7 +4831,7 @@
   },
   {
    "task_id": "TSK-9NYVNHC3",
-   "requester": "0x2b0f7af96ac3d8f9d4f87be08e879cd19c08eee9",
+   "requester": "0x2b0f…eee9",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4854,7 +4854,7 @@
   },
   {
    "task_id": "TSK-9PCPY9N5",
-   "requester": "0x99c7d371fcfb077ea4b79e5dc7736041e64cb5c1",
+   "requester": "0x99c7…b5c1",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4877,7 +4877,7 @@
   },
   {
    "task_id": "TSK-9QZWT595",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4900,7 +4900,7 @@
   },
   {
    "task_id": "TSK-9Z9HENXP",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4923,7 +4923,7 @@
   },
   {
    "task_id": "TSK-9ZRRDVBX",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4946,7 +4946,7 @@
   },
   {
    "task_id": "TSK-B1MHHF16",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -4969,7 +4969,7 @@
   },
   {
    "task_id": "TSK-BFY96A32",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -4992,7 +4992,7 @@
   },
   {
    "task_id": "TSK-BWSVD7AC",
-   "requester": "0x683bfee2e685e6061eac3e3d33eee7ae5807e6c7",
+   "requester": "0x683b…e6c7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5015,7 +5015,7 @@
   },
   {
    "task_id": "TSK-CC85RST4",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5038,7 +5038,7 @@
   },
   {
    "task_id": "TSK-D3H0NXPT",
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5061,7 +5061,7 @@
   },
   {
    "task_id": "TSK-DKFG1GC6",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5084,7 +5084,7 @@
   },
   {
    "task_id": "TSK-DQDMXFKM",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5107,7 +5107,7 @@
   },
   {
    "task_id": "TSK-DXPHGGXQ",
-   "requester": "0x4d1c670f3a7ec9af2022b540c582bed6fcfeeaef",
+   "requester": "0x4d1c…eaef",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5130,7 +5130,7 @@
   },
   {
    "task_id": "TSK-E49N4V7T",
-   "requester": "0xa175d51bfe0170738720daaec627a84d44dc9eb9",
+   "requester": "0xa175…9eb9",
    "moltrust": true,
    "settlement_status": "still_payable",
    "in_run6_17": false,
@@ -5153,7 +5153,7 @@
   },
   {
    "task_id": "TSK-EKNMJ77W",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5176,7 +5176,7 @@
   },
   {
    "task_id": "TSK-ENBE9A0P",
-   "requester": "0x1966584eecc80bd8aae8bd86e254b4c1aa80c4f7",
+   "requester": "0x1966…c4f7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5199,7 +5199,7 @@
   },
   {
    "task_id": "TSK-EQKNXF7X",
-   "requester": "0x1966584eecc80bd8aae8bd86e254b4c1aa80c4f7",
+   "requester": "0x1966…c4f7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5222,7 +5222,7 @@
   },
   {
    "task_id": "TSK-F0YMQ1NV",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5245,7 +5245,7 @@
   },
   {
    "task_id": "TSK-FJJCCTV3",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5268,7 +5268,7 @@
   },
   {
    "task_id": "TSK-FKYQ6JJK",
-   "requester": "0x695bffeb0bedbacb9939f2d6c01d8ff82076302f",
+   "requester": "0x695b…302f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5291,7 +5291,7 @@
   },
   {
    "task_id": "TSK-FS91PREW",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5314,7 +5314,7 @@
   },
   {
    "task_id": "TSK-GGJ3GWZ1",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5337,7 +5337,7 @@
   },
   {
    "task_id": "TSK-GNB1J26M",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5360,7 +5360,7 @@
   },
   {
    "task_id": "TSK-GQ9XH4RM",
-   "requester": "0x683bfee2e685e6061eac3e3d33eee7ae5807e6c7",
+   "requester": "0x683b…e6c7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5383,7 +5383,7 @@
   },
   {
    "task_id": "TSK-GYCS41ZJ",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5406,7 +5406,7 @@
   },
   {
    "task_id": "TSK-HQQ9T3VE",
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5429,7 +5429,7 @@
   },
   {
    "task_id": "TSK-HWY90NPP",
-   "requester": "0x6da3024e3c94050e9e35578b00c5b707cf3d28f6",
+   "requester": "0x6da3…28f6",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5452,7 +5452,7 @@
   },
   {
    "task_id": "TSK-J3R0MDGA",
-   "requester": "0xa175d51bfe0170738720daaec627a84d44dc9eb9",
+   "requester": "0xa175…9eb9",
    "moltrust": true,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5475,7 +5475,7 @@
   },
   {
    "task_id": "TSK-JVT5EC47",
-   "requester": "0x79d86d70588ed7f9742446849417d50d3bf1a707",
+   "requester": "0x79d8…a707",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5498,7 +5498,7 @@
   },
   {
    "task_id": "TSK-KESDZQ8J",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5521,7 +5521,7 @@
   },
   {
    "task_id": "TSK-KGSK89FT",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5544,7 +5544,7 @@
   },
   {
    "task_id": "TSK-KPTBBE2V",
-   "requester": "0x436326b6772851ca8bd84f27e48d77a8668b34bd",
+   "requester": "0x4363…34bd",
    "moltrust": false,
    "settlement_status": "awarded",
    "in_run6_17": true,
@@ -5567,7 +5567,7 @@
   },
   {
    "task_id": "TSK-M87H49ZR",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5590,7 +5590,7 @@
   },
   {
    "task_id": "TSK-MG8KF2RH",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5613,7 +5613,7 @@
   },
   {
    "task_id": "TSK-MS3GSXH6",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5636,7 +5636,7 @@
   },
   {
    "task_id": "TSK-MVBFKQFP",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5659,7 +5659,7 @@
   },
   {
    "task_id": "TSK-NC8WCRXF",
-   "requester": "0x62267b7b0e24630a5d3a60d09cd9b5d02563f4f3",
+   "requester": "0x6226…f4f3",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5682,7 +5682,7 @@
   },
   {
    "task_id": "TSK-ND38D431",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5705,7 +5705,7 @@
   },
   {
    "task_id": "TSK-P68Y1PGH",
-   "requester": "0x332743ab2da02d7a3e6072c970549fd6711fedd0",
+   "requester": "0x3327…edd0",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5728,7 +5728,7 @@
   },
   {
    "task_id": "TSK-QYWKTXAV",
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5751,7 +5751,7 @@
   },
   {
    "task_id": "TSK-R3J174K6",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5774,7 +5774,7 @@
   },
   {
    "task_id": "TSK-RE563J5T",
-   "requester": "0x695bffeb0bedbacb9939f2d6c01d8ff82076302f",
+   "requester": "0x695b…302f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5797,7 +5797,7 @@
   },
   {
    "task_id": "TSK-RSTTWB3W",
-   "requester": "0x4aef50a137b67749d542ac07f51d11f38f04440c",
+   "requester": "0x4aef…440c",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5820,7 +5820,7 @@
   },
   {
    "task_id": "TSK-RWMG853Z",
-   "requester": "0x75a0c2d1df51c07982de3ff031e5232518676b19",
+   "requester": "0x75a0…6b19",
    "moltrust": false,
    "settlement_status": "still_payable",
    "in_run6_17": true,
@@ -5843,7 +5843,7 @@
   },
   {
    "task_id": "TSK-RWVT1EY0",
-   "requester": "0xc0566e4f2760cd01d53727cb16d3a829c5787a63",
+   "requester": "0xc056…7a63",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5866,7 +5866,7 @@
   },
   {
    "task_id": "TSK-S16YCGX5",
-   "requester": "0x683bfee2e685e6061eac3e3d33eee7ae5807e6c7",
+   "requester": "0x683b…e6c7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5889,7 +5889,7 @@
   },
   {
    "task_id": "TSK-S3WXWQP6",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5912,7 +5912,7 @@
   },
   {
    "task_id": "TSK-ST5AS68D",
-   "requester": "0xa139f2f028514dcbe798b484a1a4a53a1a45dbdb",
+   "requester": "0xa139…dbdb",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5935,7 +5935,7 @@
   },
   {
    "task_id": "TSK-TCSAT3K6",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5958,7 +5958,7 @@
   },
   {
    "task_id": "TSK-TE3SN317",
-   "requester": "0x2b0f7af96ac3d8f9d4f87be08e879cd19c08eee9",
+   "requester": "0x2b0f…eee9",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -5981,7 +5981,7 @@
   },
   {
    "task_id": "TSK-TZM023P2",
-   "requester": "0x2c15b5f46a362bca404a5520d445bf532032ab3a",
+   "requester": "0x2c15…ab3a",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6004,7 +6004,7 @@
   },
   {
    "task_id": "TSK-V4JJD3RC",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6027,7 +6027,7 @@
   },
   {
    "task_id": "TSK-VE3Q5F9P",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6050,7 +6050,7 @@
   },
   {
    "task_id": "TSK-VXXN073Y",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6073,7 +6073,7 @@
   },
   {
    "task_id": "TSK-WAN8H9G1",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": true,
@@ -6096,7 +6096,7 @@
   },
   {
    "task_id": "TSK-X66SNJXV",
-   "requester": "0x2b0f7af96ac3d8f9d4f87be08e879cd19c08eee9",
+   "requester": "0x2b0f…eee9",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6119,7 +6119,7 @@
   },
   {
    "task_id": "TSK-XF1EGP5T",
-   "requester": "0x31c542295ea17f38a89ad6d95f8df4e7a3d8449b",
+   "requester": "0x31c5…449b",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6142,7 +6142,7 @@
   },
   {
    "task_id": "TSK-Y0Y0D8BW",
-   "requester": "0x1966584eecc80bd8aae8bd86e254b4c1aa80c4f7",
+   "requester": "0x1966…c4f7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6165,7 +6165,7 @@
   },
   {
    "task_id": "TSK-Y54J77GG",
-   "requester": "0x8904df3de6dfee6a7c8cc38619d2f17806213cee",
+   "requester": "0x8904…3cee",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6188,7 +6188,7 @@
   },
   {
    "task_id": "TSK-YE7THG31",
-   "requester": "0x6189b3c5736c556077dafadd4ae386e7f41edf2a",
+   "requester": "0x6189…df2a",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6211,7 +6211,7 @@
   },
   {
    "task_id": "TSK-YK19YNYD",
-   "requester": "0xeb76f3442eaf192ebddbc1f7eebd59cde5e00d35",
+   "requester": "0xeb76…0d35",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6234,7 +6234,7 @@
   },
   {
    "task_id": "TSK-YP1CZCGR",
-   "requester": "0x683bfee2e685e6061eac3e3d33eee7ae5807e6c7",
+   "requester": "0x683b…e6c7",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6257,7 +6257,7 @@
   },
   {
    "task_id": "TSK-YQQ9QKC4",
-   "requester": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+   "requester": "0xcad2…feed",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6280,7 +6280,7 @@
   },
   {
    "task_id": "TSK-YTVEBMEZ",
-   "requester": "0x6189b3c5736c556077dafadd4ae386e7f41edf2a",
+   "requester": "0x6189…df2a",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6303,7 +6303,7 @@
   },
   {
    "task_id": "TSK-Z72Y1Y1Z",
-   "requester": "0x93710f148a88d80b344bb1febb91dcba9f80019f",
+   "requester": "0x9371…019f",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6326,7 +6326,7 @@
   },
   {
    "task_id": "TSK-Z85G0KPA",
-   "requester": "0xeecd138212fa1220627c9a3081f770c1b162a5e2",
+   "requester": "0xeecd…a5e2",
    "moltrust": false,
    "settlement_status": "final_unpaid",
    "in_run6_17": false,
@@ -6364,7 +6364,7 @@
     "grace_days": 21
    },
    "label": "measured counts; status by rule (estimated)",
-   "route": "https://shaduf.ai/p/agentic-freelance/assets/data/settlement.json",
+   "route": "settlement_summary.json",
    "basis": "measured counts; status by rule (estimated)"
   },
   {
@@ -6616,6 +6616,1969 @@
     "p_win": "measured counts; ci estimated"
    }
   },
-  "e2_caveat": "\"Funded\" on TaskMarket means the reward is locked in escrow, not that anyone will be paid: once a task has a live submission, only the requester can release the reward, and nothing times out."
- }
+  "e2_caveat": "\"Funded\" on TaskMarket means the reward is locked in escrow, not that anyone will be paid: once a task has a live submission, only the requester can release the reward, and nothing times out.",
+  "refresh_2026_10_07_one_sentence": "Run 8 (window 2026-09-07..10-07, without MolTrust, grace 16): 84 closed tasks, 72 awarded, 9 final_unpaid, 3 still payable; p_win_final 0.0136 (90% 0.0106-0.0179); 20.9% of submissions and 24.3% of reward on tasks that paid nobody; run 7's 8.3% corrected to about 21.7%; no refund of any kind since 2026-09-02; 67 unawarded closed tasks (602.22 USDC) still in escrow over 90 days."
+ },
+ "refresh_2026_10_07": {
+  "run_id": "run:54ede12f-9824-4712-afb1-bf35a8cf54e3",
+  "as_of": "2026-10-07T13:49:12Z",
+  "source": "run working file, run working file, run working file",
+  "grace_days": {
+   "rule_value_now": 16,
+   "run7_value": 21,
+   "detail": {
+    "value": 16,
+    "p95_positive_delay": 15.402,
+    "n_awarded": 284,
+    "n_positive": 211,
+    "median_delay": 1.046,
+    "p90_positive": 11.018,
+    "max": 68.422,
+    "share_after_expiry": 0.743
+   },
+   "label": "estimated (p95 of positive award delays over 90 days, rounded up; floor 7 assumed)",
+   "note": "Recomputed on the run-8 90-day history, p95 of positive delays falls from 20.84 to 15.40, so the rule grace becomes 16 days. Headline figures below use the rule value; grace 21 (run 7) is shown for the branch test and as sensitivity."
+  },
+  "branch": {
+   "answer": "21.7% branch held",
+   "statement": "Run 7's provisional 8.3% becomes about 21.7%: none of the five 0xeecd…a5e2 tasks (861 submissions, 19 USDC) was awarded. Under run 7's grace 21 the run-7 window is 21.4% of submissions / 25.4% of reward unpaid, reaching 21.7% once TSK-RWMG853Z passes 21 days; under grace 16 (recomputed rule value) it is 21.7% / 25.4%.",
+   "run7_closed_set_grace21": {
+    "status_counts": {
+     "awarded": 69,
+     "still_payable": 4,
+     "final_unpaid": 8
+    },
+    "closed_total": 81,
+    "p_win_final": {
+     "p": 0.01368,
+     "awards": 82,
+     "submissions": 5994,
+     "tasks": 77,
+     "ci90_wilson": [
+      0.011423,
+      0.016377
+     ],
+     "ci90_bootstrap": [
+      0.010553,
+      0.018023
+     ],
+     "ci90": [
+      0.010553,
+      0.018023
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.214381,
+    "unpaid_reward_share": 0.253876,
+    "submissions": {
+     "awarded": 4709,
+     "final_unpaid": 1285,
+     "still_payable": 124
+    },
+    "reward_usdc": {
+     "awarded": 99.953,
+     "final_unpaid": 34.01,
+     "still_payable": 65.01
+    },
+    "still_payable_task_ids": [
+     "TSK-P68Y1PGH",
+     "TSK-HWY90NPP",
+     "TSK-9JW9F8MY",
+     "TSK-RWMG853Z"
+    ],
+    "final_unpaid_task_ids": [
+     "TSK-0P73MV6D",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP",
+     "TSK-38QB2KK3",
+     "TSK-WAN8H9G1"
+    ]
+   },
+   "run7_closed_set_rule_grace16": {
+    "status_counts": {
+     "awarded": 69,
+     "still_payable": 3,
+     "final_unpaid": 9
+    },
+    "closed_total": 81,
+    "p_win_final": {
+     "p": 0.013628,
+     "awards": 82,
+     "submissions": 6017,
+     "tasks": 78,
+     "ci90_wilson": [
+      0.011379,
+      0.016314
+     ],
+     "ci90_bootstrap": [
+      0.010531,
+      0.017753
+     ],
+     "ci90": [
+      0.010531,
+      0.017753
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.217384,
+    "unpaid_reward_share": 0.253932,
+    "submissions": {
+     "awarded": 4709,
+     "final_unpaid": 1308,
+     "still_payable": 101
+    },
+    "reward_usdc": {
+     "awarded": 99.953,
+     "final_unpaid": 34.02,
+     "still_payable": 65.0
+    },
+    "still_payable_task_ids": [
+     "TSK-P68Y1PGH",
+     "TSK-HWY90NPP",
+     "TSK-9JW9F8MY"
+    ],
+    "final_unpaid_task_ids": [
+     "TSK-RWMG853Z",
+     "TSK-0P73MV6D",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP",
+     "TSK-38QB2KK3",
+     "TSK-WAN8H9G1"
+    ]
+   },
+   "run7_closed_set_grace7": {
+    "status_counts": {
+     "awarded": 69,
+     "still_payable": 3,
+     "final_unpaid": 9
+    },
+    "closed_total": 81,
+    "p_win_final": {
+     "p": 0.013628,
+     "awards": 82,
+     "submissions": 6017,
+     "tasks": 78,
+     "ci90_wilson": [
+      0.011379,
+      0.016314
+     ],
+     "ci90_bootstrap": [
+      0.010531,
+      0.017753
+     ],
+     "ci90": [
+      0.010531,
+      0.017753
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.217384,
+    "unpaid_reward_share": 0.253932,
+    "submissions": {
+     "awarded": 4709,
+     "final_unpaid": 1308,
+     "still_payable": 101
+    },
+    "reward_usdc": {
+     "awarded": 99.953,
+     "final_unpaid": 34.02,
+     "still_payable": 65.0
+    },
+    "still_payable_task_ids": [
+     "TSK-P68Y1PGH",
+     "TSK-HWY90NPP",
+     "TSK-9JW9F8MY"
+    ],
+    "final_unpaid_task_ids": [
+     "TSK-RWMG853Z",
+     "TSK-0P73MV6D",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP",
+     "TSK-38QB2KK3",
+     "TSK-WAN8H9G1"
+    ]
+   },
+   "label": "measured status; estimated grace"
+  },
+  "run8_window": {
+   "without_moltrust": {
+    "status_counts": {
+     "open": 15,
+     "awarded": 72,
+     "still_payable": 3,
+     "final_unpaid": 9
+    },
+    "closed_total": 84,
+    "p_win_final": {
+     "p": 0.013593,
+     "awards": 85,
+     "submissions": 6253,
+     "tasks": 81,
+     "ci90_wilson": [
+      0.011387,
+      0.016221
+     ],
+     "ci90_bootstrap": [
+      0.010618,
+      0.017876
+     ],
+     "ci90": [
+      0.010618,
+      0.017876
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.20918,
+    "unpaid_reward_share": 0.243047,
+    "submissions": {
+     "awarded": 4945,
+     "final_unpaid": 1308,
+     "still_payable": 101
+    },
+    "reward_usdc": {
+     "awarded": 105.953,
+     "final_unpaid": 34.02,
+     "still_payable": 65.0
+    },
+    "still_payable_task_ids": [
+     "TSK-P68Y1PGH",
+     "TSK-HWY90NPP",
+     "TSK-9JW9F8MY"
+    ],
+    "final_unpaid_task_ids": [
+     "TSK-RWMG853Z",
+     "TSK-0P73MV6D",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP",
+     "TSK-38QB2KK3",
+     "TSK-WAN8H9G1"
+    ],
+    "sensitivity_grace": {
+     "0": {
+      "status_counts": {
+       "open": 15,
+       "awarded": 72,
+       "final_unpaid": 12
+      },
+      "unpaid_submission_share": 0.22175,
+      "unpaid_reward_share": 0.483088,
+      "p_win_final": 0.013377
+     },
+     "7": {
+      "status_counts": {
+       "open": 15,
+       "awarded": 72,
+       "still_payable": 3,
+       "final_unpaid": 9
+      },
+      "unpaid_submission_share": 0.20918,
+      "unpaid_reward_share": 0.243047,
+      "p_win_final": 0.013593
+     },
+     "21": {
+      "status_counts": {
+       "open": 15,
+       "awarded": 72,
+       "still_payable": 4,
+       "final_unpaid": 8
+      },
+      "unpaid_submission_share": 0.20626,
+      "unpaid_reward_share": 0.242993,
+      "p_win_final": 0.013644
+     }
+    }
+   },
+   "with_moltrust": {
+    "status_counts": {
+     "open": 18,
+     "awarded": 78,
+     "still_payable": 5,
+     "final_unpaid": 9
+    },
+    "closed_total": 92,
+    "p_win_final": {
+     "p": 0.019948,
+     "awards": 131,
+     "submissions": 6567,
+     "tasks": 87,
+     "ci90_wilson": [
+      0.017302,
+      0.02299
+     ],
+     "ci90_bootstrap": [
+      0.014611,
+      0.027084
+     ],
+     "ci90": [
+      0.014611,
+      0.027084
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.199178,
+    "unpaid_reward_share": 0.223614,
+    "submissions": {
+     "awarded": 5259,
+     "final_unpaid": 1308,
+     "still_payable": 327
+    },
+    "reward_usdc": {
+     "awarded": 118.117,
+     "final_unpaid": 34.02,
+     "still_payable": 70.951
+    },
+    "still_payable_task_ids": [
+     "TSK-E49N4V7T",
+     "TSK-P68Y1PGH",
+     "TSK-HWY90NPP",
+     "TSK-9JW9F8MY",
+     "TSK-J3R0MDGA"
+    ],
+    "final_unpaid_task_ids": [
+     "TSK-RWMG853Z",
+     "TSK-0P73MV6D",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP",
+     "TSK-38QB2KK3",
+     "TSK-WAN8H9G1"
+    ],
+    "sensitivity_grace": {
+     "0": {
+      "status_counts": {
+       "open": 18,
+       "awarded": 78,
+       "final_unpaid": 14
+      },
+      "unpaid_submission_share": 0.237163,
+      "unpaid_reward_share": 0.470536,
+      "p_win_final": 0.019002
+     },
+     "7": {
+      "status_counts": {
+       "open": 18,
+       "awarded": 78,
+       "still_payable": 5,
+       "final_unpaid": 9
+      },
+      "unpaid_submission_share": 0.199178,
+      "unpaid_reward_share": 0.223614,
+      "p_win_final": 0.019948
+     },
+     "21": {
+      "status_counts": {
+       "open": 18,
+       "awarded": 78,
+       "still_payable": 6,
+       "final_unpaid": 8
+      },
+      "unpaid_submission_share": 0.196363,
+      "unpaid_reward_share": 0.223563,
+      "p_win_final": 0.020018
+     }
+    }
+   },
+   "moltrust_only": {
+    "status_counts": {
+     "open": 3,
+     "awarded": 6,
+     "still_payable": 2
+    },
+    "closed_total": 8,
+    "p_win_final": {
+     "p": 0.146497,
+     "awards": 46,
+     "submissions": 314,
+     "tasks": 6,
+     "ci90_wilson": [
+      0.116695,
+      0.182338
+     ],
+     "ci90_bootstrap": [
+      0.068376,
+      0.361446
+     ],
+     "ci90": [
+      0.068376,
+      0.361446
+     ],
+     "ci_chosen": "bootstrap"
+    },
+    "unpaid_submission_share": 0.0,
+    "unpaid_reward_share": 0.0,
+    "submissions": {
+     "awarded": 314,
+     "final_unpaid": 0,
+     "still_payable": 226
+    },
+    "reward_usdc": {
+     "awarded": 12.164,
+     "final_unpaid": 0,
+     "still_payable": 5.951
+    },
+    "still_payable_task_ids": [
+     "TSK-E49N4V7T",
+     "TSK-J3R0MDGA"
+    ],
+    "final_unpaid_task_ids": [],
+    "sensitivity_grace": {
+     "0": {
+      "status_counts": {
+       "open": 3,
+       "awarded": 6,
+       "final_unpaid": 2
+      },
+      "unpaid_submission_share": 0.418519,
+      "unpaid_reward_share": 0.328512,
+      "p_win_final": 0.085185
+     },
+     "7": {
+      "status_counts": {
+       "open": 3,
+       "awarded": 6,
+       "still_payable": 2
+      },
+      "unpaid_submission_share": 0.0,
+      "unpaid_reward_share": 0.0,
+      "p_win_final": 0.146497
+     },
+     "21": {
+      "status_counts": {
+       "open": 3,
+       "awarded": 6,
+       "still_payable": 2
+      },
+      "unpaid_submission_share": 0.0,
+      "unpaid_reward_share": 0.0,
+      "p_win_final": 0.146497
+     }
+    }
+   }
+  },
+  "history_90d_without_moltrust": {
+   "status_counts": {
+    "open": 15,
+    "awarded": 278,
+    "still_payable": 3,
+    "final_unpaid": 83
+   },
+   "closed_total": 364,
+   "p_win_final": {
+    "p": 0.018841,
+    "awards": 506,
+    "submissions": 26856,
+    "tasks": 361,
+    "ci90_wilson": [
+     0.017524,
+     0.020255
+    ],
+    "ci90_bootstrap": [
+     0.015542,
+     0.023356
+    ],
+    "ci90": [
+     0.015542,
+     0.023356
+    ],
+    "ci_chosen": "bootstrap"
+   },
+   "unpaid_submission_share": 0.200849,
+   "unpaid_reward_share": 0.359444,
+   "submissions": {
+    "awarded": 21462,
+    "final_unpaid": 5394,
+    "still_payable": 101
+   },
+   "reward_usdc": {
+    "awarded": 1212.16986,
+    "final_unpaid": 680.200904,
+    "still_payable": 65.0
+   },
+   "still_payable_task_ids": [
+    "TSK-P68Y1PGH",
+    "TSK-HWY90NPP",
+    "TSK-9JW9F8MY"
+   ],
+   "final_unpaid_task_ids": [
+    "TSK-RWMG853Z",
+    "TSK-0P73MV6D",
+    "TSK-5DV55M47",
+    "TSK-MG8KF2RH",
+    "TSK-CC85RST4",
+    "TSK-B1MHHF16",
+    "TSK-MVBFKQFP",
+    "TSK-38QB2KK3",
+    "TSK-TE3SN317",
+    "TSK-FKYQ6JJK",
+    "TSK-RE563J5T",
+    "TSK-4AKTDZMB",
+    "TSK-FJJCCTV3",
+    "TSK-5DSDQJ76",
+    "TSK-S3WXWQP6",
+    "TSK-XF1EGP5T",
+    "TSK-VE3Q5F9P",
+    "TSK-9QZWT595",
+    "TSK-FS91PREW",
+    "TSK-ND38D431",
+    "TSK-9Z9HENXP",
+    "TSK-4M83XEN0",
+    "TSK-HQQ9T3VE",
+    "TSK-RSTTWB3W",
+    "TSK-X66SNJXV",
+    "TSK-602GNN5Q",
+    "TSK-9NYVNHC3",
+    "TSK-WAN8H9G1",
+    "TSK-EQKNXF7X",
+    "TSK-ENBE9A0P",
+    "TSK-Y0Y0D8BW",
+    "TSK-20W651EW",
+    "TSK-8XD8PJQF",
+    "TSK-ST5AS68D",
+    "TSK-GQ9XH4RM",
+    "TSK-MS3GSXH6",
+    "TSK-Z85G0KPA",
+    "TSK-6DRNTH10",
+    "TSK-17JXV54D",
+    "TSK-V4JJD3RC",
+    "TSK-9ZRRDVBX",
+    "TSK-DKFG1GC6",
+    "TSK-VXXN073Y",
+    "TSK-GNB1J26M",
+    "TSK-M87H49ZR",
+    "TSK-BWSVD7AC",
+    "TSK-GYCS41ZJ",
+    "TSK-3DP9H829",
+    "TSK-NC8WCRXF",
+    "TSK-4E4CXBM9",
+    "TSK-YE7THG31",
+    "TSK-YTVEBMEZ",
+    "TSK-5J2QPQZR",
+    "TSK-R3J174K6",
+    "TSK-BFY96A32",
+    "TSK-KGSK89FT",
+    "TSK-EKNMJ77W",
+    "TSK-RWVT1EY0",
+    "TSK-GGJ3GWZ1",
+    "TSK-3F4Q85FT",
+    "TSK-DXPHGGXQ",
+    "TSK-Y54J77GG",
+    "TSK-Z72Y1Y1Z",
+    "TSK-6ZPX4Q1Y",
+    "TSK-F0YMQ1NV",
+    "TSK-TCSAT3K6",
+    "TSK-DQDMXFKM",
+    "TSK-0FD7V0ZB",
+    "TSK-YQQ9QKC4",
+    "TSK-KESDZQ8J",
+    "TSK-S16YCGX5",
+    "TSK-YP1CZCGR",
+    "TSK-TZM023P2",
+    "TSK-7KKH3VWV",
+    "TSK-9PCPY9N5",
+    "TSK-QYWKTXAV",
+    "TSK-4QDHQY9A",
+    "TSK-D3H0NXPT",
+    "TSK-YK19YNYD",
+    "TSK-9H0N4YAQ",
+    "TSK-6AWXHF97",
+    "TSK-3Z1RN20T",
+    "TSK-JVT5EC47"
+   ]
+  },
+  "named_tasks": [
+   {
+    "task_id": "TSK-Q9MCW9ME",
+    "requester_trunc": "0xa175...9eb9",
+    "reward_usdc": 0.541,
+    "expiry": "2026-10-09T10:36:18.175000+00:00",
+    "days_past_expiry": -1.87,
+    "run7": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 29,
+     "settlement_status": "open"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 35,
+     "submissions_counter": 35,
+     "submissions_listed": 35,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "submit",
+      "update"
+     ],
+     "settlement_status_grace21": "open",
+     "settlement_status_rule_grace": "open"
+    },
+    "moltrust": true
+   },
+   {
+    "task_id": "TSK-4TKGPE3S",
+    "requester_trunc": "0xa175...9eb9",
+    "reward_usdc": 0.541,
+    "expiry": "2026-10-09T10:36:10.791000+00:00",
+    "days_past_expiry": -1.87,
+    "run7": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 20,
+     "settlement_status": "open"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 27,
+     "submissions_counter": 27,
+     "submissions_listed": 27,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "submit",
+      "update"
+     ],
+     "settlement_status_grace21": "open",
+     "settlement_status_rule_grace": "open"
+    },
+    "moltrust": true
+   },
+   {
+    "task_id": "TSK-09GC1Y9D",
+    "requester_trunc": "0xa175...9eb9",
+    "reward_usdc": 0.541,
+    "expiry": "2026-10-09T10:36:03.082000+00:00",
+    "days_past_expiry": -1.87,
+    "run7": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 26,
+     "settlement_status": "open"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "active",
+     "awards": 0,
+     "submissions": 30,
+     "submissions_counter": 30,
+     "submissions_listed": 30,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "submit",
+      "update"
+     ],
+     "settlement_status_grace21": "open",
+     "settlement_status_rule_grace": "open"
+    },
+    "moltrust": true
+   },
+   {
+    "task_id": "TSK-E49N4V7T",
+    "requester_trunc": "0xa175...9eb9",
+    "reward_usdc": 0.541,
+    "expiry": "2026-10-05T20:51:11.355000+00:00",
+    "days_past_expiry": 1.71,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 20,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 20,
+     "submissions_counter": 20,
+     "submissions_listed": 20,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "still_payable",
+     "settlement_status_rule_grace": "still_payable"
+    },
+    "moltrust": true
+   },
+   {
+    "task_id": "TSK-P68Y1PGH",
+    "requester_trunc": "0x3327...edd0",
+    "reward_usdc": 25.0,
+    "expiry": "2026-10-03T00:12:06.223000+00:00",
+    "days_past_expiry": 4.57,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 0,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 0,
+     "submissions_counter": 0,
+     "submissions_listed": 0,
+     "first_award_at": null,
+     "pending_actions": [
+      "refund_expired",
+      "update"
+     ],
+     "settlement_status_grace21": "still_payable",
+     "settlement_status_rule_grace": "still_payable"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-HWY90NPP",
+    "requester_trunc": "0x6da3...28f6",
+    "reward_usdc": 10.0,
+    "expiry": "2026-10-02T00:42:39.079000+00:00",
+    "days_past_expiry": 5.55,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 28,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 28,
+     "submissions_counter": 0,
+     "submissions_listed": 28,
+     "first_award_at": null,
+     "pending_actions": [
+      "refund_expired",
+      "update"
+     ],
+     "settlement_status_grace21": "still_payable",
+     "settlement_status_rule_grace": "still_payable"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-9JW9F8MY",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 30.0,
+    "expiry": "2026-10-04T02:28:40.486000+00:00",
+    "days_past_expiry": 3.47,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 73,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 73,
+     "submissions_counter": 73,
+     "submissions_listed": 73,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "still_payable",
+     "settlement_status_rule_grace": "still_payable"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-J3R0MDGA",
+    "requester_trunc": "0xa175...9eb9",
+    "reward_usdc": 5.41,
+    "expiry": "2026-09-30T15:14:04.561000+00:00",
+    "days_past_expiry": 6.94,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 206,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 206,
+     "submissions_counter": 206,
+     "submissions_listed": 206,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "still_payable",
+     "settlement_status_rule_grace": "still_payable"
+    },
+    "moltrust": true
+   },
+   {
+    "task_id": "TSK-5DV55M47",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 4.0,
+    "expiry": "2026-09-16T02:51:20.404000+00:00",
+    "days_past_expiry": 21.46,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 173,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 173,
+     "submissions_counter": 173,
+     "submissions_listed": 173,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-MG8KF2RH",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 4.0,
+    "expiry": "2026-09-16T02:51:17.071000+00:00",
+    "days_past_expiry": 21.46,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 178,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 178,
+     "submissions_counter": 178,
+     "submissions_listed": 178,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-CC85RST4",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 4.0,
+    "expiry": "2026-09-16T02:51:13.310000+00:00",
+    "days_past_expiry": 21.46,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 159,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 159,
+     "submissions_counter": 159,
+     "submissions_listed": 159,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-B1MHHF16",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 4.0,
+    "expiry": "2026-09-16T02:50:40.446000+00:00",
+    "days_past_expiry": 21.46,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 186,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 186,
+     "submissions_counter": 186,
+     "submissions_listed": 186,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-MVBFKQFP",
+    "requester_trunc": "0xeecd...a5e2",
+    "reward_usdc": 3.0,
+    "expiry": "2026-09-16T02:50:28.186000+00:00",
+    "days_past_expiry": 21.46,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 165,
+     "settlement_status": "still_payable"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 165,
+     "submissions_counter": 165,
+     "submissions_listed": 165,
+     "first_award_at": null,
+     "pending_actions": [
+      "accept",
+      "accept_submissions",
+      "reject_submission",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   },
+   {
+    "task_id": "TSK-TZM023P2",
+    "requester_trunc": "0x2c15...ab3a",
+    "reward_usdc": 5.0,
+    "expiry": "2026-07-31T19:32:47.294000+00:00",
+    "days_past_expiry": 67.76,
+    "run7": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 0,
+     "settlement_status": "final_unpaid"
+    },
+    "run8": {
+     "status": "open",
+     "phase": "awaiting_settlement",
+     "awards": 0,
+     "submissions": 0,
+     "submissions_counter": 0,
+     "submissions_listed": null,
+     "first_award_at": null,
+     "pending_actions": [
+      "refund_expired",
+      "update"
+     ],
+     "settlement_status_grace21": "final_unpaid",
+     "settlement_status_rule_grace": "final_unpaid"
+    },
+    "moltrust": false
+   }
+  ],
+  "requester_flag_counts": {
+   "reliable": 11,
+   "mostly_unpaid": 2,
+   "mixed": 4,
+   "never_paid": 4,
+   "too_new": 38
+  },
+  "requester_thresholds": "assumed: never_paid >=3 decided (awarded+final_unpaid) and 0 awarded; mostly_unpaid >=3 and rate<0.5; reliable >=3 and rate>=0.8; mixed otherwise; too_new <3",
+  "requesters": [
+   {
+    "requester_trunc": "0xc056...7a63",
+    "posted": 108,
+    "closed": 108,
+    "awarded": 100,
+    "final_unpaid": 8,
+    "still_payable": 0,
+    "submissions": 8509,
+    "escrowed_usdc": 751.0,
+    "paid_gross_usdc": 625.0,
+    "award_rate": 0.9259,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x4363...34bd",
+    "posted": 66,
+    "closed": 63,
+    "awarded": 63,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 5829,
+    "escrowed_usdc": 132.0,
+    "paid_gross_usdc": 126.0,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0xeecd...a5e2",
+    "posted": 27,
+    "closed": 27,
+    "awarded": 10,
+    "final_unpaid": 16,
+    "still_payable": 1,
+    "submissions": 3128,
+    "escrowed_usdc": 224.0,
+    "paid_gross_usdc": 105.0,
+    "award_rate": 0.3846,
+    "flag": "mostly_unpaid"
+   },
+   {
+    "requester_trunc": "0xcb18...e764",
+    "posted": 22,
+    "closed": 22,
+    "awarded": 21,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 231,
+    "escrowed_usdc": 0.455,
+    "paid_gross_usdc": 0.445,
+    "award_rate": 0.9545,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x2b0f...eee9",
+    "posted": 15,
+    "closed": 15,
+    "awarded": 11,
+    "final_unpaid": 4,
+    "still_payable": 0,
+    "submissions": 1411,
+    "escrowed_usdc": 21.3613,
+    "paid_gross_usdc": 13.0513,
+    "award_rate": 0.7333,
+    "flag": "mixed"
+   },
+   {
+    "requester_trunc": "0xa175...9eb9",
+    "posted": 11,
+    "closed": 8,
+    "awarded": 6,
+    "final_unpaid": 0,
+    "still_payable": 2,
+    "submissions": 632,
+    "escrowed_usdc": 19.738,
+    "paid_gross_usdc": 12.164,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x4aef...440c",
+    "posted": 11,
+    "closed": 11,
+    "awarded": 6,
+    "final_unpaid": 5,
+    "still_payable": 0,
+    "submissions": 942,
+    "escrowed_usdc": 16.2432,
+    "paid_gross_usdc": 4.5135,
+    "award_rate": 0.5455,
+    "flag": "mixed"
+   },
+   {
+    "requester_trunc": "0x2ea6...7250",
+    "posted": 10,
+    "closed": 10,
+    "awarded": 9,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 153,
+    "escrowed_usdc": 9.421,
+    "paid_gross_usdc": 8.2147,
+    "award_rate": 0.9,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x683b...e6c7",
+    "posted": 10,
+    "closed": 10,
+    "awarded": 6,
+    "final_unpaid": 4,
+    "still_payable": 0,
+    "submissions": 1045,
+    "escrowed_usdc": 178.38,
+    "paid_gross_usdc": 85.0,
+    "award_rate": 0.6,
+    "flag": "mixed"
+   },
+   {
+    "requester_trunc": "0x9371...019f",
+    "posted": 8,
+    "closed": 7,
+    "awarded": 0,
+    "final_unpaid": 7,
+    "still_payable": 0,
+    "submissions": 425,
+    "escrowed_usdc": 232.6922,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "never_paid"
+   },
+   {
+    "requester_trunc": "0xc309...68ce",
+    "posted": 8,
+    "closed": 0,
+    "awarded": 0,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 5,
+    "escrowed_usdc": 0.08,
+    "paid_gross_usdc": 0,
+    "award_rate": null,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x31c5...449b",
+    "posted": 7,
+    "closed": 7,
+    "awarded": 0,
+    "final_unpaid": 7,
+    "still_payable": 0,
+    "submissions": 67,
+    "escrowed_usdc": 0.35,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "never_paid"
+   },
+   {
+    "requester_trunc": "0x15e9...be23",
+    "posted": 7,
+    "closed": 7,
+    "awarded": 7,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 13,
+    "escrowed_usdc": 13.85,
+    "paid_gross_usdc": 13.85,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0xcad2...feed",
+    "posted": 6,
+    "closed": 6,
+    "awarded": 0,
+    "final_unpaid": 6,
+    "still_payable": 0,
+    "submissions": 520,
+    "escrowed_usdc": 45.3,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "never_paid"
+   },
+   {
+    "requester_trunc": "0x695b...302f",
+    "posted": 5,
+    "closed": 5,
+    "awarded": 2,
+    "final_unpaid": 3,
+    "still_payable": 0,
+    "submissions": 8,
+    "escrowed_usdc": 0.25,
+    "paid_gross_usdc": 0.1,
+    "award_rate": 0.4,
+    "flag": "mostly_unpaid"
+   },
+   {
+    "requester_trunc": "0x79d8...a707",
+    "posted": 5,
+    "closed": 5,
+    "awarded": 4,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 449,
+    "escrowed_usdc": 20.5,
+    "paid_gross_usdc": 12.5,
+    "award_rate": 0.8,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0xeb76...0d35",
+    "posted": 4,
+    "closed": 4,
+    "awarded": 2,
+    "final_unpaid": 2,
+    "still_payable": 0,
+    "submissions": 8,
+    "escrowed_usdc": 3.15,
+    "paid_gross_usdc": 0.15,
+    "award_rate": 0.5,
+    "flag": "mixed"
+   },
+   {
+    "requester_trunc": "0xa7be...419a",
+    "posted": 4,
+    "closed": 4,
+    "awarded": 4,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 366,
+    "escrowed_usdc": 20.0,
+    "paid_gross_usdc": 20.0,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x1966...c4f7",
+    "posted": 3,
+    "closed": 3,
+    "awarded": 0,
+    "final_unpaid": 3,
+    "still_payable": 0,
+    "submissions": 0,
+    "escrowed_usdc": 3.101,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "never_paid"
+   },
+   {
+    "requester_trunc": "0x8b66...cb6e",
+    "posted": 3,
+    "closed": 3,
+    "awarded": 3,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 155,
+    "escrowed_usdc": 2.01,
+    "paid_gross_usdc": 2.01,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0xf138...7fed",
+    "posted": 3,
+    "closed": 3,
+    "awarded": 3,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 199,
+    "escrowed_usdc": 12.0,
+    "paid_gross_usdc": 12.0,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x6668...7426",
+    "posted": 3,
+    "closed": 3,
+    "awarded": 3,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 277,
+    "escrowed_usdc": 0.85,
+    "paid_gross_usdc": 0.85,
+    "award_rate": 1.0,
+    "flag": "reliable"
+   },
+   {
+    "requester_trunc": "0x609e...086c",
+    "posted": 2,
+    "closed": 0,
+    "awarded": 0,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 167,
+    "escrowed_usdc": 10.0,
+    "paid_gross_usdc": 0,
+    "award_rate": null,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x64b4...2555",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 2,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 253,
+    "escrowed_usdc": 17.9,
+    "paid_gross_usdc": 17.9,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xa4d8...ac6a",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 2,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 440,
+    "escrowed_usdc": 4.5,
+    "paid_gross_usdc": 4.5,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x13f1...4999",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 0,
+    "final_unpaid": 2,
+    "still_payable": 0,
+    "submissions": 175,
+    "escrowed_usdc": 22.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x6189...df2a",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 0,
+    "final_unpaid": 2,
+    "still_payable": 0,
+    "submissions": 1,
+    "escrowed_usdc": 200.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xd3fa...e723",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 2,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 5,
+    "escrowed_usdc": 3.0,
+    "paid_gross_usdc": 3.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x8918...9660",
+    "posted": 2,
+    "closed": 2,
+    "awarded": 2,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 602,
+    "escrowed_usdc": 0.17,
+    "paid_gross_usdc": 0.17,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x6349...4d24",
+    "posted": 1,
+    "closed": 0,
+    "awarded": 0,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 15,
+    "escrowed_usdc": 5.0,
+    "paid_gross_usdc": 0,
+    "award_rate": null,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xcbd3...4490",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 13,
+    "escrowed_usdc": 0.108,
+    "paid_gross_usdc": 0.108,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x292d...578f",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 76,
+    "escrowed_usdc": 1.0,
+    "paid_gross_usdc": 1.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x3327...edd0",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 0,
+    "still_payable": 1,
+    "submissions": 0,
+    "escrowed_usdc": 25.0,
+    "paid_gross_usdc": 0,
+    "award_rate": null,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x6da3...28f6",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 0,
+    "still_payable": 1,
+    "submissions": 28,
+    "escrowed_usdc": 10.0,
+    "paid_gross_usdc": 0,
+    "award_rate": null,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xa388...995d",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 27,
+    "escrowed_usdc": 1.0,
+    "paid_gross_usdc": 1.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x75a0...6b19",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 23,
+    "escrowed_usdc": 0.01,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xb874...96b1",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 17,
+    "escrowed_usdc": 1.5,
+    "paid_gross_usdc": 1.5,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x29fe...1061",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 247,
+    "escrowed_usdc": 5.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xd732...f841",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 1,
+    "escrowed_usdc": 0.05,
+    "paid_gross_usdc": 0.05,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x3c6f...0c6b",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 1,
+    "escrowed_usdc": 2.0,
+    "paid_gross_usdc": 1.85,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xa139...dbdb",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 1,
+    "escrowed_usdc": 0.01,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x18d3...bf97",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 262,
+    "escrowed_usdc": 100.0,
+    "paid_gross_usdc": 100.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x6dc9...e554",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 104,
+    "escrowed_usdc": 1.0,
+    "paid_gross_usdc": 1.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xc76a...8b52",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 0,
+    "escrowed_usdc": 0.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x6226...f4f3",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 7,
+    "escrowed_usdc": 0.008,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xeb2c...915c",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 34,
+    "escrowed_usdc": 5.0,
+    "paid_gross_usdc": 5.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x2dc3...5ddd",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 112,
+    "escrowed_usdc": 15.0,
+    "paid_gross_usdc": 15.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x03b7...f510",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 9,
+    "escrowed_usdc": 0.1,
+    "paid_gross_usdc": 0.1,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x4d1c...eaef",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 26,
+    "escrowed_usdc": 2.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xe274...40ae",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 22,
+    "escrowed_usdc": 5.0,
+    "paid_gross_usdc": 5.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x8904...3cee",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 51,
+    "escrowed_usdc": 0.1,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x34aa...fdf3",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 14,
+    "escrowed_usdc": 1.0,
+    "paid_gross_usdc": 1.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x2c15...ab3a",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 0,
+    "escrowed_usdc": 5.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x988a...7331",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 0,
+    "escrowed_usdc": 13.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0x99c7...b5c1",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 0,
+    "escrowed_usdc": 1.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xdee6...c8e9",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 13,
+    "escrowed_usdc": 4.0,
+    "paid_gross_usdc": 4.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xe0d9...77ea",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 0,
+    "final_unpaid": 1,
+    "still_payable": 0,
+    "submissions": 592,
+    "escrowed_usdc": 10.0,
+    "paid_gross_usdc": 0,
+    "award_rate": 0.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xfc31...a955",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 311,
+    "escrowed_usdc": 20.0,
+    "paid_gross_usdc": 20.0,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   },
+   {
+    "requester_trunc": "0xf096...90a7",
+    "posted": 1,
+    "closed": 1,
+    "awarded": 1,
+    "final_unpaid": 0,
+    "still_payable": 0,
+    "submissions": 9,
+    "escrowed_usdc": 0.001,
+    "paid_gross_usdc": 0.001,
+    "award_rate": 1.0,
+    "flag": "too_new"
+   }
+  ],
+  "requester_flag_changes": [
+   "new requester 0x6349…4d24 (too_new)",
+   "0xeecd…a5e2 still mostly_unpaid: 10 awarded / 16 final_unpaid / 1 still_payable (rate 0.385, was 0.476)"
+  ],
+  "decision_rule": {
+   "scope": "run-8 window, without MolTrust, awarded+final_unpaid tasks",
+   "tasks": 81,
+   "skipped_tasks": 0,
+   "skipped_task_ids": [],
+   "skipped_submission_share": 0.0,
+   "p_win_base": 0.013593,
+   "p_win_rule": 0.013593,
+   "p_win_rule_ci90_bootstrap": [
+    0.010572,
+    0.017801
+   ],
+   "p_win_rule_ci90_wilson": [
+    0.011387,
+    0.016221
+   ],
+   "ev_mid_central_base": -0.2914,
+   "ev_mid_central_rule": -0.2914,
+   "ev_change": 0.0,
+   "ev_inputs": "R_net 1.85, C_attempt 0.3165 (run 6/7, estimated)",
+   "lookahead_upper_bound": {
+    "skipped_tasks": 6,
+    "p_win": 0.016262,
+    "skipped_submission_share": 0.164081
+   },
+   "label": "estimated"
+  },
+  "escrow_delta": {
+   "from_block": 52252476,
+   "to_block": 52295743,
+   "events_since_run7": {
+    "TaskSubmitted": 372,
+    "TaskRated": 4,
+    "RequesterReputation": 3,
+    "TaskCompleted": 3,
+    "TaskCreated": 4,
+    "HookRegistered": 4
+   },
+   "new_awards": [
+    {
+     "task_id": "TSK-R8BEXQE8",
+     "tx": "0xe5d3cabdf12c349b091ea6b84df64e7cddc878d90b2cdabbac86e7fd89483ac2",
+     "settled_at": "2026-10-07T05:58:49Z",
+     "worker_payment_usdc": 1.85,
+     "fee_usdc": 0.15
+    },
+    {
+     "task_id": "TSK-NWM09X2T",
+     "tx": "0x8d33f3d1d3f524c69608f4ec6aec128610547884d20bbd0a753bdb4397efa669",
+     "settled_at": "2026-10-07T06:00:21Z",
+     "worker_payment_usdc": 1.85,
+     "fee_usdc": 0.15
+    },
+    {
+     "task_id": "TSK-R09N5W8V",
+     "tx": "0x3d70ee166618e42c96c6e02adc4979c73de7a156e93b917251031f44c4489ddf",
+     "settled_at": "2026-10-07T06:01:37Z",
+     "worker_payment_usdc": 1.85,
+     "fee_usdc": 0.15
+    }
+   ],
+   "refunds": {
+    "refundExpired": 0,
+    "cancelTask": 0,
+    "note": "No refund of any kind since run 7. Last refund overall still 2026-09-02; last refundExpired 2026-08-12. refundExpired has not resumed."
+   },
+   "rejections": 0,
+   "new_deposits": [
+    {
+     "task_id": "TSK-9SK5TZZF",
+     "requester_trunc": "0x6349...4d24",
+     "reward_usdc": 5.0,
+     "tx": "0xbfdff9e5227ef04135d20c0cef1343ff36aa8d1ba702c57f68b012d7c9d9ba45"
+    },
+    {
+     "task_id": "TSK-X9ZW3EJD",
+     "requester_trunc": "0x4363...34bd",
+     "reward_usdc": 2.0,
+     "tx": "0xdd99d6cde29cb9ffbb66c420e497217a492025a412c4d1f4489640b06495fc25"
+    },
+    {
+     "task_id": "TSK-5W59XC2G",
+     "requester_trunc": "0x4363...34bd",
+     "reward_usdc": 2.0,
+     "tx": "0x1449d33a7c342be840b632b6198f83d0c154a9cb9f589371d2b4cae43117a5dd"
+    },
+    {
+     "task_id": "TSK-GC59BY84",
+     "requester_trunc": "0x4363...34bd",
+     "reward_usdc": 2.0,
+     "tx": "0x6f6d40031b2cfa792496bf1bed62483f82e1aedf6ef2f942d8717d3bb4f4007b"
+    }
+   ],
+   "summary": {
+    "unawarded_closed_tasks_90d": 88,
+    "by_outcome": {
+     "still_in_escrow": 67,
+     "refunded_to_requester": 21
+    },
+    "reward_by_outcome": {
+     "still_in_escrow": 602.2241,
+     "refunded_to_requester": 148.9278
+    },
+    "submissions_by_outcome": {
+     "still_in_escrow": 5720,
+     "refunded_to_requester": 1
+    },
+    "final_unpaid_run8": 83,
+    "newly_final_unpaid_vs_run7": [
+     "TSK-RWMG853Z",
+     "TSK-5DV55M47",
+     "TSK-MG8KF2RH",
+     "TSK-CC85RST4",
+     "TSK-B1MHHF16",
+     "TSK-MVBFKQFP"
+    ],
+    "five_0xeecd": {
+     "outcome": "still_in_escrow",
+     "reward_usdc": 19.0,
+     "submissions": 861,
+     "note": "deposits traced in run 7 (TaskCreated logs); no terminal event since; refund_expired not offered (submissions exist)"
+    },
+    "refundable_by_anyone_untouched": [
+     "TSK-P68Y1PGH (25 USDC, 0 subs)",
+     "TSK-HWY90NPP (10 USDC, all submitters rejected)",
+     "TSK-TZM023P2 (pending refund_expired, 0 subs)"
+    ]
+   }
+  },
+  "open_filter_vs_unfiltered": {
+   "status_open_filter_count": 10,
+   "unfiltered_total": 391,
+   "unfiltered_not_resolved": 85,
+   "unfiltered_phase_active": 19,
+   "unfiltered_by_status_phase": {
+    "open/active": 10,
+    "completed/resolved": 285,
+    "open/awaiting_settlement": 66,
+    "pending_approval/active": 6,
+    "claimed/active": 3,
+    "cancelled/resolved": 18,
+    "expired/resolved": 3
+   },
+   "share_open_filter_of_not_resolved": 0.118,
+   "share_open_filter_of_phase_active": 0.526,
+   "note": "status=open returns only open/active tasks (10). It omits pending_approval (6) and claimed (3) tasks that are still active, and the 66 open/awaiting_settlement tasks. Audience pass 1 \"about 1 in 4\" is consistent with 10/19 active (0.53) only loosely; against all unresolved tasks it is 10/85 (0.12). label: measured"
+  },
+  "not_done": [
+   "requester-stats endpoint cross-check (daydreams#701) not attempted",
+   "escrow balance not re-read (call budget kept for ledger and watch)"
+  ]
+ },
+ "previous_run_id": "run:53b237a4-8806-4241-ab35-3731907527d3",
+ "public_redaction": "Public copy, 7 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 hex characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored."
 }

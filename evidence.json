@@ -2,6 +2,196 @@
   "schema_version": "1.0.0",
   "items": [
     {
+      "evidence_id": "superteam-listings-2026-10-07",
+      "source_type": "platform API",
+      "source_url": "https://superteam.fun/api/listings?status=review",
+      "title": "Superteam Earn public listings feeds",
+      "claim": "Census of 337 listings (deadlines 2026-04-10 to 2026-10-07 plus open and in-review): 27 agent-allowed; 51 listings past deadline with no winners and 3,078 submissions waiting; about 0.088 agent-allowed listings published a day over 90 days.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-earn-code-2026-10-07",
+      "source_type": "source code",
+      "source_url": "https://github.com/SuperteamDAO/earn/tree/6ce3fa6fc199b912f126ebacc93083b1f358880b",
+      "title": "SuperteamDAO/earn open-source code (commit 6ce3fa6)",
+      "claim": "Payment fields (isPaid, paymentDetails, winner wallet) exist but are returned only behind sign-in; agent users carry the last name \"agent\"; one submission per user and per agent per listing; KYC for Foundation-paid winners; claiming moves an agent's submissions to the human.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-payment-trace-2026-10-07",
+      "source_type": "platform API",
+      "source_url": "https://superteam.fun/earn",
+      "title": "Superteam Earn public winner and talent routes",
+      "claim": "30 of 30 sampled winners wallet_unknown on 7 public routes; no paid flag or transaction visible; 10 agent-marked winners, all unclaimed 97 to 120 days after announcement.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-faq-2026-10-07",
+      "source_type": "platform docs",
+      "source_url": "https://docs.superteam.fun/the-superteam-handbook/community/faqs/superteam-earn-faq",
+      "title": "Superteam Earn FAQ",
+      "claim": "Foundation-paid winners are paid \"within 7 days of submitting the form\"; winners of Superteam or Solana-sponsored listings complete KYC; some sponsors disqualify entries with over 15% plagiarism.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-terms-2026-10-07",
+      "source_type": "terms",
+      "source_url": "https://superteam.fun/earn/terms-of-use.pdf",
+      "title": "Superteam Earn Terms of Use",
+      "claim": "Users must be of age (18 or the age of majority) and may not open accounts in another person's name; Superteam Earn has no liability for a sponsor's non-payment.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-skill-2026-10-07",
+      "source_type": "agent docs",
+      "source_url": "https://superteam.fun/skill.md",
+      "title": "Superteam agent skill file (read as data)",
+      "claim": "Agents may submit only to AGENT_ALLOWED or AGENT_ONLY listings (403 otherwise); a human must claim the agent and complete a talent profile to be paid. Agent-directed wording is paraphrased, not republished.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "algora-payments-docs-2026-10-07",
+      "source_type": "platform docs",
+      "source_url": "https://github.com/algora-io/algora/blob/main/priv/content/docs/payments.md",
+      "title": "Algora payments documentation",
+      "claim": "Payouts typically 1-3 business days after a payment is completed, through Stripe; individuals in India and the UAE cannot receive international payouts.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "algora-latest-award-2026-10-07",
+      "source_type": "repository",
+      "source_url": "https://github.com/CapSoftware/Cap/pull/1966",
+      "title": "Newest new Algora award found (Cap#1966, 2026-07-02)",
+      "claim": "The latest new award on the 6 boards that paid in 180 days was on 2026-07-02; 0 new awards or bounties since 2026-07-09; 27 awards, US$3,335 in 180 days.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "algora-qdrant-payout-2026-10-07",
+      "source_type": "repository",
+      "source_url": "https://github.com/qdrant/qdrant/issues/3323",
+      "title": "Algora bot payout confirmation (Qdrant, 2026-08-26)",
+      "claim": "Latest payout confirmation found, for an older award; Algora's E1 basis passes 60 days on 2026-10-25.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "activepieces-contributing-2026-10-07",
+      "source_type": "maintainer policy",
+      "source_url": "https://github.com/activepieces/activepieces/blob/main/CONTRIBUTING.md",
+      "title": "Activepieces CONTRIBUTING.md",
+      "claim": "Unsolicited pull requests from outside the core team are automatically closed.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "turso-contributing-2026-10-07",
+      "source_type": "maintainer policy",
+      "source_url": "https://github.com/tursodatabase/turso/blob/main/CONTRIBUTING.md",
+      "title": "Turso CONTRIBUTING.md",
+      "claim": "AI coding agents welcome; contributors are expected to understand the code they submit.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "qdrant-contributing-2026-10-07",
+      "source_type": "maintainer policy",
+      "source_url": "https://github.com/qdrant/qdrant/blob/master/docs/CONTRIBUTING.md",
+      "title": "Qdrant CONTRIBUTING.md",
+      "claim": "Disclose AI-generated parts; PR descriptions and replies should not be AI-generated.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-tasks-2026-10-07",
+      "source_type": "platform API",
+      "source_url": "https://taskmarket.dev/api/tasks",
+      "title": "TaskMarket task list (unfiltered)",
+      "claim": "None of the five 0xeecd…a5e2 tasks was awarded by 2026-10-07T13:49Z: run 7's 8.3% unpaid share becomes about 21.7%; newest window 20.9% of submissions unpaid at a 16-day grace; status=open shows 10 of 85 unresolved tasks.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "deskcrew-ledger-2026-10-07",
+      "source_type": "platform API",
+      "source_url": "https://deskcrew.io/api/arena/contests",
+      "title": "DeskCrew Arena operator ledger",
+      "claim": "Operator-published payout ledger: 82 payouts, $68.89, 29 wallets; latest dated receipt 2026-08-23. Transaction hashes not independently checked.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "metaculus-futureeval-2026-10-07",
+      "source_type": "organiser page",
+      "source_url": "https://www.metaculus.com/futureeval/",
+      "title": "Metaculus FutureEval bot tournaments",
+      "claim": "Prize pools are published, but no confirmed payment to a bot entrant was found; metaculus.com returned 403; not added to the catalogue.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "does-it-pay-2026-10-07",
+      "source_type": "third-party tracker",
+      "source_url": "https://github.com/Veyr09/does-it-pay",
+      "title": "does-it-pay (Veyr09)",
+      "claim": "Cross-check agrees: August $858 against our 851.87 USDC; 1 to 19 September $61 against 61.37.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-contracts-14-2026-10-07",
+      "source_type": "issue",
+      "source_url": "https://github.com/daydreamsai/taskmarket-contracts/issues/14",
+      "title": "taskmarket-contracts#14",
+      "claim": "Its first claim (refunds despite live submissions) disagrees with the deployed contract; the deadlock follow-up agrees with run 7 (56 tasks, 512.26 USDC).",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "daydreams-701-2026-10-07",
+      "source_type": "issue",
+      "source_url": "https://github.com/daydreamsai/daydreams/issues/701",
+      "title": "daydreams#701",
+      "claim": "Stuck escrow agrees ($560.66 against our 602.21); its 2.94% payment chance uses a different definition (2.55% on theirs, 1.60% on ours).",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "openclaw-readme-2026-10-07",
+      "source_type": "project docs",
+      "source_url": "https://raw.githubusercontent.com/openclaw/openclaw/main/README.md",
+      "title": "OpenClaw README",
+      "claim": "A self-hosted assistant with no built-in earning, payment or wallet feature (\"no paid tier, hosted service, or token\"); 0 mentions of wallet, payment, earn, USDC, x402 or Stripe in the README and docs index.",
+      "accessed_at": "2026-10-07T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
       "evidence_id": "taskmarket-escrow-corefacet",
       "source_type": "on-chain",
       "source_url": "https://base.blockscout.com/address/0x0FC28adc96064c93669593709f8DB88D708A1b9f?tab=contract",

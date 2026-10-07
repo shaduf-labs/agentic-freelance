@@ -1,0 +1,277 @@
+{
+ "title": "Agentic Freelance: Is it real? Plain answers",
+ "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified and the next-best route with its odds. Built only from run 8 numbers (7 October 2026).",
+ "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
+ "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-07-owner-submits.html",
+ "usage_rules": [
+  "Expected values are estimates, never promises.",
+  "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
+ ],
+ "schema": "agentic-freelance-answers/0.1",
+ "run_id": "run:54ede12f-9824-4712-afb1-bf35a8cf54e3",
+ "as_of": "2026-10-07",
+ "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
+ "answers": [
+  {
+   "id": "does-openclaw-make-money",
+   "question": "Does OpenClaw make money?",
+   "short_answer": "not_a_venue",
+   "one_line": "No by itself: OpenClaw is a self-hosted assistant with no built-in earning, payment or marketplace feature; it can only earn by being pointed at a venue that pays, and it costs tokens while idle.",
+   "numbers": [
+    {
+     "value": "no",
+     "label": "built-in earning, payment or wallet feature",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured (README and 1,375-line docs index; 0 mentions of wallet, payment, earn, USDC, x402, Stripe)",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": 48,
+     "label": "default heartbeat wake-ups per day (every 30 minutes)",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured (first-party docs)",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": "about 100K tokens per heartbeat run (about 2-5K in an isolated session)",
+     "label": "first-party cost warning",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured by its publisher",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": 31,
+     "label": "of 34 catalogue venues expose a skill file, MCP server, API or CLI an OpenClaw-type agent could use",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured from catalogue (5 re-checked)",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": 281,
+     "label": "third-party payment-related skills on ClawHub (capped lower bound; none by OpenClaw)",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    }
+   ],
+   "what_we_did_not_verify": "No dollar figure for idle cost exists in first-party docs (secondary guides range from about $0.72/day to $150/month); nothing was installed or run; third-party payment skills were not reviewed.",
+   "next_best_route": {
+    "venue_slug": "superteam-earn",
+    "why": "the only route where an attempt is worth far more than its tokens on announced prizes, with an owner in the loop",
+    "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
+   },
+   "last_checked": "2026-10-07"
+  },
+  {
+   "id": "is-taskmarket-real",
+   "question": "Is TaskMarket real? Does it pay?",
+   "short_answer": "yes_but_small",
+   "one_line": "Yes, it pays on chain, but small and not reliably: about 1 in 74 entries wins about $1.85, and about 1 in 5 submissions went to tasks that paid nobody; \"funded\" means locked, not \"will be paid\".",
+   "numbers": [
+    {
+     "value": 0.013593,
+     "label": "chance an entry is paid (p_win_final, 2026-09-07..10-07, without MolTrust)",
+     "as_of": "2026-10-07",
+     "source_path": "settlement.json#refresh_2026_10_07.run8_window.without_moltrust.p_win_final",
+     "basis": "measured counts; grace estimated",
+     "public_file": "assets/data/settlement.json"
+    },
+    {
+     "value": 0.209,
+     "label": "share of submissions on closed tasks that paid nobody (grace 16)",
+     "as_of": "2026-10-07",
+     "source_path": "settlement.json#refresh_2026_10_07.run8_window.without_moltrust",
+     "basis": "estimated (rule on measured fields)",
+     "public_file": "assets/data/settlement.json"
+    },
+    {
+     "value": 602.22,
+     "label": "USDC still in escrow on 67 unawarded closed tasks (90 days)",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": -0.291396,
+     "label": "expected value per attempt at mid-tier token prices (USD)",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=taskmarket].ev_per_attempt_usd.central",
+     "basis": "estimated",
+     "public_file": "assets/data/economics.json"
+    },
+    {
+     "value": 0.08,
+     "label": "dollars back per $1 of mid-tier tokens",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=taskmarket].cost_translations.return_per_dollar",
+     "basis": "estimated",
+     "public_file": "assets/data/economics.json"
+    },
+    {
+     "value": 212.01,
+     "label": "USD paid to agent workers across 5 traced venues in 30 days (estimate)",
+     "as_of": "2026-10-07",
+     "source_path": "payouts.json#totals_2026_10_07",
+     "basis": "estimated",
+     "public_file": "assets/data/payouts.json"
+    }
+   ],
+   "what_we_did_not_verify": "Who signs relayed refunds; whether refundExpired will resume (none since 2026-08-12); the requester-stats endpoint was not cross-checked; worker identities.",
+   "next_best_route": {
+    "venue_slug": "superteam-earn",
+    "why": "higher announced prizes per entry, but payment is not verifiable",
+    "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
+   },
+   "last_checked": "2026-10-07"
+  },
+  {
+   "id": "is-superteam-earn-legit-for-agents",
+   "question": "Is Superteam Earn legit for agents?",
+   "short_answer": "partly",
+   "one_line": "Partly: the board is real and lists agent-allowed bounties, and agent accounts have won, but we could not see a single payment on public routes and none of the 10 agent wins has been claimed.",
+   "numbers": [
+    {
+     "value": 337,
+     "label": "listings in the 180-day census (27 agent-allowed)",
+     "as_of": "2026-10-07",
+     "source_path": "run working file",
+     "basis": "measured",
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
+    },
+    {
+     "value": 30,
+     "label": "of 30 sampled winners whose payment could not be checked (no public wallet or payment record)",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[0].payment_trace",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 10,
+     "label": "winners on agent accounts (US$790 face), none claimed 97-120 days after announcement",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[0].agent_marked_winners",
+     "basis": "measured; \"not paid\" is an inference",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 0.026923,
+     "label": "chance an entry wins on agent-allowed listings (180 days; most entries are by humans)",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=superteam-earn].p_win",
+     "basis": "measured",
+     "public_file": "assets/data/economics.json"
+    },
+    {
+     "value": 0.0883,
+     "label": "new agent-allowed listings per day (about one every 11 days)",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[0].supply",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 0.2377,
+     "label": "expected USD per day at any daily cap (announced prizes)",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=superteam-earn].cost_translations.per_day.mid.1.50",
+     "basis": "estimated",
+     "public_file": "assets/data/economics.json"
+    },
+    {
+     "value": 51,
+     "label": "listings past deadline with no winners announced (3,078 submissions waiting)",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[0].overdue_stock",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    }
+   ],
+   "what_we_did_not_verify": "Whether any winner was paid (payment fields are sign-in only); whether claimed agent wins are paid; why agent accounts won on two listings that are human-only today; KYC form length.",
+   "next_best_route": {
+    "venue_slug": "taskmarket",
+    "why": "payments are visible on chain, though the expected value per attempt is below mid-tier token cost",
+    "odds_line": "TaskMarket: p_win_final 0.0136, about $0.08 back per $1 at mid tier, about $0.08 expected per day at $1.50, median first cash about 17 days; payments verifiable on chain"
+   },
+   "last_checked": "2026-10-07"
+  },
+  {
+   "id": "does-algora-pay-for-agent-drafted-work",
+   "question": "Does Algora pay for agent-drafted work?",
+   "short_answer": "unknown",
+   "one_line": "It has paid, but not lately, and we cannot tell whether any paid PR was agent-drafted: 6 boards paid 27 awards in 180 days, none since 2026-07-02, and about 2 open bounties remain.",
+   "numbers": [
+    {
+     "value": 6,
+     "label": "boards with an award in 180 days",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[1].census_summary",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 27,
+     "label": "awards in 180 days (US$3,335; 10 are maintainer tips)",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[1].census_summary",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 0,
+     "label": "new awards since 2026-07-09",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[1].census_summary",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": "2026-08-26",
+     "label": "latest payout confirmation found (passes 60 days on 2026-10-25)",
+     "as_of": "2026-10-07",
+     "source_path": "human_route.json#venues[1].census_summary",
+     "basis": "measured",
+     "public_file": "assets/data/human_route.json"
+    },
+    {
+     "value": 54.55,
+     "label": "expected USD per owner hour at an assumed 10 minutes per entry",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time",
+     "basis": "estimated",
+     "public_file": "assets/data/economics.json"
+    },
+    {
+     "value": 5.62,
+     "label": "expected USD per owner hour at 97 minutes per entry (code review)",
+     "as_of": "2026-10-07",
+     "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time_alternatives",
+     "basis": "estimated",
+     "public_file": "assets/data/economics.json"
+    }
+   ],
+   "what_we_did_not_verify": "Whether Algora moved bounties off GitHub (challenges pages not read); whether two onboarding-pending awards were paid; Stripe Connect field count; agent use behind any winning PR.",
+   "next_best_route": {
+    "venue_slug": "superteam-earn",
+    "why": "the other human-account route with live supply",
+    "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
+   },
+   "last_checked": "2026-10-07"
+  }
+ ],
+ "public_redaction": "Public copy, 7 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 hex characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored."
+}
