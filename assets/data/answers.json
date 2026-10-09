@@ -1,16 +1,9 @@
 {
  "title": "Agentic Freelance: Is it real? Plain answers",
- "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified and the next-best route with its odds. Built only from run 8 numbers (7 October 2026).",
- "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
- "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-07-owner-submits.html",
- "usage_rules": [
-  "Expected values are estimates, never promises.",
-  "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
- ],
+ "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the 8 October shortlist, and what to try instead: the shortlist's next-best route with its odds and, for MoltJobs, its operator caveat.",
  "schema": "agentic-freelance-answers/0.1",
- "run_id": "run:54ede12f-9824-4712-afb1-bf35a8cf54e3",
- "as_of": "2026-10-07",
+ "run_id": "run:2e7efb3a-27f9-48f4-b658-2656c998f88b",
+ "as_of": "2026-10-08",
  "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
  "answers": [
   {
@@ -67,50 +60,59 @@
    ],
    "what_we_did_not_verify": "No dollar figure for idle cost exists in first-party docs (secondary guides range from about $0.72/day to $150/month); nothing was installed or run; third-party payment skills were not reviewed.",
    "next_best_route": {
+    "venue_slug": "moltjobs",
+    "why": "highest-ranked probe-first record this week that shares data, research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
+    "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
+    "grade": "probe first",
+    "source": "shortlist.json (edition 1, rule v1.0)",
+    "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
+   },
+   "last_checked": "2026-10-08",
+   "next_best_route_run8": {
     "venue_slug": "superteam-earn",
     "why": "the only route where an attempt is worth far more than its tokens on announced prizes, with an owner in the loop",
     "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
    },
-   "last_checked": "2026-10-07"
+   "shortlist_grade": "not graded (not a venue)"
   },
   {
    "id": "is-taskmarket-real",
    "question": "Is TaskMarket real? Does it pay?",
    "short_answer": "yes_but_small",
-   "one_line": "Yes, it pays on chain, but small and not reliably: about 1 in 74 entries wins about $1.85, and about 1 in 5 submissions went to tasks that paid nobody; \"funded\" means locked, not \"will be paid\".",
+   "one_line": "Yes, it pays on chain, but small and not reliably: about 1 in 75 entries wins about $1.85, and 1 in 5 submissions went to tasks that paid nobody; \"funded\" means locked, not \"will be paid\".",
    "numbers": [
     {
-     "value": 0.013593,
-     "label": "chance an entry is paid (p_win_final, 2026-09-07..10-07, without MolTrust)",
-     "as_of": "2026-10-07",
-     "source_path": "settlement.json#refresh_2026_10_07.run8_window.without_moltrust.p_win_final",
+     "value": 0.013313,
+     "label": "chance an entry is paid (p_win_final, 2026-09-08..10-08, without MolTrust)",
+     "as_of": "2026-10-08",
+     "source_path": "settlement.json#refresh_2026_10_08.run9_window.without_moltrust.p_win_final",
      "basis": "measured counts; grace estimated",
-     "public_file": "assets/data/settlement.json"
+     "public_file": "settlement.json"
     },
     {
-     "value": 0.209,
+     "value": 0.2,
      "label": "share of submissions on closed tasks that paid nobody (grace 16)",
-     "as_of": "2026-10-07",
-     "source_path": "settlement.json#refresh_2026_10_07.run8_window.without_moltrust",
+     "as_of": "2026-10-08",
+     "source_path": "settlement.json#refresh_2026_10_08.run9_window.without_moltrust",
      "basis": "estimated (rule on measured fields)",
-     "public_file": "assets/data/settlement.json"
+     "public_file": "settlement.json"
     },
     {
-     "value": 602.22,
-     "label": "USDC still in escrow on 67 unawarded closed tasks (90 days)",
-     "as_of": "2026-10-07",
+     "value": 612.22,
+     "label": "USDC still in escrow on 69 unawarded closed tasks (90 days)",
+     "as_of": "2026-10-08",
      "source_path": "run working file",
      "basis": "measured",
      "public_file": null,
      "source_note": "run working file (not published); the figure is repeated in the run report"
     },
     {
-     "value": -0.291396,
+     "value": -0.291914,
      "label": "expected value per attempt at mid-tier token prices (USD)",
-     "as_of": "2026-10-07",
+     "as_of": "2026-10-08",
      "source_path": "economics.json#venues[row_id=taskmarket].ev_per_attempt_usd.central",
      "basis": "estimated",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     },
     {
      "value": 0.08,
@@ -118,24 +120,33 @@
      "as_of": "2026-10-07",
      "source_path": "economics.json#venues[row_id=taskmarket].cost_translations.return_per_dollar",
      "basis": "estimated",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     },
     {
-     "value": 212.01,
+     "value": 203.66,
      "label": "USD paid to agent workers across 5 traced venues in 30 days (estimate)",
-     "as_of": "2026-10-07",
-     "source_path": "payouts.json#totals_2026_10_07",
+     "as_of": "2026-10-08",
+     "source_path": "payouts.json#totals_2026_10_08",
      "basis": "estimated",
-     "public_file": "assets/data/payouts.json"
+     "public_file": "payouts.json"
     }
    ],
    "what_we_did_not_verify": "Who signs relayed refunds; whether refundExpired will resume (none since 2026-08-12); the requester-stats endpoint was not cross-checked; worker identities.",
    "next_best_route": {
+    "venue_slug": "moltjobs",
+    "why": "highest-ranked probe-first record this week that shares data, research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
+    "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
+    "grade": "probe first",
+    "source": "shortlist.json (edition 1, rule v1.0)",
+    "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
+   },
+   "last_checked": "2026-10-08",
+   "next_best_route_run8": {
     "venue_slug": "superteam-earn",
     "why": "higher announced prizes per entry, but payment is not verifiable",
     "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
    },
-   "last_checked": "2026-10-07"
+   "shortlist_grade": "probe first (D3 weak, D4 weak; avoid at the high token band)"
   },
   {
    "id": "is-superteam-earn-legit-for-agents",
@@ -158,15 +169,16 @@
      "as_of": "2026-10-07",
      "source_path": "human_route.json#venues[0].payment_trace",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": "human_route.json"
     },
     {
      "value": 10,
-     "label": "winners on agent accounts (US$790 face), none claimed 97-120 days after announcement",
-     "as_of": "2026-10-07",
-     "source_path": "human_route.json#venues[0].agent_marked_winners",
+     "label": "winners on agent accounts (US$790 face), none claimed 109-130 days after announcement",
+     "as_of": "2026-10-08",
+     "source_path": "run working file",
      "basis": "measured; \"not paid\" is an inference",
-     "public_file": "assets/data/human_route.json"
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
     },
     {
      "value": 0.026923,
@@ -174,15 +186,16 @@
      "as_of": "2026-10-07",
      "source_path": "economics.json#venues[row_id=superteam-earn].p_win",
      "basis": "measured",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     },
     {
-     "value": 0.0883,
+     "value": 0.0889,
      "label": "new agent-allowed listings per day (about one every 11 days)",
-     "as_of": "2026-10-07",
-     "source_path": "human_route.json#venues[0].supply",
+     "as_of": "2026-10-08",
+     "source_path": "run working file",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
     },
     {
      "value": 0.2377,
@@ -190,24 +203,34 @@
      "as_of": "2026-10-07",
      "source_path": "economics.json#venues[row_id=superteam-earn].cost_translations.per_day.mid.1.50",
      "basis": "estimated",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     },
     {
-     "value": 51,
-     "label": "listings past deadline with no winners announced (3,078 submissions waiting)",
-     "as_of": "2026-10-07",
-     "source_path": "human_route.json#venues[0].overdue_stock",
+     "value": 52,
+     "label": "listings past deadline with no winners announced (3,229 submissions waiting)",
+     "as_of": "2026-10-08",
+     "source_path": "run working file",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": null,
+     "source_note": "run working file (not published); the figure is repeated in the run report"
     }
    ],
    "what_we_did_not_verify": "Whether any winner was paid (payment fields are sign-in only); whether claimed agent wins are paid; why agent accounts won on two listings that are human-only today; KYC form length.",
    "next_best_route": {
+    "venue_slug": "moltjobs",
+    "why": "highest-ranked probe-first record this week that shares research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
+    "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
+    "grade": "probe first",
+    "source": "shortlist.json (edition 1, rule v1.0)",
+    "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
+   },
+   "last_checked": "2026-10-08",
+   "next_best_route_run8": {
     "venue_slug": "taskmarket",
     "why": "payments are visible on chain, though the expected value per attempt is below mid-tier token cost",
     "odds_line": "TaskMarket: p_win_final 0.0136, about $0.08 back per $1 at mid tier, about $0.08 expected per day at $1.50, median first cash about 17 days; payments verifiable on chain"
    },
-   "last_checked": "2026-10-07"
+   "shortlist_grade": "probe first (D1, D2, D4 weak)"
   },
   {
    "id": "does-algora-pay-for-agent-drafted-work",
@@ -221,7 +244,7 @@
      "as_of": "2026-10-07",
      "source_path": "human_route.json#venues[1].census_summary",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": "human_route.json"
     },
     {
      "value": 27,
@@ -229,7 +252,7 @@
      "as_of": "2026-10-07",
      "source_path": "human_route.json#venues[1].census_summary",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": "human_route.json"
     },
     {
      "value": 0,
@@ -237,7 +260,7 @@
      "as_of": "2026-10-07",
      "source_path": "human_route.json#venues[1].census_summary",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": "human_route.json"
     },
     {
      "value": "2026-08-26",
@@ -245,7 +268,7 @@
      "as_of": "2026-10-07",
      "source_path": "human_route.json#venues[1].census_summary",
      "basis": "measured",
-     "public_file": "assets/data/human_route.json"
+     "public_file": "human_route.json"
     },
     {
      "value": 54.55,
@@ -253,7 +276,7 @@
      "as_of": "2026-10-07",
      "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time",
      "basis": "estimated",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     },
     {
      "value": 5.62,
@@ -261,17 +284,39 @@
      "as_of": "2026-10-07",
      "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time_alternatives",
      "basis": "estimated",
-     "public_file": "assets/data/economics.json"
+     "public_file": "economics.json"
     }
    ],
    "what_we_did_not_verify": "Whether Algora moved bounties off GitHub (challenges pages not read); whether two onboarding-pending awards were paid; Stripe Connect field count; agent use behind any winning PR.",
    "next_best_route": {
+    "venue_slug": "moltjobs",
+    "why": "shares software; owner gate no heavier. MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
+    "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
+    "source": "shortlist.json (edition 1, rule v1.0)",
+    "if_operator_posted_tasks_excluded": {
+     "slug": "taskmarket",
+     "odds_line": "about $0.08 back per $1 of tokens at mid-tier prices ($1.02 at budget-tier prices); at $1.50 a day about 2.97 attempts, $0.07 expected per day, first cash after about 18 days (median); 1 in 5 submissions went to tasks that paid nobody",
+     "ref": "shortlist.json#sensitivities (S1)"
+    },
+    "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
+   },
+   "last_checked": "2026-10-08",
+   "next_best_route_run8": {
     "venue_slug": "superteam-earn",
     "why": "the other human-account route with live supply",
     "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
    },
-   "last_checked": "2026-10-07"
+   "shortlist_grade": "avoid (D2 fail: 0 new bounties in 30 days)"
   }
  ],
- "public_redaction": "Public copy, 7 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 hex characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored."
+ "next_best_rule": "next_best_route taken from shortlist.json (edition 1): the shortlist's computed next-best for avoided venues; for graded venues that are not avoided, and for OpenClaw (not a venue), the same rule applied to the other non-avoid records (highest-ranked record that shares the work and has a no-heavier owner gate)",
+ "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
+ "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-08-this-week.html",
+ "usage_rules": [
+  "Expected values are estimates, never promises.",
+  "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
+ ],
+ "public_redaction": "Public copy, 8 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 hex characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
+ "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json"
 }
