@@ -1,8 +1,8 @@
 {
  "title": "Agentic Freelance: is it worth the tokens? Expected value per attempt by venue",
- "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October).",
+ "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-09-measured-gates.html",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-10-should-your-agent-join.html",
  "tool_url": "https://shaduf.ai/p/agentic-freelance/tools/token-calculator.html",
  "page_url": "https://shaduf.ai/p/agentic-freelance/getting-started/#calculator",
  "related": {
@@ -47,9 +47,9 @@
   }
  ],
  "previous_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
- "public_redaction": "Public copy, 9 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
+ "public_redaction": "Public copy, 10 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
  "schema": "agentic-freelance-economics/0.1",
- "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
+ "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
  "as_of": "2026-10-08T13:50:00Z",
  "merged_at": "2026-10-08",
  "window": {
@@ -64,7 +64,7 @@
   "ev_formula": "R_net = reward_per_prize x (1 - fee) - payout_friction_per_win; p_win = sum awards / sum submissions on closed tasks (pooled, incl. unawarded); C_attempt = tokens_in x price_in + tokens_out x price_out + other_cost; EV = p_win x R_net - C_attempt; break_even_cost = p_win x R_net; break_even_tokens_mid = break_even_cost / mid output price per token (output-only bound). EV_low = ci90_low x R_net(median) - C(high band, mid); EV_central = p_win x R_net(median) - C(central band, mid); EV_high = ci90_high x R_net(median) - C(low band, budget).",
   "closed_task_rule": "TaskMarket (run 8): p_win_final over awarded + final_unpaid tasks at grace_days 16 (p95 of positive award delays over 90 days, rounded up; was 21 in run 7); still_payable excluded. Superteam: closed = announced, or past deadline and unannounced, by deadline window. Other venues: run 6 rule unchanged.",
   "p_win_definition": "pooled awards / submissions on closed tasks; Superteam submissions include spam/rejected entries; Algora submissions are distinct /attempt commenters (undercount).",
-  "interval_method": "Wilson 90% on pooled counts and a bootstrap over tasks (2,000 resamples, random.Random(20261005)); the wider is reported as ci90. Algora: envelope of two Wilson intervals (bounds). Recomputed by the merge from tasks.json; matches sub-pass drafts. Run 7 TaskMarket rows: seed 20261006; main/all/MolTrust rows use the the run intervals; subset rows recomputed by the merge. Run 8: seed 20261007 for TaskMarket (C) and Superteam (A) rows.",
+  "interval_method": "Wilson 90% on pooled counts and a bootstrap over tasks (2,000 resamples, random.Random(20261005)); the wider is reported as ci90. Algora: envelope of two Wilson intervals (bounds). Recomputed by the merge from tasks.json; matches sub-pass drafts. Run 7 TaskMarket rows: seed 20261006; main/all/MolTrust rows use the run intervals; subset rows recomputed by the merge. Run 8: seed 20261007 for TaskMarket (C) and Superteam (A) rows.",
   "newcomer_rule": "measured where submitter IDs are public (TaskMarket, the run); otherwise p_win x (1 - top5 share of awards), labelled estimated.",
   "verdict_rule": "EV_central (central band) evaluated at budget, mid and frontier prices: positive at frontier -> positive_at_frontier_tier; else positive at mid -> positive_at_mid_tier; else positive at budget -> positive_only_at_budget_tier; else negative_at_all_tiers; not_computable names the missing input. Assignment venues: not_computable (no p_win) with payout per job and margin vs cost.",
   "labels": {
@@ -1150,19 +1150,19 @@
    "main_row": true,
    "route": "agent_first_board",
    "competition_model": "open_submission",
-   "window": "2026-09-09..2026-10-09",
+   "window": "2026-09-10..2026-10-10",
    "window_extended": false,
    "sample": {
     "tasks_closed": 91,
-    "tasks_awarded": 76,
-    "tasks_final_unpaid": 10,
-    "tasks_still_payable_excluded": 5,
-    "submissions_still_payable_excluded": 302,
+    "tasks_awarded": 78,
+    "tasks_final_unpaid": 8,
+    "tasks_still_payable_excluded": 8,
+    "submissions_still_payable_excluded": 640,
     "tasks_in_p_win": 85,
-    "submissions_total": 6883,
-    "awards_total": 88,
+    "submissions_total": 6603,
+    "awards_total": 90,
     "route": "run working file (unfiltered list, 5 pages)",
-    "as_of": "2026-10-09T13:58:14Z"
+    "as_of": "2026-10-10T14:45:26Z"
    },
    "competition": {
     "submissions_per_task": {
@@ -1201,22 +1201,22 @@
     "per_prize_usd_median_check_run8": 2.0
    },
    "p_win": {
-    "pooled": 0.012785,
-    "awards": 88,
-    "submissions": 6883,
+    "pooled": 0.01363,
+    "awards": 90,
+    "submissions": 6603,
     "ci90_wilson": [
-     0.010741,
-     0.015212
+     0.011474,
+     0.016184
     ],
     "ci90_bootstrap": [
-     0.010249,
-     0.016401
+     0.010878,
+     0.017343
     ],
     "ci90": [
-     0.010249,
-     0.016401
+     0.010878,
+     0.017343
     ],
-    "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261009)",
+    "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261010)",
     "newcomer": 0.010119,
     "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
     "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
@@ -1273,13 +1273,13 @@
    },
    "ev_per_attempt_usd": {
     "low": -1.099409,
-    "central": -0.292891,
+    "central": -0.291328,
     "high": 0.027714,
     "central_at_p90_reward": -0.292891
    },
-   "break_even_cost_usd": 0.023652,
+   "break_even_cost_usd": 0.025216,
    "break_even_tokens_out_mid": 3469,
-   "verdict": "negative_at_all_tiers",
+   "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
     "competition": "measured",
@@ -1410,7 +1410,7 @@
     "verdict": "negative_at_all_tiers",
     "basis": "measured/estimated in run 6"
    },
-   "as_of_row": "2026-10-09T13:58:14Z (p_win, supply); costs estimated 2026-10-05..07 (price tiers refresh in run 12)",
+   "as_of_row": "2026-10-10",
    "snapshot_2026_10_06": {
     "sample": {
      "tasks_closed": 81,
@@ -1468,17 +1468,17 @@
    },
    "cost_translations": {
     "inputs": {
-     "p_win": 0.012785,
+     "p_win": 0.01363,
      "R_net_usd": 1.85,
-     "eligible_supply_per_day": 3.033,
-     "award_delay_median_days": 1.031,
+     "eligible_supply_per_day": 2.8,
+     "award_delay_median_days": 1.03,
      "payout_delay_median_days": 0.0
     },
-    "expected_payout_per_attempt_usd": 0.023652,
+    "expected_payout_per_attempt_usd": 0.025216,
     "return_per_dollar": {
-     "budget": 0.9805,
-     "mid": 0.0747,
-     "frontier": 0.0098
+     "budget": 1.0453,
+     "mid": 0.0797,
+     "frontier": 0.0105
     },
     "per_day": {
      "budget": {
@@ -1525,14 +1525,11 @@
        "days_to_first_cash_median": 23.8
       },
       "1.50": {
-       "budget_attempts_per_day": 4.74,
-       "attempts_per_day": 3.033,
+       "attempts_per_day": 2.8,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0717,
-       "spend_per_day_usd": 0.9601,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 17.8,
-       "days_to_first_cash_median": 18.8
+       "payout_per_day_usd": 0.0706,
+       "days_to_first_win_median": 18.0,
+       "days_to_first_cash_median": 19.1
       },
       "5.00": {
        "budget_attempts_per_day": 15.8,
@@ -1609,7 +1606,8 @@
      },
      "setup_minutes_one_off": null,
      "setup_note": "one-off; not spread over payouts"
-    }
+    },
+    "per_day_note_2026_10_10": "per-day rows recomputed for the $1.50 mid-tier cell only (shortlist input); other cells carried from run 10 until run 12 refreshes price tiers"
    },
    "snapshot_2026_10_07": {
     "p_win": {
@@ -1999,7 +1997,26 @@
      }
     },
     "as_of_row": "2026-10-08T13:50:00Z (p_win, supply); costs estimated 2026-10-05..07"
-   }
+   },
+   "snapshot_2026_10_09": {
+    "p_win": 0.012785,
+    "ci90": [
+     0.010249,
+     0.016401
+    ],
+    "return_per_dollar": {
+     "budget": 0.9805,
+     "mid": 0.0747,
+     "frontier": 0.0098
+    },
+    "ev_per_attempt_usd": {
+     "low": -1.099409,
+     "central": -0.291328,
+     "high": 0.027714,
+     "central_at_p90_reward": -0.292891
+    }
+   },
+   "verdict_reason_2026_10_10": "EV central at the budget tier +$0.0011 per attempt (inside rounding), mid -$0.291"
   },
   {
    "row_id": "taskmarket#single_file_band",
@@ -6414,7 +6431,7 @@
     "paidContractsToday": 0,
     "liveJobs": 237,
     "bidsLast24h": 94,
-    "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in runner/research (same values)"
+    "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in run working file (same values)"
    },
    "basis": {
     "window": "measured",
@@ -6593,7 +6610,7 @@
    "window_extended": true,
    "sample": {
     "tasks_closed": 1,
-    "tasks_closed_note": "Site counters: 'Completed and paid: 1' (all time), 'Active contracts: 15', 'Open tasks: 22', '68 published' all time, 'Published agents: 503'. The one completed-and-paid contract: task 'Make OpenTask Impossible to Scroll Past' (20 USDC, published about 2 months ago by @opentask_admin), worker @eltociear, payment 21 USDC on Base confirmed about 21 days before 2026-10-05 (about 2026-09-14), turnaround 22.6 h, rating 5.0 (1). Payer is the operator's admin account: operator-paid.",
+    "tasks_closed_note": "Site counters: 'Completed and paid: 1' (all time), 'Active contracts: 15', 'Open tasks: 22', '68 published' all time, 'Published agents: 503'. The one completed-and-paid contract: task 'Make OpenTask Impossible to Scroll Past' (20 USDC, published about 2 months ago by @opentask_admin), worker account not named here, payment 21 USDC on Base confirmed about 21 days before 2026-10-05 (about 2026-09-14), turnaround 22.6 h, rating 5.0 (1). Payer is the operator's admin account: operator-paid.",
     "tasks_open": 22,
     "tasks_awarded": 1,
     "submissions_total": null,
@@ -6634,7 +6651,7 @@
     "funded_note": "Sample open listing states it does not escrow funds"
    },
    "carry_over_E1": {
-    "answer": "single completed-and-paid contract identified: payer @opentask_admin (operator), payee @eltociear, 21 USDC on Base, about 2026-09-14",
+    "answer": "single completed-and-paid contract identified: payer @opentask_admin (operator), payee a worker account, 21 USDC on Base, about 2026-09-14",
     "payer_class_suggested": "operator",
     "tx_hash": null,
     "note": "Activity page shows token contract only (0x8335…2913 = USDC); tx hash not exposed; Blockscout trace left to the run/merge.",
@@ -9181,7 +9198,7 @@
     "openai-resale_sharing-3",
     "github-copilot-resale_sharing-2"
    ],
-   "rules_source": "runner/research/2026-10-04-run5/rules.json",
+   "rules_source": "run working file",
    "note": "Show as a separate scenario next to the paid tiers; check provider rules on automated use of consumer plans before relying on it.",
    "id": "flat_rate_subscription",
    "label": "Flat-rate subscription (assumed $0 marginal within quota; not free compute, not resellable)",
@@ -9528,5 +9545,15 @@
   "x402_seller_odds": "replaced (as_of 2026-10-09); run 6 values under x402_seller_odds.snapshot_2026_10_05",
   "agentpact": "no row: D3 not computable (offer counts per need not public)",
   "costs": "run 6-8 price tiers and token bands carried (refresh in run 12)"
- }
+ },
+ "refresh_2026_10_10": {
+  "rows_recomputed": [
+   "taskmarket (p_win, translations, EV central, verdict)"
+  ],
+  "costs": "run 6-8 estimates carried (price tiers refresh in run 12)",
+  "verdict_change": "negative_at_all_tiers -> positive_only_at_budget_tier",
+  "source": "run working file",
+  "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685"
+ },
+ "previous_run_id_run10": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a"
 }

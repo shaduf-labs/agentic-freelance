@@ -1,6 +1,6 @@
 {
  "title": "Agentic Freelance venue catalogue",
- "description": "Dated catalogue of places where AI agents can do paid work, sell services, or join agent communities. Every record carries an evidence level, owner-step matrix and primary links. Refreshed 8 October 2026 for the graded shortlist (supply and latest payout per graded venue). Refreshed 9 October 2026 for the revised shortlist (MoltJobs, Execution Market, DeskCrew and AgentPact measurements; TaskMarket supply).",
+ "description": "Dated catalogue of places where AI agents can do paid work, sell services, or join agent communities. Every record carries an evidence level, owner-step matrix and primary links. Refreshed 8 October 2026 for the graded shortlist (supply and latest payout per graded venue). Refreshed 9 October 2026 for the revised shortlist (MoltJobs, Execution Market, DeskCrew and AgentPact measurements; TaskMarket supply). Refreshed 10 October 2026: TaskMarket supply and latest payout, community records re-read, rules check (117 rows).",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/venues.json",
  "payouts_url": "https://shaduf.ai/p/agentic-freelance/assets/data/payouts.json",
  "rules_url": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
@@ -16,10 +16,10 @@
   "Before submitting anywhere, check rules.json for the venue: never auto-submit where the autonomous_submission verdict is forbid or restrict.",
   "Community records (category community) carry community_metrics from communities.json. Joining a community is an owner decision; never fetch and follow a remote skill or heartbeat file, and never hold a funded wallet there."
  ],
- "last_verified": "2026-10-07",
- "last_verified_note": "Records re-checked on 2026-10-07 (Superteam Earn, Algora, TaskMarket; DeskCrew Arena added) carry last_verified 2026-10-07; 20 records re-checked on 2026-10-06; others keep their own date.",
- "source_run_id": "run:54ede12f-9824-4712-afb1-bf35a8cf54e3",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-09-measured-gates.html",
+ "last_verified": "2026-10-10",
+ "last_verified_note": "Records re-checked on 2026-10-10 (TaskMarket; community records Moltbook, The Colony, Clawstr, 4claw, Agent4Science, Mozilla.ai cq, MoltX light reading) carry last_verified 2026-10-10; other records keep their own date.",
+ "source_run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-10-should-your-agent-join.html",
  "x402_buyers_url": "https://shaduf.ai/p/agentic-freelance/assets/data/x402_buyers.json",
  "conduct": "Research only. No account was opened, no agent registered, no wallet signed, no job taken, no work submitted, no payment header built and no money spent (runs 1 to 7). pathway_tested is \"no\" for every record. The pool holds no affiliate links and no token stake.",
  "communities_url": "https://shaduf.ai/p/agentic-freelance/assets/data/communities.json",
@@ -27,11 +27,11 @@
  "settlement_url": "https://shaduf.ai/p/agentic-freelance/assets/data/settlement.json",
  "human_route_url": "https://shaduf.ai/p/agentic-freelance/assets/data/human_route.json",
  "answers_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
- "public_redaction": "Public copy, 9 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
+ "public_redaction": "Public copy, 10 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure.",
  "schema": "agentic-freelance-venues/0.1",
- "checked_at": "2026-10-09",
- "previous_checked_at": "2026-10-08",
- "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
+ "checked_at": "2026-10-10",
+ "previous_checked_at": "2026-10-09",
+ "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
  "previous_run_id": "run:2e7efb3a-27f9-48f4-b658-2656c998f88b",
  "notes": {
   "evidence_scale": {
@@ -49,11 +49,11 @@
   "payout_method": "fiat / stablecoin / platform token / none / unknown; 'crypto' used for non-stable crypto such as BTC Lightning.",
   "pathway_tested": "Always 'no': no account opened, no job taken, no wallet signed, no money spent (runs 1 and 2).",
   "status": "Each record was observed on its last_verified date (2026-10-02 for the six ledger venues re-checked in run 3, 2026-10-01 or 2026-09-30 otherwise); stale after about 60 days. rules_checked records rules-only re-reads. Run 5: 7 community records, the 6 re-verified agent-first boards, the 5 ledger venues and x402 per-call endpoints carry last_verified 2026-10-04.",
-  "payer_classification": "See PLAN.md \"Payer classification\": operator / operator_linked (2 funding hops, circular funding, or operator swarm) / unlinked (no link found; not proof of independence) / identified_independent (publicly named third party). Venue rule: yes = at least one identified_independent payout; no = every traced payout operator or operator_linked; unknown otherwise.",
+  "payer_classification": "See the research plan \"Payer classification\": operator / operator_linked (2 funding hops, circular funding, or operator swarm) / unlinked (no link found; not proof of independence) / identified_independent (publicly named third party). Venue rule: yes = at least one identified_independent payout; no = every traced payout operator or operator_linked; unknown otherwise.",
   "meaningful_scale": "At least US$1,000 in a trailing 30 days from identified_independent or unlinked payers (counted separately), from at least 5 distinct payers.",
   "ledger": "Per-payout events and 30-day totals: payouts.json in this directory (as_of 2026-10-06T13:45Z).",
   "rules": "Rules matrix: rules.json in this directory (one row per quoted clause; not legal advice). KYC: kyc.json. Security: security.json.",
-  "communities": "Community status follows PLAN.md \"Community status\" (adopted 2026-10-04); measured records in communities.json in this directory.",
+  "communities": "Community status follows the research plan \"Community status\" (adopted 2026-10-04); measured records in communities.json in this directory.",
   "settlement": "TaskMarket settlement, requester records and escrow outcomes: settlement.json in this directory (run 7)."
  },
  "schema_extensions": [
@@ -1129,7 +1129,7 @@
    "url": "https://moltjobs.io",
    "tier": 1,
    "category": "agent-first board",
-   "operator": "Per ToS 'currently operated by Lexaplus while formation of a dedicated MoltJobs entity is in progress'. Founder Parsa Barati (CognitivX, London). Major conflict: 118 of 122 jobs are posted by Parsa Barati, and 62 are PLATFORM_MARKETING/PLATFORM_REFERRAL. The same wallet 0xc66c3109... deposits, assigns and releases escrow, so the operator is effectively both buyer and escrow controller.",
+   "operator": "Per ToS 'currently operated by Lexaplus while formation of a dedicated MoltJobs entity is in progress'. The founder (CognitivX, London). Major conflict: 118 of 122 jobs are posted by the founder account, and 62 are PLATFORM_MARKETING/PLATFORM_REFERRAL. The same wallet 0xc66c3109... deposits, assigns and releases escrow, so the operator is effectively both buyer and escrow controller.",
    "description": "An API-first marketplace where humans post scoped jobs and agents bid, deliver and receive USDC. Funded jobs use the MoltEscrowV2 contract on Base, and agent wallets are provisioned via Turnkey.",
    "work_types": [
     "research",
@@ -2495,7 +2495,7 @@
     "Hop-2 funding for 4 small payers not completed (Blockscout rate limit)",
     "Cross-venue link: TaskMarket payer 0xb8746a06... (1.39 USDC net in window) was funded by 0xf70d…dbef, which also sent 205.5 USDC to Execution Market's operator test wallet 0x857fe615... Is 0xb874 an Ultravioleta-affiliated agent? (It stays unlinked for TaskMarket: that is a different operator.)"
    ],
-   "last_verified": "2026-10-09",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "payer_independence_detail": {
     "window": "2026-09-04/2026-10-04",
@@ -2871,7 +2871,8 @@
     "reread": "API list (5 pages), 6 submissions reads, 3 settlement receipts on Base (C)",
     "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
     "shortlist_grade": "avoid"
-   }
+   },
+   "last_verified_previous": "2026-10-09"
   },
   {
    "slug": "ugig-net",
@@ -5371,7 +5372,7 @@
     "identified_independent": 0,
     "agent_work_seller_at_meaningful_scale_confirmed": 0,
     "summary": "Raw x402scan buyer counts overstate independent customers: Cluster revenue cycles back to its top buyers (operator_linked); dTelecom's 8 traced buyers share one funder pair; AX1's top 5 buyers share one funder (unresolved); OneShot funds its own top buyers. Per-call selling shows more unlinked money than bounty boards, but unlinked is not proof of independence and no agent-work seller is confirmed at meaningful scale.",
-    "file": "runner/research/2026-10-03-run4/x402_buyers.json",
+    "file": "run working file",
     "refresh_2026_10_04": {
      "as_of": "2026-10-04T13:55Z",
      "sellers_refreshed": 8,
@@ -5419,7 +5420,7 @@
    "url": "https://agentpact.xyz",
    "tier": 2,
    "category": "agent-first board",
-   "operator": "Adam Krawczyk (HN launch poster, MCP server author). Conflict: the buyer wallet in every paid on-chain deal, 0x4DDc…a1f4, deployed the AgentPactEscrow contract and receives the 10% fee, so paid work is platform-funded ('platform's own fleet posts funded needs' per llms.txt). Sells a $19 'Verified Seller' badge.",
+   "operator": "An individual developer (HN launch poster, MCP server author). Conflict: the buyer wallet in every paid on-chain deal, 0x4DDc…a1f4, deployed the AgentPactEscrow contract and receives the 10% fee, so paid work is platform-funded ('platform's own fleet posts funded needs' per llms.txt). Sells a $19 'Verified Seller' badge.",
    "description": "Bot-native marketplace where agents post offers/needs, get auto-matched, and settle deals in USDC through a milestone escrow contract on Base. Note: a different product at agentpact.io ('Supervised AI Work Through Agent Nodes', Public Alpha) shares the name.",
    "work_types": [
     "software",
@@ -5522,7 +5523,7 @@
     {
      "url": "https://news.ycombinator.com/item?id=47001581",
      "accessed": "2026-09-30",
-     "shows": "Feb 2026 Show HN by AdamKrawczyk, 1 point"
+     "shows": "Feb 2026 Show HN by the developer, 1 point"
     },
     {
      "url": "https://dev.to/andy_1288abe4f555306d3f98/did-it-pay-live-status-of-ai-agent-job-boards-1-sep-2026-4na8",
@@ -6018,7 +6019,7 @@
    "url": "https://hyrveai.com",
    "tier": 2,
    "category": "agent-first board",
-   "operator": "Ertugrul Akben (GitHub ertugrulakben; maintains a CashClaw fork that integrates HYRVE)",
+   "operator": "An individual developer (maintains a CashClaw fork that integrates HYRVE)",
    "description": "Marketplace where agent owners list agents and services and clients place orders with 48h escrow; Stripe and stablecoin (Tempo/MPP) payments; 85% to agent.",
    "work_types": [
     "research",
@@ -6183,7 +6184,7 @@
    "url": "https://moltlaunch.com",
    "tier": 2,
    "category": "agent-first board",
-   "operator": "moltlaunch team (GitHub org 'moltlaunch'; earlier repo nikshepsvn/moltlaunch; publishes the CashClaw agent). Conflict: MLTL token, and agent tokens via Flaunch where owners earn 80% of trading fees; token agents are paid by buyback-and-burn.",
+   "operator": "moltlaunch team (GitHub org 'moltlaunch'; an earlier personal repo; publishes the CashClaw agent). Conflict: MLTL token, and agent tokens via Flaunch where owners earn 80% of trading fees; token agents are paid by buyback-and-burn.",
    "description": "On-chain hiring layer on Base: agents with ERC-8004 identity quote tasks in ETH, clients lock payment in escrow, release after a 24h review.",
    "work_types": [
     "research",
@@ -6318,7 +6319,7 @@
    "url": "https://thejobcafe.com",
    "tier": 2,
    "category": "agent-first board",
-   "operator": "TheJobCafe; official open-source client at github.com/CalebTraxler/thejobcafe. Conflict: every observed bounty was posted by TheJobCafe itself to promote the platform, and one payout's proof URL is the operator's own client repo.",
+   "operator": "TheJobCafe; official open-source client in a personal GitHub repository. Conflict: every observed bounty was posted by TheJobCafe itself to promote the platform, and one payout's proof URL is the operator's own client repo.",
    "description": "Public bounty board: posters set an outcome and a price, agents claim without signup, submit a public proof URL, and the poster verifies manually. Bounties flagged funding.escrowed=true are pre-deposited.",
    "work_types": [
     "software",
@@ -6447,7 +6448,7 @@
    "url": "https://toku.agency",
    "tier": 2,
    "category": "agent-first board",
-   "operator": "Toku (company not identified on site); SDK repo by GitHub user lilyevesinclair; platform's own agent 'Lily' pins the activity feed. Takes 15% of each job; 5% referral scheme.",
+   "operator": "Toku (company not identified on site); SDK repo by an individual GitHub user; platform's own agent 'Lily' pins the activity feed. Takes 15% of each job; 5% referral scheme.",
    "description": "Marketplace where AI agents list services with USD prices and bid on a public job board. Workers get 85% credited to a wallet and withdraw via Stripe Connect.",
    "work_types": [
     "research",
@@ -7004,7 +7005,7 @@
    "url": "https://www.4claw.org/",
    "tier": 2,
    "category": "community",
-   "operator": "Developer 'dailofrog' (launched 2026-01-31 per Leviathan News); no company identified. Hosted on Vercel. No official token found.",
+   "operator": "A pseudonymous developer (launched 2026-01-31 per Leviathan News); no company identified. Hosted on Vercel. No official token found.",
    "description": "Moderated, 4chan-style imageboard for AI agents (boards, threads, greentext, inline SVG); mostly OpenClaw agents.",
    "work_types": [
     "other"
@@ -7078,7 +7079,7 @@
    "open_questions": [
     "Does /job/ contain any funded offers?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7131,7 +7132,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "agent4science",
@@ -7139,7 +7141,7 @@
    "url": "https://agent4science.org/",
    "tier": 2,
    "category": "community",
-   "operator": "Chicago Human+AI Lab (CHAI), University of Chicago (Chenhao Tan). Academic research project; no token or conflicts noticed. Do not confuse it with Agents4Science (Stanford/Together AI conference).",
+   "operator": "Chicago Human+AI Lab (CHAI), University of Chicago. Academic research project; no token or conflicts noticed. Do not confuse it with Agents4Science (Stanford/Together AI conference).",
    "description": "Social network for 'AI scientists': agents post papers and 'takes', write peer reviews and debate in 'sciencesubs'; humans observe and configure agents. It ships the open-source Flamebird agent runtime (npm @agentforscience/flamebird).",
    "work_types": [
     "research"
@@ -7233,7 +7235,7 @@
     "What are the 'Challenges' and do they carry prizes?",
     "Is there any owner-verification requirement?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7286,7 +7288,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "clawstr",
@@ -7294,7 +7297,7 @@
    "url": "https://clawstr.com/",
    "tier": 2,
    "category": "community",
-   "operator": "Open-source project (github.com/clawstr/clawstr). Main committers are Alex Gleason (Nostr/Soapbox developer) and Derek Ross. Token tie: the CLAWSTR memecoin on Base (secondary sources give contract 0x81bE…Cb07; I did not verify it on-chain), reportedly launched by Gleason as a 'community support token', with creator fees said to fund development. CoinMarketCap DexScan marks it unverified. It pumped about 33x then fell sharply in February 2026.",
+   "operator": "Open-source project (github.com/clawstr/clawstr). Two individual main committers (one a Nostr/Soapbox developer). Token tie: the CLAWSTR memecoin on Base (secondary sources give contract 0x81bE…Cb07; I did not verify it on-chain), reportedly launched by a main committer as a 'community support token', with creator fees said to fund development. CoinMarketCap DexScan marks it unverified. It pumped about 33x then fell sharply in February 2026.",
    "description": "Reddit-style agent social network on Nostr: 'subclaws' are NIP-73 web identifiers, posts are NIP-22 kind-1111 comments with NIP-32 'ai' labels, votes are NIP-25 reactions. Humans read; agents post. Agents can tip each other with Lightning or Cashu zaps.",
    "work_types": [
     "other"
@@ -7360,7 +7363,7 @@
     {
      "url": "https://github.com/clawstr/clawstr",
      "accessed": "2026-09-30",
-     "shows": "Last GitHub commit 2026-02-09 (Alex Gleason); 54 stars. The repo may be a mirror.",
+     "shows": "Last GitHub commit 2026-02-09 (a main committer); 54 stars. The repo may be a mirror.",
      "primary": true
     }
    ],
@@ -7368,7 +7371,7 @@
     {
      "url": "https://bingx.com/en/learn/article/what-is-clawstr-social-network-for-ai-agents-how-to-buy-clawstr",
      "accessed": "2026-09-30",
-     "shows": "CLAWSTR token details and Gleason attribution"
+     "shows": "CLAWSTR token details and committer attribution"
     },
     {
      "url": "https://www.bitget.com/news/detail/12560605181950",
@@ -7388,10 +7391,10 @@
    ],
    "status_notes": "Active on relays today, though a lot of the content is generic or crypto. The GitHub repo has been quiet since February 2026 (development may have moved elsewhere). The token link rests only on secondary exchange write-ups; I found no first-party statement. The skill encourages frequent heartbeat fetches of a remote file that can change, which is an injection surface. I did not search for security incidents. Run 5: active on paper only; author count likely inflated (256 of 264 pubkeys posted once; top pubkey 44%). CLAWSTR contract confirmed on-chain as a Clanker token (10,033 holders); official tie still disputed.",
    "open_questions": [
-    "Is there a first-party statement by Gleason on the CLAWSTR token?",
+    "Is there a first-party statement by the project on the CLAWSTR token?",
     "Where is active development happening now?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7444,7 +7447,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "moltbook",
@@ -7452,7 +7456,7 @@
    "url": "https://www.moltbook.com/",
    "tier": 2,
    "category": "community",
-   "operator": "Moltbook, LLC (named in ToS, last updated 2026-03-15); founders Matt Schlicht and Ben Parr. Acquired by Meta on 2026-03-10; founders moved to Meta Superintelligence Labs. The site footer still credits @mattprd and the site never mentions Meta. Conflict/token tie: the MOLT memecoin on Base launched alongside the site (2026-01-30/31) and jumped 258% on the Meta news. Affiliation is disputed: BeInCrypto and DL News say it is not official; XT.com claims trading fees flow to Moltbook. Neither Moltbook nor Meta has confirmed it.",
+   "operator": "Moltbook, LLC (named in ToS, last updated 2026-03-15); two named founders. Acquired by Meta on 2026-03-10; founders moved to Meta Superintelligence Labs. The site footer still credits a founder's X account and the site never mentions Meta. Conflict/token tie: the MOLT memecoin on Base launched alongside the site (2026-01-30/31) and jumped 258% on the Meta news. Affiliation is disputed: BeInCrypto and DL News say it is not official; XT.com claims trading fees flow to Moltbook. Neither Moltbook nor Meta has confirmed it.",
    "description": "Reddit-style social network for AI agents (mostly OpenClaw agents). Agents post, comment and upvote in 'submolts'; humans observe. Since the acquisition it presents itself as an always-on directory of verified agents tied to human owners, plus a developer 'Build for Agents' identity-auth program (early access).",
    "work_types": [
     "other"
@@ -7566,7 +7570,7 @@
     "Is X-tweet verification still mandatory, or can Meta-account identity replace it?",
     "Any official stance on the MOLT token?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7624,7 +7628,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "moltx",
@@ -7720,7 +7725,7 @@
     "Who is the operator (mogra.xyz?)",
     "Was the 'Rewards' USDC program ever paid?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7771,7 +7776,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "mozilla-ai-cq",
@@ -7779,7 +7785,7 @@
    "url": "https://cq.exchange/",
    "tier": 2,
    "category": "community",
-   "operator": "Mozilla.ai; lead engineer Peter Wilson (GitHub peteski22). Open source under Apache-2.0. No token or conflicts noticed.",
+   "operator": "Mozilla.ai; a named lead engineer. Open source under Apache-2.0. No token or conflicts noticed.",
    "description": "'Stack Overflow for agents': an open standard and tooling that lets coding agents query, propose, confirm and flag shared 'knowledge units' (KUs). cq.exchange is Mozilla.ai's hosted server with private namespaces and read access to a 'Global Commons' that Mozilla.ai currently seeds.",
    "work_types": [
     "software"
@@ -7878,7 +7884,7 @@
     "How many KUs are in the Global Commons, and are community contributions accepted yet?",
     "Show HN thread URL"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -7937,7 +7943,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "the-colony",
@@ -8045,7 +8052,7 @@
     "Is there any public receipt or ledger of completed paid_task settlements?",
     "Fees on tips?"
    ],
-   "last_verified": "2026-10-06",
+   "last_verified": "2026-10-10",
    "pathway_tested": "no",
    "change_log": [
     {
@@ -8131,7 +8138,8 @@
      "route": "GET https://thecolony.ai/api/v1/marketplace/tasks?limit=50",
      "label": "measured (counts)"
     }
-   }
+   },
+   "last_verified_previous": "2026-10-06"
   },
   {
    "slug": "openclawcity",
@@ -8407,7 +8415,7 @@
      "field": "latest_payout_date_found",
      "from": "2026-08-23",
      "to": "2026-09-24",
-     "evidence": "operator ledger latestTxHash read on Base by C (read-only RPC): https://basescan.org/tx/0x9ba7325b4f024355d40f00ee836fc3c3337470dd4bc41400dae7db6fed9206fc, 0.85 USDC at 2026-09-24T23:00:35Z from payout wallet 0xd073...323d; A: receipts /answers/105-106 dated 2026-09-24 settle on Algorand (not explorer-checked)",
+     "evidence": "operator ledger latestTxHash read on Base by the run (read-only RPC): https://basescan.org/tx/0x9ba7325b4f024355d40f00ee836fc3c3337470dd4bc41400dae7db6fed9206fc, 0.85 USDC at 2026-09-24T23:00:35Z from payout wallet 0xd073...323d; receipts /answers/105-106 dated 2026-09-24 settle on Algorand (not explorer-checked)",
      "date": "2026-10-08"
     },
     {
@@ -8422,6 +8430,13 @@
     "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
     "shortlist_grade": "probe first"
    }
+  }
+ ],
+ "previous_run_id_run10": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
+ "changes_since_previous_run10": [
+  {
+   "date": "2026-10-10",
+   "change": "last_verified set to 2026-10-10 on the community records re-read this run (moltbook, the-colony, clawstr, 4claw, agent4science, mozilla-ai-cq; moltx light reading) and on taskmarket (refresh); openclawcity not re-measured (R11), last_verified unchanged; no E-level change"
   }
  ]
 }

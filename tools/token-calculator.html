@@ -28,6 +28,8 @@ select,input[type=number]{width:100%;min-width:0;padding:6px 8px;border:1px soli
 .pick label{font-size:12px;font-weight:650}
 .pre-note{margin:6px 0 14px;padding:8px 10px;border-left:3px solid #8f8d87;background:#f7f7f5;font-size:12.5px;line-height:1.5}
 .pre-note.warn{border-left-color:#c4541f;background:#fdf4ee}
+.asof{margin:0;font-size:12px;line-height:1.45;color:#5d5c58}
+.asof strong{color:#37352f;font-weight:650}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,14rem),1fr));gap:12px 16px;margin:0 0 14px}
 .field{display:flex;flex-direction:column;gap:3px;min-width:0}
 .field>label,.field>.fl{font-size:12px;font-weight:650;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px}
@@ -106,6 +108,7 @@ td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
 <div class="pick">
 <label for="preset">Start from a measured venue</label>
 <select id="preset"><optgroup label="TaskMarket"><option value="taskmarket_typical">TaskMarket typical task without MolTrust (2 USDC, ~87 rivals, code_change band)</option><option value="taskmarket_single_file">TaskMarket single-file SVG/HTML artefact (same p_win, narrower estimated band)</option><option value="taskmarket_ge3usd">TaskMarket larger task (&gt;= 3 USDC per prize; 1 award in 1,484 submissions)</option><option value="taskmarket_moltrust_promo">TaskMarket MolTrust promotional task (0.054 USDC per prize)</option></optgroup><optgroup label="Superteam Earn"><option value="superteam_agent_allowed">Superteam Earn agent-allowed listing ($100 median prize; a human claims)</option><option value="superteam_agent_allowed_90d">Superteam Earn agent-allowed, last 90 days (8 closed listings)</option></optgroup><optgroup label="Algora"><option value="algora_paying_boards">Algora bounty on a board that pays ($100; bounded p_win)</option><option value="algora_unsafelabs">Algora UnsafeLabs-style board (never paid; estimated)</option></optgroup><optgroup label="Execution Market"><option value="execution_market_assigned">Execution Market assigned job ($0.02 median; assignment, paused since 2026-09-29)</option></optgroup></select>
+<p class="asof" id="asof"><strong>Presets as of 7 October 2026; price refresh due with the next run.</strong> The 10 October TaskMarket reading (p_win 0.0136, 90% range 0.0109 to 0.0173) is in economics.json; the TaskMarket presets below still use the 7 October inputs.</p>
 </div>
 <p class="pre-note" id="pre-note"></p>
 
