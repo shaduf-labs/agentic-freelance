@@ -1,0 +1,1409 @@
+{
+ "title": "Agentic Freelance: capped probe record template (untested)",
+ "description": "What one owner's capped probe could settle on each probe-first venue, and the fields to record it. Untested: we have not run a probe. One probe is one observation, not a rate. After the 11 October 2026 check, 23 open gates (weak or unknown) remain on the 9 probe-first venues: one capped probe could settle 0 by itself, partly settle 17 and not settle 6 (a D4 unpaid share needs at least 5-10 final units). Not a prediction of income; never 'you will earn'.",
+ "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/probe-record-template.json",
+ "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/#probe",
+ "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-11-grades-hold.html",
+ "usage_rules": "Free to reuse with attribution and the date. Keep the label: untested; the pool has not run a probe. Do not record or share task text, item text or instructions aimed at an agent; count them. Truncate wallets in anything shared. Rules quotes are not legal advice.",
+ "public_redaction": "Public copy, 11 October 2026: internal working-file paths are removed; no task text, item text or instructions aimed at agents are stored; wallets are not stored.",
+ "schema": "agentic-freelance-probe-record/0.1",
+ "run_id": "run:ef12dbb1-d292-4975-a6db-1b691b9d61f9",
+ "generated": "2026-10-11",
+ "status": "complete",
+ "not_done": [],
+ "label": "untested; the pool has not run a probe; one probe is one observation, not a rate",
+ "capped_probe_v1_0": "At most 7 days at a cap of $1.50 a day, at the budget tier where D3 is weak; for routes where the owner reviews or submits each entry, at most 3 entries. Success = one payout received in the owner's own wallet or account, not an announcement. Stop at once on: a KYC or document request not in the documented owner steps; a request to sign a wallet message beyond the documented steps; task text with instructions aimed at the agent; any rules doubt; the cap reached.",
+ "settleability_scale": {
+  "yes": "one probe's record can by itself put the gate in a definite status for this owner",
+  "yes_as_stop": "settles only in the stopping direction (a stop condition ends the probe); counted as yes",
+  "partly": "the record measures at least one gate input for this owner, or settles only on one outcome, but not the gate as defined",
+  "no": "the gate needs a rate or population measure (or a public route) that one probe cannot provide"
+ },
+ "record_fields": {
+  "venue": "slug",
+  "graded_route": "route sentence the probe followed",
+  "start_date": null,
+  "end_date": null,
+  "daily_cap_usd": 1.5,
+  "days": "<= 7",
+  "price_tier": "budget | mid | other (name the list price and date)",
+  "entries": [
+   {
+    "owner_ref": "owner's own reference for the task or entry (no task text)",
+    "time_utc": null,
+    "tokens_in": null,
+    "tokens_out": null,
+    "tokens_source": "provider usage page",
+    "estimated_cost_usd": null,
+    "cost_basis": "tokens x list price of the tier used (state the price and date)",
+    "owner_minutes": null,
+    "outcome": "won | lost | no_decision | pending",
+    "competing_entries_seen": null
+   }
+  ],
+  "award_date": null,
+  "payout_received": {
+   "received": "yes | no",
+   "amount": null,
+   "currency": null,
+   "date": null,
+   "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+  },
+  "fees_deducted": {
+   "amount": null,
+   "what_for": null
+  },
+  "kyc_or_document_request": {
+   "requested": "yes | no",
+   "what": null,
+   "in_documented_owner_steps": "yes | no"
+  },
+  "stop_conditions_hit": {
+   "kyc_or_document_request_not_in_documented_steps": "yes | no",
+   "wallet_signature_request_beyond_documented_steps": "yes | no",
+   "task_text_with_instructions_aimed_at_agent": "yes | no",
+   "rules_doubt": "yes | no",
+   "cap_reached": "yes | no"
+  },
+  "rules_doubts": "short note of the clause and why (no quotes from task text)",
+  "agent_aimed_instruction_task_count": "count only; never the text",
+  "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+ },
+ "privacy": "Never record task text, item text or instructions aimed at the agent; count them. Wallets truncated in anything shared.",
+ "venues": [
+  {
+   "slug": "moltjobs",
+   "name": "MoltJobs",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "agent claims single-claimant jobs via API; owner claims by email and withdraws",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "moltjobs; KYC no (none found); who acts: owner (must claim the agent by email and issue a key with wallet:withdraw; the agent's registration key cannot move money)",
+    "kyc": "no",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-09",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "12 unpaid units are founder MARKETPLACE bid jobs assigned to an agent and then cancelled (3 after a submission); 0% unpaid on PLATFORM_MARKETING forum-reward jobs, 44% on MARKETPLACE jobs",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "D4 here is a measured unpaid share (0.1875); a share needs many final units (n >= 10, or 5-9 with a narrow interval). One probe adds at most a few units, and a won-and-paid or won-and-unpaid result is one observation.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "moltjobs",
+    "graded_route": "agent claims single-claimant jobs via API; owner claims by email and withdraws",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "probe first"
+  },
+  {
+   "slug": "taskmarket",
+   "name": "Taskmarket (Daydreams)",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "avoid"
+   },
+   "graded_route": "agent submits to open tasks via CLI/API; owner approves the one-time withdrawal address",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "budget (D3 weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "taskmarket; KYC no (on request only) (none); who acts: owner (explicit approval before the one-time set-withdrawal-address; owner must keep the one-time accountRecoveryCode, which is the only way to change the addre",
+    "kyc": "unknown",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D3",
+     "status": "weak",
+     "as_of": "2026-10-10",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"band\": \"central\", \"mid\": 0.0797, \"budget\": 1.0453}",
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-10",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "unpaid reward share 14.5%; 8 still_payable tasks (640 submissions, 81 USDC) excluded; 19.0% -> 13.6% is window roll-off (R14): 17.8% if the 3 new still-payable tasks end unpaid, upper bound 21.2%",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "D4 here is a measured unpaid share (0.135696); a share needs many final units (n >= 10, or 5-9 with a narrow interval). One probe adds at most a few units, and a won-and-paid or won-and-unpaid result is one observation.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "taskmarket",
+    "graded_route": "agent submits to open tasks via CLI/API; owner approves the one-time withdrawal address",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "probe first"
+  },
+  {
+   "slug": "execution-market",
+   "name": "Execution Market",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "avoid"
+   },
+   "graded_route": "agent executor registers (ERC-8128 wallet) and accepts assigned tasks; payouts to the agent wallet",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "budget (D3 weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "execution-market; KYC conditional (World ID (Orb)); who acts: owner (a human must hold the Orb verification; publisher-side wallet and ERC-8004 identity set up once by a human per SETUP.md)",
+    "kyc": "conditional",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D3",
+     "status": "weak",
+     "as_of": "2026-10-05",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"band\": \"central\", \"mid\": 0.1785, \"budget\": 2.302}",
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-09",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"measure\": \"unpaid share, Execution Market venue unit (tasks with an executor that reached submitted); graded at the unfavourable end of a bound range (input ruling 2)\", \"value\": 0.1277, \"verifiable_on_public_route\": false, \"announces_winners\": false}",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "D4 here is a measured unpaid share (0.1277); a share needs many final units (n >= 10, or 5-9 with a narrow interval). One probe adds at most a few units, and a won-and-paid or won-and-unpaid result is one observation. It would show one payment in the owner's own wallet, which bears on verifiability, but the measured share (0.1277) alone keeps the gate weak.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "execution-market",
+    "graded_route": "agent executor registers (ERC-8128 wallet) and accepts assigned tasks; payouts to the agent wallet",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "avoid"
+  },
+  {
+   "slug": "deskcrew",
+   "name": "DeskCrew Arena",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "agent pays a per-entry x402 fee and submits a draft answer to a support-ticket bounty; winner paid 85% in USDC to the paying wallet",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "triage.json#DeskCrew: no KYC seen; owner wallet signs EIP-3009 x402 authorizations",
+    "kyc": "no",
+    "wallet_signing": true
+   },
+   "gate_map": [
+    {
+     "gate": "D2",
+     "status": "unknown",
+     "as_of": "2026-10-09",
+     "unknown_reason": "not_public: DeskCrew publishes no dated list of bounty rows (contests array empty; bountyCurve all-time; the /answers receipts index is undated and lists awarded rows only); a per-receipt lower bound (>= 5 operator rows decided 2026-09-17..24) is reported, not used; only the operator publishing dated rows would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route. The public count stays not_public.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-09",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "87 awarded of 107 decided rows (all-time); 20 decided with no award; 5 awarded rows without a payout record (87 - ledger 82); 1 pending (ticket 465). Readings 0.139-0.236, all weak.",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "D4 here is a measured unpaid share (0.2348); a share needs many final units (n >= 10, or 5-9 with a narrow interval). One probe adds at most a few units, and a won-and-paid or won-and-unpaid result is one observation.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "deskcrew",
+    "graded_route": "agent pays a per-entry x402 fee and submits a draft answer to a support-ticket bounty; winner paid 85% in USDC to the paying wallet",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "probe first"
+  },
+  {
+   "slug": "superteam-earn",
+   "name": "Superteam Earn",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "AGENT_ALLOWED listings; agent submits via the agent API, owner reviews and claims the win for payout",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": 3,
+    "owner_reviews_each_entry": true,
+    "documented_owner_steps": "superteam-earn; KYC conditional (Sumsub (inferred from the open-source repo's @sumsub/websdk dependency; FAQ names no vendor)); who acts: owner (human claimant: 'Agents do not complete OAuth, wallet signing, or KYC. A human must claim the agent for payouts.')",
+    "kyc": "conditional",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D1",
+     "status": "weak",
+     "as_of": "2026-10-09",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"e_level\": \"E3\", \"latest_confirmed_payout\": null, \"payout_age_days\": null, \"latest_announced_award\": \"2026-10-09\", \"award_age_days\": 1}",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "fees_deducted"
+     ],
+     "one_probe_settles": "partly",
+     "why": "A payout received in the owner's own wallet or account during the probe is a primary confirmed payout on this route, dated; that would settle D1 for this owner's route. A probe that wins nothing shows nothing about others' payouts, so only one outcome settles it.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D2",
+     "status": "weak",
+     "as_of": "2026-10-09",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "open: Streamflow (deadline 2026-10-09T21:59Z, 564 submissions) and La Familia (deadline 2026-10-24); published in 2026-09-09..10-09: the same 2 (publishedAt carried from run 8 details); 0 new AGENT_ALLOWED ids since run 9; Streamflow closes about 8 h after this read, so open falls to 1 on 2026-10-10 unless a new listing appears",
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-07",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "winners announced; payment not verifiable on public routes. Run 9: all 10 agent-account wins still unclaimed (so unpaid to an owner, inference)",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "fees_deducted"
+     ],
+     "one_probe_settles": "partly",
+     "why": "Weak because winners are announced but payments are not verifiable on a public route. A win paid into the owner's own account verifies one payment privately, for this owner; it does not make payments verifiable on a public route and gives no unpaid share.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "superteam-earn",
+    "graded_route": "AGENT_ALLOWED listings; agent submits via the agent API, owner reviews and claims the win for payout",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "probe first"
+  },
+  {
+   "slug": "bugcrowd",
+   "name": "Bugcrowd (bug bounty platform; GenAI / automation rules)",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "hackbot-assisted findings validated and submitted by the owner (human sign-off)",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": 3,
+    "owner_reviews_each_entry": true,
+    "documented_owner_steps": "bugcrowd; KYC conditional (Jumio (NetVerify)); who acts: owner (individual researcher; tax forms also exist for a non-US corporation)",
+    "kyc": "conditional",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D2",
+     "status": "unknown",
+     "as_of": "2026-10-09",
+     "unknown_reason": "not_public: no launch or start date on any free public GET (engagements.json fields and its sort_by=starts variant show none); only Bugcrowd publishing launch dates would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route. The public count stays not_public.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D3",
+     "status": "unknown",
+     "as_of": "2026-10-05",
+     "unknown_reason": "not_public: no public submission denominator (accepted 'signal' excludes duplicates and invalid reports); only Bugcrowd publishing submissions per programme, or a capped probe, would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate. The missing public input (no public submission denominator; 'signal' excludes duplicates) is not supplied by one owner's entries.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-06",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "venue publishes awards/bounty amounts; payment receipts not public",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "fees_deducted"
+     ],
+     "one_probe_settles": "partly",
+     "why": "Weak because winners are announced but payments are not verifiable on a public route. A win paid into the owner's own account verifies one payment privately, for this owner; it does not make payments verifiable on a public route and gives no unpaid share.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "bugcrowd",
+    "graded_route": "hackbot-assisted findings validated and submitted by the owner (human sign-off)",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "not enough data"
+  },
+  {
+   "slug": "virtuals-acp",
+   "name": "Virtuals Agent Commerce Protocol (ACP) escrow jobs",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "avoid"
+   },
+   "graded_route": "agent sells jobs on ACP; buyer picks the provider; escrow releases to the agent wallet",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "budget (D3 weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "virtuals-acp; KYC unknown (none found); who acts: agent wallet receives directly; owner controls the wallet keys",
+    "kyc": "unknown",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D2",
+     "status": "unknown",
+     "as_of": "2026-10-09",
+     "unknown_reason": "not_public: acpx.virtuals.io /api/jobs returns 403 to unauthenticated reads and the ACP docs list no public jobs route; only Virtuals publishing open client jobs would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route. The public count stays not_public.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D3",
+     "status": "weak",
+     "as_of": "2026-10-05",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"band\": \"central\", \"mid\": 0.3784, \"budget\": 4.8845}",
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "unknown",
+     "as_of": "2026-10-09",
+     "unknown_reason": "not_yet_measured (chain_cost): Base eth_getLogs on ACP escrow 0x238E...32E0 in and out over 30 days, about 5,200 calls (a 3-day sample about 520), above the 180-call run budget",
+     "unknown_reason_class": "not_yet_measured",
+     "weak_reason": null,
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "No unpaid share is measured. One probe yields at most a few final units, below the 5-unit minimum for any status (sample_too_small). not_yet_measured (chain_cost): Base eth_getLogs on ACP escrow 0x238E...32E0 in and out over 30 days, about 5,200 calls (a 3-day sample about 520), above the 180-call run budget",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "virtuals-acp",
+    "graded_route": "agent sells jobs on ACP; buyer picks the provider; escrow releases to the agent wallet",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "not enough data"
+  },
+  {
+   "slug": "hackerone",
+   "name": "HackerOne (bug bounty platform; hackbot / AI rules)",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "hackbot findings submitted by the owner with human sign-off",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": 3,
+    "owner_reviews_each_entry": true,
+    "documented_owner_steps": "hackerone; KYC yes (Veriff); who acts: owner (a natural person aged 18+; for business accounts, a legally authorized representative who is ID-verified every 12 months)",
+    "kyc": "yes",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D2",
+     "status": "unknown",
+     "as_of": "2026-10-08",
+     "unknown_reason": "not_public: the programme directory and Hacktivity load through a GraphQL POST only (the pool makes no POST); only HackerOne publishing dated programme launches on a GET route would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route. The public count stays not_public.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D3",
+     "status": "unknown",
+     "as_of": "2026-10-05",
+     "unknown_reason": "not_public: the attempt denominator (submissions per programme incl. invalid and duplicates) is not published platform-wide; only a capped probe or HackerOne publishing it would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate. The missing public input (attempt denominator (submissions per programme incl. invalid and duplicates) is not published platform-wide) is not supplied by one owner's entries.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "weak",
+     "as_of": "2026-10-06",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "venue publishes awards/bounty amounts; payment receipts not public",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "fees_deducted"
+     ],
+     "one_probe_settles": "partly",
+     "why": "Weak because winners are announced but payments are not verifiable on a public route. A win paid into the owner's own account verifies one payment privately, for this owner; it does not make payments verifiable on a public route and gives no unpaid share.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    }
+   ],
+   "record_template": {
+    "venue": "hackerone",
+    "graded_route": "hackbot findings submitted by the owner with human sign-off",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "not enough data"
+  },
+  {
+   "slug": "opentask-ai",
+   "name": "OpenTask",
+   "grade_run11": "probe first",
+   "grade_by_band_run11": {
+    "low": "probe first",
+    "central": "probe first",
+    "high": "probe first"
+   },
+   "graded_route": "agent bids on tasks via MCP/API; owner supervises and sets limits",
+   "probe_settings": {
+    "max_days": 7,
+    "daily_cap_usd": 1.5,
+    "price_tier": "owner's choice (D3 not weak)",
+    "max_entries": null,
+    "owner_reviews_each_entry": false,
+    "documented_owner_steps": "opentask-ai; KYC conditional (not stated); who acts: owner",
+    "kyc": "conditional",
+    "wallet_signing": null
+   },
+   "gate_map": [
+    {
+     "gate": "D1",
+     "status": "weak",
+     "as_of": "2026-10-05",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "{\"e_level\": \"E3\", \"latest_confirmed_payout\": null, \"payout_age_days\": null, \"latest_announced_award\": \"2026-09-14\", \"award_age_days\": 26}",
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "fees_deducted"
+     ],
+     "one_probe_settles": "partly",
+     "why": "A payout received in the owner's own wallet or account during the probe is a primary confirmed payout on this route, dated; that would settle D1 for this owner's route. A probe that wins nothing shows nothing about others' payouts, so only one outcome settles it.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D2",
+     "status": "weak",
+     "as_of": "2026-10-08",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "23 listed tasks, all executionMode 'pitch'; counted 10 with a non-zero budget and no passed deadline (others: 8 '0 (internal roadmap item)', 1 'Free', 1 'Unpaid pilot', 1 '0 USDC', 2 with deadlines in Feb 2026). None escrowed (model is not_escrowed per run 8). Owner kind: 19 agent, 4 human.; created 2026-09-08..10-08: 2026-09-10 (7 USD, human poster), 2026-10-07 (1 USDC), 2026-10-08 (1 USDC); all pitch mode, unfunded",
+     "record_fields": [
+      "eligible_tasks_seen_daily",
+      "entries[].owner_ref",
+      "start_date",
+      "end_date"
+     ],
+     "one_probe_settles": "partly",
+     "why": "The owner's agent sees the supply it is eligible for over up to 7 days (signed-in view). That answers 'is there work for this owner now', not the gate's 30-day public count; a signed-in view is one owner's observation and is not a public route.",
+     "status_step3": "weak",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D3",
+     "status": "unknown",
+     "as_of": "2026-10-05",
+     "unknown_reason": "not_public: bids are not exposed per task and only 1 paid contract exists all time; only the operator publishing bids per task, or a capped probe, would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "entries[].tokens_in",
+      "entries[].tokens_out",
+      "entries[].estimated_cost_usd",
+      "entries[].outcome",
+      "entries[].competing_entries_seen",
+      "payout_received.amount",
+      "fees_deducted",
+      "price_tier"
+     ],
+     "one_probe_settles": "partly",
+     "why": "D3 is a ratio: win odds x net payout / cost per attempt. The record measures this owner's cost per attempt (tokens in and out from the provider's usage page, priced at a dated list price), which can move the cost side. Win odds need many attempts; up to 3 entries or 7 days give a handful of outcomes, not a rate. The missing public input (1 paid contract all time; bids not exposed per task) is not supplied by one owner's entries.",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D4",
+     "status": "unknown",
+     "as_of": "2026-10-05",
+     "unknown_reason": "not_public: no per-task award or payment outcome on a free public route (only an all-time 'completed and paid' counter of 1 on /activity; payment is not escrowed); only the operator publishing outcomes would settle it",
+     "unknown_reason_class": "not_public",
+     "weak_reason": null,
+     "record_fields": [
+      "payout_received",
+      "award_date",
+      "entries[].outcome"
+     ],
+     "one_probe_settles": "no",
+     "why": "No unpaid share is measured. One probe yields at most a few final units, below the 5-unit minimum for any status (sample_too_small). not_public: no per-task award or payment outcome on a free public route (only an all-time 'completed and paid' counter of 1 on /activity; payment is not escrowed); only the operator publishing outcomes would settle it",
+     "status_step3": "unknown",
+     "still_weak_or_unknown": true
+    },
+    {
+     "gate": "D5",
+     "status": "weak",
+     "as_of": "2026-10-02",
+     "unknown_reason": null,
+     "unknown_reason_class": null,
+     "weak_reason": "stale_input",
+     "record_fields": [
+      "rules_doubts",
+      "stop_conditions_hit.rules_doubt"
+     ],
+     "one_probe_settles": "yes_as_stop",
+     "why": "Any rules doubt stops the probe at once (v1.0 stop list), so the probe settles D5 only in the stopping direction. The gate is weak because its rule rows are stale (freshness rule); the pool's rules re-read (run 12) settles that, not a probe.",
+     "status_step3": "pass",
+     "still_weak_or_unknown": false,
+     "settled_by_run12": "gate now pass after the run 12 merge (rules re-read in step 1)"
+    }
+   ],
+   "record_template": {
+    "venue": "opentask-ai",
+    "graded_route": "agent bids on tasks via MCP/API; owner supervises and sets limits",
+    "start_date": null,
+    "end_date": null,
+    "daily_cap_usd": 1.5,
+    "days": "<= 7",
+    "price_tier": "budget | mid | other (name the list price and date)",
+    "entries": [
+     {
+      "owner_ref": "owner's own reference for the task or entry (no task text)",
+      "time_utc": null,
+      "tokens_in": null,
+      "tokens_out": null,
+      "tokens_source": "provider usage page",
+      "estimated_cost_usd": null,
+      "cost_basis": "tokens x list price of the tier used (state the price and date)",
+      "owner_minutes": null,
+      "outcome": "won | lost | no_decision | pending",
+      "competing_entries_seen": null
+     }
+    ],
+    "award_date": null,
+    "payout_received": {
+     "received": "yes | no",
+     "amount": null,
+     "currency": null,
+     "date": null,
+     "evidence": "transaction in the owner's own wallet (hash) or account statement line; not an announcement"
+    },
+    "fees_deducted": {
+     "amount": null,
+     "what_for": null
+    },
+    "kyc_or_document_request": {
+     "requested": "yes | no",
+     "what": null,
+     "in_documented_owner_steps": "yes | no"
+    },
+    "stop_conditions_hit": {
+     "kyc_or_document_request_not_in_documented_steps": "yes | no",
+     "wallet_signature_request_beyond_documented_steps": "yes | no",
+     "task_text_with_instructions_aimed_at_agent": "yes | no",
+     "rules_doubt": "yes | no",
+     "cap_reached": "yes | no"
+    },
+    "rules_doubts": "short note of the clause and why (no quotes from task text)",
+    "agent_aimed_instruction_task_count": "count only; never the text",
+    "eligible_tasks_seen_daily": "added field (D2): count per day of tasks this owner's agent could enter on the graded route; one owner's view"
+   },
+   "grade_step3": "probe first",
+   "v1_1_shadow_step3": "not enough data"
+  }
+ ],
+ "summary": {
+  "probe_first_venues": 9,
+  "gates_mapped": 24,
+  "settles_yes": 1,
+  "of_which_yes_as_stop": 1,
+  "settles_partly": 17,
+  "settles_no": 6,
+  "by_gate": {
+   "D1": {
+    "partly": 2
+   },
+   "D2": {
+    "partly": 6
+   },
+   "D3": {
+    "partly": 6
+   },
+   "D4": {
+    "no": 6,
+    "partly": 3
+   },
+   "D5": {
+    "yes_as_stop": 1
+   }
+  },
+  "statuses": {
+   "weak": 15,
+   "unknown": 9
+  },
+  "unknown_reason_classes": {
+   "not_public": 8,
+   "not_yet_measured": 1
+  }
+ },
+ "coverage_check": {
+  "expected_from_shortlist": 24,
+  "mapped": 24
+ },
+ "joined_to": {
+  "grades": "shortlist.json (central band; rule v1.0 published) and rule_v1_1_shadow (shadow)",
+  "as_of": "2026-10-11"
+ },
+ "coverage_check_step3": {
+  "probe_first_venues_step3": [
+   "bugcrowd",
+   "deskcrew",
+   "execution-market",
+   "hackerone",
+   "moltjobs",
+   "opentask-ai",
+   "superteam-earn",
+   "taskmarket",
+   "virtuals-acp"
+  ],
+  "weak_or_unknown_gates": 23,
+  "mapped": 23,
+  "unmapped": [],
+  "detail": [
+   {
+    "slug": "moltjobs",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "taskmarket",
+    "gate": "D3",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "taskmarket",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "execution-market",
+    "gate": "D3",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "execution-market",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "deskcrew",
+    "gate": "D2",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "deskcrew",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "superteam-earn",
+    "gate": "D1",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "superteam-earn",
+    "gate": "D2",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "superteam-earn",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "bugcrowd",
+    "gate": "D2",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "bugcrowd",
+    "gate": "D3",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "bugcrowd",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "virtuals-acp",
+    "gate": "D2",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "virtuals-acp",
+    "gate": "D3",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "virtuals-acp",
+    "gate": "D4",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "hackerone",
+    "gate": "D2",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "hackerone",
+    "gate": "D3",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "hackerone",
+    "gate": "D4",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "opentask-ai",
+    "gate": "D1",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "opentask-ai",
+    "gate": "D2",
+    "status": "weak",
+    "mapped": true
+   },
+   {
+    "slug": "opentask-ai",
+    "gate": "D3",
+    "status": "unknown",
+    "mapped": true
+   },
+   {
+    "slug": "opentask-ai",
+    "gate": "D4",
+    "status": "unknown",
+    "mapped": true
+   }
+  ]
+ },
+ "summary_step3": {
+  "probe_first_venues": 9,
+  "gates_mapped_still_open": 23,
+  "settles": {
+   "yes": 0,
+   "partly": 17,
+   "no": 6
+  },
+  "gates_settled_by_run12": [
+   [
+    "opentask-ai",
+    "D5",
+    "pass"
+   ]
+  ]
+ }
+}

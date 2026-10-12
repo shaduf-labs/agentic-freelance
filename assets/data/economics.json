@@ -1,6 +1,6 @@
 {
  "title": "Agentic Freelance: is it worth the tokens? Expected value per attempt by venue",
- "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects.",
+ "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-10-should-your-agent-join.html",
  "tool_url": "https://shaduf.ai/p/agentic-freelance/tools/token-calculator.html",
@@ -47,10 +47,10 @@
   }
  ],
  "previous_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
- "public_redaction": "Public copy, 10 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
+ "public_redaction": "Public copy, 11 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
  "schema": "agentic-freelance-economics/0.1",
- "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
- "as_of": "2026-10-08T13:50:00Z",
+ "run_id": "run:ef12dbb1-d292-4975-a6db-1b691b9d61f9",
+ "as_of": "2026-10-11",
  "merged_at": "2026-10-08",
  "window": {
   "taskmarket": "2026-09-08..2026-10-08 (settlement rule, grace 16)",
@@ -120,7 +120,7 @@
  "price_tiers": [
   {
    "tier": "budget",
-   "public_label": "budget band (about $0.10 in / $0.50 out per million tokens)",
+   "public_label": "budget band (about $0.1 in / $0.5 out per million tokens)",
    "input_usd_per_mtok": 0.1,
    "output_usd_per_mtok": 0.5,
    "cached_input_usd_per_mtok": 0.01,
@@ -128,76 +128,131 @@
     {
      "id": "openai/gpt-6-luna",
      "input": 0.1,
-     "output": 0.5
+     "output": 0.5,
+     "cached_input": 0.01
     }
    ],
    "sources": [
     {
      "url": "https://openrouter.ai/api/v1/models",
-     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
-     "accessed": "2026-10-05T13:53:22Z"
+     "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-11T20:29:07Z",
+     "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+     "bytes": 766350
     },
     {
      "url": "https://platform.openai.com/docs/pricing",
-     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
-     "accessed": "2026-10-05T13:55:54Z"
+     "route": "GET HTML 200",
+     "accessed": "2026-10-11T20:29:40Z",
+     "final_url": "https://developers.openai.com/api/docs/pricing",
+     "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+     "bytes": 595036
     }
    ],
    "selection": "cheapest output price in the eligible set",
-   "basis": "measured"
+   "basis": "measured (list price on the access date)",
+   "change_vs_2026_10_05": {
+    "input": {
+     "old_10_05": 0.1,
+     "new_10_11": 0.1,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 0.5,
+     "new_10_11": 0.5,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "cached_input": {
+     "old_10_05": 0.01,
+     "new_10_11": 0.01,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    }
+   }
   },
   {
    "tier": "mid",
-   "public_label": "mid band (about $1.25 in / $7.25 out per million tokens)",
+   "public_label": "mid band (about $1.25 in / $6.75 out per million tokens)",
    "input_usd_per_mtok": 1.25,
-   "output_usd_per_mtok": 7.25,
-   "cached_input_usd_per_mtok": 0.13,
+   "output_usd_per_mtok": 6.75,
+   "cached_input_usd_per_mtok": 0.1,
    "models": [
     {
-     "id": "z-ai/glm-5.3",
-     "input": 0.05,
-     "output": 7.0
+     "id": "x-ai/grok-4.7",
+     "input": 2.0,
+     "output": 6.0
     },
     {
      "id": "mistralai/mistral-medium-3-5",
      "input": 1.5,
      "output": 7.5
-    },
-    {
-     "id": "x-ai/grok-4.7",
-     "input": 2.0,
-     "output": 6.0
     }
    ],
    "sources": [
     {
      "url": "https://openrouter.ai/api/v1/models",
-     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
-     "accessed": "2026-10-05T13:53:22Z"
+     "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-11T20:29:07Z",
+     "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+     "bytes": 766350
     },
     {
      "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
      "route": "GET HTML 200",
-     "accessed": "2026-10-05T13:55:53Z"
+     "accessed": "2026-10-11T20:29:38Z",
+     "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+     "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
+     "bytes": 1141318
     },
     {
      "url": "https://platform.openai.com/docs/pricing",
-     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
-     "accessed": "2026-10-05T13:55:54Z"
+     "route": "GET HTML 200",
+     "accessed": "2026-10-11T20:29:40Z",
+     "final_url": "https://developers.openai.com/api/docs/pricing",
+     "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+     "bytes": 595036
     },
     {
      "url": "https://ai.google.dev/gemini-api/docs/pricing",
-     "route": "GET HTML 200",
-     "accessed": "2026-10-05T13:55:55Z"
+     "route": "GET HTML 200 (retry with cookie jar after a 302 self-redirect)",
+     "accessed": "2026-10-11T20:30:04Z",
+     "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+     "sha256": "cce72251e924222790224164a8daf1bbe37486e96432ecd3937ec86fc1f73089",
+     "bytes": 244995
     },
     {
      "url": "https://api-docs.deepseek.com/quick_start/pricing",
      "route": "GET HTML 200",
-     "accessed": "2026-10-05T13:55:55Z"
+     "accessed": "2026-10-11T20:29:46Z",
+     "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+     "sha256": "210f102275ccf1a6542f08a3bc9e4b4c7c83278cb74b35217bffa112df6363b2",
+     "bytes": 23982
     }
    ],
-   "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=16); a single median model would pair a ~$7 output with a $0.05 input (glm-5.3), which understates input-heavy agent work",
-   "basis": "estimated (component-wise median of measured list prices; not one model)"
+   "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=16; cached median over n=15 with a cached price); models listed are those around the output median, not one model",
+   "basis": "estimated (component-wise median of measured list prices; not one model)",
+   "change_vs_2026_10_05": {
+    "input": {
+     "old_10_05": 1.25,
+     "new_10_11": 1.25,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 7.25,
+     "new_10_11": 6.75,
+     "change_usd": -0.5,
+     "change_pct": -6.9
+    },
+    "cached_input": {
+     "old_10_05": 0.13,
+     "new_10_11": 0.1,
+     "change_usd": -0.03,
+     "change_pct": -23.1
+    }
+   }
   },
   {
    "tier": "frontier",
@@ -209,33 +264,63 @@
     {
      "id": "anthropic/claude-fable-5.1",
      "input": 10.0,
-     "output": 50.0
+     "output": 50.0,
+     "cached_input": 0.25
     },
     {
      "id": "openai/gpt-6-astra",
      "input": 10.0,
-     "output": 50.0
+     "output": 50.0,
+     "cached_input": 1.0
     }
    ],
    "sources": [
     {
      "url": "https://openrouter.ai/api/v1/models",
-     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
-     "accessed": "2026-10-05T13:53:22Z"
+     "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-11T20:29:07Z",
+     "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+     "bytes": 766350
     },
     {
      "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
      "route": "GET HTML 200",
-     "accessed": "2026-10-05T13:55:53Z"
+     "accessed": "2026-10-11T20:29:38Z",
+     "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+     "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
+     "bytes": 1141318
     },
     {
      "url": "https://platform.openai.com/docs/pricing",
-     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
-     "accessed": "2026-10-05T13:55:54Z"
+     "route": "GET HTML 200",
+     "accessed": "2026-10-11T20:29:40Z",
+     "final_url": "https://developers.openai.com/api/docs/pricing",
+     "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+     "bytes": 595036
     }
    ],
-   "selection": "most expensive output price in the eligible set (two-way tie)",
-   "basis": "measured"
+   "selection": "most expensive output price in the eligible set",
+   "basis": "measured (list price on the access date)",
+   "change_vs_2026_10_05": {
+    "input": {
+     "old_10_05": 10.0,
+     "new_10_11": 10.0,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 50.0,
+     "new_10_11": 50.0,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "cached_input": {
+     "old_10_05": 0.25,
+     "new_10_11": 0.25,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    }
+   }
   }
  ],
  "price_tier_model_set": [
@@ -251,8 +336,22 @@
     "output": 50,
     "cached_input": 0.25,
     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:38Z",
+    "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "quote": "Claude Fable 5.1 ... $10 / MTok $50 / MTok $12.50 / MTok $20 / MTok $0.25 / MTok",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "anthropic/claude-fable-5.1",
+   "name": "Anthropic: Claude Fable 5.1",
+   "prev_10_05": {
+    "input": 10.0,
+    "output": 50.0,
+    "cached_input": 0.25
+   },
+   "excluded": false
   },
   {
    "id": "anthropic/claude-opus-5.5",
@@ -266,23 +365,51 @@
     "output": 20,
     "cached_input": 0.2,
     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:38Z",
+    "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "quote": "Claude Opus 5.5 ... $4 / MTok $20 / MTok $5 / MTok $8 / MTok $0.20 / MTok",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "anthropic/claude-opus-5.5",
+   "name": "Anthropic: Claude Opus 5.5",
+   "prev_10_05": {
+    "input": 4.0,
+    "output": 20.0,
+    "cached_input": 0.2
+   },
+   "excluded": false
   },
   {
    "id": "anthropic/claude-sonnet-5.5",
    "input": 2.0,
    "output": 10.0,
-   "cached_input": 0.2,
+   "cached_input": 0.1,
    "context_length": 1000000,
    "long_context_override": false,
    "first_party": {
     "input": 2,
     "output": 10,
-    "cached_input": 0.2,
+    "cached_input": 0.1,
     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:38Z",
+    "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "quote": "Claude Sonnet 5.5 ... $2 / MTok $10 / MTok $2.50 / MTok $4 / MTok $0.10 / MTok",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "anthropic/claude-sonnet-5.5",
+   "name": "Anthropic: Claude Sonnet 5.5",
+   "prev_10_05": {
+    "input": 2.0,
+    "output": 10.0,
+    "cached_input": 0.2
+   },
+   "excluded": false
   },
   {
    "id": "anthropic/claude-haiku-4.5",
@@ -296,8 +423,22 @@
     "output": 5,
     "cached_input": 0.1,
     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:38Z",
+    "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+    "quote": "Claude Haiku 4.5 $1 / MTok $5 / MTok $1.25 / MTok $2 / MTok $0.10 / MTok",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "anthropic/claude-haiku-4.5",
+   "name": "Anthropic: Claude Haiku 4.5",
+   "prev_10_05": {
+    "input": 1.0,
+    "output": 5.0,
+    "cached_input": 0.1
+   },
+   "excluded": false
   },
   {
    "id": "openai/gpt-6-astra",
@@ -311,8 +452,22 @@
     "output": 50,
     "cached_input": 1.0,
     "url": "https://platform.openai.com/docs/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:40Z",
+    "final_url": "https://developers.openai.com/api/docs/pricing",
+    "quote": "Standard, short context: gpt-6-astra $10.00 $1.00 $12.50 $50.00",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "openai/gpt-6-astra",
+   "name": "OpenAI: GPT-6 Astra",
+   "prev_10_05": {
+    "input": 10.0,
+    "output": 50.0,
+    "cached_input": 1.0
+   },
+   "excluded": false
   },
   {
    "id": "openai/gpt-6.1-sol",
@@ -326,8 +481,22 @@
     "output": 10,
     "cached_input": 0.1,
     "url": "https://platform.openai.com/docs/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:40Z",
+    "final_url": "https://developers.openai.com/api/docs/pricing",
+    "quote": "Standard, short context: gpt-6.1-sol $2.00 $0.10 $2.50 $10.00",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "openai/gpt-6.1-sol",
+   "name": "OpenAI: GPT-6.1 Sol",
+   "prev_10_05": {
+    "input": 2.0,
+    "output": 10.0,
+    "cached_input": 0.1
+   },
+   "excluded": false
   },
   {
    "id": "openai/gpt-6-luna",
@@ -341,8 +510,22 @@
     "output": 0.5,
     "cached_input": 0.01,
     "url": "https://platform.openai.com/docs/pricing",
-    "match": true
-   }
+    "match": true,
+    "accessed": "2026-10-11T20:29:40Z",
+    "final_url": "https://developers.openai.com/api/docs/pricing",
+    "quote": "Standard, short context: gpt-6-luna $0.10 $0.01 $0.125 $0.50",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "openai/gpt-6-luna",
+   "name": "OpenAI: GPT-6 Luna",
+   "prev_10_05": {
+    "input": 0.1,
+    "output": 0.5,
+    "cached_input": 0.01
+   },
+   "excluded": false
   },
   {
    "id": "google/gemini-3.1-pro-preview",
@@ -354,11 +537,24 @@
    "first_party": {
     "input": 2,
     "output": 12,
-    "cached_input": null,
+    "cached_input": 0.2,
     "url": "https://ai.google.dev/gemini-api/docs/pricing",
     "match": true,
-    "note": "<=200k prompt; $4 input above 200k"
-   }
+    "accessed": "2026-10-11T20:30:04Z",
+    "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "quote": "Paid tier: input $2.00, prompts <= 200k; output $12.00; context caching $0.20",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "google/gemini-3.1-pro-preview",
+   "name": "Google: Gemini 3.1 Pro Preview",
+   "prev_10_05": {
+    "input": 2.0,
+    "output": 12.0,
+    "cached_input": 0.2
+   },
+   "excluded": false
   },
   {
    "id": "google/gemini-3.8-flash",
@@ -373,8 +569,21 @@
     "cached_input": 0.075,
     "url": "https://ai.google.dev/gemini-api/docs/pricing",
     "match": true,
-    "note": "promotional through 2026-12-31; $1.50/$7.50 from 2027-01-01"
-   }
+    "accessed": "2026-10-11T20:30:04Z",
+    "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "quote": "Paid tier: $0.75 / $3.75 / caching $0.075 through December 31, 2026; $1.50 / $7.50 / $0.15 from January 1, 2027",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "google/gemini-3.8-flash",
+   "name": "Google: Gemini 3.8 Flash",
+   "prev_10_05": {
+    "input": 0.75,
+    "output": 3.75,
+    "cached_input": 0.075
+   },
+   "excluded": false
   },
   {
    "id": "deepseek/deepseek-v4-pro",
@@ -389,8 +598,21 @@
     "cached_input": 0.044,
     "url": "https://api-docs.deepseek.com/quick_start/pricing",
     "match": false,
-    "note": "first-party peak price (off-peak half: $0.66/$1.98); OpenRouter lists $0.2088/$0.4176 - mismatch, so excluded from tier selection"
-   }
+    "accessed": "2026-10-11T20:29:46Z",
+    "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "quote": "deepseek-v4-pro PEAK: cache hit $0.044, cache miss $1.32, output $3.96 (off-peak half)",
+    "input_within_5pct": false,
+    "output_within_5pct": false,
+    "cached_match": false
+   },
+   "id_run6": "deepseek/deepseek-v4-pro",
+   "name": "DeepSeek: DeepSeek V4 Pro 0423",
+   "prev_10_05": {
+    "input": 0.2088,
+    "output": 0.4176,
+    "cached_input": 0.0174
+   },
+   "excluded": true
   },
   {
    "id": "deepseek/deepseek-v4.1-flash",
@@ -405,8 +627,21 @@
     "cached_input": 0.006,
     "url": "https://api-docs.deepseek.com/quick_start/pricing",
     "match": true,
-    "note": "peak price; off-peak half"
-   }
+    "accessed": "2026-10-11T20:29:46Z",
+    "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+    "quote": "deepseek-flash (DeepSeek-V4.1-Flash) PEAK: cache hit $0.006, cache miss $0.3, output $1.2 (off-peak half)",
+    "input_within_5pct": true,
+    "output_within_5pct": true,
+    "cached_match": true
+   },
+   "id_run6": "deepseek/deepseek-v4.1-flash",
+   "name": "DeepSeek: DeepSeek V4.1 Flash",
+   "prev_10_05": {
+    "input": 0.3,
+    "output": 1.2,
+    "cached_input": 0.006
+   },
+   "excluded": false
   },
   {
    "id": "x-ai/grok-4.7",
@@ -414,31 +649,72 @@
    "output": 6.0,
    "cached_input": 0.5,
    "context_length": 500000,
-   "long_context_override": true
+   "long_context_override": true,
+   "id_run6": "x-ai/grok-4.7",
+   "name": "SpaceXAI: Grok 4.7",
+   "prev_10_05": {
+    "input": 2.0,
+    "output": 6.0,
+    "cached_input": 0.5
+   },
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   },
   {
    "id": "moonshotai/kimi-k3",
-   "input": 0.67,
-   "output": 14.0,
-   "cached_input": 0.22,
+   "input": 0.8,
+   "output": 13.5,
+   "cached_input": 0.55,
    "context_length": 1048576,
-   "long_context_override": false
+   "long_context_override": false,
+   "id_run6": "moonshotai/kimi-k3",
+   "name": "MoonshotAI: Kimi K3",
+   "prev_10_05": {
+    "input": 0.67,
+    "output": 14.0,
+    "cached_input": 0.22
+   },
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   },
   {
    "id": "z-ai/glm-5.3",
-   "input": 0.05,
-   "output": 7.0,
-   "cached_input": 0.045,
+   "input": 0.07,
+   "output": 4.8,
+   "cached_input": 0.05,
    "context_length": 1048576,
-   "long_context_override": false
+   "long_context_override": false,
+   "id_run6": "z-ai/glm-5.3",
+   "name": "Z.ai: GLM 5.3",
+   "prev_10_05": {
+    "input": 0.05,
+    "output": 7.0,
+    "cached_input": 0.045
+   },
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   },
   {
-   "id": "qwen/qwen3-coder-plus",
-   "input": 0.65,
-   "output": 3.25,
-   "cached_input": 0.13,
-   "context_length": 1000000,
-   "long_context_override": true
+   "id_run6": "qwen/qwen3-coder-plus",
+   "replacement": {
+    "action": "replaced_by_successor",
+    "successor": "qwen/qwen3-coder-next",
+    "reading": "qwen3-coder-plus is not in the OpenRouter list on 2026-10-11. Same-family successor read as the newest listed model in the same provider's qwen3-coder line (ids starting 'qwen/qwen3-coder'): qwen3-coder-next (created 2026-02-04). Other coder-line ids listed: qwen3-coder (2025-07-23), qwen3-coder-30b-a3b-instruct (2025-07-31), qwen3-coder-flash (2025-09-17). No 'plus' coder id is listed. This choice is a reading, not stated in the rule; sensitivity 'dropped' is reported."
+   },
+   "id": "qwen/qwen3-coder-next",
+   "name": "Qwen: Qwen3 Coder Next",
+   "input": 0.12,
+   "output": 0.8,
+   "cached_input": 0.07,
+   "context_length": 262144,
+   "long_context_override": false,
+   "prev_10_05": null,
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   },
   {
    "id": "mistralai/mistral-medium-3-5",
@@ -446,7 +722,17 @@
    "output": 7.5,
    "cached_input": null,
    "context_length": 262144,
-   "long_context_override": false
+   "long_context_override": false,
+   "id_run6": "mistralai/mistral-medium-3-5",
+   "name": "Mistral: Mistral Medium 3.5",
+   "prev_10_05": {
+    "input": 1.5,
+    "output": 7.5,
+    "cached_input": null
+   },
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   },
   {
    "id": "mistralai/devstral-2512",
@@ -454,13 +740,31 @@
    "output": 2.0,
    "cached_input": 0.04,
    "context_length": 262144,
-   "long_context_override": false
+   "long_context_override": false,
+   "id_run6": "mistralai/devstral-2512",
+   "name": "Mistral: Devstral 2 2512",
+   "prev_10_05": {
+    "input": 0.4,
+    "output": 2.0,
+    "cached_input": 0.04
+   },
+   "first_party": null,
+   "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+   "excluded": false
   }
  ],
  "price_tier_exclusions": [
   {
    "id": "deepseek/deepseek-v4-pro",
-   "reason": "OpenRouter price ($0.21/$0.42) does not match first-party ($1.32/$3.96 peak); would otherwise be the budget pick and changes the budget output price by only $0.08/Mtok"
+   "reason": "OpenRouter price differs from the first-party list price by more than 5% (first-party peak price; off-peak is half)",
+   "openrouter": [
+    0.2088,
+    0.4176
+   ],
+   "first_party": [
+    1.32,
+    3.96
+   ]
   }
  ],
  "token_bands": [
@@ -1150,19 +1454,19 @@
    "main_row": true,
    "route": "agent_first_board",
    "competition_model": "open_submission",
-   "window": "2026-09-10..2026-10-10",
+   "window": "2026-09-11..2026-10-11",
    "window_extended": false,
    "sample": {
     "tasks_closed": 91,
-    "tasks_awarded": 78,
+    "tasks_awarded": 73,
     "tasks_final_unpaid": 8,
-    "tasks_still_payable_excluded": 8,
+    "tasks_still_payable_excluded": 9,
     "submissions_still_payable_excluded": 640,
-    "tasks_in_p_win": 85,
-    "submissions_total": 6603,
-    "awards_total": 90,
+    "tasks_in_p_win": 80,
+    "submissions_total": 6042,
+    "awards_total": 85,
     "route": "run working file (unfiltered list, 5 pages)",
-    "as_of": "2026-10-10T14:45:26Z"
+    "as_of": "2026-10-11T20:30:39Z"
    },
    "competition": {
     "submissions_per_task": {
@@ -1201,22 +1505,22 @@
     "per_prize_usd_median_check_run8": 2.0
    },
    "p_win": {
-    "pooled": 0.01363,
-    "awards": 90,
-    "submissions": 6603,
+    "pooled": 0.014068,
+    "awards": 85,
+    "submissions": 6042,
     "ci90_wilson": [
-     0.011474,
-     0.016184
+     0.011785,
+     0.016787
     ],
     "ci90_bootstrap": [
-     0.010878,
-     0.017343
+     0.011197,
+     0.017966
     ],
     "ci90": [
-     0.010878,
-     0.017343
+     0.011197,
+     0.017966
     ],
-    "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261010)",
+    "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261011)",
     "newcomer": 0.010119,
     "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
     "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
@@ -1248,9 +1552,9 @@
      "high": 0.08707
     },
     "mid": {
-     "low": 0.035345,
-     "central": 0.316543,
-     "high": 1.11837
+     "low": 0.034095,
+     "central": 0.309042,
+     "high": 1.10337
     },
     "frontier": {
      "low": 0.26276,
@@ -1258,7 +1562,8 @@
      "high": 8.70696
     },
     "other_cost_usd": 0,
-    "band": "code_change"
+    "band": "code_change",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 1.85,
@@ -1272,13 +1577,13 @@
     "p_win_needed_at_mid_central": 0.171104
    },
    "ev_per_attempt_usd": {
-    "low": -1.099409,
-    "central": -0.291328,
-    "high": 0.027714,
-    "central_at_p90_reward": -0.292891
+    "low": -1.082656,
+    "central": -0.283016,
+    "high": 0.030609,
+    "central_at_p90_reward": -0.283016
    },
-   "break_even_cost_usd": 0.025216,
-   "break_even_tokens_out_mid": 3469,
+   "break_even_cost_usd": 0.026026,
+   "break_even_tokens_out_mid": 3855,
    "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
@@ -1410,7 +1715,7 @@
     "verdict": "negative_at_all_tiers",
     "basis": "measured/estimated in run 6"
    },
-   "as_of_row": "2026-10-10",
+   "as_of_row": "2026-10-11",
    "snapshot_2026_10_06": {
     "sample": {
      "tasks_closed": 81,
@@ -1468,78 +1773,81 @@
    },
    "cost_translations": {
     "inputs": {
-     "p_win": 0.01363,
+     "p_win": 0.014068,
      "R_net_usd": 1.85,
-     "eligible_supply_per_day": 2.8,
+     "eligible_supply_per_day": 2.733,
      "award_delay_median_days": 1.03,
      "payout_delay_median_days": 0.0
     },
-    "expected_payout_per_attempt_usd": 0.025216,
+    "expected_payout_per_attempt_usd": 0.026026,
     "return_per_dollar": {
-     "budget": 1.0453,
-     "mid": 0.0797,
-     "frontier": 0.0105
+     "budget": 1.0789,
+     "mid": 0.0842,
+     "frontier": 0.0108
     },
     "per_day": {
      "budget": {
       "0.75": {
        "budget_attempts_per_day": 31.09,
-       "attempts_per_day": 3.033,
+       "attempts_per_day": 2.733,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0717,
-       "spend_per_day_usd": 0.0732,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 17.8,
-       "days_to_first_cash_median": 18.8
+       "payout_per_day_usd": 0.0711,
+       "spend_per_day_usd": 0.0659,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 17.9,
+       "days_to_first_cash_median": 18.9
       },
       "1.50": {
        "budget_attempts_per_day": 62.18,
-       "attempts_per_day": 3.033,
+       "attempts_per_day": 2.733,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0717,
-       "spend_per_day_usd": 0.0732,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 17.8,
-       "days_to_first_cash_median": 18.8
+       "payout_per_day_usd": 0.0711,
+       "spend_per_day_usd": 0.0659,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 17.9,
+       "days_to_first_cash_median": 18.9
       },
       "5.00": {
        "budget_attempts_per_day": 207.27,
-       "attempts_per_day": 3.033,
+       "attempts_per_day": 2.733,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0717,
-       "spend_per_day_usd": 0.0732,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 17.8,
-       "days_to_first_cash_median": 18.8
+       "payout_per_day_usd": 0.0711,
+       "spend_per_day_usd": 0.0659,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 17.9,
+       "days_to_first_cash_median": 18.9
       }
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 2.37,
-       "attempts_per_day": 2.3693,
+       "budget_attempts_per_day": 2.43,
+       "attempts_per_day": 2.4269,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.056,
+       "payout_per_day_usd": 0.0632,
        "spend_per_day_usd": 0.75,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 22.7,
-       "days_to_first_cash_median": 23.8
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 20.2,
+       "days_to_first_cash_median": 21.2
       },
       "1.50": {
-       "attempts_per_day": 2.8,
+       "attempts_per_day": 2.733,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0706,
-       "days_to_first_win_median": 18.0,
-       "days_to_first_cash_median": 19.1
+       "payout_per_day_usd": 0.0711,
+       "days_to_first_win_median": 17.9,
+       "days_to_first_cash_median": 18.9,
+       "budget_attempts_per_day": 4.85,
+       "spend_per_day_usd": 0.8446,
+       "attempts_to_first_win_median": 48.9
       },
       "5.00": {
-       "budget_attempts_per_day": 15.8,
-       "attempts_per_day": 3.033,
+       "budget_attempts_per_day": 16.18,
+       "attempts_per_day": 2.733,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0717,
-       "spend_per_day_usd": 0.9601,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 17.8,
-       "days_to_first_cash_median": 18.8
+       "payout_per_day_usd": 0.0711,
+       "spend_per_day_usd": 0.8446,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 17.9,
+       "days_to_first_cash_median": 18.9
       }
      },
      "frontier": {
@@ -1547,31 +1855,31 @@
        "budget_attempts_per_day": 0.31,
        "attempts_per_day": 0.3109,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0074,
+       "payout_per_day_usd": 0.0081,
        "spend_per_day_usd": 0.75,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 173.3,
-       "days_to_first_cash_median": 174.3
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 157.4,
+       "days_to_first_cash_median": 158.4
       },
       "1.50": {
        "budget_attempts_per_day": 0.62,
        "attempts_per_day": 0.6218,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0147,
+       "payout_per_day_usd": 0.0162,
        "spend_per_day_usd": 1.5,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 86.6,
-       "days_to_first_cash_median": 87.7
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 78.7,
+       "days_to_first_cash_median": 79.7
       },
       "5.00": {
        "budget_attempts_per_day": 2.07,
        "attempts_per_day": 2.0727,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.049,
+       "payout_per_day_usd": 0.0539,
        "spend_per_day_usd": 5.0,
-       "attempts_to_first_win_median": 53.9,
-       "days_to_first_win_median": 26.0,
-       "days_to_first_cash_median": 27.0
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 23.6,
+       "days_to_first_cash_median": 24.6
       }
      }
     },
@@ -1607,7 +1915,8 @@
      "setup_minutes_one_off": null,
      "setup_note": "one-off; not spread over payouts"
     },
-    "per_day_note_2026_10_10": "per-day rows recomputed for the $1.50 mid-tier cell only (shortlist input); other cells carried from run 10 until run 12 refreshes price tiers"
+    "per_day_note_2026_10_10": "per-day rows recomputed for the $1.50 mid-tier cell only (shortlist input); other cells carried from run 10 until run 12 refreshes price tiers",
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "snapshot_2026_10_07": {
     "p_win": {
@@ -2016,7 +2325,26 @@
      "central_at_p90_reward": -0.292891
     }
    },
-   "verdict_reason_2026_10_10": "EV central at the budget tier +$0.0011 per attempt (inside rounding), mid -$0.291"
+   "verdict_reason_2026_10_10": "EV central at the budget tier +$0.0011 per attempt (inside rounding), mid -$0.291",
+   "snapshot_2026_10_10": {
+    "p_win": 0.01363,
+    "ci90": [
+     0.010878,
+     0.017343
+    ],
+    "return_per_dollar": {
+     "budget": 1.0453,
+     "mid": 0.0797,
+     "frontier": 0.0105
+    },
+    "ev_per_attempt_usd": {
+     "low": -1.099409,
+     "central": -0.291328,
+     "high": 0.027714,
+     "central_at_p90_reward": -0.292891
+    }
+   },
+   "verdict_reason_2026_10_11": "EV central at the budget tier +$0.0019 per attempt (inside rounding), mid -$0.283 (11 October list prices)"
   },
   {
    "row_id": "taskmarket#single_file_band",
@@ -2077,7 +2405,7 @@
     "per_prize_usd_median_check_run8": null
    },
    "p_win": {
-    "pooled": 0.012785,
+    "pooled": 0.014068,
     "awards": 85,
     "submissions": 6253,
     "ci90_wilson": [
@@ -2089,8 +2417,8 @@
      0.017876
     ],
     "ci90": [
-     0.010249,
-     0.016401
+     0.011197,
+     0.017966
     ],
     "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261008)",
     "newcomer": 0.010119,
@@ -2124,9 +2452,9 @@
      "high": 0.010019
     },
     "mid": {
-     "low": 0.040468,
-     "central": 0.072216,
-     "high": 0.136899
+     "low": 0.039194,
+     "central": 0.069633,
+     "high": 0.13107
     },
     "frontier": {
      "low": 0.30336,
@@ -2134,7 +2462,8 @@
      "high": 1.00192
     },
     "other_cost_usd": 0,
-    "band": "code_single_file"
+    "band": "code_single_file",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 1.85,
@@ -2148,13 +2477,13 @@
     "p_win_needed_at_mid_central": 0.039036
    },
    "ev_per_attempt_usd": {
-    "low": -0.117374,
-    "central": -0.047587,
-    "high": 0.028509,
-    "central_at_p90_reward": -0.047587
+    "low": -0.110356,
+    "central": -0.043607,
+    "high": 0.030203,
+    "central_at_p90_reward": -0.043607
    },
-   "break_even_cost_usd": 0.024629,
-   "break_even_tokens_out_mid": 3469,
+   "break_even_cost_usd": 0.026026,
+   "break_even_tokens_out_mid": 3855,
    "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
@@ -2343,17 +2672,17 @@
    },
    "cost_translations": {
     "inputs": {
-     "p_win": 0.013313,
+     "p_win": 0.014068,
      "R_net_usd": 1.85,
      "eligible_supply_per_day": 2.967,
      "award_delay_median_days": 1.045,
      "payout_delay_median_days": 0.0
     },
-    "expected_payout_per_attempt_usd": 0.024629,
+    "expected_payout_per_attempt_usd": 0.026026,
     "return_per_dollar": {
-     "budget": 4.5915,
-     "mid": 0.341,
-     "frontier": 0.0459
+     "budget": 4.8519,
+     "mid": 0.3738,
+     "frontier": 0.0485
     },
     "per_day": {
      "budget": {
@@ -2361,63 +2690,63 @@
        "budget_attempts_per_day": 139.82,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
+       "payout_per_day_usd": 0.0772,
        "spend_per_day_usd": 0.0159,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       },
       "1.50": {
        "budget_attempts_per_day": 279.64,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
+       "payout_per_day_usd": 0.0772,
        "spend_per_day_usd": 0.0159,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       },
       "5.00": {
        "budget_attempts_per_day": 932.14,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
+       "payout_per_day_usd": 0.0772,
        "spend_per_day_usd": 0.0159,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       }
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 10.39,
+       "budget_attempts_per_day": 10.77,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
-       "spend_per_day_usd": 0.2143,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "payout_per_day_usd": 0.0772,
+       "spend_per_day_usd": 0.2066,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       },
       "1.50": {
-       "budget_attempts_per_day": 20.77,
+       "budget_attempts_per_day": 21.54,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
-       "spend_per_day_usd": 0.2143,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "payout_per_day_usd": 0.0772,
+       "spend_per_day_usd": 0.2066,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       },
       "5.00": {
-       "budget_attempts_per_day": 69.24,
+       "budget_attempts_per_day": 71.81,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
-       "spend_per_day_usd": 0.2143,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "payout_per_day_usd": 0.0772,
+       "spend_per_day_usd": 0.2066,
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       }
      },
      "frontier": {
@@ -2425,31 +2754,31 @@
        "budget_attempts_per_day": 1.4,
        "attempts_per_day": 1.3982,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0344,
+       "payout_per_day_usd": 0.0364,
        "spend_per_day_usd": 0.75,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 37.0,
-       "days_to_first_cash_median": 38.0
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 35.0,
+       "days_to_first_cash_median": 36.0
       },
       "1.50": {
        "budget_attempts_per_day": 2.8,
        "attempts_per_day": 2.7964,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0689,
+       "payout_per_day_usd": 0.0728,
        "spend_per_day_usd": 1.5,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 18.5,
-       "days_to_first_cash_median": 19.5
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 17.5,
+       "days_to_first_cash_median": 18.5
       },
       "5.00": {
        "budget_attempts_per_day": 9.32,
        "attempts_per_day": 2.967,
        "binding_constraint": "supply",
-       "payout_per_day_usd": 0.0731,
+       "payout_per_day_usd": 0.0772,
        "spend_per_day_usd": 1.5915,
-       "attempts_to_first_win_median": 51.7,
-       "days_to_first_win_median": 17.4,
-       "days_to_first_cash_median": 18.5
+       "attempts_to_first_win_median": 48.9,
+       "days_to_first_win_median": 16.5,
+       "days_to_first_cash_median": 17.5
       }
      }
     },
@@ -2484,7 +2813,8 @@
      },
      "setup_minutes_one_off": null,
      "setup_note": "one-off; not spread over payouts"
-    }
+    },
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "snapshot_2026_10_07": {
     "p_win": {
@@ -2932,9 +3262,9 @@
      "high": 0.010019
     },
     "mid": {
-     "low": 0.040468,
-     "central": 0.072216,
-     "high": 0.136899
+     "low": 0.039194,
+     "central": 0.069633,
+     "high": 0.13107
     },
     "frontier": {
      "low": 0.30336,
@@ -2942,7 +3272,8 @@
      "high": 1.00192
     },
     "other_cost_usd": 0,
-    "band": "code_single_file"
+    "band": "code_single_file",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 1.85,
@@ -2956,13 +3287,13 @@
     "p_win_needed_at_mid_central": 0.039036
    },
    "ev_per_attempt_usd": {
-    "low": -0.121927,
-    "central": -0.052323,
+    "low": -0.116098,
+    "central": -0.04974,
     "high": 0.023375,
-    "central_at_p90_reward": -0.052323
+    "central_at_p90_reward": -0.04974
    },
    "break_even_cost_usd": 0.019893,
-   "break_even_tokens_out_mid": 2744,
+   "break_even_tokens_out_mid": 2947,
    "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
@@ -3125,9 +3456,9 @@
     },
     "expected_payout_per_attempt_usd": 0.019893,
     "return_per_dollar": {
-     "budget": 3.71,
-     "mid": 0.28,
-     "frontier": 0.04
+     "budget": 3.7086,
+     "mid": 0.2857,
+     "frontier": 0.0371
     },
     "per_day": {
      "budget": {
@@ -3276,9 +3607,9 @@
      "high": 0.08707
     },
     "mid": {
-     "low": 0.035345,
-     "central": 0.316543,
-     "high": 1.11837
+     "low": 0.034095,
+     "central": 0.309042,
+     "high": 1.10337
     },
     "frontier": {
      "low": 0.26276,
@@ -3286,7 +3617,8 @@
      "high": 8.70696
     },
     "other_cost_usd": 0,
-    "band": "code_change"
+    "band": "code_change",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 9.1575,
@@ -3300,13 +3632,13 @@
     "p_win_needed_at_mid_central": 0.034567
    },
    "ev_per_attempt_usd": {
-    "low": -1.116896,
-    "central": -0.309922,
+    "low": -1.101896,
+    "central": -0.302421,
     "high": 0.026997,
-    "central_at_p90_reward": null
+    "central_at_p90_reward": -0.302368
    },
    "break_even_cost_usd": 0.006621,
-   "break_even_tokens_out_mid": 2420,
+   "break_even_tokens_out_mid": 980,
    "verdict": "negative_at_all_tiers",
    "basis": {
     "sample": "measured",
@@ -3524,9 +3856,9 @@
     },
     "expected_payout_per_attempt_usd": 0.006621,
     "return_per_dollar": {
-     "budget": 0.27,
-     "mid": 0.02,
-     "frontier": 0.0
+     "budget": 0.2745,
+     "mid": 0.0214,
+     "frontier": 0.0027
     },
     "per_day": {
      "budget": {
@@ -3563,34 +3895,66 @@
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 2.37,
-       "attempts_per_day": 2.3693,
+       "budget_attempts_per_day": 2.43,
+       "attempts_per_day": 2.4269,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0157,
+       "payout_per_day_usd": 0.0161,
        "spend_per_day_usd": 0.75,
        "attempts_to_first_win_median": 958.4,
-       "days_to_first_win_median": 404.5,
-       "days_to_first_cash_median": 405.5
+       "days_to_first_win_median": 394.9,
+       "days_to_first_cash_median": 395.9
       },
       "1.50": {
-       "budget_attempts_per_day": 4.74,
+       "budget_attempts_per_day": 4.85,
        "attempts_per_day": 3.1333,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.0207,
-       "spend_per_day_usd": 0.9918,
+       "spend_per_day_usd": 0.9683,
        "attempts_to_first_win_median": 958.4,
        "days_to_first_win_median": 305.9,
        "days_to_first_cash_median": 306.9
       },
       "5.00": {
-       "budget_attempts_per_day": 15.8,
+       "budget_attempts_per_day": 16.18,
        "attempts_per_day": 3.1333,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.0207,
-       "spend_per_day_usd": 0.9918,
+       "spend_per_day_usd": 0.9683,
        "attempts_to_first_win_median": 958.4,
        "days_to_first_win_median": 305.9,
        "days_to_first_cash_median": 306.9
+      }
+     },
+     "frontier": {
+      "0.75": {
+       "budget_attempts_per_day": 0.31,
+       "attempts_per_day": 0.3109,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0021,
+       "spend_per_day_usd": 0.75,
+       "attempts_to_first_win_median": 958.4,
+       "days_to_first_win_median": 3082.5,
+       "days_to_first_cash_median": 3083.6
+      },
+      "1.50": {
+       "budget_attempts_per_day": 0.62,
+       "attempts_per_day": 0.6218,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0041,
+       "spend_per_day_usd": 1.5,
+       "attempts_to_first_win_median": 958.4,
+       "days_to_first_win_median": 1541.3,
+       "days_to_first_cash_median": 1542.3
+      },
+      "5.00": {
+       "budget_attempts_per_day": 2.07,
+       "attempts_per_day": 2.0727,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0137,
+       "spend_per_day_usd": 5.0,
+       "attempts_to_first_win_median": 958.4,
+       "days_to_first_win_median": 462.4,
+       "days_to_first_cash_median": 463.4
       }
      }
     },
@@ -3633,7 +3997,8 @@
       "payout_per_owner_hour_usd": 0.02
      }
     },
-    "note": "supply shown is all non-MolTrust tasks; >=3 USDC tasks are a subset (not measured separately)"
+    "note": "supply shown is all non-MolTrust tasks; >=3 USDC tasks are a subset (not measured separately)",
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "run10_note": "not recomputed in run 10 (main and single-file rows only)"
   },
@@ -3730,9 +4095,9 @@
      "high": 0.028639
     },
     "mid": {
-     "low": 0.004395,
-     "central": 0.047564,
-     "high": 0.36299
+     "low": 0.004245,
+     "central": 0.046814,
+     "high": 0.36049
     },
     "frontier": {
      "low": 0.03276,
@@ -3740,7 +4105,8 @@
      "high": 2.86392
     },
     "other_cost_usd": 0,
-    "band": "short_text"
+    "band": "short_text",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 0.050043,
@@ -3754,13 +4120,13 @@
     "p_win_needed_at_mid_central": 0.950463
    },
    "ev_per_attempt_usd": {
-    "low": -0.359568,
-    "central": -0.040233,
+    "low": -0.357068,
+    "central": -0.039483,
     "high": 0.01776,
-    "central_at_p90_reward": 0.155701
+    "central_at_p90_reward": 0.156451
    },
    "break_even_cost_usd": 0.007331,
-   "break_even_tokens_out_mid": 1011,
+   "break_even_tokens_out_mid": 1086,
    "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
@@ -3978,9 +4344,9 @@
     },
     "expected_payout_per_attempt_usd": 0.007331,
     "return_per_dollar": {
-     "budget": 1.99,
-     "mid": 0.15,
-     "frontier": 0.02
+     "budget": 1.9894,
+     "mid": 0.1566,
+     "frontier": 0.0199
     },
     "per_day": {
      "budget": {
@@ -4017,31 +4383,63 @@
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 15.77,
+       "budget_attempts_per_day": 16.02,
        "attempts_per_day": 0.3667,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.0027,
-       "spend_per_day_usd": 0.0174,
+       "spend_per_day_usd": 0.0172,
        "attempts_to_first_win_median": 4.4,
        "days_to_first_win_median": 11.9,
        "days_to_first_cash_median": 13.0
       },
       "1.50": {
-       "budget_attempts_per_day": 31.54,
+       "budget_attempts_per_day": 32.04,
        "attempts_per_day": 0.3667,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.0027,
-       "spend_per_day_usd": 0.0174,
+       "spend_per_day_usd": 0.0172,
        "attempts_to_first_win_median": 4.4,
        "days_to_first_win_median": 11.9,
        "days_to_first_cash_median": 13.0
       },
       "5.00": {
-       "budget_attempts_per_day": 105.12,
+       "budget_attempts_per_day": 106.81,
        "attempts_per_day": 0.3667,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.0027,
-       "spend_per_day_usd": 0.0174,
+       "spend_per_day_usd": 0.0172,
+       "attempts_to_first_win_median": 4.4,
+       "days_to_first_win_median": 11.9,
+       "days_to_first_cash_median": 13.0
+      }
+     },
+     "frontier": {
+      "0.75": {
+       "budget_attempts_per_day": 2.04,
+       "attempts_per_day": 0.3667,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.0027,
+       "spend_per_day_usd": 0.1351,
+       "attempts_to_first_win_median": 4.4,
+       "days_to_first_win_median": 11.9,
+       "days_to_first_cash_median": 13.0
+      },
+      "1.50": {
+       "budget_attempts_per_day": 4.07,
+       "attempts_per_day": 0.3667,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.0027,
+       "spend_per_day_usd": 0.1351,
+       "attempts_to_first_win_median": 4.4,
+       "days_to_first_win_median": 11.9,
+       "days_to_first_cash_median": 13.0
+      },
+      "5.00": {
+       "budget_attempts_per_day": 13.57,
+       "attempts_per_day": 0.3667,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.0027,
+       "spend_per_day_usd": 0.1351,
        "attempts_to_first_win_median": 4.4,
        "days_to_first_win_median": 11.9,
        "days_to_first_cash_median": 13.0
@@ -4086,7 +4484,8 @@
       "owner_minutes_per_payout": 136.5,
       "payout_per_owner_hour_usd": 0.02
      }
-    }
+    },
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "run10_note": "not recomputed in run 10 (main and single-file rows only)"
   },
@@ -4195,9 +4594,9 @@
      "high": 0.08707
     },
     "mid": {
-     "low": 0.035345,
-     "central": 0.316543,
-     "high": 1.11837
+     "low": 0.034095,
+     "central": 0.309042,
+     "high": 1.10337
     },
     "frontier": {
      "low": 0.26276,
@@ -4205,7 +4604,8 @@
      "high": 8.70696
     },
     "other_cost_usd": 0,
-    "band": "code_change"
+    "band": "code_change",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 1.85,
@@ -4219,13 +4619,13 @@
     "p_win_needed_at_mid_central": 0.171104
    },
    "ev_per_attempt_usd": {
-    "low": -1.09134,
-    "central": -0.279639,
+    "low": -1.07634,
+    "central": -0.272138,
     "high": 0.047477,
-    "central_at_p90_reward": -0.279639
+    "central_at_p90_reward": -0.272138
    },
    "break_even_cost_usd": 0.036904,
-   "break_even_tokens_out_mid": 5090,
+   "break_even_tokens_out_mid": 5467,
    "verdict": "positive_only_at_budget_tier",
    "basis": {
     "sample": "measured",
@@ -4442,9 +4842,9 @@
     },
     "expected_payout_per_attempt_usd": 0.036904,
     "return_per_dollar": {
-     "budget": 1.53,
-     "mid": 0.12,
-     "frontier": 0.02
+     "budget": 1.5298,
+     "mid": 0.1194,
+     "frontier": 0.0153
     },
     "per_day": {
      "budget": {
@@ -4481,34 +4881,66 @@
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 2.37,
-       "attempts_per_day": 2.3693,
+       "budget_attempts_per_day": 2.43,
+       "attempts_per_day": 2.4269,
        "binding_constraint": "budget",
-       "payout_per_day_usd": 0.0874,
+       "payout_per_day_usd": 0.0896,
        "spend_per_day_usd": 0.75,
        "attempts_to_first_win_median": 34.4,
-       "days_to_first_win_median": 14.5,
-       "days_to_first_cash_median": 15.6
+       "days_to_first_win_median": 14.2,
+       "days_to_first_cash_median": 15.2
       },
       "1.50": {
-       "budget_attempts_per_day": 4.74,
+       "budget_attempts_per_day": 4.85,
        "attempts_per_day": 3.5,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.1292,
-       "spend_per_day_usd": 1.1079,
+       "spend_per_day_usd": 1.0816,
        "attempts_to_first_win_median": 34.4,
        "days_to_first_win_median": 9.8,
        "days_to_first_cash_median": 10.9
       },
       "5.00": {
-       "budget_attempts_per_day": 15.8,
+       "budget_attempts_per_day": 16.18,
        "attempts_per_day": 3.5,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.1292,
-       "spend_per_day_usd": 1.1079,
+       "spend_per_day_usd": 1.0816,
        "attempts_to_first_win_median": 34.4,
        "days_to_first_win_median": 9.8,
        "days_to_first_cash_median": 10.9
+      }
+     },
+     "frontier": {
+      "0.75": {
+       "budget_attempts_per_day": 0.31,
+       "attempts_per_day": 0.3109,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0115,
+       "spend_per_day_usd": 0.75,
+       "attempts_to_first_win_median": 34.4,
+       "days_to_first_win_median": 110.6,
+       "days_to_first_cash_median": 111.7
+      },
+      "1.50": {
+       "budget_attempts_per_day": 0.62,
+       "attempts_per_day": 0.6218,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0229,
+       "spend_per_day_usd": 1.5,
+       "attempts_to_first_win_median": 34.4,
+       "days_to_first_win_median": 55.3,
+       "days_to_first_cash_median": 56.4
+      },
+      "5.00": {
+       "budget_attempts_per_day": 2.07,
+       "attempts_per_day": 2.0727,
+       "binding_constraint": "budget",
+       "payout_per_day_usd": 0.0765,
+       "spend_per_day_usd": 5.0,
+       "attempts_to_first_win_median": 34.4,
+       "days_to_first_win_median": 16.6,
+       "days_to_first_cash_median": 17.6
       }
      }
     },
@@ -4550,7 +4982,8 @@
       "owner_minutes_per_payout": 1002.6,
       "payout_per_owner_hour_usd": 0.11
      }
-    }
+    },
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "run10_note": "not recomputed in run 10 (main and single-file rows only)"
   },
@@ -4677,9 +5110,9 @@
      "high": 0.028639
     },
     "mid": {
-     "low": 0.004395,
-     "central": 0.047564,
-     "high": 0.36299
+     "low": 0.004245,
+     "central": 0.046814,
+     "high": 0.36049
     },
     "frontier": {
      "low": 0.03276,
@@ -4688,7 +5121,7 @@
     },
     "other_cost_usd": 0,
     "band": "short_text",
-    "recomputed": "merge run 8: token_bands x price_tiers"
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 100.0,
@@ -4702,13 +5135,13 @@
     "p_win_needed_at_mid_central": 0.000476
    },
    "ev_per_attempt_usd": {
-    "low": 1.29421,
-    "central": 2.644736,
+    "low": 1.29671,
+    "central": 2.645486,
     "high": 4.222772,
-    "central_at_p90_reward": 40.336936
+    "central_at_p90_reward": 40.337686
    },
    "break_even_cost_usd": 2.6923,
-   "break_even_tokens_out_mid": 371352,
+   "break_even_tokens_out_mid": 398859,
    "verdict": "positive_at_frontier_tier",
    "verdict_reason": "EV_central positive at every tier on announced prizes; payment of those prizes cannot be verified on public routes (human_route.json: 30 of 30 sampled winners wallet_unknown), so the verdict is about announced prizes, not cash received.",
    "evidence_links": [
@@ -4862,9 +5295,9 @@
     },
     "expected_payout_per_attempt_usd": 2.6923,
     "return_per_dollar": {
-     "budget": 730.61,
-     "mid": 56.6,
-     "frontier": 7.31
+     "budget": 730.6106,
+     "mid": 57.5106,
+     "frontier": 7.3059
     },
     "per_day": {
      "budget": {
@@ -4901,31 +5334,63 @@
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 15.77,
+       "budget_attempts_per_day": 16.02,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.2377,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
        "attempts_to_first_win_median": 25.4,
        "days_to_first_win_median": 287.6,
        "days_to_first_cash_median": 301.1
       },
       "1.50": {
-       "budget_attempts_per_day": 31.54,
+       "budget_attempts_per_day": 32.04,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.2377,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
        "attempts_to_first_win_median": 25.4,
        "days_to_first_win_median": 287.6,
        "days_to_first_cash_median": 301.1
       },
       "5.00": {
-       "budget_attempts_per_day": 105.12,
+       "budget_attempts_per_day": 106.81,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.2377,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
+       "attempts_to_first_win_median": 25.4,
+       "days_to_first_win_median": 287.6,
+       "days_to_first_cash_median": 301.1
+      }
+     },
+     "frontier": {
+      "0.75": {
+       "budget_attempts_per_day": 2.04,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.2377,
+       "spend_per_day_usd": 0.0325,
+       "attempts_to_first_win_median": 25.4,
+       "days_to_first_win_median": 287.6,
+       "days_to_first_cash_median": 301.1
+      },
+      "1.50": {
+       "budget_attempts_per_day": 4.07,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.2377,
+       "spend_per_day_usd": 0.0325,
+       "attempts_to_first_win_median": 25.4,
+       "days_to_first_win_median": 287.6,
+       "days_to_first_cash_median": 301.1
+      },
+      "5.00": {
+       "budget_attempts_per_day": 13.57,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.2377,
+       "spend_per_day_usd": 0.0325,
        "attempts_to_first_win_median": 25.4,
        "days_to_first_win_median": 287.6,
        "days_to_first_cash_median": 301.1
@@ -4986,7 +5451,8 @@
       "payout_per_day_usd_any_cap_mid": 0.208
      }
     },
-    "note": "Payment cannot be verified on public routes; every per-day and per-hour figure is for announced prizes. p_win denominator is mostly human entries."
+    "note": "Payment cannot be verified on public routes; every per-day and per-hour figure is for announced prizes. p_win denominator is mostly human entries.",
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    },
    "supply_refresh_2026_10_08": {
     "agent_allowed_open_now": 2,
@@ -5113,9 +5579,9 @@
      "high": 0.028639
     },
     "mid": {
-     "low": 0.004395,
-     "central": 0.047564,
-     "high": 0.36299
+     "low": 0.004245,
+     "central": 0.046814,
+     "high": 0.36049
     },
     "frontier": {
      "low": 0.03276,
@@ -5124,7 +5590,7 @@
     },
     "other_cost_usd": 0,
     "band": "short_text",
-    "recomputed": "merge run 8: token_bands x price_tiers"
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 100.0,
@@ -5138,13 +5604,13 @@
     "p_win_needed_at_mid_central": 0.000476
    },
    "ev_per_attempt_usd": {
-    "low": 0.38231,
-    "central": 1.813936,
+    "low": 0.38481,
+    "central": 1.814686,
     "high": 5.324372,
-    "central_at_p90_reward": 5.536936
+    "central_at_p90_reward": 5.537686
    },
    "break_even_cost_usd": 1.8615,
-   "break_even_tokens_out_mid": 256759,
+   "break_even_tokens_out_mid": 275777,
    "verdict": "positive_at_frontier_tier",
    "verdict_reason": "EV_central positive at every tier on announced prizes; payment of those prizes cannot be verified on public routes (human_route.json: 30 of 30 sampled winners wallet_unknown), so the verdict is about announced prizes, not cash received.",
    "evidence_links": [
@@ -5298,9 +5764,9 @@
     },
     "expected_payout_per_attempt_usd": 1.8615,
     "return_per_dollar": {
-     "budget": 505.16,
-     "mid": 39.14,
-     "frontier": 5.05
+     "budget": 505.156,
+     "mid": 39.7637,
+     "frontier": 5.0514
     },
     "per_day": {
      "budget": {
@@ -5337,31 +5803,63 @@
      },
      "mid": {
       "0.75": {
-       "budget_attempts_per_day": 15.77,
+       "budget_attempts_per_day": 16.02,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.1644,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
        "attempts_to_first_win_median": 36.9,
        "days_to_first_win_median": 417.8,
        "days_to_first_cash_median": 431.3
       },
       "1.50": {
-       "budget_attempts_per_day": 31.54,
+       "budget_attempts_per_day": 32.04,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.1644,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
        "attempts_to_first_win_median": 36.9,
        "days_to_first_win_median": 417.8,
        "days_to_first_cash_median": 431.3
       },
       "5.00": {
-       "budget_attempts_per_day": 105.12,
+       "budget_attempts_per_day": 106.81,
        "attempts_per_day": 0.0883,
        "binding_constraint": "supply",
        "payout_per_day_usd": 0.1644,
-       "spend_per_day_usd": 0.0042,
+       "spend_per_day_usd": 0.0041,
+       "attempts_to_first_win_median": 36.9,
+       "days_to_first_win_median": 417.8,
+       "days_to_first_cash_median": 431.3
+      }
+     },
+     "frontier": {
+      "0.75": {
+       "budget_attempts_per_day": 2.04,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.1644,
+       "spend_per_day_usd": 0.0325,
+       "attempts_to_first_win_median": 36.9,
+       "days_to_first_win_median": 417.8,
+       "days_to_first_cash_median": 431.3
+      },
+      "1.50": {
+       "budget_attempts_per_day": 4.07,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.1644,
+       "spend_per_day_usd": 0.0325,
+       "attempts_to_first_win_median": 36.9,
+       "days_to_first_win_median": 417.8,
+       "days_to_first_cash_median": 431.3
+      },
+      "5.00": {
+       "budget_attempts_per_day": 13.57,
+       "attempts_per_day": 0.0883,
+       "binding_constraint": "supply",
+       "payout_per_day_usd": 0.1644,
+       "spend_per_day_usd": 0.0325,
        "attempts_to_first_win_median": 36.9,
        "days_to_first_win_median": 417.8,
        "days_to_first_cash_median": 431.3
@@ -5394,7 +5892,8 @@
      },
      "setup_note": "one-off; not spread over payouts"
     },
-    "note": "90-day p_win, n = 8 closed listings; wide interval."
+    "note": "90-day p_win, n = 8 closed listings; wide interval.",
+    "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
    }
   },
   {
@@ -5674,9 +6173,9 @@
      "high": 0.08707
     },
     "mid": {
-     "low": 0.035345,
-     "central": 0.316543,
-     "high": 1.11837
+     "low": 0.034095,
+     "central": 0.309042,
+     "high": 1.10337
     },
     "frontier": {
      "low": 0.26276,
@@ -5684,7 +6183,8 @@
      "high": 8.70696
     },
     "other_cost_usd": 0,
-    "band": "code_change"
+    "band": "code_change",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 100.0,
@@ -5698,13 +6198,13 @@
     "p_win_needed_at_mid_central": 0.003165
    },
    "ev_per_attempt_usd": {
-    "low": 3.88563,
-    "central": 8.774357,
+    "low": 3.90063,
+    "central": 8.781858,
     "high": 32.127372,
-    "central_at_p90_reward": 12.865262
+    "central_at_p90_reward": 12.872763
    },
    "break_even_cost_usd": 9.0909,
-   "break_even_tokens_out_mid": 1253917,
+   "break_even_tokens_out_mid": 1346800,
    "verdict": "positive_at_frontier_tier",
    "verdict_confidence": "low",
    "verdict_reason": "computed with an explicitly wide range: on the few boards that still pay, one attempt is worth more than its token cost, but only 1 award was found on public routes in 90 days, attempters are undercounted (claims without /attempt comments), and the volume of live paying bounties is the binding constraint, not the per-attempt EV",
@@ -5839,9 +6339,9 @@
     },
     "expected_payout_per_attempt_usd": 9.0909,
     "return_per_dollar": {
-     "budget": 376.86,
-     "mid": 28.72,
-     "frontier": 3.77
+     "budget": 376.8561,
+     "mid": 29.4164,
+     "frontier": 3.7685
     },
     "per_day": {
      "budget": {
@@ -6055,9 +6555,9 @@
      "high": 0.08707
     },
     "mid": {
-     "low": 0.035345,
-     "central": 0.316543,
-     "high": 1.11837
+     "low": 0.034095,
+     "central": 0.309042,
+     "high": 1.10337
     },
     "frontier": {
      "low": 0.26276,
@@ -6065,7 +6565,8 @@
      "high": 8.70696
     },
     "other_cost_usd": 0,
-    "band": "code_change"
+    "band": "code_change",
+    "recomputed": "merge run 12: token_bands x price_tiers (list prices 2026-10-11)"
    },
    "economics": {
     "R_net_median_usd": 100.0,
@@ -6079,13 +6580,13 @@
     "p_win_needed_at_mid_central": 0.003165
    },
    "ev_per_attempt_usd": {
-    "low": -1.03797,
-    "central": -0.168243,
+    "low": -1.02297,
+    "central": -0.160742,
     "high": 0.270572,
-    "central_at_p90_reward": -0.101508
+    "central_at_p90_reward": -0.094007
    },
    "break_even_cost_usd": 0.1483,
-   "break_even_tokens_out_mid": 20455,
+   "break_even_tokens_out_mid": 21970,
    "verdict": "positive_only_at_budget_tier",
    "verdict_reason": "Treating UnsafeLabs claims as attempts: a board with 188 open and 0 completed bounties looks like it never pays; do-not-attempt signal",
    "basis": {
@@ -6205,9 +6706,9 @@
     },
     "expected_payout_per_attempt_usd": 0.1483,
     "return_per_dollar": {
-     "budget": 6.15,
-     "mid": 0.47,
-     "frontier": 0.06
+     "budget": 6.1477,
+     "mid": 0.4799,
+     "frontier": 0.0615
     },
     "per_day": {
      "budget": {
@@ -6985,8 +7486,8 @@
     "top5_provider_share": 0.4257,
     "top5_basis": "share of 909 completed jobs (created in window) going to the top-5 executors (C, A)",
     "cost_class_for_comparison": "structured_data",
-    "cost_per_job_mid_central_usd": 0.097481,
-    "margin_per_assigned_job_mid_central_usd": -0.080081,
+    "cost_per_job_mid_central_usd": 0.095981,
+    "margin_per_assigned_job_mid_central_usd": -0.078581,
     "margin_per_assigned_job_budget_central_usd": 0.009841
    },
    "window": {
@@ -7138,9 +7639,10 @@
    "as_of_row": "2026-10-05T13:45:00Z",
    "cost_translations": {
     "status": "assignment",
-    "payout_per_job_over_cost_per_job_mid": 0.178,
+    "payout_per_job_over_cost_per_job_mid": 0.181,
     "basis": "estimated: payout per job (measured, run 7) / cost per job (estimated, mid tier central band)",
-    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)"
+    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)",
+    "payout_per_job_over_cost_per_job_budget": 2.302
    }
   },
   {
@@ -7166,8 +7668,8 @@
     "top5_provider_share": 0.5524,
     "top5_basis": "share of sampled releases (105) going to the top-5 providers (C; sample, not the ~620 releases)",
     "cost_class_for_comparison": "short_text",
-    "cost_per_job_mid_central_usd": 0.047564,
-    "margin_per_assigned_job_mid_central_usd": -0.029564,
+    "cost_per_job_mid_central_usd": 0.046814,
+    "margin_per_assigned_job_mid_central_usd": -0.028814,
     "margin_per_assigned_job_budget_central_usd": 0.014315
    },
    "acp_sample_releases": 105,
@@ -7224,9 +7726,10 @@
    "as_of_row": "2026-10-05T13:45:00Z",
    "cost_translations": {
     "status": "assignment",
-    "payout_per_job_over_cost_per_job_mid": 0.378,
+    "payout_per_job_over_cost_per_job_mid": 0.385,
     "basis": "estimated: payout per job (measured, run 7) / cost per job (estimated, mid tier central band)",
-    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)"
+    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)",
+    "payout_per_job_over_cost_per_job_budget": 4.885
    }
   },
   {
@@ -7252,8 +7755,8 @@
     "top5_provider_share": 0.9125,
     "top5_basis": "top-5 workers share of window USD (C ledger); top-5 share of awards 26.4%",
     "cost_class_for_comparison": "short_text",
-    "cost_per_job_mid_central_usd": 0.047564,
-    "margin_per_assigned_job_mid_central_usd": 0.052436,
+    "cost_per_job_mid_central_usd": 0.046814,
+    "margin_per_assigned_job_mid_central_usd": 0.053186,
     "margin_per_assigned_job_budget_central_usd": 0.096315
    },
    "window": {
@@ -7369,9 +7872,10 @@
    "as_of_row": "2026-10-05T13:45:00Z",
    "cost_translations": {
     "status": "assignment",
-    "payout_per_job_over_cost_per_job_mid": 2.102,
+    "payout_per_job_over_cost_per_job_mid": 2.136,
     "basis": "estimated: payout per job (measured, run 7) / cost per job (estimated, mid tier central band)",
-    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)"
+    "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)",
+    "payout_per_job_over_cost_per_job_budget": 27.136
    }
   },
   {
@@ -8031,9 +8535,9 @@
       "high": 0.088639
      },
      "mid": {
-      "low": 0.064395,
-      "central": 0.107564,
-      "high": 0.42299
+      "low": 0.064245,
+      "central": 0.106814,
+      "high": 0.42049
      },
      "frontier": {
       "low": 0.09276,
@@ -8041,38 +8545,29 @@
       "high": 2.92392
      }
     },
-    "components": "per-entry fee 0.06 (measured) + short_text token band x run 8 price tiers (estimated; tiers dated 2026-10-05)",
+    "components": "per-entry fee 0.06 (measured) + short_text token band x price tiers of 2026-10-11 (estimated)",
     "basis": "estimated"
    },
    "return_per_dollar": {
-    "value": {
-     "budget": {
-      "low": 2.5116,
-      "central": 2.3792,
-      "high": 1.7094
-     },
-     "mid": {
-      "low": 2.353,
-      "central": 1.4087,
-      "high": 0.3582
-     },
-     "frontier": {
-      "low": 1.6335,
-      "central": 0.3536,
-      "high": 0.0518
-     }
+    "budget": {
+     "low": 2.5116,
+     "central": 2.3792,
+     "high": 1.7094
     },
-    "at_p_win_ci90_low_central_band": {
-     "budget": 1.746,
-     "mid": 1.0338,
-     "frontier": 0.2595
+    "mid": {
+     "low": 2.3585,
+     "central": 1.4186,
+     "high": 0.3603
     },
-    "basis": "estimated",
-    "definition": "p_win x R_net / C_attempt (entry fee included)"
+    "frontier": {
+     "low": 1.6335,
+     "central": 0.3536,
+     "high": 0.0518
+    }
    },
    "ev_per_attempt_usd": {
     "budget": 0.08784,
-    "mid": 0.04396,
+    "mid": 0.04471,
     "frontier": -0.27699
    },
    "verdict": "positive_at_mid_tier",
@@ -8089,9 +8584,9 @@
        "high": 1.7094
       },
       "mid": {
-       "low": 2.353,
-       "central": 1.4087,
-       "high": 0.3582
+       "low": 2.3585,
+       "central": 1.4186,
+       "high": 0.3603
       },
       "frontier": {
        "low": 1.6335,
@@ -8101,7 +8596,7 @@
      },
      "at_p_win_ci90_low_central_band": {
       "budget": 1.746,
-      "mid": 1.0338,
+      "mid": 1.041,
       "frontier": 0.2595
      },
      "basis": "estimated",
@@ -8115,7 +8610,7 @@
     "latest payout 2026-09-24 confirmed on Base (C); newest receipts settle on Algorand (not explorer-checked)"
    ],
    "source": "run working file",
-   "as_of_row": "2026-10-08"
+   "as_of_row": "2026-10-11"
   }
  ],
  "x402_seller_odds": {
@@ -8358,10 +8853,10 @@
    "payout_friction_per_win_usd": 0,
    "rivals": 85.0,
    "prizes": 1.188,
-   "p_win": 0.013593,
+   "p_win": 0.014068,
    "p_win_ci90": [
-    0.010618,
-    0.017876
+    0.011197,
+    0.017966
    ],
    "p_win_newcomer": 0.010119,
    "deliverable_class": "code_change",
@@ -8379,10 +8874,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": -1.098727,
-    "central": -0.291396,
-    "high": 0.030443,
-    "central_at_p90_reward": -0.291396
+    "low": -1.082656,
+    "central": -0.283017,
+    "high": 0.030609,
+    "central_at_p90_reward": -0.283017
    },
    "break_even_cost_usd": 0.025147,
    "verdict": "positive_only_at_budget_tier",
@@ -8440,6 +8935,26 @@
     "low": 0,
     "central": 0,
     "high": 0
+   },
+   "p_win_previous": 0.013593,
+   "p_win_source": "run working file (2026-09-11..10-11)",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
    }
   },
   {
@@ -8452,10 +8967,10 @@
    "payout_friction_per_win_usd": 0,
    "rivals": 85.0,
    "prizes": 1.188,
-   "p_win": 0.013593,
+   "p_win": 0.014068,
    "p_win_ci90": [
-    0.010618,
-    0.017876
+    0.011197,
+    0.017966
    ],
    "p_win_newcomer": 0.010119,
    "deliverable_class": "code_single_file",
@@ -8473,10 +8988,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": -0.117256,
-    "central": -0.047069,
-    "high": 0.030037,
-    "central_at_p90_reward": -0.047069
+    "low": -0.110355,
+    "central": -0.043607,
+    "high": 0.030203,
+    "central_at_p90_reward": -0.043607
    },
    "break_even_cost_usd": 0.025147,
    "verdict": "positive_only_at_budget_tier",
@@ -8534,6 +9049,26 @@
     "low": 0,
     "central": 0,
     "high": 0
+   },
+   "p_win_previous": 0.013593,
+   "p_win_source": "run working file (2026-09-11..10-11)",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
    }
   },
   {
@@ -8567,10 +9102,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": -1.116896,
-    "central": -0.309922,
+    "low": -1.101896,
+    "central": -0.302422,
     "high": 0.026997,
-    "central_at_p90_reward": null
+    "central_at_p90_reward": -0.302368
    },
    "break_even_cost_usd": 0.006621,
    "verdict": "negative_at_all_tiers",
@@ -8628,6 +9163,24 @@
     "low": 0,
     "central": 0,
     "high": 0
+   },
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
    }
   },
   {
@@ -8661,10 +9214,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": -0.359568,
-    "central": -0.040233,
+    "low": -0.357068,
+    "central": -0.039483,
     "high": 0.01776,
-    "central_at_p90_reward": 0.155701
+    "central_at_p90_reward": 0.156451
    },
    "break_even_cost_usd": 0.007331,
    "verdict": "positive_only_at_budget_tier",
@@ -8722,6 +9275,24 @@
     "low": 0,
     "central": 0,
     "high": 0
+   },
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
    }
   },
   {
@@ -8755,10 +9326,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": 1.29421,
-    "central": 2.644736,
+    "low": 1.29671,
+    "central": 2.645486,
     "high": 4.222772,
-    "central_at_p90_reward": 40.336936
+    "central_at_p90_reward": 40.337686
    },
    "break_even_cost_usd": 2.6923,
    "verdict": "positive_at_frontier_tier",
@@ -8819,7 +9390,25 @@
     "high": 30
    },
    "as_of": "2026-10-07T14:00:00Z",
-   "payment_note": "Winner payment cannot be verified on public routes (human_route.json)."
+   "payment_note": "Winner payment cannot be verified on public routes (human_route.json).",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   }
   },
   {
    "id": "superteam_agent_allowed_90d",
@@ -8852,10 +9441,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": 0.38231,
-    "central": 1.813936,
+    "low": 0.38481,
+    "central": 1.814686,
     "high": 5.324372,
-    "central_at_p90_reward": 5.536936
+    "central_at_p90_reward": 5.537686
    },
    "break_even_cost_usd": 1.8615,
    "verdict": "positive_at_frontier_tier",
@@ -8915,7 +9504,25 @@
     "central": 15,
     "high": 30
    },
-   "as_of": "2026-10-07T14:00:00Z"
+   "as_of": "2026-10-07T14:00:00Z",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   }
   },
   {
    "id": "algora_paying_boards",
@@ -8948,10 +9555,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": 3.88563,
-    "central": 8.774357,
+    "low": 3.90063,
+    "central": 8.781857,
     "high": 32.127372,
-    "central_at_p90_reward": 12.865262
+    "central_at_p90_reward": 12.872762
    },
    "break_even_cost_usd": 9.0909,
    "verdict": "positive_at_frontier_tier",
@@ -9011,7 +9618,25 @@
     "central": 1,
     "high": 2
    },
-   "as_of": "2026-10-07T14:00:00+00:00"
+   "as_of": "2026-10-07T14:00:00+00:00",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   }
   },
   {
    "id": "algora_unsafelabs",
@@ -9044,10 +9669,10 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": {
-    "low": -1.03797,
-    "central": -0.168243,
+    "low": -1.02297,
+    "central": -0.160743,
     "high": 0.270572,
-    "central_at_p90_reward": -0.101508
+    "central_at_p90_reward": -0.094008
    },
    "break_even_cost_usd": 0.1483,
    "verdict": "positive_only_at_budget_tier",
@@ -9107,7 +9732,25 @@
     "central": 1,
     "high": 2
    },
-   "as_of": "2026-10-07T14:00:00+00:00"
+   "as_of": "2026-10-07T14:00:00+00:00",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   }
   },
   {
    "id": "execution_market_assigned",
@@ -9138,7 +9781,7 @@
    "default_band": "central",
    "other_cost_usd": 0,
    "ev_per_attempt_usd": null,
-   "margin_per_assigned_job_mid_central_usd": -0.080081,
+   "margin_per_assigned_job_mid_central_usd": -0.078581,
    "verdict": "not_computable",
    "basis": {
     "reward_usd": "measured",
@@ -9180,7 +9823,90 @@
     "basis": "assumed"
    },
    "break_even_cost_usd": null,
-   "as_of": "2026-10-05T13:45:00Z"
+   "as_of": "2026-10-05T13:45:00Z",
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   }
+  },
+  {
+   "id": "deskcrew_bounty_1usd",
+   "label": "DeskCrew $1 support-ticket bounty (0.85 net to the winner; 0.06 entry fee; operator all-time aggregates)",
+   "venue_slug": "deskcrew",
+   "row_id": "deskcrew",
+   "reward_usd": 1.0,
+   "fee_pct": 15,
+   "payout_friction_per_win_usd": 0,
+   "rivals": 3.6,
+   "prizes": 1,
+   "p_win": 0.17826,
+   "p_win_ci90": [
+    0.13082,
+    0.23755
+   ],
+   "p_win_newcomer": null,
+   "deliverable_class": "short_text",
+   "tokens_in": {
+    "low": 1776,
+    "central": 29351,
+    "high": 261392
+   },
+   "tokens_out": {
+    "low": 300,
+    "central": 1500,
+    "high": 5000
+   },
+   "default_tier": "mid",
+   "default_band": "central",
+   "other_cost_usd": 0.06,
+   "ev_per_attempt_usd": {
+    "low": -0.309293,
+    "central": 0.044707,
+    "high": 0.14159
+   },
+   "basis": {
+    "p_win": "operator_aggregate (awardedPct 0.82 / avgFinalEntrants 4.6, $1 rows; all-time)",
+    "rivals": "estimated (avgFinalEntrants 4.6 - 1)",
+    "other_cost_usd": "measured (toolPriceUsd 0.06 per entry)",
+    "tokens": "estimated (short_text band)"
+   },
+   "prices": {
+    "tiers": {
+     "budget": {
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5
+     },
+     "mid": {
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75
+     },
+     "frontier": {
+      "input_usd_per_mtok": 10.0,
+      "output_usd_per_mtok": 50.0
+     }
+    },
+    "label": "list prices on 11 October 2026",
+    "accessed": "2026-10-11"
+   },
+   "source_paths": [
+    "run working file",
+    "economics.json#venues[row_id=deskcrew]"
+   ],
+   "added": "run 12 merge (merge reading M12-DESKCREW-PRESET)"
   }
  ],
  "cost_scenarios": [
@@ -9555,5 +10281,704 @@
   "source": "run working file",
   "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685"
  },
- "previous_run_id_run10": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a"
+ "previous_run_id_run10": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
+ "price_tiers_2026_10_05": [
+  {
+   "tier": "budget",
+   "public_label": "budget band (about $0.10 in / $0.50 out per million tokens)",
+   "input_usd_per_mtok": 0.1,
+   "output_usd_per_mtok": 0.5,
+   "cached_input_usd_per_mtok": 0.01,
+   "models": [
+    {
+     "id": "openai/gpt-6-luna",
+     "input": 0.1,
+     "output": 0.5
+    }
+   ],
+   "sources": [
+    {
+     "url": "https://openrouter.ai/api/v1/models",
+     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-05T13:53:22Z"
+    },
+    {
+     "url": "https://platform.openai.com/docs/pricing",
+     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
+     "accessed": "2026-10-05T13:55:54Z"
+    }
+   ],
+   "selection": "cheapest output price in the eligible set",
+   "basis": "measured"
+  },
+  {
+   "tier": "mid",
+   "public_label": "mid band (about $1.25 in / $7.25 out per million tokens)",
+   "input_usd_per_mtok": 1.25,
+   "output_usd_per_mtok": 7.25,
+   "cached_input_usd_per_mtok": 0.13,
+   "models": [
+    {
+     "id": "z-ai/glm-5.3",
+     "input": 0.05,
+     "output": 7.0
+    },
+    {
+     "id": "mistralai/mistral-medium-3-5",
+     "input": 1.5,
+     "output": 7.5
+    },
+    {
+     "id": "x-ai/grok-4.7",
+     "input": 2.0,
+     "output": 6.0
+    }
+   ],
+   "sources": [
+    {
+     "url": "https://openrouter.ai/api/v1/models",
+     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-05T13:53:22Z"
+    },
+    {
+     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+     "route": "GET HTML 200",
+     "accessed": "2026-10-05T13:55:53Z"
+    },
+    {
+     "url": "https://platform.openai.com/docs/pricing",
+     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
+     "accessed": "2026-10-05T13:55:54Z"
+    },
+    {
+     "url": "https://ai.google.dev/gemini-api/docs/pricing",
+     "route": "GET HTML 200",
+     "accessed": "2026-10-05T13:55:55Z"
+    },
+    {
+     "url": "https://api-docs.deepseek.com/quick_start/pricing",
+     "route": "GET HTML 200",
+     "accessed": "2026-10-05T13:55:55Z"
+    }
+   ],
+   "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=16); a single median model would pair a ~$7 output with a $0.05 input (glm-5.3), which understates input-heavy agent work",
+   "basis": "estimated (component-wise median of measured list prices; not one model)"
+  },
+  {
+   "tier": "frontier",
+   "public_label": "frontier band (about $10 in / $50 out per million tokens)",
+   "input_usd_per_mtok": 10.0,
+   "output_usd_per_mtok": 50.0,
+   "cached_input_usd_per_mtok": 0.25,
+   "models": [
+    {
+     "id": "anthropic/claude-fable-5.1",
+     "input": 10.0,
+     "output": 50.0
+    },
+    {
+     "id": "openai/gpt-6-astra",
+     "input": 10.0,
+     "output": 50.0
+    }
+   ],
+   "sources": [
+    {
+     "url": "https://openrouter.ai/api/v1/models",
+     "route": "GET public JSON (466 models), pricing.prompt/completion/input_cache_read x 1e6",
+     "accessed": "2026-10-05T13:53:22Z"
+    },
+    {
+     "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+     "route": "GET HTML 200",
+     "accessed": "2026-10-05T13:55:53Z"
+    },
+    {
+     "url": "https://platform.openai.com/docs/pricing",
+     "route": "GET HTML 200 (openai.com/api/pricing returned 403; Wayback not needed)",
+     "accessed": "2026-10-05T13:55:54Z"
+    }
+   ],
+   "selection": "most expensive output price in the eligible set (two-way tie)",
+   "basis": "measured"
+  }
+ ],
+ "price_tier_model_set_2026_10_05": [
+  {
+   "id": "anthropic/claude-fable-5.1",
+   "input": 10.0,
+   "output": 50.0,
+   "cached_input": 0.25,
+   "context_length": 1000000,
+   "long_context_override": false,
+   "first_party": {
+    "input": 10,
+    "output": 50,
+    "cached_input": 0.25,
+    "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "anthropic/claude-opus-5.5",
+   "input": 4.0,
+   "output": 20.0,
+   "cached_input": 0.2,
+   "context_length": 1000000,
+   "long_context_override": false,
+   "first_party": {
+    "input": 4,
+    "output": 20,
+    "cached_input": 0.2,
+    "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "anthropic/claude-sonnet-5.5",
+   "input": 2.0,
+   "output": 10.0,
+   "cached_input": 0.2,
+   "context_length": 1000000,
+   "long_context_override": false,
+   "first_party": {
+    "input": 2,
+    "output": 10,
+    "cached_input": 0.2,
+    "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "anthropic/claude-haiku-4.5",
+   "input": 1.0,
+   "output": 5.0,
+   "cached_input": 0.1,
+   "context_length": 200000,
+   "long_context_override": false,
+   "first_party": {
+    "input": 1,
+    "output": 5,
+    "cached_input": 0.1,
+    "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "openai/gpt-6-astra",
+   "input": 10.0,
+   "output": 50.0,
+   "cached_input": 1.0,
+   "context_length": 1050000,
+   "long_context_override": true,
+   "first_party": {
+    "input": 10,
+    "output": 50,
+    "cached_input": 1.0,
+    "url": "https://platform.openai.com/docs/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "openai/gpt-6.1-sol",
+   "input": 2.0,
+   "output": 10.0,
+   "cached_input": 0.1,
+   "context_length": 1050000,
+   "long_context_override": true,
+   "first_party": {
+    "input": 2,
+    "output": 10,
+    "cached_input": 0.1,
+    "url": "https://platform.openai.com/docs/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "openai/gpt-6-luna",
+   "input": 0.1,
+   "output": 0.5,
+   "cached_input": 0.01,
+   "context_length": 1050000,
+   "long_context_override": true,
+   "first_party": {
+    "input": 0.1,
+    "output": 0.5,
+    "cached_input": 0.01,
+    "url": "https://platform.openai.com/docs/pricing",
+    "match": true
+   }
+  },
+  {
+   "id": "google/gemini-3.1-pro-preview",
+   "input": 2.0,
+   "output": 12.0,
+   "cached_input": 0.2,
+   "context_length": 1048576,
+   "long_context_override": true,
+   "first_party": {
+    "input": 2,
+    "output": 12,
+    "cached_input": null,
+    "url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "match": true,
+    "note": "<=200k prompt; $4 input above 200k"
+   }
+  },
+  {
+   "id": "google/gemini-3.8-flash",
+   "input": 0.75,
+   "output": 3.75,
+   "cached_input": 0.075,
+   "context_length": 1048576,
+   "long_context_override": false,
+   "first_party": {
+    "input": 0.75,
+    "output": 3.75,
+    "cached_input": 0.075,
+    "url": "https://ai.google.dev/gemini-api/docs/pricing",
+    "match": true,
+    "note": "promotional through 2026-12-31; $1.50/$7.50 from 2027-01-01"
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4-pro",
+   "input": 0.2088,
+   "output": 0.4176,
+   "cached_input": 0.0174,
+   "context_length": 1048576,
+   "long_context_override": false,
+   "first_party": {
+    "input": 1.32,
+    "output": 3.96,
+    "cached_input": 0.044,
+    "url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "match": false,
+    "note": "first-party peak price (off-peak half: $0.66/$1.98); OpenRouter lists $0.2088/$0.4176 - mismatch, so excluded from tier selection"
+   }
+  },
+  {
+   "id": "deepseek/deepseek-v4.1-flash",
+   "input": 0.3,
+   "output": 1.2,
+   "cached_input": 0.006,
+   "context_length": 1048576,
+   "long_context_override": false,
+   "first_party": {
+    "input": 0.3,
+    "output": 1.2,
+    "cached_input": 0.006,
+    "url": "https://api-docs.deepseek.com/quick_start/pricing",
+    "match": true,
+    "note": "peak price; off-peak half"
+   }
+  },
+  {
+   "id": "x-ai/grok-4.7",
+   "input": 2.0,
+   "output": 6.0,
+   "cached_input": 0.5,
+   "context_length": 500000,
+   "long_context_override": true
+  },
+  {
+   "id": "moonshotai/kimi-k3",
+   "input": 0.67,
+   "output": 14.0,
+   "cached_input": 0.22,
+   "context_length": 1048576,
+   "long_context_override": false
+  },
+  {
+   "id": "z-ai/glm-5.3",
+   "input": 0.05,
+   "output": 7.0,
+   "cached_input": 0.045,
+   "context_length": 1048576,
+   "long_context_override": false
+  },
+  {
+   "id": "qwen/qwen3-coder-plus",
+   "input": 0.65,
+   "output": 3.25,
+   "cached_input": 0.13,
+   "context_length": 1000000,
+   "long_context_override": true
+  },
+  {
+   "id": "mistralai/mistral-medium-3-5",
+   "input": 1.5,
+   "output": 7.5,
+   "cached_input": null,
+   "context_length": 262144,
+   "long_context_override": false
+  },
+  {
+   "id": "mistralai/devstral-2512",
+   "input": 0.4,
+   "output": 2.0,
+   "cached_input": 0.04,
+   "context_length": 262144,
+   "long_context_override": false
+  }
+ ],
+ "price_tier_replacements": [
+  {
+   "from": "qwen/qwen3-coder-plus",
+   "action": "replaced_by_successor",
+   "successor": "qwen/qwen3-coder-next",
+   "reading": "qwen3-coder-plus is not in the OpenRouter list on 2026-10-11. Same-family successor read as the newest listed model in the same provider's qwen3-coder line (ids starting 'qwen/qwen3-coder'): qwen3-coder-next (created 2026-02-04). Other coder-line ids listed: qwen3-coder (2025-07-23), qwen3-coder-30b-a3b-instruct (2025-07-31), qwen3-coder-flash (2025-09-17). No 'plus' coder id is listed. This choice is a reading, not stated in the rule; sensitivity 'dropped' is reported."
+  }
+ ],
+ "price_tier_sensitivity": {
+  "without_exclusions": {
+   "note": "deepseek-v4-pro included at its OpenRouter price",
+   "n": 17,
+   "budget": {
+    "input": 0.2088,
+    "output": 0.4176,
+    "cached_input": 0.0174,
+    "models": [
+     {
+      "id": "deepseek/deepseek-v4-pro",
+      "input": 0.2088,
+      "output": 0.4176,
+      "cached_input": 0.0174
+     }
+    ]
+   },
+   "mid": {
+    "input": 1.0,
+    "output": 6.0,
+    "cached_input": 0.1,
+    "n_cached": 16,
+    "models_around_output_median": [
+     {
+      "id": "x-ai/grok-4.7",
+      "input": 2.0,
+      "output": 6.0
+     }
+    ]
+   },
+   "frontier": {
+    "input": 10.0,
+    "output": 50.0,
+    "cached_input": 0.25,
+    "cached_input_tie_note": "output tie: the lowest cached price among tied models is used, reproducing run 6's 10-05 value convention (Fable 0.25 over Astra 1.00); the highest would be 1.0",
+    "models": [
+     {
+      "id": "anthropic/claude-fable-5.1",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 0.25
+     },
+     {
+      "id": "openai/gpt-6-astra",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 1.0
+     }
+    ]
+   }
+  },
+  "qwen_member_dropped_instead_of_replaced": {
+   "n": 15,
+   "budget": {
+    "input": 0.1,
+    "output": 0.5,
+    "cached_input": 0.01,
+    "models": [
+     {
+      "id": "openai/gpt-6-luna",
+      "input": 0.1,
+      "output": 0.5,
+      "cached_input": 0.01
+     }
+    ]
+   },
+   "mid": {
+    "input": 1.5,
+    "output": 7.5,
+    "cached_input": 0.1,
+    "n_cached": 14,
+    "models_around_output_median": [
+     {
+      "id": "mistralai/mistral-medium-3-5",
+      "input": 1.5,
+      "output": 7.5
+     }
+    ]
+   },
+   "frontier": {
+    "input": 10.0,
+    "output": 50.0,
+    "cached_input": 0.25,
+    "cached_input_tie_note": "output tie: the lowest cached price among tied models is used, reproducing run 6's 10-05 value convention (Fable 0.25 over Astra 1.00); the highest would be 1.0",
+    "models": [
+     {
+      "id": "anthropic/claude-fable-5.1",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 0.25
+     },
+     {
+      "id": "openai/gpt-6-astra",
+      "input": 10.0,
+      "output": 50.0,
+      "cached_input": 1.0
+     }
+    ]
+   }
+  }
+ },
+ "price_tier_first_party_checks": {
+  "pages_ok": [
+   "anthropic",
+   "deepseek",
+   "google",
+   "openai"
+  ],
+  "pages_ok_n": 4,
+  "models_checked": 11,
+  "models_matching_within_5pct": 10
+ },
+ "price_tiers_label": "list prices on 11 October 2026 (OpenRouter public list, cross-checked on 4 first-party pages); never 'costs'; mid is a component-wise median (estimated)",
+ "refresh_2026_10_11": {
+  "run_id": "run:ef12dbb1-d292-4975-a6db-1b691b9d61f9",
+  "price_tiers": "replaced: run working file (list prices accessed 2026-10-11; R20)",
+  "tier_change_vs_2026_10_05": {
+   "budget": {
+    "input": {
+     "old_10_05": 0.1,
+     "new_10_11": 0.1,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 0.5,
+     "new_10_11": 0.5,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "cached_input": {
+     "old_10_05": 0.01,
+     "new_10_11": 0.01,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    }
+   },
+   "mid": {
+    "input": {
+     "old_10_05": 1.25,
+     "new_10_11": 1.25,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 7.25,
+     "new_10_11": 6.75,
+     "change_usd": -0.5,
+     "change_pct": -6.9
+    },
+    "cached_input": {
+     "old_10_05": 0.13,
+     "new_10_11": 0.1,
+     "change_usd": -0.03,
+     "change_pct": -23.1
+    }
+   },
+   "frontier": {
+    "input": {
+     "old_10_05": 10.0,
+     "new_10_11": 10.0,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "output": {
+     "old_10_05": 50.0,
+     "new_10_11": 50.0,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    },
+    "cached_input": {
+     "old_10_05": 0.25,
+     "new_10_11": 0.25,
+     "change_usd": 0.0,
+     "change_pct": 0.0
+    }
+   }
+  },
+  "rows_repriced": {
+   "taskmarket": [
+    "cost_per_attempt_usd (mid central 0.316543 -> 0.309042)",
+    "cost_translations (mid return 0.0842)"
+   ],
+   "taskmarket#single_file_band": [
+    "cost_per_attempt_usd (mid central 0.072216 -> 0.069633)",
+    "cost_translations (mid return 0.3738)"
+   ],
+   "taskmarket#single_file_tasks_only": [
+    "cost_per_attempt_usd (mid central 0.072216 -> 0.069633)",
+    "cost_translations (mid return 0.2857)"
+   ],
+   "taskmarket#ge_3usd": [
+    "cost_per_attempt_usd (mid central 0.316543 -> 0.309042)",
+    "cost_translations (mid return 0.0214)"
+   ],
+   "taskmarket#moltrust_only": [
+    "cost_per_attempt_usd (mid central 0.047564 -> 0.046814)",
+    "cost_translations (mid return 0.1566)"
+   ],
+   "taskmarket#all": [
+    "cost_per_attempt_usd (mid central 0.316543 -> 0.309042)",
+    "cost_translations (mid return 0.1194)"
+   ],
+   "superteam-earn": [
+    "cost_per_attempt_usd (mid central 0.047564 -> 0.046814)",
+    "cost_translations (mid return 57.5106)"
+   ],
+   "superteam-earn#agent_allowed_90d": [
+    "cost_per_attempt_usd (mid central 0.047564 -> 0.046814)",
+    "cost_translations (mid return 39.7637)"
+   ],
+   "algora-github-bounties": [
+    "cost_per_attempt_usd (mid central 0.316543 -> 0.309042)",
+    "cost_translations (mid return 29.4164)"
+   ],
+   "algora-github-bounties#incl_unsafelabs": [
+    "cost_per_attempt_usd (mid central 0.316543 -> 0.309042)",
+    "cost_translations (mid return 0.4799)"
+   ],
+   "execution-market": [
+    "assignment cost per job mid central 0.097481 -> 0.095981"
+   ],
+   "virtuals-acp": [
+    "assignment cost per job mid central 0.047564 -> 0.046814"
+   ],
+   "moltjobs": [
+    "assignment cost per job mid central 0.047564 -> 0.046814"
+   ],
+   "deskcrew": [
+    "cost_per_attempt_usd.value (0.107564 -> 0.106814 mid central)"
+   ]
+  },
+  "d3_inputs_old_to_new": [
+   {
+    "slug": "taskmarket",
+    "measure": "return_per_dollar",
+    "budget_central": [
+     1.0453,
+     1.0789
+    ],
+    "mid_central": [
+     0.0797,
+     0.0842
+    ],
+    "as_of": [
+     "2026-10-10",
+     "2026-10-11"
+    ]
+   },
+   {
+    "slug": "moltjobs",
+    "measure": "assignment_ratio",
+    "budget_central": [
+     27.1363,
+     27.1363
+    ],
+    "mid_central": [
+     2.1024,
+     2.1361
+    ],
+    "as_of": [
+     "2026-10-05",
+     "2026-10-05"
+    ]
+   },
+   {
+    "slug": "execution-market",
+    "measure": "assignment_ratio",
+    "budget_central": [
+     2.302,
+     2.302
+    ],
+    "mid_central": [
+     0.1785,
+     0.1813
+    ],
+    "as_of": [
+     "2026-10-05",
+     "2026-10-05"
+    ]
+   },
+   {
+    "slug": "virtuals-acp",
+    "measure": "assignment_ratio",
+    "budget_central": [
+     4.8845,
+     4.8845
+    ],
+    "mid_central": [
+     0.3784,
+     0.3845
+    ],
+    "as_of": [
+     "2026-10-05",
+     "2026-10-05"
+    ]
+   },
+   {
+    "slug": "superteam-earn",
+    "measure": "return_per_dollar",
+    "budget_central": [
+     730.6106,
+     730.6106
+    ],
+    "mid_central": [
+     56.6037,
+     57.5106
+    ],
+    "as_of": [
+     "2026-10-07",
+     "2026-10-07"
+    ]
+   },
+   {
+    "slug": "algora-github-bounties",
+    "measure": "return_per_dollar",
+    "budget_central": [
+     376.8561,
+     376.8561
+    ],
+    "mid_central": [
+     28.7193,
+     29.4164
+    ],
+    "as_of": [
+     "2026-10-07",
+     "2026-10-07"
+    ]
+   },
+   {
+    "slug": "deskcrew",
+    "measure": "return_per_dollar",
+    "budget_central": [
+     2.3792,
+     2.3792
+    ],
+    "mid_central": [
+     1.4087,
+     1.4186
+    ],
+    "as_of": [
+     "2026-10-08",
+     "2026-10-11"
+    ]
+   }
+  ],
+  "taskmarket_p_win": "replaced from run working file (window 2026-09-11..10-11)",
+  "economics_as_of_rule": "pre-registered rule 4 (oldest of price-tier access and venue-side input)",
+  "presets": "every preset's EV recomputed at the new prices; TaskMarket main and single-file presets take C's p_win; DeskCrew preset added (M12-DESKCREW-PRESET)"
+ },
+ "previous_run_id_run11": "run:3948ce08-f8d3-42b7-b368-8b071d392685"
 }

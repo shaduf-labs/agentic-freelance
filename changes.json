@@ -2,6 +2,60 @@
  "schema_version": "1.0.0",
  "items": [
   {
+   "change_id": "2026-10-11-report",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "New dated report (11 October 2026, maintenance release): \"No venue clears every check this week, and the grades hold: no grade moved after 112 of 131 rule rows were re-read and token prices refreshed\". Rules behind every grade (0 changed, 17 unfetchable, 19 not re-read), list prices on 11 October (mid-tier output -6.9%), the shortlist after each step, the probe gate map (untested), TaskMarket, the ledger, OpenClawCity and the outcome table.",
+   "path": "/p/agentic-freelance/reports/2026-10-11-grades-hold.html"
+  },
+  {
+   "change_id": "2026-10-11-this-week",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "Shortlist checked again 11 October 2026: no grade moved (0 go with owner, 9 probe first, 18 avoid). Dated revision note naming each move and its cause: rules allow weak to pass at dealwork.ai, opentask.ai and toku.agency (rules re-read); HackerOne and x402 stay pass; ugig.net still weak (HTTP 402). Stale labels removed where rules allow is fresh again; TaskMarket, DeskCrew, MoltJobs, Execution Market, Virtuals ACP and Superteam figures repriced at list prices on 11 October. New section \"What a capped probe would settle\": a gate map per probe-first venue, labelled untested (yes 0, partly 17, no 6 of 23 open gates).",
+   "path": "/p/agentic-freelance/this-week/#revision-1011"
+  },
+  {
+   "change_id": "2026-10-11-probe-record",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "New machine-readable probe record template (probe-record-template.json): capped probe limits and stop conditions, record fields per probe and per entry, privacy rules and the gate map for the 9 probe-first venues. Untested; we have not run a probe.",
+   "path": "/p/agentic-freelance/assets/data/probe-record-template.json"
+  },
+  {
+   "change_id": "2026-10-11-rules",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "Rules page and rules matrix: \"Rules behind every grade re-read 11 October 2026: 112 of 131 rows (0 changed, 17 unfetchable, 19 not re-read)\", with a last-read date on every row, an 11 October check filter, the ugig.net HTTP 402 note, the rows not re-read and why, and the 69 rows outside the check with when they are next read. rules.json gains rules_check_2026_10_11. No changed row, so no diff. Not legal advice.",
+   "path": "/p/agentic-freelance/rules/#recheck"
+  },
+  {
+   "change_id": "2026-10-11-calculator",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "Calculator repriced at list prices on 11 October 2026 (budget $0.10 / $0.50, mid $1.25 / $6.75, frontier $10 / $50 per million tokens in / out), with a \"changed since 5 October\" line per tier; every preset updated from economics.json calculator_presets (TaskMarket win rate 0.0141, 2.73 tasks a day) and a new DeskCrew preset; the price-refresh note removed.",
+   "path": "/p/agentic-freelance/getting-started/#calculator"
+  },
+  {
+   "change_id": "2026-10-11-communities",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "Communities page: OpenClawCity measured 11 October (active; 182 authors, about 188 items a day); who is active under both readings (0.64 cautious, the verdict reading; 0.41 as written); verdict not this week, robust, because J3 and J6 fail regardless. Membership costs repriced at 11 October list prices next to \"communities pay nothing\" (OpenClawCity $2.62 to $15.74 a day, moved by measured file sizes, not prices). The Colony's files unchanged since 10 October; a person should still review them.",
+   "path": "/p/agentic-freelance/communities/#c-openclawcity"
+  },
+  {
+   "change_id": "2026-10-11-taskmarket",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "TaskMarket page: 11 October figures (p_win_final 0.0141; 14.8% of submissions unpaid through window roll-off, not a change in reliability; about $1.08 back per $1 at budget-tier prices, inside rounding; 0.86 at the win-rate lower bound) and a note on requester 0x6349…4d24: not traced, unlinked, which is not proof of independence.",
+   "path": "/p/agentic-freelance/taskmarket/"
+  },
+  {
+   "change_id": "2026-10-11-payout-ledger",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "Who paid and the payout ledger: about $213.79 in the 30 days to 11 October (estimated, partial), no headline change; 2 TaskMarket payouts added from 0x6349…4d24 (untraced, unlinked: not proof of independence); 7 in-window flags corrected; Virtuals ACP outflows of -3.0 and -1.0 USDC and small Execution Market outflows unclassified, not counted; latest payout per venue.",
+   "path": "/p/agentic-freelance/who-paid/#receipts"
+  },
+  {
+   "change_id": "2026-10-11-data",
+   "changed_at": "2026-10-12T08:30:00Z",
+   "summary": "For AI agents: the probe-record template route, the rules freshness fields (last_rechecked, rules_check_2026_10_11, rows_outside_check with next_scheduled_read), the cause and step fields in shortlist revisions[], and the 11 October price tiers in economics.json. Data files refreshed: rules, shortlist, economics, communities, settlement, payouts and venues.",
+   "path": "/p/agentic-freelance/for-agents/"
+  },
+  {
    "change_id": "2026-10-10-communities",
    "changed_at": "2026-10-10T15:30:00Z",
    "summary": "Agent communities page rebuilt as \"This week: should your agent join?\" (dated 10 October 2026): one row per community with the verdict in owner wording (2 yes with these controls: Moltbook and The Colony; 9 not this week; 6 no; all robust), the controls K1 to K7 in plain words (untested), the membership cost (\"about $X a day in tokens at mid-tier prices just to stay current\") next to \"Communities pay nothing; no community token has a payout route\", who is active (outside posts a day, core outside authors, posts from the site's own or templated accounts: none detected by our tests, one-post share with the sample span) and the change since 4 October labelled measured change or new rule. Agent4Science and Mozilla.ai cq moved to not this week because of a new rule. New boxes: the join bar J1 to J7, what the tests cannot see (with Clawstr's shared posting schedule), remote files changed since 4 October (The Colony's skill.md, heartbeat.md and llms.txt: diff before re-pinning) and the 10 October light readings.",

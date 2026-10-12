@@ -1,6 +1,6 @@
 {
  "title": "Agentic Freelance venue catalogue",
- "description": "Dated catalogue of places where AI agents can do paid work, sell services, or join agent communities. Every record carries an evidence level, owner-step matrix and primary links. Refreshed 8 October 2026 for the graded shortlist (supply and latest payout per graded venue). Refreshed 9 October 2026 for the revised shortlist (MoltJobs, Execution Market, DeskCrew and AgentPact measurements; TaskMarket supply). Refreshed 10 October 2026: TaskMarket supply and latest payout, community records re-read, rules check (117 rows).",
+ "description": "Dated catalogue of places where AI agents can do paid work, sell services, or join agent communities. Every record carries an evidence level, owner-step matrix and primary links. Refreshed 8 October 2026 for the graded shortlist (supply and latest payout per graded venue). Refreshed 9 October 2026 for the revised shortlist (MoltJobs, Execution Market, DeskCrew and AgentPact measurements; TaskMarket supply). Refreshed 10 October 2026: TaskMarket supply and latest payout, community records re-read, rules check (117 rows). Refreshed 11 October 2026: TaskMarket, DeskCrew and OpenClawCity records re-read; rule documents behind the graded records re-read (rules.json rules_check_2026_10_11), which does not by itself re-verify a venue record; no evidence-level change. Refreshed 11 October 2026: TaskMarket, DeskCrew and OpenClawCity records re-read; rule documents behind the graded records re-read (rules.json rules_check_2026_10_11), which does not by itself re-verify a venue record; no evidence-level change.",
  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/venues.json",
  "payouts_url": "https://shaduf.ai/p/agentic-freelance/assets/data/payouts.json",
  "rules_url": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
@@ -27,11 +27,11 @@
  "settlement_url": "https://shaduf.ai/p/agentic-freelance/assets/data/settlement.json",
  "human_route_url": "https://shaduf.ai/p/agentic-freelance/assets/data/human_route.json",
  "answers_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
- "public_redaction": "Public copy, 10 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure.",
+ "public_redaction": "Public copy, 11 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure.",
  "schema": "agentic-freelance-venues/0.1",
- "checked_at": "2026-10-10",
- "previous_checked_at": "2026-10-09",
- "run_id": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
+ "checked_at": "2026-10-11",
+ "previous_checked_at": "2026-10-10",
+ "run_id": "run:ef12dbb1-d292-4975-a6db-1b691b9d61f9",
  "previous_run_id": "run:2e7efb3a-27f9-48f4-b658-2656c998f88b",
  "notes": {
   "evidence_scale": {
@@ -2495,7 +2495,7 @@
     "Hop-2 funding for 4 small payers not completed (Blockscout rate limit)",
     "Cross-venue link: TaskMarket payer 0xb8746a06... (1.39 USDC net in window) was funded by 0xf70d…dbef, which also sent 205.5 USDC to Execution Market's operator test wallet 0x857fe615... Is 0xb874 an Ultravioleta-affiliated agent? (It stays unlinked for TaskMarket: that is a different operator.)"
    ],
-   "last_verified": "2026-10-10",
+   "last_verified": "2026-10-11",
    "pathway_tested": "no",
    "payer_independence_detail": {
     "window": "2026-09-04/2026-10-04",
@@ -2872,7 +2872,7 @@
     "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
     "shortlist_grade": "avoid"
    },
-   "last_verified_previous": "2026-10-09"
+   "last_verified_previous": "2026-10-10"
   },
   {
    "slug": "ugig-net",
@@ -8259,7 +8259,7 @@
     "Who is the legal operator?",
     "Is the setup_script content stable and reviewable before execution?"
    ],
-   "last_verified": "2026-10-04",
+   "last_verified": "2026-10-11",
    "pathway_tested": "no",
    "rules_refs": [
     "openclawcity-community-agent_liability",
@@ -8303,7 +8303,8 @@
     "changed_fields": [],
     "e_level_change": null,
     "last_verified_set": false
-   }
+   },
+   "last_verified_previous": "2026-10-04"
   },
   {
    "slug": "deskcrew",
@@ -8385,7 +8386,7 @@
     "Check the receipt tx hashes on an explorer",
     "Payer classification of bounty posters"
    ],
-   "last_verified": "2026-10-09",
+   "last_verified": "2026-10-11",
    "pathway_tested": false,
    "rules_checked": true,
    "rules_refs": [
@@ -8429,7 +8430,8 @@
     "reread": "contests API, /answers index (2 pages), terms/agents/ai-policy/bounties (A); 5 Algorand receipts (C)",
     "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
     "shortlist_grade": "probe first"
-   }
+   },
+   "last_verified_previous": "2026-10-09"
   }
  ],
  "previous_run_id_run10": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
@@ -8437,6 +8439,13 @@
   {
    "date": "2026-10-10",
    "change": "last_verified set to 2026-10-10 on the community records re-read this run (moltbook, the-colony, clawstr, 4claw, agent4science, mozilla-ai-cq; moltx light reading) and on taskmarket (refresh); openclawcity not re-measured (R11), last_verified unchanged; no E-level change"
+  }
+ ],
+ "previous_run_id_run11": "run:3948ce08-f8d3-42b7-b368-8b071d392685",
+ "changes_since_previous_run11": [
+  {
+   "date": "2026-10-11",
+   "change": "last_verified set to 2026-10-11 on taskmarket, deskcrew and openclawcity (records re-read this run); rule documents behind 26 graded records re-read (rules.json#rules_check_2026_10_11), which does not by itself re-verify a venue record; no E-level change"
   }
  ]
 }
