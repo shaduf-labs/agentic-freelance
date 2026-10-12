@@ -1670,6 +1670,66 @@
       "accessed_at": "2026-10-11T20:38:15Z",
       "relation": "limits",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-jobs-2026-10-12",
+      "source_type": "platform API",
+      "source_url": "https://api.moltjobs.io/v1/jobs?limit=100",
+      "title": "MoltJobs public jobs list (3 founder jobs after grace)",
+      "claim": "Read 12 October 2026 at 18:07 UTC: the 3 jobs the founder account posted on 23 September (0.1 USDC each, submitted 07:03 UTC) were still IN_PROGRESS with no completedAt, about 11.6 hours after their grace ended (06:31:49 to 06:32:06 UTC), so final unpaid. 0 new jobs since 23 September; 10 open jobs, all founder referral rewards; unpaid share 22.4% (n 67, 90 days); median gross reward of 10 funded jobs created 12 September to 12 October $0.50.",
+      "accessed_at": "2026-10-12T18:07:21Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-escrow-2026-10-12",
+      "source_type": "block explorer",
+      "source_url": "https://base.blockscout.com/address/0x3a57faee4EE95444506a6E290261D4C37b3060Be",
+      "title": "MoltJobs escrow balance on Base",
+      "claim": "The MoltJobs escrow 0x3a57…60Be held 6.065 USDC at the 11 and 12 October cut-off blocks and at 18:09:49 UTC on 12 October (read by balanceOf over read-only RPC), the same as on 9 October. An unchanged balance does not prove that no other wallet paid.",
+      "accessed_at": "2026-10-12T18:09:49Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "execution-market-tasks-2026-10-12",
+      "source_type": "platform API",
+      "source_url": "https://api.execution.market/api/v1/tasks?limit=100",
+      "title": "Execution Market public task list",
+      "claim": "Read 12 October 2026: 0 open tasks; 470 tasks created in 30 days, all from the operator's own 21 swarm wallets (0 from outside); none created 11 or 12 October before the read; newest completed task created 10 October (platform record, not matched on chain). Fresh supply pass to weak.",
+      "accessed_at": "2026-10-12T18:09:44Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-api-2026-10-12",
+      "source_type": "platform API",
+      "source_url": "https://taskmarket.dev/",
+      "title": "TaskMarket public task API (settlement refresh)",
+      "claim": "Read 12 October 2026 (window 12 September to 12 October, without MolTrust): 11 open eligible tasks, 83 new in 30 days (0 from the operator or linked wallets); p_win_final 0.01548 (90% 0.0117 to 0.0203); 14.76% of submissions and 14.2% of reward on tasks that paid nobody; the moves come from 4 still-payable tasks that settled plus window roll-off.",
+      "accessed_at": "2026-10-12T18:08:03Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "base-rpc-ledger-2026-10-12",
+      "source_type": "blockchain RPC",
+      "source_url": "https://mainnet.base.org",
+      "title": "Base public RPC (ledger refresh, POST only)",
+      "claim": "On 12 October 2026 the 1-day ledger refresh used award receipts and balances because Blockscout returned 403 and eth_getLogs 429: 13 TaskMarket payouts added ($10.16 net; 10 from new requester 0x4c98…9dc7, untraced, and 3 from 0x4363…34bd), 30-day total about $223.89, estimated and partial.",
+      "accessed_at": "2026-10-12T13:45:00Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-payout-0x4c98-2026-10-12",
+      "source_type": "blockchain transaction",
+      "source_url": "https://base.blockscout.com/tx/0x54bec042d5354c6db450e2e9d343d114cd289fd16b911f0f1f5502b542b721f2",
+      "title": "TaskMarket settlement for TSK-5RSHNAP4",
+      "claim": "10 awards of 0.498 USDC (about $0.46 net each) settled in one transaction at 01:58 UTC on 12 October 2026 from the escrow funded by requester 0x4c98…9dc7, which could not be traced, so the payouts are unlinked (not proof of independence).",
+      "accessed_at": "2026-10-12T13:45:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
     }
   ]
 }
