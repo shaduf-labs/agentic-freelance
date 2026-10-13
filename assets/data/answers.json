@@ -1,18 +1,7 @@
 {
- "title": "Agentic Freelance: Is it real? Plain answers",
- "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow).",
- "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
- "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
- "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-09-measured-gates.html",
- "usage_rules": [
-  "Expected values are estimates, never promises.",
-  "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
- ],
- "public_redaction": "Public copy, 9 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
- "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
  "schema": "agentic-freelance-answers/0.1",
- "run_id": "run:2e7efb3a-27f9-48f4-b658-2656c998f88b",
- "as_of": "2026-10-08",
+ "run_id": "run:18318d94-7bab-41fc-aca4-f79009c2bafd",
+ "as_of": "2026-10-13",
  "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
  "answers": [
   {
@@ -76,14 +65,64 @@
     "source": "shortlist.json (edition 1, rule v1.0)",
     "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
    },
-   "last_checked": "2026-10-08",
+   "last_checked": "2026-10-13",
    "next_best_route_run8": {
     "venue_slug": "superteam-earn",
     "why": "the only route where an attempt is worth far more than its tokens on announced prizes, with an owner in the loop",
     "odds_line": "Superteam agent-allowed: p_win 0.027 per entry, about 0.088 eligible listings a day, about $0.24 expected per day at any cap, median first cash about 301 days; payment not verifiable"
    },
    "shortlist_grade": "not graded (not a venue)",
-   "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet"
+   "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet",
+   "run14": {
+    "question_searchers": "Did OpenClaw make money?",
+    "date": "2026-10-13",
+    "facts": [
+     {
+      "value": "0 of 11 terms",
+      "label": "whole-word counts in the README (331 lines) and docs.openclaw.ai/llms.txt (1,387 lines) for wallet, payment(s), earn*, monetiz*, USDC, x402, Stripe, crypto, invoice, bounty, freelance",
+      "as_of": "2026-10-13",
+      "basis": "measured (run working file); run 8 (2026-10-07) also 0 on a 1,375-line index"
+     },
+     {
+      "value": "no paid tier, hosted service, or token",
+      "label": "README's own statement",
+      "as_of": "2026-10-13",
+      "basis": "measured (quote under two sentences)"
+     },
+     {
+      "value": "0 go / 9 probe first / 18 avoid",
+      "label": "venues an OpenClaw agent could be pointed at (v1.0, central band, 27 graded)",
+      "as_of": "2026-10-13",
+      "basis": "shortlist.json#summary"
+     },
+     {
+      "value": "about $221.28",
+      "label": "agent-work payouts traced in the 30 days to 2026-10-13 across tracked venues (all agents, not OpenClaw specifically)",
+      "as_of": "2026-10-13",
+      "basis": "estimated, partial (payouts.json#totals_2026_10_13; no log route)"
+     },
+     {
+      "value": {
+       "unlinked": 154.8898,
+       "identified_independent": 12.75,
+       "operator": 0.76,
+       "operator_linked": 4.8628
+      },
+      "label": "net USD of listed in-window events by payer class (operator, operator_linked, unlinked, ...)",
+      "as_of": "2026-10-13",
+      "basis": "payouts.json events; 'unlinked' is not proof of independence"
+     }
+    ],
+    "answer_changes": false,
+    "short_answer": "not_a_venue (unchanged): OpenClaw itself has no built-in earning or payment feature on 13 October; money would come only from a venue it is pointed at, and no tracked venue clears every check this week.",
+    "next_best_from_shortlist": {
+     "slug": "moltjobs",
+     "grade": "probe first",
+     "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid",
+     "rule": "highest-ranked probe-first record, v1.0 central (shortlist.json#summary.probe_first_ranked[0])"
+    },
+    "not_verified": "whether any individual OpenClaw user earned money (no public route; self-reports not checked)"
+   }
   },
   {
    "id": "is-taskmarket-real",
@@ -324,11 +363,79 @@
    "shortlist_grade": "avoid (D2 fail: 0 new bounties in 30 days)",
    "shortlist_grade_2026_10_09": "avoid",
    "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet"
+  },
+  {
+   "id": "does-moltbook-still-exist",
+   "question": "Does Moltbook still exist?",
+   "short_answer": "yes_reachable",
+   "one_line": "Yes, on 13 October: its public newest-posts feed answered and the newest post was under a minute old; its activity status (active) and join verdict (join with controls) date from 10 October.",
+   "numbers": [
+    {
+     "value": 200,
+     "label": "HTTP status of GET /api/v1/posts?sort=new&limit=50",
+     "as_of": "2026-10-13T13:52:01Z",
+     "basis": "measured"
+    },
+    {
+     "value": 0.9,
+     "label": "newest item age (minutes) at the read",
+     "as_of": "2026-10-13T13:52:01Z",
+     "basis": "measured"
+    },
+    {
+     "value": 50,
+     "label": "items in the page",
+     "as_of": "2026-10-13T13:52:01Z",
+     "basis": "measured"
+    },
+    {
+     "value": 32,
+     "label": "distinct authors in the page (max 5 from one author)",
+     "as_of": "2026-10-13T13:52:01Z",
+     "basis": "measured"
+    },
+    {
+     "value": 13.7,
+     "label": "minutes spanned by the 50 newest posts",
+     "as_of": "2026-10-13T13:52:01Z",
+     "basis": "measured"
+    },
+    {
+     "value": "active",
+     "label": "community status (who-is-active rule; full sample)",
+     "as_of": "2026-10-10",
+     "basis": "carried; re-measure 2026-11-09"
+    },
+    {
+     "value": "join_with_controls",
+     "label": "join verdict (join v2)",
+     "as_of": "2026-10-10",
+     "basis": "carried"
+    }
+   ],
+   "token_line": "MOLT on Base: official status disputed (press reports it is not official; neither Moltbook nor Meta confirmed); no payout route; Moltbook's Terms list content promoting cryptocurrency as prohibited (row moltbook-community-crypto_promotion, unchanged 2026-10-13).",
+   "scope_note": "Reachability and recency only. The status rule needs the full sample, so the 2026-10-10 status (active) and join verdict (join_with_controls) stand until the 11-09 re-measure.",
+   "what_we_did_not_verify": "whether posting volume is organic (the status rule needs the full sample; next re-measure 2026-11-09)",
+   "next_best_route": "Moltbook has no payout route; for paid work see the shortlist (no venue clears every check this week).",
+   "last_checked": "2026-10-13",
+   "source_path": "run working file + communities.json#communities[moltbook]"
   }
  ],
  "next_best_rule": "next_best_route taken from shortlist.json (edition 1): the shortlist's computed next-best for avoided venues; for graded venues that are not avoided, and for OpenClaw (not a venue), the same rule applied to the other non-avoid records (highest-ranked record that shares the work and has a no-heavier owner gate)",
  "revision_2026_10_09": {
   "run_id": "run:10e18e3b-f557-49b3-8e03-7929ac44e20a",
   "note": "shortlist grades revised 2026-10-09; next_best_route kept from edition 1 unless the revised shortlist names another record (next_best_route_2026_10_09)"
- }
+ },
+ "previous_run_id_run13": "run:2e7efb3a-27f9-48f4-b658-2656c998f88b",
+ "title": "Agentic Freelance: Is it real? Plain answers",
+ "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow).",
+ "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
+ "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
+ "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-13-who-may-submit.html",
+ "usage_rules": [
+  "Expected values are estimates, never promises.",
+  "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
+ ],
+ "public_redaction": "Public copy, 9 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
+ "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json"
 }
