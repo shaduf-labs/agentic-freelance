@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-economics/0.1",
-  "run_id": "report-732799ca1dbf37a17c7a5e1a",
-  "as_of": "2026-10-13",
+  "run_id": "report-6b3ee899e2c0b31d6e5d0690",
+  "as_of": "2026-10-14",
   "merged_at": "2026-10-08",
   "window": {
     "taskmarket": "2026-09-08..2026-10-08 (settlement rule, grace 16)",
@@ -33,8 +33,8 @@
       "security_report (assumed band, no anchor)",
       "human_only (cost n/a)"
     ],
-    "token_band_rule": "tokens_in = turns x (venue instruction overhead + task text) + working material; tokens_out per class; components labelled measured/estimated/assumed (definitions dated 2026-10-05); code_single_file: turns x (TaskMarket skill.md + task text) + Aider polyglot per-exercise tokens.",
-    "cost_price_basis": "list prices without caching or batch discounts; B also reports an overhead-cached variant in dated calculation",
+    "token_band_rule": "tokens_in = turns x (venue instruction overhead + task text) + working material; tokens_out per class; components labelled measured/estimated/assumed (PLAN.md Definitions 2026-10-05); code_single_file: turns x (TaskMarket skill.md + task text) + Aider polyglot per-exercise tokens.",
+    "cost_price_basis": "list prices without caching or batch discounts; B also reports an overhead-cached variant in run working file",
     "flat_rate_subscription": "separate assumed scenario (cost_scenarios); never free compute or resellable capacity",
     "concentration_basis": "economics rows use the same task sample as p_win; the ledger basis is reported in caveats and the report.",
     "no_paid_attempts": "No model call, submission or paid attempt was made; every cost per attempt is an estimate.",
@@ -740,7 +740,7 @@
             "high": 38186
           },
           "basis": "estimated",
-          "source": "dated calculation: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
+          "source": "run working file: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
         },
         {
           "name": "task_text_tokens",
@@ -807,7 +807,7 @@
             "high": 38186
           },
           "basis": "estimated",
-          "source": "dated calculation: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
+          "source": "run working file: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
         },
         {
           "name": "task_text_tokens",
@@ -874,7 +874,7 @@
             "high": 38186
           },
           "basis": "estimated",
-          "source": "dated calculation: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
+          "source": "run working file: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
         },
         {
           "name": "task_text_tokens",
@@ -952,7 +952,7 @@
             "high": 38186
           },
           "basis": "estimated",
-          "source": "dated calculation: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
+          "source": "run working file: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
         },
         {
           "name": "task_text_tokens",
@@ -1177,7 +1177,7 @@
             "high": 38186
           },
           "basis": "estimated",
-          "source": "dated calculation: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
+          "source": "run working file: agent instruction files ÷4 (low Superteam skill.md 1,642; central TaskMarket skill.md 7,292 = median of measured files; high dealwork.ai skill.md+openapi.json 38,186)"
         },
         {
           "name": "task_text_tokens",
@@ -1251,7 +1251,7 @@
           "name": "context_overhead_tokens_per_load",
           "value": 7292,
           "basis": "estimated",
-          "source": "dated calculation: TaskMarket skill.md 29,167 bytes / 4 (bytes measured)"
+          "source": "run working file: TaskMarket skill.md 29,167 bytes / 4 (bytes measured)"
         },
         {
           "name": "task_text_tokens",
@@ -1261,7 +1261,7 @@
             "high": 2046
           },
           "basis": "estimated",
-          "source": "TaskMarket closed-task description chars p10/median/p90 (2,261/3,301/8,184; measured, dated calculation) / 4"
+          "source": "TaskMarket closed-task description chars p10/median/p90 (2,261/3,301/8,184; measured, run working file) / 4"
         },
         {
           "name": "turns_per_attempt",
@@ -1281,7 +1281,7 @@
             "high": 13883
           },
           "basis": "estimated",
-          "source": "Aider polyglot prompt tokens per exercise, min/median/max of 6 runs (measured by publisher, secondary; dated calculation)"
+          "source": "Aider polyglot prompt tokens per exercise, min/median/max of 6 runs (measured by publisher, secondary; run working file)"
         },
         {
           "name": "tokens_out",
@@ -1378,9 +1378,9 @@
       "note": "Added by the merge because most TaskMarket code_change tasks are single-file artefacts; the repo-level code_change band (SWE-bench anchors) likely overstates their cost."
     }
   ],
-  "cost_anchors_ref": "dated calculation",
+  "cost_anchors_ref": "run working file",
   "cost_anchors_count": 13,
-  "context_sizes_ref": "dated calculation",
+  "context_sizes_ref": "run working file",
   "context_sizes": {
     "taskmarket | skill.md": 7292,
     "dealwork-ai | skill.md": 18175,
@@ -1405,7 +1405,7 @@
       "main_row": true,
       "route": "agent_first_board",
       "competition_model": "open_submission",
-      "window": "2026-09-13..2026-10-13",
+      "window": "2026-09-14..2026-10-14",
       "window_extended": false,
       "sample": {
         "tasks_closed": 91,
@@ -1416,7 +1416,7 @@
         "tasks_in_p_win": 79,
         "submissions_total": 6199,
         "awards_total": 96,
-        "route": "dated calculation (unfiltered list, 5 pages)",
+        "route": "run working file (unfiltered list, 5 pages)",
         "as_of": "2026-10-13T13:46:47Z"
       },
       "competition": {
@@ -1456,26 +1456,26 @@
         "per_prize_usd_median_check_run8": 2
       },
       "p_win": {
-        "pooled": 0.015486,
-        "awards": 96,
-        "submissions": 6199,
+        "pooled": 0.015356,
+        "awards": 100,
+        "submissions": 6512,
         "ci90_wilson": [
-          0.01311,
-          0.018285
+          0.013044,
+          0.018071
         ],
         "ci90_bootstrap": [
-          0.011853,
-          0.020327
+          0.011611,
+          0.019715
         ],
         "ci90": [
-          0.011853,
-          0.020327
+          0.011611,
+          0.019715
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261013)",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261014)",
         "newcomer": 0.010119,
         "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
-        "source": "dated calculation"
+        "source": "run working file"
       },
       "deliverable_class_mix": [
         {
@@ -1666,7 +1666,7 @@
         "verdict": "negative_at_all_tiers",
         "basis": "measured/estimated in run 6"
       },
-      "as_of_row": "2026-10-13",
+      "as_of_row": "2026-10-14",
       "snapshot_2026_10_06": {
         "sample": {
           "tasks_closed": 81,
@@ -1724,17 +1724,17 @@
       },
       "cost_translations": {
         "inputs": {
-          "p_win": 0.015486,
+          "p_win": 0.015356,
           "R_net_usd": 1.85,
-          "eligible_supply_per_day": 2.833,
+          "eligible_supply_per_day": 3.033,
           "award_delay_median_days": 1.03,
           "payout_delay_median_days": 0
         },
-        "expected_payout_per_attempt_usd": 0.028649,
+        "expected_payout_per_attempt_usd": 0.028409,
         "return_per_dollar": {
-          "budget": 1.1876,
-          "mid": 0.0927,
-          "frontier": 0.0119
+          "budget": 1.1777,
+          "mid": 0.0919,
+          "frontier": 0.0118
         },
         "per_day": {
           "budget": {
@@ -1836,7 +1836,7 @@
         },
         "basis": {
           "return_per_dollar": "estimated",
-          "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-09..10-09 per day (no MolTrust), dated calculation",
+          "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-09..10-09 per day (no MolTrust), run working file",
           "caps": "assumed (0.75 / 1.50 / 5.00 USD per day)",
           "delays": "award delay measured (90-day median award - expiry, C); payout delay 0 (the award transaction pays the worker wallet)",
           "review_minutes_per_entry": "assumed 0 (agent-first board: the agent submits without per-entry owner review)",
@@ -1869,7 +1869,8 @@
         "per_day_note_2026_10_10": "per-day rows recomputed for the $1.50 mid-tier cell only (shortlist input); other cells carried from run 10 until run 12 refreshes price tiers",
         "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices",
         "per_day_note_2026_10_12": "per-day cells recomputed by the run 13 merge (p_win 0.015483, supply 2.767/day) at the 2026-10-11 list prices",
-        "per_day_note_2026_10_13": "per-day cells recomputed by the run 14 merge (p_win 0.015486, supply 2.833/day) at the 2026-10-11 list prices"
+        "per_day_note_2026_10_13": "per-day cells recomputed by the run 14 merge (p_win 0.015486, supply 2.833/day) at the 2026-10-11 list prices",
+        "per_day_note_2026_10_14": "per-attempt figures recomputed by the run 15 merge (p_win 0.015356) at the 2026-10-11 list prices; per-day cells: see grading_inputs economics"
       },
       "snapshot_2026_10_07": {
         "p_win": {
@@ -2067,7 +2068,7 @@
           "tasks_in_p_win": 81,
           "submissions_total": 6535,
           "awards_total": 87,
-          "route": "dated calculation (unfiltered list, 4 pages)",
+          "route": "run working file (unfiltered list, 4 pages)",
           "as_of": "2026-10-08T13:50:00Z"
         },
         "p_win": {
@@ -2090,7 +2091,7 @@
           "newcomer": 0.010119,
           "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
-          "source": "dated calculation"
+          "source": "run working file"
         },
         "economics": {
           "R_net_median_usd": 1.85,
@@ -2227,7 +2228,7 @@
           },
           "basis": {
             "return_per_dollar": "estimated",
-            "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), dated calculation",
+            "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), run working file",
             "caps": "assumed (0.75 / 1.50 / 5.00 USD per day)",
             "delays": "award delay measured (90-day median award - expiry, C); payout delay 0 (the award transaction pays the worker wallet)",
             "review_minutes_per_entry": "assumed 0 (agent-first board: the agent submits without per-entry owner review)",
@@ -2333,6 +2334,18 @@
           "high": 0.034855,
           "central_at_p90_reward": -0.283016
         }
+      },
+      "snapshot_2026_10_13": {
+        "p_win": 0.015486,
+        "ci90": [
+          0.011853,
+          0.020327
+        ],
+        "return_per_dollar": {
+          "budget": 1.1876,
+          "mid": 0.0927,
+          "frontier": 0.0119
+        }
       }
     },
     {
@@ -2354,7 +2367,7 @@
         "tasks_in_p_win": 81,
         "submissions_total": 6535,
         "awards_total": 87,
-        "route": "dated calculation (unfiltered list, 4 pages)",
+        "route": "run working file (unfiltered list, 4 pages)",
         "as_of": "2026-10-08T13:50:00Z"
       },
       "competition": {
@@ -2413,7 +2426,7 @@
         "newcomer": 0.010119,
         "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
-        "source": "dated calculation"
+        "source": "run working file"
       },
       "deliverable_class_mix": [
         {
@@ -2773,7 +2786,7 @@
         },
         "basis": {
           "return_per_dollar": "estimated",
-          "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), dated calculation",
+          "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), run working file",
           "caps": "assumed (0.75 / 1.50 / 5.00 USD per day)",
           "delays": "award delay measured (90-day median award - expiry, C); payout delay 0 (the award transaction pays the worker wallet)",
           "review_minutes_per_entry": "assumed 0 (agent-first board: the agent submits without per-entry owner review)",
@@ -3011,7 +3024,7 @@
           "newcomer": 0.010119,
           "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
-          "source": "dated calculation"
+          "source": "run working file"
         },
         "cost_translations": {
           "inputs": {
@@ -3127,7 +3140,7 @@
           },
           "basis": {
             "return_per_dollar": "estimated",
-            "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), dated calculation",
+            "eligible_supply_per_day": "measured: TaskMarket bounty-mode tasks created 2026-09-08..10-08 per day (no MolTrust), run working file",
             "caps": "assumed (0.75 / 1.50 / 5.00 USD per day)",
             "delays": "award delay measured (90-day median award - expiry, C); payout delay 0 (the award transaction pays the worker wallet)",
             "review_minutes_per_entry": "assumed 0 (agent-first board: the agent submits without per-entry owner review)",
@@ -3163,7 +3176,7 @@
         "budget": 4.4094,
         "mid": 0.3275,
         "frontier": 0.0441,
-        "source": "dated calculation"
+        "source": "run working file"
       }
     },
     {
@@ -3531,7 +3544,7 @@
         "tasks_in_p_win": 8,
         "submissions_total": 1383,
         "awards_total": 1,
-        "route": "merge recompute from dated calculation (in_run8_window, no MolTrust, awarded or final_unpaid at grace 16, reward >= 3 USDC)",
+        "route": "merge recompute from run working file (in_run8_window, no MolTrust, awarded or final_unpaid at grace 16, reward >= 3 USDC)",
         "as_of": "2026-10-07T13:49:12Z"
       },
       "competition": {
@@ -4980,19 +4993,19 @@
       "row_id": "superteam-earn",
       "venue_slug": "superteam-earn",
       "variant": null,
-      "label": "Superteam Earn AGENT_ALLOWED listings (main row; window extended ~225 days)",
+      "label": "Superteam Earn AGENT_ALLOWED listings (main row: deadline from 2026-04-10, plus review-feed listings past deadline)",
       "main_row": true,
       "route": "human_account_bounty",
       "competition_model": "judged_competition",
-      "window": "180 days by deadline: 2026-04-10..2026-10-07 (AGENT_ALLOWED)",
+      "window": "deadline from 2026-04-10 to 2026-10-14 (AGENT_ALLOWED; main row)",
       "window_extended": true,
       "sample": {
-        "tasks_closed": 25,
-        "tasks_awarded": 22,
-        "submissions_total": 3900,
-        "awards_total": 105,
-        "route": "the run: superteam.fun public listings feeds (completed, review, open), details, winners",
-        "as_of": "2026-10-07T14:00:00Z"
+        "tasks_closed": 26,
+        "tasks_awarded": 23,
+        "submissions_total": 4487,
+        "awards_total": 108,
+        "route": "run 8 held rows + run 15 the run feeds and winners reads",
+        "as_of": "2026-10-14T13:49Z"
       },
       "competition": {
         "submissions_per_task": {
@@ -5023,25 +5036,26 @@
         "funded_share": null
       },
       "p_win": {
-        "pooled": 0.026923,
-        "awards": 105,
-        "submissions": 3900,
+        "pooled": 0.02407,
+        "awards": 108,
+        "submissions": 4487,
         "ci90_wilson": [
-          0.022977,
-          0.031525
+          0.020583,
+          0.02813
         ],
         "ci90_bootstrap": [
-          0.016572,
-          0.042231
+          0.014749,
+          0.038628
         ],
         "ci90": [
-          0.016572,
-          0.042231
+          0.014749,
+          0.038628
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007)",
-        "newcomer": 0.024871,
+        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261014)",
         "newcomer_basis": "estimated: p_win x (1 - top5 share of awards); rough adjustment",
-        "denominator_note": "Submissions on AGENT_ALLOWED listings are mostly by human accounts: 4 of the 105 winners (180 days) carry the agent marker; agent submission counts are not public, so an agent-only win rate cannot be computed."
+        "denominator_note": "Submissions on AGENT_ALLOWED listings are mostly by human accounts: 4 of the 105 winners (180 days) carry the agent marker; agent submission counts are not public, so an agent-only win rate cannot be computed.",
+        "source": "run working file",
+        "newcomer_note": "not recomputed in run 15 (top-5 share not re-read)"
       },
       "deliverable_class_mix": [
         {
@@ -5084,13 +5098,13 @@
       },
       "caveats": [
         "Submission counts are _count.Submission from the public feed; spam/rejected submissions are included in the denominator.",
-        "Only 7 AGENT_ALLOWED listings announced winners in the 90-day window (plus 2 in review), so the main AGENT_ALLOWED row uses all 34 visible completed AGENT_ALLOWED listings since 2026-02-23 plus 3 in the review feed: window_extended true (~225 days).",
         "AGENT_ALLOWED does not mean winners were agents; winners are Superteam user accounts (human accounts). Agent identity of winners is not exposed.",
         "Review-feed listings (Steve Agent Arena, deadline 2026-10-01, 66 submissions; orbitx, deadline 2026-08-20; raze thread, deadline 2026-05-24) are counted as closed with 0 awards; Steve Agent Arena may still award.",
         "One extreme outlier (ranger-build-a-bear hackathon, 1,000,000 USDC, prizes 500k/300k/200k) drives max; use median.",
         "Winners API returns positions; amounts come from the details 'rewards' table; bonus spots (key 99) are paid the bonus amount.",
         "AGENT_ONLY listings are hidden from public feeds (agent feed needs an API key), so they are not counted.",
-        "AGENT_ALLOWED does not mean the winners were agents; winners are Superteam user (human) accounts."
+        "AGENT_ALLOWED does not mean the winners were agents; winners are Superteam user (human) accounts.",
+        "Main row: AGENT_ALLOWED listings with deadline from 2026-04-10 (completed, or in review past deadline with 0 awards until announced); run 15 adds Steve Agent Arena's 3 awards and Streamflow (in review, 4.7 days past deadline, 587 submissions, 0 awards; kept under a recorded pool decision)."
       ],
       "cost_per_attempt_usd": {
         "budget": {
@@ -5115,7 +5129,7 @@
       "economics": {
         "R_net_median_usd": 100,
         "R_net_p90_usd": 1500,
-        "expected_payout_per_attempt_usd": 2.6923,
+        "expected_payout_per_attempt_usd": 2.407,
         "ev_central_by_tier_usd": {
           "budget": 2.688615,
           "mid": 2.644736,
@@ -5129,7 +5143,7 @@
         "high": 4.222772,
         "central_at_p90_reward": 40.337686
       },
-      "break_even_cost_usd": 2.6923,
+      "break_even_cost_usd": 2.407,
       "break_even_tokens_out_mid": 398859,
       "verdict": "positive_at_frontier_tier",
       "verdict_reason": "EV_central positive at every tier on announced prizes; payment of those prizes cannot be verified on public routes (human_route.json: 30 of 30 sampled winners wallet_unknown), so the verdict is about announced prizes, not cash received.",
@@ -5169,7 +5183,7 @@
         "superteam-earn-kyc_payout_eligibility-1"
       ],
       "economics_ref": "economics.json#venues[row_id=superteam-earn]",
-      "as_of_row": "2026-10-07T14:00:00Z",
+      "as_of_row": "2026-10-14",
       "snapshot_2026_10_06": {
         "sample": {
           "tasks_closed": 37,
@@ -5251,10 +5265,10 @@
       "human_route_ref": "human_route.json#venues[venue_slug=superteam-earn]",
       "cost_translations": {
         "inputs": {
-          "p_win": 0.026923,
+          "p_win": 0.02407,
           "R_net_usd": 100,
-          "eligible_supply_per_day": 0.0883,
-          "award_delay_median_days": 6.51,
+          "eligible_supply_per_day": 0.0889,
+          "award_delay_median_days": 6.52,
           "payout_delay_median_days": 7,
           "review_minutes_per_entry": {
             "low": 5,
@@ -5282,107 +5296,107 @@
           "payout_per_day": "estimated (expected, gross, before owner time and tax)",
           "days_to_first_win_median": "estimated (geometric; independent attempts assumed)"
         },
-        "expected_payout_per_attempt_usd": 2.6923,
+        "expected_payout_per_attempt_usd": 2.407,
         "return_per_dollar": {
-          "budget": 730.6106,
-          "mid": 57.5106,
-          "frontier": 7.3059
+          "budget": 653.1886,
+          "mid": 51.4162,
+          "frontier": 6.5317
         },
         "per_day": {
           "budget": {
             "0.75": {
               "budget_attempts_per_day": 203.53,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
+              "payout_per_day_usd": 0.214,
               "spend_per_day_usd": 0.0003,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "1.50": {
               "budget_attempts_per_day": 407.06,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
+              "payout_per_day_usd": 0.214,
               "spend_per_day_usd": 0.0003,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "5.00": {
               "budget_attempts_per_day": 1356.85,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
+              "payout_per_day_usd": 0.214,
               "spend_per_day_usd": 0.0003,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             }
           },
           "mid": {
             "0.75": {
               "budget_attempts_per_day": 16.02,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0041,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0042,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "1.50": {
               "budget_attempts_per_day": 32.04,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0041,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0042,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "5.00": {
               "budget_attempts_per_day": 106.81,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0041,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0042,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             }
           },
           "frontier": {
             "0.75": {
               "budget_attempts_per_day": 2.04,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0325,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0328,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "1.50": {
               "budget_attempts_per_day": 4.07,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0325,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0328,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             },
             "5.00": {
               "budget_attempts_per_day": 13.57,
-              "attempts_per_day": 0.0883,
+              "attempts_per_day": 0.0889,
               "binding_constraint": "supply",
-              "payout_per_day_usd": 0.2377,
-              "spend_per_day_usd": 0.0325,
-              "attempts_to_first_win_median": 25.4,
-              "days_to_first_win_median": 287.6,
-              "days_to_first_cash_median": 301.1
+              "payout_per_day_usd": 0.214,
+              "spend_per_day_usd": 0.0328,
+              "attempts_to_first_win_median": 28.4,
+              "days_to_first_win_median": 320,
+              "days_to_first_cash_median": 333.5
             }
           }
         },
@@ -5441,7 +5455,8 @@
           }
         },
         "note": "Payment cannot be verified on public routes; every per-day and per-hour figure is for announced prizes. p_win denominator is mostly human entries.",
-        "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices"
+        "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices",
+        "per_day_note_2026_10_14": "recomputed by the run 15 merge (p_win 0.02407, supply 0.0889/day) at the 2026-10-11 list prices; estimated"
       },
       "supply_refresh_2026_10_08": {
         "agent_allowed_open_now": 2,
@@ -5450,8 +5465,81 @@
         "per_day_90d": 0.0889,
         "latest_agent_allowed_announcement": "2026-09-10",
         "note": "no new AGENT_ALLOWED listing since run 8; payout per day unchanged at about $0.24",
-        "source": "dated calculation",
+        "source": "run working file",
         "label": "measured"
+      },
+      "snapshot_2026_10_07": {
+        "p_win": {
+          "pooled": 0.026923,
+          "awards": 105,
+          "submissions": 3900,
+          "ci90_wilson": [
+            0.022977,
+            0.031525
+          ],
+          "ci90_bootstrap": [
+            0.016572,
+            0.042231
+          ],
+          "ci90": [
+            0.016572,
+            0.042231
+          ],
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007)",
+          "newcomer": 0.024871,
+          "newcomer_basis": "estimated: p_win x (1 - top5 share of awards); rough adjustment",
+          "denominator_note": "Submissions on AGENT_ALLOWED listings are mostly by human accounts: 4 of the 105 winners (180 days) carry the agent marker; agent submission counts are not public, so an agent-only win rate cannot be computed."
+        },
+        "sample": {
+          "tasks_closed": 25,
+          "tasks_awarded": 22,
+          "submissions_total": 3900,
+          "awards_total": 105,
+          "route": "run 8 the run: superteam.fun public listings feeds (completed, review, open), details, winners",
+          "as_of": "2026-10-07T14:00:00Z"
+        },
+        "label": "Superteam Earn AGENT_ALLOWED listings (main row; window extended ~225 days)",
+        "window": "180 days by deadline: 2026-04-10..2026-10-07 (AGENT_ALLOWED)"
+      },
+      "label_correction": {
+        "date": "2026-10-14",
+        "old_label": "Superteam Earn AGENT_ALLOWED listings (main row; window extended ~225 days)",
+        "old_caveat": "Only 7 AGENT_ALLOWED listings announced winners ... uses all 34 visible completed AGENT_ALLOWED listings since 2026-02-23 plus 3 in the review feed: window_extended true (~225 days).",
+        "correction": "the held sample (25 listings / 105 awards / 3,900 submissions, seed 20261007) is the set of AGENT_ALLOWED listings with deadline from 2026-04-10 plus review-feed listings past deadline; the label now says so. A correction note, not a data change."
+      },
+      "sensitivities_run15": {
+        "rolling_180d": {
+          "label": "180-day rolling by deadline (2026-04-17..2026-10-14), sensitivity",
+          "tasks_closed": 23,
+          "awards": 92,
+          "submissions": 4010,
+          "p_win": 0.022943,
+          "ci90": [
+            0.013177,
+            0.03861
+          ]
+        },
+        "without_streamflow": {
+          "tasks_closed": 25,
+          "awards": 108,
+          "submissions": 3900,
+          "p_win": 0.027692,
+          "ci90": [
+            0.017323,
+            0.044338
+          ],
+          "label": "not pre-registered; body only; may not move a gate or enter the title"
+        },
+        "reproduce_run8": {
+          "tasks_closed": 25,
+          "awards": 105,
+          "submissions": 3900,
+          "p_win": 0.026923,
+          "ci90": [
+            0.01658,
+            0.042231
+          ]
+        }
       }
     },
     {
@@ -6481,6 +6569,10 @@
           "label": "historical (Apr-Jul 2026 supply); new bounty supply has been 0 per day since 2026-07-09"
         },
         "note": "Supply-bound at zero: no new Algora bounty since 2026-07-02 on the boards that paid; ~2 open bounties remain (individual sponsors)."
+      },
+      "d3_refresh_run15": {
+        "status": "not recomputed",
+        "reason": "run 8's run working file holds award rows only (27), not the closed non-awarded issues and attempter counts behind the 7/77 basis, so the rolled 180-day window cannot be recomputed; D3 stays dated 2026-10-07 (stale-weak from 2026-10-15; Algora is avoid on D2 either way)"
       }
     },
     {
@@ -6921,7 +7013,7 @@
         "paidContractsToday": 0,
         "liveJobs": 237,
         "bidsLast24h": 94,
-        "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in dated calculation (same values)"
+        "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in run working file (same values)"
       },
       "basis": {
         "window": "measured",
@@ -7632,6 +7724,27 @@
         "basis": "estimated: payout per job (measured, run 7) / cost per job (estimated, mid tier central band)",
         "payout_per_day": "not_computable (supply of assignable jobs per owner not measured)",
         "payout_per_job_over_cost_per_job_budget": 2.302
+      },
+      "assignment_refresh_2026_10_14": {
+        "payout_per_job_median_gross_usd": 0.02,
+        "payout_per_job_median_net_usd": 0.0174,
+        "top5_executor_share": 0.4201,
+        "completed_created_in_window": 438,
+        "window": "2026-09-14..2026-10-14",
+        "assignment_ratio": {
+          "budget": {
+            "low": 21.6095,
+            "central": 2.302,
+            "high": 0.3269
+          },
+          "mid": {
+            "low": 1.6869,
+            "central": 0.1813,
+            "high": 0.026
+          }
+        },
+        "list_frozen_note": "public list unchanged since 2026-10-10 (newest task 2026-10-10T20:35Z; offsets 0-400 byte-identical to the 10-12 reads)",
+        "source": "run working file"
       }
     },
     {
@@ -7940,7 +8053,7 @@
           "label": "sensitivities (R35), not graded; D3 passes at mid in every reading"
         },
         "ruling": "R35",
-        "source": "dated calculation"
+        "source": "run working file"
       }
     },
     {
@@ -8674,96 +8787,99 @@
         "1 open bounty on 2026-10-08, undecided about 4.5 days past its decision time",
         "latest payout 2026-09-24 confirmed on Base (C); newest receipts settle on Algorand (not explorer-checked)"
       ],
-      "source": "dated calculation",
+      "source": "run working file",
       "as_of_row": "2026-10-11"
     }
   ],
   "x402_seller_odds": {
-    "as_of": "2026-10-09",
+    "as_of": "2026-10-14",
     "source": {
-      "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list input {json:{pagination:{page_size:400,page:N},timeframe:30,sorting:{id:total_amount,desc:true}}}, pages 0-5; stopped at page 5 where revenue fell below $1 (page minimum $0.86)",
+      "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list input {json:{pagination:{page_size:400,page:N},timeframe:30,sorting:{id:total_amount,desc:true}}}, pages 0-5; stopped at page 5 where revenue fell below $1 (page minimum $0.77)",
       "bazaar": "https://www.x402scan.com/api/trpc/public.sellers.bazaar.featured, same input, pages 0-2 (page 2 empty)",
-      "method": "same routes, input and stopping rule as run 6 (economics.json#x402_seller_odds.source)",
-      "route": "x402scan public tRPC, unauthenticated GET"
+      "method": "run 6/10 routes, input and stopping rule unchanged",
+      "route": "x402scan public tRPC, unauthenticated GET, honest research UA"
     },
-    "sellers_total": 39120,
-    "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains); run 6: 38,048",
+    "sellers_total": 39007,
+    "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains)",
     "buckets": [
       {
         "min_usd": 0,
         "max_usd": 1,
         "label": "<1 (incl. 0)",
-        "sellers": 36899,
-        "share": 0.943226
+        "sellers": 36822,
+        "share": 0.943984
       },
       {
         "min_usd": 1,
         "max_usd": 100,
         "label": "1-100",
-        "sellers": 2050,
-        "share": 0.052403
+        "sellers": 2023,
+        "share": 0.051862
       },
       {
         "min_usd": 100,
         "max_usd": 1000,
         "label": "100-1,000",
-        "sellers": 129,
-        "share": 0.003298
+        "sellers": 116,
+        "share": 0.002974
       },
       {
         "min_usd": 1000,
         "max_usd": null,
         "label": ">=1,000",
-        "sellers": 42,
-        "share": 0.001074
+        "sellers": 46,
+        "share": 0.001179
       }
     ],
-    "share_ge_1": 0.056774,
-    "share_ge_100": 0.004371,
-    "share_ge_1000": 0.001074,
-    "share_ge_1000_ge5_buyers": 0.00069,
-    "count_ge_1": 2221,
-    "count_ge_100": 171,
-    "count_ge_1000": 42,
-    "count_ge_1000_ge5_buyers": 27,
-    "usd_ge_1000_ge5_buyers": 673299.26,
+    "share_ge_1": 0.056016,
+    "share_ge_100": 0.004153,
+    "share_ge_1000": 0.001179,
+    "share_ge_1000_ge5_buyers": 0.000795,
+    "count_ge_1": 2185,
+    "count_ge_100": 162,
+    "count_ge_1000": 46,
+    "count_ge_1000_ge5_buyers": 31,
+    "usd_ge_1000_ge5_buyers": 680074.99,
     "bazaar_registered": {
-      "n": 1157,
+      "n": 1169,
       "unit": "origin group (bazaar.featured row)",
-      "returned_rows_with_30d_revenue": 591,
-      "rows_not_returned": 566,
-      "denominator_note": "total_count 1,157 groups; only the 591 groups with 30-day revenue are returned (as in run 6, where 577 of 1,305 had revenue); groups not returned are counted as < $1",
-      "share_ge_1": 0.206569,
-      "share_ge_100": 0.032844,
-      "share_ge_1000": 0.008643,
-      "count_ge_1": 239,
-      "count_ge_100": 38,
-      "count_ge_1000": 10,
-      "ge_1000_ge5_buyers": 10,
-      "compare_run6": {
-        "n": 1305,
-        "share_ge_1": 0.17165,
-        "share_ge_100": 0.02835,
-        "share_ge_1000": 0.00843
+      "rows_not_returned": 577,
+      "denominator_note": "total_count groups; only groups with 30-day revenue are returned; groups not returned are counted as < $1",
+      "share_ge_1": 0.206159,
+      "share_ge_100": 0.030796,
+      "share_ge_1000": 0.010265,
+      "count_ge_1": 241,
+      "count_ge_100": 36,
+      "count_ge_1000": 12,
+      "ge_1000_ge5_buyers": 12,
+      "returned_rows": 592,
+      "returned_min_usd": 0.001,
+      "compare_run10": {
+        "n": 1157,
+        "share_ge_1": 0.206569,
+        "share_ge_100": 0.032844,
+        "share_ge_1000": 0.008643,
+        "count_ge_1": 239
       }
     },
     "agent_work_seller_ge_1000": {
       "payTo": "0x7284…299c",
       "name": "AX1 q-verdict (run 4 class agent_work_service)",
-      "usd_30d": 7831.18,
-      "buyers_30d": 4734,
-      "run6": {
-        "usd_30d": 7066.64,
-        "buyers_30d": 4764
+      "usd_30d": 8044.76,
+      "buyers_30d": 3639,
+      "tx_30d": 402238,
+      "run10": {
+        "usd_30d": 7831.18,
+        "buyers_30d": 4734
       },
-      "note": "still the only run-4-classed agent-work seller >= $1,000; the other >= $1,000 sellers were not re-classified this run"
+      "agent_work_sellers_ge_1000": "carried 1 from run 6 (row still >= $1,000; other >= $1,000 sellers not re-classified)"
     },
     "basis": {
       "buckets": "measured (x402scan counts, untraced)",
       "shares": "estimated (computed from measured counts)",
       "buyers": "x402scan unique_buyers, untraced"
     },
-    "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; the odds describe existing indexed sellers, not the chance that a new listing sells.",
+    "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; odds describe existing indexed sellers, not the chance that a new listing sells. Detection limit: only payments x402scan indexes.",
     "snapshot_2026_10_05": {
       "as_of": "2026-10-05T13:5xZ fetch; x402scan 30-day timeframe (rolling; newest latest_block_timestamp in table 2026-10-05T12:55:43.000Z)",
       "source": {
@@ -8903,9 +9019,96 @@
         "seller_types": "carried from run 4 classification (x402_population.json); not re-classified",
         "buyers": "x402scan unique_buyers, untraced: buyers sharing a funder are not merged"
       },
-      "source_path": "dated calculation"
+      "source_path": "run working file"
     },
-    "note": "refreshed 2026-10-09 by the run (same tRPC routes and method as run 6); fresh for the shortlist until 2026-10-16"
+    "snapshot_2026_10_09": {
+      "as_of": "2026-10-09",
+      "source": {
+        "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list input {json:{pagination:{page_size:400,page:N},timeframe:30,sorting:{id:total_amount,desc:true}}}, pages 0-5; stopped at page 5 where revenue fell below $1 (page minimum $0.86)",
+        "bazaar": "https://www.x402scan.com/api/trpc/public.sellers.bazaar.featured, same input, pages 0-2 (page 2 empty)",
+        "method": "same routes, input and stopping rule as run 6 (economics.json#x402_seller_odds.source)",
+        "route": "x402scan public tRPC, unauthenticated GET"
+      },
+      "sellers_total": 39120,
+      "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains); run 6: 38,048",
+      "buckets": [
+        {
+          "min_usd": 0,
+          "max_usd": 1,
+          "label": "<1 (incl. 0)",
+          "sellers": 36899,
+          "share": 0.943226
+        },
+        {
+          "min_usd": 1,
+          "max_usd": 100,
+          "label": "1-100",
+          "sellers": 2050,
+          "share": 0.052403
+        },
+        {
+          "min_usd": 100,
+          "max_usd": 1000,
+          "label": "100-1,000",
+          "sellers": 129,
+          "share": 0.003298
+        },
+        {
+          "min_usd": 1000,
+          "max_usd": null,
+          "label": ">=1,000",
+          "sellers": 42,
+          "share": 0.001074
+        }
+      ],
+      "share_ge_1": 0.056774,
+      "share_ge_100": 0.004371,
+      "share_ge_1000": 0.001074,
+      "share_ge_1000_ge5_buyers": 0.00069,
+      "count_ge_1": 2221,
+      "count_ge_100": 171,
+      "count_ge_1000": 42,
+      "count_ge_1000_ge5_buyers": 27,
+      "usd_ge_1000_ge5_buyers": 673299.26,
+      "bazaar_registered": {
+        "n": 1157,
+        "unit": "origin group (bazaar.featured row)",
+        "returned_rows_with_30d_revenue": 591,
+        "rows_not_returned": 566,
+        "denominator_note": "total_count 1,157 groups; only the 591 groups with 30-day revenue are returned (as in run 6, where 577 of 1,305 had revenue); groups not returned are counted as < $1",
+        "share_ge_1": 0.206569,
+        "share_ge_100": 0.032844,
+        "share_ge_1000": 0.008643,
+        "count_ge_1": 239,
+        "count_ge_100": 38,
+        "count_ge_1000": 10,
+        "ge_1000_ge5_buyers": 10,
+        "compare_run6": {
+          "n": 1305,
+          "share_ge_1": 0.17165,
+          "share_ge_100": 0.02835,
+          "share_ge_1000": 0.00843
+        }
+      },
+      "agent_work_seller_ge_1000": {
+        "payTo": "0x7284…299c",
+        "name": "AX1 q-verdict (run 4 class agent_work_service)",
+        "usd_30d": 7831.18,
+        "buyers_30d": 4734,
+        "run6": {
+          "usd_30d": 7066.64,
+          "buyers_30d": 4764
+        },
+        "note": "still the only run-4-classed agent-work seller >= $1,000; the other >= $1,000 sellers were not re-classified this run"
+      },
+      "basis": {
+        "buckets": "measured (x402scan counts, untraced)",
+        "shares": "estimated (computed from measured counts)",
+        "buyers": "x402scan unique_buyers, untraced"
+      },
+      "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; the odds describe existing indexed sellers, not the chance that a new listing sells.",
+      "note": "refreshed 2026-10-09 by run 10 the run (same tRPC routes and method as run 6); fresh for the shortlist until 2026-10-16"
+    }
   },
   "calculator_presets": [
     {
@@ -9002,7 +9205,7 @@
         "high": 0
       },
       "p_win_previous": 0.015483,
-      "p_win_source": "dated calculation (2026-09-13..10-13)",
+      "p_win_source": "run working file (2026-09-13..10-13)",
       "prices": {
         "tiers": {
           "budget": {
@@ -9116,7 +9319,7 @@
         "high": 0
       },
       "p_win_previous": 0.015483,
-      "p_win_source": "dated calculation (2026-09-13..10-13)",
+      "p_win_source": "run working file (2026-09-13..10-13)",
       "prices": {
         "tiers": {
           "budget": {
@@ -9968,7 +10171,7 @@
         "accessed": "2026-10-11"
       },
       "source_paths": [
-        "dated calculation",
+        "run working file",
         "economics.json#venues[row_id=deskcrew]"
       ],
       "added": "run 12 merge (merge reading M12-DESKCREW-PRESET)"
@@ -10024,7 +10227,7 @@
       "source_paths": [
         "economics.json#venues[row_id=moltjobs]",
         "economics.json#token_bands[deliverable_class=short_text]",
-        "dated calculation"
+        "run working file"
       ],
       "daily_cap_usd": {
         "default": 1.5,
@@ -10082,7 +10285,7 @@
         "openai-resale_sharing-3",
         "github-copilot-resale_sharing-2"
       ],
-      "rules_source": "dated calculation",
+      "rules_source": "run working file",
       "note": "Show as a separate scenario next to the paid tiers; check provider rules on automated use of consumer plans before relying on it.",
       "id": "flat_rate_subscription",
       "label": "Flat-rate subscription (assumed $0 marginal within quota; not free compute, not resellable)",
@@ -10305,10 +10508,10 @@
     }
   ],
   "sources": {
-    "A": "dated calculation, tasks.json, context_sizes.json",
-    "B": "dated calculation, tasks.json, price_tiers.json, cost_anchors.json, token_bands_draft.json",
-    "C": "dated calculation, x402_seller_odds.json",
-    "run7": "dated calculation (via tasks.json), settlement.json; dated calculation"
+    "A": "run working file, tasks.json, context_sizes.json",
+    "B": "run working file, tasks.json, price_tiers.json, cost_anchors.json, token_bands_draft.json",
+    "C": "run working file, x402_seller_odds.json",
+    "run7": "run working file (via tasks.json), settlement.json; run working file"
   },
   "previous_run_id": "report-d110858e7247d2b988c08316",
   "previous_as_of": "2026-10-07T14:00:00Z",
@@ -10436,7 +10639,7 @@
     ],
     "costs": "run 6-8 estimates carried (price tiers refresh in run 12)",
     "verdict_change": "negative_at_all_tiers -> positive_only_at_budget_tier",
-    "source": "dated calculation",
+    "source": "run working file",
     "run_id": "report-52ff5e4073c04bbfe2125eb4"
   },
   "previous_run_id_run10": "report-c7815426d1367f505e2c810c",
@@ -10903,7 +11106,7 @@
   "price_tiers_label": "list prices on 11 October 2026 (OpenRouter public list, cross-checked on 4 first-party pages); never 'costs'; mid is a component-wise median (estimated)",
   "refresh_2026_10_11": {
     "run_id": "report-d01ecfcff5ece19e2959346e",
-    "price_tiers": "replaced: dated calculation (list prices accessed 2026-10-11; R20)",
+    "price_tiers": "replaced: run working file (list prices accessed 2026-10-11; R20)",
     "tier_change_vs_2026_10_05": {
       "budget": {
         "input": {
@@ -11134,7 +11337,7 @@
         ]
       }
     ],
-    "taskmarket_p_win": "replaced from dated calculation (window 2026-09-11..10-11)",
+    "taskmarket_p_win": "replaced from run working file (window 2026-09-11..10-11)",
     "economics_as_of_rule": "pre-registered rule 4 (oldest of price-tier access and venue-side input)",
     "presets": "every preset's EV recomputed at the new prices; TaskMarket main and single-file presets take C's p_win; DeskCrew preset added (M12-DESKCREW-PRESET)"
   },
@@ -11262,9 +11465,9 @@
   },
   "previous_run_id_run13": "report-3a1db52bdf9670aa5991b83b",
   "title": "Agentic Freelance: is it worth the tokens? Expected value per attempt by venue",
-  "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 12 October 2026 (refresh_2026_10_12): price tiers unchanged (list prices on 11 October, fresh to 18 October). TaskMarket p_win_final 0.0155 (90% 0.0117 to 0.0203, window 2026-09-12..10-12): about $1.19 back per $1 at budget-tier prices and $0.09 at mid-tier (central band); $0.90 at the p_win lower bound. MoltJobs assignment payout per job $0.10 to $0.50 (median gross reward of 10 funded jobs created 12 September to 12 October, all posted by the founder account; fee 0 assumed); mid-tier ratio 2.14 to 10.68; sensitivities, not graded: $0.40 (window from read time, ratio 8.54) and $0.30 (excluding jobs cancelled after funding, ratio 6.41). A moltjobs_assigned preset was added. These are list prices, not costs.",
+  "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 12 October 2026 (refresh_2026_10_12): price tiers unchanged (list prices on 11 October, fresh to 18 October). TaskMarket p_win_final 0.0155 (90% 0.0117 to 0.0203, window 2026-09-12..10-12): about $1.19 back per $1 at budget-tier prices and $0.09 at mid-tier (central band); $0.90 at the p_win lower bound. MoltJobs assignment payout per job $0.10 to $0.50 (median gross reward of 10 funded jobs created 12 September to 12 October, all posted by the founder account; fee 0 assumed); mid-tier ratio 2.14 to 10.68; sensitivities, not graded: $0.40 (window from read time, ratio 8.54) and $0.30 (excluding jobs cancelled after funding, ratio 6.41). A moltjobs_assigned preset was added. These are list prices, not costs. Refreshed 14 October 2026: TaskMarket p_win_final 0.015356 (about $1.18 back per $1 at budget-tier prices); Superteam agent-allowed main row p_win 0.02407 (90% 0.0147-0.0386), about $0.21 expected a day at a $1.50 cap and about 334 days to first cash (median), estimates on announced prizes; Execution Market payout per job re-dated (median $0.02 gross).",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
-  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-13-who-may-submit.html",
+  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-14-superteam-algora.html",
   "tool_url": "https://shaduf.ai/p/agentic-freelance/tools/token-calculator.html",
   "page_url": "https://shaduf.ai/p/agentic-freelance/getting-started/#calculator",
   "related": {
@@ -11309,5 +11512,112 @@
     }
   ],
   "previous_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
-  "public_redaction": "Public copy, 12 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored."
+  "public_redaction": "Public copy, 14 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published.",
+  "refresh_2026_10_14": {
+    "run_id": "report-6b3ee899e2c0b31d6e5d0690",
+    "price_tiers": "unchanged (list prices accessed 2026-10-11; fresh to 10-18)",
+    "rows_updated": {
+      "taskmarket": "p_win 0.015356 (C, run 15 window)",
+      "superteam-earn": "p_win 0.02407 (main row; label corrected; Streamflow kept)",
+      "execution-market": "payout per job $0.02 gross / $0.0174 net re-dated 2026-10-14",
+      "x402_seller_odds": "replaced with the 2026-10-14 read (A)"
+    },
+    "rows_not_updated": {
+      "algora-github-bounties": "Pool decision: run 8 rows hold awards only; D3 stays dated 2026-10-07",
+      "moltjobs": "no new job (C); D3 input $0.50 kept"
+    },
+    "d3_inputs_old_to_new": [
+      {
+        "slug": "superteam-earn",
+        "measure": "return_per_dollar",
+        "budget_central": [
+          730.6106,
+          653.1886
+        ],
+        "mid_central": [
+          57.5106,
+          51.4162
+        ],
+        "p_win": [
+          0.026923,
+          0.02407
+        ],
+        "as_of": [
+          "2026-10-07",
+          "2026-10-11"
+        ],
+        "pwin_lo": [
+          {
+            "budget": 449.7151,
+            "mid": 35.3997
+          },
+          {
+            "budget": 400.2442,
+            "mid": 31.5055
+          }
+        ]
+      },
+      {
+        "slug": "taskmarket",
+        "measure": "return_per_dollar",
+        "budget_central": [
+          1.1876,
+          1.1777
+        ],
+        "mid_central": [
+          0.0927,
+          0.0919
+        ],
+        "p_win": [
+          0.015486,
+          0.015356
+        ],
+        "as_of": [
+          "2026-10-11",
+          "2026-10-11"
+        ],
+        "pwin_lo": [
+          {
+            "budget": 0.909,
+            "mid": 0.071
+          },
+          {
+            "budget": 0.8905,
+            "mid": 0.0695
+          }
+        ]
+      },
+      {
+        "slug": "execution-market",
+        "measure": "assignment_ratio",
+        "budget_central": [
+          2.302,
+          2.302
+        ],
+        "mid_central": [
+          0.1813,
+          0.1813
+        ],
+        "as_of": [
+          "2026-10-05",
+          "2026-10-11"
+        ]
+      },
+      {
+        "slug": "x402-per-call-endpoints",
+        "measure": "seller_share_ge_1",
+        "old_new": [
+          0.056774,
+          0.056016
+        ],
+        "as_of": [
+          "2026-10-09",
+          "2026-10-14"
+        ]
+      }
+    ],
+    "presets": "carried from run 14 unchanged (stated; TaskMarket presets not re-priced this run)",
+    "economics_as_of_rule": "run 12 rule 4: oldest of price-tier access (10-11) and venue-side input (10-14) -> 2026-10-11"
+  },
+  "previous_run_id_run14": "report-732799ca1dbf37a17c7a5e1a"
 }

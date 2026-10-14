@@ -173,12 +173,12 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-09-23",
-            "payout_age_days": 20,
+            "payout_age_days": 21,
             "latest_announced_award": null,
             "award_age_days": null
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-13",
+          "as_of": "2026-10-14",
           "source_path": "run13 run working file (newest completedAt) + run working file",
           "basis": "measured"
         },
@@ -271,10 +271,10 @@
       "e_level": "E1",
       "latest_confirmed_payout": {
         "date": "2026-09-23",
-        "route": "run 8 Blockscout escrow 0x3a57 newest release (2026-09-23T07:42:57Z, carried); 2026-10-09: API newest completedAt 2026-09-23T07:43Z (B) and escrow balance unchanged at 6.065 USDC between the ledger cut-offs (C); 2026-10-12: API newest completedAt 2026-09-23T07:43:00Z (A) and escrow 0x3a57...60Be 6.065 USDC unchanged through 18:09:49Z (C); 2026-10-13: list byte-identical to run 13 (B, 122 jobs, newest created 2026-09-23T06:32:06Z) and escrow 0x3a57...60Be 6.065 USDC unchanged through 13:50:07Z (C)",
+        "route": "run 8 Blockscout escrow 0x3a57 newest release (2026-09-23T07:42:57Z, carried); 2026-10-09: API newest completedAt 2026-09-23T07:43Z (B) and escrow balance unchanged at 6.065 USDC between the ledger cut-offs (C); 2026-10-12: API newest completedAt 2026-09-23T07:43:00Z (A) and escrow 0x3a57...60Be 6.065 USDC unchanged through 18:09:49Z (C); 2026-10-14: list byte-identical to 10-13 (C, 122 jobs, newest created 2026-09-23T06:32:06Z) and escrow 0x3a57...60Be 6.065 USDC unchanged through 2026-10-14T13:51:29Z (C)",
         "primary": true,
         "tx_verified": true,
-        "checked_through": "2026-10-13T13:50:07Z"
+        "checked_through": "2026-10-14T13:51:29Z"
       },
       "supply": {
         "open_eligible_now": 10,
@@ -309,6 +309,12 @@
             "n_funded": 8,
             "label": "sensitivity (shown, not graded): the 2 founder jobs of 2026-09-12 leave the date-level window on 10-13"
           }
+        },
+        "reread_2026_10_14": {
+          "by": "C",
+          "read_at": "2026-10-14T13:58Z",
+          "result": "0 new jobs; pages byte-identical to 10-13; statuses COMPLETED 57, CANCELLED 51, OPEN 10, IN_PROGRESS 4",
+          "kept": "counts kept as measured for 2026-09-12..10-12 (supply.as_of 2026-10-12); the date-level 09-14..10-14 window is a sensitivity (run working file); the grade clock projects the roll-off"
         }
       },
       "operator_posted_supply": {
@@ -354,8 +360,8 @@
           }
         }
       ],
-      "last_checked": "2026-10-13",
-      "carried_from": "run14 (re-read: B list, C escrow; no input changed, R59) + run13 + run12 + run10 + run9",
+      "last_checked": "2026-10-14",
+      "carried_from": "run15 (re-read: C list and escrow; no input changed) + run14 + run13 + run12 + run10 + run9",
       "operator_caveat": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet",
       "probe": {
         "label": "suggested, untested by the pool",
@@ -425,7 +431,7 @@
         "identified_independent": 0,
         "unknown": 0,
         "n": 54,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "rules_last_reread": "2026-10-13",
       "founder_jobs_3": {
@@ -532,56 +538,56 @@
           "status": "pass",
           "value": {
             "e_level": "E1",
-            "latest_confirmed_payout": "2026-10-13",
+            "latest_confirmed_payout": "2026-10-14",
             "payout_age_days": 0,
-            "latest_announced_award": "2026-10-13",
+            "latest_announced_award": "2026-10-14",
             "award_age_days": 0
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-13",
-          "source_path": "run14 run working file",
+          "as_of": "2026-10-14",
+          "source_path": "run working file",
           "basis": "measured"
         },
         "D2": {
           "status": "pass",
           "value": {
-            "open_eligible_now": 10,
-            "new_eligible_30d": 85,
+            "open_eligible_now": 11,
+            "new_eligible_30d": 91,
             "route": "GET taskmarket.dev/api/tasks unfiltered (5 pages); eligible = mode bounty, not cancelled; open now = status open, phase active, expiry in the future",
             "countable": true,
             "reachable": true
           },
           "threshold": "pass: >= 1 open eligible now and >= 4 new eligible in 30 d; weak: >= 1 new in 30 d; fail: 0 new on a public route that would show them, or unreachable; unknown: not countable",
-          "as_of": "2026-10-13",
-          "source_path": "run14 run working file + requester_classes",
+          "as_of": "2026-10-14",
+          "source_path": "run working file + requester_classes",
           "basis": "measured",
-          "note": "without MolTrust (with MolTrust: open 12, new 98); 2.83 new eligible tasks per day; 16 requesters, top requester 0x4363...34bd posted 60.0%; 199 of the 238.98 USDC open now is TSK-SV32SNGX from never_paid requester 0x9371...019f"
+          "note": "without MolTrust (with MolTrust: open 11, new 104); 3.033 new eligible tasks per day; 16 requesters, top requester 0x4363...34bd posted 59.3%; 199 of the 243.98 USDC open now is TSK-SV32SNGX from never_paid requester 0x9371...019f"
         },
         "D3": {
           "status": "weak",
           "value": {
             "band": "central",
-            "mid": 0.0927,
-            "budget": 1.1876
+            "mid": 0.0919,
+            "budget": 1.1777
           },
           "threshold": "return per $1 >= 1.0 at mid tier (band central) pass; >= 1.0 at budget only weak; < 1.0 at budget fail",
           "as_of": "2026-10-11",
-          "source_path": "run14 run working file (repriced by the merge)",
+          "source_path": "run working file (repriced by the merge)",
           "basis": "estimated"
         },
         "D4": {
           "status": "weak",
           "value": {
             "measure": "unpaid_submission_share (final_unpaid / awarded + final_unpaid, grace 16, without MolTrust)",
-            "value": 0.144539,
+            "value": 0.137592,
             "verifiable_on_public_route": true,
             "announces_winners": true
           },
           "threshold": "pass: measured unpaid share < 10% and verifiable on a public route; weak: 10-35%, or not verifiable although winners are announced; fail: >= 35%; unknown: not measured",
-          "as_of": "2026-10-13",
-          "source_path": "run14 run working file",
+          "as_of": "2026-10-14",
+          "source_path": "run working file",
           "basis": "measured",
-          "note": "unpaid reward share 14.0%; 8 still_payable tasks (444 submissions, 92.0 USDC) excluded; 14.76% -> 14.45%: 4 newly awarded tasks entered the denominator and the window start moved one day (C, inference from counts); grace 16 applied, statuses identical at 15 (R55)"
+          "note": "unpaid reward share 13.4%; 9 still_payable tasks (447 submissions, 95.0 USDC) excluded; 14.45% -> 13.76%: 4 newly awarded tasks entered the denominator and the window start moved one day (C, inference from counts); grace 16 applied, statuses identical at the recomputed 15"
         },
         "D5": {
           "status": "pass",
@@ -617,10 +623,10 @@
         "D3 (weak): reach pass: return per $1 >= 1.0 at mid tier (band central) pass; >= 1.0 at budget only weak; < 1.0 at budget fail",
         "D4 (weak): reach pass: pass: measured unpaid share < 10% and verifiable on a public route; weak: 10-35%, or not verifiable although winners are announced; fail: >= 35%; unknown: not measured"
       ],
-      "odds_line": "about $0.09 back per $1 of tokens at mid-tier list prices ($1.19 at budget-tier prices, central band; below $1 at the p_win lower bound and in the high cost band); at $1.50 a day about 2.83 attempts, $0.08 expected per day, first cash after about 17 days (median); 14.5% of submissions went to tasks that paid nobody",
-      "per_day_150": "about $0.08 expected per day at a $1.50 cap (mid tier, central band)",
-      "per_day_150_usd": 0.0812,
-      "days_to_first_cash_150": 16.7,
+      "odds_line": "about $0.09 back per $1 of tokens at mid-tier list prices ($1.18 at budget-tier prices, central band; below $1 at the p_win lower bound and in the high cost band); at $1.50 a day about 3.03 attempts, $0.09 expected per day, first cash after about 16 days (median); 13.8% of submissions went to tasks that paid nobody",
+      "per_day_150": "about $0.09 expected per day at a $1.50 cap (mid tier, central band; estimated)",
+      "per_day_150_usd": 0.0862,
+      "days_to_first_cash_150": 15.8,
       "payout_per_owner_hour": "not_applicable (no per-entry owner minutes)",
       "owner_steps": {
         "summary": "taskmarket; KYC no (on request only) (none); who acts: owner (explicit approval before the one-time set-withdrawal-address; owner must keep the one-time accountRecoveryCode, which is the only way to change the addre",
@@ -630,35 +636,35 @@
         "kyc": "unknown",
         "wallet_signing": null
       },
-      "record_line": "Requesters over 90 days: too_new 40, reliable 11, mixed 5, never_paid 4, mostly_unpaid 2; 1 change vs run 13 (0x79d8...a707 reliable -> mixed by window roll-off).",
+      "record_line": "Requesters over 90 days: too_new 41, reliable 11, mixed 4, never_paid 4, mostly_unpaid 2; 1 change vs run 14 (0x79d8...a707 mixed -> too_new by window roll-off).",
       "e_level": "E1",
       "latest_confirmed_payout": {
-        "date": "2026-10-13",
-        "datetime": "2026-10-13T00:07:37Z",
-        "route": "/api/tasks/{id} awards + eth_getTransactionReceipt (TSK-04MK0H0G, block 52530355)",
+        "date": "2026-10-14",
+        "datetime": "2026-10-14T00:13:09Z",
+        "route": "/api/tasks/{id} awards + eth_getTransactionReceipt (TSK-6BQ1EHZR, block 52573721)",
         "primary": true,
         "tx_verified": true
       },
       "supply": {
-        "open_eligible_now": 10,
-        "new_eligible_30d": 85,
+        "open_eligible_now": 11,
+        "new_eligible_30d": 91,
         "countable": true,
         "reachable": true,
-        "as_of": "2026-10-13",
+        "as_of": "2026-10-14",
         "route": "GET taskmarket.dev/api/tasks unfiltered (5 pages); eligible = mode bounty, not cancelled; open now = status open, phase active, expiry in the future",
         "basis": "measured",
-        "note": "without MolTrust (with MolTrust: open 12, new 98); 2.83 new eligible tasks per day; 16 requesters, top requester 0x4363...34bd posted 60.0%; 199 of the 238.98 USDC open now is TSK-SV32SNGX from never_paid requester 0x9371...019f"
+        "note": "without MolTrust (with MolTrust: open 11, new 104); 3.033 new eligible tasks per day; 16 requesters, top requester 0x4363...34bd posted 59.3%; 199 of the 243.98 USDC open now is TSK-SV32SNGX from never_paid requester 0x9371...019f"
       },
       "operator_posted_supply": {
         "status": "measured",
-        "window": "2026-09-13..2026-10-13 (30 days to as_of)",
-        "open_now": 10,
-        "new_30d": 85,
+        "window": "2026-09-14..2026-10-14 (30 days to as_of)",
+        "open_now": 11,
+        "new_30d": 91,
         "by_class": {
           "operator": 0,
           "operator_linked": 0,
-          "outside": 67,
-          "unknown": 18
+          "outside": 70,
+          "unknown": 21
         },
         "by_class_requesters": {
           "unknown": 8,
@@ -668,20 +674,20 @@
           "operator": 0,
           "operator_linked": 0,
           "outside": 5,
-          "unknown": 5
+          "unknown": 6
         },
         "share_operator_or_linked": 0,
-        "share_unknown": 0.2118,
-        "n": 85,
-        "route": "requester field of GET taskmarket.dev/api/tasks (unfiltered list, 2026-10-13), classed offline from run working file payer classes (TaskMarket operator addresses: relayer 0x3C08...83D8, escrow 0xDDc6...33f7, fee 0xD822...FC51)",
-        "as_of": "2026-10-13T13:46:47Z",
+        "share_unknown": 0.2308,
+        "n": 91,
+        "route": "requester field of GET taskmarket.dev/api/tasks (unfiltered list, 2026-10-14), classed offline from run working file payer classes (TaskMarket operator addresses: relayer 0x3C08...83D8, escrow 0xDDc6...33f7, fee 0xD822...FC51)",
+        "as_of": "2026-10-14T13:48:50Z",
         "basis": "measured (poster wallets); classes from earlier traced funding (payouts.json), not re-traced this run",
         "note": "new_30d counts new eligible tasks (mode bounty, not cancelled) created in the window; 'outside' = unlinked or identified_independent with respect to the TaskMarket operator; unknown = requester never traced (no new calls)"
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-13",
-      "carried_from": "run14 (fresh fields: C) + run13 + run12 + run11 + run10 + run9",
+      "last_checked": "2026-10-14",
+      "carried_from": "run15 (fresh fields: C) + run14 + run13 + run12 + run11 + run10 + run9",
       "v1_1_shadow": {
         "grade": "probe first",
         "grade_by_band": {
@@ -741,11 +747,11 @@
       "payout_payer_mix_60d": {
         "operator": 0,
         "operator_linked": 4,
-        "unlinked": 138,
+        "unlinked": 143,
         "identified_independent": 76,
         "unknown": 0,
-        "n": 218,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "n": 223,
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "probe": {
         "label": "suggested, untested by the pool",
@@ -867,9 +873,9 @@
         "D3",
         "D4"
       ],
-      "who_posts_plain": "0 of 85 new tasks in 30 days from the operator or its own accounts",
+      "who_posts_plain": "0 of 91 new tasks in 30 days from the operator or its own accounts",
       "checked": "2026-10-11",
-      "checked_basis": "as_of of the input behind D3+D4 (2026-10-11; 2026-10-13)",
+      "checked_basis": "as_of of the input behind D3+D4 (2026-10-11; 2026-10-14)",
       "who_may_submit": {
         "class": "owner_reviews_or_submits",
         "text": "An owner must review or submit each entry",
@@ -908,7 +914,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-09-24",
-            "payout_age_days": 19,
+            "payout_age_days": 20,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -1226,38 +1232,38 @@
             "latest_confirmed_payout": null,
             "payout_age_days": null,
             "latest_announced_award": "2026-10-09",
-            "award_age_days": 4
+            "award_age_days": 5
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-09",
-          "source_path": "run9 run working file superteam_refresh.json",
+          "as_of": "2026-10-14",
+          "source_path": "run working file",
           "basis": "measured"
         },
         "D2": {
           "status": "weak",
           "value": {
-            "open_eligible_now": 2,
+            "open_eligible_now": 1,
             "new_eligible_30d": 2,
             "route": "https://superteam.fun/api/listings?status=open|review|completed (AGENT_ALLOWED)",
             "countable": true,
             "reachable": true
           },
           "threshold": "pass: >= 1 open eligible now and >= 4 new eligible in 30 d; weak: >= 1 new in 30 d; fail: 0 new on a public route that would show them, or unreachable; unknown: not countable",
-          "as_of": "2026-10-09",
-          "source_path": "run9 https://superteam.fun/api/listings?status=open|review|completed (AGENT_ALLOWED)",
+          "as_of": "2026-10-14",
+          "source_path": "run working file",
           "basis": "measured",
-          "note": "open: Streamflow (deadline 2026-10-09T21:59Z, 564 submissions) and La Familia (deadline 2026-10-24); published in 2026-09-09..10-09: the same 2 (publishedAt carried from run 8 details); 0 new AGENT_ALLOWED ids since run 9; Streamflow closes about 8 h after this read, so open falls to 1 on 2026-10-10 unless a new listing appears"
+          "note": "open: La Familia (deadline 2026-10-24T22:59Z, 166 submissions, Global); published 2026-09-14..10-14: 2 (Streamflow 09-25, La Familia 10-03); 0 since 10-09; 90 days: 8 = 0.0889/day (7 Global, 1 Vietnam); 0 new AGENT_ALLOWED ids since run 9; AGENT_ONLY listings not on public feeds (detection limit)"
         },
         "D3": {
           "status": "pass",
           "value": {
             "band": "central",
-            "mid": 57.5106,
-            "budget": 730.6106
+            "mid": 51.4162,
+            "budget": 653.1886
           },
           "threshold": "return per $1 >= 1.0 at mid tier (band central) pass; >= 1.0 at budget only weak; < 1.0 at budget fail",
-          "as_of": "2026-10-07",
-          "source_path": "run9 economics.json#venues[row_id=superteam-earn]",
+          "as_of": "2026-10-11",
+          "source_path": "run working file (repriced by the merge)",
           "basis": "estimated"
         },
         "D4": {
@@ -1269,10 +1275,10 @@
             "announces_winners": true
           },
           "threshold": "pass: measured unpaid share < 10% and verifiable on a public route; weak: 10-35%, or not verifiable although winners are announced; fail: >= 35%; unknown: not measured",
-          "as_of": "2026-10-07",
-          "source_path": "run9 run 8 human_route.json payment_trace (30/30 wallet_unknown); not re-traced in run 9 (needs sign-in; out of scope)",
+          "as_of": "2026-10-14",
+          "source_path": "run working file",
           "basis": "n/a",
-          "note": "winners announced; payment not verifiable on public routes. Run 9: all 10 agent-account wins still unclaimed (so unpaid to an owner, inference)"
+          "note": "winners announced; payment not public (0 payment-like fields on the winners route, 2026-10-14; paid_public_record 0, paid_matched 0). 10 of 10 agent-account wins still carry the marker (unclaimed 104-127 days; Pool decision: marker_gone 0)"
         },
         "D5": {
           "status": "pass",
@@ -1314,10 +1320,10 @@
         "D2 (weak): reach pass: pass: >= 1 open eligible now and >= 4 new eligible in 30 d; weak: >= 1 new in 30 d; fail: 0 new on a public route that would show them, or unreachable; unknown: not countable",
         "D4 (weak): reach pass: pass: measured unpaid share < 10% and verifiable on a public route; weak: 10-35%, or not verifiable although winners are announced; fail: >= 35%; unknown: not measured"
       ],
-      "odds_line": "about $56.60 back per $1 of tokens at mid-tier prices; at $1.50 a day about 0.09 attempts, $0.24 expected per day, first cash after about 301 days (median)",
-      "per_day_150": "about $0.24 expected per day at a $1.50 cap (mid tier, central band)",
-      "per_day_150_usd": 0.2377,
-      "days_to_first_cash_150": 301.1,
+      "odds_line": "about $51.42 back per $1 of tokens at mid-tier prices; at $1.50 a day about 0.09 attempts, $0.21 expected per day, first cash after about 334 days (median)",
+      "per_day_150": "about $0.21 expected per day at a $1.50 cap (mid tier, central band; estimated)",
+      "per_day_150_usd": 0.214,
+      "days_to_first_cash_150": 333.5,
       "payout_per_owner_hour": 16.15,
       "owner_steps": {
         "summary": "superteam-earn; KYC conditional (Sumsub (inferred from the open-source repo's @sumsub/websdk dependency; FAQ names no vendor)); who acts: owner (human claimant: 'Agents do not complete OAuth, wallet signing, or KYC. A human must claim the agent for payouts.')",
@@ -1327,23 +1333,23 @@
         "kyc": "conditional",
         "wallet_signing": null
       },
-      "record_line": "AGENT_ALLOWED sponsors with open or in-review listings: Streamflow Finance prompt, La Familia prompt, OOBE Protocol slow (Steve Agent Arena 6.7 d past deadline, not announced), ORBITX has_overdue (48.8 d), Raze has_overdue (136.9 d); overdue stock all 52 listings / 3,229 submissions, agent-allowed 3 / 224",
+      "record_line": "Overdue stock (review feed, 2026-10-14): 48 listings in review, 28 of them more than 14 days past deadline, 2923 submissions waiting; AGENT_ALLOWED 3 in review (2 overdue: ORBITX 54.8 d, Raze 142.9 d; Streamflow 4.7 d past deadline, 587 submissions); 24 sponsors with an overdue listing (counts, not judgements)",
       "e_level": "E3",
       "latest_confirmed_payout": null,
       "supply": {
-        "open_eligible_now": 2,
+        "open_eligible_now": 1,
         "new_eligible_30d": 2,
         "countable": true,
         "reachable": true,
-        "as_of": "2026-10-09",
+        "as_of": "2026-10-14",
         "route": "https://superteam.fun/api/listings?status=open|review|completed (AGENT_ALLOWED)",
         "basis": "measured",
-        "note": "open: Streamflow (deadline 2026-10-09T21:59Z, 564 submissions) and La Familia (deadline 2026-10-24); published in 2026-09-09..10-09: the same 2 (publishedAt carried from run 8 details); 0 new AGENT_ALLOWED ids since run 9; Streamflow closes about 8 h after this read, so open falls to 1 on 2026-10-10 unless a new listing appears"
+        "note": "open: La Familia (deadline 2026-10-24T22:59Z, 166 submissions, Global); published 2026-09-14..10-14: 2 (Streamflow 09-25, La Familia 10-03); 0 since 10-09; 90 days: 8 = 0.0889/day (7 Global, 1 Vietnam); 0 new AGENT_ALLOWED ids since run 9; AGENT_ONLY listings not on public feeds (detection limit)"
       },
       "operator_posted_supply": {
         "status": "by_construction",
-        "window": "2026-09-10..2026-10-10 (30 days to as_of)",
-        "open_now": 2,
+        "window": "2026-09-14..2026-10-14 (30 days to as_of)",
+        "open_now": 1,
         "new_30d": 2,
         "by_class": {
           "operator": 0,
@@ -1353,15 +1359,15 @@
         },
         "share_operator_or_linked": 0,
         "n": 2,
-        "route": "https://superteam.fun/api/listings (AGENT_ALLOWED; sponsor slugs, run 10 superteam_light.json)",
-        "as_of": "2026-10-09",
-        "basis": "assumed (by construction); sponsor list checked offline: streamflow-finance, lafamilia (neither is a Superteam sponsor account)",
+        "route": "https://superteam.fun/api/listings (AGENT_ALLOWED; sponsor slugs, run 15 run working file)",
+        "as_of": "2026-10-14",
+        "basis": "assumed (by construction); sponsors of the 2 listings: streamflow-finance, lafamilia (neither is a Superteam sponsor account)",
         "note": "posted by named sponsor organisations; Superteam's own sponsor accounts would count as operator (none among the 2)"
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-09",
-      "carried_from": "run10 (fresh fields) + run9",
+      "last_checked": "2026-10-14",
+      "carried_from": "run15 (fresh fields: A) + run10 + run9",
       "probe": {
         "label": "suggested, untested by the pool",
         "max_days": 7,
@@ -1416,8 +1422,8 @@
         "D2"
       ],
       "who_posts_plain": "named organisations post the work",
-      "checked": "2026-10-09",
-      "checked_basis": "as_of of the input behind D1+D2 (2026-10-09; 2026-10-09)",
+      "checked": "2026-10-14",
+      "checked_basis": "as_of of the input behind D1+D2 (2026-10-14; 2026-10-14)",
       "who_may_submit": {
         "class": "owner_reviews_or_submits",
         "text": "An owner must review or submit each entry",
@@ -1439,7 +1445,8 @@
         "precedence": "the pool's pre-registered 'Plain reader fields' rule (pre-registered 2026-10-13), R47: strictly by applies_to and verdict"
       },
       "not_public_note": [],
-      "plain_fields_rule": "the pool's pre-registered 'Plain reader fields' rule (pre-registered 2026-10-13); computed by run working file from v1.0 central; shown, never graded"
+      "plain_fields_rule": "the pool's pre-registered 'Plain reader fields' rule (pre-registered 2026-10-13); computed by run working file from v1.0 central; shown, never graded",
+      "wording_rule": "winners announced; payment not public"
     },
     {
       "slug": "execution-market",
@@ -1462,7 +1469,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-10-10",
-            "payout_age_days": 3,
+            "payout_age_days": 4,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -1494,14 +1501,14 @@
             "budget": 2.302
           },
           "threshold": "assignment: payout/cost per job >= 1.0 at mid (band central) pass; at budget only weak; < 1.0 at budget fail",
-          "as_of": "2026-10-05",
-          "source_path": "run8 economics.json#venues[row_id=execution-market]",
+          "as_of": "2026-10-11",
+          "source_path": "run working file (median $0.02 gross / $0.0174 net; repriced by the merge)",
           "basis": "estimated"
         },
         "D4": {
           "status": "weak",
           "value": {
-            "measure": "unpaid share, Execution Market venue unit (tasks with an executor that reached submitted); graded at the unfavourable end of a bound range (classification rule)",
+            "measure": "unpaid share, Execution Market venue unit (tasks with an executor that reached submitted); graded at the unfavourable end of a bound range (manager ruling 2)",
             "value": 0.1277,
             "verifiable_on_public_route": false,
             "announces_winners": false
@@ -1558,7 +1565,7 @@
         "kyc": "conditional",
         "wallet_signing": null
       },
-      "record_line": "Operator-supply caveat: all 470 tasks created in the 30 days came from the operator's own 21 swarm wallets, 0 from outside posters; 0 open tasks now; no task created on 10-11 or 10-12 to the read; every traced payout in 60 days came from the swarm (operator_linked); disputed counter 54 (51 on 10-09)",
+      "record_line": "publisher record: operator caveat: all 470 tasks created in the 30 days came from the operator's own 21 swarm wallets, 0 from outside posters; 0 open tasks now; no task created on 10-11 or 10-12 to the read; every traced payout in 60 days came from the swarm (operator_linked); disputed counter 54 (51 on 10-09)",
       "e_level": "E1",
       "latest_confirmed_payout": {
         "date": "2026-10-10",
@@ -1627,7 +1634,7 @@
           }
         }
       ],
-      "last_checked": "2026-10-12",
+      "last_checked": "2026-10-14",
       "carried_from": "run13 (fresh fields: A) + run12 + run10 + run9",
       "operator_caveat": "Execution Market operator caveat: all 799 tasks created in the 30 days (and the 1 open task) came from the operator's own 21 swarm wallets, 0 from outside posters; activity resumed on 2026-10-08 (79 swarm tasks, $3.52) after a pause since 2026-09-29; every traced payout in 60 days came from the swarm (operator_linked)",
       "probe": {
@@ -1684,7 +1691,7 @@
             "from": "unknown",
             "to": "weak",
             "value_now": {
-              "measure": "unpaid share, Execution Market venue unit (tasks with an executor that reached submitted); graded at the unfavourable end of a bound range (classification rule)",
+              "measure": "unpaid share, Execution Market venue unit (tasks with an executor that reached submitted); graded at the unfavourable end of a bound range (manager ruling 2)",
               "value": 0.1277,
               "verifiable_on_public_route": false,
               "announces_winners": false
@@ -1713,7 +1720,7 @@
         "identified_independent": 0,
         "unknown": 0,
         "n": 17,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "rules_last_reread": "2026-10-13",
       "v1_2_shadow": {
@@ -1797,8 +1804,8 @@
         "D3"
       ],
       "who_posts_plain": "470 of 470 new tasks in 30 days from the operator or its own accounts",
-      "checked": "2026-10-05",
-      "checked_basis": "as_of of the input behind D2+D3 (2026-10-12; 2026-10-05)",
+      "checked": "2026-10-11",
+      "checked_basis": "as_of of the input behind D2+D3 (2026-10-12; 2026-10-11)",
       "who_may_submit": {
         "class": "agent_may_submit",
         "text": "The rules we read let the agent act and submit itself",
@@ -1835,9 +1842,9 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-10-09",
-            "payout_age_days": 4,
+            "payout_age_days": 5,
             "latest_announced_award": "2026-10-09",
-            "award_age_days": 4
+            "award_age_days": 5
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
           "as_of": "2026-10-09",
@@ -2075,7 +2082,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-10-05",
-            "payout_age_days": 8,
+            "payout_age_days": 9,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -2248,7 +2255,7 @@
         "identified_independent": 0,
         "unknown": 0,
         "n": 105,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "rules_last_reread": "2026-10-13",
       "v1_2_shadow": {
@@ -2318,12 +2325,12 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-09-24",
-            "payout_age_days": 19,
+            "payout_age_days": 20,
             "latest_announced_award": "2026-09-24",
-            "award_age_days": 19
+            "award_age_days": 20
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-06 (carried)",
+          "as_of": "2026-10-14",
           "source_path": "run working file",
           "basis": "measured"
         },
@@ -2424,9 +2431,11 @@
       "e_level": "E1",
       "latest_confirmed_payout": {
         "date": "2026-09-24",
-        "route": "https://hackerone.com/reports/4000185.json: bounty_amount 200.0 on HackerOne's own programme, disclosed 2026-09-24 (primary, read in run 1/run 6-8; not re-read this run)",
+        "route": "https://hackerone.com/reports/4000185.json: bounty_amount 200.0 on HackerOne's own programme, disclosed 2026-09-24 (re-read 2026-10-14, unchanged)",
         "primary": true,
-        "tx_verified": null
+        "tx_verified": null,
+        "label": "latest paid report found on a public route; newer ones may exist (Hacktivity is GraphQL only)",
+        "checked_through": "2026-10-14T13:55:12Z"
       },
       "supply": {
         "open_eligible_now": null,
@@ -2458,7 +2467,7 @@
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-08",
+      "last_checked": "2026-10-14",
       "carried_from": "run9",
       "probe": {
         "label": "suggested, untested by the pool",
@@ -2555,7 +2564,8 @@
           "note": "HackerOne does not publish win rates; the programme or the platform could."
         }
       ],
-      "plain_fields_rule": "the pool's pre-registered 'Plain reader fields' rule (pre-registered 2026-10-13); computed by run working file from v1.0 central; shown, never graded"
+      "plain_fields_rule": "the pool's pre-registered 'Plain reader fields' rule (pre-registered 2026-10-13); computed by run working file from v1.0 central; shown, never graded",
+      "d1_label": "latest paid report found on a public route (disclosed 2026-09-24, checked 2026-10-14); newer ones may exist (Hacktivity is GraphQL only)"
     },
     {
       "slug": "opentask-ai",
@@ -2580,27 +2590,27 @@
             "latest_confirmed_payout": null,
             "payout_age_days": null,
             "latest_announced_award": "2026-09-14",
-            "award_age_days": 29
+            "award_age_days": 30
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-05",
+          "as_of": "2026-10-14",
           "source_path": "run working file",
           "basis": "measured"
         },
         "D2": {
           "status": "weak",
           "value": {
-            "open_eligible_now": 10,
+            "open_eligible_now": 11,
             "new_eligible_30d": 3,
             "route": "GET https://opentask.ai/api/tasks",
             "countable": true,
             "reachable": true
           },
           "threshold": "pass: >= 1 open eligible now and >= 4 new eligible in 30 d; weak: >= 1 new in 30 d; fail: 0 new on a public route that would show them, or unreachable; unknown: not countable",
-          "as_of": "2026-10-08",
+          "as_of": "2026-10-14",
           "source_path": "run working file (GET https://opentask.ai/api/tasks)",
           "basis": "measured",
-          "note": "23 listed tasks, all executionMode 'pitch'; counted 10 with a non-zero budget and no passed deadline (others: 8 '0 (internal roadmap item)', 1 'Free', 1 'Unpaid pilot', 1 '0 USDC', 2 with deadlines in Feb 2026). None escrowed (model is not_escrowed per run 8). Owner kind: 19 agent, 4 human.; created 2026-09-08..10-08: 2026-09-10 (7 USD, human poster), 2026-10-07 (1 USDC), 2026-10-08 (1 USDC); all pitch mode, unfunded"
+          "note": "25 listed tasks, all pitch mode (not escrowed); 11 with a non-zero budget and no passed deadline; 3 created 2026-09-14..10-14 (1 USDC each, one human poster); owner kind 19 agent, 6 human"
         },
         "D3": {
           "status": "unknown",
@@ -2682,36 +2692,36 @@
       "e_level": "E3",
       "latest_confirmed_payout": null,
       "supply": {
-        "open_eligible_now": 10,
+        "open_eligible_now": 11,
         "new_eligible_30d": 3,
         "countable": true,
         "reachable": true,
-        "as_of": "2026-10-08",
+        "as_of": "2026-10-14",
         "route": "GET https://opentask.ai/api/tasks",
         "basis": "measured",
-        "note": "23 listed tasks, all executionMode 'pitch'; counted 10 with a non-zero budget and no passed deadline (others: 8 '0 (internal roadmap item)', 1 'Free', 1 'Unpaid pilot', 1 '0 USDC', 2 with deadlines in Feb 2026). None escrowed (model is not_escrowed per run 8). Owner kind: 19 agent, 4 human.; created 2026-09-08..10-08: 2026-09-10 (7 USD, human poster), 2026-10-07 (1 USDC), 2026-10-08 (1 USDC); all pitch mode, unfunded"
+        "note": "25 listed tasks, all pitch mode (not escrowed); 11 with a non-zero budget and no passed deadline; 3 created 2026-09-14..10-14 (1 USDC each, one human poster); owner kind 19 agent, 6 human"
       },
       "operator_posted_supply": {
         "status": "measured",
-        "window": "2026-09-10..2026-10-10 (30 days to as_of)",
+        "window": "2026-09-14..2026-10-14 (30 days to as_of)",
         "open_now": null,
-        "new_30d": 4,
+        "new_30d": 3,
         "by_class": {
           "operator": 0,
           "operator_linked": 0,
-          "outside": 4,
+          "outside": 3,
           "unknown": 0
         },
         "share_operator_or_linked": 0,
-        "n": 4,
+        "n": 3,
         "route": "GET https://opentask.ai/api/tasks (1 GET; nextCursor null, so one page holds the whole list)",
-        "as_of": "2026-10-10",
+        "as_of": "2026-10-14",
         "basis": "measured (poster field on the public list; classes by absence of an operator marker)",
-        "note": "4 new tasks by date (3 on a strict 720 h window) from 2 posters, both marked kind 'human'; no field marks an owner as the operator's, so 'outside' means unlinked, not proof of independence; the list seems to hold open tasks only (lower bound); 8 older tasks of 2026-02-06 budgeted '0 (internal roadmap item)' look operator-posted (outside the window)"
+        "note": "3 new eligible tasks in 30 days, all from one poster marked kind 'human'; no field marks an owner as the operator's, so 'outside' means unlinked, not proof of independence (A, 2026-10-14)"
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-08",
+      "last_checked": "2026-10-14",
       "carried_from": "run9",
       "probe": {
         "label": "suggested, untested by the pool",
@@ -2827,9 +2837,9 @@
         "D1",
         "D2"
       ],
-      "who_posts_plain": "0 of 4 new tasks in 30 days from the operator or its own accounts",
-      "checked": "2026-10-05",
-      "checked_basis": "as_of of the input behind D1+D2 (2026-10-05; 2026-10-08)",
+      "who_posts_plain": "0 of 3 new tasks in 30 days from the operator or its own accounts",
+      "checked": "2026-10-14",
+      "checked_basis": "as_of of the input behind D1+D2 (2026-10-14; 2026-10-14)",
       "who_may_submit": {
         "class": "conditions_apply",
         "text": "Allowed with conditions; no rule on who submits",
@@ -2876,7 +2886,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-09-01",
-            "payout_age_days": 42,
+            "payout_age_days": 43,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -3081,7 +3091,7 @@
         "identified_independent": 0,
         "unknown": 0,
         "n": 3,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "rules_last_reread": "2026-10-13",
       "v1_2_shadow": {
@@ -3154,7 +3164,7 @@
             "latest_confirmed_payout": null,
             "payout_age_days": null,
             "latest_announced_award": "2026-07-17",
-            "award_age_days": 88
+            "award_age_days": 89
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
           "as_of": "2026-10-08",
@@ -3444,13 +3454,13 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-08-26",
-            "payout_age_days": 48,
+            "payout_age_days": 49,
             "latest_announced_award": "2026-07-02",
-            "award_age_days": 103
+            "award_age_days": 104
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
-          "as_of": "2026-10-09",
-          "source_path": "run9 run working file algora_refresh.json",
+          "as_of": "2026-10-14",
+          "source_path": "run working file + latest_award",
           "basis": "measured"
         },
         "D2": {
@@ -3463,10 +3473,10 @@
             "reachable": true
           },
           "threshold": "pass: >= 1 open eligible now and >= 4 new eligible in 30 d; weak: >= 1 new in 30 d; fail: 0 new on a public route that would show them, or unreachable; unknown: not countable",
-          "as_of": "2026-10-08",
-          "source_path": "run9 https://api.github.com/search/issues?per_page=100&sort=updated&order=desc&q=commenter%3Aapp/algora-pbc%20created%3A%3E%3D2026-07-09%20org%3Aarchestra-ai%20org%3Aactivepieces%20org%3ACapSoftware%20org%3Atursodatabase%20org%3APG-AGI%20org%3Acoollabsio ; algora.io org boards",
+          "as_of": "2026-10-14",
+          "source_path": "run working file + open_on_paying_boards",
           "basis": "measured",
-          "note": "0 new bounty issues on the 6 paying boards since 2026-07-09; open now about 2 (coollabsio board 1, PG-AGI #13)"
+          "note": "0 new bounty issues on the 6 paying boards since 2026-07-09 (GitHub search total 1 = CapSoftware/Cap#2448, a $50 tip initiation, not a bounty); open now 2 (coollabsio coolify#6696 $20; PG-AGI/toingg-jarvis#13 $5); no board left the paying list; bounty-census cross-check 'agrees' with its power note"
         },
         "D3": {
           "status": "pass",
@@ -3489,10 +3499,10 @@
             "announces_winners": true
           },
           "threshold": "pass: measured unpaid share < 10% and verifiable on a public route; weak: 10-35%, or not verifiable although winners are announced; fail: >= 35%; unknown: not measured",
-          "as_of": "2026-10-08",
-          "source_path": "run9 algora_refresh.json#archestra_onboarding_pending + run 8 payment_trace",
+          "as_of": "2026-10-14",
+          "source_path": "run working file (no new paid comment) + run 8 payment_trace",
           "basis": "n/a",
-          "note": "bot award/paid comments are the venue's record; Stripe transfer not verifiable; 2 archestra awards still onboarding-pending (no paid comment)"
+          "note": "bot award/paid comments are the venue's record; Stripe transfer not verifiable; 2 archestra awards still onboarding-pending (no paid comment); re-checked 2026-10-14: no new paid comment found (5 non-paying-board issues unread, 403)"
         },
         "D5": {
           "status": "weak",
@@ -3552,24 +3562,24 @@
         "kyc": "yes",
         "wallet_signing": null
       },
-      "record_line": "6 paying boards; 0 new bounties since 2026-07-09; latest new award 2026-07-02; latest payout 2026-08-26 (60 days on 2026-10-25)",
+      "record_line": "6 paying boards (none left; tursodatabase leaves on 2026-10-27 unless it awards); 0 new bounties since 2026-07-09; latest new award 2026-07-02; latest payout 2026-08-26 (60 days on 2026-10-25); a $50 tip started 2026-10-10 is not an award",
       "e_level": "E1",
       "latest_confirmed_payout": {
         "date": "2026-08-26",
-        "route": "https://github.com/qdrant/qdrant/issues/3323 (carried); the 13 issues run 9 could not read were read 2026-10-09: 0 newer award or paid comment; archestra #3836/#4463 still onboarding-pending",
+        "route": "https://github.com/qdrant/qdrant/issues/3323 (carried); the 13 issues run 9 could not read were read 2026-10-09: 0 newer award or paid comment; archestra #3836/#4463 still onboarding-pending; 2026-10-14: GitHub-wide 'been awarded' search updated since 08-27 (20 issues) - jlcsearch#92 read (no award); 5 non-paying-board issues updated since their last read not read (403); no newer award or paid comment found",
         "primary": true,
         "tx_verified": false,
-        "checked_through": "2026-10-09"
+        "checked_through": "2026-10-14"
       },
       "supply": {
         "open_eligible_now": 2,
         "new_eligible_30d": 0,
         "countable": true,
         "reachable": true,
-        "as_of": "2026-10-08",
+        "as_of": "2026-10-14",
         "route": "https://api.github.com/search/issues?per_page=100&sort=updated&order=desc&q=commenter%3Aapp/algora-pbc%20created%3A%3E%3D2026-07-09%20org%3Aarchestra-ai%20org%3Aactivepieces%20org%3ACapSoftware%20org%3Atursodatabase%20org%3APG-AGI%20org%3Acoollabsio ; algora.io org boards",
         "basis": "measured",
-        "note": "0 new bounty issues on the 6 paying boards since 2026-07-09; open now about 2 (coollabsio board 1, PG-AGI #13)"
+        "note": "0 new bounty issues on the 6 paying boards since 2026-07-09 (GitHub search total 1 = CapSoftware/Cap#2448, a $50 tip initiation, not a bounty); open now 2 (coollabsio coolify#6696 $20; PG-AGI/toingg-jarvis#13 $5); no board left the paying list; bounty-census cross-check 'agrees' with its power note"
       },
       "operator_posted_supply": {
         "status": "by_construction",
@@ -3591,8 +3601,8 @@
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-09",
-      "carried_from": "run10 (fresh fields) + run9",
+      "last_checked": "2026-10-14",
+      "carried_from": "run15 (fresh fields: B) + run10 + run9",
       "next_best": {
         "slug": "moltjobs",
         "grade": "probe first",
@@ -3637,8 +3647,8 @@
         "D2"
       ],
       "who_posts_plain": "named organisations post the work",
-      "checked": "2026-10-08",
-      "checked_basis": "as_of of the input behind D2 (2026-10-08)",
+      "checked": "2026-10-14",
+      "checked_basis": "as_of of the input behind D2 (2026-10-14)",
       "who_may_submit": {
         "class": "conditions_apply",
         "text": "Allowed with conditions; no rule on who submits",
@@ -3691,7 +3701,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-10-03",
-            "payout_age_days": 10,
+            "payout_age_days": 11,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -3702,7 +3712,7 @@
           "flags": [
             "stale_input"
           ],
-          "note": "stale_input: input as_of 2026-10-04 is 9 days before 2026-10-13"
+          "note": "stale_input: input as_of 2026-10-04 is 10 days before 2026-10-14"
         },
         "D2": {
           "status": "unknown",
@@ -3721,10 +3731,10 @@
         "D3": {
           "status": "fail",
           "value": {
-            "seller_share_ge_1": 0.056774
+            "seller_share_ge_1": 0.056016
           },
           "threshold": "sellers: share_ge_1 >= 0.50 pass; 0.10-0.50 weak; < 0.10 fail",
-          "as_of": "2026-10-09",
+          "as_of": "2026-10-14",
           "source_path": "run8 economics.json#venues[row_id=x402-per-call-endpoints] + economics.json#x402_seller_odds",
           "basis": "measured"
         },
@@ -3824,7 +3834,7 @@
       },
       "stale_inputs": [],
       "sensitivities": [],
-      "last_checked": "2026-10-09",
+      "last_checked": "2026-10-14",
       "carried_from": "run10 (fresh fields) + run9",
       "next_best": {
         "slug": "moltjobs",
@@ -3851,7 +3861,7 @@
         "identified_independent": 0,
         "unknown": 0,
         "n": 84,
-        "source": "payouts.json events dated 2026-08-14..2026-10-13 (run 14)"
+        "source": "payouts.json events dated 2026-08-15..2026-10-14 (run 15)"
       },
       "rules_last_reread": "2026-10-13",
       "v1_2_shadow": {
@@ -3912,8 +3922,8 @@
         "D3"
       ],
       "who_posts_plain": "not public",
-      "checked": "2026-10-09",
-      "checked_basis": "as_of of the input behind D3 (2026-10-09)",
+      "checked": "2026-10-14",
+      "checked_basis": "as_of of the input behind D3 (2026-10-14)",
       "who_may_submit": {
         "class": "conditions_apply",
         "text": "Allowed with conditions; no rule on who submits",
@@ -3964,9 +3974,9 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-09-14",
-            "payout_age_days": 29,
+            "payout_age_days": 30,
             "latest_announced_award": "2026-09-14",
-            "award_age_days": 29
+            "award_age_days": 30
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
           "as_of": "2026-10-08",
@@ -4115,7 +4125,7 @@
         "slug": "taskmarket",
         "grade": "probe first",
         "why": "shares testing; owner gate no heavier",
-        "odds_line": "about $0.09 back per $1 of tokens at mid-tier list prices ($1.19 at budget-tier prices, central band; below $1 at the p_win lower bound and in the high cost band); at $1.50 a day about 2.83 attempts, $0.08 expected per day, first cash after about 17 days (median); 14.5% of submissions went to tasks that paid nobody"
+        "odds_line": "about $0.09 back per $1 of tokens at mid-tier list prices ($1.18 at budget-tier prices, central band; below $1 at the p_win lower bound and in the high cost band); at $1.50 a day about 3.03 attempts, $0.09 expected per day, first cash after about 16 days (median); 13.8% of submissions went to tasks that paid nobody"
       },
       "v1_1_shadow": {
         "grade": "not enough data",
@@ -4208,9 +4218,9 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-07-06",
-            "payout_age_days": 99,
+            "payout_age_days": 100,
             "latest_announced_award": "2026-07-06",
-            "award_age_days": 99
+            "award_age_days": 100
           },
           "threshold": "pass: E1 and latest confirmed payout <= 30 d; weak: E1 31-60 d, or E2/E3 with venue-announced award <= 60 d; fail: E4-E6 or none within 60 d",
           "as_of": "2026-10-08",
@@ -4437,7 +4447,7 @@
           "value": {
             "e_level": "E1",
             "latest_confirmed_payout": "2026-06-30",
-            "payout_age_days": 105,
+            "payout_age_days": 106,
             "latest_announced_award": null,
             "award_age_days": null
           },
@@ -4503,7 +4513,10 @@
               "upwork-mcp-automation_ai-1:restrict",
               "upwork-mcp-automation_ai-2:restrict",
               "upwork-mcp-automation_ai-3:restrict",
-              "upwork-mcp-automation_ai-4:restrict"
+              "upwork-mcp-automation_ai-4:restrict",
+              "upwork-mcp-automation_ai-5:unclear",
+              "upwork-mcp-account_identity-4:restrict",
+              "upwork-mcp-account_identity-5:restrict"
             ],
             "venue_forbid": [],
             "third_party_forbid": [],
@@ -7613,7 +7626,7 @@
   },
   "rule_v1_1_candidates_ref": "run working file",
   "summary": {
-    "revision": "2026-10-13 (edition 1, checked again; rule v1.0 published, v1.1 and v1.2 shadows)",
+    "revision": "2026-10-14 (edition 1, checked again; rule v1.0 published, v1.1 and v1.2 shadows)",
     "counts_by_grade": {
       "go with owner": 0,
       "probe first": 9,
@@ -7869,6 +7882,82 @@
             "avoid": 18
           }
         }
+      },
+      "step3": {
+        "v10": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 6,
+            "avoid": 21
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 8,
+            "avoid": 19
+          }
+        },
+        "v11": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 4,
+            "avoid": 20
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          }
+        },
+        "v12": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          }
+        }
       }
     },
     "probe_first_ranked": [
@@ -7961,7 +8050,7 @@
         ],
         "gate_status_by_band": {
           "D3": {
-            "low": "weak",
+            "low": "pass",
             "central": "weak",
             "high": "fail"
           }
@@ -8015,7 +8104,7 @@
       "conditions_apply": 3
     },
     "plain_fields_present": 27,
-    "maintenance_line": "Re-read 142 of 153 rule rows and TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow on 13 October 2026; 0 changed; no grade moved (1 central-band gate moved: ugig.net D5 weak -> pass).",
+    "maintenance_line": "Re-read Superteam's and Algora's listings, the x402 seller table, HackerOne's and opentask.ai's evidence, TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow, and Execution Market's task list on 14 October 2026; added 6 rule rows; no grade moved (1 gate move outside the central band: low band Execution Market D3 weak -> pass).",
     "operator_posted_supply_status_counts": {
       "measured": 5,
       "by_construction": 6,
@@ -8027,7 +8116,8 @@
       "moltjobs",
       "deskcrew",
       "execution-market"
-    ]
+    ],
+    "edition2_freshness_ref": "run working file"
   },
   "summary_edition_1": {
     "counts_by_grade": {
@@ -9292,6 +9382,51 @@
         "R63"
       ],
       "dating_line": "Edition 1, checked again 13 October; next full edition about 15 October"
+    },
+    {
+      "date": "2026-10-14",
+      "run_id": "report-6b3ee899e2c0b31d6e5d0690",
+      "rule": "1.0",
+      "engine": {
+        "file": "run working file",
+        "sha256": "3cb24108a605880f70d053784c1580d035dd9a20509f93dd587abd9ff3a12d2c",
+        "changed_by_merge": false
+      },
+      "shadow_engines": {
+        "v1.1": {
+          "file": "run working file",
+          "sha256": "3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7"
+        },
+        "v1.2": {
+          "file": "run working file",
+          "sha256": "5544967f256b8dfc845df07641473b8fe6faa4a9f757c8a38587a304b02c83cc"
+        }
+      },
+      "overlay_order": "pre-registered run 15 item 8: step 0 time only (as_of 2026-10-14), step 1 rules (new rows), step 2 human-route and seller inputs (A, B), step 3 daily block (C); no price step (tiers fresh to 10-18)",
+      "gate_changes": [],
+      "grade_changes": [],
+      "band_grade_changes": [],
+      "gate_changes_all_bands": [
+        {
+          "band": "low",
+          "slug": "execution-market",
+          "what": "D3",
+          "from": "weak",
+          "to": "pass",
+          "flags_from": [
+            "stale_input"
+          ],
+          "flags": null
+        }
+      ],
+      "steps_ref": "run working file",
+      "go_guard": {
+        "fired": false,
+        "records": [],
+        "checked": "every record graded go with owner under v1.0 in any band run (0 this step)",
+        "reason": "no record graded go with owner under v1.0 at any band or at the p_win lower bound, so the guard had nothing to hold"
+      },
+      "dating_line": "Edition 1, checked again 14 October; edition 2 on 15 October"
     }
   ],
   "rule_v1_1_shadow": {
@@ -9442,6 +9577,32 @@
         }
       },
       "run14_inputs": {
+        "low": {
+          "go with owner": 0,
+          "probe first": 4,
+          "not enough data": 5,
+          "avoid": 18
+        },
+        "central": {
+          "go with owner": 0,
+          "probe first": 4,
+          "not enough data": 5,
+          "avoid": 18
+        },
+        "high": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 4,
+          "avoid": 20
+        },
+        "pwin_lo": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 5,
+          "avoid": 19
+        }
+      },
+      "run15_inputs": {
         "low": {
           "go with owner": 0,
           "probe first": 4,
@@ -9662,6 +9823,52 @@
         ]
       },
       "run14_inputs": {
+        "n": 2,
+        "share": 0.0741,
+        "records": [
+          "taskmarket",
+          "virtuals-acp"
+        ],
+        "detail": [
+          {
+            "slug": "taskmarket",
+            "grade_by_band": {
+              "low": "probe first",
+              "central": "probe first",
+              "high": "avoid"
+            },
+            "flipping_gates": [
+              "D3"
+            ],
+            "gate_status_by_band": {
+              "D3": {
+                "low": "weak",
+                "central": "weak",
+                "high": "fail"
+              }
+            }
+          },
+          {
+            "slug": "virtuals-acp",
+            "grade_by_band": {
+              "low": "not enough data",
+              "central": "not enough data",
+              "high": "avoid"
+            },
+            "flipping_gates": [
+              "D3"
+            ],
+            "gate_status_by_band": {
+              "D3": {
+                "low": "weak",
+                "central": "weak",
+                "high": "fail"
+              }
+            }
+          }
+        ]
+      },
+      "run15_inputs": {
         "n": 2,
         "share": 0.0741,
         "records": [
@@ -10209,16 +10416,16 @@
     "n_unexplained_run10": 0,
     "adoption_criteria_status": {
       "1_hash_unchanged": {
-        "status": "met so far (runs 10-14)",
-        "detail": "grade_v11.py SHA-256 3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7 re-checked by the run 14 merge; unchanged-at-edition-2 check pending"
+        "status": "met so far (runs 10-15)",
+        "detail": "run working file SHA-256 3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7 re-checked by the run 15 merge; unchanged-at-edition-2 check pending"
       },
       "2_every_difference_explained": {
-        "status": "met on run 9-14 inputs",
-        "detail": "run 14 (step 2): 22 record-band differences, 0 unexplained (run working file)"
+        "status": "met on run 9-15 inputs",
+        "detail": "run 15 (step 3): 22 record-band differences, 0 unexplained (run working file)"
       },
       "3_flip_share_le_one_third": {
-        "status": "met on run 9-14 inputs",
-        "detail": "run 14: 2 of 27 (0.074) flip between cost bands under v1.1"
+        "status": "met on run 9-15 inputs",
+        "detail": "run 15: 2 of 27 (0.074) flip between cost bands under v1.1"
       },
       "parity_check": {
         "status": "ok",
@@ -11324,6 +11531,61 @@
         "stripe-mpp-monetize-mcp": "taskmarket",
         "thejobcafe": "taskmarket"
       }
+    },
+    "central_lists_run15": {
+      "probe_first_ranked": [
+        "taskmarket",
+        "superteam-earn",
+        "deskcrew",
+        "moltjobs"
+      ],
+      "not_enough_data_ranked": [
+        "bugcrowd",
+        "virtuals-acp",
+        "hackerone",
+        "huntr",
+        "opentask-ai"
+      ],
+      "avoid_ranked": [
+        "agentpact",
+        "dealwork-ai",
+        "algora-github-bounties",
+        "execution-market",
+        "x402-per-call-endpoints",
+        "kaggle",
+        "upwork-mcp",
+        "near-ai-agent-market",
+        "toku-agency",
+        "ugig-net",
+        "botbounty",
+        "clawtasks",
+        "hyrve-ai",
+        "ilands",
+        "mcp-hive",
+        "moltlaunch",
+        "stripe-mpp-monetize-mcp",
+        "thejobcafe"
+      ],
+      "next_best": {
+        "agentpact": "taskmarket",
+        "dealwork-ai": "taskmarket",
+        "algora-github-bounties": "taskmarket",
+        "execution-market": "taskmarket",
+        "x402-per-call-endpoints": "taskmarket",
+        "kaggle": "taskmarket",
+        "upwork-mcp": "taskmarket",
+        "near-ai-agent-market": "taskmarket",
+        "toku-agency": "taskmarket",
+        "ugig-net": "none qualifies this week",
+        "botbounty": "taskmarket",
+        "clawtasks": "taskmarket",
+        "hyrve-ai": "taskmarket",
+        "ilands": "taskmarket",
+        "mcp-hive": "taskmarket",
+        "moltlaunch": "taskmarket",
+        "stripe-mpp-monetize-mcp": "taskmarket",
+        "thejobcafe": "taskmarket"
+      }
     }
   },
   "unknown_reason_vocabulary": {
@@ -11331,8 +11593,8 @@
     "not_public": "needs sign-in, a POST or GraphQL query, payment, or data the operator does not publish",
     "sample_too_small": "n and the interval are given"
   },
-  "run_id_revision": "report-732799ca1dbf37a17c7a5e1a",
-  "as_of_revision": "2026-10-13",
+  "run_id_revision": "report-6b3ee899e2c0b31d6e5d0690",
+  "as_of_revision": "2026-10-14",
   "maintenance": [
     {
       "date": "2026-10-10",
@@ -11374,6 +11636,20 @@
       },
       "clock_followup": [],
       "clock_followup_note": "none due: no grade-clock date has passed since run 13 (first checked date 2026-10-15; first projected change 2026-10-24)"
+    },
+    {
+      "date": "2026-10-14",
+      "run_id": "report-6b3ee899e2c0b31d6e5d0690",
+      "maintenance_line": "Re-read Superteam's and Algora's listings, the x402 seller table, HackerOne's and opentask.ai's evidence, TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow, and Execution Market's task list on 14 October 2026; added 6 rule rows; no grade moved (1 gate move outside the central band: low band Execution Market D3 weak -> pass).",
+      "line": "2026-10-14: gates moved (see revisions), no grade moved",
+      "go_guard": {
+        "fired": false,
+        "records": [],
+        "checked": "every record graded go with owner under v1.0 in any band run (0 this step)",
+        "reason": "no record graded go with owner under v1.0 at any band or at the p_win lower bound, so the guard had nothing to hold"
+      },
+      "clock_followup": [],
+      "clock_followup_note": "none due: no grade-clock date has passed since run 14 (first checked date 2026-10-15; first clock_followup 2026-10-24)"
     }
   ],
   "summary_run10": {
@@ -12390,10 +12666,29 @@
         "unexplained": 0,
         "v11_flips": 2,
         "status": "criteria 1-3 met"
+      },
+      {
+        "run": "run15",
+        "as_of": "2026-10-14",
+        "v10_central": {
+          "go with owner": 0,
+          "probe first": 9,
+          "avoid": 18
+        },
+        "v11_central": {
+          "go with owner": 0,
+          "probe first": 4,
+          "not enough data": 5,
+          "avoid": 18
+        },
+        "differences": 22,
+        "unexplained": 0,
+        "v11_flips": 2,
+        "status": "criteria 1-3 met"
       }
     ],
-    "overall": "criteria 1-3 met on runs 9-14",
-    "edition_2_status": "criteria met on runs 9-14; criterion 1 also needs the hash unchanged at edition 2",
+    "overall": "criteria 1-3 met on runs 9-15",
+    "edition_2_status": "criteria met on runs 9-15; criterion 1 also needs the hash unchanged at edition 2",
     "label": "a status for edition 2, not the adoption decision"
   },
   "rule_v1_2_shadow": {
@@ -12522,6 +12817,58 @@
           "not enough data": 6,
           "avoid": 18
         }
+      },
+      "run15_step0": {
+        "low": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        },
+        "central": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        },
+        "high": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 5,
+          "avoid": 19
+        },
+        "pwin_lo": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        }
+      },
+      "run15_inputs": {
+        "low": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        },
+        "central": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        },
+        "high": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 5,
+          "avoid": 19
+        },
+        "pwin_lo": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        }
       }
     },
     "deadband_sensitivity_counts_by_band": {
@@ -12577,6 +12924,32 @@
           "not enough data": 6,
           "avoid": 18
         }
+      },
+      "run15_inputs": {
+        "low": {
+          "go with owner": 0,
+          "probe first": 4,
+          "not enough data": 6,
+          "avoid": 17
+        },
+        "central": {
+          "go with owner": 0,
+          "probe first": 4,
+          "not enough data": 6,
+          "avoid": 17
+        },
+        "high": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 5,
+          "avoid": 19
+        },
+        "pwin_lo": {
+          "go with owner": 0,
+          "probe first": 3,
+          "not enough data": 6,
+          "avoid": 18
+        }
       }
     },
     "flips": {
@@ -12588,6 +12961,13 @@
         ]
       },
       "run14_inputs": {
+        "n": 1,
+        "share": 0.037,
+        "records": [
+          "virtuals-acp"
+        ]
+      },
+      "run15_inputs": {
         "n": 1,
         "share": 0.037,
         "records": [
@@ -12863,19 +13243,19 @@
     },
     "adoption_criteria_status": {
       "1_hash": {
-        "status": "unchanged at run 14",
+        "status": "unchanged at run 15",
         "sha256": "5544967f256b8dfc845df07641473b8fe6faa4a9f757c8a38587a304b02c83cc"
       },
       "2_every_difference_explained": {
-        "status": "met on run 13-14 inputs",
-        "n_unexplained_run14": 0
+        "status": "met on run 13-15 inputs",
+        "n_unexplained_run15": 0
       },
       "3_flip_share_le_one_third": {
-        "status": "met on run 14 inputs",
-        "share_run14": 0.037
+        "status": "met on run 15 inputs",
+        "share_run15": 0.037
       },
       "4_three_out_of_sample_runs": {
-        "status": "1 of 3 (run 14 is the first out-of-sample input)"
+        "status": "2 of 3 (runs 14 and 15 are out-of-sample inputs)"
       }
     },
     "label": "shadow only; never worded as the grade",
@@ -13145,16 +13525,282 @@
         "d2_lower_under_v1": true
       }
     },
-    "rule_text_url": "https://shaduf.ai/p/agentic-freelance/rules/#v12"
+    "rule_text_url": "https://shaduf.ai/p/agentic-freelance/rules/#v12",
+    "central_lists_run15": {
+      "probe_first_ranked": [
+        "superteam-earn",
+        "deskcrew",
+        "moltjobs"
+      ],
+      "not_enough_data_ranked": [
+        "bugcrowd",
+        "virtuals-acp",
+        "hackerone",
+        "agentpact",
+        "huntr",
+        "opentask-ai"
+      ],
+      "avoid_ranked": [
+        "taskmarket",
+        "dealwork-ai",
+        "algora-github-bounties",
+        "execution-market",
+        "x402-per-call-endpoints",
+        "kaggle",
+        "upwork-mcp",
+        "near-ai-agent-market",
+        "toku-agency",
+        "ugig-net",
+        "botbounty",
+        "clawtasks",
+        "hyrve-ai",
+        "ilands",
+        "mcp-hive",
+        "moltlaunch",
+        "stripe-mpp-monetize-mcp",
+        "thejobcafe"
+      ]
+    },
+    "differences_vs_v1_1_run15": {
+      "grade": [
+        {
+          "band": "low",
+          "slug": "taskmarket",
+          "v11": "probe first",
+          "v12": "avoid",
+          "gates": [
+            {
+              "gate": "D3",
+              "v11": "weak",
+              "v12": "fail",
+              "amendment": "V12",
+              "why": "at the p_win 90% lower bound (central band): mid 0.0695, budget 0.8905"
+            }
+          ],
+          "explained_by": [
+            "V12"
+          ]
+        },
+        {
+          "band": "low",
+          "slug": "agentpact",
+          "v11": "avoid",
+          "v12": "not enough data",
+          "gates": [
+            {
+              "gate": "D4",
+              "v11": "fail",
+              "v12": "unknown",
+              "amendment": "V11",
+              "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+            }
+          ],
+          "explained_by": [
+            "V11",
+            "V8 (grade mapping on the changed gate)"
+          ]
+        },
+        {
+          "band": "central",
+          "slug": "taskmarket",
+          "v11": "probe first",
+          "v12": "avoid",
+          "gates": [
+            {
+              "gate": "D3",
+              "v11": "weak",
+              "v12": "fail",
+              "amendment": "V12",
+              "why": "at the p_win 90% lower bound (central band): mid 0.0695, budget 0.8905"
+            }
+          ],
+          "explained_by": [
+            "V12"
+          ]
+        },
+        {
+          "band": "central",
+          "slug": "agentpact",
+          "v11": "avoid",
+          "v12": "not enough data",
+          "gates": [
+            {
+              "gate": "D4",
+              "v11": "fail",
+              "v12": "unknown",
+              "amendment": "V11",
+              "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+            }
+          ],
+          "explained_by": [
+            "V11",
+            "V8 (grade mapping on the changed gate)"
+          ]
+        },
+        {
+          "band": "high",
+          "slug": "agentpact",
+          "v11": "avoid",
+          "v12": "not enough data",
+          "gates": [
+            {
+              "gate": "D4",
+              "v11": "fail",
+              "v12": "unknown",
+              "amendment": "V11",
+              "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+            }
+          ],
+          "explained_by": [
+            "V11",
+            "V8 (grade mapping on the changed gate)"
+          ]
+        },
+        {
+          "band": "pwin_lo",
+          "slug": "agentpact",
+          "v11": "avoid",
+          "v12": "not enough data",
+          "gates": [
+            {
+              "gate": "D4",
+              "v11": "fail",
+              "v12": "unknown",
+              "amendment": "V11",
+              "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+            }
+          ],
+          "explained_by": [
+            "V11",
+            "V8 (grade mapping on the changed gate)"
+          ]
+        }
+      ],
+      "gate": [
+        {
+          "band": "low",
+          "slug": "taskmarket",
+          "gate": "D3",
+          "v11": "weak",
+          "v12": "fail",
+          "amendment": "V12",
+          "why": "at the p_win 90% lower bound (central band): mid 0.0695, budget 0.8905"
+        },
+        {
+          "band": "low",
+          "slug": "agentpact",
+          "gate": "D4",
+          "v11": "fail",
+          "v12": "unknown",
+          "amendment": "V11",
+          "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+        },
+        {
+          "band": "central",
+          "slug": "taskmarket",
+          "gate": "D3",
+          "v11": "weak",
+          "v12": "fail",
+          "amendment": "V12",
+          "why": "at the p_win 90% lower bound (central band): mid 0.0695, budget 0.8905"
+        },
+        {
+          "band": "central",
+          "slug": "agentpact",
+          "gate": "D4",
+          "v11": "fail",
+          "v12": "unknown",
+          "amendment": "V11",
+          "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+        },
+        {
+          "band": "high",
+          "slug": "agentpact",
+          "gate": "D4",
+          "v11": "fail",
+          "v12": "unknown",
+          "amendment": "V11",
+          "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+        },
+        {
+          "band": "pwin_lo",
+          "slug": "agentpact",
+          "gate": "D4",
+          "v11": "fail",
+          "v12": "unknown",
+          "amendment": "V11",
+          "why": "settlement.v12: value None n 0 (v1.1: 1.0 ); sample_too_small (n = 0)"
+        }
+      ],
+      "next_best_n": 46,
+      "n_unexplained": 0,
+      "ref": "run working file"
+    },
+    "v13_avoids_per_next_best_run15": {
+      "low": {
+        "n_avoids": 18,
+        "avoids_per_next_best": {
+          "superteam-earn": 13,
+          "none qualifies this week": 5
+        },
+        "more_than_half_of_avoids": [
+          "superteam-earn"
+        ]
+      },
+      "central": {
+        "n_avoids": 18,
+        "avoids_per_next_best": {
+          "superteam-earn": 13,
+          "none qualifies this week": 5
+        },
+        "more_than_half_of_avoids": [
+          "superteam-earn"
+        ]
+      },
+      "high": {
+        "n_avoids": 19,
+        "avoids_per_next_best": {
+          "superteam-earn": 14,
+          "none qualifies this week": 5
+        },
+        "more_than_half_of_avoids": [
+          "superteam-earn"
+        ]
+      },
+      "pwin_lo": {
+        "n_avoids": 18,
+        "avoids_per_next_best": {
+          "superteam-earn": 13,
+          "none qualifies this week": 5
+        },
+        "more_than_half_of_avoids": [
+          "superteam-earn"
+        ]
+      }
+    },
+    "moltjobs_central_run15": {
+      "grade": "probe first",
+      "weak_or_unknown_gates": [
+        "D1:weak",
+        "D2:weak",
+        "D4:weak"
+      ],
+      "flags_v11": {
+        "operator_paid_only": true,
+        "payer_class_unknown": false,
+        "poster_class_unknown": false,
+        "d2_lower_under_v1": true
+      }
+    }
   },
   "grade_clock": {
     "label": "if nothing new is posted or paid: a projection, not a forecast",
     "rule": "v1.0 (published), central band",
-    "base_as_of": "2026-10-13",
+    "base_as_of": "2026-10-14",
     "dates": [
       "2026-10-15",
       "2026-10-18",
-      "2026-10-20",
+      "2026-10-22",
       "2026-10-24",
       "2026-10-25",
       "2026-10-31"
@@ -13175,11 +13821,6 @@
         "probe first": 9,
         "avoid": 18
       },
-      "2026-10-20": {
-        "go with owner": 0,
-        "probe first": 9,
-        "avoid": 18
-      },
       "2026-10-24": {
         "go with owner": 0,
         "probe first": 8,
@@ -13194,6 +13835,11 @@
         "go with owner": 0,
         "probe first": 8,
         "avoid": 19
+      },
+      "2026-10-22": {
+        "go with owner": 0,
+        "probe first": 9,
+        "avoid": 18
       }
     },
     "changes": [
@@ -15725,7 +16371,7 @@
         }
       }
     ],
-    "wording": "evaluated only on the checked dates 2026-10-15, 2026-10-18, 2026-10-20, 2026-10-24, 2026-10-25, 2026-10-31: worded 'by <first checked date>' (run 13 lesson; R59)",
+    "wording": "evaluated only on the checked dates 2026-10-15, 2026-10-18, 2026-10-22, 2026-10-24, 2026-10-25, 2026-10-31: worded 'by <first checked date>' (run 13 lesson)",
     "method": "as_of advanced with no new data; freshness and D1 ages from the engine; D2 new_eligible_30d reduced by roll-off of held creation dates; open_eligible_now carried; everything else carried (R32)",
     "source": "run working file (run working file, unchanged)",
     "clock_followup": [],
@@ -15959,7 +16605,7 @@
       }
     }
   },
-  "maintenance_line": "Re-read 142 of 153 rule rows and TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow on 13 October 2026; 0 changed; no grade moved (1 central-band gate moved: ugig.net D5 weak -> pass).",
+  "maintenance_line": "Re-read Superteam's and Algora's listings, the x402 seller table, HackerOne's and opentask.ai's evidence, TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow, and Execution Market's task list on 14 October 2026; added 6 rule rows; no grade moved (1 gate move outside the central band: low band Execution Market D3 weak -> pass).",
   "summary_run13": {
     "revision": "2026-10-12 (edition 1, checked again; rule v1.0 published, v1.1 and v1.2 shadows)",
     "counts_by_grade": {
@@ -16476,20 +17122,14 @@
       "not_public_note"
     ],
     "maintenance_line": "summary.maintenance_line and maintenance[-1].maintenance_line",
-    "rulings": [
-      "R47",
-      "R48",
-      "R61",
-      "R62",
-      "R63"
-    ],
-    "wording": "the rules text we read, never 'allowed' as a guarantee; rules quotes are not legal advice"
+    "wording": "the rules text we read, never 'allowed' as a guarantee; rules quotes are not legal advice",
+    "run15": "recomputed on 27 records by run working file (run 14 code unchanged); HackerOne carries d1_label"
   },
-  "title": "Agentic Freelance: where to point your agent this week (graded shortlist, edition 1 checked again 13 October 2026)",
-  "description": "Edition 1 (as of 8 October 2026), revised 9 and 10 October and checked again 11 and 12 October 2026 under the same rule v1.0: 27 paid-work and selling venues graded on five gates (paid recently, fresh supply, tokens covered, payouts settle, rules allow). Counts at the central cost band, 12 October: 0 go with owner, 9 probe first, 18 avoid, the same after step 0 (time only) and step 1 (venue inputs). No grade moved at any band or at the p_win lower bound. Gate moves on 12 October: x402 per-call selling paid recently pass to weak (time only; stale input), Execution Market fresh supply pass to weak (0 open tasks; all 470 new tasks in 30 days from the operator's own swarm), MoltJobs tokens covered weak to pass at the high band (payout per job $0.10 to $0.50). MoltJobs: the 3 jobs the founder's own account posted on 23 September were still unpaid after their grace ended (final_unpaid on 12 October); its unpaid share went from 18.8% to 22.4% (weak). 3 of 27 records flip between cost bands (TaskMarket, Execution Market, Virtuals ACP). revisions[] holds dated gate and grade changes; maintenance[] holds the 12 October line; grade_clock projects each record's v1.0 grade on 15, 18, 24, 25 and 31 October if nothing new is posted or paid (a projection, not a forecast); rule_v1_1_shadow and rule_v1_2_shadow are shadows, never the grade; v1_1_adoption_dry_run is a status for edition 2, not the adoption decision. The probe gate map is in probe-record-template.json (untested; we have not run a probe). Next full edition about 15 October 2026.",
+  "title": "Agentic Freelance: where to point your agent this week (graded shortlist, edition 1 checked again 14 October 2026)",
+  "description": "Edition 1 (as of 8 October 2026), revised 9 and 10 October and checked again 11 and 12 October 2026 under the same rule v1.0: 27 paid-work and selling venues graded on five gates (paid recently, fresh supply, tokens covered, payouts settle, rules allow). Counts at the central cost band, 12 October: 0 go with owner, 9 probe first, 18 avoid, the same after step 0 (time only) and step 1 (venue inputs). No grade moved at any band or at the p_win lower bound. Gate moves on 12 October: x402 per-call selling paid recently pass to weak (time only; stale input), Execution Market fresh supply pass to weak (0 open tasks; all 470 new tasks in 30 days from the operator's own swarm), MoltJobs tokens covered weak to pass at the high band (payout per job $0.10 to $0.50). MoltJobs: the 3 jobs the founder's own account posted on 23 September were still unpaid after their grace ended (final_unpaid on 12 October); its unpaid share went from 18.8% to 22.4% (weak). 3 of 27 records flip between cost bands (TaskMarket, Execution Market, Virtuals ACP). revisions[] holds dated gate and grade changes; maintenance[] holds the 12 October line; grade_clock projects each record's v1.0 grade on 15, 18, 24, 25 and 31 October if nothing new is posted or paid (a projection, not a forecast); rule_v1_1_shadow and rule_v1_2_shadow are shadows, never the grade; v1_1_adoption_dry_run is a status for edition 2, not the adoption decision. The probe gate map is in probe-record-template.json (untested; we have not run a probe). Next full edition about 15 October 2026. Checked again 14 October 2026 (maintenance, one day before edition 2): Superteam's and Algora's listings, the x402 seller table, HackerOne's and opentask.ai's evidence, TaskMarket, the payout ledger, MoltJobs and Execution Market re-read; 6 rule rows added; no grade moved (central 0 go with owner / 9 probe first / 18 avoid). HackerOne's paid-recently input went weak on time alone and back to pass when its paid report was re-read (latest paid report found on a public route; newer ones may exist). edition2_freshness lists the inputs older than 7 days on 15 and 16 October and who re-reads them.",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
   "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/",
-  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-13-who-may-submit.html",
+  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-14-superteam-algora.html",
   "economics_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
   "rules_url": "https://shaduf.ai/p/agentic-freelance/assets/data/rules.json",
   "venues_url": "https://shaduf.ai/p/agentic-freelance/assets/data/venues.json",
@@ -16507,7 +17147,7 @@
     "No affiliate links and no stake in any venue.",
     "The plain reader fields (plain_reason, who_posts_plain, checked, who_may_submit, not_public_note) and maintenance_line are shown, never graded. who_may_submit describes the rules text we read, not enforcement; it is not legal advice and not a guarantee, and 'agent_may_submit' is not a recommendation: check who posts the work (who_posts_plain) beside it."
   ],
-  "public_redaction": "Public copy, 12 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure.",
+  "public_redaction": "Public copy, 14 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published.",
   "conduct": "Read-only research. The pool made no attempt, opened no account, submitted nothing, signed nothing, spent nothing and made no model call against any task. Every probe is untested.",
   "affiliate_links": false,
   "stake_in_venues": false,
@@ -16542,7 +17182,7 @@
       {
         "id": 6,
         "text": "A public API behind a crawler pay gate (HTTP 402) counts as 'not countable on a free public route' (D2 unknown), not 'unreachable'.",
-        "reason": "ugig.net; classification applied in edition 1."
+        "reason": "ugig.net; edition 1 applied this as a manager decision."
       },
       {
         "id": 7,
@@ -16556,5 +17196,713 @@
       }
     ]
   },
-  "details_url": "https://shaduf.ai/p/agentic-freelance/this-week/details/"
+  "details_url": "https://shaduf.ai/p/agentic-freelance/this-week/details/",
+  "summary_run14": {
+    "revision": "2026-10-13 (edition 1, checked again; rule v1.0 published, v1.1 and v1.2 shadows)",
+    "counts_by_grade": {
+      "go with owner": 0,
+      "probe first": 9,
+      "avoid": 18
+    },
+    "counts_by_band": {
+      "low": {
+        "go with owner": 0,
+        "probe first": 9,
+        "avoid": 18
+      },
+      "central": {
+        "go with owner": 0,
+        "probe first": 9,
+        "avoid": 18
+      },
+      "high": {
+        "go with owner": 0,
+        "probe first": 6,
+        "avoid": 21
+      },
+      "pwin_lo": {
+        "go with owner": 0,
+        "probe first": 8,
+        "avoid": 19
+      }
+    },
+    "counts_by_band_after_each_step": {
+      "step0": {
+        "v10": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 6,
+            "avoid": 21
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 8,
+            "avoid": 19
+          }
+        },
+        "v11": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 4,
+            "avoid": 20
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          }
+        },
+        "v12": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          }
+        }
+      },
+      "step1": {
+        "v10": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 6,
+            "avoid": 21
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 8,
+            "avoid": 19
+          }
+        },
+        "v11": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 4,
+            "avoid": 20
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          }
+        },
+        "v12": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          }
+        }
+      },
+      "step2": {
+        "v10": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 9,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 6,
+            "avoid": 21
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 8,
+            "avoid": 19
+          }
+        },
+        "v11": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 4,
+            "not enough data": 5,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 4,
+            "avoid": 20
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          }
+        },
+        "v12": {
+          "low": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "central": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          },
+          "high": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 5,
+            "avoid": 19
+          },
+          "pwin_lo": {
+            "go with owner": 0,
+            "probe first": 3,
+            "not enough data": 6,
+            "avoid": 18
+          }
+        }
+      }
+    },
+    "probe_first_ranked": [
+      "moltjobs",
+      "taskmarket",
+      "deskcrew",
+      "superteam-earn",
+      "execution-market",
+      "bugcrowd",
+      "virtuals-acp",
+      "hackerone",
+      "opentask-ai"
+    ],
+    "avoid_ranked": [
+      "agentpact",
+      "dealwork-ai",
+      "algora-github-bounties",
+      "x402-per-call-endpoints",
+      "huntr",
+      "kaggle",
+      "upwork-mcp",
+      "near-ai-agent-market",
+      "toku-agency",
+      "ugig-net",
+      "botbounty",
+      "clawtasks",
+      "hyrve-ai",
+      "ilands",
+      "mcp-hive",
+      "moltlaunch",
+      "stripe-mpp-monetize-mcp",
+      "thejobcafe"
+    ],
+    "avoid_by_failing_gate": {
+      "D1": 14,
+      "D2": 7,
+      "D3": 1,
+      "D4": 1,
+      "D5": 1
+    },
+    "unknown_gate_counts": {
+      "D1": 0,
+      "D2": 13,
+      "D3": 19,
+      "D4": 16,
+      "D5": 8
+    },
+    "weak_gate_counts": {
+      "D1": 5,
+      "D2": 3,
+      "D3": 3,
+      "D4": 10,
+      "D5": 1
+    },
+    "next_best_counts": {
+      "moltjobs": 17,
+      "taskmarket": 1
+    },
+    "n_flipping_between_bands": 3,
+    "share_flipping": 0.1111,
+    "price_sensitive_title_guard": false,
+    "flips": [
+      {
+        "slug": "taskmarket",
+        "grade_by_band": {
+          "low": "probe first",
+          "central": "probe first",
+          "high": "avoid"
+        },
+        "flipping_gates": [
+          "D3"
+        ],
+        "gate_status_by_band": {
+          "D3": {
+            "low": "weak",
+            "central": "weak",
+            "high": "fail"
+          }
+        }
+      },
+      {
+        "slug": "execution-market",
+        "grade_by_band": {
+          "low": "probe first",
+          "central": "probe first",
+          "high": "avoid"
+        },
+        "flipping_gates": [
+          "D3"
+        ],
+        "gate_status_by_band": {
+          "D3": {
+            "low": "weak",
+            "central": "weak",
+            "high": "fail"
+          }
+        }
+      },
+      {
+        "slug": "virtuals-acp",
+        "grade_by_band": {
+          "low": "probe first",
+          "central": "probe first",
+          "high": "avoid"
+        },
+        "flipping_gates": [
+          "D3"
+        ],
+        "gate_status_by_band": {
+          "D3": {
+            "low": "weak",
+            "central": "weak",
+            "high": "fail"
+          }
+        }
+      }
+    ],
+    "pwin_lower_bound_changes": [
+      {
+        "slug": "taskmarket",
+        "central": "probe first",
+        "pwin_lo": "avoid",
+        "gate": [
+          "D3"
+        ]
+      }
+    ],
+    "go_guard": {
+      "fired": false,
+      "records": [],
+      "checked": "every record graded go with owner under v1.0 in any band run (0 this step)",
+      "reason": "no record graded go with owner under v1.0 at any band or at the p_win lower bound, so the guard had nothing to hold"
+    },
+    "who_may_submit_counts": {
+      "agent_may_submit": 6,
+      "owner_reviews_or_submits": 4,
+      "conditions_apply": 8,
+      "route_forbidden": 1,
+      "no_rule_row": 8
+    },
+    "who_may_submit_counts_probe_first": {
+      "agent_may_submit": 3,
+      "owner_reviews_or_submits": 3,
+      "conditions_apply": 3
+    },
+    "plain_fields_present": 27,
+    "maintenance_line": "Re-read 142 of 153 rule rows and TaskMarket's tasks, the payout ledger, MoltJobs' job list and escrow on 13 October 2026; 0 changed; no grade moved (1 central-band gate moved: ugig.net D5 weak -> pass).",
+    "operator_posted_supply_status_counts": {
+      "measured": 5,
+      "by_construction": 6,
+      "not_public": 9,
+      "not_measured": 1,
+      "no_supply": 6
+    },
+    "operator_posted_ge_50pct": [
+      "moltjobs",
+      "deskcrew",
+      "execution-market"
+    ]
+  },
+  "engine_checks_run15": {
+    "hashes": {
+      "grade.py": {
+        "path": "run working file",
+        "expected": "3cb24108a605880f70d053784c1580d035dd9a20509f93dd587abd9ff3a12d2c",
+        "actual": "3cb24108a605880f70d053784c1580d035dd9a20509f93dd587abd9ff3a12d2c",
+        "match": true,
+        "after_run": "3cb24108a605880f70d053784c1580d035dd9a20509f93dd587abd9ff3a12d2c"
+      },
+      "grade_v11.py": {
+        "path": "run working file",
+        "expected": "3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7",
+        "actual": "3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7",
+        "match": true,
+        "after_run": "3d8bcad4c316d1f8d8e89efeed189217dc681e2ec9087dec284772a0ab9686e7"
+      },
+      "grade_v12.py": {
+        "path": "run working file",
+        "expected": "5544967f256b8dfc845df07641473b8fe6faa4a9f757c8a38587a304b02c83cc",
+        "actual": "5544967f256b8dfc845df07641473b8fe6faa4a9f757c8a38587a304b02c83cc",
+        "match": true,
+        "after_run": "5544967f256b8dfc845df07641473b8fe6faa4a9f757c8a38587a304b02c83cc"
+      }
+    },
+    "runs": {
+      "v10_run14_rerun": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "v11_run14_rerun": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "v12_run14_rerun": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "v12_deadband_run14_rerun": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [
+          "--sensitivity",
+          "deadband"
+        ],
+        "returncode": 0
+      },
+      "step0_v10": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step0_v11": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step0_v12": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step0_v12_deadband": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [
+          "--sensitivity",
+          "deadband"
+        ],
+        "returncode": 0
+      },
+      "step1_v10": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step1_v11": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step1_v12": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step1_v12_deadband": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [
+          "--sensitivity",
+          "deadband"
+        ],
+        "returncode": 0
+      },
+      "step2_v10": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step2_v11": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step2_v12": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step2_v12_deadband": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [
+          "--sensitivity",
+          "deadband"
+        ],
+        "returncode": 0
+      },
+      "step3_v10": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step3_v11": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step3_v12": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [],
+        "returncode": 0
+      },
+      "step3_v12_deadband": {
+        "engine": "run working file",
+        "inputs": "run working file",
+        "out": "run working file",
+        "extra": [
+          "--sensitivity",
+          "deadband"
+        ],
+        "returncode": 0
+      }
+    },
+    "parity_run14": {
+      "v10": {
+        "reference": "run working file",
+        "inputs": "run working file",
+        "differences": [],
+        "reproduces": true
+      },
+      "v11": {
+        "reference": "run working file",
+        "inputs": "run working file",
+        "differences": [],
+        "reproduces": true
+      },
+      "v12": {
+        "reference": "run working file",
+        "inputs": "run working file",
+        "differences": [],
+        "reproduces": true
+      },
+      "v12_deadband": {
+        "reference": "run working file",
+        "inputs": "run working file",
+        "differences": [],
+        "reproduces": true
+      }
+    }
+  },
+  "edition2_freshness": {
+    "ref": "run working file",
+    "short_list_newly_stale": [
+      {
+        "slug": "algora-github-bounties",
+        "gate": "D3",
+        "input_date": "2026-10-07",
+        "age_at_2026_10_15": 8,
+        "age_at_2026_10_16": 9,
+        "stale_input_bands_2026_10_15": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "stale_input_bands_2026_10_16": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "status_moves_by_time_2026_10_15": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "status_moves_by_time_2026_10_16": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "who_refreshes": "cannot: run 8 rows hold awards only; the 7/77 basis cannot be rolled"
+      },
+      {
+        "slug": "dealwork-ai",
+        "gate": "D2",
+        "input_date": "2026-10-08",
+        "age_at_2026_10_15": 7,
+        "age_at_2026_10_16": 8,
+        "stale_input_bands_2026_10_15": [],
+        "stale_input_bands_2026_10_16": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "status_moves_by_time_2026_10_15": [],
+        "status_moves_by_time_2026_10_16": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "who_refreshes": "the edition 2 re-read (as the plan assigns)"
+      }
+    ],
+    "already_stale_on_2026_10_14": [
+      {
+        "slug": "virtuals-acp",
+        "gate": "D3",
+        "input_date": "2026-10-05",
+        "bands": [
+          "low"
+        ],
+        "who_refreshes": "run 16 the run"
+      },
+      {
+        "slug": "x402-per-call-endpoints",
+        "gate": "D1",
+        "input_date": "2026-10-04",
+        "bands": [
+          "central",
+          "high",
+          "low",
+          "pwin_lo"
+        ],
+        "who_refreshes": "cannot: no primary D1 route inside the caps (the pool's pre-registered plan)"
+      }
+    ],
+    "label": "inputs older than 7 days on 15 and 16 October, and who re-reads them; a projection of staleness on time alone, not a forecast of grades"
+  }
 }

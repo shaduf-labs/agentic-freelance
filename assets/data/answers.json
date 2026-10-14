@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-answers/0.1",
-  "run_id": "report-732799ca1dbf37a17c7a5e1a",
-  "as_of": "2026-10-13",
+  "run_id": "report-6b3ee899e2c0b31d6e5d0690",
+  "as_of": "2026-10-14",
   "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
   "answers": [
     {
@@ -276,7 +276,7 @@
         "source": "shortlist.json (edition 1, rule v1.0)",
         "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
       },
-      "last_checked": "2026-10-08",
+      "last_checked": "2026-10-14",
       "next_best_route_run8": {
         "venue_slug": "taskmarket",
         "why": "payments are visible on chain, though the expected value per attempt is below mid-tier token cost",
@@ -284,7 +284,69 @@
       },
       "shortlist_grade": "probe first (D1, D2, D4 weak)",
       "shortlist_grade_2026_10_09": "probe first",
-      "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet"
+      "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet",
+      "run15": {
+        "date": "2026-10-14",
+        "short_answer": "partly (unchanged)",
+        "one_line": "Partly, on 14 October: 1 agent-allowed bounty is open (closing 24 October); winners are announced but payment is not public; at least 10 agent-account wins are still unclaimed after 104-127 days.",
+        "facts": [
+          {
+            "value": 1,
+            "label": "agent-allowed bounties open now (La Familia, deadline 2026-10-24, Global)",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          },
+          {
+            "value": 2,
+            "label": "agent-allowed listings published in the 30 days to 14 October (0 since 9 October)",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          },
+          {
+            "value": "2026-10-09",
+            "label": "newest winners announcement on an agent-allowed listing",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          },
+          {
+            "value": 0,
+            "label": "payment-like fields on the public winners route (4 listings read)",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          },
+          {
+            "value": 10,
+            "label": "agent-account wins still carrying the agent marker, unclaimed 104-127 days (a lower bound; 0 lost the marker)",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          },
+          {
+            "value": 0.02407,
+            "label": "chance an entry wins (main row: 108 awards on 4,487 submissions; most entries are by humans)",
+            "as_of": "2026-10-14",
+            "basis": "measured (CI estimated)"
+          },
+          {
+            "value": 0.214,
+            "label": "expected USD per day at a $1.50 cap (announced prizes; supply-bound)",
+            "as_of": "2026-10-14",
+            "basis": "estimated"
+          },
+          {
+            "value": "48 / 28",
+            "label": "listings in review / of them more than 14 days past deadline",
+            "as_of": "2026-10-14",
+            "basis": "measured"
+          }
+        ],
+        "what_we_did_not_verify": "whether any winner was paid (payment fields are sign-in only); whether claimed agent wins are paid",
+        "next_best_from_shortlist": {
+          "slug": "moltjobs",
+          "grade": "probe first",
+          "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid"
+        },
+        "source": "run working file"
+      }
     },
     {
       "id": "does-algora-pay-for-agent-drafted-work",
@@ -419,6 +481,60 @@
       "next_best_route": "Moltbook has no payout route; for paid work see the shortlist (no venue clears every check this week).",
       "last_checked": "2026-10-13",
       "source_path": "run working file + communities.json#communities[moltbook]"
+    },
+    {
+      "id": "is-algora-still-paying",
+      "question": "Is Algora still paying?",
+      "short_answer": "not_recently",
+      "one_line": "Not recently, on 14 October: on the 6 boards that paid in the last 180 days, no new bounty has been posted since 9 July; the latest award we found is 2 July and the latest payout 26 August (60 days old on 25 October).",
+      "numbers": [
+        {
+          "value": 6,
+          "label": "boards with an award in the 180 days to 14 October (none left the list; tursodatabase leaves on 27 October unless it awards)",
+          "as_of": "2026-10-14",
+          "basis": "measured (award dates from run 8 bot-comment reads)"
+        },
+        {
+          "value": 0,
+          "label": "new bounties on those boards since 9 July (GitHub search plus the boards' open counters)",
+          "as_of": "2026-10-14",
+          "basis": "measured; detection limit: GitHub search indexes app comments imperfectly"
+        },
+        {
+          "value": "2026-07-02",
+          "label": "latest award found (a tip)",
+          "as_of": "2026-10-14",
+          "basis": "measured; 5 non-paying-board issues could not be read (rate limit)"
+        },
+        {
+          "value": "2026-08-26",
+          "label": "latest payout found (bot 'has been awarded' comment; the Stripe transfer itself is not visible)",
+          "as_of": "2026-10-14",
+          "basis": "measured"
+        },
+        {
+          "value": 2,
+          "label": "open bounties on paying boards ($20 and $5)",
+          "as_of": "2026-10-14",
+          "basis": "measured"
+        },
+        {
+          "value": "agrees",
+          "label": "a third party's daily count (bounty-census) finds no new bounty or award on these boards; weak evidence, as it cannot see closed issues, tips or award dates",
+          "as_of": "2026-10-14",
+          "basis": "third party"
+        }
+      ],
+      "observation": "a $50 tip was started on 10 October; no completion shown by 14 October (not an award)",
+      "what_we_did_not_verify": "Stripe transfers; boards outside the 45 checked in run 8; awards on 5 issues not read this run",
+      "next_best_route": {
+        "venue_slug": "moltjobs",
+        "grade": "probe first",
+        "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid",
+        "rule": "highest-ranked probe-first record, v1.0 central (shortlist.json#summary.probe_first_ranked[0])"
+      },
+      "last_checked": "2026-10-14",
+      "source_path": "run working file"
     }
   ],
   "next_best_rule": "next_best_route taken from shortlist.json (edition 1): the shortlist's computed next-best for avoided venues; for graded venues that are not avoided, and for OpenClaw (not a venue), the same rule applied to the other non-avoid records (highest-ranked record that shares the work and has a no-heavier owner gate)",
@@ -428,14 +544,15 @@
   },
   "previous_run_id_run13": "report-d110858e7247d2b988c08316",
   "title": "Agentic Freelance: Is it real? Plain answers",
-  "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow).",
+  "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow). Updated 14 October 2026: 'Is Superteam legit for agents?' refreshed and 'Is Algora still paying?' added (dated facts, next-best from the shortlist).",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
   "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
-  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-13-who-may-submit.html",
+  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-14-superteam-algora.html",
   "usage_rules": [
     "Expected values are estimates, never promises.",
     "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
   ],
-  "public_redaction": "Public copy, 9 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored.",
-  "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json"
+  "public_redaction": "Public copy, 14 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published.",
+  "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
+  "previous_run_id_run14": "report-732799ca1dbf37a17c7a5e1a"
 }
