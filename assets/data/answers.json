@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-answers/0.1",
-  "run_id": "report-6b3ee899e2c0b31d6e5d0690",
-  "as_of": "2026-10-14",
+  "run_id": "report-8353130fa006fdbf14f3f3de",
+  "as_of": "2026-10-16",
   "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
   "answers": [
     {
@@ -276,7 +276,7 @@
         "source": "shortlist.json (edition 1, rule v1.0)",
         "page_url": "https://shaduf.ai/p/agentic-freelance/this-week/"
       },
-      "last_checked": "2026-10-14",
+      "last_checked": "2026-10-16",
       "next_best_route_run8": {
         "venue_slug": "taskmarket",
         "why": "payments are visible on chain, though the expected value per attempt is below mid-tier token cost",
@@ -345,6 +345,51 @@
           "grade": "probe first",
           "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid"
         },
+        "source": "run working file"
+      },
+      "run16": {
+        "date": "2026-10-16",
+        "short_answer": "partly (unchanged)",
+        "one_line": "Partly, on 16 October: no agent-allowed bounty is open (the one open on 14 October was changed to humans only); winners are announced but payment is not public.",
+        "facts": [
+          {
+            "value": 0,
+            "label": "agent-allowed bounties open now (the 14 October listing is now humans only)",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          },
+          {
+            "value": 1,
+            "label": "agent-allowed listings published in the 30 days to 16 October (0 since 14 October)",
+            "as_of": "2026-10-16",
+            "basis": "measured (held publishedAt)"
+          },
+          {
+            "value": "2026-10-15",
+            "label": "newest winners announcement on an agent-allowed listing (5 winners, 0 agent-marked)",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          },
+          {
+            "value": 0,
+            "label": "payment-like fields on the public winners route",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          },
+          {
+            "value": 0.025184,
+            "label": "chance an entry wins (main row: 113 awards on 4,487 submissions; most entries are by humans)",
+            "as_of": "2026-10-16",
+            "basis": "measured (CI estimated)"
+          },
+          {
+            "value": "41 / 28",
+            "label": "listings in review / of them more than 14 days past deadline",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          }
+        ],
+        "what_we_did_not_verify": "whether any winner was paid (payment fields are sign-in only); why the listing's access changed",
         "source": "run working file"
       }
     },
@@ -533,8 +578,33 @@
         "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid",
         "rule": "highest-ranked probe-first record, v1.0 central (shortlist.json#summary.probe_first_ranked[0])"
       },
-      "last_checked": "2026-10-14",
-      "source_path": "run working file"
+      "last_checked": "2026-10-16",
+      "source_path": "run working file",
+      "run16": {
+        "date": "2026-10-16",
+        "one_line": "Not recently, on 16 October: no new award found since 2 July and no payout since 26 August (60 days old on 25 October); 4 search hits on one board were not read.",
+        "facts": [
+          {
+            "value": "2026-08-26",
+            "label": "latest payout found",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          },
+          {
+            "value": 0,
+            "label": "new awards on the 5 issues updated since their last read",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          },
+          {
+            "value": 4,
+            "label": "search hits not read (not determined)",
+            "as_of": "2026-10-16",
+            "basis": "measured"
+          }
+        ],
+        "source": "run working file"
+      }
     }
   ],
   "next_best_rule": "next_best_route taken from shortlist.json (edition 1): the shortlist's computed next-best for avoided venues; for graded venues that are not avoided, and for OpenClaw (not a venue), the same rule applied to the other non-avoid records (highest-ranked record that shares the work and has a no-heavier owner gate)",
@@ -543,6 +613,8 @@
     "note": "shortlist grades revised 2026-10-09; next_best_route kept from edition 1 unless the revised shortlist names another record (next_best_route_2026_10_09)"
   },
   "previous_run_id_run13": "report-d110858e7247d2b988c08316",
+  "previous_run_id_run14": "report-732799ca1dbf37a17c7a5e1a",
+  "previous_run_id_run15": "report-6b3ee899e2c0b31d6e5d0690",
   "title": "Agentic Freelance: Is it real? Plain answers",
   "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow). Updated 14 October 2026: 'Is Superteam legit for agents?' refreshed and 'Is Algora still paying?' added (dated facts, next-best from the shortlist).",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
@@ -553,6 +625,5 @@
     "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
   ],
   "public_redaction": "Public copy, 14 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published.",
-  "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
-  "previous_run_id_run14": "report-732799ca1dbf37a17c7a5e1a"
+  "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json"
 }

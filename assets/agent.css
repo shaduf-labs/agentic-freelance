@@ -1691,3 +1691,48 @@
   [data-agent-document] .rp-days-list li{grid-template-columns:minmax(0,1fr) auto}
   [data-agent-document] .rp-lab{grid-column:1 / -1}
 }
+/* edition 2 (16 October 2026) */
+[data-agent-document] .pt-f4{flex:4 1 0}
+[data-agent-document] .pt-f5{flex:5 1 0}
+[data-agent-document] .pt-seg.ned{background:#fff;color:#4f4d47;border:1px dashed #6f6d68}
+[data-agent-document] .e2-alerts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:14px;margin:18px 0 22px}
+[data-agent-document] .e2-alert{min-width:0;padding:12px 14px 10px;border-radius:6px;border:1px solid #d9d7d1;border-left:4px solid #2f6f8f;background:#f7f9fa}
+[data-agent-document] .e2-alert.e2-would{border-left-color:#6b5bb5;background:#f8f7fc}
+[data-agent-document] .e2-alert-h{margin:0 0 8px;font-size:15px;line-height:1.3}
+[data-agent-document] .e2-lines{margin:0;padding:0;list-style:none}
+[data-agent-document] .e2-lines li{margin:0 0 7px;font-size:14px;line-height:1.5;overflow-wrap:break-word}
+[data-agent-document] .e2-lab{display:inline-block;margin:0 4px 2px 0;padding:0 6px;border-radius:4px;font-size:11.5px;font-weight:700;line-height:1.6;background:#fff;border:1px solid #b9b7b0;color:#4f4d47}
+[data-agent-document] .e2-lab.data{border-color:#b8433b;color:#8c2a24}
+[data-agent-document] .e2-lab.rule{border-color:#6f6d68;border-style:dashed}
+[data-agent-document] .e2-lab.fact{border-color:#6fa786;color:#1e5b3a;background:#e6f2ea}
+[data-agent-document] .e2-lab.proj{border:1.5px dashed #6b5bb5;color:#4a3a85}
+[data-agent-document] .pt-other{margin:10px 0 0;font-size:14px;line-height:1.5}
+[data-agent-document] .e2-sec{margin:0 0 28px}
+[data-agent-document] .e2-wrap{max-width:100%;overflow-x:auto}
+[data-agent-document] .e2-table{width:100%;border-collapse:collapse;font-size:14px;line-height:1.45}
+[data-agent-document] .e2-table caption{text-align:left;font-size:13px;font-weight:650;margin:0 0 6px}
+[data-agent-document] .e2-table th,[data-agent-document] .e2-table td{padding:6px 8px;border-bottom:1px solid #e6e5e2;text-align:left;vertical-align:top}
+[data-agent-document] .e2-table thead th{font-size:12.5px;color:var(--muted,#5d5c58);border-bottom:1.5px solid #c9c7c1}
+[data-agent-document] .e2-num{font-variant-numeric:tabular-nums;white-space:nowrap}
+[data-agent-document] .e2-bands{display:grid;gap:8px;margin:10px 0 0;padding:0;list-style:none}
+[data-agent-document] .e2-bands li{display:grid;grid-template-columns:minmax(0,11rem) minmax(4rem,1fr) auto;align-items:center;gap:6px 12px}
+[data-agent-document] .e2-bar{display:flex;height:14px;border-radius:4px;overflow:hidden;background:#f1f0ed;min-width:0}
+[data-agent-document] .e2-bar span{display:block;height:100%}
+[data-agent-document] .e2-bar .pr{background:#c27a2c}
+[data-agent-document] .e2-bar .ne{background:repeating-linear-gradient(135deg,#6f6d68 0 3px,#e4e3df 3px 6px)}
+[data-agent-document] .e2-bar .av{background:#b8433b}
+[data-agent-document] .e2-blab{font-size:13.5px;min-width:0}
+[data-agent-document] .e2-bval{font-size:13.5px;font-weight:650;white-space:nowrap}
+[data-agent-document] .e2-key{display:flex;flex-wrap:wrap;gap:4px 14px;margin:8px 0 0;font-size:13px;color:var(--muted,#5d5c58)}
+[data-agent-document] .e2-key span::before{content:"";display:inline-block;width:10px;height:10px;margin-right:5px;border-radius:2px;vertical-align:-1px}
+[data-agent-document] .e2-key .k-pr::before{background:#c27a2c}
+[data-agent-document] .e2-key .k-ne::before{background:repeating-linear-gradient(135deg,#6f6d68 0 2px,#e4e3df 2px 4px)}
+[data-agent-document] .e2-key .k-av::before{background:#b8433b}
+@container shaduf-document (max-width: 40em){
+  [data-agent-document] .e2-bands li{grid-template-columns:minmax(0,1fr) auto}
+  [data-agent-document] .e2-blab{grid-column:1 / -1}
+}
+[data-agent-document] .e2-wrap:focus-visible{outline:2px solid #2f6f8f;outline-offset:2px}
+[data-agent-document] .mr-s.ne{background:repeating-linear-gradient(135deg,#6f6d68 0 3px,#e4e3df 3px 6px)}
+[data-agent-document] .mr-list.e2-mr li{grid-template-columns:minmax(0,10.5em) minmax(0,6em) minmax(0,7.5em) minmax(0,1fr)}
+@container shaduf-document (max-width: 40em){[data-agent-document] .mr-list.e2-mr li{grid-template-columns:minmax(0,1fr) auto}}
