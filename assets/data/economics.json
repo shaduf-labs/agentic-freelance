@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-economics/0.1",
-  "run_id": "report-8353130fa006fdbf14f3f3de",
-  "as_of": "2026-10-16",
+  "run_id": "report-052abdb20fbb277459abb9dd",
+  "as_of": "2026-10-17",
   "merged_at": "2026-10-08",
   "window": {
     "taskmarket": "2026-09-08..2026-10-08 (settlement rule, grace 16)",
@@ -15,8 +15,8 @@
     "ev_formula": "R_net = reward_per_prize x (1 - fee) - payout_friction_per_win; p_win = sum awards / sum submissions on closed tasks (pooled, incl. unawarded); C_attempt = tokens_in x price_in + tokens_out x price_out + other_cost; EV = p_win x R_net - C_attempt; break_even_cost = p_win x R_net; break_even_tokens_mid = break_even_cost / mid output price per token (output-only bound). EV_low = ci90_low x R_net(median) - C(high band, mid); EV_central = p_win x R_net(median) - C(central band, mid); EV_high = ci90_high x R_net(median) - C(low band, budget).",
     "closed_task_rule": "TaskMarket (run 8): p_win_final over awarded + final_unpaid tasks at grace_days 16 (p95 of positive award delays over 90 days, rounded up; was 21 in run 7); still_payable excluded. Superteam: closed = announced, or past deadline and unannounced, by deadline window. Other venues: run 6 rule unchanged.",
     "p_win_definition": "pooled awards / submissions on closed tasks; Superteam submissions include spam/rejected entries; Algora submissions are distinct /attempt commenters (undercount).",
-    "interval_method": "Wilson 90% on pooled counts and a bootstrap over tasks (2,000 resamples, random.Random(20261005)); the wider is reported as ci90. Algora: envelope of two Wilson intervals (bounds). Recomputed by the merge from tasks.json; matches sub-pass drafts. Run 7 TaskMarket rows: seed 20261006; main/all/MolTrust rows use the run intervals; subset rows recomputed by the merge. Run 8: seed 20261007 for TaskMarket (C) and Superteam (A) rows.",
-    "newcomer_rule": "measured where submitter IDs are public (TaskMarket, the run); otherwise p_win x (1 - top5 share of awards), labelled estimated.",
+    "interval_method": "Wilson 90% on pooled counts and a bootstrap over tasks (2,000 resamples, random.Random(20261005)); the wider is reported as ci90. Algora: envelope of two Wilson intervals (bounds). Recomputed by the merge from tasks.json; matches check drafts. Run 7 TaskMarket rows: seed 20261006; main/all/MolTrust rows use the one of the day's checks intervals; subset rows recomputed by the merge. Run 8: seed 20261007 for TaskMarket (C) and Superteam (A) rows.",
+    "newcomer_rule": "measured where submitter IDs are public (TaskMarket, one of the day's checks); otherwise p_win x (1 - top5 share of awards), labelled estimated.",
     "verdict_rule": "EV_central (central band) evaluated at budget, mid and frontier prices: positive at frontier -> positive_at_frontier_tier; else positive at mid -> positive_at_mid_tier; else positive at budget -> positive_only_at_budget_tier; else negative_at_all_tiers; not_computable names the missing input. Assignment venues: not_computable (no p_win) with payout per job and margin vs cost.",
     "labels": {
       "measured": "read from a public API, page or chain in this run (as_of and route recorded)",
@@ -33,10 +33,10 @@
       "security_report (assumed band, no anchor)",
       "human_only (cost n/a)"
     ],
-    "token_band_rule": "tokens_in = turns x (venue instruction overhead + task text) + working material; tokens_out per class; components labelled measured/estimated/assumed (PLAN.md Definitions 2026-10-05); code_single_file: turns x (TaskMarket skill.md + task text) + Aider polyglot per-exercise tokens.",
+    "token_band_rule": "tokens_in = turns x (venue instruction overhead + task text) + working material; tokens_out per class; components labelled measured/estimated/assumed (the pool's pre-registered plan Definitions 2026-10-05); code_single_file: turns x (TaskMarket skill.md + task text) + Aider polyglot per-exercise tokens.",
     "cost_price_basis": "list prices without caching or batch discounts; B also reports an overhead-cached variant in run working file",
     "flat_rate_subscription": "separate assumed scenario (cost_scenarios); never free compute or resellable capacity",
-    "concentration_basis": "economics rows use the same task sample as p_win; the ledger basis is reported in caveats and the report.",
+    "concentration_basis": "economics rows use the same task sample as p_win (one of the day's checks for TaskMarket); the ledger basis (one of the day's checks) is reported in caveats and the report.",
     "no_paid_attempts": "No model call, submission or paid attempt was made; every cost per attempt is an estimate.",
     "cost_translations": {
       "formulas": {
@@ -86,38 +86,38 @@
       "sources": [
         {
           "url": "https://openrouter.ai/api/v1/models",
-          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
-          "accessed": "2026-10-11T20:29:07Z",
-          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
-          "bytes": 766350
+          "route": "GET public JSON (471 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-17T23:46:59Z",
+          "sha256": "aee5e2a9aedc0cdc37b64de99512b10a382ddd27a6221a61e9dfdc378fd0722a",
+          "bytes": 787955
         },
         {
           "url": "https://platform.openai.com/docs/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:40Z",
           "final_url": "https://developers.openai.com/api/docs/pricing",
-          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
-          "bytes": 595036
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:47:00Z",
+          "sha256": "ab033e0c12c060434f7b7aba41e550c642cec2bd6d9da246eee5734f08f55e5c",
+          "bytes": 600742
         }
       ],
       "selection": "cheapest output price in the eligible set",
       "basis": "measured (list price on the access date)",
-      "change_vs_2026_10_05": {
+      "change_vs_2026_10_11": {
         "input": {
-          "old_10_05": 0.1,
-          "new_10_11": 0.1,
+          "old_10_11": 0.1,
+          "new_10_17": 0.1,
           "change_usd": 0,
           "change_pct": 0
         },
         "output": {
-          "old_10_05": 0.5,
-          "new_10_11": 0.5,
+          "old_10_11": 0.5,
+          "new_10_17": 0.5,
           "change_usd": 0,
           "change_pct": 0
         },
         "cached_input": {
-          "old_10_05": 0.01,
-          "new_10_11": 0.01,
+          "old_10_11": 0.01,
+          "new_10_17": 0.01,
           "change_usd": 0,
           "change_pct": 0
         }
@@ -125,83 +125,83 @@
     },
     {
       "tier": "mid",
-      "public_label": "mid band (about $1.25 in / $6.75 out per million tokens)",
-      "input_usd_per_mtok": 1.25,
-      "output_usd_per_mtok": 6.75,
+      "public_label": "mid band (about $1.75 in / $8.75 out per million tokens)",
+      "input_usd_per_mtok": 1.75,
+      "output_usd_per_mtok": 8.75,
       "cached_input_usd_per_mtok": 0.1,
       "models": [
-        {
-          "id": "x-ai/grok-4.7",
-          "input": 2,
-          "output": 6
-        },
         {
           "id": "mistralai/mistral-medium-3-5",
           "input": 1.5,
           "output": 7.5
+        },
+        {
+          "id": "anthropic/claude-sonnet-5.5",
+          "input": 2,
+          "output": 10
         }
       ],
       "sources": [
         {
           "url": "https://openrouter.ai/api/v1/models",
-          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
-          "accessed": "2026-10-11T20:29:07Z",
-          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
-          "bytes": 766350
+          "route": "GET public JSON (471 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-17T23:46:59Z",
+          "sha256": "aee5e2a9aedc0cdc37b64de99512b10a382ddd27a6221a61e9dfdc378fd0722a",
+          "bytes": 787955
         },
         {
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:38Z",
           "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-          "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
-          "bytes": 1141318
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:46:59Z",
+          "sha256": "d2ebf4d8badcfab27bacbd7668e57ae8dd8d9a59d408019b99892817cfdea288",
+          "bytes": 1193558
         },
         {
           "url": "https://platform.openai.com/docs/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:40Z",
           "final_url": "https://developers.openai.com/api/docs/pricing",
-          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
-          "bytes": 595036
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:47:00Z",
+          "sha256": "ab033e0c12c060434f7b7aba41e550c642cec2bd6d9da246eee5734f08f55e5c",
+          "bytes": 600742
         },
         {
           "url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "route": "GET HTML 200 (retry with cookie jar after a 302 self-redirect)",
-          "accessed": "2026-10-11T20:30:04Z",
           "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
-          "sha256": "cce72251e924222790224164a8daf1bbe37486e96432ecd3937ec86fc1f73089",
-          "bytes": 244995
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:47:00Z",
+          "sha256": "ce1fc8b9c6cb67be649abdf658bf03f80438284ebc881a44498cbfc55abb2818",
+          "bytes": 257373
         },
         {
           "url": "https://api-docs.deepseek.com/quick_start/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:46Z",
           "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
-          "sha256": "210f102275ccf1a6542f08a3bc9e4b4c7c83278cb74b35217bffa112df6363b2",
-          "bytes": 23982
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:47:01Z",
+          "sha256": "38f583f627523f45a0cacd00d43ad49cd4f7e3aa5c20cc98bdbc3674f5c74c95",
+          "bytes": 26043
         }
       ],
-      "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=16; cached median over n=15 with a cached price); models listed are those around the output median, not one model",
+      "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=14; cached median over n=13 with a cached price); models listed are those around the output median, not one model",
       "basis": "estimated (component-wise median of measured list prices; not one model)",
-      "change_vs_2026_10_05": {
+      "change_vs_2026_10_11": {
         "input": {
-          "old_10_05": 1.25,
-          "new_10_11": 1.25,
-          "change_usd": 0,
-          "change_pct": 0
+          "old_10_11": 1.25,
+          "new_10_17": 1.75,
+          "change_usd": 0.5,
+          "change_pct": 40
         },
         "output": {
-          "old_10_05": 7.25,
-          "new_10_11": 6.75,
-          "change_usd": -0.5,
-          "change_pct": -6.9
+          "old_10_11": 6.75,
+          "new_10_17": 8.75,
+          "change_usd": 2,
+          "change_pct": 29.6
         },
         "cached_input": {
-          "old_10_05": 0.13,
-          "new_10_11": 0.1,
-          "change_usd": -0.03,
-          "change_pct": -23.1
+          "old_10_11": 0.1,
+          "new_10_17": 0.1,
+          "change_usd": 0,
+          "change_pct": 0
         }
       }
     },
@@ -228,46 +228,46 @@
       "sources": [
         {
           "url": "https://openrouter.ai/api/v1/models",
-          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
-          "accessed": "2026-10-11T20:29:07Z",
-          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
-          "bytes": 766350
+          "route": "GET public JSON (471 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-17T23:46:59Z",
+          "sha256": "aee5e2a9aedc0cdc37b64de99512b10a382ddd27a6221a61e9dfdc378fd0722a",
+          "bytes": 787955
         },
         {
           "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:38Z",
           "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-          "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
-          "bytes": 1141318
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:46:59Z",
+          "sha256": "d2ebf4d8badcfab27bacbd7668e57ae8dd8d9a59d408019b99892817cfdea288",
+          "bytes": 1193558
         },
         {
           "url": "https://platform.openai.com/docs/pricing",
-          "route": "GET HTML 200",
-          "accessed": "2026-10-11T20:29:40Z",
           "final_url": "https://developers.openai.com/api/docs/pricing",
-          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
-          "bytes": 595036
+          "route": "GET HTML 200",
+          "accessed": "2026-10-17T23:47:00Z",
+          "sha256": "ab033e0c12c060434f7b7aba41e550c642cec2bd6d9da246eee5734f08f55e5c",
+          "bytes": 600742
         }
       ],
       "selection": "most expensive output price in the eligible set",
       "basis": "measured (list price on the access date)",
-      "change_vs_2026_10_05": {
+      "change_vs_2026_10_11": {
         "input": {
-          "old_10_05": 10,
-          "new_10_11": 10,
+          "old_10_11": 10,
+          "new_10_17": 10,
           "change_usd": 0,
           "change_pct": 0
         },
         "output": {
-          "old_10_05": 50,
-          "new_10_11": 50,
+          "old_10_11": 50,
+          "new_10_17": 50,
           "change_usd": 0,
           "change_pct": 0
         },
         "cached_input": {
-          "old_10_05": 0.25,
-          "new_10_11": 0.25,
+          "old_10_11": 0.25,
+          "new_10_17": 0.25,
           "change_usd": 0,
           "change_pct": 0
         }
@@ -276,376 +276,490 @@
   ],
   "price_tier_model_set": [
     {
+      "id_run6": "anthropic/claude-fable-5.1",
       "id": "anthropic/claude-fable-5.1",
+      "name": "Anthropic: Claude Fable 5.1",
       "input": 10,
       "output": 50,
       "cached_input": 0.25,
       "context_length": 1000000,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 10,
         "output": 50,
         "cached_input": 0.25,
         "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:38Z",
+        "accessed": "2026-10-17T23:46:59Z",
         "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-        "quote": "Claude Fable 5.1 ... $10 / MTok $50 / MTok $12.50 / MTok $20 / MTok $0.25 / MTok",
+        "quote": "Claude Fable 5.1 For demanding reasoning and long-horizon agentic work $10 / MTok $50 / MTok $12.50 / MTok $20 / MTok $0.25 / MTok",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "anthropic/claude-fable-5.1",
-      "name": "Anthropic: Claude Fable 5.1",
-      "prev_10_05": {
-        "input": 10,
-        "output": 50,
-        "cached_input": 0.25
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "anthropic/claude-opus-5.5",
       "id": "anthropic/claude-opus-5.5",
+      "name": "Anthropic: Claude Opus 5.5",
       "input": 4,
       "output": 20,
       "cached_input": 0.2,
       "context_length": 1000000,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 4,
+        "output": 20,
+        "cached_input": 0.2
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 4,
         "output": 20,
         "cached_input": 0.2,
         "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:38Z",
+        "accessed": "2026-10-17T23:46:59Z",
         "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-        "quote": "Claude Opus 5.5 ... $4 / MTok $20 / MTok $5 / MTok $8 / MTok $0.20 / MTok",
+        "quote": "Claude Opus 5.5 For long-running agentic coding and knowledge work $4 / MTok $20 / MTok $5 / MTok $8 / MTok $0.20 / MTok",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "anthropic/claude-opus-5.5",
-      "name": "Anthropic: Claude Opus 5.5",
-      "prev_10_05": {
-        "input": 4,
-        "output": 20,
-        "cached_input": 0.2
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "anthropic/claude-sonnet-5.5",
       "id": "anthropic/claude-sonnet-5.5",
+      "name": "Anthropic: Claude Sonnet 5.5",
       "input": 2,
       "output": 10,
       "cached_input": 0.1,
       "context_length": 1000000,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.1
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 2,
         "output": 10,
         "cached_input": 0.1,
         "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:38Z",
+        "accessed": "2026-10-17T23:46:59Z",
         "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
-        "quote": "Claude Sonnet 5.5 ... $2 / MTok $10 / MTok $2.50 / MTok $4 / MTok $0.10 / MTok",
+        "quote": "Claude Sonnet 5.5 The best combination of speed and intelligence $2 / MTok $10 / MTok $2.50 / MTok $4 / MTok $0.10 / MTok",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "anthropic/claude-sonnet-5.5",
-      "name": "Anthropic: Claude Sonnet 5.5",
-      "prev_10_05": {
-        "input": 2,
-        "output": 10,
-        "cached_input": 0.2
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "anthropic/claude-haiku-4.5",
       "id": "anthropic/claude-haiku-4.5",
+      "name": "Anthropic: Claude Haiku 4.5",
       "input": 1,
       "output": 5,
       "cached_input": 0.1,
       "context_length": 200000,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 1,
+        "output": 5,
+        "cached_input": 0.1
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 1,
         "output": 5,
         "cached_input": 0.1,
         "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:38Z",
+        "accessed": "2026-10-17T23:46:59Z",
         "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
         "quote": "Claude Haiku 4.5 $1 / MTok $5 / MTok $1.25 / MTok $2 / MTok $0.10 / MTok",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "anthropic/claude-haiku-4.5",
-      "name": "Anthropic: Claude Haiku 4.5",
-      "prev_10_05": {
-        "input": 1,
-        "output": 5,
-        "cached_input": 0.1
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "openai/gpt-6-astra",
       "id": "openai/gpt-6-astra",
+      "name": "OpenAI: GPT-6 Astra",
       "input": 10,
       "output": 50,
       "cached_input": 1,
       "context_length": 1050000,
       "long_context_override": true,
+      "prev_10_11": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 1
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 10,
         "output": 50,
         "cached_input": 1,
         "url": "https://platform.openai.com/docs/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:40Z",
+        "accessed": "2026-10-17T23:47:00Z",
         "final_url": "https://developers.openai.com/api/docs/pricing",
-        "quote": "Standard, short context: gpt-6-astra $10.00 $1.00 $12.50 $50.00",
+        "quote": "Standard, short context (Input, Cached input, Cache writes, Output): gpt-6-astra $10.00 $1.00 $12.50 $50.00",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "openai/gpt-6-astra",
-      "name": "OpenAI: GPT-6 Astra",
-      "prev_10_05": {
-        "input": 10,
-        "output": 50,
-        "cached_input": 1
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "openai/gpt-6.1-sol",
       "id": "openai/gpt-6.1-sol",
+      "name": "OpenAI: GPT-6.1 Sol",
       "input": 2,
       "output": 10,
       "cached_input": 0.1,
       "context_length": 1050000,
       "long_context_override": true,
+      "prev_10_11": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.1
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 2,
         "output": 10,
         "cached_input": 0.1,
         "url": "https://platform.openai.com/docs/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:40Z",
+        "accessed": "2026-10-17T23:47:00Z",
         "final_url": "https://developers.openai.com/api/docs/pricing",
         "quote": "Standard, short context: gpt-6.1-sol $2.00 $0.10 $2.50 $10.00",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "openai/gpt-6.1-sol",
-      "name": "OpenAI: GPT-6.1 Sol",
-      "prev_10_05": {
-        "input": 2,
-        "output": 10,
-        "cached_input": 0.1
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "openai/gpt-6-luna",
       "id": "openai/gpt-6-luna",
+      "name": "OpenAI: GPT-6 Luna",
       "input": 0.1,
       "output": 0.5,
       "cached_input": 0.01,
       "context_length": 1050000,
       "long_context_override": true,
+      "prev_10_11": {
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 0.1,
         "output": 0.5,
         "cached_input": 0.01,
         "url": "https://platform.openai.com/docs/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:40Z",
+        "accessed": "2026-10-17T23:47:00Z",
         "final_url": "https://developers.openai.com/api/docs/pricing",
         "quote": "Standard, short context: gpt-6-luna $0.10 $0.01 $0.125 $0.50",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "openai/gpt-6-luna",
-      "name": "OpenAI: GPT-6 Luna",
-      "prev_10_05": {
-        "input": 0.1,
-        "output": 0.5,
-        "cached_input": 0.01
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "google/gemini-3.1-pro-preview",
       "id": "google/gemini-3.1-pro-preview",
+      "name": "Google: Gemini 3.1 Pro Preview",
       "input": 2,
       "output": 12,
       "cached_input": 0.2,
       "context_length": 1048576,
       "long_context_override": true,
+      "prev_10_11": {
+        "input": 2,
+        "output": 12,
+        "cached_input": 0.2
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 2,
         "output": 12,
         "cached_input": 0.2,
         "url": "https://ai.google.dev/gemini-api/docs/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:30:04Z",
+        "accessed": "2026-10-17T23:47:00Z",
         "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
-        "quote": "Paid tier: input $2.00, prompts <= 200k; output $12.00; context caching $0.20",
+        "quote": "Paid Tier: Input price $2.00, prompts <= 200k; Output price $12.00; Context caching price $0.20",
         "input_within_5pct": true,
         "output_within_5pct": true,
-        "cached_match": true
-      },
-      "id_run6": "google/gemini-3.1-pro-preview",
-      "name": "Google: Gemini 3.1 Pro Preview",
-      "prev_10_05": {
-        "input": 2,
-        "output": 12,
-        "cached_input": 0.2
+        "cached_match": true,
+        "match": true,
+        "openrouter_vs_first_party_pct": {
+          "input": 0,
+          "output": 0
+        }
       },
       "excluded": false
     },
     {
+      "id_run6": "google/gemini-3.8-flash",
       "id": "google/gemini-3.8-flash",
-      "input": 0.75,
-      "output": 3.75,
-      "cached_input": 0.075,
+      "name": "Google: Gemini 3.8 Flash",
+      "input": 0.825,
+      "output": 4.125,
+      "cached_input": 0.0825,
       "context_length": 1048576,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 0.75,
+        "output": 3.75,
+        "cached_input": 0.075
+      },
+      "change_vs_10_11_pct": {
+        "input": 10,
+        "output": 10,
+        "cached_input": 10
+      },
       "first_party": {
         "input": 0.75,
         "output": 3.75,
         "cached_input": 0.075,
         "url": "https://ai.google.dev/gemini-api/docs/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:30:04Z",
+        "accessed": "2026-10-17T23:47:00Z",
         "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
-        "quote": "Paid tier: $0.75 / $3.75 / caching $0.075 through December 31, 2026; $1.50 / $7.50 / $0.15 from January 1, 2027",
-        "input_within_5pct": true,
-        "output_within_5pct": true,
-        "cached_match": true
+        "quote": "Paid Tier: Input $0.75 through December 31, 2026 ($1.50 from January 1, 2027); Output $3.75 ($7.50); Context caching $0.075 ($0.15)",
+        "input_within_5pct": false,
+        "output_within_5pct": false,
+        "cached_match": false,
+        "match": false,
+        "openrouter_vs_first_party_pct": {
+          "input": 10,
+          "output": 10
+        }
       },
-      "id_run6": "google/gemini-3.8-flash",
-      "name": "Google: Gemini 3.8 Flash",
-      "prev_10_05": {
-        "input": 0.75,
-        "output": 3.75,
-        "cached_input": 0.075
-      },
-      "excluded": false
+      "excluded": true
     },
     {
+      "id_run6": "deepseek/deepseek-v4-pro",
       "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro 0423",
       "input": 0.2088,
       "output": 0.4176,
       "cached_input": 0.0174,
       "context_length": 1048576,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 0.2088,
+        "output": 0.4176,
+        "cached_input": 0.0174
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": {
         "input": 1.32,
         "output": 3.96,
         "cached_input": 0.044,
         "url": "https://api-docs.deepseek.com/quick_start/pricing",
-        "match": false,
-        "accessed": "2026-10-11T20:29:46Z",
+        "accessed": "2026-10-17T23:47:01Z",
         "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
-        "quote": "deepseek-v4-pro PEAK: cache hit $0.044, cache miss $1.32, output $3.96 (off-peak half)",
+        "quote": "deepseek-v4-pro (DeepSeek-V4-Pro-0813) PEAK: cache hit $0.044, cache miss $1.32, output $3.96 (off-peak rates are half)",
         "input_within_5pct": false,
         "output_within_5pct": false,
-        "cached_match": false
-      },
-      "id_run6": "deepseek/deepseek-v4-pro",
-      "name": "DeepSeek: DeepSeek V4 Pro 0423",
-      "prev_10_05": {
-        "input": 0.2088,
-        "output": 0.4176,
-        "cached_input": 0.0174
+        "cached_match": false,
+        "match": false,
+        "openrouter_vs_first_party_pct": {
+          "input": -84.2,
+          "output": -89.5
+        }
       },
       "excluded": true
     },
     {
+      "id_run6": "deepseek/deepseek-v4.1-flash",
       "id": "deepseek/deepseek-v4.1-flash",
-      "input": 0.3,
-      "output": 1.2,
-      "cached_input": 0.006,
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "input": 0.0552,
+      "output": 0.144,
+      "cached_input": 0.0016,
       "context_length": 1048576,
       "long_context_override": false,
+      "prev_10_11": {
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "change_vs_10_11_pct": {
+        "input": -81.6,
+        "output": -88,
+        "cached_input": -73.3
+      },
       "first_party": {
         "input": 0.3,
         "output": 1.2,
         "cached_input": 0.006,
         "url": "https://api-docs.deepseek.com/quick_start/pricing",
-        "match": true,
-        "accessed": "2026-10-11T20:29:46Z",
+        "accessed": "2026-10-17T23:47:01Z",
         "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
-        "quote": "deepseek-flash (DeepSeek-V4.1-Flash) PEAK: cache hit $0.006, cache miss $0.3, output $1.2 (off-peak half)",
-        "input_within_5pct": true,
-        "output_within_5pct": true,
-        "cached_match": true
+        "quote": "deepseek-flash (DeepSeek-V4.1-Flash-1017) PEAK: cache hit $0.006, cache miss $0.3, output $1.2 (off-peak half: $0.003 / $0.15 / $0.6)",
+        "input_within_5pct": false,
+        "output_within_5pct": false,
+        "cached_match": false,
+        "match": false,
+        "openrouter_vs_first_party_pct": {
+          "input": -81.6,
+          "output": -88
+        }
       },
-      "id_run6": "deepseek/deepseek-v4.1-flash",
-      "name": "DeepSeek: DeepSeek V4.1 Flash",
-      "prev_10_05": {
-        "input": 0.3,
-        "output": 1.2,
-        "cached_input": 0.006
-      },
-      "excluded": false
+      "excluded": true
     },
     {
+      "id_run6": "x-ai/grok-4.7",
       "id": "x-ai/grok-4.7",
+      "name": "SpaceXAI: Grok 4.7",
       "input": 2,
       "output": 6,
       "cached_input": 0.5,
       "context_length": 500000,
       "long_context_override": true,
-      "id_run6": "x-ai/grok-4.7",
-      "name": "SpaceXAI: Grok 4.7",
-      "prev_10_05": {
+      "prev_10_11": {
         "input": 2,
         "output": 6,
         "cached_input": 0.5
       },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     },
     {
-      "id": "moonshotai/kimi-k3",
-      "input": 0.8,
-      "output": 13.5,
-      "cached_input": 0.55,
-      "context_length": 1048576,
-      "long_context_override": false,
       "id_run6": "moonshotai/kimi-k3",
+      "id": "moonshotai/kimi-k3",
       "name": "MoonshotAI: Kimi K3",
-      "prev_10_05": {
-        "input": 0.67,
-        "output": 14,
-        "cached_input": 0.22
+      "input": 0.304,
+      "output": 11.936,
+      "cached_input": 0.21,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_11": {
+        "input": 0.8,
+        "output": 13.5,
+        "cached_input": 0.55
+      },
+      "change_vs_10_11_pct": {
+        "input": -62,
+        "output": -11.6,
+        "cached_input": -61.8
       },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     },
     {
+      "id_run6": "z-ai/glm-5.3",
       "id": "z-ai/glm-5.3",
-      "input": 0.07,
-      "output": 4.8,
-      "cached_input": 0.05,
+      "name": "Z.ai: GLM 5.3",
+      "input": 0.079,
+      "output": 3.2,
+      "cached_input": 0.078,
       "context_length": 1048576,
       "long_context_override": false,
-      "id_run6": "z-ai/glm-5.3",
-      "name": "Z.ai: GLM 5.3",
-      "prev_10_05": {
-        "input": 0.05,
-        "output": 7,
-        "cached_input": 0.045
+      "prev_10_11": {
+        "input": 0.07,
+        "output": 4.8,
+        "cached_input": 0.05
+      },
+      "change_vs_10_11_pct": {
+        "input": 12.9,
+        "output": -33.3,
+        "cached_input": 56
       },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     },
     {
@@ -653,7 +767,7 @@
       "replacement": {
         "action": "replaced_by_successor",
         "successor": "qwen/qwen3-coder-next",
-        "reading": "qwen3-coder-plus is not in the OpenRouter list on 2026-10-11. Same-family successor read as the newest listed model in the same provider's qwen3-coder line (ids starting 'qwen/qwen3-coder'): qwen3-coder-next (created 2026-02-04). Other coder-line ids listed: qwen3-coder (2025-07-23), qwen3-coder-30b-a3b-instruct (2025-07-31), qwen3-coder-flash (2025-09-17). No 'plus' coder id is listed. This choice is a reading, not stated in the rule; sensitivity 'dropped' is reported."
+        "reading": "carried from run 12 (10-11): qwen3-coder-plus still not listed on 2026-10-17; qwen3-coder-next (created 2026-02-04) is still the newest listed id in the qwen3-coder line (others: qwen3-coder 2025-07-23, qwen3-coder-30b-a3b-instruct 2025-07-31, qwen3-coder-flash 2025-09-17); no 'plus' coder id listed."
       },
       "id": "qwen/qwen3-coder-next",
       "name": "Qwen: Qwen3 Coder Next",
@@ -662,60 +776,124 @@
       "cached_input": 0.07,
       "context_length": 262144,
       "long_context_override": false,
-      "prev_10_05": null,
+      "prev_10_11": {
+        "input": 0.12,
+        "output": 0.8,
+        "cached_input": 0.07
+      },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     },
     {
+      "id_run6": "mistralai/mistral-medium-3-5",
       "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
       "input": 1.5,
       "output": 7.5,
       "cached_input": null,
       "context_length": 262144,
       "long_context_override": false,
-      "id_run6": "mistralai/mistral-medium-3-5",
-      "name": "Mistral: Mistral Medium 3.5",
-      "prev_10_05": {
+      "prev_10_11": {
         "input": 1.5,
         "output": 7.5,
         "cached_input": null
       },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": null
+      },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     },
     {
+      "id_run6": "mistralai/devstral-2512",
       "id": "mistralai/devstral-2512",
+      "name": "Mistral: Devstral 2 2512",
       "input": 0.4,
       "output": 2,
       "cached_input": 0.04,
       "context_length": 262144,
       "long_context_override": false,
-      "id_run6": "mistralai/devstral-2512",
-      "name": "Mistral: Devstral 2 2512",
-      "prev_10_05": {
+      "prev_10_11": {
         "input": 0.4,
         "output": 2,
         "cached_input": 0.04
       },
+      "change_vs_10_11_pct": {
+        "input": 0,
+        "output": 0,
+        "cached_input": 0
+      },
       "first_party": null,
-      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "first_party_note": "no first-party page in this run's cap table (as in runs 6 and 12); OpenRouter price used unchecked",
       "excluded": false
     }
   ],
   "price_tier_exclusions": [
     {
+      "id": "google/gemini-3.8-flash",
+      "openrouter": [
+        0.825,
+        4.125,
+        0.0825
+      ],
+      "first_party": [
+        0.75,
+        3.75,
+        0.075
+      ],
+      "openrouter_vs_first_party_pct": {
+        "input": 10,
+        "output": 10
+      },
+      "new_this_run": true,
+      "reason": "OpenRouter price differs from the first-party list price by more than 5% (input or output)"
+    },
+    {
       "id": "deepseek/deepseek-v4-pro",
-      "reason": "OpenRouter price differs from the first-party list price by more than 5% (first-party peak price; off-peak is half)",
       "openrouter": [
         0.2088,
-        0.4176
+        0.4176,
+        0.0174
       ],
       "first_party": [
         1.32,
-        3.96
-      ]
+        3.96,
+        0.044
+      ],
+      "openrouter_vs_first_party_pct": {
+        "input": -84.2,
+        "output": -89.5
+      },
+      "new_this_run": false,
+      "reason": "OpenRouter price differs from the first-party list price by more than 5% (input or output)"
+    },
+    {
+      "id": "deepseek/deepseek-v4.1-flash",
+      "openrouter": [
+        0.0552,
+        0.144,
+        0.0016
+      ],
+      "first_party": [
+        0.3,
+        1.2,
+        0.006
+      ],
+      "openrouter_vs_first_party_pct": {
+        "input": -81.6,
+        "output": -88
+      },
+      "new_this_run": true,
+      "reason": "OpenRouter price differs from the first-party list price by more than 5% (input or output)"
     }
   ],
   "token_bands": [
@@ -1261,7 +1439,7 @@
             "high": 2046
           },
           "basis": "estimated",
-          "source": "TaskMarket closed-task description chars p10/median/p90 (2,261/3,301/8,184; measured, run working file) / 4"
+          "source": "TaskMarket closed-task description chars p10/median/p90 (2,261/3,301/8,184; measured, parts/A) / 4"
         },
         {
           "name": "turns_per_attempt",
@@ -1405,7 +1583,7 @@
       "main_row": true,
       "route": "agent_first_board",
       "competition_model": "open_submission",
-      "window": "2026-09-16..2026-10-16",
+      "window": "2026-09-17..2026-10-17",
       "window_extended": false,
       "sample": {
         "tasks_closed": 91,
@@ -1437,7 +1615,7 @@
         "repeat_winner_award_share": 0.4375,
         "share_of_submitters_ever_paid": 0.0722,
         "days_to_award_median": 1.07,
-        "concentration_basis": "the run task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis differs; see caveats.",
+        "concentration_basis": "one of the day's checks task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis (one of the day's checks, settlements dated in window) differs; see caveats.",
         "concentration_note_run7": "distinct_submitters, paid-worker and top-worker shares, repeat-winner share and days_to_award are run 6 values (not recomputed in run 7)."
       },
       "reward": {
@@ -1456,24 +1634,24 @@
         "per_prize_usd_median_check_run8": 2
       },
       "p_win": {
-        "pooled": 0.016703,
-        "awards": 107,
-        "submissions": 6406,
+        "pooled": 0.019302,
+        "awards": 109,
+        "submissions": 5647,
         "ci90_wilson": [
-          0.014266,
-          0.019548
+          0.016513,
+          0.022552
         ],
         "ci90_bootstrap": [
-          0.012538,
-          0.021958
+          0.015081,
+          0.024892
         ],
         "ci90": [
-          0.012538,
-          0.021958
+          0.015081,
+          0.024892
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261016)",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261017)",
         "newcomer": 0.010119,
-        "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+        "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
         "source": "run working file"
       },
@@ -1616,7 +1794,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 16,
           "submissions_total": 6140,
           "awards_total": 80,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -1637,7 +1815,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap; chosen: bootstrap over tasks (2000 resamples, seed 20261005)",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
           "snapshot_note": "Snapshot at 2026-10-05T13:45Z: 16 closed tasks are past expiry in awaiting_settlement and still payable; late awards would raise p_win."
         },
         "reward_per_prize_usd": {
@@ -1666,7 +1844,7 @@
         "verdict": "negative_at_all_tiers",
         "basis": "measured/estimated in run 6"
       },
-      "as_of_row": "2026-10-16",
+      "as_of_row": "2026-10-17",
       "snapshot_2026_10_06": {
         "sample": {
           "tasks_closed": 81,
@@ -1677,7 +1855,7 @@
           "tasks_in_p_win": 72,
           "submissions_total": 5133,
           "awards_total": 82,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
           "as_of": "2026-10-06T13:42:12Z"
         },
         "p_win": {
@@ -1696,9 +1874,9 @@
             0.012484,
             0.020984
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), one of the day's checks values",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
           "final_note": "p_win_final (run 7): still_payable tasks excluded (9 tasks, 985 submissions). Counting them as unpaid (grace 0) gives a lower value; see settlement.json grace_sensitivity."
         },
         "economics": {
@@ -1724,17 +1902,17 @@
       },
       "cost_translations": {
         "inputs": {
-          "p_win": 0.016703,
+          "p_win": 0.019302,
           "R_net_usd": 1.85,
-          "eligible_supply_per_day": 2.8,
+          "eligible_supply_per_day": 2.833,
           "award_delay_median_days": 1.03,
           "payout_delay_median_days": 0
         },
-        "expected_payout_per_attempt_usd": 0.030901,
+        "expected_payout_per_attempt_usd": 0.035709,
         "return_per_dollar": {
-          "budget": 1.281,
-          "mid": 0.1,
-          "frontier": 0.0128
+          "budget": 1.4803,
+          "mid": 0.0846,
+          "frontier": 0.0148
         },
         "per_day": {
           "budget": {
@@ -1871,7 +2049,8 @@
         "per_day_note_2026_10_12": "per-day cells recomputed by the run 13 merge (p_win 0.015483, supply 2.767/day) at the 2026-10-11 list prices",
         "per_day_note_2026_10_13": "per-day cells recomputed by the run 14 merge (p_win 0.015486, supply 2.833/day) at the 2026-10-11 list prices",
         "per_day_note_2026_10_14": "per-attempt figures recomputed by the run 15 merge (p_win 0.015356) at the 2026-10-11 list prices; per-day cells: see grading_inputs economics",
-        "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 final pass (p_win 0.016703) at the 2026-10-11 list prices; estimated"
+        "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 merge (p_win 0.016703) at the 2026-10-11 list prices; estimated",
+        "per_day_note_2026_10_17": "per-attempt figures recomputed by the run 17 merge (p_win 0.019302) at the 2026-10-17 list prices; estimated"
       },
       "snapshot_2026_10_07": {
         "p_win": {
@@ -1890,9 +2069,9 @@
             0.010618,
             0.017876
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), one of the day's checks values",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07"
         },
         "ev_per_attempt_usd": {
@@ -2053,7 +2232,7 @@
           "tasks_in_p_win": 81,
           "submissions_total": 6253,
           "awards_total": 85,
-          "route": "the run: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
+          "route": "run 8 one of the day's checks: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
           "as_of": "2026-10-07T13:49:12Z"
         },
         "as_of_row": "2026-10-07T13:49:12Z"
@@ -2090,7 +2269,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261008)",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
           "source": "run working file"
         },
@@ -2359,6 +2538,18 @@
           "mid": 0.0919,
           "frontier": 0.0118
         }
+      },
+      "snapshot_2026_10_16": {
+        "p_win": 0.016703,
+        "ci90": [
+          0.012538,
+          0.021958
+        ],
+        "return_per_dollar": {
+          "budget": 1.281,
+          "mid": 0.1,
+          "frontier": 0.0128
+        }
       }
     },
     {
@@ -2401,7 +2592,7 @@
         "repeat_winner_award_share": 0.4375,
         "share_of_submitters_ever_paid": 0.0722,
         "days_to_award_median": 1.07,
-        "concentration_basis": "the run task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis differs; see caveats.",
+        "concentration_basis": "one of the day's checks task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis (one of the day's checks, settlements dated in window) differs; see caveats.",
         "concentration_note_run7": "distinct_submitters, paid-worker and top-worker shares, repeat-winner share and days_to_award are run 6 values (not recomputed in run 7)."
       },
       "reward": {
@@ -2437,7 +2628,7 @@
         ],
         "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261008)",
         "newcomer": 0.010119,
-        "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+        "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
         "source": "run working file"
       },
@@ -2579,7 +2770,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 16,
           "submissions_total": 6140,
           "awards_total": 80,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -2600,7 +2791,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap; chosen: bootstrap over tasks (2000 resamples, seed 20261005)",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
           "snapshot_note": "Snapshot at 2026-10-05T13:45Z: 16 closed tasks are past expiry in awaiting_settlement and still payable; late awards would raise p_win."
         },
         "reward_per_prize_usd": {
@@ -2640,7 +2831,7 @@
           "tasks_in_p_win": 72,
           "submissions_total": 5133,
           "awards_total": 82,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
           "as_of": "2026-10-06T13:42:12Z"
         },
         "p_win": {
@@ -2659,9 +2850,9 @@
             0.012484,
             0.020984
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), one of the day's checks values",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
           "final_note": "p_win_final (run 7): still_payable tasks excluded (9 tasks, 985 submissions). Counting them as unpaid (grace 0) gives a lower value; see settlement.json grace_sensitivity."
         },
         "economics": {
@@ -2848,9 +3039,9 @@
             0.010618,
             0.017876
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), one of the day's checks values",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07"
         },
         "ev_per_attempt_usd": {
@@ -3011,7 +3202,7 @@
           "tasks_in_p_win": 81,
           "submissions_total": 6253,
           "awards_total": 85,
-          "route": "the run: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
+          "route": "run 8 one of the day's checks: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
           "as_of": "2026-10-07T13:49:12Z"
         },
         "as_of_row": "2026-10-07T13:49:12Z"
@@ -3035,7 +3226,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261008)",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
           "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
           "source": "run working file"
         },
@@ -3215,7 +3406,7 @@
         "tasks_in_p_win": 33,
         "submissions_total": 3069,
         "awards_total": 33,
-        "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+        "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
         "as_of": "2026-10-06T13:42:12Z"
       },
       "competition": {
@@ -3260,7 +3451,7 @@
         ],
         "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), merge recompute; chosen: Wilson 90%",
         "newcomer": 0.010119,
-        "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
+        "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
         "final_note": "p_win_final (run 7): still_payable tasks excluded (0 tasks, 0 submissions). Counting them as unpaid (grace 0) gives a lower value; see settlement.json grace_sensitivity."
       },
       "deliverable_class_mix": [
@@ -3389,7 +3580,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 3,
           "submissions_total": 3069,
           "awards_total": 30,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -3410,7 +3601,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap; chosen: Wilson 90%",
           "newcomer": 0.010119,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
           "snapshot_note": "Snapshot at 2026-10-05T13:45Z: 3 closed tasks are past expiry in awaiting_settlement and still payable; late awards would raise p_win."
         },
         "reward_per_prize_usd": {
@@ -3734,7 +3925,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 10,
           "submissions_total": 1484,
           "awards_total": 1,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -3795,7 +3986,7 @@
           "tasks_in_p_win": 3,
           "submissions_total": 522,
           "awards_total": 1,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
           "as_of": "2026-10-06T13:42:12Z"
         },
         "p_win": {
@@ -4036,7 +4227,7 @@
         "tasks_in_p_win": 6,
         "submissions_total": 314,
         "awards_total": 46,
-        "route": "the run: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
+        "route": "run 8 one of the day's checks: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
         "as_of": "2026-10-07T13:49:12Z"
       },
       "competition": {
@@ -4057,7 +4248,7 @@
         "repeat_winner_award_share": 0.8696,
         "share_of_submitters_ever_paid": 0.0687,
         "days_to_award_median": 0.51,
-        "concentration_basis": "the run task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis differs; see caveats.",
+        "concentration_basis": "one of the day's checks task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis (one of the day's checks, settlements dated in window) differs; see caveats.",
         "concentration_note_run7": "distinct_submitters, paid-worker and top-worker shares, repeat-winner share and days_to_award are run 6 values (not recomputed in run 7)."
       },
       "reward": {
@@ -4091,9 +4282,9 @@
           0.068376,
           0.361446
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), the run values",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), one of the day's checks values",
         "newcomer": 0.033597,
-        "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+        "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07"
       },
       "deliverable_class_mix": [
@@ -4222,7 +4413,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 1,
           "submissions_total": 520,
           "awards_total": 46,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -4243,7 +4434,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap; chosen: bootstrap over tasks (2000 resamples, seed 20261005)",
           "newcomer": 0.033597,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
           "snapshot_note": "Snapshot at 2026-10-05T13:45Z: 1 closed tasks are past expiry in awaiting_settlement and still payable; late awards would raise p_win."
         },
         "reward_per_prize_usd": {
@@ -4283,7 +4474,7 @@
           "tasks_in_p_win": 6,
           "submissions_total": 314,
           "awards_total": 46,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
           "as_of": "2026-10-06T13:42:12Z"
         },
         "p_win": {
@@ -4302,9 +4493,9 @@
             0.067941,
             0.357143
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), one of the day's checks values",
           "newcomer": 0.033597,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
           "final_note": "p_win_final (run 7): still_payable tasks excluded (2 tasks, 226 submissions). Counting them as unpaid (grace 0) gives a lower value; see settlement.json grace_sensitivity."
         },
         "economics": {
@@ -4523,7 +4714,7 @@
         "tasks_in_p_win": 87,
         "submissions_total": 6567,
         "awards_total": 131,
-        "route": "the run: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
+        "route": "run 8 one of the day's checks: GET taskmarket.dev/api/tasks (unfiltered) + /api/tasks/{id} + /submissions; settlement status at grace_days 16 (recomputed rule value)",
         "as_of": "2026-10-07T13:49:12Z"
       },
       "competition": {
@@ -4544,7 +4735,7 @@
         "repeat_winner_award_share": 0.627,
         "share_of_submitters_ever_paid": 0.0827,
         "days_to_award_median": 1.05,
-        "concentration_basis": "the run task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis differs; see caveats.",
+        "concentration_basis": "one of the day's checks task basis: awards on closed tasks created or expiring in the window (same sample as p_win). Ledger basis (one of the day's checks, settlements dated in window) differs; see caveats.",
         "concentration_note_run7": "distinct_submitters, paid-worker and top-worker shares, repeat-winner share and days_to_award are run 6 values (not recomputed in run 7)."
       },
       "reward": {
@@ -4578,9 +4769,9 @@
           0.014611,
           0.027084
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), the run values",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261007), one of the day's checks values",
         "newcomer": 0.011549,
-        "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
+        "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07"
       },
       "deliverable_class_mix": [
@@ -4720,7 +4911,7 @@
           "tasks_closed_unawarded_awaiting_settlement": 17,
           "submissions_total": 6660,
           "awards_total": 126,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (one of the day's checks)",
           "as_of": "2026-10-05T13:45:00Z"
         },
         "p_win": {
@@ -4741,7 +4932,7 @@
           ],
           "ci_method": "wider of Wilson 90% and task bootstrap; chosen: bootstrap over tasks (2000 resamples, seed 20261005)",
           "newcomer": 0.011549,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists)",
           "snapshot_note": "Snapshot at 2026-10-05T13:45Z: 17 closed tasks are past expiry in awaiting_settlement and still payable; late awards would raise p_win."
         },
         "reward_per_prize_usd": {
@@ -4781,7 +4972,7 @@
           "tasks_in_p_win": 78,
           "submissions_total": 5447,
           "awards_total": 128,
-          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions; settlement status by rule (grace_days 21)",
+          "route": "GET https://taskmarket.dev/api/tasks + /api/tasks/{id} + /submissions (run 7 one of the day's checks); settlement status by rule (grace_days 21)",
           "as_of": "2026-10-06T13:42:12Z"
         },
         "p_win": {
@@ -4800,9 +4991,9 @@
             0.016958,
             0.031593
           ],
-          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), the run values",
+          "ci_method": "wider of Wilson 90% and task bootstrap (2000 resamples, seed 20261006), one of the day's checks values",
           "newcomer": 0.011549,
-          "newcomer_basis": "measured by the run: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
+          "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7)",
           "final_note": "p_win_final (run 7): still_payable tasks excluded (11 tasks, 1211 submissions). Counting them as unpaid (grace 0) gives a lower value; see settlement.json grace_sensitivity."
         },
         "economics": {
@@ -5010,14 +5201,14 @@
       "main_row": true,
       "route": "human_account_bounty",
       "competition_model": "judged_competition",
-      "window": "deadline from 2026-04-10 to 2026-10-16 (AGENT_ALLOWED; main row a recorded ruling)",
+      "window": "deadline from 2026-04-10 to 2026-10-16 (AGENT_ALLOWED; main row)",
       "window_extended": true,
       "sample": {
         "tasks_closed": 26,
         "tasks_awarded": 24,
         "submissions_total": 4487,
         "awards_total": 113,
-        "route": "run 8 held rows + run 15 the run feeds and winners reads",
+        "route": "run 8 held rows + run 15 one of the day's checks feeds and winners reads",
         "as_of": "2026-10-16T17:47Z"
       },
       "competition": {
@@ -5117,7 +5308,7 @@
         "Winners API returns positions; amounts come from the details 'rewards' table; bonus spots (key 99) are paid the bonus amount.",
         "AGENT_ONLY listings are hidden from public feeds (agent feed needs an API key), so they are not counted.",
         "AGENT_ALLOWED does not mean the winners were agents; winners are Superteam user (human) accounts.",
-        "Main row: AGENT_ALLOWED listings with deadline from 2026-04-10 (completed, or in review past deadline with 0 awards until announced); run 15 adds Steve Agent Arena's 3 awards and Streamflow (in review, 4.7 days past deadline, 587 submissions, 0 awards; kept under a recorded pool decision)."
+        "Main row: AGENT_ALLOWED listings with deadline from 2026-04-10 (completed, or in review past deadline with 0 awards until announced); run 15 adds Steve Agent Arena's 3 awards and Streamflow (in review, 4.7 days past deadline, 587 submissions, 0 awards; kept per a recorded ruling)."
       ],
       "cost_per_attempt_usd": {
         "budget": {
@@ -5312,7 +5503,7 @@
         "expected_payout_per_attempt_usd": 2.5184,
         "return_per_dollar": {
           "budget": 683.4193,
-          "mid": 53.7959,
+          "mid": 39.0516,
           "frontier": 6.834
         },
         "per_day": {
@@ -5470,7 +5661,8 @@
         "note": "Payment cannot be verified on public routes; every per-day and per-hour figure is for announced prizes. p_win denominator is mostly human entries.",
         "per_day_note_2026_10_11": "all per-day cells recomputed by the run 12 merge at the 2026-10-11 list prices",
         "per_day_note_2026_10_14": "recomputed by the run 15 merge (p_win 0.02407, supply 0.0889/day) at the 2026-10-11 list prices; estimated",
-        "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 final pass (p_win 0.025184); per-day cells carried from run 15 (supply now 0.0778/day: see grading_inputs economics)"
+        "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 merge (p_win 0.025184); per-day cells carried from run 15 (supply now 0.0778/day: see grading_inputs economics)",
+        "per_day_note_2026_10_17": "per-attempt figures recomputed at the 2026-10-17 list prices (p_win unchanged since 10-16)"
       },
       "supply_refresh_2026_10_08": {
         "agent_allowed_open_now": 2,
@@ -5509,7 +5701,7 @@
           "tasks_awarded": 22,
           "submissions_total": 3900,
           "awards_total": 105,
-          "route": "run 8 the run: superteam.fun public listings feeds (completed, review, open), details, winners",
+          "route": "run 8 one of the day's checks: superteam.fun public listings feeds (completed, review, open), details, winners",
           "as_of": "2026-10-07T14:00:00Z"
         },
         "label": "Superteam Earn AGENT_ALLOWED listings (main row; window extended ~225 days)",
@@ -5595,7 +5787,7 @@
         "tasks_awarded": 6,
         "submissions_total": 1343,
         "awards_total": 25,
-        "route": "the run: superteam.fun public listings feeds (completed, review, open), details, winners",
+        "route": "run 8 one of the day's checks: superteam.fun public listings feeds (completed, review, open), details, winners",
         "as_of": "2026-10-07T14:00:00Z"
       },
       "competition": {
@@ -6026,7 +6218,7 @@
         "tasks_awarded": 97,
         "submissions_total": 13041,
         "awards_total": 605,
-        "route": "the run census, HUMAN_ONLY 90 days (full census, not a sample)",
+        "route": "run 8 one of the day's checks census, HUMAN_ONLY 90 days (full census, not a sample)",
         "as_of": "2026-10-07T14:00:00Z"
       },
       "competition": {
@@ -7051,7 +7243,7 @@
         "paidContractsToday": 0,
         "liveJobs": 237,
         "bidsLast24h": 94,
-        "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in run working file (same values)"
+        "note": "paidVolumeAllTime $247.44 and completedContracts 264 are unchanged from the earlier run reading in runner/research (same values)"
       },
       "basis": {
         "window": "measured",
@@ -7230,7 +7422,7 @@
       "window_extended": true,
       "sample": {
         "tasks_closed": 1,
-        "tasks_closed_note": "Site counters: 'Completed and paid: 1' (all time), 'Active contracts: 15', 'Open tasks: 22', '68 published' all time, 'Published agents: 503'. The one completed-and-paid contract: task 'Make OpenTask Impossible to Scroll Past' (20 USDC, published about 2 months ago by @opentask_admin), worker account not named here, payment 21 USDC on Base confirmed about 21 days before 2026-10-05 (about 2026-09-14), turnaround 22.6 h, rating 5.0 (1). Payer is the operator's admin account: operator-paid.",
+        "tasks_closed_note": "Site counters: 'Completed and paid: 1' (all time), 'Active contracts: 15', 'Open tasks: 22', '68 published' all time, 'Published agents: 503'. The one completed-and-paid contract: task 'Make OpenTask Impossible to Scroll Past' (20 USDC, published about 2 months ago by @opentask_admin), worker @eltociear, payment 21 USDC on Base confirmed about 21 days before 2026-10-05 (about 2026-09-14), turnaround 22.6 h, rating 5.0 (1). Payer is the operator's admin account: operator-paid.",
         "tasks_open": 22,
         "tasks_awarded": 1,
         "submissions_total": null,
@@ -7271,10 +7463,10 @@
         "funded_note": "Sample open listing states it does not escrow funds"
       },
       "carry_over_E1": {
-        "answer": "single completed-and-paid contract identified: payer @opentask_admin (operator), payee a worker account, 21 USDC on Base, about 2026-09-14",
+        "answer": "single completed-and-paid contract identified: payer @opentask_admin (operator), payee @eltociear, 21 USDC on Base, about 2026-09-14",
         "payer_class_suggested": "operator",
         "tx_hash": null,
-        "note": "Activity page shows token contract only (0x8335…2913 = USDC); tx hash not exposed; Blockscout trace left to the run/merge.",
+        "note": "Activity page shows token contract only (0x8335…2913 = USDC); tx hash not exposed; Blockscout trace left to one of the day's checks/merge.",
         "merge_decision": "Recorded as operator-paid (payer @opentask_admin), no tx hash; no E-level upgrade from it."
       },
       "basis": {
@@ -7837,7 +8029,7 @@
         {
           "url": "https://base.blockscout.com/address/0x238E541BfefD82238730D00a2208E5497F1832E0",
           "accessed": "2026-10-05",
-          "shows": "ACP escrow releases",
+          "shows": "ACP escrow releases (one of the day's checks)",
           "primary": true
         }
       ],
@@ -8088,9 +8280,8 @@
             "median_usd": 0.3,
             "ratio_mid_central": 6.408
           },
-          "label": "sensitivities (R35), not graded; D3 passes at mid in every reading"
+          "label": "sensitivities, not graded; D3 passes at mid in every reading"
         },
-        "ruling": "R35",
         "source": "run working file"
       },
       "refresh_2026_10_16": {
@@ -8107,6 +8298,24 @@
             "low": 94.2285,
             "central": 8.5445,
             "high": 1.1096
+          }
+        },
+        "source": "run working file"
+      },
+      "refresh_2026_10_17": {
+        "payout_per_job_net_usd": 0.4,
+        "n_funded": 8,
+        "window": "2026-09-17..2026-10-17",
+        "assignment_ratio": {
+          "budget": {
+            "low": 1221.0012,
+            "central": 108.5452,
+            "high": 13.9669
+          },
+          "mid": {
+            "low": 69.7715,
+            "central": 6.2026,
+            "high": 0.7981
           }
         },
         "source": "run working file"
@@ -8844,7 +9053,32 @@
         "latest payout 2026-09-24 confirmed on Base (C); newest receipts settle on Algorand (not explorer-checked)"
       ],
       "source": "run working file",
-      "as_of_row": "2026-10-11"
+      "as_of_row": "2026-10-11",
+      "refresh_2026_10_17": {
+        "p_win": 0.17447,
+        "p_win_ci90": [
+          0.12833,
+          0.23209
+        ],
+        "basis": "$1 bucket awardedPct / avgFinalEntrants = 0.82 / 4.7 = 0.17447 (rowsDecided 90, contested 80); 90% interval: Wilson envelope over the four base readings (run 9/12 method; range by base [0.15508, 0.19628])",
+        "return_per_dollar": {
+          "budget": {
+            "low": 2.4582,
+            "central": 2.3286,
+            "high": 1.6731
+          },
+          "mid": {
+            "low": 2.2561,
+            "central": 1.1913,
+            "high": 0.2643
+          }
+        },
+        "return_per_dollar_pwin_lo": {
+          "budget": 1.7128,
+          "mid": 0.8762
+        },
+        "source": "run working file (A4)"
+      }
     }
   ],
   "x402_seller_odds": {
@@ -8859,30 +9093,30 @@
     "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains)",
     "buckets": [
       {
+        "label": "<1 (incl. 0)",
         "min_usd": 0,
         "max_usd": 1,
-        "label": "<1 (incl. 0)",
         "sellers": 36822,
         "share": 0.943984
       },
       {
+        "label": "1-100",
         "min_usd": 1,
         "max_usd": 100,
-        "label": "1-100",
         "sellers": 2023,
         "share": 0.051862
       },
       {
+        "label": "100-1,000",
         "min_usd": 100,
         "max_usd": 1000,
-        "label": "100-1,000",
         "sellers": 116,
         "share": 0.002974
       },
       {
+        "label": ">=1,000",
         "min_usd": 1000,
         "max_usd": null,
-        "label": ">=1,000",
         "sellers": 46,
         "share": 0.001179
       }
@@ -8898,18 +9132,18 @@
     "usd_ge_1000_ge5_buyers": 680074.99,
     "bazaar_registered": {
       "n": 1169,
-      "unit": "origin group (bazaar.featured row)",
+      "returned_rows": 592,
       "rows_not_returned": 577,
-      "denominator_note": "total_count groups; only groups with 30-day revenue are returned; groups not returned are counted as < $1",
-      "share_ge_1": 0.206159,
-      "share_ge_100": 0.030796,
-      "share_ge_1000": 0.010265,
       "count_ge_1": 241,
       "count_ge_100": 36,
       "count_ge_1000": 12,
       "ge_1000_ge5_buyers": 12,
-      "returned_rows": 592,
+      "share_ge_1": 0.206159,
+      "share_ge_100": 0.030796,
+      "share_ge_1000": 0.010265,
       "returned_min_usd": 0.001,
+      "unit": "origin group (bazaar.featured row)",
+      "denominator_note": "total_count groups; only groups with 30-day revenue are returned; groups not returned are counted as < $1",
       "compare_run10": {
         "n": 1157,
         "share_ge_1": 0.206569,
@@ -8936,6 +9170,94 @@
       "buyers": "x402scan unique_buyers, untraced"
     },
     "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; odds describe existing indexed sellers, not the chance that a new listing sells. Detection limit: only payments x402scan indexes.",
+    "snapshot_2026_10_09": {
+      "as_of": "2026-10-09",
+      "source": {
+        "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list input {json:{pagination:{page_size:400,page:N},timeframe:30,sorting:{id:total_amount,desc:true}}}, pages 0-5; stopped at page 5 where revenue fell below $1 (page minimum $0.86)",
+        "bazaar": "https://www.x402scan.com/api/trpc/public.sellers.bazaar.featured, same input, pages 0-2 (page 2 empty)",
+        "method": "same routes, input and stopping rule as run 6 (economics.json#x402_seller_odds.source)",
+        "route": "x402scan public tRPC, unauthenticated GET"
+      },
+      "sellers_total": 39120,
+      "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains); run 6: 38,048",
+      "buckets": [
+        {
+          "min_usd": 0,
+          "max_usd": 1,
+          "label": "<1 (incl. 0)",
+          "sellers": 36899,
+          "share": 0.943226
+        },
+        {
+          "min_usd": 1,
+          "max_usd": 100,
+          "label": "1-100",
+          "sellers": 2050,
+          "share": 0.052403
+        },
+        {
+          "min_usd": 100,
+          "max_usd": 1000,
+          "label": "100-1,000",
+          "sellers": 129,
+          "share": 0.003298
+        },
+        {
+          "min_usd": 1000,
+          "max_usd": null,
+          "label": ">=1,000",
+          "sellers": 42,
+          "share": 0.001074
+        }
+      ],
+      "share_ge_1": 0.056774,
+      "share_ge_100": 0.004371,
+      "share_ge_1000": 0.001074,
+      "share_ge_1000_ge5_buyers": 0.00069,
+      "count_ge_1": 2221,
+      "count_ge_100": 171,
+      "count_ge_1000": 42,
+      "count_ge_1000_ge5_buyers": 27,
+      "usd_ge_1000_ge5_buyers": 673299.26,
+      "bazaar_registered": {
+        "n": 1157,
+        "unit": "origin group (bazaar.featured row)",
+        "returned_rows_with_30d_revenue": 591,
+        "rows_not_returned": 566,
+        "denominator_note": "total_count 1,157 groups; only the 591 groups with 30-day revenue are returned (as in run 6, where 577 of 1,305 had revenue); groups not returned are counted as < $1",
+        "share_ge_1": 0.206569,
+        "share_ge_100": 0.032844,
+        "share_ge_1000": 0.008643,
+        "count_ge_1": 239,
+        "count_ge_100": 38,
+        "count_ge_1000": 10,
+        "ge_1000_ge5_buyers": 10,
+        "compare_run6": {
+          "n": 1305,
+          "share_ge_1": 0.17165,
+          "share_ge_100": 0.02835,
+          "share_ge_1000": 0.00843
+        }
+      },
+      "agent_work_seller_ge_1000": {
+        "payTo": "0x7284…299c",
+        "name": "AX1 q-verdict (run 4 class agent_work_service)",
+        "usd_30d": 7831.18,
+        "buyers_30d": 4734,
+        "run6": {
+          "usd_30d": 7066.64,
+          "buyers_30d": 4764
+        },
+        "note": "still the only run-4-classed agent-work seller >= $1,000; the other >= $1,000 sellers were not re-classified this run"
+      },
+      "basis": {
+        "buckets": "measured (x402scan counts, untraced)",
+        "shares": "estimated (computed from measured counts)",
+        "buyers": "x402scan unique_buyers, untraced"
+      },
+      "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; the odds describe existing indexed sellers, not the chance that a new listing sells.",
+      "note": "refreshed 2026-10-09 by run 10 one of the day's checks (same tRPC routes and method as run 6); fresh for the shortlist until 2026-10-16"
+    },
     "snapshot_2026_10_05": {
       "as_of": "2026-10-05T13:5xZ fetch; x402scan 30-day timeframe (rolling; newest latest_block_timestamp in table 2026-10-05T12:55:43.000Z)",
       "source": {
@@ -9026,7 +9348,7 @@
       "agent_work_sellers_ge_1000": 1,
       "agent_work_sellers_ge_1000_list": [
         {
-          "payTo": "0x7284…299c",
+          "payTo": "0x7284d41b5b852f2bd4c99bdf95043d84452d299c",
           "name": "AX1 q-verdict",
           "usd_30d": 7066.64,
           "buyers_30d": 4764
@@ -9076,94 +9398,6 @@
         "buyers": "x402scan unique_buyers, untraced: buyers sharing a funder are not merged"
       },
       "source_path": "run working file"
-    },
-    "snapshot_2026_10_09": {
-      "as_of": "2026-10-09",
-      "source": {
-        "seller_table": "https://www.x402scan.com/api/trpc/public.sellers.all.list input {json:{pagination:{page_size:400,page:N},timeframe:30,sorting:{id:total_amount,desc:true}}}, pages 0-5; stopped at page 5 where revenue fell below $1 (page minimum $0.86)",
-        "bazaar": "https://www.x402scan.com/api/trpc/public.sellers.bazaar.featured, same input, pages 0-2 (page 2 empty)",
-        "method": "same routes, input and stopping rule as run 6 (economics.json#x402_seller_odds.source)",
-        "route": "x402scan public tRPC, unauthenticated GET"
-      },
-      "sellers_total": 39120,
-      "sellers_total_basis": "seller table total_count (distinct payTo recipients with >= 1 indexed x402 payment in 30 days, all chains); run 6: 38,048",
-      "buckets": [
-        {
-          "min_usd": 0,
-          "max_usd": 1,
-          "label": "<1 (incl. 0)",
-          "sellers": 36899,
-          "share": 0.943226
-        },
-        {
-          "min_usd": 1,
-          "max_usd": 100,
-          "label": "1-100",
-          "sellers": 2050,
-          "share": 0.052403
-        },
-        {
-          "min_usd": 100,
-          "max_usd": 1000,
-          "label": "100-1,000",
-          "sellers": 129,
-          "share": 0.003298
-        },
-        {
-          "min_usd": 1000,
-          "max_usd": null,
-          "label": ">=1,000",
-          "sellers": 42,
-          "share": 0.001074
-        }
-      ],
-      "share_ge_1": 0.056774,
-      "share_ge_100": 0.004371,
-      "share_ge_1000": 0.001074,
-      "share_ge_1000_ge5_buyers": 0.00069,
-      "count_ge_1": 2221,
-      "count_ge_100": 171,
-      "count_ge_1000": 42,
-      "count_ge_1000_ge5_buyers": 27,
-      "usd_ge_1000_ge5_buyers": 673299.26,
-      "bazaar_registered": {
-        "n": 1157,
-        "unit": "origin group (bazaar.featured row)",
-        "returned_rows_with_30d_revenue": 591,
-        "rows_not_returned": 566,
-        "denominator_note": "total_count 1,157 groups; only the 591 groups with 30-day revenue are returned (as in run 6, where 577 of 1,305 had revenue); groups not returned are counted as < $1",
-        "share_ge_1": 0.206569,
-        "share_ge_100": 0.032844,
-        "share_ge_1000": 0.008643,
-        "count_ge_1": 239,
-        "count_ge_100": 38,
-        "count_ge_1000": 10,
-        "ge_1000_ge5_buyers": 10,
-        "compare_run6": {
-          "n": 1305,
-          "share_ge_1": 0.17165,
-          "share_ge_100": 0.02835,
-          "share_ge_1000": 0.00843
-        }
-      },
-      "agent_work_seller_ge_1000": {
-        "payTo": "0x7284…299c",
-        "name": "AX1 q-verdict (run 4 class agent_work_service)",
-        "usd_30d": 7831.18,
-        "buyers_30d": 4734,
-        "run6": {
-          "usd_30d": 7066.64,
-          "buyers_30d": 4764
-        },
-        "note": "still the only run-4-classed agent-work seller >= $1,000; the other >= $1,000 sellers were not re-classified this run"
-      },
-      "basis": {
-        "buckets": "measured (x402scan counts, untraced)",
-        "shares": "estimated (computed from measured counts)",
-        "buyers": "x402scan unique_buyers, untraced"
-      },
-      "caveats": "A seller is a payTo address, not a business; buyer counts are not merged by funder; the odds describe existing indexed sellers, not the chance that a new listing sells.",
-      "note": "refreshed 2026-10-09 by run 10 the run (same tRPC routes and method as run 6); fresh for the shortlist until 2026-10-16"
     }
   },
   "calculator_presets": [
@@ -10323,7 +10557,7 @@
         "label": "list prices on 11 October 2026",
         "accessed": "2026-10-11"
       },
-      "added": "run 13 merge (R35; operator caveat: every funded job in the window was posted by the founder account)"
+      "added": "run 13 merge (operator caveat: every funded job in the window was posted by the founder account)"
     }
   ],
   "cost_scenarios": [
@@ -11049,18 +11283,18 @@
   ],
   "price_tier_sensitivity": {
     "without_exclusions": {
-      "note": "deepseek-v4-pro included at its OpenRouter price",
+      "note": "all 17 members at their OpenRouter price",
       "n": 17,
       "budget": {
-        "input": 0.2088,
-        "output": 0.4176,
-        "cached_input": 0.0174,
+        "input": 0.0552,
+        "output": 0.144,
+        "cached_input": 0.0016,
         "models": [
           {
-            "id": "deepseek/deepseek-v4-pro",
-            "input": 0.2088,
-            "output": 0.4176,
-            "cached_input": 0.0174
+            "id": "deepseek/deepseek-v4.1-flash",
+            "input": 0.0552,
+            "output": 0.144,
+            "cached_input": 0.0016
           }
         ]
       },
@@ -11081,7 +11315,167 @@
         "input": 10,
         "output": 50,
         "cached_input": 0.25,
-        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used, reproducing run 6's 10-05 value convention (Fable 0.25 over Astra 1.00); the highest would be 1.0",
+        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used (run 6/12 convention); the highest would be 1.0",
+        "models": [
+          {
+            "id": "anthropic/claude-fable-5.1",
+            "input": 10,
+            "output": 50,
+            "cached_input": 0.25
+          },
+          {
+            "id": "openai/gpt-6-astra",
+            "input": 10,
+            "output": 50,
+            "cached_input": 1
+          }
+        ]
+      }
+    },
+    "only_10_11_exclusion": {
+      "note": "deepseek-v4-pro excluded as on 10-11; gemini-3.8-flash and deepseek-v4.1-flash kept at their OpenRouter prices (not pre-registered)",
+      "n": 16,
+      "budget": {
+        "input": 0.0552,
+        "output": 0.144,
+        "cached_input": 0.0016,
+        "models": [
+          {
+            "id": "deepseek/deepseek-v4.1-flash",
+            "input": 0.0552,
+            "output": 0.144,
+            "cached_input": 0.0016
+          }
+        ]
+      },
+      "mid": {
+        "input": 1.25,
+        "output": 6.75,
+        "cached_input": 0.1,
+        "n_cached": 15,
+        "models_around_output_median": [
+          {
+            "id": "x-ai/grok-4.7",
+            "input": 2,
+            "output": 6
+          },
+          {
+            "id": "mistralai/mistral-medium-3-5",
+            "input": 1.5,
+            "output": 7.5
+          }
+        ]
+      },
+      "frontier": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25,
+        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used (run 6/12 convention); the highest would be 1.0",
+        "models": [
+          {
+            "id": "anthropic/claude-fable-5.1",
+            "input": 10,
+            "output": 50,
+            "cached_input": 0.25
+          },
+          {
+            "id": "openai/gpt-6-astra",
+            "input": 10,
+            "output": 50,
+            "cached_input": 1
+          }
+        ]
+      }
+    },
+    "first_party_price_for_excluded": {
+      "note": "the 3 excluded members included at their first-party list price instead of OpenRouter's (not pre-registered; DeepSeek peak)",
+      "n": 17,
+      "budget": {
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "models": [
+          {
+            "id": "openai/gpt-6-luna",
+            "input": 0.1,
+            "output": 0.5,
+            "cached_input": 0.01
+          }
+        ]
+      },
+      "mid": {
+        "input": 1.32,
+        "output": 6,
+        "cached_input": 0.1,
+        "n_cached": 16,
+        "models_around_output_median": [
+          {
+            "id": "x-ai/grok-4.7",
+            "input": 2,
+            "output": 6
+          }
+        ]
+      },
+      "frontier": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25,
+        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used (run 6/12 convention); the highest would be 1.0",
+        "models": [
+          {
+            "id": "anthropic/claude-fable-5.1",
+            "input": 10,
+            "output": 50,
+            "cached_input": 0.25
+          },
+          {
+            "id": "openai/gpt-6-astra",
+            "input": 10,
+            "output": 50,
+            "cached_input": 1
+          }
+        ]
+      }
+    },
+    "same_16_as_10_11_new_exclusions_at_first_party": {
+      "note": "the 10-11 eligible set (16 members; deepseek-v4-pro excluded) with gemini-3.8-flash and deepseek-v4.1-flash at their unchanged first-party list prices; isolates list-price changes from the two new exclusions (not pre-registered)",
+      "n": 16,
+      "budget": {
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "models": [
+          {
+            "id": "openai/gpt-6-luna",
+            "input": 0.1,
+            "output": 0.5,
+            "cached_input": 0.01
+          }
+        ]
+      },
+      "mid": {
+        "input": 1.25,
+        "output": 6.75,
+        "cached_input": 0.1,
+        "n_cached": 15,
+        "models_around_output_median": [
+          {
+            "id": "x-ai/grok-4.7",
+            "input": 2,
+            "output": 6
+          },
+          {
+            "id": "mistralai/mistral-medium-3-5",
+            "input": 1.5,
+            "output": 7.5
+          }
+        ]
+      },
+      "frontier": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25,
+        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used (run 6/12 convention); the highest would be 1.0",
         "models": [
           {
             "id": "anthropic/claude-fable-5.1",
@@ -11099,7 +11493,7 @@
       }
     },
     "qwen_member_dropped_instead_of_replaced": {
-      "n": 15,
+      "n": 13,
       "budget": {
         "input": 0.1,
         "output": 0.5,
@@ -11114,15 +11508,15 @@
         ]
       },
       "mid": {
-        "input": 1.5,
-        "output": 7.5,
-        "cached_input": 0.1,
-        "n_cached": 14,
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.15,
+        "n_cached": 12,
         "models_around_output_median": [
           {
-            "id": "mistralai/mistral-medium-3-5",
-            "input": 1.5,
-            "output": 7.5
+            "id": "anthropic/claude-sonnet-5.5",
+            "input": 2,
+            "output": 10
           }
         ]
       },
@@ -11130,7 +11524,7 @@
         "input": 10,
         "output": 50,
         "cached_input": 0.25,
-        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used, reproducing run 6's 10-05 value convention (Fable 0.25 over Astra 1.00); the highest would be 1.0",
+        "cached_input_tie_note": "output tie: the lowest cached price among tied models is used (run 6/12 convention); the highest would be 1.0",
         "models": [
           {
             "id": "anthropic/claude-fable-5.1",
@@ -11156,13 +11550,14 @@
       "openai"
     ],
     "pages_ok_n": 4,
+    "wayback_used": false,
     "models_checked": 11,
-    "models_matching_within_5pct": 10
+    "models_matching_within_5pct": 8
   },
-  "price_tiers_label": "list prices on 11 October 2026 (OpenRouter public list, cross-checked on 4 first-party pages); never 'costs'; mid is a component-wise median (estimated)",
+  "price_tiers_label": "list prices on the access date (2026-10-17); batch, flex and off-peak discounts not used; never 'costs'",
   "refresh_2026_10_11": {
     "run_id": "report-d01ecfcff5ece19e2959346e",
-    "price_tiers": "replaced: run working file (list prices accessed 2026-10-11; R20)",
+    "price_tiers": "replaced: run working file (list prices accessed 2026-10-11)",
     "tier_change_vs_2026_10_05": {
       "budget": {
         "input": {
@@ -11402,8 +11797,8 @@
     "run_id": "report-3a1db52bdf9670aa5991b83b",
     "price_tiers": "unchanged (list prices accessed 2026-10-11; fresh to 10-18)",
     "rows_updated": {
-      "moltjobs": "assignment payout per job $0.10 -> $0.50 (R35); cost per job unchanged",
-      "taskmarket": "p_win 0.014068 -> 0.015483 (R38)"
+      "moltjobs": "assignment payout per job $0.10 -> $0.50; cost per job unchanged",
+      "taskmarket": "p_win 0.014068 -> 0.015483"
     },
     "d3_inputs_old_to_new": [
       {
@@ -11461,7 +11856,7 @@
         "median_usd": 0.3,
         "ratio_mid_central": 6.408
       },
-      "label": "sensitivities (R35), not graded; D3 passes at mid in every reading"
+      "label": "sensitivities, not graded; D3 passes at mid in every reading"
     },
     "presets": [
       "taskmarket_typical",
@@ -11478,7 +11873,7 @@
       "taskmarket": "p_win 0.015483 -> 0.015486 (C, run 14 window)"
     },
     "rows_not_updated": {
-      "moltjobs": "no new job (B); D3 input $0.50 kept (R59, R60); date-level 10-13 window sensitivity $0.40 (8 funded founder jobs) shown in grading_inputs"
+      "moltjobs": "no new job (B); D3 input $0.50 kept; date-level 10-13 window sensitivity $0.40 (8 funded founder jobs) shown in grading_inputs"
     },
     "d3_inputs_old_to_new": [
       {
@@ -11525,12 +11920,12 @@
     "price_tiers": "unchanged (list prices accessed 2026-10-11; fresh to 10-18)",
     "rows_updated": {
       "taskmarket": "p_win 0.015356 (C, run 15 window)",
-      "superteam-earn": "p_win 0.02407 (main row; label corrected; Streamflow kept)",
+      "superteam-earn": "p_win 0.02407 (A, main row; label corrected; Streamflow kept)",
       "execution-market": "payout per job $0.02 gross / $0.0174 net re-dated 2026-10-14",
       "x402_seller_odds": "replaced with the 2026-10-14 read (A)"
     },
     "rows_not_updated": {
-      "algora-github-bounties": "Pool decision: run 8 rows hold awards only; D3 stays dated 2026-10-07",
+      "algora-github-bounties": "run 8 rows hold awards only; D3 stays dated 2026-10-07",
       "moltjobs": "no new job (C); D3 input $0.50 kept"
     },
     "d3_inputs_old_to_new": [
@@ -11643,10 +12038,1158 @@
     "presets": "carried from run 15 unchanged (stated)"
   },
   "previous_run_id_run15": "report-6b3ee899e2c0b31d6e5d0690",
+  "price_tiers_2026_10_11": [
+    {
+      "tier": "budget",
+      "public_label": "budget band (about $0.1 in / $0.5 out per million tokens)",
+      "input_usd_per_mtok": 0.1,
+      "output_usd_per_mtok": 0.5,
+      "cached_input_usd_per_mtok": 0.01,
+      "models": [
+        {
+          "id": "openai/gpt-6-luna",
+          "input": 0.1,
+          "output": 0.5,
+          "cached_input": 0.01
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openrouter.ai/api/v1/models",
+          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-11T20:29:07Z",
+          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+          "bytes": 766350
+        },
+        {
+          "url": "https://platform.openai.com/docs/pricing",
+          "final_url": "https://developers.openai.com/api/docs/pricing",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:40Z",
+          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+          "bytes": 595036
+        }
+      ],
+      "selection": "cheapest output price in the eligible set",
+      "basis": "measured (list price on the access date)",
+      "change_vs_2026_10_05": {
+        "input": {
+          "old_10_05": 0.1,
+          "new_10_11": 0.1,
+          "change_usd": 0,
+          "change_pct": 0
+        },
+        "output": {
+          "old_10_05": 0.5,
+          "new_10_11": 0.5,
+          "change_usd": 0,
+          "change_pct": 0
+        },
+        "cached_input": {
+          "old_10_05": 0.01,
+          "new_10_11": 0.01,
+          "change_usd": 0,
+          "change_pct": 0
+        }
+      }
+    },
+    {
+      "tier": "mid",
+      "public_label": "mid band (about $1.25 in / $6.75 out per million tokens)",
+      "input_usd_per_mtok": 1.25,
+      "output_usd_per_mtok": 6.75,
+      "cached_input_usd_per_mtok": 0.1,
+      "models": [
+        {
+          "id": "x-ai/grok-4.7",
+          "input": 2,
+          "output": 6
+        },
+        {
+          "id": "mistralai/mistral-medium-3-5",
+          "input": 1.5,
+          "output": 7.5
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openrouter.ai/api/v1/models",
+          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-11T20:29:07Z",
+          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+          "bytes": 766350
+        },
+        {
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:38Z",
+          "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
+          "bytes": 1141318
+        },
+        {
+          "url": "https://platform.openai.com/docs/pricing",
+          "final_url": "https://developers.openai.com/api/docs/pricing",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:40Z",
+          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+          "bytes": 595036
+        },
+        {
+          "url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+          "route": "GET HTML 200 (retry with cookie jar after a 302 self-redirect)",
+          "accessed": "2026-10-11T20:30:04Z",
+          "sha256": "cce72251e924222790224164a8daf1bbe37486e96432ecd3937ec86fc1f73089",
+          "bytes": 244995
+        },
+        {
+          "url": "https://api-docs.deepseek.com/quick_start/pricing",
+          "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:46Z",
+          "sha256": "210f102275ccf1a6542f08a3bc9e4b4c7c83278cb74b35217bffa112df6363b2",
+          "bytes": 23982
+        }
+      ],
+      "selection": "component-wise median of input, output and cached-input prices across the eligible set (n=16; cached median over n=15 with a cached price); models listed are those around the output median, not one model",
+      "basis": "estimated (component-wise median of measured list prices; not one model)",
+      "change_vs_2026_10_05": {
+        "input": {
+          "old_10_05": 1.25,
+          "new_10_11": 1.25,
+          "change_usd": 0,
+          "change_pct": 0
+        },
+        "output": {
+          "old_10_05": 7.25,
+          "new_10_11": 6.75,
+          "change_usd": -0.5,
+          "change_pct": -6.9
+        },
+        "cached_input": {
+          "old_10_05": 0.13,
+          "new_10_11": 0.1,
+          "change_usd": -0.03,
+          "change_pct": -23.1
+        }
+      }
+    },
+    {
+      "tier": "frontier",
+      "public_label": "frontier band (about $10 in / $50 out per million tokens)",
+      "input_usd_per_mtok": 10,
+      "output_usd_per_mtok": 50,
+      "cached_input_usd_per_mtok": 0.25,
+      "models": [
+        {
+          "id": "anthropic/claude-fable-5.1",
+          "input": 10,
+          "output": 50,
+          "cached_input": 0.25
+        },
+        {
+          "id": "openai/gpt-6-astra",
+          "input": 10,
+          "output": 50,
+          "cached_input": 1
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://openrouter.ai/api/v1/models",
+          "route": "GET public JSON (458 models), pricing.prompt/completion/input_cache_read x 1e6",
+          "accessed": "2026-10-11T20:29:07Z",
+          "sha256": "8df3bebf892894361d105c1847ab7e525cb953858949e4623cb65f5dccc02184",
+          "bytes": 766350
+        },
+        {
+          "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+          "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:38Z",
+          "sha256": "a30477f4d487036dc5369b6e9f857c5403cee641c5bff3ee1964de7a3b6fce77",
+          "bytes": 1141318
+        },
+        {
+          "url": "https://platform.openai.com/docs/pricing",
+          "final_url": "https://developers.openai.com/api/docs/pricing",
+          "route": "GET HTML 200",
+          "accessed": "2026-10-11T20:29:40Z",
+          "sha256": "d1f9f8c4521bbd521b3be57439b1df334702c9ca5ad36faeb9811f83fd27dc28",
+          "bytes": 595036
+        }
+      ],
+      "selection": "most expensive output price in the eligible set",
+      "basis": "measured (list price on the access date)",
+      "change_vs_2026_10_05": {
+        "input": {
+          "old_10_05": 10,
+          "new_10_11": 10,
+          "change_usd": 0,
+          "change_pct": 0
+        },
+        "output": {
+          "old_10_05": 50,
+          "new_10_11": 50,
+          "change_usd": 0,
+          "change_pct": 0
+        },
+        "cached_input": {
+          "old_10_05": 0.25,
+          "new_10_11": 0.25,
+          "change_usd": 0,
+          "change_pct": 0
+        }
+      }
+    }
+  ],
+  "price_tier_model_set_2026_10_11": [
+    {
+      "id_run6": "anthropic/claude-fable-5.1",
+      "id": "anthropic/claude-fable-5.1",
+      "name": "Anthropic: Claude Fable 5.1",
+      "input": 10,
+      "output": 50,
+      "cached_input": 0.25,
+      "context_length": 1000000,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25
+      },
+      "first_party": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 0.25,
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+        "accessed": "2026-10-11T20:29:38Z",
+        "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "quote": "Claude Fable 5.1 ... $10 / MTok $50 / MTok $12.50 / MTok $20 / MTok $0.25 / MTok",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "anthropic/claude-opus-5.5",
+      "id": "anthropic/claude-opus-5.5",
+      "name": "Anthropic: Claude Opus 5.5",
+      "input": 4,
+      "output": 20,
+      "cached_input": 0.2,
+      "context_length": 1000000,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 4,
+        "output": 20,
+        "cached_input": 0.2
+      },
+      "first_party": {
+        "input": 4,
+        "output": 20,
+        "cached_input": 0.2,
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+        "accessed": "2026-10-11T20:29:38Z",
+        "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "quote": "Claude Opus 5.5 ... $4 / MTok $20 / MTok $5 / MTok $8 / MTok $0.20 / MTok",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "anthropic/claude-sonnet-5.5",
+      "id": "anthropic/claude-sonnet-5.5",
+      "name": "Anthropic: Claude Sonnet 5.5",
+      "input": 2,
+      "output": 10,
+      "cached_input": 0.1,
+      "context_length": 1000000,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.2
+      },
+      "first_party": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.1,
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+        "accessed": "2026-10-11T20:29:38Z",
+        "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "quote": "Claude Sonnet 5.5 ... $2 / MTok $10 / MTok $2.50 / MTok $4 / MTok $0.10 / MTok",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "anthropic/claude-haiku-4.5",
+      "id": "anthropic/claude-haiku-4.5",
+      "name": "Anthropic: Claude Haiku 4.5",
+      "input": 1,
+      "output": 5,
+      "cached_input": 0.1,
+      "context_length": 200000,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 1,
+        "output": 5,
+        "cached_input": 0.1
+      },
+      "first_party": {
+        "input": 1,
+        "output": 5,
+        "cached_input": 0.1,
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+        "accessed": "2026-10-11T20:29:38Z",
+        "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "quote": "Claude Haiku 4.5 $1 / MTok $5 / MTok $1.25 / MTok $2 / MTok $0.10 / MTok",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "openai/gpt-6-astra",
+      "id": "openai/gpt-6-astra",
+      "name": "OpenAI: GPT-6 Astra",
+      "input": 10,
+      "output": 50,
+      "cached_input": 1,
+      "context_length": 1050000,
+      "long_context_override": true,
+      "prev_10_05": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 1
+      },
+      "first_party": {
+        "input": 10,
+        "output": 50,
+        "cached_input": 1,
+        "url": "https://platform.openai.com/docs/pricing",
+        "accessed": "2026-10-11T20:29:40Z",
+        "final_url": "https://developers.openai.com/api/docs/pricing",
+        "quote": "Standard, short context: gpt-6-astra $10.00 $1.00 $12.50 $50.00",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "openai/gpt-6.1-sol",
+      "id": "openai/gpt-6.1-sol",
+      "name": "OpenAI: GPT-6.1 Sol",
+      "input": 2,
+      "output": 10,
+      "cached_input": 0.1,
+      "context_length": 1050000,
+      "long_context_override": true,
+      "prev_10_05": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.1
+      },
+      "first_party": {
+        "input": 2,
+        "output": 10,
+        "cached_input": 0.1,
+        "url": "https://platform.openai.com/docs/pricing",
+        "accessed": "2026-10-11T20:29:40Z",
+        "final_url": "https://developers.openai.com/api/docs/pricing",
+        "quote": "Standard, short context: gpt-6.1-sol $2.00 $0.10 $2.50 $10.00",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "openai/gpt-6-luna",
+      "id": "openai/gpt-6-luna",
+      "name": "OpenAI: GPT-6 Luna",
+      "input": 0.1,
+      "output": 0.5,
+      "cached_input": 0.01,
+      "context_length": 1050000,
+      "long_context_override": true,
+      "prev_10_05": {
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01
+      },
+      "first_party": {
+        "input": 0.1,
+        "output": 0.5,
+        "cached_input": 0.01,
+        "url": "https://platform.openai.com/docs/pricing",
+        "accessed": "2026-10-11T20:29:40Z",
+        "final_url": "https://developers.openai.com/api/docs/pricing",
+        "quote": "Standard, short context: gpt-6-luna $0.10 $0.01 $0.125 $0.50",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "google/gemini-3.1-pro-preview",
+      "id": "google/gemini-3.1-pro-preview",
+      "name": "Google: Gemini 3.1 Pro Preview",
+      "input": 2,
+      "output": 12,
+      "cached_input": 0.2,
+      "context_length": 1048576,
+      "long_context_override": true,
+      "prev_10_05": {
+        "input": 2,
+        "output": 12,
+        "cached_input": 0.2
+      },
+      "first_party": {
+        "input": 2,
+        "output": 12,
+        "cached_input": 0.2,
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "accessed": "2026-10-11T20:30:04Z",
+        "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "quote": "Paid tier: input $2.00, prompts <= 200k; output $12.00; context caching $0.20",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "google/gemini-3.8-flash",
+      "id": "google/gemini-3.8-flash",
+      "name": "Google: Gemini 3.8 Flash",
+      "input": 0.75,
+      "output": 3.75,
+      "cached_input": 0.075,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.75,
+        "output": 3.75,
+        "cached_input": 0.075
+      },
+      "first_party": {
+        "input": 0.75,
+        "output": 3.75,
+        "cached_input": 0.075,
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "accessed": "2026-10-11T20:30:04Z",
+        "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "quote": "Paid tier: $0.75 / $3.75 / caching $0.075 through December 31, 2026; $1.50 / $7.50 / $0.15 from January 1, 2027",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "deepseek/deepseek-v4-pro",
+      "id": "deepseek/deepseek-v4-pro",
+      "name": "DeepSeek: DeepSeek V4 Pro 0423",
+      "input": 0.2088,
+      "output": 0.4176,
+      "cached_input": 0.0174,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.2088,
+        "output": 0.4176,
+        "cached_input": 0.0174
+      },
+      "first_party": {
+        "input": 1.32,
+        "output": 3.96,
+        "cached_input": 0.044,
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "accessed": "2026-10-11T20:29:46Z",
+        "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "quote": "deepseek-v4-pro PEAK: cache hit $0.044, cache miss $1.32, output $3.96 (off-peak half)",
+        "input_within_5pct": false,
+        "output_within_5pct": false,
+        "cached_match": false,
+        "match": false
+      },
+      "excluded": true
+    },
+    {
+      "id_run6": "deepseek/deepseek-v4.1-flash",
+      "id": "deepseek/deepseek-v4.1-flash",
+      "name": "DeepSeek: DeepSeek V4.1 Flash",
+      "input": 0.3,
+      "output": 1.2,
+      "cached_input": 0.006,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006
+      },
+      "first_party": {
+        "input": 0.3,
+        "output": 1.2,
+        "cached_input": 0.006,
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "accessed": "2026-10-11T20:29:46Z",
+        "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "quote": "deepseek-flash (DeepSeek-V4.1-Flash) PEAK: cache hit $0.006, cache miss $0.3, output $1.2 (off-peak half)",
+        "input_within_5pct": true,
+        "output_within_5pct": true,
+        "cached_match": true,
+        "match": true
+      },
+      "excluded": false
+    },
+    {
+      "id_run6": "x-ai/grok-4.7",
+      "id": "x-ai/grok-4.7",
+      "name": "SpaceXAI: Grok 4.7",
+      "input": 2,
+      "output": 6,
+      "cached_input": 0.5,
+      "context_length": 500000,
+      "long_context_override": true,
+      "prev_10_05": {
+        "input": 2,
+        "output": 6,
+        "cached_input": 0.5
+      },
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    },
+    {
+      "id_run6": "moonshotai/kimi-k3",
+      "id": "moonshotai/kimi-k3",
+      "name": "MoonshotAI: Kimi K3",
+      "input": 0.8,
+      "output": 13.5,
+      "cached_input": 0.55,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.67,
+        "output": 14,
+        "cached_input": 0.22
+      },
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    },
+    {
+      "id_run6": "z-ai/glm-5.3",
+      "id": "z-ai/glm-5.3",
+      "name": "Z.ai: GLM 5.3",
+      "input": 0.07,
+      "output": 4.8,
+      "cached_input": 0.05,
+      "context_length": 1048576,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.05,
+        "output": 7,
+        "cached_input": 0.045
+      },
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    },
+    {
+      "id_run6": "qwen/qwen3-coder-plus",
+      "replacement": {
+        "action": "replaced_by_successor",
+        "successor": "qwen/qwen3-coder-next",
+        "reading": "qwen3-coder-plus is not in the OpenRouter list on 2026-10-11. Same-family successor read as the newest listed model in the same provider's qwen3-coder line (ids starting 'qwen/qwen3-coder'): qwen3-coder-next (created 2026-02-04). Other coder-line ids listed: qwen3-coder (2025-07-23), qwen3-coder-30b-a3b-instruct (2025-07-31), qwen3-coder-flash (2025-09-17). No 'plus' coder id is listed. This choice is a reading, not stated in the rule; sensitivity 'dropped' is reported."
+      },
+      "id": "qwen/qwen3-coder-next",
+      "name": "Qwen: Qwen3 Coder Next",
+      "input": 0.12,
+      "output": 0.8,
+      "cached_input": 0.07,
+      "context_length": 262144,
+      "long_context_override": false,
+      "prev_10_05": null,
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    },
+    {
+      "id_run6": "mistralai/mistral-medium-3-5",
+      "id": "mistralai/mistral-medium-3-5",
+      "name": "Mistral: Mistral Medium 3.5",
+      "input": 1.5,
+      "output": 7.5,
+      "cached_input": null,
+      "context_length": 262144,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 1.5,
+        "output": 7.5,
+        "cached_input": null
+      },
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    },
+    {
+      "id_run6": "mistralai/devstral-2512",
+      "id": "mistralai/devstral-2512",
+      "name": "Mistral: Devstral 2 2512",
+      "input": 0.4,
+      "output": 2,
+      "cached_input": 0.04,
+      "context_length": 262144,
+      "long_context_override": false,
+      "prev_10_05": {
+        "input": 0.4,
+        "output": 2,
+        "cached_input": 0.04
+      },
+      "first_party": null,
+      "first_party_note": "no first-party page in this run's cap table (as in run 6); OpenRouter price used unchecked",
+      "excluded": false
+    }
+  ],
+  "price_tier_exclusions_2026_10_11": [
+    {
+      "id": "deepseek/deepseek-v4-pro",
+      "openrouter": [
+        0.2088,
+        0.4176
+      ],
+      "first_party": [
+        1.32,
+        3.96
+      ],
+      "reason": "OpenRouter price differs from the first-party list price by more than 5% (first-party peak price; off-peak is half)"
+    }
+  ],
+  "price_tier_changes_vs_2026_10_11": {
+    "tiers": {
+      "budget": {
+        "input_usd_per_mtok": {
+          "2026-10-11": 0.1,
+          "2026-10-17": 0.1,
+          "change_pct": 0
+        },
+        "output_usd_per_mtok": {
+          "2026-10-11": 0.5,
+          "2026-10-17": 0.5,
+          "change_pct": 0
+        },
+        "cached_input_usd_per_mtok": {
+          "2026-10-11": 0.01,
+          "2026-10-17": 0.01,
+          "change_pct": 0
+        }
+      },
+      "mid": {
+        "input_usd_per_mtok": {
+          "2026-10-11": 1.25,
+          "2026-10-17": 1.75,
+          "change_pct": 40
+        },
+        "output_usd_per_mtok": {
+          "2026-10-11": 6.75,
+          "2026-10-17": 8.75,
+          "change_pct": 29.6
+        },
+        "cached_input_usd_per_mtok": {
+          "2026-10-11": 0.1,
+          "2026-10-17": 0.1,
+          "change_pct": 0
+        }
+      },
+      "frontier": {
+        "input_usd_per_mtok": {
+          "2026-10-11": 10,
+          "2026-10-17": 10,
+          "change_pct": 0
+        },
+        "output_usd_per_mtok": {
+          "2026-10-11": 50,
+          "2026-10-17": 50,
+          "change_pct": 0
+        },
+        "cached_input_usd_per_mtok": {
+          "2026-10-11": 0.25,
+          "2026-10-17": 0.25,
+          "change_pct": 0
+        }
+      }
+    },
+    "members": [
+      {
+        "id": "anthropic/claude-fable-5.1",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "anthropic/claude-opus-5.5",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "anthropic/claude-sonnet-5.5",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "anthropic/claude-haiku-4.5",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "openai/gpt-6-astra",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "openai/gpt-6.1-sol",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "openai/gpt-6-luna",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "google/gemini-3.1-pro-preview",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "google/gemini-3.8-flash",
+        "change_pct": {
+          "input": 10,
+          "output": 10,
+          "cached_input": 10
+        }
+      },
+      {
+        "id": "deepseek/deepseek-v4-pro",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "deepseek/deepseek-v4.1-flash",
+        "change_pct": {
+          "input": -81.6,
+          "output": -88,
+          "cached_input": -73.3
+        }
+      },
+      {
+        "id": "x-ai/grok-4.7",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "moonshotai/kimi-k3",
+        "change_pct": {
+          "input": -62,
+          "output": -11.6,
+          "cached_input": -61.8
+        }
+      },
+      {
+        "id": "z-ai/glm-5.3",
+        "change_pct": {
+          "input": 12.9,
+          "output": -33.3,
+          "cached_input": 56
+        }
+      },
+      {
+        "id": "qwen/qwen3-coder-next",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      },
+      {
+        "id": "mistralai/mistral-medium-3-5",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": null
+        }
+      },
+      {
+        "id": "mistralai/devstral-2512",
+        "change_pct": {
+          "input": 0,
+          "output": 0,
+          "cached_input": 0
+        }
+      }
+    ],
+    "member_changes_detail": [
+      {
+        "id": "google/gemini-3.8-flash",
+        "old_10_11": {
+          "input": 0.75,
+          "output": 3.75,
+          "cached_input": 0.075
+        },
+        "new_10_17": {
+          "input": 0.825,
+          "output": 4.125,
+          "cached_input": 0.0825
+        },
+        "change_pct": {
+          "input": 10,
+          "output": 10,
+          "cached_input": 10
+        }
+      },
+      {
+        "id": "deepseek/deepseek-v4.1-flash",
+        "old_10_11": {
+          "input": 0.3,
+          "output": 1.2,
+          "cached_input": 0.006
+        },
+        "new_10_17": {
+          "input": 0.0552,
+          "output": 0.144,
+          "cached_input": 0.0016
+        },
+        "change_pct": {
+          "input": -81.6,
+          "output": -88,
+          "cached_input": -73.3
+        }
+      },
+      {
+        "id": "moonshotai/kimi-k3",
+        "old_10_11": {
+          "input": 0.8,
+          "output": 13.5,
+          "cached_input": 0.55
+        },
+        "new_10_17": {
+          "input": 0.304,
+          "output": 11.936,
+          "cached_input": 0.21
+        },
+        "change_pct": {
+          "input": -62,
+          "output": -11.6,
+          "cached_input": -61.8
+        }
+      },
+      {
+        "id": "z-ai/glm-5.3",
+        "old_10_11": {
+          "input": 0.07,
+          "output": 4.8,
+          "cached_input": 0.05
+        },
+        "new_10_17": {
+          "input": 0.079,
+          "output": 3.2,
+          "cached_input": 0.078
+        },
+        "change_pct": {
+          "input": 12.9,
+          "output": -33.3,
+          "cached_input": 56
+        }
+      }
+    ],
+    "why_mid_moved": "mid +40.0% (input) / +29.6% (output): two members (gemini-3.8-flash, deepseek-v4.1-flash) are excluded by the 5% price-match test because their OpenRouter prices moved away from unchanged first-party prices; each removes a cheap member, so the median shifts up. Not 'list prices rose'.",
+    "same_set_sensitivity": {
+      "mid": {
+        "input": 1.25,
+        "output": 6.75,
+        "cached_input": 0.1,
+        "n_cached": 15,
+        "models_around_output_median": [
+          {
+            "id": "x-ai/grok-4.7",
+            "input": 2,
+            "output": 6
+          },
+          {
+            "id": "mistralai/mistral-medium-3-5",
+            "input": 1.5,
+            "output": 7.5
+          }
+        ]
+      },
+      "label": "not pre-registered; mid unchanged at 1.25 / 6.75 / 0.10; changes no gate",
+      "grades_ref": "run working file"
+    },
+    "replacements": [
+      {
+        "from": "qwen/qwen3-coder-plus",
+        "action": "replaced_by_successor",
+        "successor": "qwen/qwen3-coder-next",
+        "reading": "carried from run 12 (10-11): qwen3-coder-plus still not listed on 2026-10-17; qwen3-coder-next (created 2026-02-04) is still the newest listed id in the qwen3-coder line (others: qwen3-coder 2025-07-23, qwen3-coder-30b-a3b-instruct 2025-07-31, qwen3-coder-flash 2025-09-17); no 'plus' coder id listed."
+      }
+    ],
+    "new_replacements_this_run": [],
+    "observation": "OpenRouter lists deepseek-v4.1-flash-1017 (created about 10-16/17; peak price matches DeepSeek's own); not substituted: the member is still listed; the planner decides for run 18",
+    "accessed": "2026-10-17T23:47:01Z",
+    "sources": [
+      {
+        "url": "https://openrouter.ai/api/v1/models",
+        "route": "GET public JSON (471 models), pricing.prompt/completion/input_cache_read x 1e6",
+        "accessed": "2026-10-17T23:46:59Z",
+        "sha256": "aee5e2a9aedc0cdc37b64de99512b10a382ddd27a6221a61e9dfdc378fd0722a",
+        "bytes": 787955
+      },
+      {
+        "url": "https://docs.anthropic.com/en/docs/about-claude/pricing",
+        "final_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+        "route": "GET HTML 200",
+        "accessed": "2026-10-17T23:46:59Z",
+        "sha256": "d2ebf4d8badcfab27bacbd7668e57ae8dd8d9a59d408019b99892817cfdea288",
+        "bytes": 1193558
+      },
+      {
+        "url": "https://platform.openai.com/docs/pricing",
+        "final_url": "https://developers.openai.com/api/docs/pricing",
+        "route": "GET HTML 200",
+        "accessed": "2026-10-17T23:47:00Z",
+        "sha256": "ab033e0c12c060434f7b7aba41e550c642cec2bd6d9da246eee5734f08f55e5c",
+        "bytes": 600742
+      },
+      {
+        "url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "final_url": "https://ai.google.dev/gemini-api/docs/pricing",
+        "route": "GET HTML 200",
+        "accessed": "2026-10-17T23:47:00Z",
+        "sha256": "ce1fc8b9c6cb67be649abdf658bf03f80438284ebc881a44498cbfc55abb2818",
+        "bytes": 257373
+      },
+      {
+        "url": "https://api-docs.deepseek.com/quick_start/pricing",
+        "final_url": "https://api-docs.deepseek.com/quick_start/pricing/",
+        "route": "GET HTML 200",
+        "accessed": "2026-10-17T23:47:01Z",
+        "sha256": "38f583f627523f45a0cacd00d43ad49cd4f7e3aa5c20cc98bdbc3674f5c74c95",
+        "bytes": 26043
+      }
+    ]
+  },
+  "refresh_2026_10_17": {
+    "run_id": "report-052abdb20fbb277459abb9dd",
+    "price_tiers": "replaced with the 2026-10-17 tiers (run 12 tier rule and model set unchanged); the 10-11 tiers kept as price_tiers_2026_10_11",
+    "repriced_rows_step3": {
+      "taskmarket": {
+        "as_of": "2026-10-17",
+        "venue_side_as_of": "2026-10-17",
+        "return_per_dollar": {
+          "budget": {
+            "low": 13.5878,
+            "central": 1.4803,
+            "high": 0.4101
+          },
+          "mid": {
+            "low": 0.7766,
+            "central": 0.0846,
+            "high": 0.0234
+          }
+        },
+        "assignment_ratio": null,
+        "return_per_dollar_pwin_lo": {
+          "budget": 1.1566,
+          "mid": 0.0661
+        }
+      },
+      "moltjobs": {
+        "as_of": "2026-10-17",
+        "venue_side_as_of": "2026-10-17",
+        "return_per_dollar": null,
+        "assignment_ratio": {
+          "budget": {
+            "low": 1221.0012,
+            "central": 108.5452,
+            "high": 13.9669
+          },
+          "mid": {
+            "low": 69.7715,
+            "central": 6.2026,
+            "high": 0.7981
+          }
+        },
+        "return_per_dollar_pwin_lo": null
+      },
+      "execution-market": {
+        "as_of": "2026-10-14",
+        "venue_side_as_of": "2026-10-14",
+        "return_per_dollar": null,
+        "assignment_ratio": {
+          "budget": {
+            "low": 21.6095,
+            "central": 2.302,
+            "high": 0.3269
+          },
+          "mid": {
+            "low": 1.2348,
+            "central": 0.1315,
+            "high": 0.0187
+          }
+        },
+        "return_per_dollar_pwin_lo": null
+      },
+      "virtuals-acp": {
+        "as_of": "2026-10-05",
+        "venue_side_as_of": "2026-10-05",
+        "return_per_dollar": null,
+        "assignment_ratio": {
+          "budget": {
+            "low": 54.9451,
+            "central": 4.8845,
+            "high": 0.6285
+          },
+          "mid": {
+            "low": 3.1397,
+            "central": 0.2791,
+            "high": 0.0359
+          }
+        },
+        "return_per_dollar_pwin_lo": null
+      },
+      "superteam-earn": {
+        "as_of": "2026-10-16",
+        "venue_side_as_of": "2026-10-16",
+        "return_per_dollar": {
+          "budget": {
+            "low": 7678.0488,
+            "central": 683.4193,
+            "high": 87.936
+          },
+          "mid": {
+            "low": 439.2814,
+            "central": 39.0516,
+            "high": 5.0249
+          }
+        },
+        "assignment_ratio": null,
+        "return_per_dollar_pwin_lo": {
+          "budget": 432.9986,
+          "mid": 24.7422
+        }
+      },
+      "algora-github-bounties": {
+        "as_of": "2026-10-07",
+        "venue_side_as_of": "2026-10-07",
+        "return_per_dollar": {
+          "budget": {
+            "low": 3459.2466,
+            "central": 376.8561,
+            "high": 104.4091
+          },
+          "mid": {
+            "low": 197.7013,
+            "central": 21.5343,
+            "high": 5.9663
+          }
+        },
+        "assignment_ratio": null,
+        "return_per_dollar_pwin_lo": {
+          "budget": 207.4369,
+          "mid": 11.8533
+        }
+      },
+      "deskcrew": {
+        "as_of": "2026-10-17",
+        "venue_side_as_of": "2026-10-17",
+        "return_per_dollar": {
+          "budget": {
+            "low": 2.4582,
+            "central": 2.3286,
+            "high": 1.6731
+          },
+          "mid": {
+            "low": 2.2561,
+            "central": 1.1913,
+            "high": 0.2643
+          }
+        },
+        "assignment_ratio": null,
+        "return_per_dollar_pwin_lo": {
+          "budget": 1.7128,
+          "mid": 0.8762
+        }
+      }
+    },
+    "rows_updated": {
+      "taskmarket": "p_win 0.019302 (C, run 17 window, edition grace 15)",
+      "deskcrew": "p_win 0.17447, interval [0.12833, 0.23209] (A4 operator aggregates, run 9/12 method)",
+      "moltjobs": "D3 input $0.40 (median of 8 funded founder jobs, 09-17..10-17)"
+    },
+    "rows_not_updated": {
+      "algora-github-bounties": "a recorded ruling (venue side 10-07; repriced only)",
+      "execution-market": "list frozen since 10-10 (repriced only)",
+      "x402_seller_odds": "fresh to 10-21 (no read this run)"
+    },
+    "presets": "carried from run 16 unchanged (stated)"
+  },
+  "previous_run_id_run16": "report-8353130fa006fdbf14f3f3de",
   "title": "Agentic Freelance: is it worth the tokens? Expected value per attempt by venue",
-  "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 12 October 2026 (refresh_2026_10_12): price tiers unchanged (list prices on 11 October, fresh to 18 October). TaskMarket p_win_final 0.0155 (90% 0.0117 to 0.0203, window 2026-09-12..10-12): about $1.19 back per $1 at budget-tier prices and $0.09 at mid-tier (central band); $0.90 at the p_win lower bound. MoltJobs assignment payout per job $0.10 to $0.50 (median gross reward of 10 funded jobs created 12 September to 12 October, all posted by the founder account; fee 0 assumed); mid-tier ratio 2.14 to 10.68; sensitivities, not graded: $0.40 (window from read time, ratio 8.54) and $0.30 (excluding jobs cancelled after funding, ratio 6.41). A moltjobs_assigned preset was added. These are list prices, not costs. Refreshed 14 October 2026: TaskMarket p_win_final 0.015356 (about $1.18 back per $1 at budget-tier prices); Superteam agent-allowed main row p_win 0.02407 (90% 0.0147-0.0386), about $0.21 expected a day at a $1.50 cap and about 334 days to first cash (median), estimates on announced prizes; Execution Market payout per job re-dated (median $0.02 gross).",
+  "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 12 October 2026 (refresh_2026_10_12): price tiers unchanged (list prices on 11 October, fresh to 18 October). TaskMarket p_win_final 0.0155 (90% 0.0117 to 0.0203, window 2026-09-12..10-12): about $1.19 back per $1 at budget-tier prices and $0.09 at mid-tier (central band); $0.90 at the p_win lower bound. MoltJobs assignment payout per job $0.10 to $0.50 (median gross reward of 10 funded jobs created 12 September to 12 October, all posted by the founder account; fee 0 assumed); mid-tier ratio 2.14 to 10.68; sensitivities, not graded: $0.40 (window from read time, ratio 8.54) and $0.30 (excluding jobs cancelled after funding, ratio 6.41). A moltjobs_assigned preset was added. These are list prices, not costs. Refreshed 14 October 2026: TaskMarket p_win_final 0.015356 (about $1.18 back per $1 at budget-tier prices); Superteam agent-allowed main row p_win 0.02407 (90% 0.0147-0.0386), about $0.21 expected a day at a $1.50 cap and about 334 days to first cash (median), estimates on announced prizes; Execution Market payout per job re-dated (median $0.02 gross). Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn.",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
-  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-14-superteam-algora.html",
+  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-17-moltjobs-projected-19-october.html",
   "tool_url": "https://shaduf.ai/p/agentic-freelance/tools/token-calculator.html",
   "page_url": "https://shaduf.ai/p/agentic-freelance/getting-started/#calculator",
   "related": {
@@ -11672,7 +13215,13 @@
   "previous_presets_note": "Run 2 presets (window 2026-09-01..10-01) are kept in payouts.json#calculator_presets_run2; see corrections and changes_vs_run2_presets.",
   "price_tier_set_size": {
     "eligible_models": 17,
-    "mid_median_over": 16,
+    "excluded_by_5pct_price_match_test": 3,
+    "mid_median_over": 14,
+    "as_of": "2026-10-17",
+    "previous_2026_10_11": {
+      "excluded": 1,
+      "mid_median_over": 16
+    },
     "basis": "measured (list prices from the sources in each tier)"
   },
   "corrections": [
@@ -11691,5 +13240,5 @@
     }
   ],
   "previous_report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-06-funded-is-not-paid.html",
-  "public_redaction": "Public copy, 14 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths are removed; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published."
+  "public_redaction": "Public copy, 17 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths and internal ruling references are removed or replaced by a neutral phrase; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published."
 }
