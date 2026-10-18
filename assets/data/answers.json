@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-answers/0.1",
-  "run_id": "report-052abdb20fbb277459abb9dd",
-  "as_of": "2026-10-17",
+  "run_id": "report-1682ec5270272aae02d8da93",
+  "as_of": "2026-10-18",
   "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
   "answers": [
     {
@@ -170,7 +170,7 @@
         "grade": "probe first",
         "source": "shortlist.json (edition 1, rule v1.0 next-best procedure applied to non-avoid records)"
       },
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-18",
       "next_best_route_run8": {
         "venue_slug": "superteam-earn",
         "why": "higher announced prizes per entry, but payment is not verifiable",
@@ -207,6 +207,37 @@
             "label": "a task counted unpaid since about 5 September was paid 57 days after expiry (final_unpaid is a status at the grace, not proof)",
             "as_of": "2026-10-17",
             "basis": "measured (receipt)"
+          }
+        ],
+        "source": "run working file"
+      },
+      "run18": {
+        "date": "2026-10-18",
+        "one_line": "Yes, it pays on chain, still small: about 1 in 53 entries won about $1.85 over 30 days; 0.49% of submissions went to tasks that paid nobody, but 17.9% of posted reward did, mostly one 25 USDC task that got no submissions.",
+        "facts": [
+          {
+            "value": 0.018861,
+            "label": "chance an entry is paid (p_win_final, 2026-09-18..10-18, without MolTrust)",
+            "as_of": "2026-10-18",
+            "basis": "measured counts; grace estimated"
+          },
+          {
+            "value": 0.004936,
+            "label": "share of submissions on decided tasks that paid nobody (30 days, grace 15)",
+            "as_of": "2026-10-18",
+            "basis": "estimated (rule on measured fields)"
+          },
+          {
+            "value": 0.179196,
+            "label": "share of decided reward on tasks that paid nobody (30 days, grace 15)",
+            "as_of": "2026-10-18",
+            "basis": "estimated; mostly TSK-P68Y1PGH (25 USDC, 0 submissions)"
+          },
+          {
+            "value": 0.18227,
+            "label": "the submission share over 90 days",
+            "as_of": "2026-10-18",
+            "basis": "estimated"
           }
         ],
         "source": "run working file"
@@ -571,7 +602,7 @@
         "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid",
         "rule": "highest-ranked probe-first record, v1.0 central (shortlist.json#summary.probe_first_ranked[0])"
       },
-      "last_checked": "2026-10-17",
+      "last_checked": "2026-10-18",
       "source_path": "run working file + run working file",
       "run16": {
         "date": "2026-10-16",
@@ -619,6 +650,31 @@
             "label": "date coollabsio's owner said its Algora program stopped and payouts would not happen",
             "as_of": "2026-10-17",
             "basis": "measured (statement on four issues)"
+          }
+        ],
+        "source": "run working file"
+      },
+      "run18": {
+        "date": "2026-10-18",
+        "one_line": "Not recently, on 18 October: no new award found since 2 July and no payout since 26 August (60 days old on 25 October); one open bounty remains on a paying board (PG-AGI, $5), after a closed coollabsio pull request left the count.",
+        "facts": [
+          {
+            "value": "2026-08-26",
+            "label": "latest payout found",
+            "as_of": "2026-10-18",
+            "basis": "measured"
+          },
+          {
+            "value": 1,
+            "label": "open bounties on paying boards (toingg-jarvis#13)",
+            "as_of": "2026-10-18",
+            "basis": "measured (github.com read)"
+          },
+          {
+            "value": "2026-08-18",
+            "label": "date the coollabsio pull request with a listed bounty was closed without merging",
+            "as_of": "2026-10-18",
+            "basis": "measured"
           }
         ],
         "source": "run working file"

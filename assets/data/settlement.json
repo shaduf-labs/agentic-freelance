@@ -1,6 +1,6 @@
 {
   "schema": "agentic-freelance-settlement/0.1",
-  "run_id": "report-052abdb20fbb277459abb9dd",
+  "run_id": "report-1682ec5270272aae02d8da93",
   "as_of": "2026-10-06T13:42:12Z",
   "merged_at": "2026-10-06",
   "windows": {
@@ -6597,11 +6597,6 @@
     },
     "e2_caveat": "\"Funded\" on TaskMarket means the reward is locked in escrow, not that anyone will be paid: once a task has a live submission, only the requester can release the reward, and nothing times out.",
     "refresh_2026_10_07_one_sentence": "Run 8 (window 2026-09-07..10-07, without MolTrust, grace 16): 84 closed tasks, 72 awarded, 9 final_unpaid, 3 still payable; p_win_final 0.0136 (90% 0.0106-0.0179); 20.9% of submissions and 24.3% of reward on tasks that paid nobody; run 7's 8.3% corrected to about 21.7%; no refund of any kind since 2026-09-02; 67 unawarded closed tasks (602.22 USDC) still in escrow over 90 days."
-  },
-  "sources": {
-    "A": "run working file, settlement_summary.json, requesters.json, award_delays.json, board_health.json, watch.json",
-    "C": "run working file",
-    "merge": "run working file (recomputes shares, p_win and intervals from per-task records)"
   },
   "tasks_ref": "tasks.json (TaskMarket records with settlement_status)",
   "refresh_2026_10_07": {
@@ -28815,6 +28810,1167 @@
     }
   },
   "previous_run_id_run16": "report-8353130fa006fdbf14f3f3de",
+  "refresh_2026_10_18": {
+    "part": "C",
+    "as_of": "2026-10-18T13:51:04Z",
+    "windows": {
+      "economics": "tasks created or expiring 2026-09-18..2026-10-18T13:51:04Z",
+      "history": "90 days to as_of"
+    },
+    "method": "Run 7-11 settlement definitions unchanged; run working file copied unchanged from run 14. Seed 20261018. Window 2026-09-18..as_of without MolTrust (main row). Edition grace 15, 16 sensitivity.",
+    "grace_days": {
+      "applied": 15,
+      "sensitivity": 16,
+      "applied_basis": "edition grace held at 15 until edition 3",
+      "rule_value_recomputed": 16,
+      "detail": {
+        "value": 16,
+        "p95_positive_delay": 15.402,
+        "n_awarded": 285,
+        "n_positive": 210,
+        "median_delay": 0.902,
+        "p90_positive": 10.095,
+        "max": 68.422,
+        "share_after_expiry": 0.737
+      },
+      "statuses_differing_15_vs_16": [
+        "TSK-P68Y1PGH"
+      ]
+    },
+    "run18_window": {
+      "without_moltrust": {
+        "status_counts": {
+          "open": 4,
+          "awarded": 70,
+          "still_payable": 11,
+          "final_unpaid": 3
+        },
+        "closed_total": 84,
+        "p_win_final": {
+          "p": 0.018861,
+          "awards": 107,
+          "submissions": 5673,
+          "tasks": 71,
+          "ci90_wilson": [
+            0.016112,
+            0.02207
+          ],
+          "ci90_bootstrap": [
+            0.014538,
+            0.024314
+          ],
+          "ci90": [
+            0.014538,
+            0.024314
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.004936,
+        "unpaid_reward_share": 0.179196,
+        "submissions": {
+          "awarded": 5645,
+          "final_unpaid": 28,
+          "still_payable": 885
+        },
+        "reward_usdc": {
+          "awarded": 174.058,
+          "final_unpaid": 38,
+          "still_payable": 265
+        },
+        "still_payable_task_ids": [
+          "TSK-74AS65TM",
+          "TSK-V0N1YE76",
+          "TSK-8QKGQ7VB",
+          "TSK-BYW11CAS",
+          "TSK-41GXF1CN",
+          "TSK-BYA22EDA",
+          "TSK-13QHZKQK",
+          "TSK-DC8ZPFT6",
+          "TSK-6BHK4EGT",
+          "TSK-9JW9F8MY",
+          "TSK-SV32SNGX"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-H1A9WH8Z",
+          "TSK-P68Y1PGH",
+          "TSK-HWY90NPP"
+        ],
+        "sensitivity_grace": {
+          "0": {
+            "status_counts": {
+              "open": 4,
+              "awarded": 70,
+              "final_unpaid": 14
+            },
+            "unpaid_submission_share": 0.139219,
+            "unpaid_reward_share": 0.635143
+          },
+          "7": {
+            "status_counts": {
+              "open": 4,
+              "awarded": 70,
+              "still_payable": 9,
+              "final_unpaid": 5
+            },
+            "unpaid_submission_share": 0.031234,
+            "unpaid_reward_share": 0.295477
+          },
+          "16": {
+            "status_counts": {
+              "open": 4,
+              "awarded": 70,
+              "still_payable": 12,
+              "final_unpaid": 2
+            },
+            "unpaid_submission_share": 0.004936,
+            "unpaid_reward_share": 0.069497
+          },
+          "21": {
+            "status_counts": {
+              "open": 4,
+              "awarded": 70,
+              "still_payable": 13,
+              "final_unpaid": 1
+            },
+            "unpaid_submission_share": 0,
+            "unpaid_reward_share": 0.016944
+          }
+        }
+      },
+      "with_moltrust": {
+        "status_counts": {
+          "open": 4,
+          "awarded": 79,
+          "still_payable": 14,
+          "final_unpaid": 4
+        },
+        "closed_total": 97,
+        "p_win_final": {
+          "p": 0.028983,
+          "awards": 183,
+          "submissions": 6314,
+          "tasks": 81,
+          "ci90_wilson": [
+            0.025707,
+            0.032663
+          ],
+          "ci90_bootstrap": [
+            0.0214,
+            0.038103
+          ],
+          "ci90": [
+            0.0214,
+            0.038103
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.037061,
+        "unpaid_reward_share": 0.187715,
+        "submissions": {
+          "awarded": 6080,
+          "final_unpaid": 234,
+          "still_payable": 953
+        },
+        "reward_usdc": {
+          "awarded": 187.845,
+          "final_unpaid": 43.41,
+          "still_payable": 266.623
+        },
+        "still_payable_task_ids": [
+          "TSK-74AS65TM",
+          "TSK-V0N1YE76",
+          "TSK-8QKGQ7VB",
+          "TSK-BYW11CAS",
+          "TSK-41GXF1CN",
+          "TSK-BYA22EDA",
+          "TSK-HZCF1QMN",
+          "TSK-KBQEW2DW",
+          "TSK-13QHZKQK",
+          "TSK-DC8ZPFT6",
+          "TSK-6BHK4EGT",
+          "TSK-E49N4V7T",
+          "TSK-9JW9F8MY",
+          "TSK-SV32SNGX"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-H1A9WH8Z",
+          "TSK-P68Y1PGH",
+          "TSK-HWY90NPP",
+          "TSK-J3R0MDGA"
+        ]
+      },
+      "moltrust_only": {
+        "status_counts": {
+          "still_payable": 3,
+          "awarded": 9,
+          "final_unpaid": 1
+        },
+        "closed_total": 13,
+        "p_win_final": {
+          "p": 0.118565,
+          "awards": 76,
+          "submissions": 641,
+          "tasks": 10,
+          "ci90_wilson": [
+            0.099148,
+            0.141188
+          ],
+          "ci90_bootstrap": [
+            0.0555,
+            0.238462
+          ],
+          "ci90": [
+            0.0555,
+            0.238462
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.321373,
+        "unpaid_reward_share": 0.281815,
+        "submissions": {
+          "awarded": 435,
+          "final_unpaid": 206,
+          "still_payable": 68
+        },
+        "reward_usdc": {
+          "awarded": 13.787,
+          "final_unpaid": 5.41,
+          "still_payable": 1.623
+        },
+        "still_payable_task_ids": [
+          "TSK-HZCF1QMN",
+          "TSK-KBQEW2DW",
+          "TSK-E49N4V7T"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-J3R0MDGA"
+        ]
+      }
+    },
+    "history_90d_without_moltrust": {
+      "status_counts": {
+        "open": 12,
+        "awarded": 276,
+        "still_payable": 11,
+        "final_unpaid": 83
+      },
+      "closed_total": 370,
+      "p_win_final": {
+        "p": 0.017877,
+        "awards": 511,
+        "submissions": 28584,
+        "tasks": 337,
+        "ci90_wilson": [
+          0.016633,
+          0.019213
+        ],
+        "ci90_bootstrap": [
+          0.014767,
+          0.022274
+        ],
+        "ci90": [
+          0.014767,
+          0.022274
+        ],
+        "ci_chosen": "bootstrap"
+      },
+      "unpaid_submission_share": 0.18227,
+      "unpaid_reward_share": 0.343081,
+      "submissions": {
+        "awarded": 23374,
+        "final_unpaid": 5210,
+        "still_payable": 885
+      },
+      "reward_usdc": {
+        "awarded": 1237.22786,
+        "final_unpaid": 646.150904,
+        "still_payable": 265
+      },
+      "still_payable_task_ids": [
+        "TSK-74AS65TM",
+        "TSK-V0N1YE76",
+        "TSK-8QKGQ7VB",
+        "TSK-BYW11CAS",
+        "TSK-41GXF1CN",
+        "TSK-BYA22EDA",
+        "TSK-13QHZKQK",
+        "TSK-DC8ZPFT6",
+        "TSK-6BHK4EGT",
+        "TSK-9JW9F8MY",
+        "TSK-SV32SNGX"
+      ],
+      "final_unpaid_task_ids": [
+        "TSK-H1A9WH8Z",
+        "TSK-P68Y1PGH",
+        "TSK-HWY90NPP",
+        "TSK-RWMG853Z",
+        "TSK-0P73MV6D",
+        "TSK-5DV55M47",
+        "TSK-MG8KF2RH",
+        "TSK-CC85RST4",
+        "TSK-B1MHHF16",
+        "TSK-MVBFKQFP",
+        "TSK-38QB2KK3",
+        "TSK-TE3SN317",
+        "TSK-FKYQ6JJK",
+        "TSK-RE563J5T",
+        "TSK-4AKTDZMB",
+        "TSK-FJJCCTV3",
+        "TSK-5DSDQJ76",
+        "TSK-S3WXWQP6",
+        "TSK-XF1EGP5T",
+        "TSK-VE3Q5F9P",
+        "TSK-9QZWT595",
+        "TSK-FS91PREW",
+        "TSK-ND38D431",
+        "TSK-9Z9HENXP",
+        "TSK-4M83XEN0",
+        "TSK-HQQ9T3VE",
+        "TSK-RSTTWB3W",
+        "TSK-X66SNJXV",
+        "TSK-602GNN5Q",
+        "TSK-9NYVNHC3",
+        "TSK-WAN8H9G1",
+        "TSK-EQKNXF7X",
+        "TSK-ENBE9A0P",
+        "TSK-Y0Y0D8BW",
+        "TSK-20W651EW",
+        "TSK-8XD8PJQF",
+        "TSK-ST5AS68D",
+        "TSK-GQ9XH4RM",
+        "TSK-MS3GSXH6",
+        "TSK-Z85G0KPA",
+        "TSK-6DRNTH10",
+        "TSK-17JXV54D",
+        "TSK-V4JJD3RC",
+        "TSK-9ZRRDVBX",
+        "TSK-DKFG1GC6",
+        "TSK-VXXN073Y",
+        "TSK-GNB1J26M",
+        "TSK-M87H49ZR",
+        "TSK-BWSVD7AC",
+        "TSK-3DP9H829",
+        "TSK-NC8WCRXF",
+        "TSK-4E4CXBM9",
+        "TSK-YE7THG31",
+        "TSK-YTVEBMEZ",
+        "TSK-5J2QPQZR",
+        "TSK-R3J174K6",
+        "TSK-BFY96A32",
+        "TSK-KGSK89FT",
+        "TSK-EKNMJ77W",
+        "TSK-RWVT1EY0",
+        "TSK-GGJ3GWZ1",
+        "TSK-3F4Q85FT",
+        "TSK-DXPHGGXQ",
+        "TSK-Y54J77GG",
+        "TSK-Z72Y1Y1Z",
+        "TSK-6ZPX4Q1Y",
+        "TSK-F0YMQ1NV",
+        "TSK-TCSAT3K6",
+        "TSK-DQDMXFKM",
+        "TSK-0FD7V0ZB",
+        "TSK-YQQ9QKC4",
+        "TSK-KESDZQ8J",
+        "TSK-S16YCGX5",
+        "TSK-YP1CZCGR",
+        "TSK-TZM023P2",
+        "TSK-7KKH3VWV",
+        "TSK-9PCPY9N5",
+        "TSK-QYWKTXAV",
+        "TSK-4QDHQY9A",
+        "TSK-D3H0NXPT",
+        "TSK-YK19YNYD",
+        "TSK-9H0N4YAQ",
+        "TSK-6AWXHF97"
+      ]
+    },
+    "change_vs_run17": {
+      "p_win_final": [
+        0.019302,
+        0.018861
+      ],
+      "unpaid_submission_share": [
+        0.009031,
+        0.004936
+      ],
+      "unpaid_reward_share": [
+        0.073446,
+        0.179196
+      ],
+      "headline_trigger_5pt": true
+    },
+    "window_edge": {
+      "left_window_since_run17": [
+        "TSK-RWMG853Z",
+        "TSK-63D4804E",
+        "TSK-3AV5TW2D",
+        "TSK-ZPFBQPQK"
+      ],
+      "left_detail": [
+        {
+          "task_id": "TSK-RWMG853Z",
+          "status_at_15": "final_unpaid",
+          "subs": 23,
+          "reward": 0.01,
+          "expiry": "2026-09-17T00:18:55.016Z",
+          "created": "2026-09-16T00:18:56.055Z"
+        },
+        {
+          "task_id": "TSK-63D4804E",
+          "status_at_15": "awarded",
+          "subs": 2,
+          "reward": 0.01,
+          "expiry": "2026-09-17T18:40:52.793Z",
+          "created": "2026-09-14T18:40:53.879Z"
+        },
+        {
+          "task_id": "TSK-3AV5TW2D",
+          "status_at_15": "awarded",
+          "subs": 3,
+          "reward": 0.05,
+          "expiry": "2026-09-17T15:35:04.745Z",
+          "created": "2026-09-14T15:35:05.851Z"
+        },
+        {
+          "task_id": "TSK-ZPFBQPQK",
+          "status_at_15": "awarded",
+          "subs": 18,
+          "reward": 0.01,
+          "expiry": "2026-09-17T11:06:17.979Z",
+          "created": "2026-09-14T11:06:20.031Z"
+        }
+      ]
+    },
+    "named_tasks": {
+      "TSK-P68Y1PGH": {
+        "requester_trunc": "0x3327...edd0",
+        "reward_usdc": 25,
+        "expiry": "2026-10-03T00:12:06.223Z",
+        "days_past_expiry": 15.57,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 0,
+        "submissions_listed": 0,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-18T00:12Z",
+        "grace_end_at_16": "2026-10-19T00:12Z",
+        "settlement_status_at_15": "final_unpaid",
+        "settlement_status_at_16": "still_payable",
+        "run17": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 0,
+          "settlement_status": "still_payable"
+        },
+        "detail_read_today": false
+      },
+      "TSK-9JW9F8MY": {
+        "requester_trunc": "0xeecd...a5e2",
+        "reward_usdc": 30,
+        "expiry": "2026-10-04T02:28:40.486Z",
+        "days_past_expiry": 14.47,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 73,
+        "submissions_listed": 73,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-19T02:28Z",
+        "grace_end_at_16": "2026-10-20T02:28Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run17": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 73,
+          "settlement_status": "still_payable"
+        },
+        "detail_read_today": false
+      },
+      "TSK-V6J8MSSD": {
+        "requester_trunc": "0x4c98...9dc7",
+        "reward_usdc": 10,
+        "expiry": "2026-10-17T21:30:55.050Z",
+        "days_past_expiry": 0.68,
+        "status": "completed",
+        "phase": "resolved",
+        "awards": 1,
+        "submissions_counter": 72,
+        "submissions_listed": 72,
+        "first_award": "2026-10-18T05:19:19.000Z",
+        "award_detail": [
+          {
+            "worker": "0xfebe...4778",
+            "gross_usdc": 10,
+            "worker_payment_usdc": 9.25,
+            "settled_at": "2026-10-18T05:19:19.000Z",
+            "settlement_tx": "0x1f72c4b471c72e0216e9f30c2fcd1177c110c3d1f29188beca16c7cf1384b40b"
+          }
+        ],
+        "grace_end_at_15": "2026-11-01T21:30Z",
+        "grace_end_at_16": "2026-11-02T21:30Z",
+        "settlement_status_at_15": "awarded",
+        "settlement_status_at_16": "awarded",
+        "run17": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 72,
+          "settlement_status": "still_payable"
+        },
+        "detail_read_today": true
+      },
+      "TSK-SV32SNGX": {
+        "requester_trunc": "0x9371...019f",
+        "reward_usdc": 199,
+        "expiry": "2026-10-16T23:00:01.373Z",
+        "days_past_expiry": 1.62,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 25,
+        "submissions_listed": 25,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-31T23:00Z",
+        "grace_end_at_16": "2026-11-01T23:00Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run17": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 25,
+          "settlement_status": "still_payable"
+        },
+        "detail_read_today": false
+      }
+    },
+    "still_payable_now": [
+      {
+        "task_id": "TSK-9JW9F8MY",
+        "requester_trunc": "0xeecd...a5e2",
+        "reward_usdc": 30,
+        "submissions": 73,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-19T02:28Z",
+        "grace_end_at_16": "2026-10-20T02:28Z"
+      },
+      {
+        "task_id": "TSK-E49N4V7T",
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "submissions": 20,
+        "moltrust": true,
+        "grace_end_at_15": "2026-10-20T20:51Z",
+        "grace_end_at_16": "2026-10-21T20:51Z"
+      },
+      {
+        "task_id": "TSK-6BHK4EGT",
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 5,
+        "submissions": 81,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-23T06:41Z",
+        "grace_end_at_16": "2026-10-24T06:41Z"
+      },
+      {
+        "task_id": "TSK-DC8ZPFT6",
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 10,
+        "submissions": 28,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-27T23:05Z",
+        "grace_end_at_16": "2026-10-28T23:05Z"
+      },
+      {
+        "task_id": "TSK-13QHZKQK",
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 5,
+        "submissions": 45,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-28T06:41Z",
+        "grace_end_at_16": "2026-10-29T06:41Z"
+      },
+      {
+        "task_id": "TSK-BYA22EDA",
+        "requester_trunc": "0x2abf...9b1a",
+        "reward_usdc": 2,
+        "submissions": 69,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-28T12:35Z",
+        "grace_end_at_16": "2026-10-29T12:35Z"
+      },
+      {
+        "task_id": "TSK-KBQEW2DW",
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "submissions": 23,
+        "moltrust": true,
+        "grace_end_at_15": "2026-10-29T09:56Z",
+        "grace_end_at_16": "2026-10-30T09:56Z"
+      },
+      {
+        "task_id": "TSK-HZCF1QMN",
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "submissions": 25,
+        "moltrust": true,
+        "grace_end_at_15": "2026-10-29T09:56Z",
+        "grace_end_at_16": "2026-10-30T09:56Z"
+      },
+      {
+        "task_id": "TSK-8QKGQ7VB",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 96,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:30Z",
+        "grace_end_at_16": "2026-10-30T22:30Z"
+      },
+      {
+        "task_id": "TSK-V0N1YE76",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 113,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:31Z",
+        "grace_end_at_16": "2026-10-30T22:31Z"
+      },
+      {
+        "task_id": "TSK-74AS65TM",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 109,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:32Z",
+        "grace_end_at_16": "2026-10-30T22:32Z"
+      },
+      {
+        "task_id": "TSK-SV32SNGX",
+        "requester_trunc": "0x9371...019f",
+        "reward_usdc": 199,
+        "submissions": 25,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-31T23:00Z",
+        "grace_end_at_16": "2026-11-01T23:00Z"
+      },
+      {
+        "task_id": "TSK-41GXF1CN",
+        "requester_trunc": "0xa7be...419a",
+        "reward_usdc": 4,
+        "submissions": 118,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-02T02:20Z",
+        "grace_end_at_16": "2026-11-03T02:20Z"
+      },
+      {
+        "task_id": "TSK-BYW11CAS",
+        "requester_trunc": "0xa7be...419a",
+        "reward_usdc": 4,
+        "submissions": 128,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-02T02:23Z",
+        "grace_end_at_16": "2026-11-03T02:23Z"
+      }
+    ],
+    "d4_projection_r149": {
+      "label": "projection, not a forecast; not part of the daily clock: if no TaskMarket task is awarded after the read and no new task is posted",
+      "method": "run working file (unchanged) at each date with the read's time of day: window = tasks created or expiring from the date-30 days (00:00Z) to that time, without MolTrust; edition grace 15; awards held as read",
+      "by_date": [
+        {
+          "date": "2026-10-18",
+          "as_of_time": "2026-10-18T13:51:04Z",
+          "window_start": "2026-09-18",
+          "unpaid_submission_share": 0.004936,
+          "unpaid_reward_share": 0.179196,
+          "status_counts": {
+            "open": 4,
+            "awarded": 70,
+            "still_payable": 11,
+            "final_unpaid": 3
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-19",
+          "as_of_time": "2026-10-19T13:51:04Z",
+          "window_start": "2026-09-19",
+          "unpaid_submission_share": 0.018264,
+          "unpaid_reward_share": 0.288077,
+          "status_counts": {
+            "open": 3,
+            "awarded": 66,
+            "still_payable": 11,
+            "final_unpaid": 4
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-20",
+          "as_of_time": "2026-10-20T13:51:04Z",
+          "window_start": "2026-09-20",
+          "unpaid_submission_share": 0.018264,
+          "unpaid_reward_share": 0.288077,
+          "status_counts": {
+            "still_payable": 12,
+            "open": 2,
+            "awarded": 66,
+            "final_unpaid": 4
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-21",
+          "as_of_time": "2026-10-21T13:51:04Z",
+          "window_start": "2026-09-21",
+          "unpaid_submission_share": 0.018635,
+          "unpaid_reward_share": 0.300688,
+          "status_counts": {
+            "still_payable": 13,
+            "open": 1,
+            "awarded": 65,
+            "final_unpaid": 4
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-22",
+          "as_of_time": "2026-10-22T13:51:04Z",
+          "window_start": "2026-09-22",
+          "unpaid_submission_share": 0.018635,
+          "unpaid_reward_share": 0.300688,
+          "status_counts": {
+            "still_payable": 14,
+            "awarded": 65,
+            "final_unpaid": 4
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-23",
+          "as_of_time": "2026-10-23T13:51:04Z",
+          "window_start": "2026-09-23",
+          "unpaid_submission_share": 0.034833,
+          "unpaid_reward_share": 0.324231,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 62,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-24",
+          "as_of_time": "2026-10-24T13:51:04Z",
+          "window_start": "2026-09-24",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-25",
+          "as_of_time": "2026-10-25T13:51:04Z",
+          "window_start": "2026-09-25",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-26",
+          "as_of_time": "2026-10-26T13:51:04Z",
+          "window_start": "2026-09-26",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-27",
+          "as_of_time": "2026-10-27T13:51:04Z",
+          "window_start": "2026-09-27",
+          "unpaid_submission_share": 0.039275,
+          "unpaid_reward_share": 0.342485,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 56,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-28",
+          "as_of_time": "2026-10-28T13:51:04Z",
+          "window_start": "2026-09-28",
+          "unpaid_submission_share": 0.068225,
+          "unpaid_reward_share": 0.392759,
+          "status_counts": {
+            "still_payable": 10,
+            "awarded": 55,
+            "final_unpaid": 8
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-29",
+          "as_of_time": "2026-10-29T13:51:04Z",
+          "window_start": "2026-09-29",
+          "unpaid_submission_share": 0.068225,
+          "unpaid_reward_share": 0.392759,
+          "status_counts": {
+            "still_payable": 10,
+            "awarded": 55,
+            "final_unpaid": 8
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-30",
+          "as_of_time": "2026-10-30T13:51:04Z",
+          "window_start": "2026-09-30",
+          "unpaid_submission_share": 0.135215,
+          "unpaid_reward_share": 0.41898,
+          "status_counts": {
+            "still_payable": 7,
+            "awarded": 51,
+            "final_unpaid": 11
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-10-31",
+          "as_of_time": "2026-10-31T13:51:04Z",
+          "window_start": "2026-10-01",
+          "unpaid_submission_share": 0.153625,
+          "unpaid_reward_share": 0.442217,
+          "status_counts": {
+            "still_payable": 7,
+            "awarded": 43,
+            "final_unpaid": 11
+          },
+          "at_or_above_10pct_submissions": true
+        }
+      ],
+      "first_date_at_or_above_10pct_submissions": "2026-10-30",
+      "reproduces_main_row_at_10_18": true
+    },
+    "supply": {
+      "without_moltrust": {
+        "open_now_phase_active": 4,
+        "open_eligible_now": 4,
+        "open_eligible_ids": [
+          "TSK-04FYDMHT",
+          "TSK-C3AZ36J4",
+          "TSK-AKRSG3P7",
+          "TSK-JQ8X7CK6"
+        ],
+        "open_eligible_reward_usdc": 18.8,
+        "open_eligible_detail": [
+          {
+            "task_id": "TSK-04FYDMHT",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1.8,
+            "created": "2026-10-17T14:25:18.124Z",
+            "expiry": "2026-10-19T14:25:16.450Z",
+            "submissions": 65
+          },
+          {
+            "task_id": "TSK-C3AZ36J4",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 6,
+            "created": "2026-10-17T08:15:39.333Z",
+            "expiry": "2026-10-22T08:15:37.716Z",
+            "submissions": 22
+          },
+          {
+            "task_id": "TSK-AKRSG3P7",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 5,
+            "created": "2026-10-16T13:31:50.581Z",
+            "expiry": "2026-10-21T13:31:49.259Z",
+            "submissions": 30
+          },
+          {
+            "task_id": "TSK-JQ8X7CK6",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 6,
+            "created": "2026-10-13T16:32:39.424Z",
+            "expiry": "2026-10-18T16:32:37.787Z",
+            "submissions": 52
+          }
+        ],
+        "new_created_30d": 83,
+        "new_eligible_30d": 81,
+        "new_eligible_per_day": 2.7,
+        "new_eligible_last_7d": 22,
+        "requesters_new_eligible_30d": 14,
+        "top_requester_share_new_eligible": 0.556,
+        "top_requester_trunc": "0x4363...34bd",
+        "new_eligible_by_class": {
+          "unknown": 23,
+          "outside": 58
+        },
+        "open_now_by_class": {
+          "unknown": 4
+        }
+      },
+      "with_moltrust": {
+        "open_now_phase_active": 4,
+        "open_eligible_now": 4,
+        "open_eligible_ids": [
+          "TSK-04FYDMHT",
+          "TSK-C3AZ36J4",
+          "TSK-AKRSG3P7",
+          "TSK-JQ8X7CK6"
+        ],
+        "open_eligible_reward_usdc": 18.8,
+        "open_eligible_detail": [
+          {
+            "task_id": "TSK-04FYDMHT",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1.8,
+            "created": "2026-10-17T14:25:18.124Z",
+            "expiry": "2026-10-19T14:25:16.450Z",
+            "submissions": 65
+          },
+          {
+            "task_id": "TSK-C3AZ36J4",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 6,
+            "created": "2026-10-17T08:15:39.333Z",
+            "expiry": "2026-10-22T08:15:37.716Z",
+            "submissions": 22
+          },
+          {
+            "task_id": "TSK-AKRSG3P7",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 5,
+            "created": "2026-10-16T13:31:50.581Z",
+            "expiry": "2026-10-21T13:31:49.259Z",
+            "submissions": 30
+          },
+          {
+            "task_id": "TSK-JQ8X7CK6",
+            "requester_trunc": "0x6349...4d24",
+            "reward_usdc": 6,
+            "created": "2026-10-13T16:32:39.424Z",
+            "expiry": "2026-10-18T16:32:37.787Z",
+            "submissions": 52
+          }
+        ],
+        "new_created_30d": 96,
+        "new_eligible_30d": 94,
+        "new_eligible_per_day": 3.133,
+        "new_eligible_last_7d": 22,
+        "requesters_new_eligible_30d": 15,
+        "top_requester_share_new_eligible": 0.479,
+        "top_requester_trunc": "0x4363...34bd",
+        "new_eligible_by_class": {
+          "unknown": 23,
+          "outside": 71
+        },
+        "open_now_by_class": {
+          "unknown": 4
+        }
+      },
+      "class_source": "run 17 settlement_refresh.json#requester_classes (payouts.json payer classes; untraced requesters unknown); no new requester since run 17"
+    },
+    "economics_inputs_light": {
+      "decided_tasks": 73,
+      "submissions_per_task_median": 89
+    },
+    "open_items_C_ref": "open_items_C.json",
+    "status": "complete",
+    "not_done": [],
+    "requesters_summary": {
+      "flag_counts": {
+        "reliable": 13,
+        "too_new": 39,
+        "mostly_unpaid": 2,
+        "never_paid": 4,
+        "mixed": 4
+      },
+      "thresholds": "assumed: never_paid >=3 decided (awarded+final_unpaid) and 0 awarded; mostly_unpaid >=3 and rate<0.5; reliable >=3 and rate>=0.8; mixed otherwise; too_new <3",
+      "flag_changes_vs_run17": [],
+      "definition_reproduces_run17_counts": true
+    },
+    "d4_projection_merge": {
+      "label": "projection, not a forecast: if no TaskMarket task is awarded after the 18 October read and no new task is posted; not part of the daily clock (which carries D4 unchanged)",
+      "method": "run working file (unchanged) at each date at 13:51:04Z: window = tasks created or expiring in the 30 days to the date, without MolTrust; edition grace 15; awards held as read",
+      "reproduces_2026_10_18": true,
+      "agrees_with_part_C": true,
+      "by_date": [
+        {
+          "date": "2026-10-18",
+          "unpaid_submission_share": 0.004936,
+          "unpaid_reward_share": 0.179196,
+          "status_counts": {
+            "open": 4,
+            "awarded": 70,
+            "still_payable": 11,
+            "final_unpaid": 3
+          }
+        },
+        {
+          "date": "2026-10-19",
+          "unpaid_submission_share": 0.018264,
+          "unpaid_reward_share": 0.288077,
+          "status_counts": {
+            "open": 3,
+            "awarded": 66,
+            "still_payable": 11,
+            "final_unpaid": 4
+          }
+        },
+        {
+          "date": "2026-10-20",
+          "unpaid_submission_share": 0.018264,
+          "unpaid_reward_share": 0.288077,
+          "status_counts": {
+            "still_payable": 12,
+            "open": 2,
+            "awarded": 66,
+            "final_unpaid": 4
+          }
+        },
+        {
+          "date": "2026-10-21",
+          "unpaid_submission_share": 0.018635,
+          "unpaid_reward_share": 0.300688,
+          "status_counts": {
+            "still_payable": 13,
+            "open": 1,
+            "awarded": 65,
+            "final_unpaid": 4
+          }
+        },
+        {
+          "date": "2026-10-22",
+          "unpaid_submission_share": 0.018635,
+          "unpaid_reward_share": 0.300688,
+          "status_counts": {
+            "still_payable": 14,
+            "awarded": 65,
+            "final_unpaid": 4
+          }
+        },
+        {
+          "date": "2026-10-23",
+          "unpaid_submission_share": 0.034833,
+          "unpaid_reward_share": 0.324231,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 62,
+            "final_unpaid": 5
+          }
+        },
+        {
+          "date": "2026-10-24",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          }
+        },
+        {
+          "date": "2026-10-25",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          }
+        },
+        {
+          "date": "2026-10-26",
+          "unpaid_submission_share": 0.036999,
+          "unpaid_reward_share": 0.333108,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 59,
+            "final_unpaid": 5
+          }
+        },
+        {
+          "date": "2026-10-27",
+          "unpaid_submission_share": 0.039275,
+          "unpaid_reward_share": 0.342485,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 56,
+            "final_unpaid": 5
+          }
+        },
+        {
+          "date": "2026-10-28",
+          "unpaid_submission_share": 0.068225,
+          "unpaid_reward_share": 0.392759,
+          "status_counts": {
+            "still_payable": 10,
+            "awarded": 55,
+            "final_unpaid": 8
+          }
+        },
+        {
+          "date": "2026-10-29",
+          "unpaid_submission_share": 0.068225,
+          "unpaid_reward_share": 0.392759,
+          "status_counts": {
+            "still_payable": 10,
+            "awarded": 55,
+            "final_unpaid": 8
+          }
+        },
+        {
+          "date": "2026-10-30",
+          "unpaid_submission_share": 0.135215,
+          "unpaid_reward_share": 0.41898,
+          "status_counts": {
+            "still_payable": 7,
+            "awarded": 51,
+            "final_unpaid": 11
+          }
+        },
+        {
+          "date": "2026-10-31",
+          "unpaid_submission_share": 0.153625,
+          "unpaid_reward_share": 0.442217,
+          "status_counts": {
+            "still_payable": 7,
+            "awarded": 43,
+            "final_unpaid": 11
+          }
+        }
+      ],
+      "first_date_share_ge_10pct": "2026-10-30",
+      "previous_first_date_run17": "2026-10-29",
+      "moved_because": "TSK-V6J8MSSD was awarded on 18 October (data; an update of a projection, not a correction)",
+      "gate_effect_if_it_happens": "TaskMarket D4 pass -> weak (grade unchanged: probe first on D3)"
+    }
+  },
   "title": "Agentic Freelance: TaskMarket settlement, requester records and escrow outcomes",
   "description": "Whether closed TaskMarket tasks paid anyone, measured 6 October 2026: settlement status per closed task (awarded, final_unpaid, still_payable) by a stated grace rule, unpaid shares of submissions and reward with a grace sensitivity, p_win_final next to the 5 October snapshot, 90-day requester records with assumed flags, escrow outcomes for every unawarded task from the escrow's event logs, a no-look-ahead decision rule, and stranded-attempt measures on other boards. Refreshed 7 October 2026 in refresh_2026_10_07: run 7's provisional 8.3% unpaid share became about 21.7% (dated correction); grace rule 16 days; new window 2026-09-07..10-07. Refreshed 8 October 2026 in refresh_2026_10_08: p_win_final 0.0133 and 20.0% of submissions (24.9% of reward) on tasks that paid nobody, without MolTrust, grace 16 days. Refreshed 9 October 2026 in refresh_2026_10_09: window 2026-09-09..10-09 without MolTrust, p_win_final 0.0128 (90% 0.0102 to 0.0164), 19.0% of submissions and 24.1% of reward on tasks that paid nobody; 10 open tasks, 229.98 USDC. Refreshed 10 October 2026 in refresh_2026_10_10: window 2026-09-10..10-10 without MolTrust, p_win_final 0.0136 (90% 0.0109 to 0.0173), 13.6% of submissions and 14.5% of reward on tasks that paid nobody. The fall from 19.0% is window roll-off (two unpaid tasks that expired on 9 September left the window), not more reliable payment; if the 3 tasks now in grace end unpaid the share is 17.8%, upper bound 21.2%. 7 open tasks, 226.98 USDC; the decision rule skipped 0 of 86 tasks. Refreshed 11 October 2026 in refresh_2026_10_11: window 2026-09-11..10-11 without MolTrust, p_win_final 0.0141 (90% 0.0112 to 0.0180), 14.8% of submissions and 14.7% of reward on tasks that paid nobody. The rise from 13.6% is window roll-off, not a change in reliability; the 8 final-unpaid tasks are unchanged; if all 9 still-payable tasks end unpaid the share would be 23.7%. 6 open eligible tasks; 82 new in 30 days (2.73 a day). Refreshed 12 October 2026 in refresh_2026_10_12: window 2026-09-12..10-12 without MolTrust, p_win_final 0.0155 (90% 0.0117 to 0.0203), 14.76% of submissions and 14.2% of reward on tasks that paid nobody; both moves come from 4 still-payable tasks that settled plus window roll-off. 11 open eligible tasks; 83 new in 30 days (0 from the operator or linked requesters, 65 outside, 18 unknown). The 7 named still-payable tasks are unchanged; the first can turn final after 2026-10-16T15:14Z. Refreshed 14 October 2026 in refresh_2026_10_14: p_win_final 0.015356; unpaid 13.76% of submissions and 13.41% of reward; 13 still-payable tasks (grace ends 16 to 30 October); grace 16 days applied, recomputed value 15 changes 0 of 427 statuses. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October. Refreshed 17 October 2026 (refresh_2026_10_17): 30 days to 17 October, grace 15 days: 0.90% of submissions and 7.34% of reward on decided tasks unpaid (16 October: 13.80% and 11.89%), because five unpaid mid-September tasks from one requester left the 30-day window, not because requesters paid differently; settlement-adjusted win rate 0.0193 (90% interval 0.0151 to 0.0249); TSK-HWY90NPP unpaid at its grace end; TSK-SV32SNGX (199 USDC) expired unawarded, payable to 31 October; TSK-GYCS41ZJ paid 57 days after expiry. Labelled projection, not a forecast: if no still-payable task is awarded, the unpaid share returns to about 13% on 29 October.",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/settlement.json",

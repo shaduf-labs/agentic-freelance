@@ -1,11 +1,11 @@
 {
   "schema": "agentic-freelance-payouts/0.1",
-  "run_id": "report-052abdb20fbb277459abb9dd",
-  "as_of": "2026-10-17T14:32:53Z",
+  "run_id": "report-1682ec5270272aae02d8da93",
+  "as_of": "2026-10-18T13:45:00Z",
   "window": {
-    "start": "2026-09-17",
-    "end": "2026-10-17",
-    "note": "inclusive by event date; ledger cut-off 2026-10-17T13:45Z, plus XQX5ME5D's 2 events at 14:32:53Z"
+    "start": "2026-09-18",
+    "end": "2026-10-18",
+    "note": "inclusive by event date; ledger cut-off 2026-10-18T13:45Z; no event after the cut-off up to the 13:51Z read"
   },
   "description": "Who actually paid: payout ledger for agent-paid or selling venues, trailing 30 days. Read-only evidence: no account, no job, no wallet, no money. Refreshed 17 October 2026 (totals_2026_10_17): about $301.66 to agent workers in the 30 days to 17 October (estimated, partial; fallback route, as no keyless address-history route worked for Base); one late TaskMarket payment (TSK-GYCS41ZJ, 4 x 14.80 USDC net) from a payer new to the ledger, unlinked by convention, which is not proof of independence.",
   "payer_classes": {
@@ -5401,11 +5401,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_18": "set by date (window 2026-09-18..2026-10-18)"
     },
     {
       "event_id": "taskmarket-0054",
@@ -5489,11 +5490,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_18": "set by date (window 2026-09-18..2026-10-18)"
     },
     {
       "event_id": "taskmarket-0055",
@@ -5577,11 +5579,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_18": "set by date (window 2026-09-18..2026-10-18)"
     },
     {
       "event_id": "taskmarket-0056",
@@ -22851,8 +22854,10 @@
       "payer_seen_before": true,
       "worker_match": true,
       "label": "measured",
-      "after_ledger_cutoff": true,
-      "after_ledger_cutoff_note": "settled 2026-10-17T14:32:53Z, after the 13:45Z ledger cut-off; added by the merge under a recorded ruling (as a recorded ruling; receipt verified by C); counts in the 30-day estimate shown with and without, and as TaskMarket's latest payout; match by tx hash next run"
+      "after_ledger_cutoff": false,
+      "after_ledger_cutoff_note": "settled 2026-10-17T14:32:53Z, after the 13:45Z ledger cut-off; added by the merge under a recorded ruling (as a recorded ruling; receipt verified by C); counts in the 30-day estimate shown with and without, and as TaskMarket's latest payout; match by tx hash next run",
+      "after_ledger_cutoff_2026_10_17": true,
+      "matched_2026_10_18": "inside the 10-17T13:45Z..10-18T13:45Z ledger window; matched by tx hash and counted once"
     },
     {
       "event_id": "taskmarket-0246",
@@ -22885,8 +22890,70 @@
       "payer_seen_before": true,
       "worker_match": true,
       "label": "measured",
-      "after_ledger_cutoff": true,
-      "after_ledger_cutoff_note": "settled 2026-10-17T14:32:53Z, after the 13:45Z ledger cut-off; added by the merge under a recorded ruling (as a recorded ruling; receipt verified by C); counts in the 30-day estimate shown with and without, and as TaskMarket's latest payout; match by tx hash next run"
+      "after_ledger_cutoff": false,
+      "after_ledger_cutoff_note": "settled 2026-10-17T14:32:53Z, after the 13:45Z ledger cut-off; added by the merge under a recorded ruling (as a recorded ruling; receipt verified by C); counts in the 30-day estimate shown with and without, and as TaskMarket's latest payout; match by tx hash next run",
+      "after_ledger_cutoff_2026_10_17": true,
+      "matched_2026_10_18": "inside the 10-17T13:45Z..10-18T13:45Z ledger window; matched by tx hash and counted once"
+    },
+    {
+      "event_id": "taskmarket-0247",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x1f72c4b471c72e0216e9f30c2fcd1177c110c3d1f29188beca16c7cf1384b40b",
+      "explorer_url": "https://base.blockscout.com/tx/0x1f72c4b471c72e0216e9f30c2fcd1177c110c3d1f29188beca16c7cf1384b40b",
+      "date": "2026-10-18T05:19:19Z",
+      "amount": 9.25,
+      "token": "USDC",
+      "usd": 9.25,
+      "gross_usd": 10,
+      "net_to_worker_usd": 9.25,
+      "payer": "0x4c98bfbc7692d27569b44466aa6187680d199dc7",
+      "payer_trunc": "0x4c98...9dc7",
+      "payee": "0xfebeb3682f672d620e1ce2ffeb2743fde20f4778",
+      "payee_trunc": "0xfebe...4778",
+      "task_id": "TSK-V6J8MSSD",
+      "payer_class": "unlinked",
+      "class_reason": "Known ledger payer 0x4c98...9dc7 (16 earlier events, class unlinked), carried from payouts.json; no new trace (no address-history route). Not proof of independence.",
+      "in_window": true,
+      "block": 52755706,
+      "payee_seen_before": true,
+      "onchain_check": "eth_getTransactionReceipt status 1: 2 USDC transfers from the escrow summing 10.0 (worker 9.25, fee address 0xd822...fc51 0.75); worker transfer matched: True; block time 2026-10-18T05:19:19Z by the 2-s formula (API settledAt 2026-10-18T05:19:19.000Z)",
+      "other_token_transfers_in_tx": [
+        {
+          "token": "0x1763...e602",
+          "from": "0x3512...9c2b",
+          "to": "0x8e28...f0ca",
+          "amount_raw_18dec": 260.25
+        }
+      ],
+      "route": "TaskMarket /api/tasks/{id} awards (settlementTxHash) + Base RPC eth_getTransactionReceipt (POST)",
+      "after_ledger_cutoff": false
+    },
+    {
+      "event_id": "deskcrew-0001",
+      "part": "C",
+      "venue_slug": "deskcrew",
+      "chain": "base",
+      "tx_hash": "0xe7a6c8300b10646119f5be6ffd91298409bb0af93bebb96a78fc00bb4426fc66",
+      "explorer_url": "https://basescan.org/tx/0xe7a6c8300b10646119f5be6ffd91298409bb0af93bebb96a78fc00bb4426fc66",
+      "date": "2026-10-15T10:00:33Z",
+      "amount": 0.85,
+      "token": "USDC",
+      "usd": 0.85,
+      "net_to_worker_usd": 0.85,
+      "payer": "0xd073306e9b749a91c9b41d682e6f97b2ad64323d",
+      "payer_trunc": "0xd073...323d",
+      "payee": "0x27ebd1ddcb6607be8641784a1bf654623fc8290e",
+      "payee_trunc": "0x27eb...290e",
+      "payer_class": "operator",
+      "class_reason": "DeskCrew's payout wallet as verified by run 9 (run working file deskcrew.latest_confirmed_payout); the amount matches the operator counter's +1 payment of 0.85 USD read on 2026-10-17. Operator-paid.",
+      "onchain_check": "eth_getTransactionReceipt status 1, block 52,634,543, header time 2026-10-15T10:00:33Z; direct USDC transfer, no other logs (run working file)",
+      "route": "Base RPC eth_getTransactionReceipt + eth_getTransactionByHash (POST)",
+      "excluded_from_agent_work_totals": true,
+      "excluded_reason": "DeskCrew payouts were never part of the 30-day agent-work estimate (no DeskCrew events before this run); kept out so the estimate stays comparable; recorded as DeskCrew's latest confirmed payout (v1.0 D1 input only)",
+      "in_window": true,
+      "in_window_corrected_2026_10_18": "set by date (window 2026-09-18..2026-10-18)"
     }
   ],
   "previous_run_id": "report-d110858e7247d2b988c08316",
@@ -26087,6 +26154,169 @@
     {
       "date": "2026-10-17",
       "change": "4 TaskMarket events added (taskmarket-0241..0244, $59.20 net, all TSK-GYCS41ZJ, paid 57 days after expiry) + 2 after the cut-off (taskmarket-0245..0246, $0.925); 3 in_window flags set false by date (taskmarket-0050..0052); BHFXGQW4's 3 events matched by tx hash, not added again; 30-day estimate 247.09 -> 301.66 (estimated, partial; 300.74 without the after-cutoff events); new payer 0xc056...7a63 unlinked; no headline change"
+    }
+  ],
+  "totals_2026_10_18": {
+    "as_of": "2026-10-18T13:45:00Z",
+    "ledger_cutoff": "2026-10-18T13:45:00Z",
+    "window": {
+      "start": "2026-09-18",
+      "end": "2026-10-18"
+    },
+    "agent_work_usd_paid_30d_estimate": {
+      "usd": 305.36,
+      "label": "estimated",
+      "basis": "run 17 estimate 301.66 (with XQX5ME5D's 2 after-cutoff events, now inside this window and counted once) - 2026-09-17 roll-off net to worker (taskmarket-0053..0055, 5.55) + 1 new TaskMarket event (TSK-V6J8MSSD, 9.25) = 305.36",
+      "not_subtracted": "Virtuals ACP apportioned roll-off and Execution Market aggregate roll-off (no events for those days in the file; no log route this run)",
+      "not_included": "DeskCrew's 0.85 USDC operator payout of 10-15 (deskcrew-0001; DeskCrew was never part of this estimate)",
+      "status": "partial (method fallback): Blockscout test GET 403; one eth_getLogs over 100 blocks refused (429) (runs 11-18); TaskMarket from award records with each settlement receipt read on chain; other venues by USDC balanceOf at the cut-off blocks"
+    },
+    "in_window_net_by_payer_class_listed_events": {
+      "unlinked": 238.9721,
+      "identified_independent": 12.75,
+      "operator": 0.76,
+      "operator_linked": 4.8628
+    },
+    "new_events": [
+      "taskmarket-0247"
+    ],
+    "operator_paid_event_added": "deskcrew-0001",
+    "matched_not_added": [
+      "taskmarket-0245",
+      "taskmarket-0246"
+    ],
+    "usd_new": 9.25,
+    "new_payers": [],
+    "new_payer_note": "0x4c98...9dc7 is a known ledger payer (unlinked by convention, untraced; not proof of independence); payee 0xfebe...4778 seen before",
+    "in_window_flag_corrections": {
+      "count": 3,
+      "events": [
+        "taskmarket-0053",
+        "taskmarket-0054",
+        "taskmarket-0055"
+      ],
+      "note": "checked by date for every event: in_window = date in 2026-09-18..2026-10-18"
+    },
+    "taskmarket_escrow_reconciliation": {
+      "previous_cutoff": 1009.486101,
+      "cutoff": 1000.286101,
+      "change": -9.2,
+      "explained": {
+        "deposit_TSK-04FYDMHT_10-17T14:25Z": 1.8,
+        "award_TSK-XQX5ME5D_gross": -1,
+        "award_TSK-V6J8MSSD_gross": -10
+      },
+      "unexplained": 0,
+      "head": 1000.286101,
+      "head_block": 52771163,
+      "refund_like_outflow": false
+    },
+    "headline_change": false,
+    "headline": "no change in kind: one new TaskMarket payout (9.25 net) from a known payer; 30-day estimate 305.36 (estimated)",
+    "latest_payout_by_venue": {
+      "taskmarket": {
+        "date": "2026-10-18T05:19:19Z",
+        "task": "TSK-V6J8MSSD",
+        "block": 52755706,
+        "after_ledger_cutoff": false,
+        "route": "/api/tasks/{id} awards + eth_getTransactionReceipt",
+        "primary": true,
+        "tx_verified": true
+      },
+      "virtuals-acp": {
+        "date": "2026-10-05T09:27:37Z",
+        "route": "virtuals-acp-0105, receipt re-read 2026-10-17 (status 1, block 52,201,555); escrow 0x238E...32E0 22.9 -> 22.9 between the cut-offs, 22.9 at the head: no decrease, so no possible_newer_outflow",
+        "primary": true,
+        "tx_verified": true,
+        "checked_through": "2026-10-17T23:49:03Z",
+        "re_dated_to": "2026-10-17",
+        "checked_through_2026_10_18": "2026-10-18T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)"
+      },
+      "moltjobs": {
+        "date": "2026-09-23T07:42:57Z",
+        "route": "carried (payouts.json); escrow 0x3a57...60be 6.065 at both 10-18 cut-offs (unchanged since 10-09)",
+        "d1_line": "2026-10-23",
+        "primary": true,
+        "checked_through": "2026-10-18T13:44:59Z"
+      },
+      "agentpact": {
+        "date": "2026-09-01T22:57:29Z",
+        "route": "carried; escrow 0x5881...9a64 0.0 at both 10-18 cut-offs",
+        "d1_line": "2026-10-31"
+      },
+      "execution-market": {
+        "date": "2026-10-10",
+        "route": "carried by the merge from run 16 grading_inputs (no api.execution.market call this run); Base payer 0x857f...43cd -0.08 unclassified (C)",
+        "primary": true,
+        "tx_verified": false
+      },
+      "deskcrew": {
+        "date": "2026-10-15T10:00:33Z",
+        "route": "DeskCrew tx 0xe7a6...6fc66 read on Base (receipt status 1; 0.85 USDC from the run-9-verified payout wallet 0xd073...323d); operator-paid",
+        "primary": true,
+        "tx_verified": true
+      },
+      "algora": {
+        "date": "carried (no C route; B reads Algora)"
+      }
+    },
+    "escrow_balances": [
+      {
+        "venue": "taskmarket",
+        "address": "0xddc6cc3e4d11c1f3527b867c7dad4ed9869c33f7",
+        "address_trunc": "0xddc6...33f7",
+        "previous_cutoff": 1009.486101,
+        "previous_block": 52727676,
+        "cutoff": 1000.286101,
+        "cutoff_block": 52770876,
+        "change": -9.2,
+        "head": 1000.286101,
+        "head_block": 52771163
+      },
+      {
+        "venue": "moltjobs",
+        "address": "0x3a57faee4ee95444506a6e290261d4c37b3060be",
+        "address_trunc": "0x3a57...60be",
+        "previous_cutoff": 6.065,
+        "previous_block": 52727676,
+        "cutoff": 6.065,
+        "cutoff_block": 52770876,
+        "change": 0
+      },
+      {
+        "venue": "virtuals-acp",
+        "address": "0x238e541bfefd82238730d00a2208e5497f1832e0",
+        "address_trunc": "0x238e...32e0",
+        "previous_cutoff": 22.9,
+        "previous_block": 52727676,
+        "cutoff": 22.9,
+        "cutoff_block": 52770876,
+        "change": 0
+      },
+      {
+        "venue": "agentpact",
+        "address": "0x588168712bf758afd747bf46471afa53f9599a64",
+        "address_trunc": "0x5881...9a64",
+        "previous_cutoff": 0,
+        "previous_block": 52727676,
+        "cutoff": 0,
+        "cutoff_block": 52770876,
+        "change": 0
+      }
+    ],
+    "execution_market_payers_at_cutoff_watch": {
+      "0x857f...43cd": 7.930159,
+      "0xd386...d474": 3.873332,
+      "0x01f9...84d3": 1.3502,
+      "0x3a3f...f3a7": 1.5152,
+      "note": "read because calls remained; run 17 values for comparison in watch.json"
+    },
+    "other_token_transfer_observation": "TSK-V6J8MSSD's settlement tx also carries a non-USDC token transfer between two other contracts (0x1763...e602, 260.25 units at 18 decimals); recorded, not interpreted"
+  },
+  "changes_since_previous_run17": [
+    {
+      "date": "2026-10-18",
+      "change": "1 TaskMarket event added (taskmarket-0247, $9.25 net, TSK-V6J8MSSD); run 17's 2 after-cutoff events matched by tx hash and counted once; 3 in_window flags set false by date (taskmarket-0053..0055); deskcrew-0001 (0.85 USDC, 10-15, operator-paid) added outside the agent-work estimate; 30-day estimate 301.66 -> 305.36 (estimated, partial); no headline change"
     }
   ],
   "title": "Agentic Freelance payout ledger: who actually paid agent workers",

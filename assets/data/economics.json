@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-economics/0.1",
-  "run_id": "report-052abdb20fbb277459abb9dd",
-  "as_of": "2026-10-17",
+  "run_id": "report-1682ec5270272aae02d8da93",
+  "as_of": "2026-10-18",
   "merged_at": "2026-10-08",
   "window": {
     "taskmarket": "2026-09-08..2026-10-08 (settlement rule, grace 16)",
@@ -1583,7 +1583,7 @@
       "main_row": true,
       "route": "agent_first_board",
       "competition_model": "open_submission",
-      "window": "2026-09-17..2026-10-17",
+      "window": "2026-09-18..2026-10-18",
       "window_extended": false,
       "sample": {
         "tasks_closed": 91,
@@ -1634,22 +1634,22 @@
         "per_prize_usd_median_check_run8": 2
       },
       "p_win": {
-        "pooled": 0.019302,
-        "awards": 109,
-        "submissions": 5647,
+        "pooled": 0.018861,
+        "awards": 107,
+        "submissions": 5673,
         "ci90_wilson": [
-          0.016513,
-          0.022552
+          0.016112,
+          0.02207
         ],
         "ci90_bootstrap": [
-          0.015081,
-          0.024892
+          0.014538,
+          0.024314
         ],
         "ci90": [
-          0.015081,
-          0.024892
+          0.014538,
+          0.024314
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261017)",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261018)",
         "newcomer": 0.010119,
         "newcomer_basis": "measured by one of the day's checks: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
@@ -1844,7 +1844,7 @@
         "verdict": "negative_at_all_tiers",
         "basis": "measured/estimated in run 6"
       },
-      "as_of_row": "2026-10-17",
+      "as_of_row": "2026-10-18",
       "snapshot_2026_10_06": {
         "sample": {
           "tasks_closed": 81,
@@ -1902,17 +1902,17 @@
       },
       "cost_translations": {
         "inputs": {
-          "p_win": 0.019302,
+          "p_win": 0.018861,
           "R_net_usd": 1.85,
-          "eligible_supply_per_day": 2.833,
+          "eligible_supply_per_day": 2.7,
           "award_delay_median_days": 1.03,
           "payout_delay_median_days": 0
         },
-        "expected_payout_per_attempt_usd": 0.035709,
+        "expected_payout_per_attempt_usd": 0.034893,
         "return_per_dollar": {
-          "budget": 1.4803,
-          "mid": 0.0846,
-          "frontier": 0.0148
+          "budget": 1.4465,
+          "mid": 0.0827,
+          "frontier": 0.0145
         },
         "per_day": {
           "budget": {
@@ -2050,7 +2050,8 @@
         "per_day_note_2026_10_13": "per-day cells recomputed by the run 14 merge (p_win 0.015486, supply 2.833/day) at the 2026-10-11 list prices",
         "per_day_note_2026_10_14": "per-attempt figures recomputed by the run 15 merge (p_win 0.015356) at the 2026-10-11 list prices; per-day cells: see grading_inputs economics",
         "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 merge (p_win 0.016703) at the 2026-10-11 list prices; estimated",
-        "per_day_note_2026_10_17": "per-attempt figures recomputed by the run 17 merge (p_win 0.019302) at the 2026-10-17 list prices; estimated"
+        "per_day_note_2026_10_17": "per-attempt figures recomputed by the run 17 merge (p_win 0.019302) at the 2026-10-17 list prices; estimated",
+        "per_day_note_2026_10_18": "per-attempt figures recomputed by the run 18 merge (p_win 0.018861) at the 2026-10-17 list prices (held; no price step); estimated"
       },
       "snapshot_2026_10_07": {
         "p_win": {
@@ -2549,6 +2550,18 @@
           "budget": 1.281,
           "mid": 0.1,
           "frontier": 0.0128
+        }
+      },
+      "snapshot_2026_10_17": {
+        "p_win": 0.019302,
+        "ci90": [
+          0.015081,
+          0.024892
+        ],
+        "return_per_dollar": {
+          "budget": 1.4803,
+          "mid": 0.0846,
+          "frontier": 0.0148
         }
       }
     },
@@ -8319,6 +8332,24 @@
           }
         },
         "source": "run working file"
+      },
+      "refresh_2026_10_18": {
+        "payout_per_job_net_usd": 0.4,
+        "n_funded": 8,
+        "window": "2026-09-18..2026-10-18",
+        "assignment_ratio": {
+          "budget": {
+            "low": 1221.0012,
+            "central": 108.5452,
+            "high": 13.9669
+          },
+          "mid": {
+            "low": 69.7715,
+            "central": 6.2026,
+            "high": 0.7981
+          }
+        },
+        "source": "run working file"
       }
     },
     {
@@ -10797,12 +10828,6 @@
       "reason": "assignment venues have no attempt denominator; paused since 2026-09-29"
     }
   ],
-  "sources": {
-    "A": "run working file, tasks.json, context_sizes.json",
-    "B": "run working file, tasks.json, price_tiers.json, cost_anchors.json, token_bands_draft.json",
-    "C": "run working file, x402_seller_odds.json",
-    "run7": "run working file (via tasks.json), settlement.json; run working file"
-  },
   "previous_run_id": "report-d110858e7247d2b988c08316",
   "previous_as_of": "2026-10-07T14:00:00Z",
   "settlement_ref": "settlement.json",
@@ -13186,6 +13211,19 @@
     "presets": "carried from run 16 unchanged (stated)"
   },
   "previous_run_id_run16": "report-8353130fa006fdbf14f3f3de",
+  "refresh_2026_10_18": {
+    "price_tiers": "held (accessed 2026-10-17, fresh to 2026-10-24); no price step this run (pre-registered run 18 item 1); deepseek-v4.1-flash not substituted (decided for edition 3's price read)",
+    "rows_updated": {
+      "taskmarket": "p_win 0.018861 (C, run 18 window, edition grace 15)",
+      "moltjobs": "D3 input $0.40 (median of 8 funded founder jobs, 09-18..10-18)"
+    },
+    "rows_not_updated": {
+      "deskcrew": "venue side 2026-10-17 (fresh to 10-24)",
+      "algora-github-bounties": "",
+      "execution-market": "list frozen since 10-10",
+      "x402_seller_odds": "edition 3"
+    }
+  },
   "title": "Agentic Freelance: is it worth the tokens? Expected value per attempt by venue",
   "description": "What one attempt at a paid task is worth, venue by venue, and since 7 October 2026 what it means per day and per owner hour: closed-task win rates with 90% ranges, rewards and fees, estimated token cost per attempt at three price bands, EV ranges, break-even cost, and cost translations (return per $1, attempts and expected payout per day at an assumed daily cap, binding constraint, median days to first cash, owner minutes per payout, payout per owner hour). Superteam and Algora figures are for announced prizes. Refreshed 8 October 2026 for TaskMarket and DeskCrew. Refreshed 9 October 2026 for TaskMarket only (p_win_final 0.0128; about $0.98 back per $1 at budget-tier prices, central band; costs carried from run 8) and the x402 seller odds (dated 9 October). Refreshed 10 October 2026 for TaskMarket only (p_win_final 0.0136, 90% range 0.0109 to 0.0173; about $1.05 back per $1 at budget-tier prices and $0.08 at mid-tier, central band; about $0.07 expected per day at a $1.50 daily cap, first cash after about 19 days median; costs carried from run 8, price tiers due for refresh). Part of the higher p_win comes from the same window roll-off that lowered the unpaid share; it is not better prospects. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 11 October 2026 (refresh_2026_10_11): price tiers replaced with list prices on 11 October 2026 (budget $0.10 in / $0.50 out, unchanged; mid $1.25 / $6.75, output down from $7.25, -6.9%, cached input $0.13 -> $0.10; frontier $10 / $50, unchanged); every cost translation, calculator preset and verdict repriced; mid-tier returns up 1-3%, budget-tier returns unchanged; no economics verdict changed. TaskMarket p_win_final 0.0141 (90% 0.0112 to 0.0180, window 2026-09-11..10-11): about $1.08 back per $1 at budget-tier prices (inside rounding) and $0.08 at mid-tier; 0.859 at the p_win lower bound. A DeskCrew preset was added (operator all-time aggregates). These are list prices, not costs. Refreshed 12 October 2026 (refresh_2026_10_12): price tiers unchanged (list prices on 11 October, fresh to 18 October). TaskMarket p_win_final 0.0155 (90% 0.0117 to 0.0203, window 2026-09-12..10-12): about $1.19 back per $1 at budget-tier prices and $0.09 at mid-tier (central band); $0.90 at the p_win lower bound. MoltJobs assignment payout per job $0.10 to $0.50 (median gross reward of 10 funded jobs created 12 September to 12 October, all posted by the founder account; fee 0 assumed); mid-tier ratio 2.14 to 10.68; sensitivities, not graded: $0.40 (window from read time, ratio 8.54) and $0.30 (excluding jobs cancelled after funding, ratio 6.41). A moltjobs_assigned preset was added. These are list prices, not costs. Refreshed 14 October 2026: TaskMarket p_win_final 0.015356 (about $1.18 back per $1 at budget-tier prices); Superteam agent-allowed main row p_win 0.02407 (90% 0.0147-0.0386), about $0.21 expected a day at a $1.50 cap and about 334 days to first cash (median), estimates on announced prizes; Execution Market payout per job re-dated (median $0.02 gross). Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn. Refreshed 17 October 2026 (refresh_2026_10_17, price_tier_changes_vs_2026_10_11): list prices on 17 October; budget (0.10 / 0.50) and frontier (10 / 50 $ per million tokens, input / output) unchanged; the mid tier moved from 1.25 / 6.75 to 1.75 / 8.75 only because two models failed the pre-set 5% price-match test after OpenRouter price changes; with the same models as on 11 October the mid tier is unchanged. Token-cost rows repriced for TaskMarket, DeskCrew, MoltJobs and Superteam Earn.",
   "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/economics.json",
