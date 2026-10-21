@@ -2090,6 +2090,86 @@
       "accessed_at": "2026-10-19T13:46:54Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-tsk-9jw9f8my-2026-10-21",
+      "source_type": "venue API",
+      "source_url": "https://taskmarket.dev/api/tasks/TSK-9JW9F8MY",
+      "title": "TaskMarket task TSK-9JW9F8MY award record, read 21 October 2026 (the 20 October check, read a day late)",
+      "claim": "The task record shows no award (award count 0, no award times; status open, phase awaiting settlement) at 13:51 UTC on 21 October, so no award was made by its 16-day grace end (20 October, 02:28 UTC): unpaid at the 15- and 16-day grace. Unpaid is a status at the grace end, not proof it will never be paid. No update was published on 20 October; each award carries its own settlement time, so the late read is decided by the record's times.",
+      "accessed_at": "2026-10-21T13:51:18Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-job-list-2026-10-21",
+      "source_type": "venue API",
+      "source_url": "https://api.moltjobs.io/v1/jobs?limit=100",
+      "title": "MoltJobs public job list, read 21 October 2026",
+      "claim": "123 jobs; one new since 23 September: job 90bf05bc, 20 USDC, posted 19 October 17:50 UTC by a poster ID not linked to the operator's known accounts, not funded, closing 22 October 17:50 UTC. Under rule v1.1 MoltJobs moves avoid -> probe first on this new data; its paid work and most posted jobs come from the operator's own accounts. We cannot see who holds the outside poster ID.",
+      "accessed_at": "2026-10-21T13:52:30Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-stats-escrow-2026-10-21",
+      "source_type": "venue API",
+      "source_url": "https://api.moltjobs.io/v1/stats",
+      "title": "MoltJobs stats route beside its escrow balance, 21 October 2026",
+      "claim": "MoltJobs' own stats count 3.8 USDC in escrow, including its referral jobs; the escrow contract holds 6.065 USDC on chain (21 October); the 2.265 USDC difference is not explained by any open or in-progress job on its public list (hypotheses untested). Moves no grade.",
+      "accessed_at": "2026-10-21T13:52:30Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-late-awards-2026-10-20",
+      "source_type": "on-chain transaction",
+      "source_url": "https://base.blockscout.com/tx/0x06230dc47b63b9dc1c16e1ec4fd89072e30de044ccbf1b7e76cf84cf487bc35e",
+      "title": "TaskMarket late awards of 20 October 2026 (one of eight settlement transactions)",
+      "claim": "On 20 October one requester awarded seven August tasks, 72 to 79 days after they closed (11 payouts, 57.35 USD net to workers); they now count as paid. With one payout of 19 October, 12 payouts on 8 tasks, 62.90 USD net, in the 48-hour ledger window to 21 October 13:45 UTC; 30-day estimate 364.65 USD (estimated, partial).",
+      "accessed_at": "2026-10-21T13:45:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-escrow-outflow-2026-10-20",
+      "source_type": "on-chain balance",
+      "source_url": "https://base.blockscout.com/address/0xDDc6cC3e4D11c1f3527B867C7DAD4ED9869C33f7",
+      "title": "TaskMarket escrow balance probes, 19 to 21 October 2026",
+      "claim": "The escrow balance fell 156.0 USDC between the 19 and 21 October cut-offs: 68.0 in awards, +4.0 in deposits and 92.0 not tied to any task on the public list, between 09:37:49 and 10:36:13 UTC on 20 October. Cause not measured (no keyless address-history route); hypotheses: a refund to a requester, or settlements of unlisted tasks. Not counted as a payout.",
+      "accessed_at": "2026-10-21T13:53:19Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "superteam-open-feed-2026-10-21",
+      "source_type": "venue API",
+      "source_url": "https://superteam.fun/api/listings?status=open",
+      "title": "Superteam Earn open listings, read 21 October 2026 (first of two promised reads)",
+      "claim": "11 open listings, all for humans only; no listing open to AI agents and none new since 19 October. Superteam Earn would move probe first -> avoid on 26 October unless an agent-allowed listing appears (projection, not a forecast). Winners announced; payment not public.",
+      "accessed_at": "2026-10-21T13:50:22Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "algora-coollabsio-board-2026-10-21",
+      "source_type": "venue page",
+      "source_url": "https://algora.io/coollabsio/bounties?status=open",
+      "title": "Algora coollabsio board page, read 21 October 2026",
+      "claim": "The board page still lists coolify#6696 ($20) as open (Open 1, Completed 27); the pull request closed on 18 August. A dated fact about Algora's listing. The five paying boards show the same counters as on 14 October.",
+      "accessed_at": "2026-10-21T13:51:13Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "x402scan-sellers-2026-10-21",
+      "source_type": "index",
+      "source_url": "https://www.x402scan.com/",
+      "title": "x402scan seller index, read 21 October 2026",
+      "claim": "2,083 of 38,203 indexed sellers (5.45%) took at least $1 in 30 days (14 October: 5.60%); 49 took at least $1,000, 31 of those with at least 5 buyers. Odds for existing indexed sellers, not the chance a new listing sells; untraced.",
+      "accessed_at": "2026-10-21T13:50:00Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }
