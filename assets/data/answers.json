@@ -1,18 +1,7 @@
 {
   "schema": "agentic-freelance-answers/0.1",
-  "title": "Agentic Freelance: Is it real? Plain answers",
-  "description": "Four plain answers (OpenClaw, TaskMarket, Superteam Earn, Algora), each with dated numbers, what was not verified, its grade in the shortlist (revised 9 October 2026: TaskMarket moved to avoid at the central band) and what to try instead: the shortlist's next-best with its odds, MoltJobs' operator caveat, and the next-best under the rule being tested (v1.1, shadow). Updated 14 October 2026: 'Is Superteam legit for agents?' refreshed and 'Is Algora still paying?' added (dated facts, next-best from the shortlist). Updated 17 October 2026: 'Is Algora still paying?' adds the 13 September statement by coollabsio's owner that its Algora program had stopped and payouts would not happen. Updated 19 October 2026: MoltJobs is graded avoid under rule v1.1 from 19 October on time alone, as projected on 18 October (no job from outside its operator since 18 September; nothing new happened at MoltJobs; under rule v1.0, shown beside, it stays probe first until 24 October, a projection, not a forecast); Algora's coollabsio board still lists coolify#6696 as open on 19 October.",
-  "canonical_url": "https://shaduf.ai/p/agentic-freelance/assets/data/answers.json",
-  "page_url": "https://shaduf.ai/p/agentic-freelance/is-it-real/",
-  "report_url": "https://shaduf.ai/p/agentic-freelance/reports/2026-10-19-moltjobs-moved-on-time.html",
-  "usage_rules": [
-    "Expected values are estimates, never promises.",
-    "public_file names the published data file that holds a number; source_note marks numbers kept only in the run working files and repeated in the report."
-  ],
-  "public_redaction": "Public copy, 19 October 2026: wallet addresses in text and label fields are shortened to their first and last 4 characters; URLs (explorer and API links) keep full addresses and transaction hashes, so every payout can be checked on an explorer; internal working-file paths and internal ruling references are removed or replaced by a neutral phrase; instructions addressed to agents that were quoted from skill files or repository files are paraphrased, not republished. No winner usernames or wallets are stored; poster and author account IDs are not published next to a measure. Third-party repositories are linked as sources; the people behind them are not named in text. Superteam winner wallets are never published.",
-  "shortlist_url": "https://shaduf.ai/p/agentic-freelance/assets/data/shortlist.json",
-  "run_id": "report-f4afe30e9e5606de3f1f3275",
-  "as_of": "2026-10-21",
+  "run_id": "report-245745b47b4bb64ecf00dd75",
+  "as_of": "2026-10-22",
   "rule": "Every number comes from a run file named in source_path; nothing new is asserted here. Expected values are estimates, never promises.",
   "answers": [
     {
@@ -25,35 +14,35 @@
           "value": "no",
           "label": "built-in earning, payment or wallet feature",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/B/openclaw.json#built_in_earning_feature",
           "basis": "measured (README and 1,375-line docs index; 0 mentions of wallet, payment, earn, USDC, x402, Stripe)"
         },
         {
           "value": 48,
           "label": "default heartbeat wake-ups per day (every 30 minutes)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/B/openclaw.json#idle_cost",
           "basis": "measured (first-party docs)"
         },
         {
           "value": "about 100K tokens per heartbeat run (about 2-5K in an isolated session)",
           "label": "first-party cost warning",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/B/openclaw.json#idle_cost",
           "basis": "measured by its publisher"
         },
         {
           "value": 31,
           "label": "of 34 catalogue venues expose a skill file, MCP server, API or CLI an OpenClaw-type agent could use",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/B/openclaw.json#venues_usable",
           "basis": "measured from catalogue (5 re-checked)"
         },
         {
           "value": 281,
           "label": "third-party payment-related skills on ClawHub (capped lower bound; none by OpenClaw)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/B/openclaw.json#third_party_payment_skills",
           "basis": "measured"
         }
       ],
@@ -63,7 +52,7 @@
         "why": "highest-ranked probe-first record this week that shares data, research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
         "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
         "grade": "probe first",
-        "source": "run working file"
+        "source": "shortlist.json (edition 1, rule v1.0 next-best procedure applied to non-avoid records)"
       },
       "last_checked": "2026-10-13",
       "next_best_route_run8": {
@@ -81,7 +70,7 @@
             "value": "0 of 11 terms",
             "label": "whole-word counts in the README (331 lines) and docs.openclaw.ai/llms.txt (1,387 lines) for wallet, payment(s), earn*, monetiz*, USDC, x402, Stripe, crypto, invoice, bounty, freelance",
             "as_of": "2026-10-13",
-            "basis": "measured (run working file); run 8 (2026-10-07) also 0 on a 1,375-line index"
+            "basis": "measured (parts/A/short_answers_A.json#openclaw); run 8 (2026-10-07) also 0 on a 1,375-line index"
           },
           {
             "value": "no paid tier, hosted service, or token",
@@ -123,15 +112,27 @@
         },
         "not_verified": "whether any individual OpenClaw user earned money (no public route; self-reports not checked)"
       },
-      "next_best_route_computed_2026_10_21": {
+      "next_best_route_computed_2026_10_22": {
         "computed": {
           "slug": "moltjobs",
           "grade": "probe first",
           "line": "moltjobs (probe first): the graded record this answer compares with, itself probe first or better today",
           "label": null
         },
+        "basis": "not graded (OpenClaw): keeps its recorded basis, the graded record named in the answer (moltjobs), and takes that record itself if it is probe first or better today",
         "matches_published": true,
-        "ref": "run working file"
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": "moltjobs",
+        "grade": "probe first",
+        "line": "moltjobs (probe first): the graded record this answer compares with, itself probe first or better today",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     },
     {
@@ -144,42 +145,42 @@
           "value": 0.013313,
           "label": "chance an entry is paid (p_win_final, 2026-09-08..10-08, without MolTrust)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "settlement.json#refresh_2026_10_08.run9_window.without_moltrust.p_win_final",
           "basis": "measured counts; grace estimated"
         },
         {
           "value": 0.2,
           "label": "share of submissions on closed tasks that paid nobody (grace 16)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "settlement.json#refresh_2026_10_08.run9_window.without_moltrust",
           "basis": "estimated (rule on measured fields)"
         },
         {
           "value": 612.22,
           "label": "USDC still in escrow on 69 unawarded closed tasks (90 days)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "parts/C/escrow_outcomes_delta.json#summary",
           "basis": "measured"
         },
         {
           "value": -0.291914,
           "label": "expected value per attempt at mid-tier token prices (USD)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=taskmarket].ev_per_attempt_usd.central",
           "basis": "estimated"
         },
         {
           "value": 0.08,
           "label": "dollars back per $1 of mid-tier tokens",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=taskmarket].cost_translations.return_per_dollar",
           "basis": "estimated"
         },
         {
           "value": 203.66,
           "label": "USD paid to agent workers across 5 traced venues in 30 days (estimate)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "payouts.json#totals_2026_10_08",
           "basis": "estimated"
         }
       ],
@@ -189,9 +190,9 @@
         "why": "highest-ranked probe-first record this week that shares data, research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
         "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
         "grade": "probe first",
-        "source": "run working file"
+        "source": "shortlist.json (edition 1, rule v1.0 next-best procedure applied to non-avoid records)"
       },
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "next_best_route_run8": {
         "venue_slug": "superteam-earn",
         "why": "higher announced prizes per entry, but payment is not verifiable",
@@ -215,7 +216,7 @@
             "value": 0.009031,
             "label": "share of submissions on decided tasks that paid nobody (30 days, grace 15)",
             "as_of": "2026-10-17",
-            "basis": "estimated (rule on measured fields); window-edge move"
+            "basis": "estimated (rule on measured fields); window-edge move (R141)"
           },
           {
             "value": 0.182429,
@@ -230,7 +231,7 @@
             "basis": "measured (receipt)"
           }
         ],
-        "source": "run working file"
+        "source": "parts/C/settlement_refresh.json"
       },
       "run18": {
         "date": "2026-10-18",
@@ -261,7 +262,7 @@
             "basis": "estimated"
           }
         ],
-        "source": "run working file"
+        "source": "parts/C/settlement_refresh.json"
       },
       "run19": {
         "date": "2026-10-19",
@@ -292,18 +293,7 @@
             "basis": "estimated"
           }
         ],
-        "source": "run working file"
-      },
-      "next_best_route_computed_2026_10_21": {
-        "computed": {
-          "slug": "superteam-earn",
-          "grade": "probe first",
-          "line": "superteam-earn (probe first): shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC conditional vs unknown)",
-          "why": "shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC conditional vs unknown)",
-          "label": "if this one is not for you"
-        },
-        "matches_published": false,
-        "ref": "run working file"
+        "source": "parts/C/settlement_refresh.json"
       },
       "run20": {
         "date": "2026-10-21",
@@ -334,7 +324,55 @@
             "basis": "estimated"
           }
         ],
-        "source": "run working file"
+        "source": "parts/C/settlement_refresh.json"
+      },
+      "next_best_route_computed_2026_10_22": {
+        "computed": {
+          "slug": "superteam-earn",
+          "grade": "probe first",
+          "line": "superteam-earn (probe first): shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC conditional vs unknown)",
+          "why": "shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC conditional vs unknown)",
+          "label": "if this one is not for you"
+        },
+        "basis": "answer about a graded record (taskmarket, probe first): takes that record's try_instead",
+        "matches_published": false,
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
+      },
+      "run21": {
+        "date": "2026-10-22",
+        "one_line": "Yes, it pays on chain, still small: about 1 in 55 entries won about $1.85 over 30 days; 1.73% of submissions and 27.5% of posted reward went to tasks that paid nobody by their grace end (18 days this week; same figures at 15).",
+        "facts": [
+          {
+            "value": 0.018319,
+            "label": "chance an entry is paid (p_win_final, 2026-09-22..10-22, without MolTrust)",
+            "as_of": "2026-10-22",
+            "basis": "measured counts; grace estimated"
+          },
+          {
+            "value": 0.017292,
+            "label": "share of submissions on decided tasks that paid nobody (30 days, edition grace 18)",
+            "as_of": "2026-10-22",
+            "basis": "estimated (rule on measured fields)"
+          },
+          {
+            "value": 0.275139,
+            "label": "share of decided reward on tasks that paid nobody (30 days, edition grace 18)",
+            "as_of": "2026-10-22",
+            "basis": "estimated; mostly TSK-9JW9F8MY (30 USDC)"
+          }
+        ],
+        "source": "parts/C/settlement_refresh.json#edition3_grace"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": "superteam-earn",
+        "grade": "probe first",
+        "line": "superteam-earn (probe first): shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC conditional vs unknown)",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     },
     {
@@ -347,49 +385,49 @@
           "value": 337,
           "label": "listings in the 180-day census (27 agent-allowed)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "parts/A/superteam_listings.json#counts",
           "basis": "measured"
         },
         {
           "value": 30,
           "label": "of 30 sampled winners whose payment could not be checked (no public wallet or payment record)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "human_route.json#venues[0].payment_trace",
           "basis": "measured"
         },
         {
           "value": 10,
           "label": "winners on agent accounts (US$790 face), none claimed 109-130 days after announcement",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "parts/A/superteam_refresh.json#agent_account_wins",
           "basis": "measured; \"not paid\" is an inference"
         },
         {
           "value": 0.026923,
           "label": "chance an entry wins on agent-allowed listings (180 days; most entries are by humans)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=superteam-earn].p_win",
           "basis": "measured"
         },
         {
           "value": 0.0889,
           "label": "new agent-allowed listings per day (about one every 11 days)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "parts/A/superteam_refresh.json#agent_allowed",
           "basis": "measured"
         },
         {
           "value": 0.2377,
           "label": "expected USD per day at any daily cap (announced prizes)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=superteam-earn].cost_translations.per_day.mid.1.50",
           "basis": "estimated"
         },
         {
           "value": 52,
           "label": "listings past deadline with no winners announced (3,229 submissions waiting)",
           "as_of": "2026-10-08",
-          "source_path": "run working file",
+          "source_path": "parts/A/superteam_refresh.json#overdue_stock",
           "basis": "measured"
         }
       ],
@@ -399,9 +437,9 @@
         "why": "highest-ranked probe-first record this week that shares research, software with an owner gate no heavier (shortlist edition 1 rule). MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
         "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
         "grade": "probe first",
-        "source": "run working file"
+        "source": "shortlist.json (edition 1, rule v1.0 next-best procedure applied to non-avoid records)"
       },
-      "last_checked": "2026-10-21",
+      "last_checked": "2026-10-22",
       "next_best_route_run8": {
         "venue_slug": "taskmarket",
         "why": "payments are visible on chain, though the expected value per attempt is below mid-tier token cost",
@@ -459,7 +497,7 @@
           },
           {
             "value": "48 / 28",
-            "label": "listings in review / of them more than 14 days past deadline",
+            "label": "listings in review / of them more than 14 days past deadline (R78)",
             "as_of": "2026-10-14",
             "basis": "measured"
           }
@@ -470,7 +508,7 @@
           "grade": "probe first",
           "plain_reason": "Worth a capped test only: 22% of delivered work went unpaid"
         },
-        "source": "run working file"
+        "source": "parts/A/superteam_r15.json"
       },
       "run16": {
         "date": "2026-10-16",
@@ -515,9 +553,14 @@
           }
         ],
         "what_we_did_not_verify": "whether any winner was paid (payment fields are sign-in only); why the listing's access changed",
-        "source": "run working file"
+        "source": "parts/A/superteam_r16.json"
       },
-      "next_best_route_computed_2026_10_21": {
+      "run20": {
+        "date": "2026-10-21",
+        "one_line": "Winners announced; payment not public. On 21 October no listing on its open feed was open to AI agents, and none was new since 19 October.",
+        "source": "parts/A/superteam_ids_A.json; parts/A/superteam_r20.json"
+      },
+      "next_best_route_computed_2026_10_22": {
         "computed": {
           "slug": "taskmarket",
           "grade": "probe first",
@@ -525,13 +568,25 @@
           "why": "shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC unknown vs conditional)",
           "label": "if this one is not for you"
         },
+        "basis": "answer about a graded record (superteam-earn, probe first): takes that record's try_instead",
         "matches_published": false,
-        "ref": "run working file"
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
       },
-      "run20": {
-        "date": "2026-10-21",
-        "one_line": "Winners announced; payment not public. On 21 October no listing on its open feed was open to AI agents, and none was new since 19 October.",
-        "source": "run working file"
+      "run21": {
+        "date": "2026-10-22",
+        "one_line": "Winners announced; payment not public. On 22 October no listing on its open feed was open to AI agents (13 listings, all for humans only).",
+        "source": "parts/B/evidence_B.json#superteam_open_feed"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": "taskmarket",
+        "grade": "probe first",
+        "line": "taskmarket (probe first): shares code_change, research, research_report, short_text, software; owner gate no heavier (KYC unknown vs conditional)",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     },
     {
@@ -544,42 +599,42 @@
           "value": 6,
           "label": "boards with an award in 180 days",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "human_route.json#venues[1].census_summary",
           "basis": "measured"
         },
         {
           "value": 27,
           "label": "awards in 180 days (US$3,335; 10 are maintainer tips)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "human_route.json#venues[1].census_summary",
           "basis": "measured"
         },
         {
           "value": 0,
           "label": "new awards since 2026-07-09",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "human_route.json#venues[1].census_summary",
           "basis": "measured"
         },
         {
           "value": "2026-08-26",
           "label": "latest payout confirmation found (passes 60 days on 2026-10-25)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "human_route.json#venues[1].census_summary",
           "basis": "measured"
         },
         {
           "value": 54.55,
           "label": "expected USD per owner hour at an assumed 10 minutes per entry",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time",
           "basis": "estimated"
         },
         {
           "value": 5.62,
           "label": "expected USD per owner hour at 97 minutes per entry (code review)",
           "as_of": "2026-10-07",
-          "source_path": "run working file",
+          "source_path": "economics.json#venues[row_id=algora-github-bounties].cost_translations.owner_time_alternatives",
           "basis": "estimated"
         }
       ],
@@ -588,11 +643,11 @@
         "venue_slug": "moltjobs",
         "why": "shares software; owner gate no heavier. MoltJobs caveat: 50 of its 70 new jobs in 30 days were the operator's own marketing or referral tasks (68 of 70 from the founder account), it has posted 0 new jobs since 2026-09-23, and its 10 open jobs are 0.2 USDC operator referral rewards",
         "odds_line": "payout per assigned job $0.10 vs about $0.048 of tokens at mid-tier prices (ratio 2.10); chance of being assigned not public; operator caveat: 50 of 70 new jobs in 30 days were the operator's own marketing or referral tasks and 68 of 70 came from the founder account; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards",
-        "source": "run working file",
+        "source": "shortlist.json#venues[slug=algora-github-bounties].next_best",
         "if_operator_posted_tasks_excluded": {
           "slug": "taskmarket",
           "odds_line": "about $0.08 back per $1 of tokens at mid-tier prices ($1.02 at budget-tier prices); at $1.50 a day about 2.97 attempts, $0.07 expected per day, first cash after about 18 days (median); 1 in 5 submissions went to tasks that paid nobody",
-          "ref": "run working file"
+          "ref": "merge/sensitivities.json#results.S1"
         }
       },
       "last_checked": "2026-10-08",
@@ -604,7 +659,7 @@
       "shortlist_grade": "avoid (D2 fail: 0 new bounties in 30 days)",
       "shortlist_grade_2026_10_09": "avoid",
       "next_best_route_caveat_2026_10_09": "MoltJobs operator caveat: 118 of the 122 jobs on MoltJobs' public list (all created since 2026-08-25) were posted by the founder account; of the 12 new jobs in 30 days, 10 are founder jobs and 2 are outside jobs that were cancelled unfunded and unclaimed; 0 new jobs since 2026-09-23; the 10 open jobs are 0.2 USDC operator referral rewards; every traced MoltJobs payout was funded by the founder wallet",
-      "next_best_route_computed_2026_10_21": {
+      "next_best_route_computed_2026_10_22": {
         "computed": {
           "slug": "taskmarket",
           "grade": "probe first",
@@ -612,8 +667,20 @@
           "why": "shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
           "label": null
         },
+        "basis": "answer about a graded record (algora-github-bounties, avoid): takes that record's try_instead",
         "matches_published": false,
-        "ref": "run working file"
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": "taskmarket",
+        "grade": "probe first",
+        "line": "taskmarket (probe first): shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     },
     {
@@ -670,16 +737,28 @@
       "what_we_did_not_verify": "whether posting volume is organic (the status rule needs the full sample; next re-measure 2026-11-09)",
       "next_best_route": "Moltbook has no payout route; for paid work see the shortlist (no venue clears every check this week).",
       "last_checked": "2026-10-13",
-      "source_path": "run working file",
-      "next_best_route_computed_2026_10_21": {
+      "source_path": "parts/A/short_answers_A.json#moltbook + communities.json#communities[moltbook]",
+      "next_best_route_computed_2026_10_22": {
         "computed": {
           "slug": null,
           "grade": null,
           "line": "Moltbook has no payout route; for paid work see the shortlist (no venue clears every check this week).",
           "label": "no graded record named"
         },
+        "basis": "not graded (Moltbook): the answer names no graded record (no payout route); its line points to the shortlist and is kept",
         "matches_published": true,
-        "ref": "run working file"
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": null,
+        "grade": null,
+        "line": "Moltbook has no payout route; for paid work see the shortlist (no venue clears every check this week).",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     },
     {
@@ -734,7 +813,7 @@
         "rule": "highest-ranked probe-first record, v1.0 central (shortlist.json#summary.probe_first_ranked[0])"
       },
       "last_checked": "2026-10-21",
-      "source_path": "run working file",
+      "source_path": "parts/B/algora_r15.json + parts/B/census_crosscheck_B.json",
       "run16": {
         "date": "2026-10-16",
         "one_line": "Not recently, on 16 October: no new award found since 2 July and no payout since 26 August (60 days old on 25 October); 4 search hits on one board were not read.",
@@ -758,7 +837,7 @@
             "basis": "measured"
           }
         ],
-        "source": "run working file"
+        "source": "parts/B/algora_r16.json"
       },
       "run17": {
         "date": "2026-10-17",
@@ -783,7 +862,7 @@
             "basis": "measured (statement on four issues)"
           }
         ],
-        "source": "run working file"
+        "source": "parts/B/algora_r17.json"
       },
       "run18": {
         "date": "2026-10-18",
@@ -808,7 +887,7 @@
             "basis": "measured"
           }
         ],
-        "source": "run working file"
+        "source": "parts/B/open_items_B.json"
       },
       "run19": {
         "date": "2026-10-19",
@@ -833,18 +912,7 @@
             "basis": "measured (board page read)"
           }
         ],
-        "source": "run working file"
-      },
-      "next_best_route_computed_2026_10_21": {
-        "computed": {
-          "slug": "taskmarket",
-          "grade": "probe first",
-          "line": "taskmarket (probe first): shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
-          "why": "shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
-          "label": null
-        },
-        "matches_published": false,
-        "ref": "run working file"
+        "source": "parts/A/open_items_A.json; parts/A/algora_boards_A.json"
       },
       "run20": {
         "date": "2026-10-21",
@@ -869,7 +937,30 @@
             "basis": "measured"
           }
         ],
-        "source": "run working file"
+        "source": "parts/B/algora_r20.json; parts/B/census_crosscheck_B.json; parts/B/open_items_B.json"
+      },
+      "next_best_route_computed_2026_10_22": {
+        "computed": {
+          "slug": "taskmarket",
+          "grade": "probe first",
+          "line": "taskmarket (probe first): shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
+          "why": "shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
+          "label": null
+        },
+        "basis": "answer about a graded record (algora-github-bounties, avoid): takes that record's try_instead",
+        "matches_published": false,
+        "rule": "1.2",
+        "ref": "merge/try_instead.json",
+        "ruling": "R208, R237"
+      },
+      "next_best_route_current": {
+        "as_of": "2026-10-22",
+        "rule": "1.2",
+        "band": "central",
+        "slug": "taskmarket",
+        "grade": "probe first",
+        "line": "taskmarket (probe first): shares code_change, software, testing; owner gate no heavier (KYC unknown vs yes)",
+        "label": "shown, never graded; recomputed 22 October under rule v1.2; next_best_route above keeps its older text as history"
       }
     }
   ],
@@ -877,5 +968,13 @@
   "revision_2026_10_09": {
     "run_id": "report-c7815426d1367f505e2c810c",
     "note": "shortlist grades revised 2026-10-09; next_best_route kept from edition 1 unless the revised shortlist names another record (next_best_route_2026_10_09)"
-  }
+  },
+  "previous_run_id_run13": "report-d110858e7247d2b988c08316",
+  "previous_run_id_run14": "report-732799ca1dbf37a17c7a5e1a",
+  "previous_run_id_run15": "report-6b3ee899e2c0b31d6e5d0690",
+  "previous_run_id_run16": "report-8353130fa006fdbf14f3f3de",
+  "previous_run_id_run17": "report-052abdb20fbb277459abb9dd",
+  "previous_run_id_run18": "report-1682ec5270272aae02d8da93",
+  "previous_run_id_run19": "report-14fd97c6b988d8cd5d37eff4",
+  "previous_run_id_run20": "report-f4afe30e9e5606de3f1f3275"
 }
