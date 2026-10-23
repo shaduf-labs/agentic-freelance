@@ -1,6 +1,6 @@
 {
   "schema": "agentic-freelance-settlement/0.1",
-  "run_id": "report-245745b47b4bb64ecf00dd75",
+  "run_id": "report-c052cd1ff8d57a333610577e",
   "as_of": "2026-10-06T13:42:12Z",
   "merged_at": "2026-10-06",
   "windows": {
@@ -37099,5 +37099,3318 @@
     },
     "figures_ref": "settlement.json#refresh_2026_10_22.edition3_grace.figures"
   },
-  "previous_run_id_run20": "report-f4afe30e9e5606de3f1f3275"
+  "previous_run_id_run20": "report-f4afe30e9e5606de3f1f3275",
+  "refresh_2026_10_23": {
+    "run_id": "report-c052cd1ff8d57a333610577e",
+    "part": "C",
+    "as_of": "2026-10-23T13:58:04Z",
+    "windows": {
+      "economics": "tasks created or expiring 2026-09-22..2026-10-23T13:58:04Z",
+      "history": "90 days to as_of"
+    },
+    "method": "Run 7-11 settlement definitions unchanged; scripts/tm_settle.py copied unchanged from run 14 (via runs 18 and 19). Seed 20261023. Window 2026-09-23..as_of without MolTrust (main row). Top-level run22_window/history blocks are at 15 (the sensitivity; kept for shape); the applied edition grace 18 (R245) is in edition3_grace.figures.*.at_18. R228: every figure, status, the R149 projection and requester records are also given at the recomputed edition grace 18 (edition3_grace).",
+    "grace_days": {
+      "applied": 18,
+      "sensitivity": 15,
+      "applied_basis": "R245: edition grace 18 fixed to edition 4; 15 shown beside (R261 sensitivity); rule_value_recomputed is the R64 daily sensitivity only, never applied",
+      "rule_value_recomputed": 23,
+      "detail": {
+        "value": 23,
+        "p95_positive_delay": 22.925,
+        "n_awarded": 271,
+        "n_positive": 203,
+        "median_delay": 0.856,
+        "p90_positive": 11.018,
+        "max": 79.016,
+        "share_after_expiry": 0.749
+      },
+      "statuses_differing_15_vs_16": [
+        "TSK-6BHK4EGT"
+      ]
+    },
+    "run22_window": {
+      "without_moltrust": {
+        "status_counts": {
+          "open": 7,
+          "still_payable": 11,
+          "awarded": 68,
+          "final_unpaid": 5
+        },
+        "closed_total": 84,
+        "p_win_final": {
+          "p": 0.018363,
+          "awards": 105,
+          "submissions": 5718,
+          "tasks": 71,
+          "ci90_wilson": [
+            0.015662,
+            0.02152
+          ],
+          "ci90_bootstrap": [
+            0.013943,
+            0.023789
+          ],
+          "ci90": [
+            0.013943,
+            0.023789
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.031829,
+        "unpaid_reward_share": 0.289513,
+        "submissions": {
+          "awarded": 5536,
+          "final_unpaid": 182,
+          "still_payable": 693
+        },
+        "reward_usdc": {
+          "awarded": 179.148,
+          "final_unpaid": 73,
+          "still_payable": 225.9
+        },
+        "still_payable_task_ids": [
+          "TSK-4QK8GC91",
+          "TSK-88YN3100",
+          "TSK-QKPRDXAC",
+          "TSK-E7RWPB75",
+          "TSK-04FYDMHT",
+          "TSK-74AS65TM",
+          "TSK-V0N1YE76",
+          "TSK-8QKGQ7VB",
+          "TSK-13QHZKQK",
+          "TSK-DC8ZPFT6",
+          "TSK-SV32SNGX"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-H1A9WH8Z",
+          "TSK-6BHK4EGT",
+          "TSK-P68Y1PGH",
+          "TSK-HWY90NPP",
+          "TSK-9JW9F8MY"
+        ],
+        "sensitivity_grace": {
+          "0": {
+            "status_counts": {
+              "open": 7,
+              "final_unpaid": 16,
+              "awarded": 68
+            },
+            "unpaid_submission_share": 0.136484,
+            "unpaid_reward_share": 0.625251
+          },
+          "7": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 6,
+              "awarded": 68,
+              "final_unpaid": 10
+            },
+            "unpaid_submission_share": 0.093796,
+            "unpaid_reward_share": 0.344136
+          },
+          "16": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 12,
+              "awarded": 68,
+              "final_unpaid": 4
+            },
+            "unpaid_submission_share": 0.017917,
+            "unpaid_reward_share": 0.275139
+          },
+          "21": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 14,
+              "awarded": 68,
+              "final_unpaid": 2
+            },
+            "unpaid_submission_share": 0.005032,
+            "unpaid_reward_share": 0.067656
+          }
+        }
+      },
+      "with_moltrust": {
+        "status_counts": {
+          "open": 7,
+          "still_payable": 13,
+          "awarded": 77,
+          "final_unpaid": 7
+        },
+        "closed_total": 97,
+        "p_win_final": {
+          "p": 0.028374,
+          "awards": 181,
+          "submissions": 6379,
+          "tasks": 82,
+          "ci90_wilson": [
+            0.02515,
+            0.031999
+          ],
+          "ci90_bootstrap": [
+            0.02127,
+            0.037037
+          ],
+          "ci90": [
+            0.02127,
+            0.037037
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.06396,
+        "unpaid_reward_share": 0.290383,
+        "submissions": {
+          "awarded": 5971,
+          "final_unpaid": 408,
+          "still_payable": 741
+        },
+        "reward_usdc": {
+          "awarded": 192.935,
+          "final_unpaid": 78.951,
+          "still_payable": 226.982
+        },
+        "still_payable_task_ids": [
+          "TSK-4QK8GC91",
+          "TSK-88YN3100",
+          "TSK-QKPRDXAC",
+          "TSK-E7RWPB75",
+          "TSK-04FYDMHT",
+          "TSK-74AS65TM",
+          "TSK-V0N1YE76",
+          "TSK-8QKGQ7VB",
+          "TSK-HZCF1QMN",
+          "TSK-KBQEW2DW",
+          "TSK-13QHZKQK",
+          "TSK-DC8ZPFT6",
+          "TSK-SV32SNGX"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-H1A9WH8Z",
+          "TSK-6BHK4EGT",
+          "TSK-E49N4V7T",
+          "TSK-P68Y1PGH",
+          "TSK-HWY90NPP",
+          "TSK-9JW9F8MY",
+          "TSK-J3R0MDGA"
+        ]
+      },
+      "moltrust_only": {
+        "status_counts": {
+          "still_payable": 2,
+          "awarded": 9,
+          "final_unpaid": 2
+        },
+        "closed_total": 13,
+        "p_win_final": {
+          "p": 0.114977,
+          "awards": 76,
+          "submissions": 661,
+          "tasks": 11,
+          "ci90_wilson": [
+            0.09612,
+            0.136974
+          ],
+          "ci90_bootstrap": [
+            0.056713,
+            0.233032
+          ],
+          "ci90": [
+            0.056713,
+            0.233032
+          ],
+          "ci_chosen": "bootstrap"
+        },
+        "unpaid_submission_share": 0.341906,
+        "unpaid_reward_share": 0.3015,
+        "submissions": {
+          "awarded": 435,
+          "final_unpaid": 226,
+          "still_payable": 48
+        },
+        "reward_usdc": {
+          "awarded": 13.787,
+          "final_unpaid": 5.951,
+          "still_payable": 1.082
+        },
+        "still_payable_task_ids": [
+          "TSK-HZCF1QMN",
+          "TSK-KBQEW2DW"
+        ],
+        "final_unpaid_task_ids": [
+          "TSK-E49N4V7T",
+          "TSK-J3R0MDGA"
+        ]
+      }
+    },
+    "history_90d_without_moltrust": {
+      "status_counts": {
+        "open": 15,
+        "still_payable": 11,
+        "awarded": 262,
+        "final_unpaid": 76
+      },
+      "closed_total": 349,
+      "p_win_final": {
+        "p": 0.018378,
+        "awards": 475,
+        "submissions": 25846,
+        "tasks": 317,
+        "ci90_wilson": [
+          0.017053,
+          0.019804
+        ],
+        "ci90_bootstrap": [
+          0.014992,
+          0.022837
+        ],
+        "ci90": [
+          0.014992,
+          0.022837
+        ],
+        "ci_chosen": "bootstrap"
+      },
+      "unpaid_submission_share": 0.165519,
+      "unpaid_reward_share": 0.332266,
+      "submissions": {
+        "awarded": 21568,
+        "final_unpaid": 4278,
+        "still_payable": 693
+      },
+      "reward_usdc": {
+        "awarded": 1222.164345,
+        "final_unpaid": 608.150904,
+        "still_payable": 225.9
+      },
+      "still_payable_task_ids": [
+        "TSK-4QK8GC91",
+        "TSK-88YN3100",
+        "TSK-QKPRDXAC",
+        "TSK-E7RWPB75",
+        "TSK-04FYDMHT",
+        "TSK-74AS65TM",
+        "TSK-V0N1YE76",
+        "TSK-8QKGQ7VB",
+        "TSK-13QHZKQK",
+        "TSK-DC8ZPFT6",
+        "TSK-SV32SNGX"
+      ],
+      "final_unpaid_task_ids": [
+        "TSK-H1A9WH8Z",
+        "TSK-6BHK4EGT",
+        "TSK-P68Y1PGH",
+        "TSK-HWY90NPP",
+        "TSK-9JW9F8MY",
+        "TSK-RWMG853Z",
+        "TSK-0P73MV6D",
+        "TSK-5DV55M47",
+        "TSK-MG8KF2RH",
+        "TSK-CC85RST4",
+        "TSK-B1MHHF16",
+        "TSK-MVBFKQFP",
+        "TSK-38QB2KK3",
+        "TSK-TE3SN317",
+        "TSK-FKYQ6JJK",
+        "TSK-RE563J5T",
+        "TSK-4AKTDZMB",
+        "TSK-FJJCCTV3",
+        "TSK-5DSDQJ76",
+        "TSK-S3WXWQP6",
+        "TSK-XF1EGP5T",
+        "TSK-VE3Q5F9P",
+        "TSK-9QZWT595",
+        "TSK-FS91PREW",
+        "TSK-ND38D431",
+        "TSK-9Z9HENXP",
+        "TSK-4M83XEN0",
+        "TSK-HQQ9T3VE",
+        "TSK-RSTTWB3W",
+        "TSK-X66SNJXV",
+        "TSK-602GNN5Q",
+        "TSK-9NYVNHC3",
+        "TSK-WAN8H9G1",
+        "TSK-EQKNXF7X",
+        "TSK-ENBE9A0P",
+        "TSK-Y0Y0D8BW",
+        "TSK-20W651EW",
+        "TSK-8XD8PJQF",
+        "TSK-ST5AS68D",
+        "TSK-GQ9XH4RM",
+        "TSK-MS3GSXH6",
+        "TSK-Z85G0KPA",
+        "TSK-6DRNTH10",
+        "TSK-17JXV54D",
+        "TSK-V4JJD3RC",
+        "TSK-9ZRRDVBX",
+        "TSK-DKFG1GC6",
+        "TSK-VXXN073Y",
+        "TSK-GNB1J26M",
+        "TSK-M87H49ZR",
+        "TSK-BWSVD7AC",
+        "TSK-3DP9H829",
+        "TSK-NC8WCRXF",
+        "TSK-4E4CXBM9",
+        "TSK-YE7THG31",
+        "TSK-YTVEBMEZ",
+        "TSK-5J2QPQZR",
+        "TSK-R3J174K6",
+        "TSK-DXPHGGXQ",
+        "TSK-Y54J77GG",
+        "TSK-Z72Y1Y1Z",
+        "TSK-6ZPX4Q1Y",
+        "TSK-F0YMQ1NV",
+        "TSK-TCSAT3K6",
+        "TSK-DQDMXFKM",
+        "TSK-0FD7V0ZB",
+        "TSK-YQQ9QKC4",
+        "TSK-S16YCGX5",
+        "TSK-YP1CZCGR",
+        "TSK-TZM023P2",
+        "TSK-7KKH3VWV",
+        "TSK-QYWKTXAV",
+        "TSK-4QDHQY9A",
+        "TSK-D3H0NXPT",
+        "TSK-YK19YNYD",
+        "TSK-9H0N4YAQ"
+      ]
+    },
+    "change_vs_run21_at_15": {
+      "p_win_final": [
+        0.018319,
+        0.018363
+      ],
+      "unpaid_submission_share": [
+        0.017292,
+        0.031829
+      ],
+      "unpaid_reward_share": [
+        0.275139,
+        0.289513
+      ],
+      "headline_trigger_5pt": false
+    },
+    "window_edge": {
+      "left_window_since_run21": [
+        "TSK-R9PG39KK",
+        "TSK-AK6ZJAGM",
+        "TSK-PMSXDMVD"
+      ],
+      "left_detail": [
+        {
+          "task_id": "TSK-R9PG39KK",
+          "status_at_15": "awarded",
+          "subs": 87,
+          "reward": 2,
+          "expiry": "2026-09-22T00:05:55.263Z",
+          "created": "2026-09-21T00:05:56.258Z"
+        },
+        {
+          "task_id": "TSK-AK6ZJAGM",
+          "status_at_15": "awarded",
+          "subs": 99,
+          "reward": 2,
+          "expiry": "2026-09-22T00:05:29.791Z",
+          "created": "2026-09-21T00:05:31.890Z"
+        },
+        {
+          "task_id": "TSK-PMSXDMVD",
+          "status_at_15": "awarded",
+          "subs": 90,
+          "reward": 2,
+          "expiry": "2026-09-22T00:05:01.914Z",
+          "created": "2026-09-21T00:05:03.527Z"
+        }
+      ]
+    },
+    "named_tasks": {
+      "TSK-6BHK4EGT": {
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 5,
+        "expiry": "2026-10-08T06:41:32.275Z",
+        "days_past_expiry": 15.3,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 81,
+        "submissions_listed": null,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-23T06:41Z",
+        "grace_end_at_16": "2026-10-24T06:41Z",
+        "settlement_status_at_15": "final_unpaid",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 81,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": true,
+        "grace_end_at_18": "2026-10-26T06:41Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": "2026-10-23T13:57:47Z"
+      },
+      "TSK-E49N4V7T": {
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "expiry": "2026-10-05T20:51:11.355Z",
+        "days_past_expiry": 17.71,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 20,
+        "submissions_listed": 20,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-20T20:51Z",
+        "grace_end_at_16": "2026-10-21T20:51Z",
+        "settlement_status_at_15": "final_unpaid",
+        "settlement_status_at_16": "final_unpaid",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 20,
+          "settlement_status": "final_unpaid",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-10-23T20:51Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-DC8ZPFT6": {
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 10,
+        "expiry": "2026-10-12T23:05:06.482Z",
+        "days_past_expiry": 10.62,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 28,
+        "submissions_listed": 28,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-27T23:05Z",
+        "grace_end_at_16": "2026-10-28T23:05Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 28,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-10-30T23:05Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-13QHZKQK": {
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 5,
+        "expiry": "2026-10-13T06:41:55.983Z",
+        "days_past_expiry": 10.3,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 45,
+        "submissions_listed": 45,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-28T06:41Z",
+        "grace_end_at_16": "2026-10-29T06:41Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 45,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-10-31T06:41Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-SV32SNGX": {
+        "requester_trunc": "0x9371...019f",
+        "reward_usdc": 199,
+        "expiry": "2026-10-16T23:00:01.373Z",
+        "days_past_expiry": 6.62,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 25,
+        "submissions_listed": 25,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-31T23:00Z",
+        "grace_end_at_16": "2026-11-01T23:00Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 25,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-03T23:00Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-9JW9F8MY": {
+        "requester_trunc": "0xeecd...a5e2",
+        "reward_usdc": 30,
+        "expiry": "2026-10-04T02:28:40.486Z",
+        "days_past_expiry": 19.48,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 73,
+        "submissions_listed": null,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-19T02:28Z",
+        "grace_end_at_16": "2026-10-20T02:28Z",
+        "settlement_status_at_15": "final_unpaid",
+        "settlement_status_at_16": "final_unpaid",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 73,
+          "settlement_status": "final_unpaid",
+          "settlement_status_at_edition_grace": "final_unpaid"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-10-22T02:28Z",
+        "settlement_status_at_18": "final_unpaid",
+        "detail_read_at": null
+      },
+      "TSK-8QKGQ7VB": {
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "expiry": "2026-10-14T22:30:25.121Z",
+        "days_past_expiry": 8.64,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 96,
+        "submissions_listed": 96,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-29T22:30Z",
+        "grace_end_at_16": "2026-10-30T22:30Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 96,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-01T22:30Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-V0N1YE76": {
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "expiry": "2026-10-14T22:31:27.789Z",
+        "days_past_expiry": 8.64,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 113,
+        "submissions_listed": 113,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-29T22:31Z",
+        "grace_end_at_16": "2026-10-30T22:31Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 113,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-01T22:31Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-74AS65TM": {
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "expiry": "2026-10-14T22:32:02.286Z",
+        "days_past_expiry": 8.64,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 109,
+        "submissions_listed": 109,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-10-29T22:32Z",
+        "grace_end_at_16": "2026-10-30T22:32Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 109,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-01T22:32Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-QKPRDXAC": {
+        "requester_trunc": "0x2abf...9b1a",
+        "reward_usdc": 2,
+        "expiry": "2026-10-20T00:56:12.911Z",
+        "days_past_expiry": 3.54,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 21,
+        "submissions_listed": 0,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-04T00:56Z",
+        "grace_end_at_16": "2026-11-05T00:56Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 21,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-07T00:56Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-04FYDMHT": {
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1.8,
+        "expiry": "2026-10-19T14:25:16.450Z",
+        "days_past_expiry": 3.98,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 88,
+        "submissions_listed": 88,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-03T14:25Z",
+        "grace_end_at_16": "2026-11-04T14:25Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 88,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-06T14:25Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-C3AZ36J4": {
+        "requester_trunc": "0x6349...4d24",
+        "reward_usdc": 6,
+        "expiry": "2026-10-22T08:15:37.716Z",
+        "days_past_expiry": 1.24,
+        "status": "completed",
+        "phase": "resolved",
+        "awards": 1,
+        "submissions_counter": 72,
+        "submissions_listed": 72,
+        "first_award": "2026-10-22T15:24:23.000Z",
+        "award_detail": [
+          {
+            "worker": "0xf682...e4be",
+            "gross_usdc": 6,
+            "worker_payment_usdc": 5.55,
+            "settled_at": "2026-10-22T15:24:23.000Z",
+            "settlement_tx": "0x826dbf75ba1b0df980ff9ee612e8ac20a84e697a8903f0db11fc91097d280ea4"
+          }
+        ],
+        "grace_end_at_15": "2026-11-06T08:15Z",
+        "grace_end_at_16": "2026-11-07T08:15Z",
+        "settlement_status_at_15": "awarded",
+        "settlement_status_at_16": "awarded",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 72,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": true,
+        "grace_end_at_18": "2026-11-09T08:15Z",
+        "settlement_status_at_18": "awarded",
+        "detail_read_at": "2026-10-23T13:58:30Z"
+      },
+      "TSK-88YN3100": {
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1,
+        "expiry": "2026-10-22T16:05:33.747Z",
+        "days_past_expiry": 0.91,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 94,
+        "submissions_listed": 94,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-06T16:05Z",
+        "grace_end_at_16": "2026-11-07T16:05Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "active",
+          "awards": 0,
+          "subs": 90,
+          "settlement_status": "open",
+          "settlement_status_at_edition_grace": "open"
+        },
+        "detail_read_today": true,
+        "grace_end_at_18": "2026-11-09T16:05Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": "2026-10-23T13:58:32Z"
+      },
+      "TSK-E7RWPB75": {
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1,
+        "expiry": "2026-10-21T14:36:44.543Z",
+        "days_past_expiry": 1.97,
+        "status": "open",
+        "phase": "awaiting_settlement",
+        "awards": 0,
+        "submissions_counter": 74,
+        "submissions_listed": 74,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-05T14:36Z",
+        "grace_end_at_16": "2026-11-06T14:36Z",
+        "settlement_status_at_15": "still_payable",
+        "settlement_status_at_16": "still_payable",
+        "run21": {
+          "status": "open",
+          "phase": "awaiting_settlement",
+          "awards": 0,
+          "subs": 74,
+          "settlement_status": "still_payable",
+          "settlement_status_at_edition_grace": "still_payable"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-08T14:36Z",
+        "settlement_status_at_18": "still_payable",
+        "detail_read_at": null
+      },
+      "TSK-1XX8G7AY": {
+        "requester_trunc": "0x4c98...9dc7",
+        "reward_usdc": 10,
+        "expiry": "2026-10-24T20:37:37.966Z",
+        "days_past_expiry": -1.28,
+        "status": "open",
+        "phase": "active",
+        "awards": 0,
+        "submissions_counter": 228,
+        "submissions_listed": null,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-08T20:37Z",
+        "grace_end_at_16": "2026-11-09T20:37Z",
+        "settlement_status_at_15": "open",
+        "settlement_status_at_16": "open",
+        "run21": {
+          "status": "open",
+          "phase": "active",
+          "awards": 0,
+          "subs": 142,
+          "settlement_status": "open",
+          "settlement_status_at_edition_grace": "open"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-11T20:37Z",
+        "settlement_status_at_18": "open",
+        "detail_read_at": null
+      },
+      "TSK-2VAKGE7V": {
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1,
+        "expiry": "2026-10-25T03:09:04.372Z",
+        "days_past_expiry": -1.55,
+        "status": "open",
+        "phase": "active",
+        "awards": 0,
+        "submissions_counter": 50,
+        "submissions_listed": null,
+        "first_award": null,
+        "award_detail": [],
+        "grace_end_at_15": "2026-11-09T03:09Z",
+        "grace_end_at_16": "2026-11-10T03:09Z",
+        "settlement_status_at_15": "open",
+        "settlement_status_at_16": "open",
+        "run21": {
+          "status": "open",
+          "phase": "active",
+          "awards": 0,
+          "subs": 27,
+          "settlement_status": "open",
+          "settlement_status_at_edition_grace": "open"
+        },
+        "detail_read_today": false,
+        "grace_end_at_18": "2026-11-12T03:09Z",
+        "settlement_status_at_18": "open",
+        "detail_read_at": null
+      }
+    },
+    "still_payable_now": [
+      {
+        "task_id": "TSK-DC8ZPFT6",
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 10,
+        "submissions": 28,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-27T23:05Z",
+        "grace_end_at_16": "2026-10-28T23:05Z",
+        "grace_end_at_18": "2026-10-30T23:05Z"
+      },
+      {
+        "task_id": "TSK-13QHZKQK",
+        "requester_trunc": "0x609e...086c",
+        "reward_usdc": 5,
+        "submissions": 45,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-28T06:41Z",
+        "grace_end_at_16": "2026-10-29T06:41Z",
+        "grace_end_at_18": "2026-10-31T06:41Z"
+      },
+      {
+        "task_id": "TSK-KBQEW2DW",
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "submissions": 23,
+        "moltrust": true,
+        "grace_end_at_15": "2026-10-29T09:56Z",
+        "grace_end_at_16": "2026-10-30T09:56Z",
+        "grace_end_at_18": "2026-11-01T09:56Z"
+      },
+      {
+        "task_id": "TSK-HZCF1QMN",
+        "requester_trunc": "0xa175...9eb9",
+        "reward_usdc": 0.541,
+        "submissions": 25,
+        "moltrust": true,
+        "grace_end_at_15": "2026-10-29T09:56Z",
+        "grace_end_at_16": "2026-10-30T09:56Z",
+        "grace_end_at_18": "2026-11-01T09:56Z"
+      },
+      {
+        "task_id": "TSK-8QKGQ7VB",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 96,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:30Z",
+        "grace_end_at_16": "2026-10-30T22:30Z",
+        "grace_end_at_18": "2026-11-01T22:30Z"
+      },
+      {
+        "task_id": "TSK-V0N1YE76",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 113,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:31Z",
+        "grace_end_at_16": "2026-10-30T22:31Z",
+        "grace_end_at_18": "2026-11-01T22:31Z"
+      },
+      {
+        "task_id": "TSK-74AS65TM",
+        "requester_trunc": "0x4363...34bd",
+        "reward_usdc": 2,
+        "submissions": 109,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-29T22:32Z",
+        "grace_end_at_16": "2026-10-30T22:32Z",
+        "grace_end_at_18": "2026-11-01T22:32Z"
+      },
+      {
+        "task_id": "TSK-SV32SNGX",
+        "requester_trunc": "0x9371...019f",
+        "reward_usdc": 199,
+        "submissions": 25,
+        "moltrust": false,
+        "grace_end_at_15": "2026-10-31T23:00Z",
+        "grace_end_at_16": "2026-11-01T23:00Z",
+        "grace_end_at_18": "2026-11-03T23:00Z"
+      },
+      {
+        "task_id": "TSK-04FYDMHT",
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1.8,
+        "submissions": 88,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-03T14:25Z",
+        "grace_end_at_16": "2026-11-04T14:25Z",
+        "grace_end_at_18": "2026-11-06T14:25Z"
+      },
+      {
+        "task_id": "TSK-QKPRDXAC",
+        "requester_trunc": "0x2abf...9b1a",
+        "reward_usdc": 2,
+        "submissions": 21,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-04T00:56Z",
+        "grace_end_at_16": "2026-11-05T00:56Z",
+        "grace_end_at_18": "2026-11-07T00:56Z"
+      },
+      {
+        "task_id": "TSK-E7RWPB75",
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1,
+        "submissions": 74,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-05T14:36Z",
+        "grace_end_at_16": "2026-11-06T14:36Z",
+        "grace_end_at_18": "2026-11-08T14:36Z"
+      },
+      {
+        "task_id": "TSK-88YN3100",
+        "requester_trunc": "0x506c...d026",
+        "reward_usdc": 1,
+        "submissions": 94,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-06T16:05Z",
+        "grace_end_at_16": "2026-11-07T16:05Z",
+        "grace_end_at_18": "2026-11-09T16:05Z"
+      },
+      {
+        "task_id": "TSK-4QK8GC91",
+        "requester_trunc": "0x8904...3cee",
+        "reward_usdc": 0.1,
+        "submissions": 0,
+        "moltrust": false,
+        "grace_end_at_15": "2026-11-06T17:34Z",
+        "grace_end_at_16": "2026-11-07T17:34Z",
+        "grace_end_at_18": "2026-11-09T17:34Z"
+      }
+    ],
+    "d4_projection_r149": {
+      "label": "projection, not a forecast; not part of the daily clock: if no TaskMarket task is awarded after the read and no new task is posted",
+      "method": "scripts/tm_settle.py (unchanged) at each date with the read's time of day: window = tasks created or expiring from the date-30 days (00:00Z) to that time, without MolTrust; edition grace 15; awards held as read",
+      "by_date": [
+        {
+          "date": "2026-10-23",
+          "as_of_time": "2026-10-23T13:58:04Z",
+          "window_start": "2026-09-23",
+          "unpaid_submission_share": 0.031829,
+          "unpaid_reward_share": 0.289513,
+          "status_counts": {
+            "open": 7,
+            "still_payable": 11,
+            "awarded": 68,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-24",
+          "as_of_time": "2026-10-24T13:58:04Z",
+          "window_start": "2026-09-24",
+          "unpaid_submission_share": 0.033629,
+          "unpaid_reward_share": 0.29657,
+          "status_counts": {
+            "open": 5,
+            "still_payable": 13,
+            "awarded": 65,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-25",
+          "as_of_time": "2026-10-25T13:58:04Z",
+          "window_start": "2026-09-25",
+          "unpaid_submission_share": 0.033629,
+          "unpaid_reward_share": 0.29657,
+          "status_counts": {
+            "open": 3,
+            "still_payable": 15,
+            "awarded": 65,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-26",
+          "as_of_time": "2026-10-26T13:58:04Z",
+          "window_start": "2026-09-26",
+          "unpaid_submission_share": 0.033629,
+          "unpaid_reward_share": 0.29657,
+          "status_counts": {
+            "still_payable": 18,
+            "awarded": 65,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-27",
+          "as_of_time": "2026-10-27T13:58:04Z",
+          "window_start": "2026-09-27",
+          "unpaid_submission_share": 0.035498,
+          "unpaid_reward_share": 0.303979,
+          "status_counts": {
+            "still_payable": 18,
+            "awarded": 62,
+            "final_unpaid": 5
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-28",
+          "as_of_time": "2026-10-28T13:58:04Z",
+          "window_start": "2026-09-28",
+          "unpaid_submission_share": 0.049294,
+          "unpaid_reward_share": 0.346255,
+          "status_counts": {
+            "still_payable": 16,
+            "awarded": 61,
+            "final_unpaid": 7
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-29",
+          "as_of_time": "2026-10-29T13:58:04Z",
+          "window_start": "2026-09-29",
+          "unpaid_submission_share": 0.049294,
+          "unpaid_reward_share": 0.346255,
+          "status_counts": {
+            "still_payable": 16,
+            "awarded": 61,
+            "final_unpaid": 7
+          },
+          "at_or_above_10pct_submissions": false
+        },
+        {
+          "date": "2026-10-30",
+          "as_of_time": "2026-10-30T13:58:04Z",
+          "window_start": "2026-09-30",
+          "unpaid_submission_share": 0.110789,
+          "unpaid_reward_share": 0.369892,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 57,
+            "final_unpaid": 10
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-10-31",
+          "as_of_time": "2026-10-31T13:58:04Z",
+          "window_start": "2026-10-01",
+          "unpaid_submission_share": 0.124484,
+          "unpaid_reward_share": 0.388289,
+          "status_counts": {
+            "still_payable": 13,
+            "awarded": 49,
+            "final_unpaid": 10
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-01",
+          "as_of_time": "2026-11-01T13:58:04Z",
+          "window_start": "2026-10-02",
+          "unpaid_submission_share": 0.136623,
+          "unpaid_reward_share": 0.673427,
+          "status_counts": {
+            "still_payable": 12,
+            "awarded": 46,
+            "final_unpaid": 11
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-02",
+          "as_of_time": "2026-11-02T13:58:04Z",
+          "window_start": "2026-10-03",
+          "unpaid_submission_share": 0.131065,
+          "unpaid_reward_share": 0.665745,
+          "status_counts": {
+            "still_payable": 12,
+            "awarded": 46,
+            "final_unpaid": 10
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-03",
+          "as_of_time": "2026-11-03T13:58:04Z",
+          "window_start": "2026-10-04",
+          "unpaid_submission_share": 0.140084,
+          "unpaid_reward_share": 0.654676,
+          "status_counts": {
+            "still_payable": 12,
+            "awarded": 43,
+            "final_unpaid": 9
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-04",
+          "as_of_time": "2026-11-04T13:58:04Z",
+          "window_start": "2026-10-05",
+          "unpaid_submission_share": 0.148021,
+          "unpaid_reward_share": 0.630117,
+          "status_counts": {
+            "still_payable": 10,
+            "final_unpaid": 10,
+            "awarded": 42
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-05",
+          "as_of_time": "2026-11-05T13:58:04Z",
+          "window_start": "2026-10-06",
+          "unpaid_submission_share": 0.148021,
+          "unpaid_reward_share": 0.630117,
+          "status_counts": {
+            "still_payable": 10,
+            "final_unpaid": 10,
+            "awarded": 42
+          },
+          "at_or_above_10pct_submissions": true
+        },
+        {
+          "date": "2026-11-06",
+          "as_of_time": "2026-11-06T13:58:04Z",
+          "window_start": "2026-10-07",
+          "unpaid_submission_share": 0.163148,
+          "unpaid_reward_share": 0.63112,
+          "status_counts": {
+            "still_payable": 9,
+            "final_unpaid": 11,
+            "awarded": 42
+          },
+          "at_or_above_10pct_submissions": true
+        }
+      ],
+      "first_date_at_or_above_10pct_submissions": "2026-10-30",
+      "reproduces_main_row_at_10_22": true
+    },
+    "supply": {
+      "without_moltrust": {
+        "open_now_phase_active": 5,
+        "open_eligible_now": 5,
+        "open_eligible_ids": [
+          "TSK-2E1NJWP3",
+          "TSK-KCKBZCY3",
+          "TSK-FRGMGTXW",
+          "TSK-2VAKGE7V",
+          "TSK-1XX8G7AY"
+        ],
+        "open_eligible_reward_usdc": 25,
+        "open_eligible_detail": [
+          {
+            "task_id": "TSK-2E1NJWP3",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1,
+            "created": "2026-10-23T00:14:27.954Z",
+            "expiry": "2026-10-26T00:14:24.442Z",
+            "submissions": 50
+          },
+          {
+            "task_id": "TSK-KCKBZCY3",
+            "requester_trunc": "0x4c98...9dc7",
+            "reward_usdc": 10,
+            "created": "2026-10-22T22:39:18.680Z",
+            "expiry": "2026-10-25T22:39:15.844Z",
+            "submissions": 92
+          },
+          {
+            "task_id": "TSK-FRGMGTXW",
+            "requester_trunc": "0x609e...086c",
+            "reward_usdc": 3,
+            "created": "2026-10-22T19:01:44.898Z",
+            "expiry": "2026-10-25T19:01:41.002Z",
+            "submissions": 82
+          },
+          {
+            "task_id": "TSK-2VAKGE7V",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1,
+            "created": "2026-10-22T03:09:09.389Z",
+            "expiry": "2026-10-25T03:09:04.372Z",
+            "submissions": 50
+          },
+          {
+            "task_id": "TSK-1XX8G7AY",
+            "requester_trunc": "0x4c98...9dc7",
+            "reward_usdc": 10,
+            "created": "2026-10-21T20:37:39.346Z",
+            "expiry": "2026-10-24T20:37:37.966Z",
+            "submissions": 228
+          }
+        ],
+        "new_created_30d": 87,
+        "new_eligible_30d": 82,
+        "new_eligible_per_day": 2.733,
+        "new_eligible_last_7d": 10,
+        "requesters_new_eligible_30d": 13,
+        "top_requester_share_new_eligible": 0.476,
+        "top_requester_trunc": "0x4363...34bd",
+        "new_eligible_by_class": {
+          "unknown": 29,
+          "outside": 53
+        },
+        "open_now_by_class": {
+          "unknown": 3,
+          "outside": 2
+        }
+      },
+      "with_moltrust": {
+        "open_now_phase_active": 5,
+        "open_eligible_now": 5,
+        "open_eligible_ids": [
+          "TSK-2E1NJWP3",
+          "TSK-KCKBZCY3",
+          "TSK-FRGMGTXW",
+          "TSK-2VAKGE7V",
+          "TSK-1XX8G7AY"
+        ],
+        "open_eligible_reward_usdc": 25,
+        "open_eligible_detail": [
+          {
+            "task_id": "TSK-2E1NJWP3",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1,
+            "created": "2026-10-23T00:14:27.954Z",
+            "expiry": "2026-10-26T00:14:24.442Z",
+            "submissions": 50
+          },
+          {
+            "task_id": "TSK-KCKBZCY3",
+            "requester_trunc": "0x4c98...9dc7",
+            "reward_usdc": 10,
+            "created": "2026-10-22T22:39:18.680Z",
+            "expiry": "2026-10-25T22:39:15.844Z",
+            "submissions": 92
+          },
+          {
+            "task_id": "TSK-FRGMGTXW",
+            "requester_trunc": "0x609e...086c",
+            "reward_usdc": 3,
+            "created": "2026-10-22T19:01:44.898Z",
+            "expiry": "2026-10-25T19:01:41.002Z",
+            "submissions": 82
+          },
+          {
+            "task_id": "TSK-2VAKGE7V",
+            "requester_trunc": "0x506c...d026",
+            "reward_usdc": 1,
+            "created": "2026-10-22T03:09:09.389Z",
+            "expiry": "2026-10-25T03:09:04.372Z",
+            "submissions": 50
+          },
+          {
+            "task_id": "TSK-1XX8G7AY",
+            "requester_trunc": "0x4c98...9dc7",
+            "reward_usdc": 10,
+            "created": "2026-10-21T20:37:39.346Z",
+            "expiry": "2026-10-24T20:37:37.966Z",
+            "submissions": 228
+          }
+        ],
+        "new_created_30d": 98,
+        "new_eligible_30d": 93,
+        "new_eligible_per_day": 3.1,
+        "new_eligible_last_7d": 10,
+        "requesters_new_eligible_30d": 14,
+        "top_requester_share_new_eligible": 0.419,
+        "top_requester_trunc": "0x4363...34bd",
+        "new_eligible_by_class": {
+          "unknown": 29,
+          "outside": 64
+        },
+        "open_now_by_class": {
+          "unknown": 3,
+          "outside": 2
+        }
+      },
+      "class_source": "run 17 settlement_refresh.json#requester_classes (as used unchanged in runs 18 and 19; payouts.json payer classes; R84/R109/R144: untraced requesters unknown)"
+    },
+    "economics_inputs_light": {
+      "decided_tasks": 73,
+      "submissions_per_task_median": 85
+    },
+    "open_items_C_ref": "open_items_C.json",
+    "status": "complete",
+    "not_done": [],
+    "edition3_grace": {
+      "label": "edition parameter (R64 as written, R228): recomputed by the unchanged settlement script at the edition read; held to edition 4. This changes how we count, not what the venue did (R229).",
+      "applied": 18,
+      "sensitivity": 15,
+      "previous_edition_value": 15,
+      "detail": {
+        "value": 23,
+        "p95_positive_delay": 22.925,
+        "n_awarded": 271,
+        "n_positive": 203,
+        "median_delay": 0.856,
+        "p90_positive": 11.018,
+        "max": 79.016,
+        "share_after_expiry": 0.749
+      },
+      "figures": {
+        "30d_without_moltrust": {
+          "at_15": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 11,
+              "awarded": 68,
+              "final_unpaid": 5
+            },
+            "p_win_final": {
+              "p": 0.018363,
+              "awards": 105,
+              "submissions": 5718,
+              "tasks": 71,
+              "ci90_wilson": [
+                0.015662,
+                0.02152
+              ],
+              "ci90_bootstrap": [
+                0.013943,
+                0.023789
+              ],
+              "ci90": [
+                0.013943,
+                0.023789
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.031829,
+            "unpaid_reward_share": 0.289513,
+            "submissions": {
+              "awarded": 5536,
+              "final_unpaid": 182,
+              "still_payable": 693
+            },
+            "reward_usdc": {
+              "awarded": 179.148,
+              "final_unpaid": 73,
+              "still_payable": 225.9
+            },
+            "still_payable_task_ids": [
+              "TSK-4QK8GC91",
+              "TSK-88YN3100",
+              "TSK-QKPRDXAC",
+              "TSK-E7RWPB75",
+              "TSK-04FYDMHT",
+              "TSK-74AS65TM",
+              "TSK-V0N1YE76",
+              "TSK-8QKGQ7VB",
+              "TSK-13QHZKQK",
+              "TSK-DC8ZPFT6",
+              "TSK-SV32SNGX"
+            ],
+            "final_unpaid_task_ids": [
+              "TSK-H1A9WH8Z",
+              "TSK-6BHK4EGT",
+              "TSK-P68Y1PGH",
+              "TSK-HWY90NPP",
+              "TSK-9JW9F8MY"
+            ]
+          },
+          "at_18": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 12,
+              "awarded": 68,
+              "final_unpaid": 4
+            },
+            "p_win_final": {
+              "p": 0.018627,
+              "awards": 105,
+              "submissions": 5637,
+              "tasks": 70,
+              "ci90_wilson": [
+                0.015888,
+                0.021828
+              ],
+              "ci90_bootstrap": [
+                0.01432,
+                0.02436
+              ],
+              "ci90": [
+                0.01432,
+                0.02436
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.017917,
+            "unpaid_reward_share": 0.275139,
+            "submissions": {
+              "awarded": 5536,
+              "final_unpaid": 101,
+              "still_payable": 774
+            },
+            "reward_usdc": {
+              "awarded": 179.148,
+              "final_unpaid": 68,
+              "still_payable": 230.9
+            },
+            "still_payable_task_ids": [
+              "TSK-4QK8GC91",
+              "TSK-88YN3100",
+              "TSK-QKPRDXAC",
+              "TSK-E7RWPB75",
+              "TSK-04FYDMHT",
+              "TSK-74AS65TM",
+              "TSK-V0N1YE76",
+              "TSK-8QKGQ7VB",
+              "TSK-13QHZKQK",
+              "TSK-DC8ZPFT6",
+              "TSK-6BHK4EGT",
+              "TSK-SV32SNGX"
+            ],
+            "final_unpaid_task_ids": [
+              "TSK-H1A9WH8Z",
+              "TSK-P68Y1PGH",
+              "TSK-HWY90NPP",
+              "TSK-9JW9F8MY"
+            ]
+          }
+        },
+        "30d_with_moltrust": {
+          "at_15": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 13,
+              "awarded": 77,
+              "final_unpaid": 7
+            },
+            "p_win_final": {
+              "p": 0.028374,
+              "awards": 181,
+              "submissions": 6379,
+              "tasks": 82,
+              "ci90_wilson": [
+                0.02515,
+                0.031999
+              ],
+              "ci90_bootstrap": [
+                0.02127,
+                0.037037
+              ],
+              "ci90": [
+                0.02127,
+                0.037037
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.06396,
+            "unpaid_reward_share": 0.290383
+          },
+          "at_18": {
+            "status_counts": {
+              "open": 7,
+              "still_payable": 15,
+              "awarded": 77,
+              "final_unpaid": 5
+            },
+            "p_win_final": {
+              "p": 0.028831,
+              "awards": 181,
+              "submissions": 6278,
+              "tasks": 80,
+              "ci90_wilson": [
+                0.025555,
+                0.032513
+              ],
+              "ci90_bootstrap": [
+                0.02136,
+                0.038005
+              ],
+              "ci90": [
+                0.02136,
+                0.038005
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.048901,
+            "unpaid_reward_share": 0.27562
+          }
+        },
+        "90d_history_without_moltrust": {
+          "at_15": {
+            "status_counts": {
+              "open": 15,
+              "still_payable": 11,
+              "awarded": 262,
+              "final_unpaid": 76
+            },
+            "p_win_final": {
+              "p": 0.018378,
+              "awards": 475,
+              "submissions": 25846,
+              "tasks": 317,
+              "ci90_wilson": [
+                0.017053,
+                0.019804
+              ],
+              "ci90_bootstrap": [
+                0.014992,
+                0.022837
+              ],
+              "ci90": [
+                0.014992,
+                0.022837
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.165519,
+            "unpaid_reward_share": 0.332266,
+            "submissions": {
+              "awarded": 21568,
+              "final_unpaid": 4278,
+              "still_payable": 693
+            },
+            "reward_usdc": {
+              "awarded": 1222.164345,
+              "final_unpaid": 608.150904,
+              "still_payable": 225.9
+            }
+          },
+          "at_18": {
+            "status_counts": {
+              "open": 15,
+              "still_payable": 12,
+              "awarded": 262,
+              "final_unpaid": 75
+            },
+            "p_win_final": {
+              "p": 0.018436,
+              "awards": 475,
+              "submissions": 25765,
+              "tasks": 316,
+              "ci90_wilson": [
+                0.017107,
+                0.019866
+              ],
+              "ci90_bootstrap": [
+                0.014933,
+                0.023053
+              ],
+              "ci90": [
+                0.014933,
+                0.023053
+              ],
+              "ci_chosen": "bootstrap"
+            },
+            "unpaid_submission_share": 0.162895,
+            "unpaid_reward_share": 0.330437,
+            "submissions": {
+              "awarded": 21568,
+              "final_unpaid": 4197,
+              "still_payable": 774
+            },
+            "reward_usdc": {
+              "awarded": 1222.164345,
+              "final_unpaid": 603.150904,
+              "still_payable": 230.9
+            }
+          }
+        }
+      },
+      "statuses_differing_15_vs_applied": [
+        {
+          "task_id": "TSK-E49N4V7T",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "submissions": 20,
+          "moltrust": true,
+          "expiry": "2026-10-05T20:51:11.355Z",
+          "days_past_expiry": 17.71,
+          "status_at_15": "final_unpaid",
+          "status_at_18": "still_payable",
+          "grace_end_at_15": "2026-10-20T20:51Z",
+          "grace_end_at_18": "2026-10-23T20:51Z",
+          "in_30d_window": true,
+          "in_90d_history": true
+        },
+        {
+          "task_id": "TSK-6BHK4EGT",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 5,
+          "submissions": 81,
+          "moltrust": false,
+          "expiry": "2026-10-08T06:41:32.275Z",
+          "days_past_expiry": 15.3,
+          "status_at_15": "final_unpaid",
+          "status_at_18": "still_payable",
+          "grace_end_at_15": "2026-10-23T06:41Z",
+          "grace_end_at_18": "2026-10-26T06:41Z",
+          "in_30d_window": true,
+          "in_90d_history": true
+        }
+      ],
+      "n_differing": 2,
+      "still_payable_at_applied": [
+        {
+          "task_id": "TSK-E49N4V7T",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "submissions": 20,
+          "moltrust": true,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-10-23T20:51Z"
+        },
+        {
+          "task_id": "TSK-6BHK4EGT",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 5,
+          "submissions": 81,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-10-26T06:41Z"
+        },
+        {
+          "task_id": "TSK-DC8ZPFT6",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 10,
+          "submissions": 28,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-10-30T23:05Z"
+        },
+        {
+          "task_id": "TSK-13QHZKQK",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 5,
+          "submissions": 45,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-10-31T06:41Z"
+        },
+        {
+          "task_id": "TSK-KBQEW2DW",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "submissions": 23,
+          "moltrust": true,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-01T09:56Z"
+        },
+        {
+          "task_id": "TSK-HZCF1QMN",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "submissions": 25,
+          "moltrust": true,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-01T09:56Z"
+        },
+        {
+          "task_id": "TSK-8QKGQ7VB",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "submissions": 96,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-01T22:30Z"
+        },
+        {
+          "task_id": "TSK-V0N1YE76",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "submissions": 113,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-01T22:31Z"
+        },
+        {
+          "task_id": "TSK-74AS65TM",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "submissions": 109,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-01T22:32Z"
+        },
+        {
+          "task_id": "TSK-SV32SNGX",
+          "requester_trunc": "0x9371...019f",
+          "reward_usdc": 199,
+          "submissions": 25,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-03T23:00Z"
+        },
+        {
+          "task_id": "TSK-04FYDMHT",
+          "requester_trunc": "0x506c...d026",
+          "reward_usdc": 1.8,
+          "submissions": 88,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-06T14:25Z"
+        },
+        {
+          "task_id": "TSK-QKPRDXAC",
+          "requester_trunc": "0x2abf...9b1a",
+          "reward_usdc": 2,
+          "submissions": 21,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-07T00:56Z"
+        },
+        {
+          "task_id": "TSK-E7RWPB75",
+          "requester_trunc": "0x506c...d026",
+          "reward_usdc": 1,
+          "submissions": 74,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-08T14:36Z"
+        },
+        {
+          "task_id": "TSK-88YN3100",
+          "requester_trunc": "0x506c...d026",
+          "reward_usdc": 1,
+          "submissions": 94,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-09T16:05Z"
+        },
+        {
+          "task_id": "TSK-4QK8GC91",
+          "requester_trunc": "0x8904...3cee",
+          "reward_usdc": 0.1,
+          "submissions": 0,
+          "moltrust": false,
+          "in_30d_window": true,
+          "grace_end_at_18": "2026-11-09T17:34Z"
+        }
+      ],
+      "requester_records_both": [
+        {
+          "requester_trunc": "0x506c...d026",
+          "at_15": {
+            "awarded": 4,
+            "final_unpaid": 0,
+            "still_payable": 3,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 4,
+            "final_unpaid": 0,
+            "still_payable": 3,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x4c98...9dc7",
+          "at_15": {
+            "awarded": 4,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 4,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x609e...086c",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 1,
+            "still_payable": 2,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 3,
+            "flag": "too_new"
+          },
+          "differs": true
+        },
+        {
+          "requester_trunc": "0x8904...3cee",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 1,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 1,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xf158...b9a2",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x2abf...9b1a",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 1,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 1,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6349...4d24",
+          "at_15": {
+            "awarded": 10,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 10,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x4363...34bd",
+          "at_15": {
+            "awarded": 78,
+            "final_unpaid": 0,
+            "still_payable": 3,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 78,
+            "final_unpaid": 0,
+            "still_payable": 3,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xa7be...419a",
+          "at_15": {
+            "awarded": 6,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 6,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xa175...9eb9",
+          "at_15": {
+            "awarded": 9,
+            "final_unpaid": 2,
+            "still_payable": 2,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 9,
+            "final_unpaid": 1,
+            "still_payable": 3,
+            "flag": "reliable"
+          },
+          "differs": true
+        },
+        {
+          "requester_trunc": "0xf805...d6e0",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xcbd3...4490",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x292d...578f",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xcb18...e764",
+          "at_15": {
+            "awarded": 21,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 21,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x3327...edd0",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6da3...28f6",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xa388...995d",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xeecd...a5e2",
+          "at_15": {
+            "awarded": 10,
+            "final_unpaid": 17,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "at_18": {
+            "awarded": 10,
+            "final_unpaid": 17,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x64b4...2555",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x9371...019f",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 7,
+            "still_payable": 1,
+            "flag": "never_paid"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 7,
+            "still_payable": 1,
+            "flag": "never_paid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xc309...68ce",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x75a0...6b19",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xb874...96b1",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x29fe...1061",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x2b0f...eee9",
+          "at_15": {
+            "awarded": 11,
+            "final_unpaid": 4,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "at_18": {
+            "awarded": 11,
+            "final_unpaid": 4,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xa4d8...ac6a",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x695b...302f",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 3,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 3,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xd732...f841",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xcad2...feed",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 6,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 6,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x31c5...449b",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 7,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 7,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x4aef...440c",
+          "at_15": {
+            "awarded": 3,
+            "final_unpaid": 5,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "at_18": {
+            "awarded": 3,
+            "final_unpaid": 5,
+            "still_payable": 0,
+            "flag": "mostly_unpaid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x1966...c4f7",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 3,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 3,
+            "still_payable": 0,
+            "flag": "never_paid"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x2ea6...7250",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x3c6f...0c6b",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x13f1...4999",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xa139...dbdb",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x18d3...bf97",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x683b...e6c7",
+          "at_15": {
+            "awarded": 6,
+            "final_unpaid": 4,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "at_18": {
+            "awarded": 6,
+            "final_unpaid": 4,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xeb76...0d35",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "mixed"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6dc9...e554",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xc056...7a63",
+          "at_15": {
+            "awarded": 70,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 70,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xc76a...8b52",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6226...f4f3",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6189...df2a",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 2,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xeb2c...915c",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x2dc3...5ddd",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x03b7...f510",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x4d1c...eaef",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xe274...40ae",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x34aa...fdf3",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x2c15...ab3a",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x15e9...be23",
+          "at_15": {
+            "awarded": 7,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "at_18": {
+            "awarded": 7,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "reliable"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xd3fa...e723",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x988a...7331",
+          "at_15": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 0,
+            "final_unpaid": 1,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x8b66...cb6e",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0xdee6...c8e9",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x6668...7426",
+          "at_15": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 2,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        },
+        {
+          "requester_trunc": "0x79d8...a707",
+          "at_15": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "at_18": {
+            "awarded": 1,
+            "final_unpaid": 0,
+            "still_payable": 0,
+            "flag": "too_new"
+          },
+          "differs": false
+        }
+      ],
+      "requester_flag_counts": {
+        "at_15": {
+          "reliable": 9,
+          "too_new": 39,
+          "mostly_unpaid": 3,
+          "never_paid": 4,
+          "mixed": 3
+        },
+        "at_18": {
+          "reliable": 9,
+          "too_new": 39,
+          "mostly_unpaid": 3,
+          "never_paid": 4,
+          "mixed": 3
+        }
+      },
+      "d4_projection_r149_both": {
+        "label": "projection, not a forecast; not part of the daily clock: if no TaskMarket task is awarded after the read and no new task is posted",
+        "at_15": [
+          [
+            "2026-10-23",
+            0.031829,
+            0.289513
+          ],
+          [
+            "2026-10-24",
+            0.033629,
+            0.29657
+          ],
+          [
+            "2026-10-25",
+            0.033629,
+            0.29657
+          ],
+          [
+            "2026-10-26",
+            0.033629,
+            0.29657
+          ],
+          [
+            "2026-10-27",
+            0.035498,
+            0.303979
+          ],
+          [
+            "2026-10-28",
+            0.049294,
+            0.346255
+          ],
+          [
+            "2026-10-29",
+            0.049294,
+            0.346255
+          ],
+          [
+            "2026-10-30",
+            0.110789,
+            0.369892
+          ],
+          [
+            "2026-10-31",
+            0.124484,
+            0.388289
+          ],
+          [
+            "2026-11-01",
+            0.136623,
+            0.673427
+          ],
+          [
+            "2026-11-02",
+            0.131065,
+            0.665745
+          ],
+          [
+            "2026-11-03",
+            0.140084,
+            0.654676
+          ],
+          [
+            "2026-11-04",
+            0.148021,
+            0.630117
+          ],
+          [
+            "2026-11-05",
+            0.148021,
+            0.630117
+          ],
+          [
+            "2026-11-06",
+            0.163148,
+            0.63112
+          ]
+        ],
+        "at_18": [
+          [
+            "2026-10-23",
+            0.017917,
+            0.275139
+          ],
+          [
+            "2026-10-24",
+            0.018946,
+            0.281985
+          ],
+          [
+            "2026-10-25",
+            0.018946,
+            0.281985
+          ],
+          [
+            "2026-10-26",
+            0.033629,
+            0.29657
+          ],
+          [
+            "2026-10-27",
+            0.035498,
+            0.303979
+          ],
+          [
+            "2026-10-28",
+            0.035686,
+            0.30525
+          ],
+          [
+            "2026-10-29",
+            0.035686,
+            0.30525
+          ],
+          [
+            "2026-10-30",
+            0.038067,
+            0.313133
+          ],
+          [
+            "2026-10-31",
+            0.05951,
+            0.372742
+          ],
+          [
+            "2026-11-01",
+            0.063213,
+            0.382462
+          ],
+          [
+            "2026-11-02",
+            0.126041,
+            0.371537
+          ],
+          [
+            "2026-11-03",
+            0.134768,
+            0.302428
+          ],
+          [
+            "2026-11-04",
+            0.124718,
+            0.626257
+          ],
+          [
+            "2026-11-05",
+            0.124718,
+            0.626257
+          ],
+          [
+            "2026-11-06",
+            0.124718,
+            0.626257
+          ]
+        ],
+        "first_date_at_or_above_10pct_submissions_at_15": "2026-10-30",
+        "first_date_at_or_above_10pct_submissions_at_18": "2026-11-02",
+        "horizon": "2026-10-23..2026-11-06",
+        "by_date_at_18": [
+          {
+            "date": "2026-10-23",
+            "unpaid_submission_share": 0.017917,
+            "unpaid_reward_share": 0.275139,
+            "status_counts": {
+              "open": 7,
+              "still_payable": 12,
+              "awarded": 68,
+              "final_unpaid": 4
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-24",
+            "unpaid_submission_share": 0.018946,
+            "unpaid_reward_share": 0.281985,
+            "status_counts": {
+              "open": 5,
+              "still_payable": 14,
+              "awarded": 65,
+              "final_unpaid": 4
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-25",
+            "unpaid_submission_share": 0.018946,
+            "unpaid_reward_share": 0.281985,
+            "status_counts": {
+              "open": 3,
+              "still_payable": 16,
+              "awarded": 65,
+              "final_unpaid": 4
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-26",
+            "unpaid_submission_share": 0.033629,
+            "unpaid_reward_share": 0.29657,
+            "status_counts": {
+              "still_payable": 18,
+              "awarded": 65,
+              "final_unpaid": 5
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-27",
+            "unpaid_submission_share": 0.035498,
+            "unpaid_reward_share": 0.303979,
+            "status_counts": {
+              "still_payable": 18,
+              "awarded": 62,
+              "final_unpaid": 5
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-28",
+            "unpaid_submission_share": 0.035686,
+            "unpaid_reward_share": 0.30525,
+            "status_counts": {
+              "still_payable": 18,
+              "awarded": 61,
+              "final_unpaid": 5
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-29",
+            "unpaid_submission_share": 0.035686,
+            "unpaid_reward_share": 0.30525,
+            "status_counts": {
+              "still_payable": 18,
+              "awarded": 61,
+              "final_unpaid": 5
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-30",
+            "unpaid_submission_share": 0.038067,
+            "unpaid_reward_share": 0.313133,
+            "status_counts": {
+              "still_payable": 18,
+              "awarded": 57,
+              "final_unpaid": 5
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-10-31",
+            "unpaid_submission_share": 0.05951,
+            "unpaid_reward_share": 0.372742,
+            "status_counts": {
+              "still_payable": 16,
+              "awarded": 49,
+              "final_unpaid": 7
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-11-01",
+            "unpaid_submission_share": 0.063213,
+            "unpaid_reward_share": 0.382462,
+            "status_counts": {
+              "still_payable": 16,
+              "awarded": 46,
+              "final_unpaid": 7
+            },
+            "at_or_above_10pct_submissions": false
+          },
+          {
+            "date": "2026-11-02",
+            "unpaid_submission_share": 0.126041,
+            "unpaid_reward_share": 0.371537,
+            "status_counts": {
+              "still_payable": 13,
+              "awarded": 46,
+              "final_unpaid": 9
+            },
+            "at_or_above_10pct_submissions": true
+          },
+          {
+            "date": "2026-11-03",
+            "unpaid_submission_share": 0.134768,
+            "unpaid_reward_share": 0.302428,
+            "status_counts": {
+              "still_payable": 13,
+              "awarded": 43,
+              "final_unpaid": 8
+            },
+            "at_or_above_10pct_submissions": true
+          },
+          {
+            "date": "2026-11-04",
+            "unpaid_submission_share": 0.124718,
+            "unpaid_reward_share": 0.626257,
+            "status_counts": {
+              "still_payable": 12,
+              "awarded": 42,
+              "final_unpaid": 8
+            },
+            "at_or_above_10pct_submissions": true
+          },
+          {
+            "date": "2026-11-05",
+            "unpaid_submission_share": 0.124718,
+            "unpaid_reward_share": 0.626257,
+            "status_counts": {
+              "still_payable": 12,
+              "awarded": 42,
+              "final_unpaid": 8
+            },
+            "at_or_above_10pct_submissions": true
+          },
+          {
+            "date": "2026-11-06",
+            "unpaid_submission_share": 0.124718,
+            "unpaid_reward_share": 0.626257,
+            "status_counts": {
+              "still_payable": 12,
+              "awarded": 42,
+              "final_unpaid": 8
+            },
+            "at_or_above_10pct_submissions": true
+          }
+        ]
+      }
+    },
+    "grace_ends_10_23_to_10_31": {
+      "label": "dated facts of the rule (grace end = expiry + grace); none is set ahead of its date; 18 governs (R245, R261), 15 beside",
+      "read_at": "2026-10-23T13:58:04Z",
+      "rows": [
+        {
+          "task_id": "TSK-E49N4V7T",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "moltrust": true,
+          "expiry": "2026-10-05T20:51:11.355Z",
+          "grace_end_at_18": "2026-10-23T20:51Z",
+          "grace_end_at_15": "2026-10-20T20:51Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "final_unpaid",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": true,
+            "at_15": false
+          }
+        },
+        {
+          "task_id": "TSK-6BHK4EGT",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 5,
+          "moltrust": false,
+          "expiry": "2026-10-08T06:41:32.275Z",
+          "grace_end_at_18": "2026-10-26T06:41Z",
+          "grace_end_at_15": "2026-10-23T06:41Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "final_unpaid",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": true,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-DC8ZPFT6",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 10,
+          "moltrust": false,
+          "expiry": "2026-10-12T23:05:06.482Z",
+          "grace_end_at_18": "2026-10-30T23:05Z",
+          "grace_end_at_15": "2026-10-27T23:05Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": true,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-13QHZKQK",
+          "requester_trunc": "0x609e...086c",
+          "reward_usdc": 5,
+          "moltrust": false,
+          "expiry": "2026-10-13T06:41:55.983Z",
+          "grace_end_at_18": "2026-10-31T06:41Z",
+          "grace_end_at_15": "2026-10-28T06:41Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": true,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-HZCF1QMN",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "moltrust": true,
+          "expiry": "2026-10-14T09:56:03.768Z",
+          "grace_end_at_18": "2026-11-01T09:56Z",
+          "grace_end_at_15": "2026-10-29T09:56Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-KBQEW2DW",
+          "requester_trunc": "0xa175...9eb9",
+          "reward_usdc": 0.541,
+          "moltrust": true,
+          "expiry": "2026-10-14T09:56:00.995Z",
+          "grace_end_at_18": "2026-11-01T09:56Z",
+          "grace_end_at_15": "2026-10-29T09:56Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-8QKGQ7VB",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "moltrust": false,
+          "expiry": "2026-10-14T22:30:25.121Z",
+          "grace_end_at_18": "2026-11-01T22:30Z",
+          "grace_end_at_15": "2026-10-29T22:30Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-V0N1YE76",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "moltrust": false,
+          "expiry": "2026-10-14T22:31:27.789Z",
+          "grace_end_at_18": "2026-11-01T22:31Z",
+          "grace_end_at_15": "2026-10-29T22:31Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-74AS65TM",
+          "requester_trunc": "0x4363...34bd",
+          "reward_usdc": 2,
+          "moltrust": false,
+          "expiry": "2026-10-14T22:32:02.286Z",
+          "grace_end_at_18": "2026-11-01T22:32Z",
+          "grace_end_at_15": "2026-10-29T22:32Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        },
+        {
+          "task_id": "TSK-SV32SNGX",
+          "requester_trunc": "0x9371...019f",
+          "reward_usdc": 199,
+          "moltrust": false,
+          "expiry": "2026-10-16T23:00:01.373Z",
+          "grace_end_at_18": "2026-11-03T23:00Z",
+          "grace_end_at_15": "2026-10-31T23:00Z",
+          "status_at_read_18": "still_payable",
+          "status_at_read_15": "still_payable",
+          "reaches_end_10_23_to_10_31": {
+            "at_18": false,
+            "at_15": true
+          }
+        }
+      ]
+    },
+    "requesters_summary": {
+      "flag_counts": {
+        "reliable": 9,
+        "too_new": 39,
+        "mostly_unpaid": 3,
+        "never_paid": 4,
+        "mixed": 3
+      },
+      "thresholds": "assumed: never_paid >=3 decided (awarded+final_unpaid) and 0 awarded; mostly_unpaid >=3 and rate<0.5; reliable >=3 and rate>=0.8; mixed otherwise; too_new <3",
+      "flag_changes_vs_run21_at_15": [],
+      "definition_reproduces_run21_counts": true
+    },
+    "ruling": "R245/R261: edition grace 18 applied (15 beside); two statuses differ (TSK-6BHK4EGT; TSK-E49N4V7T, MolTrust); 30-day figures at 18: 1.79% of submissions, 27.51% of reward (p_win 0.018627); R64 at C's read 23 days (shown only, R279); R149 projection 10-30 at 15, 11-02 at 18 (projection, not a forecast)"
+  },
+  "grace_shadow_2026_10_23": {
+    "ref": "merge/grace_shadow.json",
+    "label": "shadow only, not used for any status",
+    "at_T": {
+      "t": "2026-10-23T00:00:00Z",
+      "n_awarded": 284,
+      "n_positive": 216,
+      "p95": 17.492,
+      "p90": 11.018,
+      "max": 79.016,
+      "G1": 18,
+      "G2": 12,
+      "S3": 18
+    },
+    "ranges": {
+      "G1": {
+        "min": 14,
+        "max": 59,
+        "range": 45,
+        "n": 29
+      },
+      "G2": {
+        "min": 10,
+        "max": 12,
+        "range": 2,
+        "n": 29
+      },
+      "S3": {
+        "min": 14,
+        "max": 30,
+        "range": 16,
+        "n": 29
+      }
+    },
+    "R64_at_read": 23,
+    "line": "Shadow grace (shadow only, not used for any status): at 00:00 UTC on 23 October the candidate fixed on 23 October (90th percentile of TaskMarket's own award delays, at a fixed time) gives 12 days; the same statistic as now at that fixed time gives 18, and the capped version 18. Over the 29 days to 23 October the candidate ranged 10-12 days, the fixed-time 95th percentile 14-59. Our published grace stays 18 days to edition 4; our usual method at our 13:58 UTC read would give 23 days (shown only). At 12 days, 2 statuses would differ from 18 at our read (TSK-6BHK4EGT, TSK-E49N4V7T (MolTrust))."
+  },
+  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75"
 }

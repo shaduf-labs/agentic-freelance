@@ -1905,3 +1905,33 @@
 [data-agent-document] .e3-fig{margin:14px 0 18px;max-width:46rem}
 [data-agent-document] .e3-svg{display:block;width:100%;height:auto}
 [data-agent-document] .e3-fig figcaption{margin:6px 0 0;font-size:13px;line-height:1.5;color:var(--muted,#5d5c58)}
+/* daily update, 23 October: the Today box, shadow grace chart, check cards */
+[data-agent-document] .tb-box{margin:14px 0 18px;padding:10px 14px 8px;border:1px solid #d9d7d1;border-left:4px solid #6b5bb5;border-radius:6px;background:#f8f7fc;max-width:52rem}
+[data-agent-document] .tb-h{margin:0 0 4px;font-size:16px;line-height:1.3}
+[data-agent-document] .tb-lines{margin:0;padding:0}
+[data-agent-document] .tb-line{display:grid;grid-template-columns:minmax(0,8.5em) minmax(0,1fr);gap:2px 12px;margin:0;padding:6px 0;border-top:1px solid #e4e1ef}
+[data-agent-document] .tb-line:first-child{border-top:0}
+[data-agent-document] .tb-line dt{margin:0;font-size:13px;font-weight:700;line-height:1.55;color:#3d2f78;min-width:0;overflow-wrap:break-word}
+[data-agent-document] .tb-line dd{margin:0;font-size:14.5px;line-height:1.55;min-width:0;overflow-wrap:break-word}
+[data-agent-document] .tb-proj{color:#4a3a85}
+[data-agent-document] .tb-src{margin:4px 0 0;font-size:12.5px;color:var(--muted,#5d5c58)}
+[data-agent-document] .gs-key{display:flex;flex-wrap:wrap;gap:4px 16px;margin:6px 0 0;padding:0;list-style:none;font-size:13px;line-height:1.5}
+[data-agent-document] .gs-key li{display:flex;align-items:center;gap:6px;margin:0;min-width:0}
+[data-agent-document] .gs-sw{display:inline-block;flex:0 0 auto;width:22px;height:0;border-top:3px solid #8f8d87}
+[data-agent-document] .gs-sw.g1{border-top-color:#b8433b}
+[data-agent-document] .gs-sw.g2{border-top-color:#6b5bb5}
+[data-agent-document] .gs-sw.s3{border-top:3px dashed #c27a2c}
+[data-agent-document] .gs-sw.pub{border-top:2px dotted #1f1e1c}
+[data-agent-document] .ck-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,19rem),1fr));gap:12px;margin:12px 0 16px;max-width:60rem}
+[data-agent-document] .ck-card{margin:0;padding:10px 12px;border:1px solid #d9d7d1;border-top:4px solid #3e7d5c;border-radius:6px;background:#fbfaf8;min-width:0;overflow-wrap:break-word}
+[data-agent-document] .ck-card h3,[data-agent-document] .ck-card h4{margin:0 0 6px;font-size:15px;line-height:1.35}
+[data-agent-document] .ck-card p{margin:0 0 6px;font-size:14px;line-height:1.5}
+[data-agent-document] .ck-card dl{margin:6px 0;padding:0}
+[data-agent-document] .ck-card dl div{display:grid;grid-template-columns:minmax(0,8em) minmax(0,1fr);gap:0 10px;padding:2px 0;border-top:1px dotted #dcd9d2}
+[data-agent-document] .ck-card dt{margin:0;font-size:12.5px;font-weight:650;color:var(--muted,#5d5c58);min-width:0;overflow-wrap:break-word}
+[data-agent-document] .ck-card dd{margin:0;font-size:13.5px;min-width:0;overflow-wrap:anywhere}
+@container shaduf-document (max-width: 36em){
+  [data-agent-document] .tb-line{grid-template-columns:minmax(0,1fr)}
+  [data-agent-document] .ck-card dl div{grid-template-columns:minmax(0,1fr)}
+}
+[data-agent-document] .pj-table tr.pj-new th,[data-agent-document] .pj-table tr.pj-new td{background:#f8f7fc}

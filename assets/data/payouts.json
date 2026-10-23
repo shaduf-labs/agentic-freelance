@@ -1,11 +1,11 @@
 {
   "schema": "agentic-freelance-payouts/0.1",
-  "run_id": "report-245745b47b4bb64ecf00dd75",
-  "as_of": "2026-10-22T13:45:00Z",
+  "run_id": "report-c052cd1ff8d57a333610577e",
+  "as_of": "2026-10-23T13:45:00Z",
   "window": {
-    "start": "2026-09-22",
-    "end": "2026-10-22",
-    "note": "inclusive by event date; one 24-hour ledger window 2026-10-21T13:45Z..10-22T13:45Z; no event after the cut-off up to the 13:56:19Z head read (escrow at head equals the cut-off value)"
+    "start": "2026-09-23",
+    "end": "2026-10-23",
+    "note": "inclusive by event date; one 24-hour ledger window 2026-10-22T13:45Z..10-23T13:45Z; no event after the cut-off up to the 14:00:57Z head read (escrow at head equals the cut-off value)"
   },
   "description": "Who actually paid: payout ledger for agent-paid or selling venues, trailing 30 days. Read-only evidence: no account, no job, no wallet, no money.",
   "payer_classes": {
@@ -6414,11 +6414,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_23": "set by date (window 2026-09-23..2026-10-23)"
     },
     {
       "event_id": "taskmarket-0067",
@@ -6502,11 +6503,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_23": "set by date (window 2026-09-23..2026-10-23)"
     },
     {
       "event_id": "taskmarket-0068",
@@ -6590,11 +6592,12 @@
       "net_to_worker_usd": 1.85,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_23": "set by date (window 2026-09-23..2026-10-23)"
     },
     {
       "event_id": "taskmarket-0069",
@@ -23647,6 +23650,56 @@
       "after_ledger_cutoff": false,
       "event_key": "(tx_hash, payee)",
       "ruling": "R199, R215, R255"
+    },
+    {
+      "event_id": "taskmarket-0264",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x826dbf75ba1b0df980ff9ee612e8ac20a84e697a8903f0db11fc91097d280ea4",
+      "explorer_url": "https://base.blockscout.com/tx/0x826dbf75ba1b0df980ff9ee612e8ac20a84e697a8903f0db11fc91097d280ea4",
+      "date": "2026-10-22T15:24:23Z",
+      "day": "2026-10-22",
+      "amount": 5.55,
+      "token": "USDC",
+      "usd": 5.55,
+      "gross_usd": 6,
+      "net_to_worker_usd": 5.55,
+      "payer": "0x6349d6b80540073abe4bc271f2e832f9e75c4d24",
+      "payer_trunc": "0x6349...4d24",
+      "payee": "0xf682157a852eb8d180a3db0bc64b7706a69de4be",
+      "payee_trunc": "0xf682...e4be",
+      "task_id": "TSK-C3AZ36J4",
+      "award_rank": 1,
+      "task_expiry": "2026-10-22T08:15:37.716Z",
+      "days_after_expiry": 0.3,
+      "payer_class": "unlinked",
+      "class_reason": "Known ledger payer, class carried; no new trace. Not proof of independence.",
+      "payer_new_to_ledger": false,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 52946658,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xf682...e4be",
+            "usdc": 5.55
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.45
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-22T15:24:23.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R281",
+      "after_ledger_cutoff": false
     }
   ],
   "previous_run_id": "report-d110858e7247d2b988c08316",
@@ -27788,6 +27841,314 @@
     {
       "date": "2026-10-22",
       "change": "1 TaskMarket event added (taskmarket-0263, TSK-AKRSG3P7, $4.625 net, keyed (tx_hash, payee), R215, R255; no new payer); run 20 recorded no after-cutoff event; 20 in_window flags set false by date (taskmarket-0059..0065 subtracted, 11.10; 13 Virtuals ACP events of 09-21 not subtracted, R216); 30-day estimate 364.65 -> 358.175 (estimated, partial); 92 USDC outflow of 10-20: 2.0 traced to a refund to the requester of the seven August tasks, about 90 not identified (R254, watch fact)"
+    }
+  ],
+  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75",
+  "totals_2026_10_23": {
+    "as_of": "2026-10-23T13:45:00Z",
+    "ledger_window": {
+      "start": "2026-10-22T13:45:00Z",
+      "end": "2026-10-23T13:45:00Z",
+      "hours": 24
+    },
+    "window": {
+      "start": "2026-09-23",
+      "end": "2026-10-23"
+    },
+    "agent_work_usd_paid_30d_estimate": {
+      "usd": 358.175,
+      "label": "estimated, partial",
+      "basis": "run 21 estimate 358.175 - 2026-09-22 TaskMarket roll-off net to worker (taskmarket-0066..0068, 5.55) + 1 new TaskMarket event (taskmarket-0264, 5.550) = 358.175",
+      "not_subtracted": "Virtuals ACP apportioned roll-off and Execution Market aggregate roll-off (no log route); no Virtuals ACP event dated 09-22 (R216)",
+      "not_included": "DeskCrew (R172)",
+      "status": "partial (method fallback): Blockscout test GET 403; one eth_getLogs over 100 blocks refused (429) (runs 11-22, twelfth run); TaskMarket from award records with each settlement receipt read on chain; other venues by USDC balanceOf at the cut-off blocks"
+    },
+    "in_window_net_by_payer_class_listed_events": {
+      "unlinked": 300.4733,
+      "operator": 0.76,
+      "operator_linked": 1.2448,
+      "identified_independent": 3.5
+    },
+    "new_events": [
+      "taskmarket-0264"
+    ],
+    "usd_new": 5.55,
+    "gross_new": 6,
+    "run21_after_cutoff_matching": {
+      "run21_events_flagged_after_cutoff": 0,
+      "matched_by_tx_hash_and_payee": 0,
+      "note": "run 21 recorded 0 events after its cut-off (its after_cutoff list is empty); nothing to match; C3AZ36J4's award (10-22T15:24:23Z) was not seen by run 21 (read 13:52Z, before the award) and is counted once here"
+    },
+    "new_payers": [],
+    "new_payer_note": "no new payer: 0x6349...4d24 was already in the ledger, class unlinked carried (untraced; not proof of independence); the payee 0xf682...e4be was seen before",
+    "in_window_flag_corrections": {
+      "count": 3,
+      "taskmarket": [
+        "taskmarket-0066",
+        "taskmarket-0067",
+        "taskmarket-0068"
+      ]
+    },
+    "taskmarket_escrow_reconciliation": {
+      "deposits_listed_new_tasks": {
+        "TSK-2E1NJWP3": 1,
+        "TSK-KCKBZCY3": 10,
+        "TSK-FRGMGTXW": 3
+      },
+      "deposits_with_receipt_into_escrow": {
+        "TSK-2E1NJWP3": 1
+      },
+      "awards_gross": {
+        "TSK-C3AZ36J4": -6
+      },
+      "deposit_receipts": {
+        "TSK-2E1NJWP3": {
+          "reward_usdc": 1,
+          "escrowTxHash": "0xab45fe1cf73e5ab0f1e26753c1d7318692884281baa3608bdaa53a56d7a6c7dd",
+          "receipt_found": true,
+          "receipt_status": 1,
+          "block": 52962561,
+          "block_time": "2026-10-23T00:14:29Z",
+          "usdc_into_escrow": 1,
+          "created": "2026-10-23T00:14:27.954Z"
+        },
+        "TSK-KCKBZCY3": {
+          "reward_usdc": 10,
+          "escrowTxHash": "0x6f9bf510e4edd4279c57c98b74d6f61b5cf4d772a8d98c178ccf86fe35d6a13f",
+          "receipt_found": false,
+          "rpc_result": null,
+          "created": "2026-10-22T22:39:18.680Z",
+          "requester_trunc": "0x4c98...9dc7",
+          "note": "eth_getTransactionReceipt at mainnet.base.org returned result null (read 2026-10-23T14:01Z, hours after createdAt): no mined transaction with this hash found by this node"
+        },
+        "TSK-FRGMGTXW": {
+          "reward_usdc": 3,
+          "escrowTxHash": "0xce380b35a91d5a8c18977adaf565e1f0f416e8ccc0dbe9f1ed9d38fa588850bd",
+          "receipt_found": false,
+          "rpc_result": null,
+          "created": "2026-10-22T19:01:44.898Z",
+          "requester_trunc": "0x609e...086c",
+          "note": "eth_getTransactionReceipt at mainnet.base.org returned result null (read 2026-10-23T14:01Z, hours after createdAt): no mined transaction with this hash found by this node"
+        }
+      },
+      "expected_change_if_all_listed_deposits": 8,
+      "expected_change_receipted_deposits_only": -5,
+      "measured_change": -5,
+      "unexplained_if_all_listed_deposits": -13,
+      "unexplained_receipted_only": 0,
+      "reading": "Measured -5.0 equals the one receipted deposit (+1.0, 2E1NJWP3) minus the C3AZ36J4 award (-6.0). The two listed tasks whose escrowTxHash has no receipt at this node (KCKBZCY3 10.0, FRGMGTXW 3.0) add up to the 13.0 gap if all listed deposits are assumed. Fact: no receipt found and the balance is consistent with no deposit for these two; hypothesis: their escrow was never funded on Base (or is pending/elsewhere); not tested further."
+    },
+    "taskmarket_deposits_without_receipt_R275": {
+      "tasks": [
+        "TSK-KCKBZCY3",
+        "TSK-FRGMGTXW"
+      ],
+      "flag": "deposit receipt not found on Base at our 14:01 UTC read",
+      "wording": "we could not find the deposit (never 'unfunded')",
+      "fact": "eth_getTransactionReceipt for the escrowTxHash of TSK-KCKBZCY3 (10 USDC) and TSK-FRGMGTXW (3 USDC) returned null at 14:01 UTC; the escrow balance change balances exactly without those two deposits",
+      "hypothesis": "these two tasks are not funded in the escrow on Base (not tested)",
+      "recheck": "run 23 C re-reads both receipts (at most 2 calls) and their status"
+    },
+    "taskmarket_escrow_outflow_2026_10_20": {
+      "usdc": 92,
+      "pieces_at_least": 6,
+      "identified": [
+        {
+          "usdc": 2,
+          "class": "refunded_to_requester",
+          "to": "0xc056...7a63",
+          "block": 52851526,
+          "tx": "0x8133e584339bafae4200752d4de53c13d1cdb323a2e91004bfe4adec1231b984"
+        },
+        {
+          "usdc": 6,
+          "class": "refunded_to_requester",
+          "to": "0xc056...7a63",
+          "block": 52851402,
+          "tx": "0x7be5f8882ab06bdbd44cea09794348360e0290b61d2204fc623e4cb762ce6904",
+          "time": "2026-10-20T10:29:11Z",
+          "found_by": "run 22 C bisection (R272)"
+        }
+      ],
+      "not_identified_usdc": 84,
+      "label": "watch fact; not a payout, not a payouts.json event, not a gate input (R240, R254, R272, R278)",
+      "plain": "Of the 92 USDC that left TaskMarket's escrow on 20 October, 8.0 USDC is now traced to refunds to one requester (2.0 found on 22 October and 6.0 on 23 October; refunds, not payouts); 84.0 USDC is not identified.",
+      "source": "parts/C/outflow_92.json",
+      "status_part_C": "complete",
+      "identified_usdc_total": 8,
+      "pieces_of_the_69": [
+        {
+          "between_blocks": [
+            52851401,
+            52851402
+          ],
+          "between_times": [
+            "2026-10-20T10:29:09Z",
+            "2026-10-20T10:29:11Z"
+          ],
+          "fall_usdc": 6
+        },
+        {
+          "between_blocks": [
+            52851407,
+            52851421
+          ],
+          "between_times": [
+            "2026-10-20T10:29:21Z",
+            "2026-10-20T10:29:49Z"
+          ],
+          "fall_usdc": 9
+        },
+        {
+          "between_blocks": [
+            52851421,
+            52851448
+          ],
+          "between_times": [
+            "2026-10-20T10:29:49Z",
+            "2026-10-20T10:30:43Z"
+          ],
+          "fall_usdc": 14
+        },
+        {
+          "between_blocks": [
+            52851448,
+            52851503
+          ],
+          "between_times": [
+            "2026-10-20T10:30:43Z",
+            "2026-10-20T10:32:33Z"
+          ],
+          "fall_usdc": 40
+        }
+      ],
+      "source_run22": "parts/C/outflow_69.json"
+    },
+    "headline_change": false,
+    "latest_payout_by_venue": {
+      "taskmarket": {
+        "date": "2026-10-22T15:24:23Z",
+        "task": "TSK-C3AZ36J4",
+        "block": 52946658,
+        "after_ledger_cutoff": false,
+        "route": "/api/tasks/{id} awards + eth_getTransactionReceipt",
+        "primary": true,
+        "tx_verified": true
+      },
+      "virtuals-acp": {
+        "date": "2026-10-05T09:27:37Z",
+        "route": "virtuals-acp-0105, receipt re-read 2026-10-17 (status 1, block 52,201,555); escrow 0x238E...32E0 22.9 -> 22.9 between the cut-offs, 22.9 at the head: no decrease, so no possible_newer_outflow (R121)",
+        "primary": true,
+        "tx_verified": true,
+        "checked_through": "2026-10-17T23:49:03Z",
+        "re_dated_to": "2026-10-17",
+        "checked_through_2026_10_18": "2026-10-18T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_19": "2026-10-19T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_21": "2026-10-21T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_22": "2026-10-22T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs and at head; release receipt virtuals-acp-0105 re-read 2026-10-22, status 1)",
+        "checked_through_2026_10_23": "2026-10-23T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs and at head; no decrease)"
+      },
+      "moltjobs": {
+        "date": "2026-09-23T07:42:57Z",
+        "route": "carried (payouts.json); escrow 0x3a57...60be 6.065 at the 10-22 and 10-23 cut-offs, at head and at the 90bf05bc close block 52,951,032 (unchanged since 10-09)",
+        "d1_line": "2026-10-23",
+        "primary": true,
+        "checked_through": "2026-10-23T13:44:59Z"
+      },
+      "agentpact": {
+        "date": "2026-09-01T22:57:29Z",
+        "route": "carried; escrow 0x5881...9a64 0.0 at the 10-22 and 10-23 cut-offs",
+        "d1_line": "2026-10-31"
+      },
+      "execution-market": {
+        "date": "2026-10-10",
+        "route": "carried by the merge from run 16 grading_inputs (no api.execution.market call this run); Base payer 0x857f...43cd -0.08 unclassified (C)",
+        "primary": true,
+        "tx_verified": false
+      },
+      "deskcrew": {
+        "date": "2026-10-15T10:00:33Z",
+        "route": "DeskCrew tx 0xe7a6...6fc66 read on Base (receipt status 1; 0.85 USDC from the run-9-verified payout wallet 0xd073...323d); operator-paid (R161, R168)",
+        "primary": true,
+        "tx_verified": true
+      },
+      "algora": {
+        "date": "carried (no C route; B reads Algora)"
+      }
+    },
+    "escrow_balances": [
+      {
+        "venue": "taskmarket",
+        "address": "0xddc6cc3e4d11c1f3527b867c7dad4ed9869c33f7",
+        "address_trunc": "0xddc6...33f7",
+        "previous_cutoff": 843.386101,
+        "previous_block": 52943676,
+        "previous_source": "carried from run 21",
+        "cutoff": 838.386101,
+        "cutoff_block": 52986876,
+        "change": -5,
+        "head": 838.386101,
+        "head_block": 52987355
+      },
+      {
+        "venue": "moltjobs",
+        "address": "0x3a57faee4ee95444506a6e290261d4c37b3060be",
+        "address_trunc": "0x3a57...60be",
+        "previous_cutoff": 6.065,
+        "previous_block": 52943676,
+        "previous_source": "carried from run 21",
+        "cutoff": 6.065,
+        "cutoff_block": 52986876,
+        "change": 0,
+        "head": 6.065,
+        "head_block": 52987355
+      },
+      {
+        "venue": "virtuals-acp",
+        "address": "0x238e541bfefd82238730d00a2208e5497f1832e0",
+        "address_trunc": "0x238e...32e0",
+        "previous_cutoff": 22.9,
+        "previous_block": 52943676,
+        "previous_source": "carried from run 21",
+        "cutoff": 22.9,
+        "cutoff_block": 52986876,
+        "change": 0,
+        "head": 22.9,
+        "head_block": 52987355
+      },
+      {
+        "venue": "agentpact",
+        "address": "0x588168712bf758afd747bf46471afa53f9599a64",
+        "address_trunc": "0x5881...9a64",
+        "previous_cutoff": 0,
+        "previous_block": 52943676,
+        "previous_source": "carried from run 21",
+        "cutoff": 0,
+        "cutoff_block": 52986876,
+        "change": 0,
+        "head": 0,
+        "head_block": 52987355
+      }
+    ],
+    "moltjobs_at_close": {
+      "target_time": "2026-10-22T17:50:11Z (MoltJobs job 90bf05bc deadlineAt 17:50:11.907Z, from B)",
+      "block": 52951032,
+      "block_timestamp": 1792691411,
+      "block_time": "2026-10-22T17:50:11Z",
+      "header_calls": 1,
+      "method": "header-only eth_getBlockByNumber(false) at the 2 s formula estimate from run 21's cut-off header; timestamp equal to the target, so it is the block at the close (R262)",
+      "balance_usdc": 6.065,
+      "compared_with": 6.065,
+      "equal": true,
+      "reading": "MoltJobs escrow held 6.065 USDC at the close block, the same as at run 21's cut-off and head and at today's cut-off and head: no 20 USDC deposit at or before the close (supporting evidence only, R260)",
+      "escrowTxHash_from_B": null,
+      "escrowTxHash_note": "parts/B/check_90bf05bc.json shows escrowTxHash null (read 13:57:35Z): no receipt to read"
+    }
+  },
+  "changes_since_previous_run21": [
+    {
+      "date": "2026-10-23",
+      "change": "1 TaskMarket event added (taskmarket-0264, TSK-C3AZ36J4, $5.550 net, 6.0 gross, keyed (tx_hash, payee), R215, R255, R281; no new payer); run 21 recorded no after-cutoff event; 3 in_window flags set false by date (taskmarket-0066..0068 subtracted, 5.55); 30-day estimate 358.175 -> 358.175 (estimated, partial); 92 USDC outflow of 10-20: 8.0 traced to refunds to one requester, 84.0 not identified (R278, watch fact)"
     }
   ]
 }

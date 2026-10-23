@@ -2170,6 +2170,66 @@
       "accessed_at": "2026-10-21T13:50:00Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-job-90bf05bc-2026-10-23",
+      "source_type": "venue API",
+      "source_url": "https://api.moltjobs.io/v1/jobs?limit=100",
+      "title": "MoltJobs outside job 90bf05bc at its close, read 23 October 2026",
+      "claim": "The job (20 USDC, posted 19 October by a poster ID not linked to the operator's known accounts) closed at 17:50 UTC on 22 October without funding or a claim: no claim time, funded false with no escrow transaction, deadline not moved; the only write after our 22 October read is dated 18:04:19 UTC. Shown as cancelled on 23 October, with no cancellation time. MoltJobs' grade is unchanged; its paid work and most posted jobs come from the operator's own accounts.",
+      "accessed_at": "2026-10-23T13:57:35Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "moltjobs-escrow-close-block-2026-10-22",
+      "source_type": "on-chain balance",
+      "source_url": "https://base.blockscout.com/block/52951032",
+      "title": "MoltJobs escrow balance at the close block of job 90bf05bc (22 October 2026, 17:50 UTC)",
+      "claim": "The MoltJobs escrow held 6.065 USDC at block 52,951,032, the same as before: consistent with no 20 USDC deposit at or before the close. Supporting evidence only; the job's own record decides the check.",
+      "accessed_at": "2026-10-23T14:00:00Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-tsk-6bhk4egt-2026-10-23",
+      "source_type": "venue API",
+      "source_url": "https://taskmarket.dev/api/tasks/TSK-6BHK4EGT",
+      "title": "TaskMarket task TSK-6BHK4EGT award record at its 15-day point, read 23 October 2026",
+      "claim": "No award on the record (0 awards, not cancelled) at its 15-day point, 23 October 06:41 UTC: unpaid at the 15-day sensitivity; at the edition grace of 18 days it stays payable until 26 October, 06:41 UTC. Unpaid is a status at the grace end, not proof it will never be paid.",
+      "accessed_at": "2026-10-23T13:57:47Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-award-tsk-c3az36j4-2026-10-22",
+      "source_type": "on-chain transaction",
+      "source_url": "https://base.blockscout.com/tx/0x826dbf75ba1b0df980ff9ee612e8ac20a84e697a8903f0db11fc91097d280ea4",
+      "title": "TaskMarket award of TSK-C3AZ36J4, 22 October 2026",
+      "claim": "6.0 USDC award (5.55 USDC to the worker, 0.45 fee) from the escrow, 0.30 days after the task closed; receipt status 1; payer already in the ledger, class unlinked (not proof of independence).",
+      "accessed_at": "2026-10-23T13:58:04Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-deposits-not-found-2026-10-23",
+      "source_type": "on-chain receipt lookup",
+      "source_url": "https://base.blockscout.com/tx/0x6f9bf510e4edd4279c57c98b74d6f61b5cf4d772a8d98c178ccf86fe35d6a13f",
+      "title": "Deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW, looked up 23 October 2026",
+      "claim": "The receipt lookup for each task's listed escrow transaction returned nothing at 14:01 UTC, and the escrow balance change balances exactly without these two deposits. We could not find the deposit; both tasks are counted as the venue lists them. That they are not funded is a hypothesis, untested; re-read on 24 October.",
+      "accessed_at": "2026-10-23T14:01:00Z",
+      "relation": "unresolved",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "arcrun-site-2026-10-23",
+      "source_type": "venue page",
+      "source_url": "https://arcrun.xyz/",
+      "title": "ArcRun home page, docs and results list, read 23 October 2026 (triage, not graded)",
+      "claim": "The site labels itself Arc Testnet and shows an undated results list in testnet units; no funded cash prize is shown; its docs page is titled for a different product, Agon. Hypotheses: its USDC prizes are test tokens with no cash value; the site may be moving to Agon. Owner steps untested.",
+      "accessed_at": "2026-10-23T13:59:44Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

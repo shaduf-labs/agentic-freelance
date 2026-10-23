@@ -1,21 +1,35 @@
 {
   "schema": "agentic-freelance-grade-changes/0.1",
-  "as_of": "2026-10-22",
-  "previous_as_of": "2026-10-21",
+  "as_of": "2026-10-23",
+  "previous_as_of": "2026-10-22",
   "missed_dates": [],
   "published_rule": "1.2",
-  "run_id": "report-245745b47b4bb64ecf00dd75",
+  "run_id": "report-c052cd1ff8d57a333610577e",
   "edition": 3,
   "label": "shown, never graded; computed by script (merge/change_feed.py); items are never edited after publication: a later fix is a new correction item",
-  "status_today": "moved_on_rule",
-  "status_rule": "PLAN 2026-10-19: moved_on_data if any published (central-band) grade moved on this run's data; else moved_on_rule; else moved_on_time; else nothing_moved (R227: a grade moved only by the grace step or the rule decision counts as moved_on_rule)",
-  "status_line": "Since 21 October: no grade moved on new data or on time; 1 grade is graded differently under rule v1.2, now our published rule (AgentPact avoid → not enough data; a rule change, not venue news); TaskMarket's grace is 18 days for the week (was 15; a counting change that moves no grade).",
+  "status_today": "nothing_moved",
+  "status_rule": "PLAN 2026-10-19: moved_on_data if any published (central-band) grade moved on this run's data; else moved_on_rule; else moved_on_time; else nothing_moved",
+  "status_line": "Nothing moved a grade on 23 October. Re-checked: 4 venue inputs and 1 rule row; 2 changed (TaskMarket and MoltJobs), neither enough to move a gate under any rule. MoltJobs' outside job closed on 22 October without funding or a claim, and TaskMarket's TSK-6BHK4EGT was not awarded by its 15-day point (still payable at our 18-day grace).",
+  "today_box": {
+    "changed_today": "Changed today: no grade moved on 23 October data.",
+    "checked_today": "Checked today: MoltJobs' outside job closed unfunded and unclaimed, by its record times; TaskMarket's TSK-6BHK4EGT was not awarded by 15 days, still payable at 18.",
+    "next": "Next: Superteam Earn would move to avoid on 26 October unless an agent listing appears (projection, not a forecast).",
+    "word_counts": {
+      "changed_today": 9,
+      "checked_today": 25,
+      "next": 19
+    },
+    "ruling": "R274",
+    "built_by": "merge/change_feed.py",
+    "label_note": "the Next line is a projection from the rule, not a forecast; no rule or counting item today"
+  },
   "kinds_in_words": {
     "data": "New data",
     "time": "Time passing",
     "rule": "Rule change (how we grade) or counting change (how we count), by rule_part",
     "correction": "Correction",
-    "dated_fact": "Dated fact"
+    "dated_fact": "Dated fact",
+    "maintenance": "Maintenance (shown text refreshed; grades unaffected)"
   },
   "rule_part_values": [
     "edition parameter: TaskMarket grace",
@@ -23,305 +37,101 @@
   ],
   "today": [
     {
-      "date": "2026-10-22",
-      "slug": "execution-market",
-      "name": "Execution Market",
-      "kind": "time",
-      "level": "gate",
-      "gate": "D3",
-      "from": "pass",
-      "to": "weak",
-      "bands": [
-        "low"
-      ],
-      "step": 0,
-      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
+      "date": "2026-10-23",
+      "event_date": "2026-10-22",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "data",
+      "level": "dated_fact",
+      "gate": "D1",
+      "from": "latest payout 2026-10-21",
+      "to": "latest payout 2026-10-22",
       "cause": {
-        "input": "time (as_of 2026-10-22 with window roll-off)",
-        "source_path": "merge/steps.json#step0",
-        "checked": "2026-10-22"
+        "input": "TSK-C3AZ36J4 (6 USDC) awarded 2026-10-22T15:24:23Z, 0.30 days after it closed; 5.55 USDC net to the winner and 0.45 fee; payer 0x6349...4d24, class unlinked (not proof of independence); receipt status 1",
+        "source_path": "payouts.json#taskmarket-0264",
+        "checked": "2026-10-23"
       },
-      "published_grade_moved": false,
-      "plain_line": "Execution Market: token-cost inputs pass → weak (low band only) (input older than 7 days, checked 22 October); grade unchanged.",
-      "change_id": "2026-10-22-01",
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "gate_moved": false,
+      "ruling": "R281",
+      "plain_line": "TaskMarket: a 6 USDC task was awarded on 22 October, about 7 hours after it closed (5.55 USDC to the winner on chain); payout records stay pass (checked 23 October).",
+      "change_id": "2026-10-23-01",
+      "bands": null,
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "slug": "upwork-mcp",
-      "name": "Upwork",
+      "date": "2026-10-23",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
       "kind": "data",
-      "level": "gate",
-      "gate": "D5",
-      "from": "weak",
-      "to": "pass",
-      "bands": [
-        "low",
-        "central",
-        "high",
-        "pwin_lo"
-      ],
-      "step": 1,
-      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
-      "cause": {
-        "input": "rule text",
-        "source_path": "merge/steps.json#step1",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "plain_line": "Upwork: rule text re-read from the newest archive capture (16 October; the live page refuses automated reads), so rule text weak → pass; grade unchanged (avoid).",
-      "change_id": "2026-10-22-02",
-      "recorded_on": "2026-10-22",
-      "rule_part": null
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "dealwork-ai",
-      "name": "dealwork.ai",
-      "kind": "data",
-      "level": "gate",
+      "level": "dated_fact",
       "gate": "D2",
-      "from": "pass",
-      "to": "weak",
-      "bands": [
-        "low",
-        "central",
-        "high",
-        "pwin_lo"
-      ],
-      "step": 3,
-      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
+      "from": "3 open / 82 new in 30 days (22 October)",
+      "to": "5 open / 82 new",
       "cause": {
-        "input": "venue inputs (run 21 data)",
-        "source_path": "merge/steps.json#step3",
-        "checked": "2026-10-22"
+        "input": "3 new tasks (1, 10 and 3 USDC) posted 22-23 October; TSK-88YN3100 closed to submissions; for 2 of the 5 open tasks we could not find the deposit on Base (R275)",
+        "source_path": "parts/C/settlement_refresh.json#supply.without_moltrust",
+        "checked": "2026-10-23"
       },
-      "published_grade_moved": false,
-      "plain_line": "dealwork.ai: dated task counts pass → weak (new data, checked 22 October); grade unchanged.",
-      "change_id": "2026-10-22-03",
-      "recorded_on": "2026-10-22",
-      "rule_part": null
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "kind": "rule",
-      "rule_part": "edition parameter: TaskMarket grace",
-      "level": "parameter",
-      "from": "grace 15 days",
-      "to": "grace 18 days",
-      "step": 4,
-      "cause": {
-        "input": "the 21 October pre-check gave 59 days because seven August tasks of one requester were paid 72-79 days late; on 22 October six earlier awards (three July tasks paid 67-68 days late among them) left the 90-day window while the seven August tasks stayed, so the 95th percentile of award delays fell to 17.91 days",
-        "source_path": "merge/grace_edition3.json; parts/C/grace_r64.json",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "ruling": "R64, R228, R229, R245",
-      "plain_line": "TaskMarket: counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (recomputed at each edition from TaskMarket's own award delays; it was 15). This changes how we count, not what the venue did: the main 30-day figures are the same at 15 and 18 days; one small task outside the main figures (TSK-E49N4V7T, 0.541 USDC) was unpaid at its 15-day grace end and is still payable at 18 days, until 23 October 20:51 UTC.",
-      "change_id": "2026-10-22-04",
+      "gate_moved": false,
+      "ruling": "R144, R275",
+      "plain_line": "TaskMarket: 5 open tasks and 82 new in 30 days (3 open on 22 October); for 2 of the open tasks we could not find the deposit on Base; dated task counts stay pass (checked 23 October).",
+      "change_id": "2026-10-23-02",
       "bands": null,
-      "gate": null,
-      "recorded_on": "2026-10-22"
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "slug": "taskmarket",
       "name": "TaskMarket",
-      "kind": "rule",
-      "rule_part": "edition parameter: TaskMarket grace",
-      "level": "status",
-      "from": "final_unpaid (TSK-E49N4V7T, grace 15)",
-      "to": "still_payable until 2026-10-23T20:51Z (grace 18)",
-      "step": 4,
-      "cause": {
-        "input": "TSK-E49N4V7T (MolTrust, 0.541 USDC) is 16.7 days past expiry with no award: past the 15-day end, inside the 18-day end",
-        "source_path": "parts/C/settlement_refresh.json#edition3_grace.statuses_differing_15_vs_applied",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "ruling": "R229, R246",
-      "plain_line": "TaskMarket task TSK-E49N4V7T (0.541 USDC, a MolTrust task outside the main figures): counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (it was 15). This changes how we count, not what the venue did: it was unpaid at its 15-day grace end (20 October, 20:51 UTC) and is still payable at 18 days, until 23 October, 20:51 UTC.",
-      "change_id": "2026-10-22-05",
-      "bands": null,
-      "gate": null,
-      "recorded_on": "2026-10-22"
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "kind": "rule",
-      "rule_part": "edition parameter: TaskMarket grace",
-      "level": "projection",
+      "kind": "data",
+      "level": "dated_fact",
       "gate": "D4",
-      "from": "2026-10-30 (payout outcomes pass -> weak, grace 15)",
-      "to": "2026-11-02 (grace 18)",
-      "step": 4,
+      "from": "1.73% of submissions unpaid (grace 18, 22 October)",
+      "to": "1.79% (grace 18)",
       "cause": {
-        "input": "R149 projection recomputed at the applied grace (C's unchanged script): first date with an unpaid share of submissions of 10% or more",
-        "source_path": "merge/grace_edition3.json#d4_projection_r149",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "label": "projection, not a forecast",
-      "ruling": "R149, R229, R246",
-      "plain_line": "TaskMarket: counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (recomputed at each edition from TaskMarket's own award delays; it was 15). This changes how we count, not what the venue did: the date on which the unpaid share of submissions would first reach 10% if nothing is awarded is now 2 November instead of 30 October (projection, not a forecast).",
-      "change_id": "2026-10-22-06",
-      "bands": null,
-      "recorded_on": "2026-10-22"
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "agentpact",
-      "name": "AgentPact",
-      "kind": "rule",
-      "rule_part": "grading rule v1.2",
-      "level": "grade",
-      "from": "avoid",
-      "to": "not enough data",
-      "bands": [
-        "low",
-        "central",
-        "high",
-        "pwin_lo"
-      ],
-      "step": "rule decision",
-      "amendments": [
-        "V11",
-        "V8 (grade mapping on the changed gate)"
-      ],
-      "cause": {
-        "input": "rule v1.2 published from 22 October (four pre-registered criteria hold; merge/rule_decision.json)",
-        "source_path": "merge/rule_decision.json",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": true,
-      "pre_registered_wording": true,
-      "ruling": "R91, R226",
-      "plain_line": "AgentPact: graded differently under rule v1.2 (deals between linked accounts and deals without delivery evidence no longer count as delivered work): avoid → not enough data. Its latest payout (1 September) turns 60 days old on 31 October, so it would move to avoid on 1 November unless a new payout is confirmed (projection, not a forecast).",
-      "change_id": "2026-10-22-07",
-      "gate": null,
-      "recorded_on": "2026-10-22"
-    },
-    {
-      "date": "2026-10-22",
-      "slug": null,
-      "name": "All venues",
-      "kind": "rule",
-      "rule_part": "grading rule v1.2",
-      "level": "rule",
-      "from": "rule v1.1",
-      "to": "rule v1.2",
-      "step": "rule decision",
-      "cause": {
-        "input": "From 22 October we grade with rule v1.2, chosen by four criteria written on 12 October: the engine is unchanged since then; every grade difference from the rule in use each week is explained by a named amendment; at most 2 of 27 records flip between cost bands (limit 9); and 8 out-of-sample runs were graded under it (at least 3 needed).",
-        "source_path": "merge/rule_decision.json",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "ruling": "R91, R226",
-      "plain_line": "From 22 October we grade with rule v1.2 (chosen by four criteria written on 12 October); under it 1 grade differs from rule v1.1 (AgentPact); the routes we suggest instead change for 3 avoided venues, which now have none that qualifies.",
-      "change_id": "2026-10-22-08",
-      "bands": null,
-      "gate": null,
-      "recorded_on": "2026-10-22"
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "kaggle",
-      "name": "Kaggle",
-      "kind": "correction",
-      "level": "row",
-      "from": "stored rule-text hash for 3 Kaggle rows (recorded 4-13 October)",
-      "to": "flagged: it is the hash of a JavaScript shell, not of the rule text",
-      "cause": {
-        "input": "B's 22 October read returned the same 5,925-byte shell whose hash was stored as the baseline",
-        "source_path": "rules.json#rows[kaggle-*].baseline_hash_invalid_R251",
-        "checked": "2026-10-22"
-      },
-      "published_grade_moved": false,
-      "gate_moved": false,
-      "ruling": "R51, R251",
-      "plain_line": "Correction (rule records): for three Kaggle rule rows the stored text fingerprint from 4-13 October was a JavaScript page shell, not the rule text; it is no longer used as a baseline. Their dates stay at 7 October; no grade changes (Kaggle stays avoid).",
-      "change_id": "2026-10-22-09",
-      "bands": null,
-      "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
-    },
-    {
-      "date": "2026-10-22",
-      "event_date": "2026-10-21",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "kind": "data",
-      "level": "dated_fact",
-      "gate": "D1",
-      "from": "latest payout 2026-10-20",
-      "to": "latest payout 2026-10-21",
-      "cause": {
-        "input": "TSK-AKRSG3P7 (5 USDC) awarded 2026-10-21T17:06:43Z, 0.15 days after it closed; 4.625 USDC net to a new payee (0x1659...4ae2); receipt status 1",
-        "source_path": "payouts.json#taskmarket-0263",
-        "checked": "2026-10-22"
+        "input": "30-day window 09-23..10-23 at the edition grace 18 (3.18% at the 15-day sensitivity, where TSK-6BHK4EGT would count as unpaid)",
+        "source_path": "parts/C/settlement_refresh.json#edition3_grace.figures",
+        "checked": "2026-10-23"
       },
       "gate_moved": false,
-      "ruling": "R255",
-      "plain_line": "TaskMarket: a 5 USDC task was awarded on 21 October, a few hours after it closed (4.63 USDC to the winner on chain); payout records stay pass (checked 22 October).",
-      "change_id": "2026-10-22-10",
+      "ruling": "R245, R261",
+      "plain_line": "TaskMarket: 1.79% of submissions in 30 days went to tasks that paid nobody by their grace end (18 days; 1.73% on 22 October); payout outcomes stay pass (checked 23 October).",
+      "change_id": "2026-10-23-03",
       "bands": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "slug": "bugcrowd",
-      "name": "Bugcrowd",
-      "kind": "data",
-      "level": "dated_fact",
-      "gate": "D1",
-      "from": "newest accepted reward 2026-10-16",
-      "to": "2026-10-22",
-      "cause": {
-        "input": "CrowdStream page 1: 20 rows accepted 22 October (a platform reward record, not a payment receipt)",
-        "source_path": "parts/B/evidence_B.json#bugcrowd",
-        "checked": "2026-10-22"
-      },
-      "gate_moved": false,
-      "ruling": "R253",
-      "plain_line": "Bugcrowd: its public reward feed shows rewards accepted on 22 October (a platform record, not a payment receipt); payout records stay pass (checked 22 October).",
-      "change_id": "2026-10-22-11",
-      "bands": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
-    },
-    {
-      "date": "2026-10-22",
-      "slug": "agentpact",
-      "name": "AgentPact",
+      "date": "2026-10-23",
+      "slug": "moltjobs",
+      "name": "MoltJobs",
       "kind": "data",
       "level": "dated_fact",
       "gate": "D2",
-      "from": "81 open / 48 new in 30 days (17 October)",
-      "to": "81 open / 46 new",
+      "from": "11 open (1 outside) / 9 new in 30 days (1 outside)",
+      "to": "10 open (0 outside) / 9 new (1 outside)",
       "cause": {
-        "input": "34 of the 46 new budgeted needs from one buyer (73.9%); 35 of 46 at a budget of 0.01 USDC",
-        "source_path": "parts/B/evidence_B.json#agentpact",
-        "checked": "2026-10-22"
+        "input": "the outside job 90bf05bc closed on 22 October without funding or a claim; it still counts by its creation date until 18 November (R230)",
+        "source_path": "parts/B/moltjobs_r22.json",
+        "checked": "2026-10-23"
       },
       "gate_moved": false,
-      "ruling": "R253",
-      "plain_line": "AgentPact: 81 open budgeted requests and 46 new in 30 days, three quarters of them from one buyer and most at 0.01 USDC; dated task counts stay pass (checked 22 October).",
-      "change_id": "2026-10-22-12",
+      "ruling": "R230, R260, R277",
+      "plain_line": "MoltJobs: 10 open jobs, all the operator's referral jobs, and 9 new in 30 days (one from an outside poster, now closed); dated task counts unchanged (checked 23 October).",
+      "change_id": "2026-10-23-04",
       "bands": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "event_date": "2026-10-22",
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
       "slug": "moltjobs",
       "name": "MoltJobs",
       "kind": "dated_fact",
@@ -329,21 +139,22 @@
       "from": null,
       "to": null,
       "cause": {
-        "input": "MoltJobs' only outside job (90bf05bc, 20 USDC) was still open and not funded at 13:53 UTC on 22 October, about 4 hours before it closes at 17:50 UTC (no claim, no agent, no escrow transaction); its paid work and most posted jobs come from the operator's own accounts",
-        "source_path": "parts/B/moltjobs_r21.json#job_90bf05bc",
-        "checked": "2026-10-22"
+        "input": "MoltJobs' outside job 90bf05bc is shown as cancelled at our 23 October read; the record carries no cancellation time",
+        "source_path": "parts/B/check_90bf05bc.json",
+        "checked": "2026-10-23"
       },
-      "ruling": "R230",
-      "plain_line": "MoltJobs' only outside job (90bf05bc, 20 USDC) was still open and not funded at 13:53 UTC on 22 October, about 4 hours before it closes at 17:50 UTC (no claim, no agent, no escrow transaction); its paid work and most posted jobs come from the operator's own accounts (22 October).",
-      "change_id": "2026-10-22-13",
+      "ruling": "R277",
+      "plain_line": "MoltJobs' outside job 90bf05bc is shown as cancelled at our 23 October read; the record carries no cancellation time (23 October).",
+      "change_id": "2026-10-23-05",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "event_date": "2026-10-22",
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
       "slug": "moltjobs",
       "name": "MoltJobs",
       "kind": "dated_fact",
@@ -351,20 +162,44 @@
       "from": null,
       "to": null,
       "cause": {
-        "input": "MoltJobs' public list has no new job and no status or funding change since 21 October (123 jobs)",
-        "source_path": "merge/moltjobs_changes_1022.json",
-        "checked": "2026-10-22"
+        "input": "No outside job is open on MoltJobs at our 23 October read; all 10 open jobs are the operator's 0.2 USDC referral jobs (its paid work and most posted jobs come from the operator's own accounts)",
+        "source_path": "merge/moltjobs_changes_1023.json",
+        "checked": "2026-10-23"
       },
-      "ruling": "R241",
-      "plain_line": "MoltJobs' public list has no new job and no status or funding change since 21 October (123 jobs) (22 October).",
-      "change_id": "2026-10-22-14",
+      "ruling": "R277",
+      "plain_line": "No outside job is open on MoltJobs at our 23 October read; all 10 open jobs are the operator's 0.2 USDC referral jobs (its paid work and most posted jobs come from the operator's own accounts) (23 October).",
+      "change_id": "2026-10-23-06",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "For two open TaskMarket tasks (TSK-KCKBZCY3, 10 USDC; TSK-FRGMGTXW, 3 USDC) we could not find the deposit on Base at our 14:01 UTC read; we count them as the venue lists them and re-read both receipts in the next run",
+        "source_path": "parts/C/escrow_balances.json#taskmarket_reconciliation",
+        "checked": "2026-10-23"
+      },
+      "ruling": "R275",
+      "plain_line": "For two open TaskMarket tasks (TSK-KCKBZCY3, 10 USDC; TSK-FRGMGTXW, 3 USDC) we could not find the deposit on Base at our 14:01 UTC read; we count them as the venue lists them and re-read both receipts in the next run (23 October).",
+      "change_id": "2026-10-23-07",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
+    },
+    {
+      "date": "2026-10-23",
       "event_date": "2026-10-20",
       "slug": "taskmarket",
       "name": "TaskMarket",
@@ -373,21 +208,68 @@
       "from": null,
       "to": null,
       "cause": {
-        "input": "Of the 92 USDC that left TaskMarket's escrow on 20 October (in at least six pieces, 09:37-10:33 UTC), 2.0 USDC is traced to a refund to the requester of the seven August tasks; about 90 USDC is not identified. It is not counted as a payout",
-        "source_path": "parts/C/outflow_92.json",
-        "checked": "2026-10-22"
+        "input": "Of the 92 USDC that left TaskMarket's escrow on 20 October, 8.0 USDC is now traced to refunds to one requester (2.0 found on 22 October, 6.0 on 23 October); 84.0 USDC is not identified. Refunds are not counted as payouts",
+        "source_path": "parts/C/outflow_69.json",
+        "checked": "2026-10-23"
       },
-      "ruling": "R240, R254",
-      "plain_line": "Of the 92 USDC that left TaskMarket's escrow on 20 October (in at least six pieces, 09:37-10:33 UTC), 2.0 USDC is traced to a refund to the requester of the seven August tasks; about 90 USDC is not identified. It is not counted as a payout (20 October).",
-      "change_id": "2026-10-22-15",
+      "ruling": "R272, R278",
+      "plain_line": "Of the 92 USDC that left TaskMarket's escrow on 20 October, 8.0 USDC is now traced to refunds to one requester (2.0 found on 22 October, 6.0 on 23 October); 84.0 USDC is not identified. Refunds are not counted as payouts (20 October).",
+      "change_id": "2026-10-23-08",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "event_date": "2026-10-20",
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "On two TaskMarket tasks awaiting settlement, the requester's reject-submission action shows an end time of 30 October, 02:45 UTC; the venue does not document what it means",
+        "source_path": "parts/C/check_6bhk4egt.json",
+        "checked": "2026-10-23"
+      },
+      "ruling": "R282",
+      "plain_line": "On two TaskMarket tasks awaiting settlement, the requester's reject-submission action shows an end time of 30 October, 02:45 UTC; the venue does not document what it means (23 October).",
+      "change_id": "2026-10-23-09",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
+    },
+    {
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
+      "slug": "arcrun",
+      "name": "ArcRun",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "ArcRun (agent contests; triage, not graded): the site labels itself Arc Testnet and shows an undated results list in testnet units; no funded cash prize is shown. That its USDC prizes are test tokens with no cash value is a hypothesis",
+        "source_path": "triage.json#light_checks_2026_10_23.arcrun",
+        "checked": "2026-10-23"
+      },
+      "ruling": "R268, R276",
+      "plain_line": "ArcRun (agent contests; triage, not graded): the site labels itself Arc Testnet and shows an undated results list in testnet units; no funded cash prize is shown. That its USDC prizes are test tokens with no cash value is a hypothesis (23 October).",
+      "change_id": "2026-10-23-10",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
+    },
+    {
+      "date": "2026-10-23",
+      "event_date": "2026-10-23",
       "slug": "trybounty-ai",
       "name": "trybounty.ai",
       "kind": "dated_fact",
@@ -395,83 +277,64 @@
       "from": null,
       "to": null,
       "cause": {
-        "input": "trybounty.ai's docs changelog (dated 20 October) says new bounties now go to every ready agent and agents bid, with the owner accepting a bid (at most 20 bids an hour); a platform statement, not evidence that any agent was paid",
-        "source_path": "parts/B/rules_check_B.json",
-        "checked": "2026-10-22"
+        "input": "trybounty.ai's '$100K+ verified earnings' claim is unchanged since 9 October and no public bid, award or payout record is visible; a platform statement, not evidence that any agent was paid",
+        "source_path": "parts/A/trybounty_A.json",
+        "checked": "2026-10-23"
       },
-      "ruling": "R249",
-      "plain_line": "trybounty.ai's docs changelog (dated 20 October) says new bounties now go to every ready agent and agents bid, with the owner accepting a bid (at most 20 bids an hour); a platform statement, not evidence that any agent was paid (20 October).",
-      "change_id": "2026-10-22-16",
+      "ruling": "R280",
+      "plain_line": "trybounty.ai's '$100K+ verified earnings' claim is unchanged since 9 October and no public bid, award or payout record is visible; a platform statement, not evidence that any agent was paid (23 October).",
+      "change_id": "2026-10-23-11",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "event_date": "2026-10-22",
-      "slug": "qdrant",
-      "name": "qdrant",
-      "kind": "dated_fact",
-      "level": "dated_fact",
-      "from": null,
-      "to": null,
+      "date": "2026-10-23",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "maintenance",
+      "level": "shown_field",
+      "from": "odds line of 22 October",
+      "to": "odds line rebuilt from 23 October inputs",
       "cause": {
-        "input": "qdrant's contribution guide now lets the pull-request description (apart from the motivation) be written with AI tools, keeping disclosure and responsibility; our reading stays 'allowed with conditions'",
-        "source_path": "parts/A/rules_check_A.json",
-        "checked": "2026-10-22"
+        "input": "inputs re-read on 23 October (R265)",
+        "source_path": "shortlist.json#venues[slug=taskmarket].odds_line",
+        "checked": "2026-10-23"
       },
-      "ruling": "R248",
-      "plain_line": "qdrant's contribution guide now lets the pull-request description (apart from the motivation) be written with AI tools, keeping disclosure and responsibility; our reading stays 'allowed with conditions' (22 October).",
-      "change_id": "2026-10-22-17",
+      "published_grade_moved": false,
+      "ruling": "R256, R265",
+      "plain_line": "TaskMarket: the shown odds line was rebuilt from inputs re-read on 23 October (shown text only; grades unaffected).",
+      "change_id": "2026-10-23-12",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     },
     {
-      "date": "2026-10-22",
-      "event_date": "2026-10-22",
-      "slug": "execution-market",
-      "name": "Execution Market",
-      "kind": "dated_fact",
-      "level": "dated_fact",
-      "from": null,
-      "to": null,
+      "date": "2026-10-23",
+      "slug": "moltjobs",
+      "name": "MoltJobs",
+      "kind": "maintenance",
+      "level": "shown_field",
+      "from": "odds line of 22 October",
+      "to": "odds line rebuilt from 23 October inputs",
       "cause": {
-        "input": "Execution Market's task list shows 52 new tasks between 17 and 21 October in the 200 newest rows and one open task (8 USD) at our read; posters not classified; no grade effect (avoid)",
-        "source_path": "parts/B/evidence_B.json#optional.execution_market_supply",
-        "checked": "2026-10-22"
+        "input": "inputs re-read on 23 October (R265)",
+        "source_path": "shortlist.json#venues[slug=moltjobs].odds_line",
+        "checked": "2026-10-23"
       },
-      "ruling": "R252",
-      "plain_line": "Execution Market's task list shows 52 new tasks between 17 and 21 October in the 200 newest rows and one open task (8 USD) at our read; posters not classified; no grade effect (avoid) (22 October).",
-      "change_id": "2026-10-22-18",
+      "published_grade_moved": false,
+      "ruling": "R256, R265",
+      "plain_line": "MoltJobs: the shown odds line was rebuilt from inputs re-read on 23 October (shown text only; grades unaffected).",
+      "change_id": "2026-10-23-13",
       "bands": null,
       "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
-    },
-    {
-      "date": "2026-10-22",
-      "event_date": "2026-10-22",
-      "slug": "superteam-earn",
-      "name": "Superteam Earn",
-      "kind": "dated_fact",
-      "level": "dated_fact",
-      "from": null,
-      "to": null,
-      "cause": {
-        "input": "Superteam Earn's open feed had 13 listings on 22 October, all for humans only: no agent listing (an extra read; the planned reads are 21 and 26 October)",
-        "source_path": "parts/B/evidence_B.json#superteam_open_feed",
-        "checked": "2026-10-22"
-      },
-      "ruling": "R242",
-      "plain_line": "Superteam Earn's open feed had 13 listings on 22 October, all for humans only: no agent listing (an extra read; the planned reads are 21 and 26 October) (22 October).",
-      "change_id": "2026-10-22-19",
-      "bands": null,
-      "gate": null,
-      "recorded_on": "2026-10-22",
-      "rule_part": null
+      "recorded_on": "2026-10-23",
+      "rule_part": null,
+      "rule": null
     }
   ],
   "rechecked": [
@@ -479,8 +342,8 @@
       "id": "taskmarket-d1-d4",
       "slug": "taskmarket",
       "gate": "D1-D4",
-      "input": "TaskMarket daily block (tasks, awards, settlement at 15 and 18, supply)",
-      "checked": "2026-10-22",
+      "input": "TaskMarket daily block (tasks, awards, settlement at 18 with 15 beside, supply, open-item posters)",
+      "checked": "2026-10-23",
       "source_path": "parts/C/settlement_refresh.json",
       "kind": "venue_input",
       "result": "changed"
@@ -489,96 +352,51 @@
       "id": "moltjobs-d1-d2",
       "slug": "moltjobs",
       "gate": "D1-D2",
-      "input": "MoltJobs stats, list pages 1-2, job 90bf05bc, escrow balance",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/moltjobs_r21.json",
+      "input": "MoltJobs stats, list pages 1-2, job 90bf05bc, escrow balance (cut-offs, head, close block)",
+      "checked": "2026-10-23",
+      "source_path": "parts/B/moltjobs_r22.json",
       "kind": "venue_input",
-      "result": "unchanged"
+      "result": "changed"
     },
     {
-      "id": "agentpact-d1-d2",
+      "id": "agentpact-d1",
       "slug": "agentpact",
-      "gate": "D1-D2",
-      "input": "AgentPact needs list and escrow balance",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/evidence_B.json#agentpact",
-      "kind": "venue_input",
-      "result": "changed"
-    },
-    {
-      "id": "bugcrowd-d1",
-      "slug": "bugcrowd",
       "gate": "D1",
-      "input": "Bugcrowd CrowdStream page 1",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/evidence_B.json#bugcrowd",
-      "kind": "venue_input",
-      "result": "changed"
-    },
-    {
-      "id": "virtuals-acp-d1",
-      "slug": "virtuals-acp",
-      "gate": "D1",
-      "input": "Virtuals ACP release receipt and escrow balance",
-      "checked": "2026-10-22",
+      "input": "AgentPact escrow balance at both cut-offs",
+      "checked": "2026-10-23",
       "source_path": "parts/C/escrow_balances.json",
       "kind": "venue_input",
       "result": "unchanged"
     },
     {
-      "id": "superteam-earn-d2",
-      "slug": "superteam-earn",
-      "gate": "D2",
-      "input": "Superteam open feed (1 GET)",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/evidence_B.json#superteam_open_feed",
+      "id": "virtuals-acp-d1",
+      "slug": "virtuals-acp",
+      "gate": "D1",
+      "input": "Virtuals ACP escrow balance at both cut-offs and head",
+      "checked": "2026-10-23",
+      "source_path": "parts/C/escrow_balances.json",
       "kind": "venue_input",
       "result": "unchanged"
     },
     {
-      "id": "dealwork-ai-d2",
-      "slug": "dealwork-ai",
-      "gate": "D2",
-      "input": "dealwork.ai jobs (2 GETs)",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/evidence_B.json#optional.dealwork_d2",
-      "kind": "venue_input",
-      "result": "changed"
-    },
-    {
-      "id": "execution-market-d2",
-      "slug": "execution-market",
-      "gate": "D2",
-      "input": "Execution Market task list (2 GETs; dated fact only)",
-      "checked": "2026-10-22",
-      "source_path": "parts/B/evidence_B.json#optional.execution_market_supply",
-      "kind": "venue_input",
+      "id": "rules-huntr-automation_ai-4",
+      "slug": "huntr",
+      "gate": "D5",
+      "input": "huntr rule row from its fixed archive snapshot (2026-05-01; date does not renew)",
+      "checked": "2026-10-23",
+      "source_path": "parts/A/rules_fixed_snapshot_A.json",
+      "kind": "rule_row",
       "result": "unchanged"
-    },
-    {
-      "id": "prices-d3",
-      "slug": null,
-      "gate": "D3",
-      "input": "price tiers (OpenRouter and four first-party pages)",
-      "checked": "2026-10-22",
-      "source_path": "parts/A/price_tiers_A.json",
-      "kind": "venue_input",
-      "result": "changed"
     }
   ],
   "rechecked_counts": {
-    "venue_inputs": 9,
-    "venue_inputs_changed": 5,
-    "rule_rows_in_scope": 213,
-    "rule_rows_reread": 200,
-    "rule_rows_not_reread": 13,
-    "rule_rows_text_changed": 3,
-    "rule_rows_verdict_changed": 0,
-    "open_items": 15
+    "venue_inputs": 4,
+    "venue_inputs_changed": 2,
+    "rule_rows_reread": 1,
+    "rule_rows_changed": 0,
+    "open_items": 16
   },
-  "followups": [],
-  "followups_rule": "no projected or dated check fell due in (2026-10-21, 2026-10-22] (the 23 October checks are pre-committed below)",
-  "next_dates": [
+  "followups": [
     {
       "date": "2026-10-22",
       "slug": "moltjobs",
@@ -586,28 +404,46 @@
       "type": "dated_check",
       "job": "90bf05bc",
       "rule": null,
-      "label": "dated fact",
+      "projected_on": "2026-10-22",
       "check": {
         "input": "the job's public record (status, funded, escrowTxHash, claimedAt, deadlineAt, updatedAt)",
-        "route": "GET api.moltjobs.io/v1/jobs/90bf05bc-.../public and the job list (as B)",
-        "planned_read": "23 October",
-        "decided_by": "the record's own timestamps (claimedAt, funded, escrow transaction, status times, updatedAt), never the state at the read",
-        "if_happened": "funded or claimed before the close",
-        "if_not": "closed at 17:50 UTC on 22 October without funding or a claim",
-        "followup_by": "run 22 (2026-10-23)"
+        "cut_off": "2026-10-22T17:50:11Z"
       },
-      "state_at_read": {
-        "read_at_utc": "2026-10-22T13:53:48Z",
-        "status": "OPEN",
-        "funded": false,
-        "escrowTxHash_present": false,
+      "result": "did_not",
+      "class": "D1",
+      "ruling": "R260, R277",
+      "decided_by": "the record's own timestamps and fields (claimedAt null; funded false with no escrowTxHash; deadlineAt not moved; the only write after our 22 October read is dated 18:04:19 UTC, 14 minutes after the close); never the state at the read",
+      "deciding_timestamps": {
         "claimedAt": null,
+        "funded": false,
+        "escrowTxHash": null,
         "deadlineAt": "2026-10-22T17:50:11.907Z",
-        "updatedAt": "2026-10-22T04:05:16.105Z"
+        "updatedAt": "2026-10-22T18:04:19.005Z",
+        "previous_read_2026_10_22": "2026-10-22T13:53:48Z"
       },
-      "ruling": "R230, R231",
-      "grade_effect": "none at edition 3 (the job counts at date level to 18 November whatever its outcome)",
-      "line": "2026-10-22: MoltJobs' outside job 90bf05bc (20 USDC) closes at 17:50 UTC; open and not funded at 13:53 UTC. Checked on 23 October from the record's own timestamps (dated check; no grade effect)."
+      "supporting_evidence": {
+        "close_block": 52951032,
+        "close_block_time": "2026-10-22T17:50:11Z",
+        "escrow_usdc_at_close": 6.065,
+        "compared_with": 6.065,
+        "label": "supporting evidence only (R260): no 20 USDC deposit at or before the close"
+      },
+      "evidence": {
+        "route": "GET api.moltjobs.io/v1/jobs/90bf05bc-.../public (B) + balanceOf at the close block (C)",
+        "read_at": "2026-10-23T13:57:35Z",
+        "http_status": 200,
+        "items_read": 1,
+        "new_items_relevant": 0
+      },
+      "read_time_not_decisive": true,
+      "dated_facts": [
+        "Shown as cancelled at our 23 October read; the record carries no cancellation time (R277)",
+        "No outside job open on MoltJobs at our 23 October read; all 10 open jobs are the operator's 0.2 USDC referral jobs (R277)"
+      ],
+      "what_the_record_does_not_show": "no status time (no cancelledAt, no history); updatedAt shows only the last write, so a claim or funding made and undone between 13:53 and 18:04 UTC on 22 October would leave no trace on this record",
+      "grade_now": "probe first",
+      "grade_effect": "none: the job counts as outside supply by its creation date until 18 November (R230, R211)",
+      "plain_line": "Projected on 22 October: MoltJobs' outside job 90bf05bc (20 USDC) closes at 17:50 UTC on 22 October. Did not happen: it closed at 17:50 UTC on 22 October without funding or a claim (no claim time, no escrow transaction, deadline not moved; the escrow held 6.065 USDC at the close, as before); shown as cancelled at our 23 October read, with no cancellation time on the record. MoltJobs stays probe first: the job counts by the day it was posted until 18 November (checked 23 October)."
     },
     {
       "date": "2026-10-23",
@@ -616,19 +452,76 @@
       "type": "dated_check",
       "task": "TSK-6BHK4EGT",
       "rule": null,
-      "label": "dated fact",
+      "projected_on": "2026-10-22",
       "sensitivity": "15-day",
       "check": {
         "input": "the task's award record (awards[] with settlement times)",
-        "route": "GET taskmarket.dev/api/tasks/TSK-6BHK4EGT (as C)",
-        "planned_read": "23 October",
-        "decided_by": "award time against 2026-10-23T06:41Z, never the state at the read",
-        "if_happened": "awarded at or before 06:41 UTC on 23 October",
-        "if_not": "unawarded at its 15-day point (the 15-day sensitivity); at the edition grace (18) it stays payable until 26 October 06:41 UTC",
-        "followup_by": "run 22 (2026-10-23)"
+        "cut_off": "2026-10-23T06:41:32Z"
       },
-      "ruling": "R231, R247",
-      "line": "2026-10-23: TaskMarket task TSK-6BHK4EGT (5 USDC, 81 entries) reaches its 15-day point at 06:41 UTC (the 15-day sensitivity check; at the edition grace of 18 days it stays payable until 26 October). Checked by award time."
+      "result": "did_not",
+      "class": "T-c",
+      "ruling": "R261",
+      "decided_by": "award times on the record against the 15-day point 2026-10-23T06:41:32Z (expiry 2026-10-08T06:41:32Z + 15 days): the record holds no award (awards [], awardCount 0) and is not cancelled; never the state at the read",
+      "deciding_timestamps": {
+        "expiryTime": "2026-10-08T06:41:32.275Z",
+        "fifteen_day_point": "2026-10-23T06:41:32Z",
+        "eighteen_day_point": "2026-10-26T06:41:32Z",
+        "award_times": [],
+        "claimedAt": null
+      },
+      "evidence": {
+        "route": "GET taskmarket.dev/api/tasks/<uuid> (C, first request)",
+        "read_at": "2026-10-23T13:57:47Z",
+        "http_status": 200,
+        "items_read": 1,
+        "new_items_relevant": 0
+      },
+      "read_time_not_decisive": true,
+      "status_published": "still_payable (edition grace 18 governs, R245, R261)",
+      "status_at_15_sensitivity": "final_unpaid",
+      "next_check": "2026-10-26T06:41Z (stays in next_dates: not settled by T-a, T-b or T-d)",
+      "grade_effect": "none",
+      "plain_line": "TaskMarket task TSK-6BHK4EGT (5 USDC, 81 entries): not awarded by its 15-day point (the 15-day sensitivity); at the edition grace of 18 days it stays payable until 26 October, 06:41 UTC. Published status: still payable (checked 23 October)."
+    }
+  ],
+  "followups_rule": "R260, R261: decided by the record's own timestamps, never by the state at the read; no projected grade date fell in (2026-10-22, 2026-10-23]",
+  "next_dates": [
+    {
+      "date": "2026-10-23",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "grace_end",
+      "task": "TSK-E49N4V7T",
+      "rule": null,
+      "label": "dated fact",
+      "time": "2026-10-23T20:51Z",
+      "condition": "the status changes to unpaid only if it is still unawarded",
+      "followup_by": "run 23 (first read after 20:51 UTC on 23 October)",
+      "line": "2026-10-23: TaskMarket task TSK-E49N4V7T (MolTrust, 0.541 USDC, outside the main figures) reaches its grace end at the edition grace of 18 days at 20:51 UTC, after our read; it counts as unpaid only if still unawarded (dated fact)."
+    },
+    {
+      "date": "2026-10-24",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "dated_check",
+      "tasks": [
+        "TSK-KCKBZCY3",
+        "TSK-FRGMGTXW"
+      ],
+      "rule": null,
+      "label": "dated fact",
+      "check": {
+        "input": "the deposit receipts of the two tasks (eth_getTransactionReceipt, at most 2 calls) and their status",
+        "route": "mainnet.base.org (as C)",
+        "planned_read": "24 October (run 23)",
+        "decided_by": "the receipt's block time (if a receipt exists) against each task's creation time",
+        "if_happened": "a deposit receipt is found",
+        "if_not": "we still could not find the deposit",
+        "followup_by": "run 23"
+      },
+      "ruling": "R275",
+      "grade_effect": "none (counted as listed)",
+      "line": "2026-10-24: we re-read the deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW (we could not find them on 23 October); no grade effect (dated check)."
     },
     {
       "date": "2026-10-24",
@@ -637,7 +530,7 @@
       "type": "window_roll_off",
       "condition": null,
       "label": "dated fact",
-      "line": "2026-10-24: MoltJobs' 8 operator jobs of 23 September leave the 30-day window; no grade effect, because the outside job of 19 October stays in the window (dated fact)."
+      "line": "2026-10-24: MoltJobs' 8 operator jobs of 23 September leave the 30-day window; no grade effect, because the outside job of 19 October counts by the day it was posted until 18 November (dated fact)."
     },
     {
       "date": "2026-10-24",
@@ -672,6 +565,26 @@
       "slug": "taskmarket",
       "name": "TaskMarket",
       "type": "listing_deadline",
+      "task": "TSK-KCKBZCY3",
+      "condition": null,
+      "label": "dated fact",
+      "line": "2026-10-25: open TaskMarket task TSK-KCKBZCY3 (10 USDC) closes to submissions (dated fact)."
+    },
+    {
+      "date": "2026-10-25",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "listing_deadline",
+      "task": "TSK-FRGMGTXW",
+      "condition": null,
+      "label": "dated fact",
+      "line": "2026-10-25: open TaskMarket task TSK-FRGMGTXW (3 USDC) closes to submissions (dated fact)."
+    },
+    {
+      "date": "2026-10-25",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "listing_deadline",
       "task": "TSK-2VAKGE7V",
       "condition": null,
       "label": "dated fact",
@@ -700,7 +613,7 @@
         "if_not": "an agent-allowed listing appeared on <date>",
         "followup_by": "the first run with as_of on or after 2026-10-26"
       },
-      "check_source": "published 21 October (rule 1.1 item), unchanged; carried to the rule v1.2 item",
+      "check_source": "published 22 October (1.2 (published) item), unchanged",
       "reads_done": [
         {
           "date": "2026-10-21",
@@ -740,7 +653,7 @@
         "if_not": "an agent-allowed listing appeared on <date>",
         "followup_by": "the first run with as_of on or after 2026-10-26"
       },
-      "check_source": "published 21 October (rule 1.1 item), unchanged",
+      "check_source": "published 22 October (1.1 (shown beside) item), unchanged",
       "reads_done": [
         {
           "date": "2026-10-21",
@@ -780,7 +693,7 @@
         "if_not": "an agent-allowed listing appeared on <date>",
         "followup_by": "the first run with as_of on or after 2026-10-26"
       },
-      "check_source": "published 21 October (rule 1.1 item), unchanged",
+      "check_source": "published 22 October (1.0 (shown beside) item), unchanged",
       "reads_done": [
         {
           "date": "2026-10-21",
@@ -816,7 +729,18 @@
         "followup_by": "the first run with as_of on or after 2026-10-26"
       },
       "ruling": "R247",
-      "line": "2026-10-26: TaskMarket task TSK-6BHK4EGT reaches its grace end at the edition grace (18 days) at 06:41 UTC; it counts as unpaid only if still unawarded. Checked by award time."
+      "line": "2026-10-26: TaskMarket task TSK-6BHK4EGT reaches its grace end at the edition grace (18 days) at 06:41 UTC; it counts as unpaid only if still unawarded. Checked by award time.",
+      "status_23_october": "not settled on 23 October (T-c): unawarded at the read; stays in next_dates (R261)"
+    },
+    {
+      "date": "2026-10-26",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "listing_deadline",
+      "task": "TSK-2E1NJWP3",
+      "condition": null,
+      "label": "dated fact",
+      "line": "2026-10-26: open TaskMarket task TSK-2E1NJWP3 (1 USDC) closes to submissions (dated fact)."
     },
     {
       "date": "2026-10-27",
@@ -826,6 +750,15 @@
       "condition": "unless it awards",
       "label": "projection, not a forecast",
       "line": "2026-10-27: tursodatabase leaves Algora's paying-board list (award age) unless it awards (projection, not a forecast)."
+    },
+    {
+      "date": "2026-10-29",
+      "slug": null,
+      "name": "All venues",
+      "type": "edition",
+      "condition": null,
+      "label": "planned",
+      "line": "2026-10-29: edition 4 (about 29 October): rules, prices and the TaskMarket grace re-read; the grace definition decided by the criteria fixed on 23 October (planned)."
     },
     {
       "date": "2026-10-30",
@@ -872,45 +805,6 @@
       "name": "TaskMarket",
       "type": "gate_staleness",
       "rule": "1.2 (published)",
-      "gate": "D1",
-      "from": "pass",
-      "to": "weak",
-      "condition": "unless the input is re-read",
-      "label": "projection, not a forecast",
-      "line": "2026-10-30: TaskMarket would move payout records pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "type": "gate_staleness",
-      "rule": "1.2 (published)",
-      "gate": "D2",
-      "from": "pass",
-      "to": "weak",
-      "condition": "unless the input is re-read",
-      "label": "projection, not a forecast",
-      "line": "2026-10-30: TaskMarket would move dated task counts pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "type": "gate_staleness",
-      "rule": "1.2 (published)",
-      "gate": "D4",
-      "from": "pass",
-      "to": "weak",
-      "condition": "unless the input is re-read",
-      "label": "projection, not a forecast",
-      "line": "2026-10-30: TaskMarket would move payout outcomes pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "type": "gate_staleness",
-      "rule": "1.2 (published)",
       "gate": "D5",
       "from": "pass",
       "to": "weak",
@@ -926,7 +820,47 @@
       "task": "TSK-DC8ZPFT6",
       "condition": "the status changes to unpaid only if it is still unawarded",
       "label": "dated fact",
+      "grace_end_at_15": "2026-10-27T23:05Z",
       "line": "2026-10-30: TaskMarket task TSK-DC8ZPFT6 reaches its grace end at the edition grace of 18 days (10 USDC); it counts as unpaid only if still unawarded (dated fact)."
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "gate_staleness",
+      "rule": "1.2 (published)",
+      "gate": "D1",
+      "from": "pass",
+      "to": "weak",
+      "condition": "unless the input is re-read",
+      "label": "projection, not a forecast",
+      "line": "2026-10-31: TaskMarket would move payout records pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "gate_staleness",
+      "rule": "1.2 (published)",
+      "gate": "D2",
+      "from": "pass",
+      "to": "weak",
+      "condition": "unless the input is re-read",
+      "label": "projection, not a forecast",
+      "line": "2026-10-31: TaskMarket would move dated task counts pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "type": "gate_staleness",
+      "rule": "1.2 (published)",
+      "gate": "D4",
+      "from": "pass",
+      "to": "weak",
+      "condition": "unless the input is re-read",
+      "label": "projection, not a forecast",
+      "line": "2026-10-31: TaskMarket would move payout outcomes pass → weak unless the input is re-read; grade unchanged (projection, not a forecast)."
     },
     {
       "date": "2026-10-31",
@@ -945,44 +879,12 @@
       "task": "TSK-13QHZKQK",
       "condition": "the status changes to unpaid only if it is still unawarded",
       "label": "dated fact",
+      "grace_end_at_15": "2026-10-28T06:41Z",
       "line": "2026-10-31: TaskMarket task TSK-13QHZKQK reaches its grace end at the edition grace of 18 days (5 USDC); it counts as unpaid only if still unawarded (dated fact)."
     }
   ],
-  "next_dates_check_window": "grade items and the dated checks dated on or before 2026-10-29 carry a check (R231)",
+  "next_dates_check_window": "grade items and the dated checks dated on or before 2026-10-30 (as_of + 7) carry a check (R231)",
   "gate_moves_on_time": [
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "gate": "D1",
-      "from": "pass",
-      "to": "weak",
-      "cause": "age",
-      "shown": true,
-      "label": "projection, not a forecast"
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "gate": "D2",
-      "from": "pass",
-      "to": "weak",
-      "cause": "age",
-      "shown": true,
-      "label": "projection, not a forecast"
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "taskmarket",
-      "name": "TaskMarket",
-      "gate": "D4",
-      "from": "pass",
-      "to": "weak",
-      "cause": "age",
-      "shown": true,
-      "label": "projection, not a forecast"
-    },
     {
       "date": "2026-10-30",
       "slug": "taskmarket",
@@ -992,7 +894,44 @@
       "to": "weak",
       "cause": "age",
       "shown": true,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "gate": "D1",
+      "from": "pass",
+      "to": "weak",
+      "cause": "age",
+      "shown": true,
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "gate": "D2",
+      "from": "pass",
+      "to": "weak",
+      "cause": "age",
+      "shown": true,
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "gate": "D4",
+      "from": "pass",
+      "to": "weak",
+      "cause": "age",
+      "shown": true,
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-29",
@@ -1003,7 +942,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1014,7 +954,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1025,7 +966,8 @@
       "to": "weak",
       "cause": "age",
       "shown": true,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1036,7 +978,8 @@
       "to": "weak",
       "cause": "age",
       "shown": true,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1047,7 +990,8 @@
       "to": "weak",
       "cause": "age",
       "shown": true,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1058,7 +1002,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1069,18 +1014,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
-    },
-    {
-      "date": "2026-10-30",
-      "slug": "virtuals-acp",
-      "name": "Virtuals ACP",
-      "gate": "D1",
-      "from": "pass",
-      "to": "weak",
-      "cause": "age",
-      "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1091,7 +1026,20 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
+    },
+    {
+      "date": "2026-10-31",
+      "slug": "virtuals-acp",
+      "name": "Virtuals ACP",
+      "gate": "D1",
+      "from": "pass",
+      "to": "weak",
+      "cause": "age",
+      "shown": false,
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-25",
@@ -1102,7 +1050,8 @@
       "to": "weak",
       "cause": "roll-off",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1113,7 +1062,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1124,7 +1074,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1135,7 +1086,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1146,7 +1098,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1157,7 +1110,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1168,7 +1122,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1179,7 +1134,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-24",
@@ -1190,7 +1146,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1201,7 +1158,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1212,7 +1170,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1223,7 +1182,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-30",
@@ -1234,7 +1194,8 @@
       "to": "weak",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     },
     {
       "date": "2026-10-26",
@@ -1245,7 +1206,8 @@
       "to": "fail",
       "cause": "age",
       "shown": false,
-      "label": "projection, not a forecast"
+      "label": "projection, not a forecast",
+      "rule": "1.2 (published)"
     }
   ],
   "beyond_31_october": [
@@ -1269,7 +1231,7 @@
       "to": "weak",
       "condition": "unless tasks still payable are awarded before their grace ends",
       "label": "projection, not a forecast",
-      "line": "2026-11-02: TaskMarket would move payout outcomes pass → weak (unpaid share of submissions about 13%) unless tasks still payable are awarded before their grace ends; grade unchanged (projection, not a forecast; at the edition grace of 18 days; 30 October at 15)."
+      "line": "2026-11-02: TaskMarket would move payout outcomes pass → weak unless tasks still payable are awarded before their grace ends; grade unchanged (projection, not a forecast; at the edition grace of 18 days; 30 October at 15)."
     },
     {
       "date": "2026-11-14",
@@ -1352,7 +1314,39 @@
       "line": "2026-11-19: MoltJobs would move probe first → avoid unless a new eligible task appears (projection, not a forecast; rule v1.0, shown beside)."
     }
   ],
-  "beyond_31_october_line": "Beyond 31 October (projection, not a forecast): AgentPact on 1 November (rule v1.2), opentask.ai and huntr on 14 November, MoltJobs on 19 November unless another outside job appears; TaskMarket: no grade change projected to 19 November (tasks posted on 21 and 22 October stay in its 30-day window; on 21 October data the clock gave 19 November, only if no new task was posted for 30 days).",
+  "beyond_31_october_line": "Beyond 31 October (projection, not a forecast): AgentPact on 1 November (rule v1.2), opentask.ai and huntr on 14 November, MoltJobs on 19 November unless another outside job appears (same date under v1.1 and v1.0 for MoltJobs and opentask.ai); TaskMarket: no grade change projected to 19 November (tasks posted on 22 and 23 October stay in its 30-day window).",
+  "since_edition3": {
+    "from": "2026-10-22 (edition 3)",
+    "to": "2026-10-23",
+    "rule": "R266: items dated after 2026-10-22 up to as_of, from history[] plus today[]",
+    "published_grade_items_central_by_kind_v1_2": {
+      "data": 0,
+      "rule": 0,
+      "time": 0,
+      "correction": 0
+    },
+    "gate_items_by_rule_and_kind": {
+      "1.2 (published)": {},
+      "1.1 (shown beside)": {},
+      "1.0 (shown beside)": {}
+    },
+    "gate_items_label": {
+      "1.2 (published)": "rule v1.2 (published)",
+      "1.1 (shown beside)": "shown beside",
+      "1.0 (shown beside)": "shown beside"
+    },
+    "band_only_grade_items": [],
+    "corrections_any_level": 0,
+    "dated_facts_and_data_without_gate_move": 11,
+    "maintenance_items": 2,
+    "line": "Since edition 3 (22 October): no grade changed under rule v1.2 (0 from new data, 0 on time alone, 0 from the rule or counting); no gate moved under v1.2, v1.1 or v1.0.",
+    "details_lines": [
+      "Gate items, rule v1.2 (published): none.",
+      "Gate items, rule v1.1 (shown beside): none.",
+      "Gate items, rule v1.0 (shown beside): none.",
+      "Band-only grade items: none. Corrections: none. Dated facts and data without a gate move: 11. Maintenance (odds lines rebuilt): 2."
+    ]
+  },
   "since_edition2": {
     "from": "2026-10-16 (edition 2)",
     "to": "2026-10-22",
@@ -1381,7 +1375,8 @@
     "dated_facts_and_data_without_gate_move": 33,
     "moltjobs_net_line": "MoltJobs moved to avoid on time alone on 19 October and back to probe first on new data on 21 October (one unfunded outside job); same grade as edition 2",
     "net_vs_edition2": "1 grade differs from edition 2: AgentPact avoid → not enough data, graded differently under rule v1.2 (a rule change, not venue news)",
-    "line": "Since edition 2 (16 October): 1 grade change from new data, 1 on time alone and 1 from the rule (counted at the central band); MoltJobs moved to avoid on time alone on 19 October and back to probe first on new data on 21 October; net, one grade differs from edition 2 (AgentPact, rule v1.2)."
+    "line": "Since edition 2 (16 October): 1 grade change from new data, 1 on time alone and 1 from the rule (counted at the central band); MoltJobs moved to avoid on time alone on 19 October and back to probe first on new data on 21 October; net, one grade differs from edition 2 (AgentPact, rule v1.2).",
+    "note_2026_10_23": "unchanged block (R266: stays on the details page); items dated after 2026-10-22 are counted in since_edition3"
   },
   "history": [
     {
@@ -2203,7 +2198,7 @@
       "label": null,
       "cause": {
         "input": "time (as_of 2026-10-21 with window roll-off)",
-        "source_path": "merge/steps.json#step0; planner/scratch/r20/clock_v11_1020_1118.json (effective date)",
+        "source_path": "run working file",
         "checked": "2026-10-21"
       },
       "ruling": "R205, R206",
@@ -2231,7 +2226,7 @@
       "label": "rule v1.0, shown beside",
       "cause": {
         "input": "time (as_of 2026-10-21 with window roll-off)",
-        "source_path": "merge/steps.json#step0; planner/scratch/r20/clock_v10_1020_1118.json (effective date)",
+        "source_path": "run working file",
         "checked": "2026-10-21"
       },
       "ruling": "R206",
@@ -2259,7 +2254,7 @@
       "label": "rule v1.0, shown beside",
       "cause": {
         "input": "time (as_of 2026-10-21 with window roll-off)",
-        "source_path": "merge/steps.json#step0; planner/scratch/r20/clock_v10_1020_1118.json (effective date)",
+        "source_path": "run working file",
         "checked": "2026-10-21"
       },
       "ruling": "R205, R206",
@@ -2430,37 +2425,486 @@
       "bands": null,
       "gate": null,
       "recorded_on": "2026-10-21"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "execution-market",
+      "name": "Execution Market",
+      "kind": "time",
+      "level": "gate",
+      "gate": "D3",
+      "from": "pass",
+      "to": "weak",
+      "bands": [
+        "low"
+      ],
+      "step": 0,
+      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
+      "cause": {
+        "input": "time (as_of 2026-10-22 with window roll-off)",
+        "source_path": "merge/steps.json#step0",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "plain_line": "Execution Market: token-cost inputs pass → weak (low band only) (input older than 7 days, checked 22 October); grade unchanged.",
+      "change_id": "2026-10-22-01",
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "upwork-mcp",
+      "name": "Upwork",
+      "kind": "data",
+      "level": "gate",
+      "gate": "D5",
+      "from": "weak",
+      "to": "pass",
+      "bands": [
+        "low",
+        "central",
+        "high",
+        "pwin_lo"
+      ],
+      "step": 1,
+      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
+      "cause": {
+        "input": "rule text",
+        "source_path": "merge/steps.json#step1",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "plain_line": "Upwork: rule text re-read from the newest archive capture (16 October; the live page refuses automated reads), so rule text weak → pass; grade unchanged (avoid).",
+      "change_id": "2026-10-22-02",
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "dealwork-ai",
+      "name": "dealwork.ai",
+      "kind": "data",
+      "level": "gate",
+      "gate": "D2",
+      "from": "pass",
+      "to": "weak",
+      "bands": [
+        "low",
+        "central",
+        "high",
+        "pwin_lo"
+      ],
+      "step": 3,
+      "rule": "1.2 (published), 1.1 (shown beside), 1.0 (shown beside)",
+      "cause": {
+        "input": "venue inputs (run 21 data)",
+        "source_path": "merge/steps.json#step3",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "plain_line": "dealwork.ai: dated task counts pass → weak (new data, checked 22 October); grade unchanged.",
+      "change_id": "2026-10-22-03",
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "rule",
+      "rule_part": "edition parameter: TaskMarket grace",
+      "level": "parameter",
+      "from": "grace 15 days",
+      "to": "grace 18 days",
+      "step": 4,
+      "cause": {
+        "input": "the 21 October pre-check gave 59 days because seven August tasks of one requester were paid 72-79 days late; on 22 October six earlier awards (three July tasks paid 67-68 days late among them) left the 90-day window while the seven August tasks stayed, so the 95th percentile of award delays fell to 17.91 days",
+        "source_path": "merge/grace_edition3.json; parts/C/grace_r64.json",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "ruling": "R64, R228, R229, R245",
+      "plain_line": "TaskMarket: counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (recomputed at each edition from TaskMarket's own award delays; it was 15). This changes how we count, not what the venue did: the main 30-day figures are the same at 15 and 18 days; one small task outside the main figures (TSK-E49N4V7T, 0.541 USDC) was unpaid at its 15-day grace end and is still payable at 18 days, until 23 October 20:51 UTC.",
+      "change_id": "2026-10-22-04",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "rule",
+      "rule_part": "edition parameter: TaskMarket grace",
+      "level": "status",
+      "from": "final_unpaid (TSK-E49N4V7T, grace 15)",
+      "to": "still_payable until 2026-10-23T20:51Z (grace 18)",
+      "step": 4,
+      "cause": {
+        "input": "TSK-E49N4V7T (MolTrust, 0.541 USDC) is 16.7 days past expiry with no award: past the 15-day end, inside the 18-day end",
+        "source_path": "parts/C/settlement_refresh.json#edition3_grace.statuses_differing_15_vs_applied",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "ruling": "R229, R246",
+      "plain_line": "TaskMarket task TSK-E49N4V7T (0.541 USDC, a MolTrust task outside the main figures): counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (it was 15). This changes how we count, not what the venue did: it was unpaid at its 15-day grace end (20 October, 20:51 UTC) and is still payable at 18 days, until 23 October, 20:51 UTC.",
+      "change_id": "2026-10-22-05",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "rule",
+      "rule_part": "edition parameter: TaskMarket grace",
+      "level": "projection",
+      "gate": "D4",
+      "from": "2026-10-30 (payout outcomes pass -> weak, grace 15)",
+      "to": "2026-11-02 (grace 18)",
+      "step": 4,
+      "cause": {
+        "input": "R149 projection recomputed at the applied grace (C's unchanged script): first date with an unpaid share of submissions of 10% or more",
+        "source_path": "merge/grace_edition3.json#d4_projection_r149",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "label": "projection, not a forecast",
+      "ruling": "R149, R229, R246",
+      "plain_line": "TaskMarket: counted differently from 22 October because our grace period for counting a TaskMarket task as unpaid is now 18 days (recomputed at each edition from TaskMarket's own award delays; it was 15). This changes how we count, not what the venue did: the date on which the unpaid share of submissions would first reach 10% if nothing is awarded is now 2 November instead of 30 October (projection, not a forecast).",
+      "change_id": "2026-10-22-06",
+      "bands": null,
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "agentpact",
+      "name": "AgentPact",
+      "kind": "rule",
+      "rule_part": "grading rule v1.2",
+      "level": "grade",
+      "from": "avoid",
+      "to": "not enough data",
+      "bands": [
+        "low",
+        "central",
+        "high",
+        "pwin_lo"
+      ],
+      "step": "rule decision",
+      "amendments": [
+        "V11",
+        "V8 (grade mapping on the changed gate)"
+      ],
+      "cause": {
+        "input": "rule v1.2 published from 22 October (four pre-registered criteria hold; merge/rule_decision.json)",
+        "source_path": "merge/rule_decision.json",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": true,
+      "pre_registered_wording": true,
+      "ruling": "R91, R226",
+      "plain_line": "AgentPact: graded differently under rule v1.2 (deals between linked accounts and deals without delivery evidence no longer count as delivered work): avoid → not enough data. Its latest payout (1 September) turns 60 days old on 31 October, so it would move to avoid on 1 November unless a new payout is confirmed (projection, not a forecast).",
+      "change_id": "2026-10-22-07",
+      "gate": null,
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": null,
+      "name": "All venues",
+      "kind": "rule",
+      "rule_part": "grading rule v1.2",
+      "level": "rule",
+      "from": "rule v1.1",
+      "to": "rule v1.2",
+      "step": "rule decision",
+      "cause": {
+        "input": "From 22 October we grade with rule v1.2, chosen by four criteria written on 12 October: the engine is unchanged since then; every grade difference from the rule in use each week is explained by a named amendment; at most 2 of 27 records flip between cost bands (limit 9); and 8 out-of-sample runs were graded under it (at least 3 needed).",
+        "source_path": "merge/rule_decision.json",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "ruling": "R91, R226",
+      "plain_line": "From 22 October we grade with rule v1.2 (chosen by four criteria written on 12 October); under it 1 grade differs from rule v1.1 (AgentPact); the routes we suggest instead change for 3 avoided venues, which now have none that qualifies.",
+      "change_id": "2026-10-22-08",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22"
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "kaggle",
+      "name": "Kaggle",
+      "kind": "correction",
+      "level": "row",
+      "from": "stored rule-text hash for 3 Kaggle rows (recorded 4-13 October)",
+      "to": "flagged: it is the hash of a JavaScript shell, not of the rule text",
+      "cause": {
+        "input": "B's 22 October read returned the same 5,925-byte shell whose hash was stored as the baseline",
+        "source_path": "rules.json#rows[kaggle-*].baseline_hash_invalid_R251",
+        "checked": "2026-10-22"
+      },
+      "published_grade_moved": false,
+      "gate_moved": false,
+      "ruling": "R51, R251",
+      "plain_line": "Correction (rule records): for three Kaggle rule rows the stored text fingerprint from 4-13 October was a JavaScript page shell, not the rule text; it is no longer used as a baseline. Their dates stay at 7 October; no grade changes (Kaggle stays avoid).",
+      "change_id": "2026-10-22-09",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-21",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "data",
+      "level": "dated_fact",
+      "gate": "D1",
+      "from": "latest payout 2026-10-20",
+      "to": "latest payout 2026-10-21",
+      "cause": {
+        "input": "TSK-AKRSG3P7 (5 USDC) awarded 2026-10-21T17:06:43Z, 0.15 days after it closed; 4.625 USDC net to a new payee (0x1659...4ae2); receipt status 1",
+        "source_path": "payouts.json#taskmarket-0263",
+        "checked": "2026-10-22"
+      },
+      "gate_moved": false,
+      "ruling": "R255",
+      "plain_line": "TaskMarket: a 5 USDC task was awarded on 21 October, a few hours after it closed (4.63 USDC to the winner on chain); payout records stay pass (checked 22 October).",
+      "change_id": "2026-10-22-10",
+      "bands": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "bugcrowd",
+      "name": "Bugcrowd",
+      "kind": "data",
+      "level": "dated_fact",
+      "gate": "D1",
+      "from": "newest accepted reward 2026-10-16",
+      "to": "2026-10-22",
+      "cause": {
+        "input": "CrowdStream page 1: 20 rows accepted 22 October (a platform reward record, not a payment receipt)",
+        "source_path": "parts/B/evidence_B.json#bugcrowd",
+        "checked": "2026-10-22"
+      },
+      "gate_moved": false,
+      "ruling": "R253",
+      "plain_line": "Bugcrowd: its public reward feed shows rewards accepted on 22 October (a platform record, not a payment receipt); payout records stay pass (checked 22 October).",
+      "change_id": "2026-10-22-11",
+      "bands": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "slug": "agentpact",
+      "name": "AgentPact",
+      "kind": "data",
+      "level": "dated_fact",
+      "gate": "D2",
+      "from": "81 open / 48 new in 30 days (17 October)",
+      "to": "81 open / 46 new",
+      "cause": {
+        "input": "34 of the 46 new budgeted needs from one buyer (73.9%); 35 of 46 at a budget of 0.01 USDC",
+        "source_path": "parts/B/evidence_B.json#agentpact",
+        "checked": "2026-10-22"
+      },
+      "gate_moved": false,
+      "ruling": "R253",
+      "plain_line": "AgentPact: 81 open budgeted requests and 46 new in 30 days, three quarters of them from one buyer and most at 0.01 USDC; dated task counts stay pass (checked 22 October).",
+      "change_id": "2026-10-22-12",
+      "bands": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "slug": "moltjobs",
+      "name": "MoltJobs",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "MoltJobs' only outside job (90bf05bc, 20 USDC) was still open and not funded at 13:53 UTC on 22 October, about 4 hours before it closes at 17:50 UTC (no claim, no agent, no escrow transaction); its paid work and most posted jobs come from the operator's own accounts",
+        "source_path": "parts/B/moltjobs_r21.json#job_90bf05bc",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R230",
+      "plain_line": "MoltJobs' only outside job (90bf05bc, 20 USDC) was still open and not funded at 13:53 UTC on 22 October, about 4 hours before it closes at 17:50 UTC (no claim, no agent, no escrow transaction); its paid work and most posted jobs come from the operator's own accounts (22 October).",
+      "change_id": "2026-10-22-13",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "slug": "moltjobs",
+      "name": "MoltJobs",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "MoltJobs' public list has no new job and no status or funding change since 21 October (123 jobs)",
+        "source_path": "merge/moltjobs_changes_1022.json",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R241",
+      "plain_line": "MoltJobs' public list has no new job and no status or funding change since 21 October (123 jobs) (22 October).",
+      "change_id": "2026-10-22-14",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-20",
+      "slug": "taskmarket",
+      "name": "TaskMarket",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "Of the 92 USDC that left TaskMarket's escrow on 20 October (in at least six pieces, 09:37-10:33 UTC), 2.0 USDC is traced to a refund to the requester of the seven August tasks; about 90 USDC is not identified. It is not counted as a payout",
+        "source_path": "parts/C/outflow_92.json",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R240, R254",
+      "plain_line": "Of the 92 USDC that left TaskMarket's escrow on 20 October (in at least six pieces, 09:37-10:33 UTC), 2.0 USDC is traced to a refund to the requester of the seven August tasks; about 90 USDC is not identified. It is not counted as a payout (20 October).",
+      "change_id": "2026-10-22-15",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-20",
+      "slug": "trybounty-ai",
+      "name": "trybounty.ai",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "trybounty.ai's docs changelog (dated 20 October) says new bounties now go to every ready agent and agents bid, with the owner accepting a bid (at most 20 bids an hour); a platform statement, not evidence that any agent was paid",
+        "source_path": "parts/B/rules_check_B.json",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R249",
+      "plain_line": "trybounty.ai's docs changelog (dated 20 October) says new bounties now go to every ready agent and agents bid, with the owner accepting a bid (at most 20 bids an hour); a platform statement, not evidence that any agent was paid (20 October).",
+      "change_id": "2026-10-22-16",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "slug": "qdrant",
+      "name": "qdrant",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "qdrant's contribution guide now lets the pull-request description (apart from the motivation) be written with AI tools, keeping disclosure and responsibility; our reading stays 'allowed with conditions'",
+        "source_path": "parts/A/rules_check_A.json",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R248",
+      "plain_line": "qdrant's contribution guide now lets the pull-request description (apart from the motivation) be written with AI tools, keeping disclosure and responsibility; our reading stays 'allowed with conditions' (22 October).",
+      "change_id": "2026-10-22-17",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "slug": "execution-market",
+      "name": "Execution Market",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "Execution Market's task list shows 52 new tasks between 17 and 21 October in the 200 newest rows and one open task (8 USD) at our read; posters not classified; no grade effect (avoid)",
+        "source_path": "parts/B/evidence_B.json#optional.execution_market_supply",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R252",
+      "plain_line": "Execution Market's task list shows 52 new tasks between 17 and 21 October in the 200 newest rows and one open task (8 USD) at our read; posters not classified; no grade effect (avoid) (22 October).",
+      "change_id": "2026-10-22-18",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
+    },
+    {
+      "date": "2026-10-22",
+      "event_date": "2026-10-22",
+      "slug": "superteam-earn",
+      "name": "Superteam Earn",
+      "kind": "dated_fact",
+      "level": "dated_fact",
+      "from": null,
+      "to": null,
+      "cause": {
+        "input": "Superteam Earn's open feed had 13 listings on 22 October, all for humans only: no agent listing (an extra read; the planned reads are 21 and 26 October)",
+        "source_path": "parts/B/evidence_B.json#superteam_open_feed",
+        "checked": "2026-10-22"
+      },
+      "ruling": "R242",
+      "plain_line": "Superteam Earn's open feed had 13 listings on 22 October, all for humans only: no agent listing (an extra read; the planned reads are 21 and 26 October) (22 October).",
+      "change_id": "2026-10-22-19",
+      "bands": null,
+      "gate": null,
+      "recorded_on": "2026-10-22",
+      "rule_part": null
     }
   ],
-  "history_note": "run working file",
+  "history_note": "10-16..10-22 items copied unchanged from the published 22 October feed (history + today)",
+  "shadow_grace": {
+    "ref": "merge/grace_shadow.json",
+    "label": "shadow only, not used for any status",
+    "line": "Shadow grace (shadow only, not used for any status): at 00:00 UTC on 23 October the candidate fixed on 23 October (90th percentile of TaskMarket's own award delays, at a fixed time) gives 12 days; the same statistic as now at that fixed time gives 18, and the capped version 18. Over the 29 days to 23 October the candidate ranged 10-12 days, the fixed-time 95th percentile 14-59. Our published grace stays 18 days to edition 4; our usual method at our 13:58 UTC read would give 23 days (shown only). At 12 days, 2 statuses would differ from 18 at our read (TSK-6BHK4EGT, TSK-E49N4V7T (MolTrust)).",
+    "in_today": false,
+    "ruling": "R264"
+  },
   "counts": {
-    "today": 19,
+    "today": 13,
     "by_kind": {
-      "time": 1,
-      "data": 5,
-      "rule": 5,
-      "correction": 1,
-      "dated_fact": 7
+      "data": 4,
+      "dated_fact": 7,
+      "maintenance": 2
     },
     "by_level": {
-      "gate": 3,
-      "parameter": 1,
-      "status": 1,
-      "projection": 1,
-      "grade": 1,
-      "rule": 1,
-      "row": 1,
-      "dated_fact": 10
+      "dated_fact": 11,
+      "shown_field": 2
     },
-    "next_dates": 22,
-    "next_dates_with_check": 6,
-    "history": 47,
-    "followups": 0,
-    "rechecked_venue_inputs": 9,
-    "rechecked_rule_rows": 200,
-    "rule_rows_text_changed": 3,
-    "rule_rows_verdict_changed": 0,
-    "open_items": 15
+    "next_dates": 26,
+    "next_dates_with_check": 5,
+    "history": 66,
+    "followups": 2,
+    "gate_items_today": 0,
+    "rechecked_venue_inputs": 4,
+    "rechecked_rule_rows": 1,
+    "open_items": 16
   },
   "open_items_ref": "merge/open_items.json",
   "try_instead_ref": "merge/try_instead.json",
