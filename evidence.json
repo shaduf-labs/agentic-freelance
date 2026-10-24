@@ -2230,6 +2230,66 @@
       "accessed_at": "2026-10-23T13:59:44Z",
       "relation": "context",
       "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-deposits-chain4217-2026-10-24",
+      "source_type": "public chain endpoint (JSON-RPC)",
+      "source_url": "https://rpc.mainnet.tempo.xyz/",
+      "title": "Deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW on chain 4217, read 24 October 2026",
+      "claim": "Both transactions the venue lists have receipt status 1 on chain 4217 (Tempo, per the chainid.network registry), each moving the listed amount (10 and 3 units) of token 0x20c0...74be into the venue's contract 0xf4f4...97e7, mined on 22 October at 22:39 and 19:01 UTC, before our 23 October lookup on Base. The token is not verified as USDC. This corrects our 23 October statement that we could not find the deposits.",
+      "accessed_at": "2026-10-24T14:02:44Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "chainid-registry-4217-2026-10-24",
+      "source_type": "public chain registry",
+      "source_url": "https://chainid.network/",
+      "title": "chainid.network registry entry for chain ID 4217, read 24 October 2026",
+      "claim": "Chain ID 4217 is listed as 'Tempo Mainnet Presto'; the registry lists no tokens. The network's public endpoint answered eth_chainId with 4217.",
+      "accessed_at": "2026-10-24T14:02:26Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-task-chain-ids-2026-10-24",
+      "source_type": "venue API",
+      "source_url": "https://taskmarket.dev/api/tasks",
+      "title": "TaskMarket task records with their chain ID, read 24 October 2026",
+      "claim": "Of 446 listed tasks, 3 name chain ID 4217 (TSK-KCKBZCY3, TSK-FRGMGTXW, TSK-EQM5SA6F) and 443 name Base (8453). On Base, the receipts of the two listed deposit transactions are still null (23 and 24 October).",
+      "accessed_at": "2026-10-24T13:51:37Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-late-awards-2026-10-24",
+      "source_type": "on-chain transaction",
+      "source_url": "https://base.blockscout.com/tx/0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "title": "Five TaskMarket tasks awarded 53 to 79 days after they expired, 24 October 2026",
+      "claim": "One requester (0xcad2...feed) awarded TSK-FJJCCTV3, TSK-9Z9HENXP, TSK-4M83XEN0, TSK-6ZPX4Q1Y and TSK-F0YMQ1NV between 10:11 and 11:28 UTC: 14 payouts on Base, 30.3 USDC gross, 28.03 net to 12 workers, receipts status 1. We had counted all five as unpaid at the grace end.",
+      "accessed_at": "2026-10-24T13:51:37Z",
+      "relation": "limits",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "taskmarket-tsk-e49n4v7t-2026-10-24",
+      "source_type": "venue API",
+      "source_url": "https://taskmarket.dev/api/tasks/TSK-E49N4V7T",
+      "title": "TaskMarket task TSK-E49N4V7T at its 18-day grace end",
+      "claim": "No award on the record by its 18-day grace end (23 October, 20:51 UTC): unpaid at the grace end (a MolTrust task, outside the main figures). Unpaid is a status at the grace end, not proof it will never be paid.",
+      "accessed_at": "2026-10-24T13:51:37Z",
+      "relation": "supports",
+      "publication_basis": "linked-summary"
+    },
+    {
+      "evidence_id": "agentbounties-payouts-2026-10-24",
+      "source_type": "venue JSON",
+      "source_url": "https://agentbounties.app/",
+      "title": "Agent Bounties (Base) public metrics and payout list, read 24 October 2026 (triage, not graded)",
+      "claim": "57 settlements between 14 July and 29 September 2026 and none since (July 21, August 31, September 5, October 0); about 70 USDC settled, 68.21 USDC to solvers; largest single solver payout 3 USDC; one funded bounty open (21.30 USDC). Base mainnet by its own files. Proposed evidence level E2, not checked on chain; owner steps untested.",
+      "accessed_at": "2026-10-24T13:51:13Z",
+      "relation": "context",
+      "publication_basis": "linked-summary"
     }
   ]
 }

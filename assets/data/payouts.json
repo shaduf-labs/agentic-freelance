@@ -1,11 +1,11 @@
 {
   "schema": "agentic-freelance-payouts/0.1",
-  "run_id": "report-c052cd1ff8d57a333610577e",
-  "as_of": "2026-10-23T13:45:00Z",
+  "run_id": "report-dd863a8dadcfc4813ba4bebb",
+  "as_of": "2026-10-24T13:45:00Z",
   "window": {
-    "start": "2026-09-23",
-    "end": "2026-10-23",
-    "note": "inclusive by event date; one 24-hour ledger window 2026-10-22T13:45Z..10-23T13:45Z; no event after the cut-off up to the 14:00:57Z head read (escrow at head equals the cut-off value)"
+    "start": "2026-09-24",
+    "end": "2026-10-24",
+    "note": "inclusive by event date; one 24-hour ledger window 2026-10-23T13:45Z..10-24T13:45Z; no event after the cut-off up to the 13:53:41Z head read (escrow at head equals the cut-off value); Base only (R297)"
   },
   "description": "Who actually paid: payout ledger for agent-paid or selling venues, trailing 30 days. Read-only evidence: no account, no job, no wallet, no money.",
   "payer_classes": {
@@ -10840,10 +10840,12 @@
       "net_to_worker_usd": 0.285,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_24": "set by date (window 2026-09-24..2026-10-24)",
+      "not_subtracted_R296": "in_window set false by date; not subtracted from the 30-day estimate (R191/R216 convention, unchanged by R296)"
     },
     {
       "event_id": "moltjobs-0054",
@@ -10887,10 +10889,12 @@
       "net_to_worker_usd": 0.475,
       "sample": false,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "in_window_run2": true,
       "in_window_run3": true,
-      "in_window_run4": true
+      "in_window_run4": true,
+      "in_window_corrected_2026_10_24": "set by date (window 2026-09-24..2026-10-24)",
+      "not_subtracted_R296": "in_window set false by date; not subtracted from the 30-day estimate (R191/R216 convention, unchanged by R296)"
     },
     {
       "event_id": "agentpact-0001",
@@ -12709,10 +12713,12 @@
       "net_to_worker_usd": 0.135,
       "sample": true,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": true,
       "in_window_run2": true,
-      "in_window_run3": true
+      "in_window_run3": true,
+      "in_window_corrected_2026_10_24": "set by date (window 2026-09-24..2026-10-24)",
+      "not_subtracted_R296": "in_window set false by date; not subtracted from the 30-day estimate (R191/R216 convention, unchanged by R296)"
     },
     {
       "event_id": "virtuals-acp-0050",
@@ -12735,10 +12741,12 @@
       "net_to_worker_usd": 0.009,
       "sample": true,
       "excluded_from_agent_work_totals": false,
-      "in_window": true,
+      "in_window": false,
       "funding_traced": false,
       "in_window_run2": true,
-      "in_window_run3": true
+      "in_window_run3": true,
+      "in_window_corrected_2026_10_24": "set by date (window 2026-09-24..2026-10-24)",
+      "not_subtracted_R296": "in_window set false by date; not subtracted from the 30-day estimate (R191/R216 convention, unchanged by R296)"
     },
     {
       "event_id": "virtuals-acp-0051",
@@ -23700,6 +23708,850 @@
       "event_key": "(tx_hash, payee)",
       "ruling": "R199, R215, R255, R281",
       "after_ledger_cutoff": false
+    },
+    {
+      "event_id": "taskmarket-0265",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "explorer_url": "https://base.blockscout.com/tx/0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "date": "2026-10-24T10:11:21Z",
+      "day": "2026-10-24",
+      "amount": 11.1925,
+      "token": "USDC",
+      "usd": 11.1925,
+      "gross_usd": 12.1,
+      "net_to_worker_usd": 11.1925,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x5a6223dd34ae05f3dd6f6aeee7a5a683376cc5d5",
+      "payee_trunc": "0x5a62...c5d5",
+      "task_id": "TSK-FJJCCTV3",
+      "award_rank": 1,
+      "task_expiry": "2026-08-31T21:56:32.610Z",
+      "days_after_expiry": 53.51,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53023667,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x5a62...c5d5",
+            "usdc": 11.1925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x01d1...3029",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x8cce...17c0",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 1.815
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T10:11:21.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 53.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0266",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "explorer_url": "https://base.blockscout.com/tx/0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "date": "2026-10-24T10:11:21Z",
+      "day": "2026-10-24",
+      "amount": 5.59625,
+      "token": "USDC",
+      "usd": 5.59625,
+      "gross_usd": 6.05,
+      "net_to_worker_usd": 5.59625,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x01d1a9c044900cbb421d6bd423e348a8218b3029",
+      "payee_trunc": "0x01d1...3029",
+      "task_id": "TSK-FJJCCTV3",
+      "award_rank": 2,
+      "task_expiry": "2026-08-31T21:56:32.610Z",
+      "days_after_expiry": 53.51,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53023667,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x5a62...c5d5",
+            "usdc": 11.1925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x01d1...3029",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x8cce...17c0",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 1.815
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T10:11:21.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 53.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0267",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "explorer_url": "https://base.blockscout.com/tx/0x733c1a7d9c4ea1f3f4366aaced145889d8848b84d73cb9106ddefaaf64c83bbf",
+      "date": "2026-10-24T10:11:21Z",
+      "day": "2026-10-24",
+      "amount": 5.59625,
+      "token": "USDC",
+      "usd": 5.59625,
+      "gross_usd": 6.05,
+      "net_to_worker_usd": 5.59625,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x8cce4d241ff09ddc33b737ca4e7824567b1d17c0",
+      "payee_trunc": "0x8cce...17c0",
+      "task_id": "TSK-FJJCCTV3",
+      "award_rank": 3,
+      "task_expiry": "2026-08-31T21:56:32.610Z",
+      "days_after_expiry": 53.51,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53023667,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x5a62...c5d5",
+            "usdc": 11.1925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x01d1...3029",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x8cce...17c0",
+            "usdc": 5.59625
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 1.815
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T10:11:21.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 53.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0268",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "explorer_url": "https://base.blockscout.com/tx/0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "date": "2026-10-24T11:28:01Z",
+      "day": "2026-10-24",
+      "amount": 1.3875,
+      "token": "USDC",
+      "usd": 1.3875,
+      "gross_usd": 1.5,
+      "net_to_worker_usd": 1.3875,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xe447888a53987378bcdfa8a07ed63081fb269f91",
+      "payee_trunc": "0xe447...9f91",
+      "task_id": "TSK-9Z9HENXP",
+      "award_rank": 1,
+      "task_expiry": "2026-08-30T22:46:21.490Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025967,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe447...9f91",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd02d...68a0",
+            "usdc": 0.8325
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.555
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:01.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0269",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "explorer_url": "https://base.blockscout.com/tx/0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "date": "2026-10-24T11:28:01Z",
+      "day": "2026-10-24",
+      "amount": 0.8325,
+      "token": "USDC",
+      "usd": 0.8325,
+      "gross_usd": 0.9,
+      "net_to_worker_usd": 0.8325,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xd02de6bdfff9c641db44fab675b69db6045668a0",
+      "payee_trunc": "0xd02d...68a0",
+      "task_id": "TSK-9Z9HENXP",
+      "award_rank": 2,
+      "task_expiry": "2026-08-30T22:46:21.490Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53025967,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe447...9f91",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd02d...68a0",
+            "usdc": 0.8325
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.555
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:01.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0270",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "explorer_url": "https://base.blockscout.com/tx/0x227ff9890809a6b576b06dc0c3b29ed4538acf2eda139a44e7ad365d2aaed417",
+      "date": "2026-10-24T11:28:01Z",
+      "day": "2026-10-24",
+      "amount": 0.555,
+      "token": "USDC",
+      "usd": 0.555,
+      "gross_usd": 0.6,
+      "net_to_worker_usd": 0.555,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xa31be3a1ac1dde980db8d18d32e7cd9ab557360a",
+      "payee_trunc": "0xa31b...360a",
+      "task_id": "TSK-9Z9HENXP",
+      "award_rank": 3,
+      "task_expiry": "2026-08-30T22:46:21.490Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025967,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe447...9f91",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd02d...68a0",
+            "usdc": 0.8325
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.555
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:01.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0271",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "explorer_url": "https://base.blockscout.com/tx/0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "date": "2026-10-24T11:28:23Z",
+      "day": "2026-10-24",
+      "amount": 1.3875,
+      "token": "USDC",
+      "usd": 1.3875,
+      "gross_usd": 1.5,
+      "net_to_worker_usd": 1.3875,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xc3d863bc63343433fe9aa5f614834b7d9a0925e8",
+      "payee_trunc": "0xc3d8...25e8",
+      "task_id": "TSK-4M83XEN0",
+      "award_rank": 1,
+      "task_expiry": "2026-08-30T22:45:33.775Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025978,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xc3d8...25e8",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xdd5e...fdef",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:23.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0272",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "explorer_url": "https://base.blockscout.com/tx/0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "date": "2026-10-24T11:28:23Z",
+      "day": "2026-10-24",
+      "amount": 0.69375,
+      "token": "USDC",
+      "usd": 0.69375,
+      "gross_usd": 0.75,
+      "net_to_worker_usd": 0.69375,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xdd5ea006bf8ac5493524ea60e1d17b02ba09fdef",
+      "payee_trunc": "0xdd5e...fdef",
+      "task_id": "TSK-4M83XEN0",
+      "award_rank": 2,
+      "task_expiry": "2026-08-30T22:45:33.775Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53025978,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xc3d8...25e8",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xdd5e...fdef",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:23.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0273",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "explorer_url": "https://base.blockscout.com/tx/0x4d13d0d641bbe5a313b769e1888afe2176962a819c9e939327adf2f10dd3a8f2",
+      "date": "2026-10-24T11:28:23Z",
+      "day": "2026-10-24",
+      "amount": 0.69375,
+      "token": "USDC",
+      "usd": 0.69375,
+      "gross_usd": 0.75,
+      "net_to_worker_usd": 0.69375,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xa31be3a1ac1dde980db8d18d32e7cd9ab557360a",
+      "payee_trunc": "0xa31b...360a",
+      "task_id": "TSK-4M83XEN0",
+      "award_rank": 3,
+      "task_expiry": "2026-08-30T22:45:33.775Z",
+      "days_after_expiry": 54.53,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025978,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xc3d8...25e8",
+            "usdc": 1.3875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xdd5e...fdef",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xa31b...360a",
+            "usdc": 0.69375
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.225
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:28:23.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 54.5 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0274",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "explorer_url": "https://base.blockscout.com/tx/0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "date": "2026-10-24T11:26:49Z",
+      "day": "2026-10-24",
+      "amount": 0.023125,
+      "token": "USDC",
+      "usd": 0.023125,
+      "gross_usd": 0.025,
+      "net_to_worker_usd": 0.023125,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x2cb4131c01632aa3fb1906018d1dc09fbe99cc65",
+      "payee_trunc": "0x2cb4...cc65",
+      "task_id": "TSK-6ZPX4Q1Y",
+      "award_rank": 1,
+      "task_expiry": "2026-08-06T04:21:17.812Z",
+      "days_after_expiry": 79.3,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53025931,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x2cb4...cc65",
+            "usdc": 0.023125
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe8d3...b88c",
+            "usdc": 0.013875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xee35...cf44",
+            "usdc": 0.00925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.00375
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:26:49.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 79.3 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0275",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "explorer_url": "https://base.blockscout.com/tx/0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "date": "2026-10-24T11:26:49Z",
+      "day": "2026-10-24",
+      "amount": 0.013875,
+      "token": "USDC",
+      "usd": 0.013875,
+      "gross_usd": 0.015,
+      "net_to_worker_usd": 0.013875,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xe8d3dca3a48508aa29e5e518089c58ec2a8bb88c",
+      "payee_trunc": "0xe8d3...b88c",
+      "task_id": "TSK-6ZPX4Q1Y",
+      "award_rank": 2,
+      "task_expiry": "2026-08-06T04:21:17.812Z",
+      "days_after_expiry": 79.3,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53025931,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x2cb4...cc65",
+            "usdc": 0.023125
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe8d3...b88c",
+            "usdc": 0.013875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xee35...cf44",
+            "usdc": 0.00925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.00375
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:26:49.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 79.3 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0276",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "explorer_url": "https://base.blockscout.com/tx/0x4e7a224f9168b4ab9af3aa77674d1a331213c39f0a08b714940cac50fa495d13",
+      "date": "2026-10-24T11:26:49Z",
+      "day": "2026-10-24",
+      "amount": 0.00925,
+      "token": "USDC",
+      "usd": 0.00925,
+      "gross_usd": 0.01,
+      "net_to_worker_usd": 0.00925,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0xee354a38bff761380aec985b6136d19c3b59cf44",
+      "payee_trunc": "0xee35...cf44",
+      "task_id": "TSK-6ZPX4Q1Y",
+      "award_rank": 3,
+      "task_expiry": "2026-08-06T04:21:17.812Z",
+      "days_after_expiry": 79.3,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025931,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x2cb4...cc65",
+            "usdc": 0.023125
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xe8d3...b88c",
+            "usdc": 0.013875
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xee35...cf44",
+            "usdc": 0.00925
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.00375
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T11:26:49.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 79.3 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0277",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x1eda0ded62006cf4a98162fe0ad8ecb43247d927d2317e2555990bb962477065",
+      "explorer_url": "https://base.blockscout.com/tx/0x1eda0ded62006cf4a98162fe0ad8ecb43247d927d2317e2555990bb962477065",
+      "date": "2026-10-24T10:58:33Z",
+      "day": "2026-10-24",
+      "amount": 0.02775,
+      "token": "USDC",
+      "usd": 0.02775,
+      "gross_usd": 0.03,
+      "net_to_worker_usd": 0.02775,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x2cb4131c01632aa3fb1906018d1dc09fbe99cc65",
+      "payee_trunc": "0x2cb4...cc65",
+      "task_id": "TSK-F0YMQ1NV",
+      "award_rank": 1,
+      "task_expiry": "2026-08-06T04:05:25.256Z",
+      "days_after_expiry": 79.29,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": true,
+      "in_window": true,
+      "block": 53025083,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x2cb4...cc65",
+            "usdc": 0.02775
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x0ad7...90d6",
+            "usdc": 0.0185
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.00375
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T10:58:33.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 79.3 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
+    },
+    {
+      "event_id": "taskmarket-0278",
+      "part": "C",
+      "venue_slug": "taskmarket",
+      "chain": "base",
+      "tx_hash": "0x1eda0ded62006cf4a98162fe0ad8ecb43247d927d2317e2555990bb962477065",
+      "explorer_url": "https://base.blockscout.com/tx/0x1eda0ded62006cf4a98162fe0ad8ecb43247d927d2317e2555990bb962477065",
+      "date": "2026-10-24T10:58:33Z",
+      "day": "2026-10-24",
+      "amount": 0.0185,
+      "token": "USDC",
+      "usd": 0.0185,
+      "gross_usd": 0.02,
+      "net_to_worker_usd": 0.0185,
+      "payer": "0xcad227d6d7e60bf7b207886819972ff506b5feed",
+      "payer_trunc": "0xcad2...feed",
+      "payee": "0x0ad739f8634fc2e9a580ebcd7359bf65268d90d6",
+      "payee_trunc": "0x0ad7...90d6",
+      "task_id": "TSK-F0YMQ1NV",
+      "award_rank": 2,
+      "task_expiry": "2026-08-06T04:05:25.256Z",
+      "days_after_expiry": 79.29,
+      "payer_class": "unlinked",
+      "class_reason": "Payer new to the ledger; untraced -> unlinked. Not proof of independence.",
+      "payer_new_to_ledger": true,
+      "payee_seen_before": false,
+      "in_window": true,
+      "block": 53025083,
+      "onchain_check": {
+        "receipt_status": 1,
+        "worker_transfer_from_escrow_matched": true,
+        "usdc_transfers": [
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x2cb4...cc65",
+            "usdc": 0.02775
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0x0ad7...90d6",
+            "usdc": 0.0185
+          },
+          {
+            "from": "0xddc6...33f7",
+            "to": "0xd822...fc51",
+            "usdc": 0.00375
+          }
+        ]
+      },
+      "api_settled_at": "2026-10-24T10:58:33.000Z",
+      "route": "TaskMarket award record (GET /api/tasks/{id}) + eth_getTransactionReceipt (mainnet.base.org)",
+      "event_key": "(tx_hash, payee)",
+      "ruling": "R199, R215, R255, R296",
+      "after_ledger_cutoff": false,
+      "late_award_R296": "awarded 79.3 days after the task expired; the task had been counted unpaid at its grace end (unpaid is a status at the grace end, not proof it will never be paid)"
     }
   ],
   "previous_run_id": "report-d110858e7247d2b988c08316",
@@ -28143,12 +28995,408 @@
       "reading": "MoltJobs escrow held 6.065 USDC at the close block, the same as at run 21's cut-off and head and at today's cut-off and head: no 20 USDC deposit at or before the close (supporting evidence only, R260)",
       "escrowTxHash_from_B": null,
       "escrowTxHash_note": "parts/B/check_90bf05bc.json shows escrowTxHash null (read 13:57:35Z): no receipt to read"
-    }
+    },
+    "correction_2026_10_24_R297": "The 23 October flag on TSK-KCKBZCY3 and TSK-FRGMGTXW ('we could not find the deposit') was a lookup on the wrong chain: both deposits are on chain 4217 (Tempo), completed on 22 October. The 23 October Base reconciliation stands: these deposits were never on Base."
   },
   "changes_since_previous_run21": [
     {
       "date": "2026-10-23",
       "change": "1 TaskMarket event added (taskmarket-0264, TSK-C3AZ36J4, $5.550 net, 6.0 gross, keyed (tx_hash, payee), R215, R255, R281; no new payer); run 21 recorded no after-cutoff event; 3 in_window flags set false by date (taskmarket-0066..0068 subtracted, 5.55); 30-day estimate 358.175 -> 358.175 (estimated, partial); 92 USDC outflow of 10-20: 8.0 traced to refunds to one requester, 84.0 not identified (R278, watch fact)"
+    }
+  ],
+  "previous_run_id_run22": "report-c052cd1ff8d57a333610577e",
+  "totals_2026_10_24": {
+    "as_of": "2026-10-24T13:45:00Z",
+    "ledger_window": {
+      "start": "2026-10-23T13:45:00Z",
+      "end": "2026-10-24T13:45:00Z",
+      "hours": 24
+    },
+    "window": {
+      "start": "2026-09-24",
+      "end": "2026-10-24"
+    },
+    "chain_scope": "Base only (R297); Tempo (chain 4217) shown as a separate line",
+    "agent_work_usd_paid_30d_estimate": {
+      "usd": 386.2025,
+      "label": "estimated, partial",
+      "basis": "run 22 estimate 358.175 - 2026-09-23 TaskMarket roll-off net to worker (none, 0.00) + 14 new TaskMarket events (taskmarket-0265..0278, 28.0275; Base-verified only) = 386.2025",
+      "not_subtracted": "other venues' events dated 09-23 (moltjobs-0053/0054, 0.76; virtuals-acp-0049/0050, 0.144): in_window set false, not subtracted (R191/R216 convention, R296); Virtuals ACP apportioned roll-off and Execution Market aggregate roll-off (no log route)",
+      "not_included": "DeskCrew (R172); TSK-EQM5SA6F's 10 awards on Tempo (chain 4217; token not verified as USDC; R294, R297)",
+      "status": "partial (method fallback): Blockscout test GET 403; one eth_getLogs over 100 blocks refused (429) (runs 11-23, thirteenth run); TaskMarket from award records with each settlement receipt read on chain; other venues by USDC balanceOf at the cut-off blocks"
+    },
+    "in_window_net_by_payer_class_listed_events": {
+      "unlinked": 328.3569,
+      "operator_linked": 1.2448,
+      "identified_independent": 3.5
+    },
+    "new_events": [
+      "taskmarket-0265",
+      "taskmarket-0266",
+      "taskmarket-0267",
+      "taskmarket-0268",
+      "taskmarket-0269",
+      "taskmarket-0270",
+      "taskmarket-0271",
+      "taskmarket-0272",
+      "taskmarket-0273",
+      "taskmarket-0274",
+      "taskmarket-0275",
+      "taskmarket-0276",
+      "taskmarket-0277",
+      "taskmarket-0278"
+    ],
+    "usd_new": 28.0275,
+    "gross_new": 30.3,
+    "fees_new": 2.2725,
+    "run22_after_cutoff_matching": {
+      "run22_events_flagged_after_cutoff": 0,
+      "matched_by_tx_hash_and_payee": 0,
+      "note": "run 22 recorded 0 events after its cut-off; nothing to match"
+    },
+    "new_payers": [
+      "0xcad2...feed"
+    ],
+    "new_payer_note": "0xcad2...feed is new to the ledger: class unlinked (untraced; not proof of independence); 7 of the 12 workers are new to the ledger",
+    "late_awards_R296": {
+      "payer": "0xcad2...feed",
+      "tasks": [
+        "TSK-FJJCCTV3",
+        "TSK-9Z9HENXP",
+        "TSK-4M83XEN0",
+        "TSK-6ZPX4Q1Y",
+        "TSK-F0YMQ1NV"
+      ],
+      "events": 14,
+      "gross_usdc": 30.3,
+      "net_usdc": 28.0275,
+      "days_after_expiry": "53-79",
+      "requester_flag": "never_paid -> reliable (5 awarded / 1 final_unpaid in 90 days, at 15 and 18)",
+      "line": "One requester (0xcad2...feed) paid five tasks 53-79 days after they expired; we had counted them as unpaid (unpaid is a status at the grace end, not proof it will never be paid)."
+    },
+    "in_window_flag_corrections": {
+      "count": 4,
+      "taskmarket": [],
+      "other_venues_not_subtracted": [
+        "moltjobs-0053",
+        "moltjobs-0054",
+        "virtuals-acp-0049",
+        "virtuals-acp-0050"
+      ]
+    },
+    "taskmarket_escrow_reconciliation": {
+      "deposits_listed_new_tasks_on_base": {
+        "TSK-C4JEB663": 4,
+        "TSK-G0YHWMXN": 5
+      },
+      "deposits_listed_new_tasks_not_on_base": {
+        "TSK-EQM5SA6F": 10
+      },
+      "deposits_with_receipt_into_escrow": {
+        "TSK-C4JEB663": 4,
+        "TSK-G0YHWMXN": 5
+      },
+      "awards_gross_base": {
+        "TSK-FJJCCTV3": -24.2,
+        "TSK-9Z9HENXP": -3,
+        "TSK-4M83XEN0": -3,
+        "TSK-6ZPX4Q1Y": -0.05,
+        "TSK-F0YMQ1NV": -0.05
+      },
+      "expired_in_window_reward": {
+        "TSK-YQQ9QKC4": -15
+      },
+      "deposit_receipts": {
+        "TSK-C4JEB663": {
+          "reward_usdc": 4,
+          "chain_id_on_record": 8453,
+          "escrowTxHash": "0x544b1886339d10191e6901735b7882135e8b20ef67adecc8194993ced78a8635",
+          "receipt_found": true,
+          "receipt_status": 1,
+          "block": 52988299,
+          "block_time": "2026-10-23T14:32:25Z (computed)",
+          "usdc_into_escrow": 4,
+          "created": "2026-10-23T14:32:24.506Z",
+          "usdc_transfers": [
+            {
+              "from": "0x3c08...83d8",
+              "to": "0xddc6...33f7",
+              "usdc": 4
+            }
+          ]
+        },
+        "TSK-G0YHWMXN": {
+          "reward_usdc": 5,
+          "chain_id_on_record": 8453,
+          "escrowTxHash": "0x4ce64550cb099135bb86cd75bea922771df4193cc35d9dbcf4d0d408743cff29",
+          "receipt_found": true,
+          "receipt_status": 1,
+          "block": 53001246,
+          "block_time": "2026-10-23T21:43:59Z (computed)",
+          "usdc_into_escrow": 5,
+          "created": "2026-10-23T21:43:58.450Z",
+          "usdc_transfers": [
+            {
+              "from": "0x3c08...83d8",
+              "to": "0xddc6...33f7",
+              "usdc": 5
+            }
+          ]
+        },
+        "TSK-EQM5SA6F": {
+          "reward_usdc": 10,
+          "chain_id_on_record": 4217,
+          "escrowTxHash": "0x18b8684e563caf093ae04720d9bf5df6e2b1ab57bcfac1143d018ac493d4e361",
+          "receipt_found": false,
+          "rpc_result": null,
+          "created": "2026-10-23T17:14:12.050Z",
+          "requester_trunc": "0x4c98...9dc7",
+          "read_at": "2026-10-24T13:53:41Z",
+          "note": "eth_getTransactionReceipt at mainnet.base.org returned result null: no mined transaction with this hash found by this node; the venue record gives chainId 4217 for this task (not Base, 8453); R275 flag"
+        }
+      },
+      "expected_change_receipted_deposits_awards_and_expiry_refund": -36.3,
+      "expected_change_receipted_deposits_and_awards_only": -21.3,
+      "measured_change": -36.3,
+      "unexplained_with_expiry_refund": 0,
+      "unexplained_without_expiry_refund": -15,
+      "r285_supporting": {
+        "unexplained_rise_of_10_3_or_13": false,
+        "reading": "no unexplained rise of 10, 3 or 13 USDC in the window: the measured change is accounted for without any deposit for KCKBZCY3 or FRGMGTXW (supporting evidence for R285 only, never its sole basis)"
+      },
+      "head_vs_cutoff": 0,
+      "unexplained_receipted_only": 0,
+      "scope": "Base only (R297): the escrow 0xddc6...33f7 on Base; the chain-4217 deposits went to a contract on Tempo and are not part of this reconciliation",
+      "yqq9qkc4_note": "the 15.0 USDC leaving with TSK-YQQ9QKC4's expiry is inferred from the balance; the refund transaction was not read (hypothesis: refund to the requester)"
+    },
+    "taskmarket_escrow_reconciliation_line": "TaskMarket's Base escrow fell by 36.3 USDC between the 23 and 24 October cut-offs: +4.0 and +5.0 (deposits of two new tasks, receipts read), -30.3 (five late awards, receipts read) and -15.0 (TSK-YQQ9QKC4 expired; inferred refund, not read); unexplained 0.",
+    "tempo_chain_4217_line": {
+      "label": "Tempo (chain 4217); not added to the Base ledger (R294, R297)",
+      "task": "TSK-EQM5SA6F",
+      "awards": 10,
+      "units_each": 1,
+      "units_total": 10,
+      "token": "0x20c0...74be (6 decimals); token not verified as USDC",
+      "settlement_block_4217": 45542512,
+      "settled_at": "2026-10-23T18:30:42Z",
+      "receipt_status": 1,
+      "recipients_match_venue_award_workers": true,
+      "network": "Tempo Mainnet Presto (per chainid.network registry)",
+      "line": "Tempo (chain 4217), apart from the Base ledger: TaskMarket task TSK-EQM5SA6F paid 10 awards of 1 unit each on 23 October at 18:30 UTC (receipt status 1; recipients match the venue's award record); the token is not verified as USDC, so these are not counted in the Base ledger or the 30-day USDC estimate."
+    },
+    "taskmarket_deposits_chain4217_R297": {
+      "tasks": [
+        "TSK-KCKBZCY3",
+        "TSK-FRGMGTXW",
+        "TSK-EQM5SA6F"
+      ],
+      "flag": "deposit on Tempo (chain 4217), token not verified as USDC",
+      "flag_replaces": "deposit receipt not found on Base at our 14:01 UTC read",
+      "fact": "the venue's records for these three tasks give chainId 4217 (443 of 446 listed tasks give Base's 8453); the listed deposit transactions are on chain 4217 (Tempo Mainnet Presto, per the chainid.network registry; eth_chainId confirmed), status 1, each moving the listed reward amount of token 0x20c0...74be (6 decimals) into contract 0xf4f4...97e7",
+      "not_claimed": "the token is not verified as USDC",
+      "base_lookup": "null on 23 and 24 October at mainnet.base.org (F2 on Base, R285)",
+      "reading": "correction of 23 October (R297): we had looked on Base; the deposits are on Tempo"
+    },
+    "taskmarket_deposits_without_receipt_R275_2026_10_23": {
+      "tasks": [
+        "TSK-KCKBZCY3",
+        "TSK-FRGMGTXW"
+      ],
+      "flag": "deposit receipt not found on Base at our 14:01 UTC read",
+      "wording": "we could not find the deposit (never 'unfunded')",
+      "fact": "eth_getTransactionReceipt for the escrowTxHash of TSK-KCKBZCY3 (10 USDC) and TSK-FRGMGTXW (3 USDC) returned null at 14:01 UTC; the escrow balance change balances exactly without those two deposits",
+      "hypothesis": "these two tasks are not funded in the escrow on Base (not tested)",
+      "recheck": "run 23 C re-reads both receipts (at most 2 calls) and their status"
+    },
+    "taskmarket_escrow_outflow_2026_10_20": {
+      "usdc": 92,
+      "pieces_at_least": 6,
+      "identified": [
+        {
+          "usdc": 2,
+          "class": "refunded_to_requester",
+          "to": "0xc056...7a63",
+          "block": 52851526,
+          "tx": "0x8133e584339bafae4200752d4de53c13d1cdb323a2e91004bfe4adec1231b984"
+        },
+        {
+          "usdc": 6,
+          "class": "refunded_to_requester",
+          "to": "0xc056...7a63",
+          "block": 52851402,
+          "tx": "0x7be5f8882ab06bdbd44cea09794348360e0290b61d2204fc623e4cb762ce6904",
+          "time": "2026-10-20T10:29:11Z",
+          "found_by": "run 22 C bisection (R272)"
+        }
+      ],
+      "not_identified_usdc": 84,
+      "label": "watch fact; not a payout, not a payouts.json event, not a gate input (R240, R254, R272, R278)",
+      "plain": "Of the 92 USDC that left TaskMarket's escrow on 20 October, 8.0 USDC is now traced to refunds to one requester (2.0 found on 22 October and 6.0 on 23 October; refunds, not payouts); 84.0 USDC is not identified.",
+      "source": "parts/C/outflow_92.json",
+      "status_part_C": "complete",
+      "identified_usdc_total": 8,
+      "pieces_of_the_69": [
+        {
+          "between_blocks": [
+            52851401,
+            52851402
+          ],
+          "between_times": [
+            "2026-10-20T10:29:09Z",
+            "2026-10-20T10:29:11Z"
+          ],
+          "fall_usdc": 6
+        },
+        {
+          "between_blocks": [
+            52851407,
+            52851421
+          ],
+          "between_times": [
+            "2026-10-20T10:29:21Z",
+            "2026-10-20T10:29:49Z"
+          ],
+          "fall_usdc": 9
+        },
+        {
+          "between_blocks": [
+            52851421,
+            52851448
+          ],
+          "between_times": [
+            "2026-10-20T10:29:49Z",
+            "2026-10-20T10:30:43Z"
+          ],
+          "fall_usdc": 14
+        },
+        {
+          "between_blocks": [
+            52851448,
+            52851503
+          ],
+          "between_times": [
+            "2026-10-20T10:30:43Z",
+            "2026-10-20T10:32:33Z"
+          ],
+          "fall_usdc": 40
+        }
+      ],
+      "source_run22": "parts/C/outflow_69.json",
+      "note_2026_10_24": "not re-read in run 23 (dropped: no new route); watch fact carried"
+    },
+    "headline_change": false,
+    "latest_payout_by_venue": {
+      "taskmarket": {
+        "date": "2026-10-24T11:28:23Z",
+        "task": "TSK-4M83XEN0",
+        "block": 53025978,
+        "after_ledger_cutoff": false,
+        "route": "/api/tasks/{id} awards + eth_getTransactionReceipt",
+        "primary": true,
+        "tx_verified": true,
+        "note": "five tasks of one requester (0xcad2...feed) awarded on 24 October, 53-79 days after they expired (R296)"
+      },
+      "virtuals-acp": {
+        "date": "2026-10-05T09:27:37Z",
+        "route": "virtuals-acp-0105, receipt re-read 2026-10-17 (status 1, block 52,201,555); escrow 0x238E...32E0 22.9 -> 22.9 between the cut-offs, 22.9 at the head: no decrease, so no possible_newer_outflow (R121)",
+        "primary": true,
+        "tx_verified": true,
+        "checked_through": "2026-10-17T23:49:03Z",
+        "re_dated_to": "2026-10-17",
+        "checked_through_2026_10_18": "2026-10-18T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_19": "2026-10-19T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_21": "2026-10-21T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs; no decrease)",
+        "checked_through_2026_10_22": "2026-10-22T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs and at head; release receipt virtuals-acp-0105 re-read 2026-10-22, status 1)",
+        "checked_through_2026_10_23": "2026-10-23T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs and at head; no decrease)",
+        "checked_through_2026_10_24": "2026-10-24T13:44:59Z (escrow 0x238e...32e0 22.9 at both cut-offs and at head; no decrease)"
+      },
+      "moltjobs": {
+        "date": "2026-09-23T07:42:57Z",
+        "route": "carried (payouts.json); escrow 0x3a57...60be 6.065 at the 10-23 and 10-24 cut-offs and at head (unchanged since 10-09)",
+        "d1_line": "2026-10-23",
+        "primary": true,
+        "checked_through": "2026-10-24T13:44:59Z"
+      },
+      "agentpact": {
+        "date": "2026-09-01T22:57:29Z",
+        "route": "carried; escrow 0x5881...9a64 0.0 at the 10-23 and 10-24 cut-offs",
+        "d1_line": "2026-10-31"
+      },
+      "execution-market": {
+        "date": "2026-10-10",
+        "route": "carried by the merge from run 16 grading_inputs (no api.execution.market call this run); Base payer 0x857f...43cd -0.08 unclassified (C)",
+        "primary": true,
+        "tx_verified": false
+      },
+      "deskcrew": {
+        "date": "2026-10-15T10:00:33Z",
+        "route": "DeskCrew tx 0xe7a6...6fc66 read on Base (receipt status 1; 0.85 USDC from the run-9-verified payout wallet 0xd073...323d); operator-paid (R161, R168)",
+        "primary": true,
+        "tx_verified": true
+      },
+      "algora": {
+        "date": "carried (no C route; B reads Algora)"
+      }
+    },
+    "escrow_balances": [
+      {
+        "venue": "taskmarket",
+        "address": "0xddc6cc3e4d11c1f3527b867c7dad4ed9869c33f7",
+        "address_trunc": "0xddc6...33f7",
+        "previous_cutoff": 838.386101,
+        "previous_block": 52986876,
+        "previous_source": "carried from run 22",
+        "cutoff": 802.086101,
+        "cutoff_block": 53030076,
+        "change": -36.3,
+        "head": 802.086101,
+        "head_block": 53030337
+      },
+      {
+        "venue": "moltjobs",
+        "address": "0x3a57faee4ee95444506a6e290261d4c37b3060be",
+        "address_trunc": "0x3a57...60be",
+        "previous_cutoff": 6.065,
+        "previous_block": 52986876,
+        "previous_source": "carried from run 22",
+        "cutoff": 6.065,
+        "cutoff_block": 53030076,
+        "change": 0,
+        "head": 6.065,
+        "head_block": 53030337
+      },
+      {
+        "venue": "virtuals-acp",
+        "address": "0x238e541bfefd82238730d00a2208e5497f1832e0",
+        "address_trunc": "0x238e...32e0",
+        "previous_cutoff": 22.9,
+        "previous_block": 52986876,
+        "previous_source": "carried from run 22",
+        "cutoff": 22.9,
+        "cutoff_block": 53030076,
+        "change": 0,
+        "head": 22.9,
+        "head_block": 53030337
+      },
+      {
+        "venue": "agentpact",
+        "address": "0x588168712bf758afd747bf46471afa53f9599a64",
+        "address_trunc": "0x5881...9a64",
+        "previous_cutoff": 0,
+        "previous_block": 52986876,
+        "previous_source": "carried from run 22",
+        "cutoff": 0,
+        "cutoff_block": 53030076,
+        "change": 0,
+        "head": 0,
+        "head_block": 53030337
+      }
+    ]
+  },
+  "changes_since_previous_run22": [
+    {
+      "date": "2026-10-24",
+      "change": "14 TaskMarket events added (taskmarket-0265..0278, five tasks of 0xcad2...feed awarded 53-79 days after expiry; $28.0275 net, 30.3 gross; keyed (tx_hash, payee); new payer, class unlinked; R296); run 22 recorded no after-cutoff event; no TaskMarket event dated 09-23; 4 other-venue events dated 09-23 set in_window false, not subtracted; 30-day estimate 358.175 -> 386.2025 (estimated, partial); EQM5SA6F's 10 awards on Tempo (chain 4217) shown apart, not in the Base ledger (R294, R297)"
     }
   ]
 }

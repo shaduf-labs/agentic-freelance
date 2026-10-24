@@ -1935,3 +1935,45 @@
   [data-agent-document] .ck-card dl div{grid-template-columns:minmax(0,1fr)}
 }
 [data-agent-document] .pj-table tr.pj-new th,[data-agent-document] .pj-table tr.pj-new td{background:#f8f7fc}
+/* daily update, 24 October: dated corrections beside the original sentence, the deposit check box */
+[data-agent-document] .cx-note{display:block;margin:6px 0 2px;padding:6px 10px;border-left:3px solid #9c2f2a;background:#fbf3f2;font-size:13.5px;line-height:1.5;overflow-wrap:break-word}
+[data-agent-document] .cx-note .af-corr-tag{margin:0 6px 2px 0}
+[data-agent-document] .cx-said{color:var(--muted,#5d5c58)}
+[data-agent-document] .cx-pair{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,17rem),1fr));gap:10px;margin:10px 0 14px;max-width:60rem}
+[data-agent-document] .cx-col{margin:0;padding:10px 12px;border:1px solid #d9d7d1;border-radius:6px;background:#fbfaf8;min-width:0;overflow-wrap:break-word}
+[data-agent-document] .cx-col.now{border-color:#c9a19e;border-left:4px solid #9c2f2a;background:#fbf3f2}
+[data-agent-document] .cx-col h3,[data-agent-document] .cx-col h4{margin:0 0 6px;font-size:14px;line-height:1.35;text-transform:none}
+[data-agent-document] .cx-col p{margin:0;font-size:14px;line-height:1.55}
+[data-agent-document] .dp-box{margin:14px 0 18px;padding:12px 14px;border:1px solid #b9d3c3;border-left:4px solid #3e7d5c;border-radius:6px;background:#f2f8f4;max-width:52rem}
+[data-agent-document] .dp-box h3{margin:0 0 6px;font-size:16px;line-height:1.3}
+[data-agent-document] .dp-box ol{margin:4px 0 8px;padding-left:22px}
+[data-agent-document] .dp-box li{margin:3px 0;font-size:14.5px;line-height:1.55;overflow-wrap:break-word}
+[data-agent-document] .dp-box p{margin:6px 0 0;font-size:14px;line-height:1.55}
+[data-agent-document] .dp-box code{overflow-wrap:anywhere}
+[data-agent-document] .cx-hash{font-family:var(--font-mono,ui-monospace,monospace);font-size:12.5px;overflow-wrap:anywhere;word-break:break-all}
+[data-agent-document] .ww-diagram{display:grid;grid-template-columns:minmax(0,13rem) minmax(0,1fr);gap:12px 16px;align-items:center;margin:12px 0 8px;max-width:52rem}
+[data-agent-document] .ww-diagram p{margin:0;font-size:14px;line-height:1.5;overflow-wrap:break-word}
+[data-agent-document] .ww-rec{padding:10px 12px;border:1.5px solid #6b5bb5;border-radius:8px;background:#f8f7fc;text-align:center;min-width:0}
+[data-agent-document] .ww-h{font-weight:700}
+[data-agent-document] .ww-chain{font-weight:700;color:#3d2f78}
+[data-agent-document] .ww-paths{display:grid;gap:10px;min-width:0}
+[data-agent-document] .ww-row{display:grid;grid-template-columns:minmax(0,7.5rem) minmax(0,1fr);gap:8px;align-items:center;min-width:0}
+[data-agent-document] .ww-arrow{font-size:13px;color:var(--muted,#5d5c58)}
+[data-agent-document] .ww-box{padding:8px 12px;border-radius:8px;min-width:0}
+[data-agent-document] .ww-base .ww-box{border:1.5px dashed #9a988f;background:#faf9f6}
+[data-agent-document] .ww-tempo .ww-box{border:2px solid #3e7d5c;background:#f2f8f4}
+[data-agent-document] .ww-no{color:#7a2d27}
+[data-agent-document] .ww-warn{font-weight:650;color:#7a4a00}
+[data-agent-document] .ww-small{font-size:13px;color:var(--muted,#5d5c58)}
+[data-agent-document] .la-key{display:flex;flex-wrap:wrap;gap:4px 16px;margin:6px 0 0;padding:0;list-style:none;font-size:13px;line-height:1.5}
+[data-agent-document] .la-key li{display:flex;align-items:center;gap:6px;margin:0;min-width:0}
+[data-agent-document] .la-sw{display:inline-block;flex:0 0 auto}
+[data-agent-document] .la-sw.closed{width:9px;height:9px;border:2px solid #4f4d47;border-radius:50%;background:#fff}
+[data-agent-document] .la-sw.grace{width:2px;height:14px;background:#1f1e1c}
+[data-agent-document] .la-sw.unpaid{width:24px;height:0;border-top:5px dashed #b8433b}
+[data-agent-document] .la-sw.paid{width:11px;height:11px;border-radius:50%;background:#3e7d5c}
+@container shaduf-document (max-width: 36em){
+  [data-agent-document] .ww-diagram{grid-template-columns:minmax(0,1fr)}
+  [data-agent-document] .ww-row{grid-template-columns:minmax(0,1fr)}
+  [data-agent-document] .ww-arrow span{display:inline-block;transform:rotate(90deg)}
+}

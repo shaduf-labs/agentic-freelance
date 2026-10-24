@@ -1,7 +1,7 @@
 {
   "schema": "agentic-freelance-economics/0.1",
-  "run_id": "report-c052cd1ff8d57a333610577e",
-  "as_of": "2026-10-23",
+  "run_id": "report-dd863a8dadcfc4813ba4bebb",
+  "as_of": "2026-10-24",
   "merged_at": "2026-10-08",
   "window": {
     "taskmarket": "2026-09-08..2026-10-08 (settlement rule, grace 16)",
@@ -1461,7 +1461,7 @@
       "main_row": true,
       "route": "agent_first_board",
       "competition_model": "open_submission",
-      "window": "2026-09-23..2026-10-23",
+      "window": "2026-09-24..2026-10-24",
       "window_extended": false,
       "sample": {
         "tasks_closed": 91,
@@ -1512,26 +1512,27 @@
         "per_prize_usd_median_check_run8": 2
       },
       "p_win": {
-        "pooled": 0.018627,
-        "awards": 105,
-        "submissions": 5637,
+        "pooled": 0.020868,
+        "awards": 112,
+        "submissions": 5367,
         "ci90_wilson": [
-          0.015888,
-          0.021828
+          0.017892,
+          0.024327
         ],
         "ci90_bootstrap": [
-          0.01432,
-          0.02436
+          0.015541,
+          0.027576
         ],
         "ci90": [
-          0.01432,
-          0.02436
+          0.015541,
+          0.027576
         ],
-        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261023)",
+        "ci_method": "wider of Wilson 90% and task bootstrap (2,000, seed 20261024)",
         "newcomer": 0.010119,
         "newcomer_basis": "measured by sub-pass A: awards to workers with no earlier award in the window / submissions by such workers (tasks with public submitter lists) (run 6 value carried; not recomputed in run 7) [run 6 value carried; not recomputed in run 8]",
         "final_note": "p_win_final (run 8, grace 16): still_payable tasks excluded; grace sensitivity in settlement.json#refresh_2026_10_07",
-        "source": "parts/C/settlement_refresh.json#edition3_grace.figures.30d_without_moltrust.at_18"
+        "source": "parts/C/settlement_refresh.json#edition3_grace.figures.30d_without_moltrust.at_18",
+        "chain_4217_note": "counted as listed (R294): TSK-EQM5SA6F's 10 awards on 36 entries are in the counts (verified on Tempo, chain 4217); without the three chain-4217 tasks p_win would be 0.019133 (body-only sensitivity, not pre-registered)"
       },
       "deliverable_class_mix": [
         {
@@ -1722,7 +1723,7 @@
         "verdict": "negative_at_all_tiers",
         "basis": "measured/estimated in run 6"
       },
-      "as_of_row": "2026-10-23",
+      "as_of_row": "2026-10-24",
       "snapshot_2026_10_06": {
         "sample": {
           "tasks_closed": 81,
@@ -1780,17 +1781,17 @@
       },
       "cost_translations": {
         "inputs": {
-          "p_win": 0.018627,
+          "p_win": 0.020868,
           "R_net_usd": 1.85,
-          "eligible_supply_per_day": 2.733,
+          "eligible_supply_per_day": 2.833,
           "award_delay_median_days": 1.03,
           "payout_delay_median_days": 0
         },
-        "expected_payout_per_attempt_usd": 0.03446,
+        "expected_payout_per_attempt_usd": 0.038606,
         "return_per_dollar": {
-          "budget": 1.4285,
-          "mid": 0.0952,
-          "frontier": 0.0143
+          "budget": 1.6004,
+          "mid": 0.1067,
+          "frontier": 0.016
         },
         "per_day": {
           "budget": {
@@ -1929,7 +1930,7 @@
         "per_day_note_2026_10_14": "per-attempt figures recomputed by the run 15 merge (p_win 0.015356) at the 2026-10-11 list prices; per-day cells: see grading_inputs economics",
         "per_day_note_2026_10_16": "per-attempt figures recomputed by the run 16 merge (p_win 0.016703) at the 2026-10-11 list prices; estimated",
         "per_day_note_2026_10_17": "per-attempt figures recomputed by the run 17 merge (p_win 0.019302) at the 2026-10-17 list prices; estimated",
-        "per_day_note_2026_10_23": "per-attempt figures recomputed by the run 22 merge (p_win 0.018627, edition grace 18) at the 22 October list prices; estimated"
+        "per_day_note_2026_10_24": "per-attempt figures recomputed by the run 23 merge (p_win 0.020868, edition grace 18) at the 22 October list prices; estimated"
       },
       "snapshot_2026_10_07": {
         "p_win": {
@@ -2430,16 +2431,16 @@
           "frontier": 0.0128
         }
       },
-      "snapshot_2026_10_22": {
-        "p_win": 0.018319,
+      "snapshot_2026_10_23": {
+        "p_win": 0.018627,
         "ci90": [
-          0.014017,
-          0.023595
+          0.01432,
+          0.02436
         ],
         "return_per_dollar": {
-          "budget": 1.4049,
-          "mid": 0.0937,
-          "frontier": 0.014
+          "budget": 1.4285,
+          "mid": 0.0952,
+          "frontier": 0.0143
         }
       }
     },
@@ -8223,10 +8224,10 @@
         },
         "source": "parts/C/moltjobs_r17.json"
       },
-      "refresh_2026_10_23": {
+      "refresh_2026_10_24": {
         "payout_per_job_net_usd": 0.4,
         "n_funded": 8,
-        "window": "2026-09-23..2026-10-23 (R97, R157)",
+        "window": "2026-09-23..2026-10-23 (carried: no funded operator job created 2026-09-24..10-24)",
         "assignment_ratio": {
           "budget": {
             "low": 1221.0012,
@@ -8239,7 +8240,8 @@
             "high": 0.9311
           }
         },
-        "source": "parts/B/moltjobs_r22.json + keep/"
+        "note": "the D3 input is the median of the 8 funded operator jobs of 23 September (window 09-23..10-23, read 10-23); on 10-24 no funded operator job is in the 30-day window, so the measured median is carried with its date (merge reading; question for the manager)",
+        "source": "parts/B/moltjobs_r23.json + keep/ (no funded operator job in 09-24..10-24); run 22 keep/ for the median"
       }
     },
     {
@@ -14127,5 +14129,14 @@
       "moltjobs": "D3 input $0.40 (median of 8 funded operator jobs, 09-23..10-23)"
     }
   },
-  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75"
+  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75",
+  "refresh_2026_10_24": {
+    "run_id": "report-dd863a8dadcfc4813ba4bebb",
+    "price_tiers": "not re-read (read 2026-10-22, fresh to 2026-10-29)",
+    "rows_updated": {
+      "taskmarket": "p_win 0.020868 (C, run 23 window, edition grace 18)",
+      "moltjobs": "D3 input $0.40 carried (median of 8 funded operator jobs of 23 September; none in 09-24..10-24)"
+    }
+  },
+  "previous_run_id_run22": "report-c052cd1ff8d57a333610577e"
 }

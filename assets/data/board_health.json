@@ -1,6 +1,6 @@
 {
   "schema": "run7-partA-board-health/0.1",
-  "run_id": "report-c052cd1ff8d57a333610577e",
+  "run_id": "report-dd863a8dadcfc4813ba4bebb",
   "as_of": "2026-10-08",
   "definition": "per venue, the closest measurable analogue of stranded attempts (work submitted or posted where no payout followed); see PLAN.md run-7 definitions",
   "venues": [
@@ -304,6 +304,27 @@
             "TSK-E49N4V7T (MolTrust)"
           ]
         },
+        "source": "parts/C/settlement_refresh.json#edition3_grace"
+      },
+      "refresh_2026_10_24": {
+        "status_counts": {
+          "open": 7,
+          "awarded": 66,
+          "still_payable": 14,
+          "final_unpaid": 4
+        },
+        "unpaid_submission_share": 0.018819,
+        "unpaid_reward_share": 0.270757,
+        "grace_days": {
+          "applied": 18,
+          "sensitivity": 15,
+          "n_differ": 1,
+          "differs": [
+            "TSK-6BHK4EGT"
+          ]
+        },
+        "late_awards_R296": "One requester (0xcad2...feed) paid five tasks 53-79 days after they expired; we had counted them as unpaid (unpaid is a status at the grace end, not proof it will never be paid).",
+        "multi_chain_R297": "3 of 446 listed tasks name chain 4217 (Tempo)",
         "source": "parts/C/settlement_refresh.json#edition3_grace"
       }
     },
@@ -1195,6 +1216,21 @@
         "outside_funded": 0,
         "outside_open": 0,
         "source": "parts/B/moltjobs_r22.json"
+      },
+      "refresh_2026_10_24": {
+        "jobs_total": 123,
+        "status_counts": {
+          "CANCELLED": 52,
+          "IN_PROGRESS": 4,
+          "COMPLETED": 57,
+          "OPEN": 10
+        },
+        "new_jobs_since_10_23": 0,
+        "outside_new_30d": 1,
+        "outside_funded": 0,
+        "outside_open": 0,
+        "operator_new_30d": 0,
+        "source": "parts/B/moltjobs_r23.json"
       }
     },
     {
@@ -1312,12 +1348,13 @@
     "Algora attempt counts on UnsafeLabs issues not recrawled"
   ],
   "previous_run_id_run14": "report-d110858e7247d2b988c08316",
-  "as_of_refresh": "2026-10-23",
+  "as_of_refresh": "2026-10-24",
   "previous_run_id_run15": "report-6b3ee899e2c0b31d6e5d0690",
   "previous_run_id_run16": "report-8353130fa006fdbf14f3f3de",
   "previous_run_id_run17": "report-052abdb20fbb277459abb9dd",
   "previous_run_id_run18": "report-1682ec5270272aae02d8da93",
   "previous_run_id_run19": "report-14fd97c6b988d8cd5d37eff4",
   "previous_run_id_run20": "report-f4afe30e9e5606de3f1f3275",
-  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75"
+  "previous_run_id_run21": "report-245745b47b4bb64ecf00dd75",
+  "previous_run_id_run22": "report-c052cd1ff8d57a333610577e"
 }
