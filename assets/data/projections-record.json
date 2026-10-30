@@ -1,6 +1,6 @@
 {
  "schema": "agentic-freelance-projections-record/0.1",
- "as_of": "2026-10-24",
+ "as_of": "2026-10-30",
  "edition": 3,
  "label": "every projection and dated check we published since edition 2, in its pre-registered place, with its factual outcome; projections are projections, not forecasts",
  "rows": [
@@ -45,9 +45,10 @@
    "item": "Superteam Earn would move probe first -> avoid on 26 October unless an agent listing appears",
    "type": "grade projection",
    "date_projected": "2026-10-26",
-   "outcome": "not yet due; read on 21 and 22 October: no agent listing; next read 26 October (no Superteam read on 23 or 24 October)",
-   "outcome_label": "not yet due",
-   "checked": "2026-10-24"
+   "outcome": "did not happen: an agent-allowed listing (0b31b391, RaptorX Labs, 125 USDC) was published on 26 October at 07:41 UTC (its publishedAt), inside the 30-day window ending 26 October, so Superteam Earn stays probe first under v1.2, v1.1 and v1.0 (decided at date level by the listing's own publication time, not by the late read); checked 4 days late (we published no update 25-29 October)",
+   "outcome_label": "did not happen (a new agent listing was published that day; checked 4 days late (we published no update 25-29 October))",
+   "checked": "2026-10-30",
+   "read_late": "no update was published 25-29 October"
   },
   {
    "made_on": "2026-10-17",
@@ -63,7 +64,6 @@
    "item": "MoltJobs job 90bf05bc at its close (22 October 17:50 UTC): funded or claimed before the close?",
    "type": "dated check",
    "date_projected": "2026-10-22",
-   "planned_read": "2026-10-23",
    "outcome": "did not happen: closed at 17:50 UTC on 22 October without funding or a claim (decided by the record's own times: no claim time, no escrow transaction, deadline not moved; escrow 6.065 USDC at the close block, supporting only); shown as cancelled at our 23 October read; grade unchanged (the job counts by its creation date until 18 November)",
    "outcome_label": "did not happen",
    "checked": "2026-10-23"
@@ -73,7 +73,6 @@
    "item": "TSK-6BHK4EGT at its 15-day point (23 October 06:41 UTC): awarded by then? (the 15-day sensitivity check)",
    "type": "dated check",
    "date_projected": "2026-10-23",
-   "planned_read": "2026-10-23",
    "outcome": "did not happen: not awarded by its 15-day point (the 15-day sensitivity; no award on the record at our 13:57 UTC read); at the edition grace of 18 days it stays payable until 26 October, 06:41 UTC; published status: still payable",
    "outcome_label": "did not happen",
    "checked": "2026-10-23"
@@ -83,9 +82,8 @@
    "item": "the 24 October check: the deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW, which we could not find on 23 October",
    "type": "dated check",
    "date_projected": "2026-10-24",
-   "planned_read": "2026-10-24",
-   "outcome": "Base: not found (F2) — correction: on Tempo (chain 4217), mined before our 23 October lookup (22 October 19:01 and 22:39 UTC; status 1; token not verified as USDC); no count changes (counted as listed)",
-   "outcome_label": "did not happen on Base (F2); correction: on Tempo (chain 4217)",
+   "outcome": "Base: not found — correction: on Tempo (chain 4217), mined before our 23 October lookup (22 October 19:01 and 22:39 UTC; status 1; token not verified as USDC); no count changes (counted as listed)",
+   "outcome_label": "did not happen on Base; correction: on Tempo (chain 4217)",
    "checked": "2026-10-24"
   },
   {
@@ -93,24 +91,61 @@
    "item": "TSK-6BHK4EGT at its grace end at the edition grace (26 October 06:41 UTC)",
    "type": "dated check",
    "date_projected": "2026-10-26",
-   "planned_read": "2026-10-26",
-   "outcome": "not yet due (still unawarded at our 24 October read; still payable at 18 until 26 October 06:41 UTC)",
+   "outcome": "did not happen: not awarded by its 18-day grace end (06:41 UTC on 26 October; no award on the record, decided by award time, not by the late read); counted as unpaid at the grace end; checked 4 days late (we published no update 25-29 October)",
+   "outcome_label": "did not happen (not awarded by its grace end; checked 4 days late (we published no update 25-29 October))",
+   "checked": "2026-10-30",
+   "read_late": "no update was published 25-29 October"
+  },
+  {
+   "made_on": "2026-10-30",
+   "item": "TSK-DC8ZPFT6 (10 USDC) at its grace end at the edition grace (30 October 23:05 UTC): awarded by then?",
+   "type": "dated check",
+   "date_projected": "2026-10-30",
+   "outcome": "not yet due (unawarded at our 30 October read, 13:49 UTC; the grace end falls after the read)",
    "outcome_label": "not yet due",
-   "checked": "2026-10-24"
+   "checked": "2026-10-30"
+  },
+  {
+   "made_on": "2026-10-30",
+   "item": "TSK-13QHZKQK (5 USDC) at its grace end at the edition grace (31 October 06:41 UTC): awarded by then?",
+   "type": "dated check",
+   "date_projected": "2026-10-31",
+   "outcome": "not yet due (unawarded at our 30 October read)",
+   "outcome_label": "not yet due",
+   "checked": "2026-10-30"
+  },
+  {
+   "made_on": "2026-10-30",
+   "item": "AgentPact would move not enough data -> avoid on 1 November under rule v1.2 unless a new payout is confirmed (its latest payout, 1 September, passes 60 days)",
+   "type": "grade projection",
+   "date_projected": "2026-11-01",
+   "outcome": "not yet due (projection, not a forecast)",
+   "outcome_label": "not yet due",
+   "checked": "2026-10-30"
   }
  ],
  "counts": {
   "happened": 2,
-  "did not happen": 4,
+  "did not happen": 6,
   "withdrawn": 1,
   "moved": 1,
-  "not yet due": 2
+  "not yet due": 3
  },
+ "changed_on_2026_10_30": [
+  "Superteam Earn would move probe first -> avoid on 26 October unless an agent listing appears",
+  "TSK-6BHK4EGT at its grace end at the edition grace (26 October 06:41 UTC)"
+ ],
+ "rows_added_on_2026_10_30": [
+  "TSK-DC8ZPFT6 (10 USDC) at its grace end at the edition grace (30 October 23:05 UTC): awarded by then?",
+  "TSK-13QHZKQK (5 USDC) at its grace end at the edition grace (31 October 06:41 UTC): awarded by then?",
+  "AgentPact would move not enough data -> avoid on 1 November under rule v1.2 unless a new payout is confirmed (its latest payout, 1 September, passes 60 days)"
+ ],
+ "rows_added_note": "rows are never removed; a row added on a date keeps its place with its factual outcome when it falls due",
+ "read_late_note": "no update was published from 25 to 29 October; checks that fell due in those days were read on 30 October and decided by the record's own fields and times, never by the state at the late read",
  "changed_on_2026_10_24": [
   "the 24 October check: the deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW, which we could not find on 23 October"
  ],
  "rows_added_on_2026_10_24": [
   "the 24 October check: the deposit receipts of TaskMarket tasks TSK-KCKBZCY3 and TSK-FRGMGTXW, which we could not find on 23 October"
- ],
- "rows_added_note": "the 24 October deposit check was published in next_dates on 23 October (a dated check); its row is added in its place with the outcome"
+ ]
 }
